@@ -216,14 +216,15 @@ let best=store.get("vb-best",0);
 /* ===== artigo ===== */
 function article(w,g){
   if(!g)return "";
+  if(lang!=="de"&&/^(les|i|gli|le) /i.test(w))return "";
   if(lang==="de")return LANGS.de.arts[g]||"";
-  const v=/^[aeiouàâäéèêëíìîïóòôöúùûüh]/i.test(w);
+  const v=/^[aeiouàâäéèêëíìîïóòôöúùûüœæh]/i.test(w);
   if(lang==="it"){if(g==="f")return /^[aeiouàéèìòù]/i.test(w)?"l'":"la";if(/^[aeiouàéèìòù]/i.test(w))return "l'";if(/^(s[^aeiou]|z|gn|ps|x|y|pn)/i.test(w))return "lo";return "il"}
   if(lang==="fr"){if(v)return "l'";return g==="f"?"la":"le"}
   return "";
 }
 function full(c){const a=article(c.w,c.g);if(!a)return c.w;return a.endsWith("'")?a+c.w:a+" "+c.w}
-function label(c){const a=article(c.w,c.g);if(!a)return esc(c.w);const sep=a.endsWith("'")?"":" ";return `<span class="g-${c.g}"><span class="art">${esc(a)}</span>${sep}${esc(c.w)}</span>`}
+function label(c){const a=article(c.w,c.g);if(!a)return c.g?`<span class="g-${c.g}">${esc(c.w)}</span>`:esc(c.w);const sep=a.endsWith("'")?"":" ";return `<span class="g-${c.g}"><span class="art">${esc(a)}</span>${sep}${esc(c.w)}</span>`}
 
 /* ===== racha ===== */
 function streakInfo(){
@@ -257,7 +258,7 @@ function addActivity(){
 /* ===== dados ===== */
 function loadLang(l,cb){
   if(VB_DATA[l])return cb();
-  const s=document.createElement("script");s.src=`data/${l}.js?v=3`;s.onload=cb;
+  const s=document.createElement("script");s.src=`data/${l}.js?v=4`;s.onload=cb;
   s.onerror=()=>{$("train").innerHTML='<div class="card done"><h2>Sem conexão</h2><p class="hintline">Abra uma vez com internet para baixar esta língua. Depois ela funciona offline.</p></div>'};
   document.head.appendChild(s);
 }
