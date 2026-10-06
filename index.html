@@ -1,102 +1,108 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#2b3f8f">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Wortschatz">
+<meta name="apple-mobile-web-app-title" content="Vokabel">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icon-192.png">
 <link rel="apple-touch-icon" href="icon-180.png">
-<title>Wortschatz 100</title><style>html{color-scheme:light}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
-
+<title>Vokabel 1000</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
 <style>
-/* Layout: uma coluna de estudo tipo ficha (Karteikarte), abas no topo, cores de gênero da escola alemã (der azul, die vermelho, das verde) */
+/* Layout: uma coluna tipo ficha; barra de racha e meta no topo; cores de gênero (masc azul, fem vermelho, neutro verde) */
 :root{
   --bg:#f3f4f1; --card:#ffffff; --fg:#1c2027; --muted:#646a73; --line:#dcdfe0; --rule:#e9ecef;
-  --accent:#2b3f8f; --accent-fg:#ffffff;
-  --der:#1f5fbf; --die:#c2303a; --das:#23824a;
-  --der-bg:#e6eefb; --die-bg:#fbe9ea; --das-bg:#e5f3ea;
+  --accent:#2b3f8f; --accent-fg:#ffffff; --flame:#e0661b; --flame-bg:#fdeee2;
+  --m:#1f5fbf; --f:#c2303a; --n:#23824a; --m-bg:#e6eefb; --f-bg:#fbe9ea; --n-bg:#e5f3ea;
   --bad:#b8402e; --mid:#a8740f; --good:#23824a;
   --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
   --body:"Atkinson Hyperlegible",ui-sans-serif,system-ui,sans-serif;
   --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  color-scheme:light;
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+@media (prefers-color-scheme:dark){:root{
   --bg:#14161b; --card:#1d2027; --fg:#e8eaee; --muted:#9aa0aa; --line:#323640; --rule:#272a32;
-  --accent:#8fa6ff; --accent-fg:#10142a;
-  --der:#79a8f2; --die:#f08a8f; --das:#73c792;
-  --der-bg:#1c2a42; --die-bg:#3a1f23; --das-bg:#1b3325;
+  --accent:#8fa6ff; --accent-fg:#10142a; --flame:#ff9a52; --flame-bg:#3a2516;
+  --m:#79a8f2; --f:#f08a8f; --n:#73c792; --m-bg:#1c2a42; --f-bg:#3a1f23; --n-bg:#1b3325;
   --bad:#ec8a78; --mid:#e2b25a; --good:#73c792; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#14161b; --card:#1d2027; --fg:#e8eaee; --muted:#9aa0aa; --line:#323640; --rule:#272a32;
-  --accent:#8fa6ff; --accent-fg:#10142a;
-  --der:#79a8f2; --die:#f08a8f; --das:#73c792;
-  --der-bg:#1c2a42; --die-bg:#3a1f23; --das-bg:#1b3325;
-  --bad:#ec8a78; --mid:#e2b25a; --good:#73c792; color-scheme:dark}
 *{box-sizing:border-box}
-body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.5}
-.wrap{max-width:720px;margin:0 auto;padding-inline:16px;padding-block:20px 48px}
-header{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px}
-h1{font-family:var(--display);font-weight:800;font-size:2rem;letter-spacing:-.02em;margin:0;line-height:1}
-.sub{color:var(--muted);font-size:.9rem;margin:.35rem 0 0}
-.stats{display:flex;gap:16px;font-variant-numeric:tabular-nums}
-.stat b{display:block;font-family:var(--display);font-size:1.4rem;line-height:1}
-.stat span{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
-nav{display:flex;gap:4px;margin:20px 0 16px;border-bottom:1px solid var(--line)}
-nav button{font:inherit;font-weight:700;background:none;border:0;color:var(--muted);padding:10px 12px;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-1px}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.5;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+[hidden]{display:none!important}
+.wrap{max-width:720px;margin:0 auto;padding-inline:16px;padding-block:16px 48px}
+header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
+h1{font-family:var(--display);font-weight:800;font-size:1.7rem;letter-spacing:-.02em;margin:0;line-height:1}
+.langs{display:flex;gap:6px}
+.langs button{font:inherit;font-weight:700;font-size:.9rem;cursor:pointer;padding:7px 12px;border-radius:99px;border:1px solid var(--line);background:var(--card);color:var(--fg)}
+.langs button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-fg)}
+.streak{margin-top:14px;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.flame{display:flex;align-items:center;gap:8px;background:var(--flame-bg);color:var(--flame);border-radius:12px;padding:8px 12px}
+.flame svg{width:26px;height:26px;flex:none}
+.flame b{font-family:var(--display);font-size:1.8rem;line-height:1;font-variant-numeric:tabular-nums}
+.flame span{font-size:.72rem;line-height:1.1;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.flame.off{background:var(--rule);color:var(--muted)}
+.goal{min-width:0;display:grid;gap:6px}
+.goal-top{display:flex;justify-content:space-between;gap:8px;font-size:.85rem}
+.goal-top b{font-variant-numeric:tabular-nums}
+.bar{height:10px;border-radius:99px;background:var(--rule);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--flame);border-radius:99px;transition:width .3s}
+.week{display:flex;gap:6px;justify-content:space-between}
+.day{display:grid;justify-items:center;gap:2px;font-size:.66rem;color:var(--muted);text-transform:uppercase}
+.dot{width:22px;height:22px;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center}
+.dot.done{background:var(--flame);border-color:var(--flame)}
+.dot.done::after{content:"";width:8px;height:5px;border-left:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(-45deg) translate(1px,-1px)}
+.dot.today{border-color:var(--flame)}
+.banner{margin-top:10px;background:var(--flame-bg);color:var(--flame);border-radius:12px;padding:10px 14px;font-weight:700;text-align:center}
+nav{display:flex;gap:4px;margin:16px 0 14px;border-bottom:1px solid var(--line);overflow-x:auto}
+nav button{font:inherit;font-weight:700;background:none;border:0;color:var(--muted);padding:10px 12px;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-1px;white-space:nowrap}
 nav button[aria-selected="true"]{color:var(--fg);border-color:var(--accent)}
-button:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.controls{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
-select,.seg button{font:inherit;font-size:.9rem;padding:8px 10px;border:1px solid var(--line);background:var(--card);color:var(--fg);border-radius:8px}
+button:focus-visible,select:focus-visible,textarea:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.controls{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+select,input[type=search],.seg button{font:inherit;font-size:.9rem;padding:8px 10px;border:1px solid var(--line);background:var(--card);color:var(--fg);border-radius:8px;max-width:100%}
 .seg{display:inline-flex}
 .seg button{cursor:pointer;border-radius:0}
 .seg button:first-child{border-radius:8px 0 0 8px}.seg button:last-child{border-radius:0 8px 8px 0;border-left:0}
 .seg button[aria-pressed="true"]{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 20px;
-  background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 31px,var(--rule) 31px,var(--rule) 32px);background-position:0 70px}
-.card-top{display:flex;justify-content:space-between;gap:8px;font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
-.prompt{font-family:var(--display);font-weight:700;font-size:clamp(1.6rem,6vw,2.3rem);line-height:1.15;margin:18px 0 6px;text-wrap:balance}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 18px;background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 31px,var(--rule) 31px,var(--rule) 32px);background-position:0 66px}
+.card-top{display:flex;justify-content:space-between;gap:8px;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.prompt{font-family:var(--display);font-weight:700;font-size:clamp(1.6rem,6vw,2.3rem);line-height:1.15;margin:16px 0 6px;text-wrap:balance;overflow-wrap:anywhere}
 .hintline{color:var(--muted);font-size:.9rem;margin:0}
-.answer{margin-top:18px;padding-top:16px;border-top:2px dashed var(--line);display:grid;gap:12px}
-.de{font-family:var(--display);font-weight:800;font-size:clamp(1.8rem,7vw,2.6rem);line-height:1.05;display:flex;flex-wrap:wrap;align-items:baseline;gap:10px}
-.art{font-weight:700}
-.g-der{color:var(--der)}.g-die{color:var(--die)}.g-das{color:var(--das)}
+.answer{margin-top:16px;padding-top:14px;border-top:2px dashed var(--line);display:grid;gap:12px}
+.word{font-family:var(--display);font-weight:800;font-size:clamp(1.8rem,7vw,2.6rem);line-height:1.05;overflow-wrap:anywhere}
+.g-m{color:var(--m)}.g-f{color:var(--f)}.g-n{color:var(--n)}
+.art{font-weight:700;opacity:.9}
 .pron{font-family:var(--mono);font-size:.95rem;color:var(--muted)}
 .hook{background:var(--bg);border-radius:10px;padding:12px 14px}
 .hook .tag{display:inline-block;font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--accent);margin-bottom:4px}
 .hook p{margin:0}
-.ex{display:grid;gap:2px}
-.ex .d{font-weight:700}.ex .p{color:var(--muted);font-size:.92rem}
+.ex{display:grid;gap:2px}.ex .d{font-weight:700}.ex .p{color:var(--muted);font-size:.92rem}
 .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .btn{font:inherit;font-weight:700;cursor:pointer;border-radius:10px;padding:12px 16px;border:1px solid var(--line);background:var(--card);color:var(--fg)}
-.btn.primary{background:var(--accent);color:var(--accent-fg);border-color:var(--accent);width:100%;margin-top:18px}
+.btn.primary{background:var(--accent);color:var(--accent-fg);border-color:var(--accent);width:100%;margin-top:16px}
 .btn.small{padding:6px 10px;font-size:.85rem;border-radius:8px}
-.grade{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:6px}
+.grade{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:4px}
 .grade .btn{padding:12px 6px}
 .grade .b1{color:var(--bad)}.grade .b2{color:var(--mid)}.grade .b3{color:var(--good)}
 .grade small{display:block;font-weight:400;font-size:.72rem;color:var(--muted)}
-.done{text-align:center;padding:30px 10px}
-.grid-more{display:grid;gap:8px;margin-top:16px}.grid-more .btn.primary{margin-top:0}
+.done{text-align:center;padding:26px 14px}
 .done h2{font-family:var(--display);margin:0 0 6px}
-.list-group h2{font-family:var(--display);font-size:1.2rem;margin:26px 0 4px}
-.list-group .gdesc{color:var(--muted);font-size:.9rem;margin:0 0 10px}
-.item{border-top:1px solid var(--line);padding:12px 0;display:grid;gap:4px}
+.more{display:grid;gap:8px;margin-top:14px}.more .btn.primary{margin-top:0}
+.item{border-top:1px solid var(--line);padding:11px 0;display:grid;gap:4px}
 .item-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 12px;align-items:baseline}
-.item-head .w{font-family:var(--display);font-weight:700;font-size:1.15rem}
+.item-head .w{font-family:var(--display);font-weight:700;font-size:1.1rem}
 .item-head .m{color:var(--muted)}
-.item .hk{font-size:.93rem}
-.item .exs{font-size:.88rem;color:var(--muted)}
-.chip{font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;font-weight:700;padding:2px 7px;border-radius:99px;background:var(--bg);color:var(--muted)}
-.chip.ok{background:var(--das-bg);color:var(--das)}.chip.fix{background:var(--die-bg);color:var(--die)}
+.item .hk{font-size:.93rem}.item .exs{font-size:.88rem;color:var(--muted)}
+.chip{font-size:.66rem;text-transform:uppercase;letter-spacing:.06em;font-weight:700;padding:2px 7px;border-radius:99px;background:var(--bg);color:var(--muted)}
+.chip.ok{background:var(--n-bg);color:var(--n)}.chip.fix{background:var(--f-bg);color:var(--f)}
+.chip.lv{background:var(--m-bg);color:var(--m)}
 textarea{font:inherit;font-size:.9rem;width:100%;min-height:60px;border:1px solid var(--line);border-radius:8px;padding:8px;background:var(--card);color:var(--fg)}
-.method{display:grid;gap:18px}
+.method{display:grid;gap:16px}
 .method section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
 .method h2{font-family:var(--display);font-size:1.15rem;margin:0 0 8px}
 .method p,.method li{max-width:65ch}
@@ -106,307 +112,300 @@ table{border-collapse:collapse;width:100%;font-size:.92rem}
 th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
 th{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
 td.mono{font-family:var(--mono)}
-.gbox{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.gbox{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
 .gbox div{border-radius:10px;padding:10px;font-size:.88rem}
 .gbox b{display:block;font-family:var(--display);font-size:1.2rem}
 .fixbar{position:sticky;bottom:0;background:var(--bg);padding:12px 0;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between}
 .toast{color:var(--good);font-size:.9rem}
-@media (max-width:440px){.gbox{grid-template-columns:1fr}.stats{gap:12px}}
+.overview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-bottom:12px}
+.ov{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.ov b{display:block;font-family:var(--display);font-size:1.3rem;font-variant-numeric:tabular-nums}
+.ov span{font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.loading{padding:40px 0;text-align:center;color:var(--muted)}
+@media (max-width:420px){.streak{grid-template-columns:1fr}.flame{justify-content:center}}
 @media (prefers-reduced-motion:no-preference){.answer{animation:in .18s ease-out}@keyframes in{from{opacity:.4;transform:translateY(4px)}to{opacity:1;transform:none}}}
 </style>
-
 </head>
 <body>
 <div class="wrap">
   <header>
-    <div>
-      <h1>Wortschatz 100</h1>
-      <p class="sub">As 100 palavras mais usadas do alemão, lote 1 de 10</p>
-    </div>
-    <div class="stats" aria-live="polite">
-      <div class="stat"><b id="st-due">0</b><span>para hoje</span></div>
-      <div class="stat"><b id="st-learn">0</b><span>aprendendo</span></div>
-      <div class="stat"><b id="st-known">0</b><span>firmes</span></div>
+    <h1>Vokabel 1000</h1>
+    <div class="langs" role="group" aria-label="Língua">
+      <button id="lang-de" data-lang="de">Alemão</button>
+      <button id="lang-it" data-lang="it">Italiano</button>
+      <button id="lang-fr" data-lang="fr">Francês</button>
     </div>
   </header>
 
+  <section class="streak" aria-label="Dias seguidos">
+    <div class="flame" id="flame">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2c.6 3.2-1 5-2.5 6.7C8 10.4 6.5 12 6.5 14.6A5.5 5.5 0 0 0 12 20a5.5 5.5 0 0 0 5.5-5.4c0-2.3-1.1-3.9-2.2-5.2-.2 1.4-.9 2.5-2 3 .5-3.6-.3-7.5-1.3-10.4z"/></svg>
+      <div><b id="streak-n">0</b><span id="streak-l">dias seguidos</span></div>
+    </div>
+    <div class="goal">
+      <div class="goal-top"><span>Meta de hoje</span><b id="goal-t">0 / 20</b></div>
+      <div class="bar"><i id="goal-bar" style="width:0%"></i></div>
+      <div class="week" id="week"></div>
+    </div>
+  </section>
+  <div class="banner" id="banner" hidden></div>
+
   <nav role="tablist">
     <button role="tab" id="tab-train" aria-selected="true">Treinar</button>
-    <button role="tab" id="tab-list" aria-selected="false">Todas as palavras</button>
+    <button role="tab" id="tab-list" aria-selected="false">Palavras</button>
     <button role="tab" id="tab-method" aria-selected="false">Método</button>
   </nav>
 
   <main id="view-train">
+    <div class="overview">
+      <div class="ov"><b id="ov-due">0</b><span>para hoje</span></div>
+      <div class="ov"><b id="ov-learn">0</b><span>aprendendo</span></div>
+      <div class="ov"><b id="ov-known">0</b><span>firmes</span></div>
+    </div>
     <div class="controls">
-      <select id="sel-group" aria-label="Grupo"></select>
+      <select id="sel-level" aria-label="Nível"></select>
       <div class="seg" role="group" aria-label="Direção">
-        <button id="dir-pt" aria-pressed="true">PT → DE</button>
-        <button id="dir-de" aria-pressed="false">DE → PT</button>
+        <button id="dir-pt" aria-pressed="true">PT → <span class="lcode">DE</span></button>
+        <button id="dir-tg" aria-pressed="false"><span class="lcode">DE</span> → PT</button>
       </div>
     </div>
-    <div id="train"></div>
+    <div id="train"><div class="loading">Carregando palavras...</div></div>
   </main>
 
   <main id="view-list" hidden>
-    <p class="sub">Marque cada gancho como bom ou ruim. Nos ruins, escreva sua ideia. No fim, copie as correções e cole no chat.</p>
+    <div class="controls">
+      <select id="sel-level-list" aria-label="Nível"></select>
+      <input type="search" id="search" placeholder="Buscar palavra" aria-label="Buscar palavra">
+    </div>
+    <p class="hintline" style="margin-bottom:8px">Marque ganchos bons ou ruins. Nos ruins, escreva sua ideia e copie as correções para colar no chat.</p>
     <div id="list"></div>
     <div class="fixbar">
-      <span id="fixcount" class="sub" style="margin:0"></span>
+      <span id="fixcount" class="hintline"></span>
       <span class="row"><span id="copied" class="toast" hidden>Copiado. Cole no chat.</span><button class="btn small" id="btn-copy">Copiar correções</button></span>
     </div>
     <textarea id="copy-fallback" hidden readonly aria-label="Correções para copiar"></textarea>
   </main>
 
-  <main id="view-method" hidden>
-    <div class="method">
-      <section>
-        <h2>Como estudar (15 minutos por dia)</h2>
-        <ol>
-          <li><b>Leia o português e tente dizer o alemão em voz alta antes de virar.</b> Lembrar com esforço é o que fixa; reler não fixa.</li>
-          <li><b>Ouça a pronúncia e repita a frase inteira.</b> A palavra sozinha some, a frase curta fica.</li>
-          <li><b>Seja honesto na nota.</b> Errei volta na mesma sessão. Difícil volta amanhã. Sabia volta em intervalos crescentes (1, 3, 7, 16, 35 dias).</li>
-          <li><b>No máximo 10 palavras novas por dia.</b> Mais que isso acumula revisões e você desiste na segunda semana.</li>
-          <li><b>Substantivo sempre com artigo e cor.</b> Nunca decore "Frau", decore "die Frau".</li>
-        </ol>
-      </section>
-      <section>
-        <h2>Atalho principal: o alemão é primo do inglês</h2>
-        <p>Como você tem inglês avançado, a maior parte das 1000 palavras vem quase de graça. Quatro trocas de som explicam centenas delas:</p>
-        <div class="tbl"><table>
-          <thead><tr><th>Inglês</th><th>Alemão</th><th>Exemplos</th></tr></thead>
-          <tbody>
-            <tr><td class="mono">th</td><td class="mono">d</td><td>that → dass, then → dann, there → da, through → durch, this → dies</td></tr>
-            <tr><td class="mono">t</td><td class="mono">z / ss</td><td>two → zwei, to → zu, time → Zeit, what → was, water → Wasser</td></tr>
-            <tr><td class="mono">d</td><td class="mono">t</td><td>day → Tag, good → gut, under → unter, word → Wort</td></tr>
-            <tr><td class="mono">v / f</td><td class="mono">b</td><td>have → haben, give → geben, live → leben</td></tr>
-            <tr><td class="mono">k</td><td class="mono">ch</td><td>make → machen, book → Buch</td></tr>
-          </tbody>
-        </table></div>
-        <p>Por isso o gancho de cada palavra segue esta ordem: <b>inglês</b> quando existe, depois <b>espanhol ou português</b>, depois <b>som ou imagem</b>. Cena inventada só entra quando não há parente.</p>
-      </section>
-      <section>
-        <h2>Gênero: cor e personagem</h2>
-        <div class="gbox">
-          <div style="background:var(--der-bg)"><b class="g-der">der</b>masculino, azul. Termina em <b style="display:inline;font-size:inherit">R</b> de Rei.</div>
-          <div style="background:var(--die-bg)"><b class="g-die">die</b>feminino e plural, vermelho. Termina em <b style="display:inline;font-size:inherit">E</b> de Ela.</div>
-          <div style="background:var(--das-bg)"><b class="g-das">das</b>neutro, verde. Termina em <b style="display:inline;font-size:inherit">S</b> de Sem gênero.</div>
-        </div>
-        <p>Regras que valem para centenas de palavras: verbo virado substantivo é <b class="g-das">das</b> (das Leben, de leben). Final <i>-ung, -heit, -keit, -schaft</i> é <b class="g-die">die</b>. Final <i>-chen</i> é <b class="g-das">das</b>.</p>
-      </section>
-    </div>
-  </main>
+  <main id="view-method" hidden><div class="method" id="method"></div></main>
 </div>
 
 <script>
-const GROUPS = [
- {id:"quem", name:"1. Pessoas", desc:"Pronomes e as pessoas do dia a dia.", words:[
-  ["ich","eu","ich (chiado, como 'ixi')","Som PT","\"IXI, fui EU.\" O ch alemão depois de i soa como esse chiado.","Ich bin müde.","Eu estou cansado."],
-  ["du","você (informal)","du","Português","É o nosso TU, com D no lugar do T.","Du bist mein Freund.","Você é meu amigo."],
-  ["er","ele","ér","Inglês","her/he: o R final do alemão marca o masculino, como em deR.","Er ist groß.","Ele é alto."],
-  ["sie","ela / eles / o senhor (Sie)","zí","Inglês","she → sie. Com maiúscula (Sie) vira o tratamento formal: o senhor, a senhora.","Sie ist hier.","Ela está aqui."],
-  ["es","isso / ele, ela (neutro)","és","Inglês","it's → es ist. Sujeito de clima e de coisas: es regnet, chove.","Es ist kalt.","Está frio."],
-  ["wir","nós","vír","Inglês","we're → wir. O W alemão soa como V.","Wir sind Freunde.","Nós somos amigos."],
-  ["ihr","vocês (informal)","ír","Som PT","\"VOCÊS vão IR comigo.\"","Ihr seid laut.","Vocês são barulhentos."],
-  ["man","a gente / se (indeterminado)","man","Inglês","one / a man qualquer, sem rosto. Um N só = genérico; der Mann (dois N) = o homem real.","Man sagt das nicht.","Isso não se diz."],
-  ["sich","se (reflexivo)","zich","Espanhol","sí mismo / a si mesmo → sich.","Er wäscht sich.","Ele se lava."],
-  ["Mensch","ser humano, pessoa","mench","Inglês","Em inglês, 'a mensch' é uma pessoa decente. der: o Rei também é humano.","Der Mensch braucht Zeit.","O ser humano precisa de tempo.","der"],
-  ["Mann","homem","man","Inglês","man → Mann, com dois N de dois braços fortes.","Der Mann ist alt.","O homem é velho.","der"],
-  ["Frau","mulher / senhora","frau","Imagem","Frau Merkel = Senhora Merkel. Mulher é die, como esperado.","Die Frau ist neu hier.","A mulher é nova aqui.","die"],
-  ["Kind","criança","kint","Inglês","Kindergarten = jardim de crianças (kid). Criança é das: ainda sem gênero gramatical.","Das Kind spielt.","A criança brinca.","das"]
- ]},
- {id:"verbos", name:"2. Verbos-chave", desc:"Os verbos que aparecem em quase toda frase.", words:[
-  ["sein","ser / estar","záin","Frase famosa","Hamlet em alemão: \"Sein oder Nichtsein\", ser ou não ser. Conjugação: ich bin, du bist, er ist.","Ich bin Student.","Eu sou estudante."],
-  ["haben","ter","háben","Inglês","have + haver → haben (o v vira b).","Ich habe Zeit.","Eu tenho tempo."],
-  ["werden","tornar-se / vai (futuro)","vérden","Som PT","A banana VERDE vai SE TORNAR amarela.","Es wird kalt.","Está ficando frio."],
-  ["können","poder / conseguir","kœnen","Inglês","can → ich kann.","Ich kann schwimmen.","Eu sei nadar."],
-  ["müssen","ter que","müssen","Inglês","must → ich muss.","Ich muss gehen.","Eu tenho que ir."],
-  ["sollen","dever (por regra ou ordem)","zólen","Inglês","shall → ich soll. É o dever que alguém te impõe.","Du sollst lernen.","Você deve estudar."],
-  ["wollen","querer","vólen","Catalão","volen = (eles) querem, em catalão. Quase igual a wollen, que soa 'vólen'. Cuidado: ich will NÃO é futuro em alemão, é 'eu quero'.","Ich will Kaffee.","Eu quero café."],
-  ["sagen","dizer","zágen","Inglês","say → sagen. E uma saga é algo que se diz.","Was sagst du?","O que você diz?"],
-  ["machen","fazer","márren","Inglês","make → machen (k vira ch).","Was machst du?","O que você está fazendo?"],
-  ["geben","dar","guêben","Inglês","give → geben (v vira b). Es gibt = há, existe.","Gib mir das!","Me dá isso!"]
- ]},
- {id:"acao", name:"3. Movimento e percepção", desc:"Ir, vir, ver, saber, ficar.", words:[
-  ["kommen","vir","kómen","Inglês","come → kommen. E a avó: \"VEM COMER!\"","Komm her!","Vem cá!"],
-  ["gehen","ir (a pé)","guêen","Inglês","go → gehen. Wie geht's? = como vai?","Ich gehe nach Hause.","Eu vou para casa."],
-  ["sehen","ver","zêen","Inglês","see → sehen.","Ich sehe dich.","Eu te vejo."],
-  ["wissen","saber (um fato)","víssen","Inglês","wise / wisdom → wissen. Ich weiß = eu sei.","Ich weiß es nicht.","Eu não sei."],
-  ["finden","achar, encontrar","fínden","Inglês","find → finden. Também é 'achar' de opinião.","Ich finde das gut.","Eu acho isso bom."],
-  ["stehen","estar de pé","chtêen","Inglês","stand → stehen. St no início soa 'cht'.","Er steht an der Tür.","Ele está de pé na porta."],
-  ["lassen","deixar","lássen","Francês","laissez-faire = deixar fazer → lassen.","Lass mich!","Me deixa!"],
-  ["bleiben","ficar, permanecer","bláiben","Som PT","Você FICA preso ouvindo BLÁ-BLÁ-BLÁ numa reunião sem fim.","Ich bleibe hier.","Eu fico aqui."],
-  ["nehmen","pegar, tomar","nêmen","Som PT","\"NEM pense em PEGAR o bolo!\" A criança pega com as duas mãos.","Ich nehme das.","Eu pego (fico com) isso."]
- ]},
- {id:"ligacao", name:"4. Artigos e ligações", desc:"As peças que montam a frase.", words:[
-  ["der","o (masculino)","dér","Regra","Termina em R de Rei. Sempre azul.","Der Mann ist hier.","O homem está aqui."],
-  ["die","a (feminino) / os, as (plural)","dí","Regra","Termina em E de Ela. Todo plural também usa die. Sempre vermelho.","Die Frau ist hier.","A mulher está aqui."],
-  ["das","o (neutro) / isso","dás","Regra","Termina em S de Sem gênero. Também é 'isso': Was ist das?","Das Kind ist hier.","A criança está aqui."],
-  ["ein","um, uma","áin","Inglês","an / one → ein. Feminino: eine.","Ich habe ein Haus.","Eu tenho uma casa."],
-  ["kein","nenhum","káin","Padrão","k + ein = 'nem um'. Nega substantivo; nicht nega o resto.","Ich habe kein Geld.","Eu não tenho dinheiro nenhum."],
-  ["und","e","unt","Inglês","and → und.","du und ich","você e eu"],
-  ["oder","ou","ôda","Inglês","or → oder. \"Ô, DÁ a maçã OU a banana?\"","Ja oder nein?","Sim ou não?"],
-  ["aber","mas","ába","Som PT","ABRAcadabra... MAS o coelho não saiu.","Klein, aber gut.","Pequeno, mas bom."],
-  ["dass","que (eu sei que...)","dás","Inglês","that → dass (th vira d, t vira ss). Dois S = conjunção; um S = artigo.","Ich weiß, dass du hier bist.","Eu sei que você está aqui."],
-  ["weil","porque","váil","Som PT","\"Por que você pulou?\" \"PORQUE gritaram VAI!\" Joga o verbo para o fim da frase.","Ich bleibe, weil es regnet.","Eu fico porque está chovendo."],
-  ["wenn","se / quando","vén","Inglês","when → wenn. Vale para 'se' e para 'sempre que'.","Wenn du kommst, koche ich.","Se você vier, eu cozinho."],
-  ["als","do que / como / quando (passado)","als","Inglês","as → als: als Kind = como criança. Comparação: größer als = maior do que.","Er ist größer als ich.","Ele é maior do que eu."],
-  ["dieser","este, esta","díza","Inglês","this → dies (th vira d).","Dieser Weg ist lang.","Este caminho é longo."]
- ]},
- {id:"onde", name:"5. Onde e para onde", desc:"Preposições. Pense numa caixa e num ponto se mexendo em volta dela.", words:[
-  ["in","em, dentro de","in","Inglês","in → in. Dentro da caixa.","Ich wohne in Berlin.","Eu moro em Berlim."],
-  ["auf","em cima de / aberto","auf","Som PT","Você chega EM CIMA do morro e solta \"UFA!\". Também: auf = aberto (a loja está auf).","Das Buch liegt auf dem Tisch.","O livro está em cima da mesa."],
-  ["an","encostado em, junto a","an","Imagem","Um ANão grudado NA parede, como ímã. Encostado na lateral.","Das Bild hängt an der Wand.","O quadro está pendurado na parede."],
-  ["bei","na casa de / junto a","bái","Inglês","by → bei. Bei Oma = na casa da avó.","Ich wohne bei meiner Oma.","Eu moro na casa da minha avó."],
-  ["mit","com","mit","Imagem","Estudar COM os gênios do MIT.","Kaffee mit Milch","café com leite"],
-  ["von","de (origem, posse)","fon","Nome famoso","Otto VON Bismarck = Otto DE Bismarck.","ein Freund von mir","um amigo meu"],
-  ["zu","para (pessoa, lugar) / demais","tsu","Inglês","to → zu (t vira z). Zu viel = demais.","Ich gehe zu Anna.","Eu vou até a Anna."],
-  ["aus","de (origem) / fora / desligado","aus","Inglês","out → aus. De onde você saiu: Ich komme aus Brasilien.","Ich komme aus Brasilien.","Eu sou do Brasil."],
-  ["nach","para (cidade, país) / depois","narr","Imagem","DEPOIS dos NACHOS, todo mundo vai PARA o México.","Ich fahre nach Berlin.","Eu vou para Berlim."],
-  ["über","sobre, acima de","über","Inglês","over → über. O Uber voador passa acima da cidade.","Das Flugzeug fliegt über die Stadt.","O avião voa sobre a cidade."],
-  ["unter","debaixo de","únta","Inglês","under → unter (d vira t).","Die Katze ist unter dem Bett.","O gato está debaixo da cama."],
-  ["vor","diante de / antes de","fôr","Inglês","before / fore → vor. Na frente da caixa.","Er wartet vor dem Haus.","Ele espera na frente da casa."],
-  ["durch","através de","durrch","Inglês","through → durch (th vira d). Atravessa a caixa.","Wir gehen durch die Stadt.","Nós andamos pela cidade."],
-  ["für","para (em benefício de)","für (biquinho)","Inglês","for → für. Presente: für dich.","Das ist für dich.","Isso é para você."],
-  ["um","às (horas) / em volta de","um","Imagem","O ponteiro dá UMa volta: um acht Uhr = às oito horas.","Ich komme um acht Uhr.","Eu chego às oito."],
-  ["bis","até","bis","Som PT","A plateia grita \"BIS!\" e a banda toca ATÉ amanhecer.","Bis morgen!","Até amanhã!"]
- ]},
- {id:"tempo", name:"6. Tempo", desc:"Quando as coisas acontecem.", words:[
-  ["dann","então, depois","dan","Inglês","then → dann (th vira d).","Erst essen, dann schlafen.","Primeiro comer, depois dormir."],
-  ["noch","ainda","norr","Onomatopeia","Seu tio AINDA está roncando \"NORRR\" às 3 da tarde.","Ich bin noch hier.","Eu ainda estou aqui."],
-  ["schon","já","chôn","Som PT","O SHOW JÁ começou e você ainda procura a chave.","Ich bin schon da.","Eu já cheguei."],
-  ["immer","sempre","ímer","Som PT","O ÍMÃ fica SEMPRE grudado na geladeira.","Er ist immer müde.","Ele está sempre cansado."],
-  ["heute","hoje","hóite","Espanhol","hoy → heute.","Heute ist Montag.","Hoje é segunda."],
-  ["mal","vez","mál","Padrão","einmal = uma vez, zweimal = duas vezes. Malabarista: toda VEZ que cai.","Noch einmal, bitte!","Mais uma vez, por favor!"],
-  ["Zeit","tempo","tsáit","Inglês","Zeitgeist = espírito do tempo. time → Zeit (t vira z).","Ich habe keine Zeit.","Eu não tenho tempo.","die"],
-  ["Jahr","ano","iár","Inglês","year → Jahr (y vira j).","Das Jahr ist fast vorbei.","O ano está quase acabando.","das"],
-  ["Tag","dia","tak","Inglês","day → Tag (d vira t). Guten Tag = bom dia.","Guten Tag!","Bom dia!","der"],
-  ["Ende","fim","ênde","Inglês","end → Ende.","Das ist das Ende.","Este é o fim.","das"]
- ]},
- {id:"perguntas", name:"7. Perguntas e lugares", desc:"O que, como, onde, aqui, ali.", words:[
-  ["was","o quê","vás","Inglês","what → was (t vira s).","Was ist das?","O que é isso?"],
-  ["wie","como","ví","Som PT","\"COMO você VIU isso?\" Wie geht's? = Como vai?","Wie geht es dir?","Como você está?"],
-  ["wo","onde","vô","Som PT","\"ONDE está o VÔ?\" Ele subiu no telhado de novo.","Wo bist du?","Onde você está?"],
-  ["hier","aqui","hír","Inglês","here → hier.","Ich bin hier.","Eu estou aqui."],
-  ["da","ali, aí / presente","dá","Inglês","there → da (th vira d). Ich bin da = cheguei, estou presente.","Da ist er!","Lá está ele!"]
- ]},
- {id:"quanto", name:"8. Sim, não e quanto", desc:"Negação, confirmação e intensidade.", words:[
-  ["nicht","não","nicht","Frase famosa","Sein oder NICHTsein: ser ou NÃO ser.","Das ist nicht gut.","Isso não é bom."],
-  ["ja","sim","iá","Inglês","yeah → ja.","Ja, gerne!","Sim, com prazer!"],
-  ["doch","sim! (contrariando um não)","dorr","Som PT","\"Não dói nada.\" Peteleco. \"DÓI SIM!\" Doch rebate uma negação.","Du kommst nicht? Doch!","Você não vem? Venho sim!"],
-  ["auch","também","aurr","Onomatopeia","Você pede pizza e o cachorro late \"AU!\": TAMBÉM quer.","Ich auch!","Eu também!"],
-  ["nur","só, apenas","nur","Som PT","Um homem no shopping NU, SÓ de meia.","Nur ein Kaffee, bitte.","Só um café, por favor."],
-  ["so","assim / tão","zô","Inglês","so → so.","Das ist so gut!","Isso é tão bom!"],
-  ["also","então, portanto","álzo","Falso amigo","NÃO é 'também'. O guarda alemão: \"ALSO... ENTÃO você está multado.\"","Also, gehen wir!","Então, vamos!"],
-  ["sehr","muito (intensidade)","zêr","Som PT","Um juiz MUITO SÉRio. sehr gut = muito bom. Vai antes de adjetivo.","Sehr gut!","Muito bom!"],
-  ["viel","muito (quantidade)","fíl","Inglês","full / fill → viel. Quantidade, não intensidade.","Viel Glück!","Muita sorte!"],
-  ["mehr","mais","mêr","Inglês","more → mehr. O MAR sempre quer MAIS água.","Ich will mehr Zeit.","Eu quero mais tempo."],
-  ["alle","todos","ále","Inglês","all → alle.","Alle sind hier.","Todos estão aqui."],
-  ["ganz","inteiro / totalmente","gants","Som PT","Um GANSO engole uma melancia INTEIRA.","die ganze Stadt","a cidade inteira"],
-  ["zwei","dois","tsvái","Inglês","two / twin → zwei (tw vira zw).","zwei Kinder","duas crianças"]
- ]},
- {id:"descricao", name:"9. Descrição", desc:"Adjetivos básicos.", words:[
-  ["gut","bom, bem","gút","Inglês","good → gut (d vira t).","Alles gut.","Tudo bem."],
-  ["groß","grande, alto","grôs","Inglês","gross (bruto) / grosso → groß. O ß soa como SS.","Das Haus ist groß.","A casa é grande."],
-  ["neu","novo","nói","Inglês","new → neu. A NOIVA com vestido novo.","Das Auto ist neu.","O carro é novo."],
-  ["alt","velho","alt","Inglês","old → alt (d vira t).","Mein Opa ist alt.","Meu avô é velho."]
- ]},
- {id:"mundo", name:"10. Mundo", desc:"Substantivos concretos. Cor = gênero.", words:[
-  ["Haus","casa","haus","Inglês","house → Haus. Nach Hause = para casa.","Das Haus ist alt.","A casa é velha.","das"],
-  ["Stadt","cidade","chtat","Inglês","state → Stadt: cidade-estado governada por uma Rainha.","Berlin ist eine große Stadt.","Berlim é uma cidade grande.","die"],
-  ["Land","país, campo","lant","Inglês","land → Land.","Brasilien ist ein großes Land.","O Brasil é um país grande.","das"],
-  ["Welt","mundo","vélt","Inglês","world → Welt.","Die Welt ist klein.","O mundo é pequeno.","die"],
-  ["Leben","vida","lêben","Inglês","live → leben (v vira b). Verbo virado substantivo = das.","Das Leben ist schön.","A vida é bonita.","das"],
-  ["Geld","dinheiro","guelt","Inglês","gold → Geld.","Zeit ist Geld.","Tempo é dinheiro.","das"],
-  ["Weg","caminho","vêk","Inglês","way → Weg.","Der Weg ist lang.","O caminho é longo.","der"]
- ]}
-];
-const CARDS=[];GROUPS.forEach(g=>g.words.forEach(w=>CARDS.push({id:w[0],g:g.id,de:w[0],pt:w[1],pron:w[2],tipo:w[3],hook:w[4],exDe:w[5],exPt:w[6],gen:w[7]||null})));
-const INTERVALS=[0,1,3,7,16,35];const DAY=864e5;let NEW_PER_DAY=10;let free=false;
+const LANGS={
+  de:{name:"Alemão",code:"DE",voice:"de-DE",arts:{m:"der",f:"die",n:"das"}},
+  it:{name:"Italiano",code:"IT",voice:"it-IT"},
+  fr:{name:"Francês",code:"FR",voice:"fr-FR"}
+};
+const TYPES={EN:"Inglês",PT:"Português",ES:"Espanhol",IT:"Italiano",FR:"Francês",LA:"Latim",CA:"Catalão",DE:"Alemão",SOM:"Som PT",IMG:"Imagem",REGRA:"Regra",FALSO:"Falso amigo",ONO:"Onomatopeia",PAD:"Padrão",FRASE:"Frase famosa"};
+const LEVEL=50, GOAL=20, NEW_DEFAULT=10, INTERVALS=[0,1,3,7,16,35], DAY=864e5;
+window.VB_DATA=window.VB_DATA||{};
+
 const store={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
-let prog=store.get("ws100-prog",{});{const x=store.get("ws100-extra",{d:0,n:0});if(x.d===today())NEW_PER_DAY+=x.n;}let fixes=store.get("ws100-fix",{});
-let dir="pt",group="all",queue=[],cur=null,revealed=false;
 const $=id=>document.getElementById(id);
-const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-function today(){const d=new Date();d.setHours(0,0,0,0);return d.getTime()}
-function newToday(){const t=today();return Object.values(prog).filter(p=>p.first>=t).length}
-function deLabel(c){return c.gen?`<span class="art g-${c.gen}">${c.gen}</span> <span class="g-${c.gen}">${esc(c.de)}</span>`:esc(c.de)}
-function deText(c){return (c.gen?c.gen+" ":"")+c.de}
+const esc=s=>String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function dayKey(t){const d=t?new Date(t):new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")}
+function today0(){const d=new Date();d.setHours(0,0,0,0);return d.getTime()}
+
+/* migração do progresso antigo (só alemão) */
+(function(){const old=store.get("ws100-prog",null);if(old&&!store.get("vb-prog-de",null))store.set("vb-prog-de",old)})();
+
+let lang=store.get("vb-lang","de"), dir="pt", level="all", listLevel="1";
+let CARDS=[], prog={}, fixes={}, queue=[], cur=null, revealed=false, free=false, extraNew=0;
+let act=store.get("vb-activity",{}); // {"AAAA-MM-DD": cartas respondidas}
+let best=store.get("vb-best",0);
+
+/* ===== artigo ===== */
+function article(w,g){
+  if(!g)return "";
+  if(lang==="de")return LANGS.de.arts[g]||"";
+  const v=/^[aeiouàâäéèêëíìîïóòôöúùûüh]/i.test(w);
+  if(lang==="it"){if(g==="f")return /^[aeiouàéèìòù]/i.test(w)?"l'":"la";if(/^[aeiouàéèìòù]/i.test(w))return "l'";if(/^(s[^aeiou]|z|gn|ps|x|y|pn)/i.test(w))return "lo";return "il"}
+  if(lang==="fr"){if(v)return "l'";return g==="f"?"la":"le"}
+  return "";
+}
+function full(c){const a=article(c.w,c.g);if(!a)return c.w;return a.endsWith("'")?a+c.w:a+" "+c.w}
+function label(c){const a=article(c.w,c.g);if(!a)return esc(c.w);const sep=a.endsWith("'")?"":" ";return `<span class="g-${c.g}"><span class="art">${esc(a)}</span>${sep}${esc(c.w)}</span>`}
+
+/* ===== racha ===== */
+function streakInfo(){
+  let n=0,d=new Date();d.setHours(12);
+  if((act[dayKey(d.getTime())]||0)<GOAL)d.setDate(d.getDate()-1);
+  while((act[dayKey(d.getTime())]||0)>=GOAL){n++;d.setDate(d.getDate()-1)}
+  return n;
+}
+function renderStreak(){
+  const n=streakInfo();if(n>best){best=n;store.set("vb-best",best)}
+  const t=act[dayKey()]||0;const doneToday=t>=GOAL;
+  $("streak-n").textContent=n;$("streak-l").textContent=n===1?"dia seguido":"dias seguidos";
+  $("flame").classList.toggle("off",!doneToday);
+  $("goal-t").textContent=`${Math.min(t,GOAL)} / ${GOAL}`+(t>GOAL?`  (+${t-GOAL})`:"");
+  $("goal-bar").style.width=Math.min(100,t/GOAL*100)+"%";
+  const names=["dom","seg","ter","qua","qui","sex","sáb"];let h="";
+  for(let i=6;i>=0;i--){const d=new Date();d.setHours(12);d.setDate(d.getDate()-i);const k=dayKey(d.getTime());
+    h+=`<div class="day"><div class="dot ${(act[k]||0)>=GOAL?"done":""} ${i===0?"today":""}"></div>${names[d.getDay()]}</div>`}
+  $("week").innerHTML=h;
+}
+function addActivity(){
+  const k=dayKey();const before=act[k]||0;act[k]=before+1;
+  const keys=Object.keys(act).sort();while(keys.length>400)delete act[keys.shift()];
+  store.set("vb-activity",act);
+  if(before<GOAL&&act[k]>=GOAL){const n=streakInfo();
+    $("banner").textContent=n>1?`Meta batida! ${n} dias seguidos. Volte amanhã para manter a sequência.`:"Meta batida! Primeiro dia da sequência. Volte amanhã.";
+    $("banner").hidden=false;setTimeout(()=>$("banner").hidden=true,6000)}
+  renderStreak();
+}
+
+/* ===== dados ===== */
+function loadLang(l,cb){
+  if(VB_DATA[l])return cb();
+  const s=document.createElement("script");s.src=`data/${l}.js?v=3`;s.onload=cb;
+  s.onerror=()=>{$("train").innerHTML='<div class="card done"><h2>Sem conexão</h2><p class="hintline">Abra uma vez com internet para baixar esta língua. Depois ela funciona offline.</p></div>'};
+  document.head.appendChild(s);
+}
+function setLang(l){
+  lang=l;store.set("vb-lang",l);
+  document.querySelectorAll(".langs button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.lang===l));
+  document.querySelectorAll(".lcode").forEach(e=>e.textContent=LANGS[l].code);
+  $("train").innerHTML='<div class="loading">Carregando palavras...</div>';
+  loadLang(l,()=>{
+    CARDS=VB_DATA[l].map((r,i)=>({i,id:r[0],w:r[0],g:r[1],pt:r[2],pron:r[3],tipo:TYPES[r[4]]||r[4],hook:r[5],ex:r[6],exPt:r[7],lv:Math.floor(i/LEVEL)+1}));
+    prog=store.get("vb-prog-"+l,{});fixes=store.get("vb-fix-"+l,{});
+    const x=store.get("vb-extra-"+l,{d:"",n:0});extraNew=x.d===dayKey()?x.n:0;
+    const nl=Math.ceil(CARDS.length/LEVEL);let o=`<option value="all">Todos os níveis, em ordem</option>`,o2="";
+    for(let i=1;i<=nl;i++){const a=(i-1)*LEVEL+1,b=Math.min(i*LEVEL,CARDS.length);o+=`<option value="${i}">Nível ${i} (palavras ${a} a ${b})</option>`;o2+=`<option value="${i}">Nível ${i} (${a} a ${b})</option>`}
+    $("sel-level").innerHTML=o;$("sel-level-list").innerHTML=o2;level="all";listLevel="1";
+    cur=null;free=false;buildQueue();renderTrain();renderMethod();
+    if(!$("view-list").hidden)renderList();
+  });
+}
+
+/* ===== treino ===== */
+function newToday(){const t=today0();return Object.values(prog).filter(p=>p.first>=t).length}
+function newRoom(){return Math.max(0,NEW_DEFAULT+extraNew-newToday())}
+function pool(){return CARDS.filter(c=>level==="all"||c.lv==+level)}
 function buildQueue(){
-  const now=Date.now();const pool=CARDS.filter(c=>group==="all"||c.g===group);
-  const due=pool.filter(c=>prog[c.id]&&prog[c.id].due<=now).sort((a,b)=>prog[a.id].due-prog[b.id].due);
-  const room=Math.max(0,NEW_PER_DAY-newToday());
-  const fresh=pool.filter(c=>!prog[c.id]).slice(0,room);
+  const now=Date.now(),p=pool();
+  const due=p.filter(c=>prog[c.id]&&prog[c.id].due<=now).sort((a,b)=>prog[a.id].due-prog[b.id].due);
+  const fresh=p.filter(c=>!prog[c.id]).slice(0,newRoom());
   queue=[...due,...fresh];
 }
-function stats(){const now=Date.now();let d=0,l=0,k=0;CARDS.forEach(c=>{const p=prog[c.id];if(!p)return;if(p.due<=now)d++;if(p.box>=4)k++;else l++});
-  $("st-due").textContent=d+Math.max(0,Math.min(NEW_PER_DAY-newToday(),CARDS.filter(c=>!prog[c.id]).length));$("st-learn").textContent=l;$("st-known").textContent=k}
-function speak(t){try{const s=window.speechSynthesis;if(!s)return;s.cancel();const u=new SpeechSynthesisUtterance(t);u.lang="de-DE";u.rate=.9;const v=s.getVoices().find(v=>v.lang&&v.lang.startsWith("de"));if(v)u.voice=v;s.speak(u)}catch(e){}}
+function overview(){const now=Date.now();let d=0,l=0,k=0;CARDS.forEach(c=>{const p=prog[c.id];if(!p)return;if(p.due<=now)d++;if(p.box>=4)k++;else l++});
+  $("ov-due").textContent=d+Math.min(newRoom(),CARDS.filter(c=>!prog[c.id]).length);$("ov-learn").textContent=l;$("ov-known").textContent=k}
+function speak(t){try{const s=window.speechSynthesis;if(!s)return;s.cancel();const u=new SpeechSynthesisUtterance(t);u.lang=LANGS[lang].voice;u.rate=.9;
+  const v=s.getVoices().find(v=>v.lang&&v.lang.replace("_","-").startsWith(LANGS[lang].voice.slice(0,2)));if(v)u.voice=v;s.speak(u)}catch(e){}}
 function renderTrain(){
-  const el=$("train");stats();
+  const el=$("train");overview();
+  if(!CARDS.length){el.innerHTML=`<div class="card done"><h2>${LANGS[lang].name} chegando</h2><p class="hintline">As palavras desta língua estão sendo preparadas e aparecem aqui em breve.</p></div>`;return}
   if(!cur){cur=queue.shift()||null;revealed=false}
-  if(!cur){const left=CARDS.filter(c=>(group==="all"||c.g===group)&&!prog[c.id]).length;
-    el.innerHTML=`<div class="card done"><h2>${free?"Treino livre feito":"Sessão feita"}</h2><p class="hintline">${left?`Faltam ${left} palavras novas${group==="all"?"":" neste grupo"}.`:"Você já começou todas as palavras deste grupo."}</p>
-    <div class="grid-more">${left?`<button class="btn primary" id="more10">Liberar mais 10 novas</button>`:""}
-    <button class="btn" id="freeplay">Treino livre: repassar tudo o que já vi</button></div>
-    <p class="hintline" style="margin-top:14px">O treino livre não mexe nas datas de revisão.</p></div>`;
-    const m=$("more10");if(m)m.onclick=()=>{NEW_PER_DAY+=10;const x=store.get("ws100-extra",{d:0,n:0});store.set("ws100-extra",{d:today(),n:(x.d===today()?x.n:0)+10});free=false;buildQueue();renderTrain()};
-    $("freeplay").onclick=()=>{free=true;queue=CARDS.filter(c=>(group==="all"||c.g===group)&&prog[c.id]).sort(()=>Math.random()-.5);renderTrain()};
-    if(!m&&!CARDS.some(c=>(group==="all"||c.g===group)&&prog[c.id]))$("freeplay").hidden=true;return}
-  const grp=GROUPS.find(g=>g.id===cur.g).name;const isNew=!prog[cur.id];
-  const front=dir==="pt"?`<div class="prompt">${esc(cur.pt)}</div><p class="hintline">Diga em alemão, em voz alta${cur.gen?", com o artigo":""}.</p>`
-    :`<div class="prompt">${deLabel(cur)}</div><p class="hintline">O que significa?</p>`;
+  if(!cur){const left=pool().filter(c=>!prog[c.id]).length;const seen=pool().some(c=>prog[c.id]);
+    el.innerHTML=`<div class="card done"><h2>${free?"Treino livre feito":"Tudo em dia"}</h2>
+      <p class="hintline">${left?`Ainda há ${left} palavras novas ${level==="all"?"em "+LANGS[lang].name.toLowerCase():"neste nível"}.`:"Você já começou todas as palavras deste nível."}</p>
+      <div class="more">${left?`<button class="btn primary" id="more10">Liberar mais 10 novas</button>`:""}
+      ${seen?`<button class="btn" id="freeplay">Treino livre: repassar o que já vi</button>`:""}</div>
+      ${seen?`<p class="hintline" style="margin-top:12px">O treino livre conta para a meta do dia e não mexe nas datas de revisão.</p>`:""}</div>`;
+    const m=$("more10");if(m)m.onclick=()=>{extraNew+=10;store.set("vb-extra-"+lang,{d:dayKey(),n:extraNew});free=false;buildQueue();renderTrain()};
+    const f=$("freeplay");if(f)f.onclick=()=>{free=true;queue=pool().filter(c=>prog[c.id]).sort(()=>Math.random()-.5);renderTrain()};
+    return}
+  const isNew=!prog[cur.id];const tg=LANGS[lang].code;
+  const front=dir==="pt"?`<div class="prompt">${esc(cur.pt)}</div><p class="hintline">Diga em ${LANGS[lang].name.toLowerCase()}, em voz alta${cur.g?", com o artigo":""}.</p>`
+    :`<div class="prompt">${label(cur)}</div><p class="hintline">O que significa?</p>`;
   let back="";
-  if(revealed){back=`<div class="answer">
-    ${dir==="pt"?`<div class="de">${deLabel(cur)}</div>`:`<div class="prompt" style="margin:0">${esc(cur.pt)}</div>`}
-    <div class="row"><span class="pron">[${esc(cur.pron)}]</span><button class="btn small" id="say-w">Ouvir palavra</button></div>
-    <div class="hook"><span class="tag">Gancho · ${esc(cur.tipo)}</span><p>${esc(cur.hook)}</p></div>
-    <div class="ex"><span class="d">${esc(cur.exDe)}</span><span class="p">${esc(cur.exPt)}</span></div>
-    <div class="row"><button class="btn small" id="say-e">Ouvir frase e repetir</button></div>
+  if(revealed){const box=(prog[cur.id]||{box:0}).box;back=`<div class="answer">
+    ${dir==="pt"?`<div class="word">${label(cur)}</div>`:`<div class="prompt" style="margin:0">${esc(cur.pt)}</div>`}
+    <div class="row">${cur.pron?`<span class="pron">[${esc(cur.pron)}]</span>`:""}<button class="btn small" id="say-w">Ouvir palavra</button></div>
+    ${cur.hook?`<div class="hook"><span class="tag">Gancho · ${esc(cur.tipo)}</span><p>${esc(cur.hook)}</p></div>`:""}
+    ${cur.ex?`<div class="ex"><span class="d">${esc(cur.ex)}</span><span class="p">${esc(cur.exPt)}</span></div><div class="row"><button class="btn small" id="say-e">Ouvir frase e repetir</button></div>`:""}
     <div class="grade">
       <button class="btn b1" data-r="0">Errei<small>volta agora</small></button>
       <button class="btn b2" data-r="1">Difícil<small>amanhã</small></button>
-      <button class="btn b3" data-r="2">Sabia<small>${INTERVALS[Math.min(5,((prog[cur.id]||{box:0}).box)+1)]} dia(s)</small></button>
+      <button class="btn b3" data-r="2">Sabia<small>${free?"treino livre":INTERVALS[Math.min(5,box+1)]+" dia(s)"}</small></button>
     </div></div>`}
-  el.innerHTML=`<div class="card"><div class="card-top"><span>${esc(grp)}</span><span>${free?"treino livre":isNew?"nova":"revisão"} · faltam ${queue.length+1}</span></div>${front}${revealed?back:`<button class="btn primary" id="reveal">Mostrar resposta</button>`}</div>`;
-  if(!revealed){$("reveal").onclick=()=>{revealed=true;renderTrain();if(dir==="pt")speak(deText(cur))}}
-  else{$("say-w").onclick=()=>speak(deText(cur));$("say-e").onclick=()=>speak(cur.exDe);
+  el.innerHTML=`<div class="card"><div class="card-top"><span>Nível ${cur.lv} · ${tg}</span><span>${free?"treino livre":isNew?"nova":"revisão"} · faltam ${queue.length+1}</span></div>${front}${revealed?back:`<button class="btn primary" id="reveal">Mostrar resposta</button>`}</div>`;
+  if(!revealed){$("reveal").onclick=()=>{revealed=true;renderTrain();if(dir==="pt")speak(full(cur))}}
+  else{$("say-w").onclick=()=>speak(full(cur));const se=$("say-e");if(se)se.onclick=()=>speak(cur.ex);
     el.querySelectorAll("[data-r]").forEach(b=>b.onclick=()=>grade(+b.dataset.r))}
 }
-function grade(r){if(free){if(r===0)queue.splice(Math.min(3,queue.length),0,cur);cur=null;renderTrain();return}const now=Date.now();const p=prog[cur.id]||{box:0,first:now};
+function grade(r){
+  addActivity();
+  if(free){if(r===0)queue.splice(Math.min(3,queue.length),0,cur);cur=null;renderTrain();return}
+  const now=Date.now();const p=prog[cur.id]||{box:0,first:now};
   if(r===0){p.box=0;p.due=now;queue.splice(Math.min(3,queue.length),0,cur)}
-  else if(r===1){p.box=Math.max(1,p.box);p.due=today()+DAY}
-  else{p.box=Math.min(5,p.box+1);p.due=today()+INTERVALS[p.box]*DAY}
-  prog[cur.id]=p;store.set("ws100-prog",prog);cur=null;renderTrain()}
+  else if(r===1){p.box=Math.max(1,p.box);p.due=today0()+DAY}
+  else{p.box=Math.min(5,p.box+1);p.due=today0()+INTERVALS[p.box]*DAY}
+  prog[cur.id]=p;store.set("vb-prog-"+lang,prog);cur=null;renderTrain()}
+
+/* ===== lista ===== */
 function renderList(){
-  $("list").innerHTML=GROUPS.map(g=>`<div class="list-group"><h2>${esc(g.name)}</h2><p class="gdesc">${esc(g.desc)}</p>${
-   g.words.map(w=>{const c=CARDS.find(x=>x.id===w[0]);const f=fixes[c.id]||{};return `<div class="item">
-     <div class="item-head"><span><span class="w">${deLabel(c)}</span> <span class="m">· ${esc(c.pt)}</span></span>
-     <span class="row">${f.s==="ok"?'<span class="chip ok">bom</span>':f.s==="fix"?'<span class="chip fix">corrigir</span>':''}
-       <button class="btn small" data-ok="${esc(c.id)}">Bom</button><button class="btn small" data-fix="${esc(c.id)}">Corrigir</button></span></div>
-     <div class="hk"><span class="chip">${esc(c.tipo)}</span> ${esc(c.hook)}</div>
-     <div class="exs">${esc(c.exDe)} · ${esc(c.exPt)}</div>
-     ${f.s==="fix"?`<textarea id="fx-${esc(c.id)}" data-note="${esc(c.id)}" placeholder="Sua ideia de gancho ou o que está ruim">${esc(f.n||"")}</textarea>`:""}
-   </div>`}).join("")}</div>`).join("");
+  const q=$("search").value.trim().toLowerCase();
+  const items=q?CARDS.filter(c=>(c.w+" "+c.pt).toLowerCase().includes(q)).slice(0,80):CARDS.filter(c=>c.lv==+listLevel);
+  $("list").innerHTML=items.length?items.map(c=>{const f=fixes[c.id]||{};const p=prog[c.id];return `<div class="item">
+    <div class="item-head"><span><span class="w">${label(c)}</span> <span class="m">· ${esc(c.pt)}</span></span>
+    <span class="row">${p?`<span class="chip lv">${p.box>=4?"firme":"aprendendo"}</span>`:""}${f.s==="ok"?'<span class="chip ok">bom</span>':f.s==="fix"?'<span class="chip fix">corrigir</span>':""}
+      <button class="btn small" data-ok="${esc(c.id)}">Bom</button><button class="btn small" data-fix="${esc(c.id)}">Corrigir</button></span></div>
+    ${c.hook?`<div class="hk"><span class="chip">${esc(c.tipo)}</span> ${esc(c.hook)}</div>`:""}
+    ${c.ex?`<div class="exs">${esc(c.ex)} · ${esc(c.exPt)}</div>`:""}
+    ${f.s==="fix"?`<textarea data-note="${esc(c.id)}" placeholder="Sua ideia de gancho ou o que está ruim">${esc(f.n||"")}</textarea>`:""}
+  </div>`}).join(""):'<p class="hintline">Nenhuma palavra encontrada.</p>';
   $("list").querySelectorAll("[data-ok]").forEach(b=>b.onclick=()=>{fixes[b.dataset.ok]={s:"ok"};saveFix();renderList()});
-  $("list").querySelectorAll("[data-fix]").forEach(b=>b.onclick=()=>{fixes[b.dataset.fix]={s:"fix",n:(fixes[b.dataset.fix]||{}).n||""};saveFix();renderList();const t=$("fx-"+b.dataset.fix);if(t)t.focus()});
-  $("list").querySelectorAll("[data-note]").forEach(t=>t.oninput=()=>{fixes[t.dataset.note].n=t.value;saveFix(false)});
+  $("list").querySelectorAll("[data-fix]").forEach(b=>b.onclick=()=>{fixes[b.dataset.fix]={s:"fix",n:(fixes[b.dataset.fix]||{}).n||""};saveFix();renderList();const t=document.querySelector(`[data-note="${CSS.escape(b.dataset.fix)}"]`);if(t)t.focus()});
+  $("list").querySelectorAll("[data-note]").forEach(t=>t.oninput=()=>{fixes[t.dataset.note].n=t.value;saveFix()});
   countFix()}
-function saveFix(){store.set("ws100-fix",fixes);countFix()}
-function countFix(){const v=Object.values(fixes);$("fixcount").textContent=`${v.filter(f=>f.s==="ok").length} bons · ${v.filter(f=>f.s==="fix").length} para corrigir · ${CARDS.length-v.length} sem marcar`}
+function saveFix(){store.set("vb-fix-"+lang,fixes);countFix()}
+function countFix(){const v=Object.values(fixes);$("fixcount").textContent=`${v.filter(f=>f.s==="ok").length} bons · ${v.filter(f=>f.s==="fix").length} para corrigir`}
 $("btn-copy").onclick=()=>{
-  const fx=CARDS.filter(c=>(fixes[c.id]||{}).s==="fix");const ok=CARDS.filter(c=>(fixes[c.id]||{}).s==="ok");
-  const txt=`Revisão lote 1\nCorrigir (${fx.length}):\n`+fx.map(c=>`- ${deText(c)}: ${(fixes[c.id].n||"gancho ruim").trim()}`).join("\n")+`\nBons (${ok.length}): `+ok.map(c=>c.de).join(", ");
+  const fx=CARDS.filter(c=>(fixes[c.id]||{}).s==="fix");
+  const txt=`Correções ${LANGS[lang].name} (${fx.length}):\n`+fx.map(c=>`- ${full(c)}: ${(fixes[c.id].n||"gancho ruim").trim()}`).join("\n");
   const done=()=>{$("copied").hidden=false;setTimeout(()=>$("copied").hidden=true,3000)};
   const fb=()=>{const t=$("copy-fallback");t.hidden=false;t.value=txt;t.select()};
   try{navigator.clipboard.writeText(txt).then(done,fb)}catch(e){fb()}};
+
+/* ===== método ===== */
+function renderMethod(){
+  const common=`<section><h2>Como estudar (15 minutos por dia)</h2><ol>
+    <li><b>Leia o português e diga a palavra em voz alta antes de virar.</b> Lembrar com esforço é o que fixa.</li>
+    <li><b>Ouça e repita a frase inteira.</b> A frase curta fica; a palavra solta some.</li>
+    <li><b>Seja honesto na nota.</b> Errei volta na hora, Difícil volta amanhã, Sabia volta em 1, 3, 7, 16 e 35 dias.</li>
+    <li><b>Meta diária: ${GOAL} cartas.</b> Bater a meta mantém a sequência de dias. Novas: 10 por dia por padrão, libere mais quando quiser.</li>
+    <li><b>Substantivo sempre com artigo e cor.</b></li></ol></section>`;
+  const de=`<section><h2>Atalho: o alemão é primo do inglês</h2><p>Cinco trocas de som explicam centenas de palavras:</p><div class="tbl"><table><thead><tr><th>Inglês</th><th>Alemão</th><th>Exemplos</th></tr></thead><tbody>
+    <tr><td class="mono">th</td><td class="mono">d</td><td>that → dass, then → dann, through → durch, thing → Ding</td></tr>
+    <tr><td class="mono">t</td><td class="mono">z / ss</td><td>two → zwei, time → Zeit, water → Wasser, what → was</td></tr>
+    <tr><td class="mono">d</td><td class="mono">t</td><td>day → Tag, good → gut, under → unter, word → Wort</td></tr>
+    <tr><td class="mono">v / f</td><td class="mono">b</td><td>have → haben, give → geben, live → leben</td></tr>
+    <tr><td class="mono">p</td><td class="mono">f / pf</td><td>ship → Schiff, apple → Apfel, open → offen</td></tr>
+    <tr><td class="mono">k</td><td class="mono">ch</td><td>make → machen, book → Buch, week → Woche</td></tr></tbody></table></div></section>
+    <section><h2>Gênero</h2><div class="gbox"><div style="background:var(--m-bg)"><b class="g-m">der</b>masculino, azul</div><div style="background:var(--f-bg)"><b class="g-f">die</b>feminino e plural, vermelho</div><div style="background:var(--n-bg)"><b class="g-n">das</b>neutro, verde</div></div>
+    <p>Verbo virado substantivo é <b class="g-n">das</b> (das Leben). Final -ung, -heit, -keit, -schaft, -ion é <b class="g-f">die</b>. Final -chen e -lein é <b class="g-n">das</b>. Dias, meses e estações são <b class="g-m">der</b>.</p></section>`;
+  const it=`<section><h2>Atalho: italiano é quase português</h2><ul>
+    <li><b>Mais de 70% das palavras têm parente direto</b> em português ou espanhol. O gancho mostra o parente e a troca de som.</li>
+    <li><b>-ção vira -zione:</b> nação → nazione, informação → informazione.</li>
+    <li><b>-dade vira -tà:</b> cidade → città, verdade → verità, liberdade → libertà.</li>
+    <li><b>pl/cl/fl viram pi/chi/fi:</b> pleno → pieno, chave → chiave, flor → fiore, praça → piazza.</li>
+    <li><b>Consoante dobrada se pronuncia mais longa:</b> fato → fatto, ano → anno (e anno é diferente de ano!).</li></ul></section>
+    <section><h2>Gênero</h2><div class="gbox"><div style="background:var(--m-bg)"><b class="g-m">il / lo / l'</b>masculino, azul</div><div style="background:var(--f-bg)"><b class="g-f">la / l'</b>feminino, vermelho</div></div>
+    <p>Final -o quase sempre é masculino, -a quase sempre feminino. Final -e pode ser os dois: decore pela cor. "Lo" vem antes de s+consoante e z (lo studente, lo zio).</p></section>`;
+  const fr=`<section><h2>Atalho: francês escreve como latim e fala encurtado</h2><ul>
+    <li><b>A escrita entrega o parente:</b> table, porte, temps (tempo), mer (mar). A dificuldade é a pronúncia, por isso ouça sempre.</li>
+    <li><b>Letras finais quase nunca soam:</b> petit = "ptí", vous = "vu", grand = "grã".</li>
+    <li><b>Acento circunflexo marca um S que caiu:</b> forêt → floresta, hôpital → hospital, fête → festa.</li>
+    <li><b>-ção vira -tion, -dade vira -té:</b> nation, liberté, vérité.</li>
+    <li><b>Falsos amigos são poucos, mas perigosos:</b> eles vêm marcados como "Falso amigo".</li></ul></section>
+    <section><h2>Gênero</h2><div class="gbox"><div style="background:var(--m-bg)"><b class="g-m">le / l'</b>masculino, azul</div><div style="background:var(--f-bg)"><b class="g-f">la / l'</b>feminino, vermelho</div></div>
+    <p>Diante de vogal ou h mudo o artigo vira l', e aí só a cor mostra o gênero. Final -tion, -té, -ure costuma ser feminino; -ment, -age costuma ser masculino. Atenção: la mer, le lait, la fleur são diferentes do português.</p></section>`;
+  $("method").innerHTML=common+({de,it,fr})[lang];
+}
+
+/* ===== eventos ===== */
 function tab(name){["train","list","method"].forEach(n=>{$("tab-"+n).setAttribute("aria-selected",n===name);$("view-"+n).hidden=n!==name});if(name==="list")renderList();if(name==="train")renderTrain()}
 $("tab-train").onclick=()=>tab("train");$("tab-list").onclick=()=>tab("list");$("tab-method").onclick=()=>tab("method");
-$("sel-group").innerHTML=`<option value="all">Todos os grupos, em ordem</option>`+GROUPS.map(g=>`<option value="${g.id}">${esc(g.name)} (${g.words.length})</option>`).join("");
-$("sel-group").onchange=e=>{group=e.target.value;cur=null;free=false;buildQueue();renderTrain()};
-$("dir-pt").onclick=()=>{dir="pt";$("dir-pt").setAttribute("aria-pressed",true);$("dir-de").setAttribute("aria-pressed",false);renderTrain()};
-$("dir-de").onclick=()=>{dir="de";$("dir-de").setAttribute("aria-pressed",true);$("dir-pt").setAttribute("aria-pressed",false);renderTrain()};
-buildQueue();renderTrain();
+document.querySelectorAll(".langs button").forEach(b=>b.onclick=()=>{if(b.dataset.lang!==lang)setLang(b.dataset.lang)});
+$("sel-level").onchange=e=>{level=e.target.value;cur=null;free=false;buildQueue();renderTrain()};
+$("sel-level-list").onchange=e=>{listLevel=e.target.value;$("search").value="";renderList()};
+$("search").oninput=()=>renderList();
+$("dir-pt").onclick=()=>{dir="pt";$("dir-pt").setAttribute("aria-pressed",true);$("dir-tg").setAttribute("aria-pressed",false);renderTrain()};
+$("dir-tg").onclick=()=>{dir="tg";$("dir-tg").setAttribute("aria-pressed",true);$("dir-pt").setAttribute("aria-pressed",false);renderTrain()};
+document.addEventListener("visibilitychange",()=>{if(!document.hidden){renderStreak();if(!cur){buildQueue();renderTrain()}}});
+renderStreak();setLang(LANGS[lang]?lang:"de");
+if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}))}
 </script>
-<script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}))}</script>
 </body>
 </html>
