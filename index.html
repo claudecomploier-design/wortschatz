@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#6c5ce7">
+<meta name="theme-color" content="#2f6fd6">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Vokabel">
@@ -17,22 +17,22 @@
 <style>
 /* Layout: uma coluna de cartões arredondados tipo brinquedo; céu pastel ao fundo; mascote fixo no canto; cores de gênero (masc azul, fem rosa-vermelho, neutro verde) */
 :root{
-  --bg1:#eef0ff; --bg2:#fff4ec; --card:#ffffff; --fg:#2d2a4a; --muted:#7a7699; --line:#e6e3f5; --rule:#f1effa;
-  --accent:#6c5ce7; --accent-2:#a29bfe; --accent-fg:#ffffff; --accent-shadow:#4b3fc0;
+  --bg1:#e8f3fb; --bg2:#f4f8ee; --card:#ffffff; --fg:#1f2d3d; --muted:#667788; --line:#dde6ee; --rule:#eef3f7;
+  --accent:#2f6fd6; --accent-2:#2bb3a3; --accent-fg:#ffffff; --accent-shadow:#1f4fa3;
   --flame:#ff7a45; --flame-2:#ffb547; --flame-bg:#fff0e6; --sun:#ffd166;
-  --m:#3d7be0; --f:#e5487a; --n:#2fae7a; --m-bg:#e8f0ff; --f-bg:#ffe9f1; --n-bg:#e3f7ee;
+  --m:#3d7be0; --f:#d9483b; --n:#2fae7a; --m-bg:#e8f0ff; --f-bg:#fdebe7; --n-bg:#e3f7ee;
   --bad:#ef5d6b; --bad-shadow:#c43c4a; --mid:#f2a33a; --mid-shadow:#c97f1c; --good:#2fbf85; --good-shadow:#1f9364;
-  --shadow:0 10px 30px rgba(108,92,231,.12),0 2px 6px rgba(45,42,74,.06);
+  --shadow:0 10px 28px rgba(31,45,61,.10),0 2px 6px rgba(31,45,61,.06);
   --display:"Fredoka","Baloo 2",ui-rounded,system-ui,sans-serif;
   --body:"Nunito",ui-rounded,system-ui,sans-serif;
   --mono:"Nunito",ui-monospace,monospace;
   color-scheme:light;
 }
 @media (prefers-color-scheme:dark){:root{
-  --bg1:#1b1838; --bg2:#26173a; --card:#2a2650; --fg:#f3f1ff; --muted:#b3add9; --line:#3d3870; --rule:#332f60;
-  --accent:#a29bfe; --accent-2:#6c5ce7; --accent-fg:#1b1838; --accent-shadow:#7b6fe0;
-  --flame:#ff8f5c; --flame-2:#ffc061; --flame-bg:#3d2a3a; --sun:#ffd166;
-  --m:#8cb4ff; --f:#ff8fb3; --n:#6fe0b0; --m-bg:#25305a; --f-bg:#47264a; --n-bg:#1f4040;
+  --bg1:#121c2b; --bg2:#14241f; --card:#1d2a3a; --fg:#eef3f8; --muted:#9fb0c2; --line:#2e3f52; --rule:#253446;
+  --accent:#6fa8ff; --accent-2:#2bb3a3; --accent-fg:#0f1a28; --accent-shadow:#3f78cf;
+  --flame:#ff8f5c; --flame-2:#ffc061; --flame-bg:#3a2e22; --sun:#ffd166;
+  --m:#8cb4ff; --f:#ff8a7a; --n:#6fe0b0; --m-bg:#25305a; --f-bg:#45261f; --n-bg:#1f4040;
   --bad:#ff8a95; --bad-shadow:#c45b67; --mid:#ffc061; --mid-shadow:#c48a2f; --good:#6fe0b0; --good-shadow:#3fae80;
   --shadow:0 10px 30px rgba(0,0,0,.35),0 2px 6px rgba(0,0,0,.25);
   color-scheme:dark}}
@@ -49,8 +49,8 @@ h1 .spark{width:26px;height:26px}
 .langs button[aria-pressed="true"]{background:var(--accent);color:var(--accent-fg)}
 
 /* ===== sequência ===== */
-.streak{margin-top:16px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;align-items:center;background:linear-gradient(135deg,#fff6ee 0%,#ffe8f0 100%);border-radius:28px;padding:16px 18px;box-shadow:var(--shadow);position:relative;overflow:hidden}
-@media (prefers-color-scheme:dark){.streak{background:linear-gradient(135deg,#3b2a45 0%,#352552 100%)}}
+.streak{margin-top:16px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;align-items:center;background:linear-gradient(135deg,#fff8e6 0%,#ffeedd 100%);border-radius:28px;padding:16px 18px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+@media (prefers-color-scheme:dark){.streak{background:linear-gradient(135deg,#33291c 0%,#2c2a22 100%)}}
 .flame{display:grid;justify-items:center;gap:0;min-width:92px}
 .flame svg{width:64px;height:72px;overflow:visible;transform-origin:50% 90%}
 .flame.on svg{animation:wiggle 2.6s ease-in-out infinite}
@@ -157,7 +157,7 @@ td.mono{font-weight:900;color:var(--accent)}
 
 /* ===== mascote ===== */
 .mascot-wrap{position:fixed;right:max(14px,env(safe-area-inset-right,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:20;display:flex;align-items:flex-end;gap:8px;pointer-events:none}
-.mascot{pointer-events:auto;width:88px;height:88px;border-radius:50%;border:4px solid #fff;background:linear-gradient(160deg,#c8c2ff,#ffd6e8);box-shadow:0 10px 24px rgba(108,92,231,.3),0 0 0 4px rgba(108,92,231,.15);padding:0;cursor:pointer;overflow:hidden;transition:transform .25s cubic-bezier(.34,1.56,.64,1)}
+.mascot{pointer-events:auto;width:88px;height:88px;border-radius:50%;border:4px solid #fff;background:linear-gradient(160deg,#bfe3ff,#c9f1e4);box-shadow:0 10px 24px rgba(31,79,163,.28),0 0 0 4px rgba(47,111,214,.15);padding:0;cursor:pointer;overflow:hidden;transition:transform .25s cubic-bezier(.34,1.56,.64,1)}
 .mascot svg{width:100%;height:100%;display:block}
 .bubble{pointer-events:auto;max-width:200px;background:var(--card);color:var(--fg);font-family:var(--display);font-weight:500;font-size:.98rem;line-height:1.25;padding:10px 14px;border-radius:20px 20px 6px 20px;box-shadow:var(--shadow);margin-bottom:40px;animation:pop .35s cubic-bezier(.34,1.56,.64,1)}
 .mascot.happy{animation:hop .6s cubic-bezier(.34,1.56,.64,1)}
@@ -233,7 +233,7 @@ td.mono{font-weight:900;color:var(--accent)}
         <defs><linearGradient id="fg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffb547"/><stop offset="1" stop-color="#ff6b3d"/></linearGradient></defs>
         <path class="fl-out" fill="url(#fg)" d="M32 2c4 10 16 16 20 30 5 18-6 36-20 36S7 55 12 38c3-10 10-12 11-22 5 4 6 10 6 14 4-6 5-16 3-28z"/>
         <path class="fl-in" fill="#ffe08a" d="M32 34c3 5 10 9 10 18 0 7-5 12-10 12s-10-5-10-12c0-6 5-8 6-13 2 2 3 4 3 6 1-3 2-7 1-11z"/>
-        <g class="fl-face-on"><circle cx="26" cy="50" r="2.6" fill="#4a2a2a"/><circle cx="38" cy="50" r="2.6" fill="#4a2a2a"/><circle cx="27" cy="49" r=".9" fill="#fff"/><circle cx="39" cy="49" r=".9" fill="#fff"/><path d="M28 56q4 4 8 0" stroke="#4a2a2a" stroke-width="2.2" fill="none" stroke-linecap="round"/><ellipse cx="22" cy="55" rx="2.6" ry="1.6" fill="#ff8aa0" opacity=".7"/><ellipse cx="42" cy="55" rx="2.6" ry="1.6" fill="#ff8aa0" opacity=".7"/></g>
+        <g class="fl-face-on"><circle cx="26" cy="50" r="2.6" fill="#4a2a2a"/><circle cx="38" cy="50" r="2.6" fill="#4a2a2a"/><circle cx="27" cy="49" r=".9" fill="#fff"/><circle cx="39" cy="49" r=".9" fill="#fff"/><path d="M28 56q4 4 8 0" stroke="#4a2a2a" stroke-width="2.2" fill="none" stroke-linecap="round"/><ellipse cx="22" cy="55" rx="2.6" ry="1.6" fill="#ff9c6b" opacity=".5"/><ellipse cx="42" cy="55" rx="2.6" ry="1.6" fill="#ff9c6b" opacity=".5"/></g>
         <g class="fl-face-off"><path d="M23 51q3 2 6 0M35 51q3 2 6 0" stroke="#5a5470" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M29 58h6" stroke="#5a5470" stroke-width="2.2" stroke-linecap="round"/><text x="44" y="40" font-family="Fredoka,sans-serif" font-size="9" fill="#8a84a8">z</text><text x="49" y="33" font-family="Fredoka,sans-serif" font-size="7" fill="#8a84a8">z</text></g>
       </svg>
       <div><b id="streak-n">0</b><span id="streak-l">dias seguidos</span></div>
@@ -301,7 +301,7 @@ td.mono{font-weight:900;color:var(--accent)}
       <g class="eyes-open"><ellipse cx="48" cy="58" rx="7" ry="8.5" fill="#fff"/><ellipse cx="72" cy="58" rx="7" ry="8.5" fill="#fff"/>
         <g class="pupils"><circle cx="48.5" cy="59" r="5" fill="#7a4a26"/><circle cx="72.5" cy="59" r="5" fill="#7a4a26"/><circle cx="48.5" cy="59" r="2.4" fill="#2b1608"/><circle cx="72.5" cy="59" r="2.4" fill="#2b1608"/><circle cx="50.5" cy="56.5" r="1.7" fill="#fff"/><circle cx="74.5" cy="56.5" r="1.7" fill="#fff"/></g></g>
       <g class="eyes-happy"><path d="M41 60q7-8 14 0M65 60q7-8 14 0" stroke="#2b1608" stroke-width="3.2" fill="none" stroke-linecap="round"/></g>
-      <ellipse cx="38" cy="70" rx="5" ry="3" fill="#ff9aa8" opacity=".55"/><ellipse cx="82" cy="70" rx="5" ry="3" fill="#ff9aa8" opacity=".55"/>
+      <ellipse cx="38" cy="70" rx="5" ry="3" fill="#f0a18a" opacity=".35"/><ellipse cx="82" cy="70" rx="5" ry="3" fill="#f0a18a" opacity=".35"/>
       <path d="M57 64q3 6 6 0" fill="#eaa983"/><ellipse cx="60" cy="67" rx="4.5" ry="3.2" fill="#eeac86"/>
       <path d="M47 75c4-4 9-4 13-2 4-2 9-2 13 2-4 1-8 0-13-1-5 1-9 2-13 1z" fill="#5a3319"/>
       <path class="x x-idle" d="M52 80q8 6 16 0" stroke="#7a3b2a" stroke-width="2.8" fill="none" stroke-linecap="round"/>
@@ -311,7 +311,7 @@ td.mono{font-weight:900;color:var(--accent)}
       <path d="M54 88c2 5 10 5 12 0 1 4-1 9-6 10-5-1-7-6-6-10z" fill="#5a3319"/></g>
       <g class="hand"><path d="M86 120l6-18" stroke="#3fb8af" stroke-width="10" stroke-linecap="round"/><circle cx="93" cy="98" r="7" fill="#f6c7a1"/><path d="M89 92l-1-5M93 91v-6M97 92l1-5" stroke="#f6c7a1" stroke-width="3.2" stroke-linecap="round"/></g>
       </g>
-      <g class="burst"><path d="M20 40l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" fill="#ffd166"/><path d="M100 50l1.5 4 4 1.5-4 1.5-1.5 4-1.5-4-4-1.5 4-1.5z" fill="#ff8aa0"/><circle cx="96" cy="20" r="3" fill="#a29bfe"/><circle cx="24" cy="18" r="2.5" fill="#6fe0b0"/></g>
+      <g class="burst"><path d="M20 40l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" fill="#ffd166"/><path d="M100 50l1.5 4 4 1.5-4 1.5-1.5 4-1.5-4-4-1.5 4-1.5z" fill="#2bb3a3"/><circle cx="96" cy="20" r="3" fill="#6fa8ff"/><circle cx="24" cy="18" r="2.5" fill="#6fe0b0"/></g>
     </svg>
   </button>
 </div>
