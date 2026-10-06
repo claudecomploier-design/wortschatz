@@ -180,6 +180,31 @@ td.mono{font-weight:900;color:var(--accent)}
 @media (max-width:480px){.mascot{width:68px;height:68px}.bubble{max-width:160px;font-size:.9rem;margin-bottom:28px}.wrap{padding-bottom:130px}}
 @media (max-width:420px){.streak{grid-template-columns:1fr}.flame{grid-auto-flow:column;align-items:center;justify-content:center;gap:10px}}
 
+
+/* movimento do mascote */
+.mascot .body{transform-origin:60px 120px}
+.mascot .head{transform-origin:60px 92px;transition:transform .35s cubic-bezier(.34,1.56,.64,1)}
+.mascot .hand{transform-origin:88px 118px;transform:translateY(30px) rotate(10deg);transition:transform .3s cubic-bezier(.34,1.56,.64,1)}
+.mascot .burst{opacity:0;transform-origin:60px 60px}
+@media (prefers-reduced-motion:no-preference){
+  .mascot .body{animation:breathe 3.2s ease-in-out infinite}
+  .mascot[data-face="idle"] .head{animation:sway 5s ease-in-out infinite}
+  .mascot[data-face="idle"] .pupils{animation:look 7s ease-in-out infinite}
+  .mascot[data-face="think"] .head{transform:rotate(-7deg)}
+  .mascot[data-face="sad"] .head{transform:rotate(5deg) translateY(2px)}
+  .mascot[data-face="happy"] .head,.mascot[data-face="party"] .head{animation:bob .45s ease-in-out 3}
+  .mascot[data-face="happy"] .hand,.mascot[data-face="party"] .hand{transform:none;animation:wave .5s ease-in-out 4}
+  .mascot[data-face="happy"] .burst,.mascot[data-face="party"] .burst{animation:burst .9s ease-out}
+  .mascot[data-face="party"] .burst{animation:burst .9s ease-out 3}
+  .mascot-wrap{animation:float 4s ease-in-out infinite}
+}
+@keyframes breathe{0%,100%{transform:scaleY(1)}50%{transform:scaleY(1.02)}}
+@keyframes sway{0%,100%{transform:rotate(0)}25%{transform:rotate(-3deg)}75%{transform:rotate(3deg)}}
+@keyframes look{0%,30%,100%{transform:translate(0,0)}38%,48%{transform:translate(-2.5px,0)}56%,66%{transform:translate(2.5px,-1px)}74%{transform:translate(0,0)}}
+@keyframes bob{0%,100%{transform:rotate(0)}30%{transform:rotate(-6deg) translateY(-2px)}70%{transform:rotate(6deg) translateY(-2px)}}
+@keyframes wave{0%,100%{transform:rotate(0)}50%{transform:rotate(-22deg)}}
+@keyframes burst{0%{opacity:0;transform:scale(.6)}30%{opacity:1}100%{opacity:0;transform:scale(1.25)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
 @keyframes wiggle{0%,100%{transform:rotate(-3deg) scale(1)}50%{transform:rotate(3deg) scale(1.05)}}
 @keyframes candy{to{background-position:28px 0}}
 @keyframes pop{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}
@@ -265,10 +290,10 @@ td.mono{font-weight:900;color:var(--accent)}
   <button class="mascot" id="mascot" data-face="idle" aria-label="Mascote de estudo. Toque para uma mensagem.">
     <svg viewBox="0 0 120 120" aria-hidden="true">
       <circle cx="18" cy="22" r="3" fill="#fff" opacity=".7"/><circle cx="102" cy="30" r="2" fill="#fff" opacity=".7"/><path d="M98 92l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" fill="#fff" opacity=".8"/>
-      <path d="M22 120c2-18 16-26 38-26s36 8 38 26z" fill="#3fb8af"/>
+      <g class="body"><path d="M22 120c2-18 16-26 38-26s36 8 38 26z" fill="#3fb8af"/>
       <path d="M46 96l14 12 14-12" fill="none" stroke="#2e978f" stroke-width="3" stroke-linejoin="round"/>
       <rect x="52" y="84" width="16" height="14" rx="6" fill="#efb791"/>
-      <circle cx="31" cy="62" r="6.5" fill="#f2bd98"/><circle cx="89" cy="62" r="6.5" fill="#f2bd98"/>
+      <g class="head"><circle cx="31" cy="62" r="6.5" fill="#f2bd98"/><circle cx="89" cy="62" r="6.5" fill="#f2bd98"/>
       <ellipse cx="60" cy="60" rx="29" ry="32" fill="#f6c7a1"/>
       <path d="M30 56c-3-22 10-36 30-36s34 12 30 36c-3-10-8-15-16-17-6 5-17 6-26 2-8 3-14 8-18 15z" fill="#6b3f22"/>
       <path d="M52 22c4-6 14-8 20-4-6 0-10 2-12 6z" fill="#7d4a28"/>
@@ -283,7 +308,10 @@ td.mono{font-weight:900;color:var(--accent)}
       <g class="x x-happy"><path d="M50 79q10 13 20 0z" fill="#7a2f2f"/><path d="M54 84q6 4 12 0q-6-2-12 0z" fill="#ff8a8a"/></g>
       <ellipse class="x x-think" cx="63" cy="81" rx="3.4" ry="3" fill="#7a3b2a"/>
       <path class="x x-sad" d="M52 84q8-6 16 0" stroke="#7a3b2a" stroke-width="2.8" fill="none" stroke-linecap="round"/>
-      <path d="M54 88c2 5 10 5 12 0 1 4-1 9-6 10-5-1-7-6-6-10z" fill="#5a3319"/>
+      <path d="M54 88c2 5 10 5 12 0 1 4-1 9-6 10-5-1-7-6-6-10z" fill="#5a3319"/></g>
+      <g class="hand"><path d="M86 120l6-18" stroke="#3fb8af" stroke-width="10" stroke-linecap="round"/><circle cx="93" cy="98" r="7" fill="#f6c7a1"/><path d="M89 92l-1-5M93 91v-6M97 92l1-5" stroke="#f6c7a1" stroke-width="3.2" stroke-linecap="round"/></g>
+      </g>
+      <g class="burst"><path d="M20 40l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" fill="#ffd166"/><path d="M100 50l1.5 4 4 1.5-4 1.5-1.5 4-1.5-4-4-1.5 4-1.5z" fill="#ff8aa0"/><circle cx="96" cy="20" r="3" fill="#a29bfe"/><circle cx="24" cy="18" r="2.5" fill="#6fe0b0"/></g>
     </svg>
   </button>
 </div>
