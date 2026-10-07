@@ -40,9 +40,10 @@
 html{-webkit-text-size-adjust:100%}
 body{margin:0;min-height:100vh;background:linear-gradient(170deg,var(--bg1) 0%,var(--bg2) 100%) fixed;color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.5;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 [hidden]{display:none!important}
-.wrap{max-width:720px;margin:0 auto;padding-inline:16px;padding-block:18px 150px}
+.wrap{max-width:720px;margin:0 auto;padding-inline:16px;padding-block:18px 40px}
 header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
 h1{font-family:var(--display);font-weight:700;font-size:1.9rem;margin:0;line-height:1;color:var(--accent)}
+h1 .ver{font-family:var(--body);font-size:.7rem;font-weight:800;color:var(--muted);vertical-align:middle}
 .langs{display:flex;gap:6px;background:var(--card);padding:5px;border-radius:99px;box-shadow:var(--shadow)}
 .langs button{font:inherit;font-weight:800;font-size:.88rem;cursor:pointer;padding:7px 13px;border-radius:99px;border:0;background:transparent;color:var(--muted);transition:background .2s,color .2s}
 .langs button[aria-pressed="true"]{background:var(--accent);color:var(--accent-fg)}
@@ -170,16 +171,32 @@ td.mono{font-weight:900;color:var(--accent)}
 .loading{padding:40px 0;text-align:center;color:var(--muted);font-weight:700}
 
 /* ===== mascote ===== */
-.mascot-wrap{position:fixed;right:max(14px,env(safe-area-inset-right,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:20;display:flex;align-items:flex-end;gap:8px;pointer-events:none}
-.mascot{pointer-events:auto;width:112px;height:112px;flex:none;border-radius:50%;border:4px solid #fff;background:linear-gradient(160deg,#bfe3ff,#c9f1e4);box-shadow:0 10px 24px rgba(31,79,163,.28),0 0 0 4px rgba(47,111,214,.15);padding:0;cursor:pointer;overflow:hidden;transition:transform .25s cubic-bezier(.34,1.56,.64,1)}
+.mascot-wrap{display:flex;align-items:center;gap:14px;margin:4px 0 16px}
+.mascot{width:150px;height:150px;flex:none;-webkit-tap-highlight-color:transparent;border-radius:50%;border:4px solid #fff;background:linear-gradient(160deg,#bfe3ff,#c9f1e4);box-shadow:0 10px 24px rgba(31,79,163,.28),0 0 0 4px rgba(47,111,214,.15);padding:0;cursor:pointer;overflow:hidden;transition:transform .25s cubic-bezier(.34,1.56,.64,1)}
 .mascot svg{width:100%;height:100%;display:block}
-.bubble{pointer-events:auto;max-width:200px;background:var(--card);color:var(--fg);font-family:var(--display);font-weight:500;font-size:.98rem;line-height:1.25;padding:10px 14px;border-radius:20px 20px 6px 20px;box-shadow:var(--shadow);margin-bottom:40px;animation:pop .35s cubic-bezier(.34,1.56,.64,1)}
-.mascot.happy{animation:hop .6s cubic-bezier(.34,1.56,.64,1)}
-.mascot.sad{animation:shake .5s ease}
-.mascot.party{animation:hop .6s cubic-bezier(.34,1.56,.64,1) 3}
+.bubble{position:relative;flex:1;min-width:0;background:var(--card);color:var(--fg);font-family:var(--display);font-weight:500;font-size:1.08rem;line-height:1.3;padding:14px 16px;border-radius:22px 22px 22px 6px;box-shadow:var(--shadow)}
+.bubble::before{content:"";position:absolute;left:-9px;bottom:18px;border:10px solid transparent;border-right-color:var(--card);border-left:0}
+.bubble.pop{animation:pop .35s cubic-bezier(.34,1.56,.64,1)}
+.bubble small{display:block;margin-top:4px;font-family:var(--body);font-weight:800;font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+/* gestos ao tocar */
+.mascot.g-jump{animation:hop .6s cubic-bezier(.34,1.56,.64,1) 2}
+.mascot.g-spin{animation:spin .9s cubic-bezier(.34,1.56,.64,1)}
+.mascot.g-dance{animation:dance .5s ease-in-out 4}
+.mascot.g-laugh{animation:shake .22s ease 6}
+.mascot.g-wow{animation:boing .6s cubic-bezier(.34,1.56,.64,1)}
+.mascot.g-nod{animation:nod .4s ease-in-out 3}
+.mascot.g-wave .hand{transform:none!important;animation:wave .4s ease-in-out 6!important}
+.mascot.g-flex .hand{transform:translateY(-6px) rotate(-30deg)!important}
+@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+@keyframes dance{0%,100%{transform:rotate(0) translateX(0)}25%{transform:rotate(-10deg) translateX(-8px)}75%{transform:rotate(10deg) translateX(8px)}}
+@keyframes boing{0%{transform:scale(1)}30%{transform:scale(1.18,.86)}60%{transform:scale(.92,1.1)}100%{transform:scale(1)}}
+@keyframes nod{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
 /* expressões */
 .mascot .x{display:none}
-.mascot[data-face="idle"] .x-idle,.mascot[data-face="think"] .x-think,.mascot[data-face="happy"] .x-happy,.mascot[data-face="sad"] .x-sad,.mascot[data-face="party"] .x-happy{display:inline}
+.mascot[data-face="idle"] .x-idle,.mascot[data-face="think"] .x-think,.mascot[data-face="happy"] .x-happy,.mascot[data-face="sad"] .x-sad,.mascot[data-face="party"] .x-happy,.mascot[data-face="wink"] .x-happy,.mascot[data-face="wow"] .x-wow{display:inline}
+.mascot .wink{display:none}.mascot[data-face="wink"] .wink{display:inline}
+.mascot[data-face="wow"] .brows{transform:translateY(-5px)}
+.mascot[data-face="wow"] .eyes-open{transform:scale(1.08)}
 .mascot .eyes-open{transform-origin:60px 58px}
 .mascot[data-face="idle"] .eyes-open,.mascot[data-face="think"] .eyes-open{animation:blink 4.5s infinite}
 .mascot[data-face="happy"] .eyes-open,.mascot[data-face="party"] .eyes-open{display:none}
@@ -191,7 +208,7 @@ td.mono{font-weight:900;color:var(--accent)}
 .mascot[data-face="sad"] .brow-r{transform:rotate(-14deg);transform-origin:73px 46px}
 .mascot[data-face="think"] .brow-r{transform:translateY(-3px)}
 .mascot[data-face="happy"] .brows,.mascot[data-face="party"] .brows{transform:translateY(-3px)}
-@media (max-width:480px){.mascot{width:92px;height:92px}.bubble{max-width:170px;font-size:.92rem;margin-bottom:34px}.wrap{padding-bottom:150px}}
+@media (max-width:480px){.mascot{width:124px;height:124px}.bubble{font-size:1rem}}
 @media (max-width:380px){.flame{width:70px;height:70px}.flame svg{width:46px;height:52px}.st-main b{font-size:2.2rem}.dot{width:32px;height:32px}}
 
 /* ===== lobby: cartão de início ===== */
@@ -217,11 +234,6 @@ body.playing{overflow:hidden}
 .g-chip svg{width:15px;height:17px}
 .g-score{display:flex;justify-content:center;gap:8px}
 .g-score span{color:#fff;font-weight:800;font-size:.82rem;padding:4px 12px;border-radius:99px;background:rgba(255,255,255,.14)}
-.coach{min-height:132px;display:flex;align-items:center}
-.coach .mascot-wrap{position:static;flex-direction:row-reverse;align-items:center;gap:12px;width:100%;pointer-events:auto}
-.coach .mascot{width:132px;height:132px;border-color:#ffd166;box-shadow:0 12px 28px rgba(0,0,0,.28)}
-.coach .bubble{flex:1;max-width:none;margin:0;font-size:1.12rem;padding:14px 16px;border-radius:22px 22px 22px 6px;position:relative}
-.coach .bubble::before{content:"";position:absolute;left:-9px;bottom:16px;border:10px solid transparent;border-right-color:var(--card);border-left:0}
 .game .card{border-radius:30px}
 .game .done h2{font-size:1.8rem}
 .sum{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0 4px}
@@ -229,8 +241,7 @@ body.playing{overflow:hidden}
 .sum b{display:block;font-family:var(--display);font-weight:600;font-size:1.6rem;line-height:1.1}
 .sum span{font-size:.68rem;font-weight:900;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
 .sum .s1 b{color:var(--good)}.sum .s2 b{color:var(--mid)}.sum .s3 b{color:var(--bad)}
-@media (max-width:480px){.coach{min-height:112px}.coach .mascot{width:108px;height:108px}.coach .bubble{font-size:1rem}}
-
+@media (max-width:480px){
 
 /* movimento do mascote */
 .mascot .body{transform-origin:60px 120px}
@@ -247,7 +258,6 @@ body.playing{overflow:hidden}
   .mascot[data-face="happy"] .hand,.mascot[data-face="party"] .hand{transform:none;animation:wave .5s ease-in-out 4}
   .mascot[data-face="happy"] .burst,.mascot[data-face="party"] .burst{animation:burst .9s ease-out}
   .mascot[data-face="party"] .burst{animation:burst .9s ease-out 3}
-  .mascot-wrap{animation:float 4s ease-in-out infinite}
 }
 @keyframes breathe{0%,100%{transform:scaleY(1)}50%{transform:scaleY(1.02)}}
 @keyframes sway{0%,100%{transform:rotate(0)}25%{transform:rotate(-3deg)}75%{transform:rotate(3deg)}}
@@ -270,7 +280,7 @@ body.playing{overflow:hidden}
 <body>
 <div class="wrap">
   <header>
-    <h1>Vokabel 1000</h1>
+    <h1>Vokabel 1000 <small class="ver">v9</small></h1>
     <div class="langs" role="group" aria-label="Língua">
       <button id="lang-de" data-lang="de">Alemão</button>
       <button id="lang-it" data-lang="it">Italiano</button>
@@ -310,6 +320,38 @@ body.playing{overflow:hidden}
   </nav>
 
   <main id="view-train">
+    <div class="mascot-wrap">
+    <button class="mascot" id="mascot" data-face="idle" aria-label="Mascote. Toque para ele fazer um gesto.">
+      <svg viewBox="0 0 120 120" aria-hidden="true">
+        <circle cx="18" cy="22" r="3" fill="#fff" opacity=".7"/><circle cx="102" cy="30" r="2" fill="#fff" opacity=".7"/><path d="M98 92l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" fill="#fff" opacity=".8"/>
+        <g class="body"><path d="M22 120c2-18 16-26 38-26s36 8 38 26z" fill="#3fb8af"/>
+        <path d="M46 96l14 12 14-12" fill="none" stroke="#2e978f" stroke-width="3" stroke-linejoin="round"/>
+        <rect x="52" y="84" width="16" height="14" rx="6" fill="#efb791"/>
+        <g class="head"><circle cx="31" cy="62" r="6.5" fill="#f2bd98"/><circle cx="89" cy="62" r="6.5" fill="#f2bd98"/>
+        <ellipse cx="60" cy="60" rx="29" ry="32" fill="#f6c7a1"/>
+        <path d="M30 56c-3-22 10-36 30-36s34 12 30 36c-3-10-8-15-16-17-6 5-17 6-26 2-8 3-14 8-18 15z" fill="#6b3f22"/>
+        <path d="M52 22c4-6 14-8 20-4-6 0-10 2-12 6z" fill="#7d4a28"/>
+        <g class="brows"><path class="brow-l" d="M40 47q7-5 14-1" stroke="#5a3319" stroke-width="3.5" fill="none" stroke-linecap="round"/><path class="brow-r" d="M66 46q7-4 14 1" stroke="#5a3319" stroke-width="3.5" fill="none" stroke-linecap="round"/></g>
+        <g class="eyes-open"><ellipse cx="48" cy="58" rx="7" ry="8.5" fill="#fff"/><ellipse cx="72" cy="58" rx="7" ry="8.5" fill="#fff"/>
+          <g class="pupils"><circle cx="48.5" cy="59" r="5" fill="#7a4a26"/><circle cx="72.5" cy="59" r="5" fill="#7a4a26"/><circle cx="48.5" cy="59" r="2.4" fill="#2b1608"/><circle cx="72.5" cy="59" r="2.4" fill="#2b1608"/><circle cx="50.5" cy="56.5" r="1.7" fill="#fff"/><circle cx="74.5" cy="56.5" r="1.7" fill="#fff"/></g></g>
+        <g class="eyes-happy"><path d="M41 60q7-8 14 0M65 60q7-8 14 0" stroke="#2b1608" stroke-width="3.2" fill="none" stroke-linecap="round"/></g>
+        <g class="wink"><ellipse cx="72" cy="58" rx="8.4" ry="9.8" fill="#f6c7a1"/><path d="M65 60q7-6 14 0" stroke="#2b1608" stroke-width="3.2" fill="none" stroke-linecap="round"/></g>
+        <ellipse cx="38" cy="70" rx="5" ry="3" fill="#f0a18a" opacity=".35"/><ellipse cx="82" cy="70" rx="5" ry="3" fill="#f0a18a" opacity=".35"/>
+        <path d="M57 64q3 6 6 0" fill="#eaa983"/><ellipse cx="60" cy="67" rx="4.5" ry="3.2" fill="#eeac86"/>
+        <path d="M47 75c4-4 9-4 13-2 4-2 9-2 13 2-4 1-8 0-13-1-5 1-9 2-13 1z" fill="#5a3319"/>
+        <path class="x x-idle" d="M52 80q8 6 16 0" stroke="#7a3b2a" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+        <g class="x x-happy"><path d="M50 79q10 13 20 0z" fill="#7a2f2f"/><path d="M54 84q6 4 12 0q-6-2-12 0z" fill="#ff8a8a"/></g>
+        <ellipse class="x x-think" cx="63" cy="81" rx="3.4" ry="3" fill="#7a3b2a"/>
+        <ellipse class="x x-wow" cx="60" cy="81.5" rx="4.6" ry="5.6" fill="#7a2f2f"/>
+        <path class="x x-sad" d="M52 84q8-6 16 0" stroke="#7a3b2a" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+        <path d="M54 88c2 5 10 5 12 0 1 4-1 9-6 10-5-1-7-6-6-10z" fill="#5a3319"/></g>
+        <g class="hand"><path d="M86 120l6-18" stroke="#3fb8af" stroke-width="10" stroke-linecap="round"/><circle cx="93" cy="98" r="7" fill="#f6c7a1"/><path d="M89 92l-1-5M93 91v-6M97 92l1-5" stroke="#f6c7a1" stroke-width="3.2" stroke-linecap="round"/></g>
+        </g>
+        <g class="burst"><path d="M20 40l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" fill="#ffd166"/><path d="M100 50l1.5 4 4 1.5-4 1.5-1.5 4-1.5-4-4-1.5 4-1.5z" fill="#2bb3a3"/><circle cx="96" cy="20" r="3" fill="#6fa8ff"/><circle cx="24" cy="18" r="2.5" fill="#6fe0b0"/></g>
+      </svg>
+    </button>
+      <div class="bubble" id="bubble" aria-live="polite">Oi! Toque em mim.</div>
+    </div>
     <div class="overview">
       <div class="ov"><b id="ov-due">0</b><span>para hoje</span></div>
       <div class="ov"><b id="ov-learn">0</b><span>aprendendo</span></div>
@@ -349,41 +391,10 @@ body.playing{overflow:hidden}
       <span class="g-chip" title="Meta de hoje"><svg viewBox="0 0 16 18" aria-hidden="true"><path fill="#ffd166" d="M8 0c1 3 4 4 5 8 1.4 5-1.6 10-5 10S1.6 14 3 9.5C4 7 6 6.5 6 4c1 1 2 2.5 2 4 1-2 1-5 0-8z"/></svg><span id="g-goal">0/20</span></span>
     </div>
     <div class="g-score"><span id="g-ok">0 certas</span><span id="g-left">0 restantes</span></div>
-    <div class="coach" id="coach"></div>
     <div id="train"></div>
   </div>
 </section>
 
-<div class="mascot-wrap" aria-live="polite">
-  <div class="bubble" id="bubble" hidden></div>
-  <button class="mascot" id="mascot" data-face="idle" aria-label="Mascote de estudo. Toque para uma mensagem.">
-    <svg viewBox="0 0 120 120" aria-hidden="true">
-      <circle cx="18" cy="22" r="3" fill="#fff" opacity=".7"/><circle cx="102" cy="30" r="2" fill="#fff" opacity=".7"/><path d="M98 92l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" fill="#fff" opacity=".8"/>
-      <g class="body"><path d="M22 120c2-18 16-26 38-26s36 8 38 26z" fill="#3fb8af"/>
-      <path d="M46 96l14 12 14-12" fill="none" stroke="#2e978f" stroke-width="3" stroke-linejoin="round"/>
-      <rect x="52" y="84" width="16" height="14" rx="6" fill="#efb791"/>
-      <g class="head"><circle cx="31" cy="62" r="6.5" fill="#f2bd98"/><circle cx="89" cy="62" r="6.5" fill="#f2bd98"/>
-      <ellipse cx="60" cy="60" rx="29" ry="32" fill="#f6c7a1"/>
-      <path d="M30 56c-3-22 10-36 30-36s34 12 30 36c-3-10-8-15-16-17-6 5-17 6-26 2-8 3-14 8-18 15z" fill="#6b3f22"/>
-      <path d="M52 22c4-6 14-8 20-4-6 0-10 2-12 6z" fill="#7d4a28"/>
-      <g class="brows"><path class="brow-l" d="M40 47q7-5 14-1" stroke="#5a3319" stroke-width="3.5" fill="none" stroke-linecap="round"/><path class="brow-r" d="M66 46q7-4 14 1" stroke="#5a3319" stroke-width="3.5" fill="none" stroke-linecap="round"/></g>
-      <g class="eyes-open"><ellipse cx="48" cy="58" rx="7" ry="8.5" fill="#fff"/><ellipse cx="72" cy="58" rx="7" ry="8.5" fill="#fff"/>
-        <g class="pupils"><circle cx="48.5" cy="59" r="5" fill="#7a4a26"/><circle cx="72.5" cy="59" r="5" fill="#7a4a26"/><circle cx="48.5" cy="59" r="2.4" fill="#2b1608"/><circle cx="72.5" cy="59" r="2.4" fill="#2b1608"/><circle cx="50.5" cy="56.5" r="1.7" fill="#fff"/><circle cx="74.5" cy="56.5" r="1.7" fill="#fff"/></g></g>
-      <g class="eyes-happy"><path d="M41 60q7-8 14 0M65 60q7-8 14 0" stroke="#2b1608" stroke-width="3.2" fill="none" stroke-linecap="round"/></g>
-      <ellipse cx="38" cy="70" rx="5" ry="3" fill="#f0a18a" opacity=".35"/><ellipse cx="82" cy="70" rx="5" ry="3" fill="#f0a18a" opacity=".35"/>
-      <path d="M57 64q3 6 6 0" fill="#eaa983"/><ellipse cx="60" cy="67" rx="4.5" ry="3.2" fill="#eeac86"/>
-      <path d="M47 75c4-4 9-4 13-2 4-2 9-2 13 2-4 1-8 0-13-1-5 1-9 2-13 1z" fill="#5a3319"/>
-      <path class="x x-idle" d="M52 80q8 6 16 0" stroke="#7a3b2a" stroke-width="2.8" fill="none" stroke-linecap="round"/>
-      <g class="x x-happy"><path d="M50 79q10 13 20 0z" fill="#7a2f2f"/><path d="M54 84q6 4 12 0q-6-2-12 0z" fill="#ff8a8a"/></g>
-      <ellipse class="x x-think" cx="63" cy="81" rx="3.4" ry="3" fill="#7a3b2a"/>
-      <path class="x x-sad" d="M52 84q8-6 16 0" stroke="#7a3b2a" stroke-width="2.8" fill="none" stroke-linecap="round"/>
-      <path d="M54 88c2 5 10 5 12 0 1 4-1 9-6 10-5-1-7-6-6-10z" fill="#5a3319"/></g>
-      <g class="hand"><path d="M86 120l6-18" stroke="#3fb8af" stroke-width="10" stroke-linecap="round"/><circle cx="93" cy="98" r="7" fill="#f6c7a1"/><path d="M89 92l-1-5M93 91v-6M97 92l1-5" stroke="#f6c7a1" stroke-width="3.2" stroke-linecap="round"/></g>
-      </g>
-      <g class="burst"><path d="M20 40l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" fill="#ffd166"/><path d="M100 50l1.5 4 4 1.5-4 1.5-1.5 4-1.5-4-4-1.5 4-1.5z" fill="#2bb3a3"/><circle cx="96" cy="20" r="3" fill="#6fa8ff"/><circle cx="24" cy="18" r="2.5" fill="#6fe0b0"/></g>
-    </svg>
-  </button>
-</div>
 <script>
 const LANGS={
   de:{name:"Alemão",code:"DE",voice:"de-DE",arts:{m:"der",f:"die",n:"das"}},
@@ -466,31 +477,38 @@ function renderStreak(){
     h+=`<div class="day${i===0?" is-today":""}"><div class="dot${(act[k]||0)>=GOAL?" lit":""}${i===0?" today":""}">${MINI}</div>${i===0?"hoje":names[d.getDay()]}</div>`}
   $("week").innerHTML=h;
 }
-/* ===== mascote ===== */
-const SAY={
-  idle:["Bora estudar?","Tô aqui torcendo por você!","Uma carta de cada vez."],
-  think:["Você sabe essa?","Fala em voz alta!","Pensa no gancho..."],
-  reveal:["E aí, lembrou?","Seja sincero na nota!","Repete a frase comigo!"],
-  good:["Isso aí!","Mandou bem!","Arrasou!","Na mosca!","Que memória!"],
-  hard:["Quase! Amanhã ela volta.","Tá chegando lá!","Difícil, mas foi!"],
-  bad:["Tudo bem, ela volta já já.","Errar faz parte!","Na próxima você pega!"],
-  party:["Meta batida! A chama tá acesa!","Mais um dia na sequência!"],
-  done:["Fechou a partida! Bora mais uma?","Por hoje tá ótimo, mas eu topo mais!","Que partida! Orgulho de você."],
-  go:["Bora! Tô aqui do seu lado.","Vamos nessa! Uma de cada vez.","Valendo! Fala em voz alta, hein."],
-  freego:["Treino livre! Sem pressão.","Vamos repassar tudo!"],
-  thinknew:["Palavra nova! Chuta, vale tentar.","Essa é nova. Pensa num parente em português!","Primeira vez dessa. Arrisca!"]
-};
-let bubbleT=null;
-function mascot(face,kind){
-  const m=$("mascot");if(!m)return;
-  m.dataset.face=face;m.classList.remove("happy","sad","party");void m.offsetWidth;
-  if(face==="happy")m.classList.add("happy");else if(face==="sad")m.classList.add("sad");else if(face==="party")m.classList.add("party");
-  const list=SAY[kind||face];if(!list)return;
-  const b=$("bubble");b.textContent=list[Math.floor(Math.random()*list.length)];b.hidden=false;
-  b.style.animation="none";void b.offsetWidth;b.style.animation="";
-  clearTimeout(bubbleT);bubbleT=setTimeout(()=>{if(!playing)b.hidden=true;if(m.dataset.face!=="think")m.dataset.face="idle"},kind==="party"?5000:2800);
+/* ===== mascote (só no lobby, gestos ao tocar) ===== */
+const HI={de:"Hallo!",it:"Ciao!",fr:"Salut !"};
+function gestures(){
+  const t=act[dayKey()]||0,n=streakInfo();
+  const g=[
+    {c:"g-wave",f:"happy",t:HI[lang]+" Bora treinar?"},
+    {c:"g-jump",f:"happy",t:"Uhul! Hoje tem palavra nova!"},
+    {c:"g-spin",f:"party",t:"Wiiii! Rodopio de aquecimento!"},
+    {c:"g-wink",f:"wink",t:"Psiu... 15 minutinhos e a chama fica acesa."},
+    {c:"g-dance",f:"happy",t:"Dancinha do vocabulário!"},
+    {c:"g-think",f:"think",t:"Hmm... qual palavra eu vou lembrar hoje?"},
+    {c:"g-laugh",f:"happy",t:"Hahaha, para! Isso faz cócegas!"},
+    {c:"g-wow",f:"wow",t:"Opa! Que susto!"},
+    {c:"g-flex",f:"happy",t:`Já são ${total.toLocaleString("pt-BR")} palavras verificadas. Que memória!`},
+    {c:"g-nod",f:"idle",t:t>=GOAL?"Meta de hoje batida. Tô orgulhoso!":`Faltam ${GOAL-t} cartas para a meta de hoje.`}
+  ];
+  if(n>0)g.push({c:"g-jump",f:"party",t:`${n} dia${n>1?"s":""} seguido${n>1?"s":""}! Não para agora.`});
+  return g;
 }
-$("mascot").onclick=()=>mascot("happy","idle");
+let gestT=null,lastG=-1;
+function idleBubble(){
+  const t=act[dayKey()]||0;
+  return t>=GOAL?"Meta batida hoje! Quer jogar mais?":t?`Faltam ${GOAL-t} cartas. Bora!`:"Oi! Toque em mim.";
+}
+function gesture(){
+  const m=$("mascot"),b=$("bubble"),list=gestures();
+  let i;do{i=Math.floor(Math.random()*list.length)}while(i===lastG&&list.length>1);lastG=i;const g=list[i];
+  m.className="mascot";void m.offsetWidth;m.classList.add(g.c);m.dataset.face=g.f;
+  b.textContent=g.t;b.classList.remove("pop");void b.offsetWidth;b.classList.add("pop");
+  clearTimeout(gestT);gestT=setTimeout(()=>{m.className="mascot";m.dataset.face="idle";b.textContent=idleBubble()},3800);
+}
+$("mascot").onclick=gesture;
 function addActivity(){
   total++;store.set("vb-total",total);
   const k=dayKey();const before=act[k]||0;act[k]=before+1;
@@ -569,16 +587,12 @@ function startFree(){free=true;queue=pool().filter(c=>prog[c.id]).sort(()=>Math.
 function startGame(isFree){
   if(isFree)startFree();else{free=false;buildQueue()}
   cur=null;lastCardId=null;ses={ok:0,mid:0,bad:0};playing=true;
-  $("coach").appendChild(document.querySelector(".mascot-wrap"));
   $("game").hidden=false;document.body.classList.add("playing");$("game").scrollTop=0;
-  const b=$("bubble");b.hidden=false;
-  mascot("happy",isFree?"freego":"go");
   renderTrain();setTimeout(()=>$("g-close").focus({preventScroll:true}),50);
 }
 function closeGame(){
-  playing=false;clearTimeout(thinkT);
-  document.body.appendChild(document.querySelector(".mascot-wrap"));
-  $("game").hidden=true;document.body.classList.remove("playing");$("bubble").hidden=true;$("mascot").dataset.face="idle";
+  playing=false;
+  $("game").hidden=true;document.body.classList.remove("playing");$("bubble").textContent=idleBubble();
   cur=null;free=false;buildQueue();renderLobby();
 }
 function gameHud(){
@@ -596,10 +610,10 @@ function renderTrain(){
       <div class="more" style="margin-top:16px">${left&&!free?`<button class="btn primary" id="more10">Continuar com mais 10 novas</button>`:""}
       ${seen?`<button class="btn" id="freeplay">Treino livre: repassar o que já vi</button>`:""}
       <button class="btn" id="tolobby">Voltar ao lobby</button></div></div>`;
-    const m=$("more10");if(m)m.onclick=()=>{unlock10();cur=null;renderTrain();mascot("happy","go")};
-    const f=$("freeplay");if(f)f.onclick=()=>{startFree();cur=null;renderTrain();mascot("happy","freego")};
+    const m=$("more10");if(m)m.onclick=()=>{unlock10();cur=null;renderTrain()};
+    const f=$("freeplay");if(f)f.onclick=()=>{startFree();cur=null;renderTrain()};
     $("tolobby").onclick=closeGame;
-    if(lastCardId!=="done"){lastCardId="done";clearTimeout(thinkT);setTimeout(()=>{if(playing&&!cur)mascot(partyNext?"party":"happy",partyNext?"party":"done");partyNext=false},500)}
+    partyNext=false;
     return}
   const isNew=!prog[cur.id];const tg=LANGS[lang].code;
   const front=dir==="pt"?`<div class="prompt">${esc(cur.pt)}</div><p class="hintline">Diga em ${LANGS[lang].name.toLowerCase()}, em voz alta${cur.g?", com o artigo":""}.</p>`
@@ -616,18 +630,14 @@ function renderTrain(){
       <button class="btn b3" data-r="2">Sabia<small>${free?"treino livre":INTERVALS[Math.min(5,box+1)]+" dia(s)"}</small></button>
     </div></div>`}
   const pre=!revealed?`<div class="hook pre"><span class="tag">Pista · ${esc(cur.tipo||"gancho")}</span><p>${cur.hook?hintFor(cur):"Começa com <span class=\"mask\">"+esc(hideWord(dir==="pt"?cur.w:cur.pt))+"</span>"}</p></div>`:"";
-  if(!revealed&&lastCardId!==cur.id+dir){lastCardId=cur.id+dir;const id=lastCardId;clearTimeout(thinkT);
-    const first=ses.ok+ses.mid+ses.bad===0;
-    thinkT=setTimeout(()=>{if(playing&&cur&&!revealed&&cur.id+dir===id)mascot("think",isNew?"thinknew":"think")},first?1600:1900)}
   el.innerHTML=`<div class="card"><div class="card-top"><span class="pill">Nível ${cur.lv} · ${tg}</span><span class="pill">${free?"treino livre":isNew?"nova":"revisão"}</span></div>${front}${pre}${revealed?back:`<button class="btn primary" id="reveal">Mostrar resposta</button>`}</div>`;
-  if(!revealed){$("reveal").onclick=()=>{revealed=true;clearTimeout(thinkT);renderTrain();mascot("idle","reveal");if(dir==="pt")speak(full(cur))}}
+  if(!revealed){$("reveal").onclick=()=>{revealed=true;renderTrain();if(dir==="pt")speak(full(cur))}}
   else{$("say-w").onclick=()=>speak(full(cur));const se=$("say-e");if(se)se.onclick=()=>speak(cur.ex);
     el.querySelectorAll("[data-r]").forEach(b=>b.onclick=()=>grade(+b.dataset.r))}
 }
 function grade(r){
   addActivity();
   if(r===2)ses.ok++;else if(r===1)ses.mid++;else ses.bad++;
-  if(partyNext&&queue.length){partyNext=false;mascot("party","party")}else mascot(r===2?"happy":r===1?"idle":"sad",r===2?"good":r===1?"hard":"bad");
   if(free){if(r===0)queue.splice(Math.min(3,queue.length),0,cur);cur=null;renderTrain();$("game").scrollTop=0;return}
   const now=Date.now();const p=prog[cur.id]||{box:0,first:now};
   if(r===0){p.box=0;p.due=now;queue.splice(Math.min(3,queue.length),0,cur)}
@@ -709,7 +719,11 @@ $("g-close").onclick=closeGame;
 document.addEventListener("keydown",e=>{if(e.key==="Escape"&&playing)closeGame()});
 document.addEventListener("visibilitychange",()=>{if(!document.hidden){renderStreak();if(!playing){buildQueue();renderLobby()}}});
 renderStreak();setLang(LANGS[lang]?lang:"de");
-if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}))}
+if("serviceWorker" in navigator){
+  let reloaded=false;const hadCtrl=!!navigator.serviceWorker.controller;
+  navigator.serviceWorker.addEventListener("controllerchange",()=>{if(hadCtrl&&!reloaded&&!playing){reloaded=true;location.reload()}});
+  window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js",{updateViaCache:"none"}).then(r=>{r.update();document.addEventListener("visibilitychange",()=>{if(!document.hidden)r.update()})}).catch(()=>{}));
+}
 </script>
 </body>
 </html>
