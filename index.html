@@ -112,6 +112,10 @@ select,input[type=search],.seg button{font:inherit;font-weight:700;font-size:.9r
 .hook{background:linear-gradient(135deg,var(--m-bg),var(--rule));border-radius:20px;padding:14px 16px}
 .hook .tag{display:inline-block;font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;font-weight:900;color:#fff;background:var(--accent);padding:2px 10px;border-radius:99px;margin-bottom:6px}
 .hook p{margin:0;font-weight:600}
+.hook.pre{margin-top:14px;background:linear-gradient(135deg,#fff6db,var(--rule))}
+@media (prefers-color-scheme:dark){.hook.pre{background:linear-gradient(135deg,#3a3220,var(--rule))}}
+.hook.pre .tag{background:var(--mid)}
+.mask{font-weight:900;letter-spacing:.12em;color:var(--accent)}
 .ex{display:grid;gap:2px;padding-inline:4px}.ex .d{font-weight:800}.ex .p{color:var(--muted);font-size:.92rem}
 .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .btn{font:inherit;font-weight:800;cursor:pointer;border-radius:18px;padding:12px 18px;border:2px solid var(--line);background:var(--card);color:var(--fg);box-shadow:0 4px 0 var(--line);transition:transform .08s,box-shadow .08s}
@@ -204,7 +208,7 @@ body.playing{overflow:hidden}
 @media (prefers-color-scheme:dark){.game{background:radial-gradient(130% 70% at 50% 0%,#2c4f86 0%,#1a3158 50%,#101d33 100%)}}
 .game::before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 12% 30%,rgba(255,255,255,.12) 0 3px,transparent 4px),radial-gradient(circle at 85% 18%,rgba(255,255,255,.14) 0 2px,transparent 3px),radial-gradient(circle at 70% 70%,rgba(255,255,255,.1) 0 3px,transparent 4px),radial-gradient(circle at 25% 85%,rgba(255,255,255,.1) 0 2px,transparent 3px)}
 .game-in{position:relative;max-width:640px;margin:0 auto;padding:14px 16px 32px;min-height:100%;display:flex;flex-direction:column;gap:12px}
-.g-top{display:flex;align-items:center;gap:12px}
+.g-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
 .g-x{flex:none;width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.18);color:#fff;font:700 1.5rem/1 var(--display);cursor:pointer;display:grid;place-items:center}
 .g-x:active{background:rgba(255,255,255,.3)}
 .g-prog{flex:1;height:16px;border-radius:99px;background:rgba(255,255,255,.2);overflow:hidden;box-shadow:inset 0 2px 4px rgba(0,0,0,.15)}
@@ -342,7 +346,6 @@ body.playing{overflow:hidden}
   <div class="game-in">
     <div class="g-top">
       <button class="g-x" id="g-close" aria-label="Sair da partida e voltar ao lobby">×</button>
-      <div class="g-prog" role="progressbar" aria-label="Progresso da partida"><i id="g-bar"></i></div>
       <span class="g-chip" title="Meta de hoje"><svg viewBox="0 0 16 18" aria-hidden="true"><path fill="#ffd166" d="M8 0c1 3 4 4 5 8 1.4 5-1.6 10-5 10S1.6 14 3 9.5C4 7 6 6.5 6 4c1 1 2 2.5 2 4 1-2 1-5 0-8z"/></svg><span id="g-goal">0/20</span></span>
     </div>
     <div class="g-score"><span id="g-ok">0 certas</span><span id="g-left">0 restantes</span></div>
@@ -416,6 +419,25 @@ function article(w,g){
   if(lang==="it"){if(g==="f")return /^[aeiouàéèìòù]/i.test(w)?"l'":"la";if(/^[aeiouàéèìòù]/i.test(w))return "l'";if(/^(s[^aeiou]|z|gn|ps|x|y|pn)/i.test(w))return "lo";return "il"}
   if(lang==="fr"){if(v)return "l'";return g==="f"?"la":"le"}
   return "";
+}
+/* pista: gancho com a resposta escondida (só a primeira letra) */
+function hideWord(w){let first=true;return w.replace(/\p{L}/gu,ch=>{if(first){first=false;return ch}return "_"})}
+function maskHook(text,terms){
+  const L="\\p{L}";let out=String(text||"");
+  const list=[...new Set(terms.map(t=>String(t||"").trim()).filter(t=>t.length>=2))].sort((a,b)=>b.length-a.length);
+  const rx=t=>t.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
+  for(const t of list){
+    out=out.replace(new RegExp(`(^|[^${L}\u0001\u0002])(${rx(t)})(?=$|[^${L}])`,"giu"),(m,a,b)=>a+"\u0001"+hideWord(b)+"\u0002");
+    const tk=t.split(/\s+/);
+    if(tk.length===1&&t.length>=6){const stem=t.slice(0,t.length-2);
+      out=out.replace(new RegExp(`(^|[^${L}\u0001\u0002])(${rx(stem)}${L}*)`,"giu"),(m,a,b)=>a+"\u0001"+hideWord(b)+"\u0002")}
+  }
+  return esc(out).replace(/\u0001/g,'<span class="mask">').replace(/\u0002/g,"</span>");
+}
+function hintFor(c){
+  const terms=dir==="pt"?[c.w,full(c),...c.w.split(/\s+/).filter(x=>x.length>=3)]
+    :String(c.pt).split(/[,;/()]/).flatMap(x=>{x=x.trim();return [x,...x.split(/\s+/).filter(y=>y.length>=3)]});
+  return maskHook(c.hook,terms);
 }
 function full(c){const a=article(c.w,c.g);if(!a)return c.w;return a.endsWith("'")?a+c.w:a+" "+c.w}
 function label(c){const a=article(c.w,c.g);if(!a)return c.g?`<span class="g-${c.g}">${esc(c.w)}</span>`:esc(c.w);const sep=a.endsWith("'")?"":" ";return `<span class="g-${c.g}"><span class="art">${esc(a)}</span>${sep}${esc(c.w)}</span>`}
@@ -561,7 +583,6 @@ function closeGame(){
 }
 function gameHud(){
   const n=ses.ok+ses.mid+ses.bad,rest=queue.length+(cur?1:0);
-  $("g-bar").style.width=(n+rest?n/(n+rest)*100:100)+"%";
   $("g-ok").textContent=`${ses.ok} cert${ses.ok===1?"a":"as"}`;$("g-left").textContent=`${rest} restante${rest===1?"":"s"}`;
 }
 function renderTrain(){
@@ -594,10 +615,11 @@ function renderTrain(){
       <button class="btn b2" data-r="1">Difícil<small>amanhã</small></button>
       <button class="btn b3" data-r="2">Sabia<small>${free?"treino livre":INTERVALS[Math.min(5,box+1)]+" dia(s)"}</small></button>
     </div></div>`}
+  const pre=!revealed?`<div class="hook pre"><span class="tag">Pista · ${esc(cur.tipo||"gancho")}</span><p>${cur.hook?hintFor(cur):"Começa com <span class=\"mask\">"+esc(hideWord(dir==="pt"?cur.w:cur.pt))+"</span>"}</p></div>`:"";
   if(!revealed&&lastCardId!==cur.id+dir){lastCardId=cur.id+dir;const id=lastCardId;clearTimeout(thinkT);
     const first=ses.ok+ses.mid+ses.bad===0;
     thinkT=setTimeout(()=>{if(playing&&cur&&!revealed&&cur.id+dir===id)mascot("think",isNew?"thinknew":"think")},first?1600:1900)}
-  el.innerHTML=`<div class="card"><div class="card-top"><span class="pill">Nível ${cur.lv} · ${tg}</span><span class="pill">${free?"treino livre":isNew?"nova":"revisão"}</span></div>${front}${revealed?back:`<button class="btn primary" id="reveal">Mostrar resposta</button>`}</div>`;
+  el.innerHTML=`<div class="card"><div class="card-top"><span class="pill">Nível ${cur.lv} · ${tg}</span><span class="pill">${free?"treino livre":isNew?"nova":"revisão"}</span></div>${front}${pre}${revealed?back:`<button class="btn primary" id="reveal">Mostrar resposta</button>`}</div>`;
   if(!revealed){$("reveal").onclick=()=>{revealed=true;clearTimeout(thinkT);renderTrain();mascot("idle","reveal");if(dir==="pt")speak(full(cur))}}
   else{$("say-w").onclick=()=>speak(full(cur));const se=$("say-e");if(se)se.onclick=()=>speak(cur.ex);
     el.querySelectorAll("[data-r]").forEach(b=>b.onclick=()=>grade(+b.dataset.r))}
