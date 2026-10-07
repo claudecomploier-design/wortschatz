@@ -25,6 +25,6 @@ Arquivo de controle para retomar o trabalho se a sessão parar no meio.
 - [x] Plano e estrutura
 - [x] frases.js (motor + tela) e integração no index.html (aba Frases)
 - [x] Frases alemão (130 frases, validadas; simulação em /tmp: progressão ok)
-- [ ] Frases italiano
+- [x] Frases italiano (128 frases, validadas e simuladas)
 - [ ] Frases francês
 - [ ] Verificação no navegador e publicação
