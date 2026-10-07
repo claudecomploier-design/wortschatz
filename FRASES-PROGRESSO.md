@@ -27,4 +27,10 @@ Arquivo de controle para retomar o trabalho se a sessão parar no meio.
 - [x] Frases alemão (130 frases, validadas; simulação em /tmp: progressão ok)
 - [x] Frases italiano (128 frases, validadas e simuladas)
 - [x] Frases francês (130 frases, validadas e simuladas)
-- [ ] Verificação no navegador e publicação
+- [x] Verificação no navegador (Playwright, desktop e celular, sem erros) e publicação
+
+## Próximos passos sugeridos
+
+- Ampliar frases para cobrir palavras 300 a 1000 (hoje cada língua usa cerca de 230 a 250 das 1000).
+- Revisar naturalidade das frases com o usuário (botão de reportar frase).
+- Áudio por bloco e modo só ouvir.
