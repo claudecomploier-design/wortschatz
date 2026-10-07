@@ -359,12 +359,33 @@ body.playing{overflow:hidden}
 @keyframes spDot{to{transform:scale(1);opacity:1}}
 @keyframes spConf{0%{opacity:1;transform:translate(0,0) rotate(0)}100%{opacity:0;transform:translate(var(--x),var(--y)) rotate(var(--r))}}
 @media (prefers-reduced-motion:reduce){.sp-ring .fg{stroke-dashoffset:0}.sp-core .fl{fill:var(--accent-hi)}.sp-late{opacity:1;transform:none}.sp-week .dot.now{transform:none;opacity:1}}
+
+/* ===== personagem / avatares ===== */
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.me{width:40px;height:40px;flex:none;border-radius:50%;border:1px solid var(--accent);background:var(--raised);padding:0;overflow:hidden;cursor:pointer}
+.me svg,.me img{width:100%;height:100%;display:block;object-fit:cover}
+.mascot img{width:100%;height:100%;display:block;object-fit:cover;border-radius:50%}
+.sp-fox img{width:100%;height:100%;object-fit:cover;border-radius:50%;border:2px solid var(--accent)}
+.bubble-col{display:grid;gap:8px;justify-items:start;min-width:0}
+.av-change{color:var(--muted)}
+.avp{position:fixed;inset:0;z-index:90;display:grid;place-items:end center;background:rgba(10,13,18,.78);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+.avp-in{width:100%;max-width:560px;max-height:88vh;overflow:auto;background:var(--surface);border:1px solid var(--line-soft);border-radius:16px 16px 0 0;padding:20px 20px calc(24px + env(safe-area-inset-bottom,0px));display:grid;gap:12px;animation:avUp .3s cubic-bezier(.2,.8,.2,1)}
+@media (min-width:600px){.avp{place-items:center}.avp-in{border-radius:16px}}
+.avp-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.avp h2{font-family:var(--serif);font-weight:500;font-size:1.4rem;margin:0}
+.avp-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.avp-grid button{position:relative;aspect-ratio:1;max-width:100%;border-radius:50%;border:2px solid transparent;padding:0;overflow:hidden;background:var(--raised);cursor:pointer;transition:transform .15s}
+.avp-grid button:hover{transform:scale(1.04)}
+.avp-grid button[aria-pressed="true"]{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.avp-grid img,.avp-grid svg{width:100%;height:100%;display:block;object-fit:cover}
+@keyframes avUp{from{transform:translateY(40px);opacity:.4}to{transform:none;opacity:1}}
+@media (max-width:420px){.avp-grid{gap:10px}.me{width:34px;height:34px}}
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <h1>Vokabel 1000 <small class="ver">v12</small></h1>
+    <div class="brand"><button class="me" id="me" aria-label="Escolher personagem" title="Escolher personagem"></button><h1>Vokabel 1000 <small class="ver">v12</small></h1></div>
     <div class="langs" role="group" aria-label="Língua">
       <button id="lang-de" data-lang="de">Alemão</button>
       <button id="lang-it" data-lang="it">Italiano</button>
@@ -433,7 +454,7 @@ body.playing{overflow:hidden}
         <g class="burst"><path d="M20 40l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" fill="#c8a464"/><path d="M100 50l1.5 4 4 1.5-4 1.5-1.5 4-1.5-4-4-1.5 4-1.5z" fill="#c8a464"/><circle cx="96" cy="20" r="3" fill="#c8a464"/><circle cx="24" cy="18" r="2.5" fill="#c8a464"/></g>
       </svg>
     </button>
-      <div class="bubble" id="bubble" aria-live="polite">Oi! Toque em mim.</div>
+      <div class="bubble-col"><div class="bubble" id="bubble" aria-live="polite">Oi! Toque em mim.</div><button class="btn small av-change" id="av-change">Trocar personagem</button></div>
     </div>
     <div class="overview">
       <div class="ov"><b id="ov-due">0</b><span>para hoje</span></div>
@@ -493,6 +514,14 @@ body.playing{overflow:hidden}
     <p class="sp-late" id="sp-sub">Volte amanhã para manter a chama acesa.</p>
     <div class="sp-week sp-late" id="sp-week"></div>
     <button class="btn primary sp-late" id="sp-ok">Continuar</button>
+  </div>
+</div>
+
+<div class="avp" id="avp" hidden role="dialog" aria-modal="true" aria-labelledby="avp-title">
+  <div class="avp-in">
+    <div class="avp-head"><h2 id="avp-title">Escolha seu personagem</h2><button class="g-x" id="avp-x" aria-label="Fechar">×</button></div>
+    <p class="hintline">A raposa gatuna é animada e muda de expressão. As outras são ilustrações.</p>
+    <div class="avp-grid" id="avp-grid"></div>
   </div>
 </div>
 <script>
@@ -882,6 +911,32 @@ $("dir-tg").onclick=()=>{dir="tg";$("dir-tg").setAttribute("aria-pressed",true);
 $("g-close").onclick=closeGame;
 document.addEventListener("keydown",e=>{if(e.key==="Escape"&&playing)closeGame()});
 document.addEventListener("visibilitychange",()=>{if(!document.hidden){renderStreak();if(!playing){buildQueue();renderLobby()}}});
+
+/* ===== personagem / avatares ===== */
+const AVATARS=[["fox","Raposa gatuna"],["01-cowboy","Cowboy"],["02-gorro","De gorro"],["03-chuva","Na chuva"],["04-mago","Mago"],["05-esboco","Esboço"],["06-bone","De boné"],["07-explorador","Explorador"],["08-surfista","Surfista"],["09-neve","Na neve"],["10-girassol","Girassóis"],["11-acampamento","Acampamento"],["12-outono","Outono"],["13-leitor","Leitor"],["14-pirata","Pirata"],["15-rede","Na rede"],["16-noite","Noite na cidade"]];
+const FOX_SVG=$("mascot").innerHTML;
+let avatar=store.get("vb-avatar","fox");if(!AVATARS.some(a=>a[0]===avatar))avatar="fox";
+const avSrc=id=>`img/av/${id}.webp`;
+const avHTML=(id,alt)=>id==="fox"?FOX_SVG:`<img src="${avSrc(id)}" alt="${esc(alt||"")}" decoding="async">`;
+function applyAvatar(){
+  const a=AVATARS.find(x=>x[0]===avatar)||AVATARS[0];
+  $("mascot").innerHTML=avHTML(avatar,"");$("mascot").classList.toggle("is-img",avatar!=="fox");
+  $("mascot").setAttribute("aria-label",`${a[1]}, seu personagem. Toque para um gesto.`);
+  $("me").innerHTML=avHTML(avatar,"");
+}
+function openAvatars(){
+  const g=$("avp-grid");
+  g.innerHTML=AVATARS.map(([id,name])=>`<button data-av="${id}" aria-pressed="${id===avatar}" aria-label="${esc(name)}" title="${esc(name)}">${id==="fox"?`<span class="mascot" data-face="idle" style="display:block;width:100%;height:100%;border:0;border-radius:50%">${FOX_SVG}</span>`:`<img src="${avSrc(id)}" alt="" loading="lazy" decoding="async">`}</button>`).join("");
+  g.querySelectorAll("[data-av]").forEach(b=>b.onclick=()=>{avatar=b.dataset.av;store.set("vb-avatar",avatar);applyAvatar();
+    g.querySelectorAll("[data-av]").forEach(x=>x.setAttribute("aria-pressed",x===b));setTimeout(closeAvatars,180);
+    try{$("bubble").textContent=avatar==="fox"?"A gatuna voltou!":"Gostou do visual novo?"}catch(e){}});
+  $("avp").hidden=false;setTimeout(()=>{const s=g.querySelector('[aria-pressed="true"]');if(s)s.focus({preventScroll:true})},50);
+}
+function closeAvatars(){$("avp").hidden=true}
+$("me").onclick=openAvatars;$("av-change").onclick=openAvatars;$("avp-x").onclick=closeAvatars;
+$("avp").addEventListener("click",e=>{if(e.target.id==="avp")closeAvatars()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("avp").hidden)closeAvatars()});
+applyAvatar();
 renderStreak();setLang(LANGS[lang]?lang:"de");
 /* prévia da comemoração: não altera nenhum dado */
 function previewStreak(){const n=streakInfo();const t=act[dayKey()]||0;celebrateStreak(t>=GOAL?Math.max(1,n):n+1)}
