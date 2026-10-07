@@ -42,38 +42,48 @@ body{margin:0;min-height:100vh;background:linear-gradient(170deg,var(--bg1) 0%,v
 [hidden]{display:none!important}
 .wrap{max-width:720px;margin:0 auto;padding-inline:16px;padding-block:18px 150px}
 header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px}
-h1{font-family:var(--display);font-weight:700;font-size:1.9rem;margin:0;line-height:1;color:var(--accent);display:flex;align-items:center;gap:8px}
-h1 .spark{width:26px;height:26px}
+h1{font-family:var(--display);font-weight:700;font-size:1.9rem;margin:0;line-height:1;color:var(--accent)}
 .langs{display:flex;gap:6px;background:var(--card);padding:5px;border-radius:99px;box-shadow:var(--shadow)}
 .langs button{font:inherit;font-weight:800;font-size:.88rem;cursor:pointer;padding:7px 13px;border-radius:99px;border:0;background:transparent;color:var(--muted);transition:background .2s,color .2s}
 .langs button[aria-pressed="true"]{background:var(--accent);color:var(--accent-fg)}
 
 /* ===== sequência ===== */
-.streak{margin-top:16px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;align-items:center;background:linear-gradient(135deg,#fff8e6 0%,#ffeedd 100%);border-radius:28px;padding:16px 18px;box-shadow:var(--shadow);position:relative;overflow:hidden}
-@media (prefers-color-scheme:dark){.streak{background:linear-gradient(135deg,#33291c 0%,#2c2a22 100%)}}
-.flame{display:grid;justify-items:center;gap:0;min-width:92px}
-.flame svg{width:64px;height:72px;overflow:visible;transform-origin:50% 90%}
+.streak{margin-top:16px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px 16px;align-items:center;background:linear-gradient(140deg,#fff7e3 0%,#ffe9d6 60%,#ffe2d9 100%);border-radius:28px;padding:18px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.streak::after{content:"";position:absolute;right:-40px;top:-40px;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,rgba(255,181,71,.28),transparent 70%);pointer-events:none}
+@media (prefers-color-scheme:dark){.streak{background:linear-gradient(140deg,#33291c 0%,#2f2620 60%,#2c2324 100%)}}
+.flame{display:grid;place-items:center;width:84px;height:84px;border-radius:50%;background:rgba(255,255,255,.7);box-shadow:inset 0 -3px 0 rgba(255,122,69,.15)}
+@media (prefers-color-scheme:dark){.flame{background:rgba(0,0,0,.22)}}
+.flame svg{width:56px;height:63px;overflow:visible;transform-origin:50% 90%}
 .flame.on svg{animation:wiggle 2.6s ease-in-out infinite}
-.flame>div{display:grid;justify-items:center}
-.flame b{font-family:var(--display);font-size:2.2rem;line-height:1;color:var(--flame);font-variant-numeric:tabular-nums;margin-top:-4px}
-.flame span{font-size:.72rem;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
-.flame.off b{color:var(--muted)}
 .flame .fl-face-off{display:none}.flame.off .fl-face-off{display:inline}.flame.off .fl-face-on{display:none}.flame.off .fl-out{fill:#cfd9e3}.flame.off .fl-in{fill:#e9eff4}
-.goal{min-width:0;display:grid;gap:8px}
+.st-nums{min-width:0;display:grid;gap:8px}
+.st-main{display:flex;align-items:baseline;gap:8px}
+.st-main b{font-family:var(--display);font-size:2.6rem;line-height:1;color:var(--flame);font-variant-numeric:tabular-nums}
+.st-main span{font-family:var(--display);font-weight:600;font-size:1.05rem}
+.streak.cold .st-main b{color:var(--muted)}
+.st-sub{display:flex;flex-wrap:wrap;gap:8px}
+.st-sub div{display:flex;align-items:baseline;gap:5px;background:rgba(255,255,255,.7);padding:4px 11px;border-radius:99px}
+@media (prefers-color-scheme:dark){.st-sub div{background:rgba(0,0,0,.22)}}
+.st-sub b{font-family:var(--display);font-weight:600;font-size:1rem;font-variant-numeric:tabular-nums}
+.st-sub span{font-size:.72rem;font-weight:800;color:var(--muted)}
+.goal{grid-column:1/-1;min-width:0;display:grid;gap:8px}
 .goal-top{display:flex;justify-content:space-between;align-items:baseline;gap:8px;font-weight:800}
 .goal-top span{font-family:var(--display);font-size:1.05rem}
 .goal-top b{font-variant-numeric:tabular-nums;color:var(--flame)}
-.bar{height:16px;border-radius:99px;background:rgba(255,255,255,.75);overflow:hidden;box-shadow:inset 0 2px 4px rgba(45,42,74,.08)}
+.bar{height:14px;border-radius:99px;background:rgba(255,255,255,.75);overflow:hidden;box-shadow:inset 0 2px 4px rgba(45,42,74,.08)}
 @media (prefers-color-scheme:dark){.bar{background:rgba(0,0,0,.25)}}
 .bar i{display:block;height:100%;border-radius:99px;background:repeating-linear-gradient(-45deg,var(--flame) 0 10px,var(--flame-2) 10px 20px);background-size:28px 28px;transition:width .5s cubic-bezier(.34,1.56,.64,1);animation:candy 1.2s linear infinite}
-.week{display:flex;gap:4px;justify-content:space-between}
-.day{display:grid;justify-items:center;gap:2px;font-size:.66rem;font-weight:800;color:var(--muted);text-transform:uppercase}
-.dot{width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.8);display:grid;place-items:center;box-shadow:inset 0 -2px 0 rgba(45,42,74,.08)}
-@media (prefers-color-scheme:dark){.dot{background:rgba(0,0,0,.25)}}
-.dot svg{width:16px;height:18px;display:none}
-.dot.done{background:linear-gradient(180deg,var(--flame-2),var(--flame))}
-.dot.done svg{display:block}
-.dot.today{outline:2.5px dashed var(--flame);outline-offset:1px}
+.week{grid-column:1/-1;display:grid;grid-template-columns:repeat(7,1fr);gap:6px;background:rgba(255,255,255,.55);border-radius:20px;padding:10px 8px 8px}
+@media (prefers-color-scheme:dark){.week{background:rgba(0,0,0,.18)}}
+.day{display:grid;justify-items:center;gap:5px;font-size:.68rem;font-weight:900;color:var(--muted);text-transform:uppercase;letter-spacing:.03em}
+.dot{width:36px;height:36px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:inset 0 0 0 2px var(--line);transition:transform .2s}
+@media (prefers-color-scheme:dark){.dot{background:rgba(255,255,255,.06)}}
+.dot svg{width:16px;height:18px;opacity:0}
+.dot.lit{background:linear-gradient(160deg,var(--flame-2),var(--flame));box-shadow:0 3px 0 #d9612f}
+.dot.lit svg{opacity:1}
+.dot.today{box-shadow:inset 0 0 0 3px var(--flame)}
+.dot.today.lit{box-shadow:0 3px 0 #d9612f,0 0 0 3px rgba(255,122,69,.3)}
+.day.is-today{color:var(--flame)}
 .banner{margin-top:12px;background:linear-gradient(90deg,var(--flame),var(--flame-2));color:#fff;border-radius:20px;padding:12px 16px;font-family:var(--display);font-size:1.05rem;text-align:center;box-shadow:var(--shadow);animation:pop .5s cubic-bezier(.34,1.56,.64,1)}
 
 /* ===== abas ===== */
@@ -157,7 +167,7 @@ td.mono{font-weight:900;color:var(--accent)}
 
 /* ===== mascote ===== */
 .mascot-wrap{position:fixed;right:max(14px,env(safe-area-inset-right,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:20;display:flex;align-items:flex-end;gap:8px;pointer-events:none}
-.mascot{pointer-events:auto;width:88px;height:88px;border-radius:50%;border:4px solid #fff;background:linear-gradient(160deg,#bfe3ff,#c9f1e4);box-shadow:0 10px 24px rgba(31,79,163,.28),0 0 0 4px rgba(47,111,214,.15);padding:0;cursor:pointer;overflow:hidden;transition:transform .25s cubic-bezier(.34,1.56,.64,1)}
+.mascot{pointer-events:auto;width:112px;height:112px;flex:none;border-radius:50%;border:4px solid #fff;background:linear-gradient(160deg,#bfe3ff,#c9f1e4);box-shadow:0 10px 24px rgba(31,79,163,.28),0 0 0 4px rgba(47,111,214,.15);padding:0;cursor:pointer;overflow:hidden;transition:transform .25s cubic-bezier(.34,1.56,.64,1)}
 .mascot svg{width:100%;height:100%;display:block}
 .bubble{pointer-events:auto;max-width:200px;background:var(--card);color:var(--fg);font-family:var(--display);font-weight:500;font-size:.98rem;line-height:1.25;padding:10px 14px;border-radius:20px 20px 6px 20px;box-shadow:var(--shadow);margin-bottom:40px;animation:pop .35s cubic-bezier(.34,1.56,.64,1)}
 .mascot.happy{animation:hop .6s cubic-bezier(.34,1.56,.64,1)}
@@ -177,8 +187,45 @@ td.mono{font-weight:900;color:var(--accent)}
 .mascot[data-face="sad"] .brow-r{transform:rotate(-14deg);transform-origin:73px 46px}
 .mascot[data-face="think"] .brow-r{transform:translateY(-3px)}
 .mascot[data-face="happy"] .brows,.mascot[data-face="party"] .brows{transform:translateY(-3px)}
-@media (max-width:480px){.mascot{width:68px;height:68px}.bubble{max-width:160px;font-size:.9rem;margin-bottom:28px}.wrap{padding-bottom:130px}}
-@media (max-width:420px){.streak{grid-template-columns:1fr}.flame{grid-auto-flow:column;align-items:center;justify-content:center;gap:10px}}
+@media (max-width:480px){.mascot{width:92px;height:92px}.bubble{max-width:170px;font-size:.92rem;margin-bottom:34px}.wrap{padding-bottom:150px}}
+@media (max-width:380px){.flame{width:70px;height:70px}.flame svg{width:46px;height:52px}.st-main b{font-size:2.2rem}.dot{width:32px;height:32px}}
+
+/* ===== lobby: cartão de início ===== */
+.start{text-align:center;padding:26px 20px}
+.start h2{font-family:var(--display);font-weight:600;font-size:1.6rem;margin:0 0 4px;color:var(--accent)}
+.start .counts{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin:12px 0 4px}
+.start .counts span{font-weight:800;font-size:.85rem;padding:5px 12px;border-radius:99px;background:var(--rule)}
+.btn.play{font-family:var(--display);font-size:1.45rem;font-weight:600;padding:16px 18px;width:100%;margin-top:18px;border:0;color:#fff;background:linear-gradient(180deg,#3fd29a,var(--good));box-shadow:0 6px 0 var(--good-shadow);border-radius:22px}
+.btn.play:active{box-shadow:0 2px 0 var(--good-shadow);transform:translateY(4px)}
+
+/* ===== tela de jogo ===== */
+body.playing{overflow:hidden}
+.game{position:fixed;inset:0;z-index:30;overflow-y:auto;background:radial-gradient(130% 70% at 50% 0%,#6a9cf5 0%,#2f6fd6 45%,#1d4a9c 100%);padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){.game{background:radial-gradient(130% 70% at 50% 0%,#2c4f86 0%,#1a3158 50%,#101d33 100%)}}
+.game::before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 12% 30%,rgba(255,255,255,.12) 0 3px,transparent 4px),radial-gradient(circle at 85% 18%,rgba(255,255,255,.14) 0 2px,transparent 3px),radial-gradient(circle at 70% 70%,rgba(255,255,255,.1) 0 3px,transparent 4px),radial-gradient(circle at 25% 85%,rgba(255,255,255,.1) 0 2px,transparent 3px)}
+.game-in{position:relative;max-width:640px;margin:0 auto;padding:14px 16px 32px;min-height:100%;display:flex;flex-direction:column;gap:12px}
+.g-top{display:flex;align-items:center;gap:12px}
+.g-x{flex:none;width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.18);color:#fff;font:700 1.5rem/1 var(--display);cursor:pointer;display:grid;place-items:center}
+.g-x:active{background:rgba(255,255,255,.3)}
+.g-prog{flex:1;height:16px;border-radius:99px;background:rgba(255,255,255,.2);overflow:hidden;box-shadow:inset 0 2px 4px rgba(0,0,0,.15)}
+.g-prog i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,#ffd166,#ffb547);box-shadow:inset 0 -3px 0 rgba(0,0,0,.08);transition:width .45s cubic-bezier(.34,1.56,.64,1)}
+.g-chip{flex:none;display:flex;align-items:center;gap:5px;background:rgba(255,255,255,.18);color:#fff;font-family:var(--display);font-weight:600;font-size:1.05rem;padding:7px 13px;border-radius:99px;font-variant-numeric:tabular-nums}
+.g-chip svg{width:15px;height:17px}
+.g-score{display:flex;justify-content:center;gap:8px}
+.g-score span{color:#fff;font-weight:800;font-size:.82rem;padding:4px 12px;border-radius:99px;background:rgba(255,255,255,.14)}
+.coach{min-height:132px;display:flex;align-items:center}
+.coach .mascot-wrap{position:static;flex-direction:row-reverse;align-items:center;gap:12px;width:100%;pointer-events:auto}
+.coach .mascot{width:132px;height:132px;border-color:#ffd166;box-shadow:0 12px 28px rgba(0,0,0,.28)}
+.coach .bubble{flex:1;max-width:none;margin:0;font-size:1.12rem;padding:14px 16px;border-radius:22px 22px 22px 6px;position:relative}
+.coach .bubble::before{content:"";position:absolute;left:-9px;bottom:16px;border:10px solid transparent;border-right-color:var(--card);border-left:0}
+.game .card{border-radius:30px}
+.game .done h2{font-size:1.8rem}
+.sum{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:14px 0 4px}
+.sum div{border-radius:18px;padding:10px 6px;background:var(--rule)}
+.sum b{display:block;font-family:var(--display);font-weight:600;font-size:1.6rem;line-height:1.1}
+.sum span{font-size:.68rem;font-weight:900;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.sum .s1 b{color:var(--good)}.sum .s2 b{color:var(--mid)}.sum .s3 b{color:var(--bad)}
+@media (max-width:480px){.coach{min-height:112px}.coach .mascot{width:108px;height:108px}.coach .bubble{font-size:1rem}}
 
 
 /* movimento do mascote */
@@ -219,7 +266,7 @@ td.mono{font-weight:900;color:var(--accent)}
 <body>
 <div class="wrap">
   <header>
-    <h1><svg class="spark" viewBox="0 0 24 24" aria-hidden="true"><path fill="#ffd166" d="M12 1l2.6 7.4L22 11l-7.4 2.6L12 21l-2.6-7.4L2 11l7.4-2.6z"/></svg>Vokabel 1000</h1>
+    <h1>Vokabel 1000</h1>
     <div class="langs" role="group" aria-label="Língua">
       <button id="lang-de" data-lang="de">Alemão</button>
       <button id="lang-it" data-lang="it">Italiano</button>
@@ -236,13 +283,19 @@ td.mono{font-weight:900;color:var(--accent)}
         <g class="fl-face-on"><circle cx="26" cy="50" r="2.6" fill="#4a2a2a"/><circle cx="38" cy="50" r="2.6" fill="#4a2a2a"/><circle cx="27" cy="49" r=".9" fill="#fff"/><circle cx="39" cy="49" r=".9" fill="#fff"/><path d="M28 56q4 4 8 0" stroke="#4a2a2a" stroke-width="2.2" fill="none" stroke-linecap="round"/><ellipse cx="22" cy="55" rx="2.6" ry="1.6" fill="#ff9c6b" opacity=".5"/><ellipse cx="42" cy="55" rx="2.6" ry="1.6" fill="#ff9c6b" opacity=".5"/></g>
         <g class="fl-face-off"><path d="M23 51q3 2 6 0M35 51q3 2 6 0" stroke="#56677a" stroke-width="2.2" fill="none" stroke-linecap="round"/><path d="M29 58h6" stroke="#56677a" stroke-width="2.2" stroke-linecap="round"/><text x="44" y="40" font-family="Fredoka,sans-serif" font-size="9" fill="#8597a8">z</text><text x="49" y="33" font-family="Fredoka,sans-serif" font-size="7" fill="#8597a8">z</text></g>
       </svg>
-      <div><b id="streak-n">0</b><span id="streak-l">dias seguidos</span></div>
+    </div>
+    <div class="st-nums">
+      <div class="st-main"><b id="streak-n">0</b><span id="streak-l">dias seguidos</span></div>
+      <div class="st-sub">
+        <div><b id="total-n">0</b><span>palavras verificadas</span></div>
+        <div><b id="best-n">0</b><span>recorde de dias</span></div>
+      </div>
     </div>
     <div class="goal">
       <div class="goal-top"><span id="goal-msg">Meta de hoje</span><b id="goal-t">0 / 20</b></div>
       <div class="bar"><i id="goal-bar" style="width:0%"></i></div>
-      <div class="week" id="week"></div>
     </div>
+    <div class="week" id="week"></div>
   </section>
   <div class="banner" id="banner" hidden></div>
 
@@ -265,7 +318,7 @@ td.mono{font-weight:900;color:var(--accent)}
         <button id="dir-tg" aria-pressed="false"><span class="lcode">DE</span> → PT</button>
       </div>
     </div>
-    <div id="train"><div class="loading">Carregando palavras...</div></div>
+    <div id="lobby"><div class="loading">Carregando palavras...</div></div>
   </main>
 
   <main id="view-list" hidden>
@@ -284,6 +337,19 @@ td.mono{font-weight:900;color:var(--accent)}
 
   <main id="view-method" hidden><div class="method" id="method"></div></main>
 </div>
+
+<section class="game" id="game" hidden aria-label="Partida">
+  <div class="game-in">
+    <div class="g-top">
+      <button class="g-x" id="g-close" aria-label="Sair da partida e voltar ao lobby">×</button>
+      <div class="g-prog" role="progressbar" aria-label="Progresso da partida"><i id="g-bar"></i></div>
+      <span class="g-chip" title="Meta de hoje"><svg viewBox="0 0 16 18" aria-hidden="true"><path fill="#ffd166" d="M8 0c1 3 4 4 5 8 1.4 5-1.6 10-5 10S1.6 14 3 9.5C4 7 6 6.5 6 4c1 1 2 2.5 2 4 1-2 1-5 0-8z"/></svg><span id="g-goal">0/20</span></span>
+    </div>
+    <div class="g-score"><span id="g-ok">0 certas</span><span id="g-left">0 restantes</span></div>
+    <div class="coach" id="coach"></div>
+    <div id="train"></div>
+  </div>
+</section>
 
 <div class="mascot-wrap" aria-live="polite">
   <div class="bubble" id="bubble" hidden></div>
@@ -338,6 +404,8 @@ let lang=store.get("vb-lang","de"), dir="pt", level="all", listLevel="1";
 let CARDS=[], prog={}, fixes={}, queue=[], cur=null, revealed=false, free=false, extraNew=0;
 let act=store.get("vb-activity",{}); // {"AAAA-MM-DD": cartas respondidas}
 let best=store.get("vb-best",0);let partyNext=false,lastCardId=null;
+let total=store.get("vb-total",null);if(total==null){total=Object.values(act).reduce((a,b)=>a+(+b||0),0);store.set("vb-total",total)}
+let playing=false,ses={ok:0,mid:0,bad:0},thinkT=null;
 
 /* ===== artigo ===== */
 function article(w,g){
@@ -364,13 +432,16 @@ function renderStreak(){
   const n=streakInfo();if(n>best){best=n;store.set("vb-best",best)}
   const t=act[dayKey()]||0;const doneToday=t>=GOAL;
   $("streak-n").textContent=n;$("streak-l").textContent=n===1?"dia seguido":"dias seguidos";
+  $("total-n").textContent=total.toLocaleString("pt-BR");$("best-n").textContent=best;
+  document.querySelector(".streak").classList.toggle("cold",n===0);
+  $("g-goal").textContent=`${Math.min(t,GOAL)}/${GOAL}`;
   const fl=$("flame");fl.classList.toggle("off",!doneToday);fl.classList.toggle("on",doneToday);
   $("goal-t").textContent=`${Math.min(t,GOAL)} / ${GOAL}`+(t>GOAL?` +${t-GOAL}`:"");
   $("goal-msg").textContent=doneToday?"Meta batida hoje!":t===0?(n>0?"Não deixe a chama apagar!":"Vamos acender a chama?"):`Faltam ${GOAL-t} cartas`;
   $("goal-bar").style.width=Math.min(100,t/GOAL*100)+"%";
   const names=["dom","seg","ter","qua","qui","sex","sáb"];let h="";
   for(let i=6;i>=0;i--){const d=new Date();d.setHours(12);d.setDate(d.getDate()-i);const k=dayKey(d.getTime());
-    h+=`<div class="day"><div class="dot ${(act[k]||0)>=GOAL?"done":""} ${i===0?"today":""}">${MINI}</div>${names[d.getDay()]}</div>`}
+    h+=`<div class="day${i===0?" is-today":""}"><div class="dot${(act[k]||0)>=GOAL?" lit":""}${i===0?" today":""}">${MINI}</div>${i===0?"hoje":names[d.getDay()]}</div>`}
   $("week").innerHTML=h;
 }
 /* ===== mascote ===== */
@@ -382,7 +453,10 @@ const SAY={
   hard:["Quase! Amanhã ela volta.","Tá chegando lá!","Difícil, mas foi!"],
   bad:["Tudo bem, ela volta já já.","Errar faz parte!","Na próxima você pega!"],
   party:["Meta batida! A chama tá acesa!","Mais um dia na sequência!"],
-  done:["Tudo em dia! Libera mais algumas?","Por hoje tá ótimo!"]
+  done:["Fechou a partida! Bora mais uma?","Por hoje tá ótimo, mas eu topo mais!","Que partida! Orgulho de você."],
+  go:["Bora! Tô aqui do seu lado.","Vamos nessa! Uma de cada vez.","Valendo! Fala em voz alta, hein."],
+  freego:["Treino livre! Sem pressão.","Vamos repassar tudo!"],
+  thinknew:["Palavra nova! Chuta, vale tentar.","Essa é nova. Pensa num parente em português!","Primeira vez dessa. Arrisca!"]
 };
 let bubbleT=null;
 function mascot(face,kind){
@@ -392,10 +466,11 @@ function mascot(face,kind){
   const list=SAY[kind||face];if(!list)return;
   const b=$("bubble");b.textContent=list[Math.floor(Math.random()*list.length)];b.hidden=false;
   b.style.animation="none";void b.offsetWidth;b.style.animation="";
-  clearTimeout(bubbleT);bubbleT=setTimeout(()=>{b.hidden=true;if(m.dataset.face!=="think")m.dataset.face="idle"},kind==="party"?5000:2800);
+  clearTimeout(bubbleT);bubbleT=setTimeout(()=>{if(!playing)b.hidden=true;if(m.dataset.face!=="think")m.dataset.face="idle"},kind==="party"?5000:2800);
 }
 $("mascot").onclick=()=>mascot("happy","idle");
 function addActivity(){
+  total++;store.set("vb-total",total);
   const k=dayKey();const before=act[k]||0;act[k]=before+1;
   const keys=Object.keys(act).sort();while(keys.length>400)delete act[keys.shift()];
   store.set("vb-activity",act);
@@ -409,14 +484,14 @@ function addActivity(){
 function loadLang(l,cb){
   if(VB_DATA[l])return cb();
   const s=document.createElement("script");s.src=`data/${l}.js?v=4`;s.onload=cb;
-  s.onerror=()=>{$("train").innerHTML='<div class="card done"><h2>Sem conexão</h2><p class="hintline">Abra uma vez com internet para baixar esta língua. Depois ela funciona offline.</p></div>'};
+  s.onerror=()=>{$("lobby").innerHTML='<div class="card done"><h2>Sem conexão</h2><p class="hintline">Abra uma vez com internet para baixar esta língua. Depois ela funciona offline.</p></div>'};
   document.head.appendChild(s);
 }
 function setLang(l){
   lang=l;store.set("vb-lang",l);
   document.querySelectorAll(".langs button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.lang===l));
   document.querySelectorAll(".lcode").forEach(e=>e.textContent=LANGS[l].code);
-  $("train").innerHTML='<div class="loading">Carregando palavras...</div>';
+  $("lobby").innerHTML='<div class="loading">Carregando palavras...</div>';
   loadLang(l,()=>{
     CARDS=VB_DATA[l].map((r,i)=>({i,id:r[0],w:r[0],g:r[1],pt:r[2],pron:r[3],tipo:TYPES[r[4]]||r[4],hook:r[5],ex:r[6],exPt:r[7],lv:Math.floor(i/LEVEL)+1}));
     prog=store.get("vb-prog-"+l,{});fixes=store.get("vb-fix-"+l,{});
@@ -424,7 +499,7 @@ function setLang(l){
     const nl=Math.ceil(CARDS.length/LEVEL);let o=`<option value="all">Todos os níveis, em ordem</option>`,o2="";
     for(let i=1;i<=nl;i++){const a=(i-1)*LEVEL+1,b=Math.min(i*LEVEL,CARDS.length);o+=`<option value="${i}">Nível ${i} (palavras ${a} a ${b})</option>`;o2+=`<option value="${i}">Nível ${i} (${a} a ${b})</option>`}
     $("sel-level").innerHTML=o;$("sel-level-list").innerHTML=o2;level="all";listLevel="1";
-    cur=null;free=false;buildQueue();renderTrain();renderMethod();
+    cur=null;free=false;buildQueue();renderLobby();renderMethod();
     if(!$("view-list").hidden)renderList();
   });
 }
@@ -443,19 +518,67 @@ function overview(){const now=Date.now();let d=0,l=0,k=0;CARDS.forEach(c=>{const
   $("ov-due").textContent=d+Math.min(newRoom(),CARDS.filter(c=>!prog[c.id]).length);$("ov-learn").textContent=l;$("ov-known").textContent=k}
 function speak(t){try{const s=window.speechSynthesis;if(!s)return;s.cancel();const u=new SpeechSynthesisUtterance(t);u.lang=LANGS[lang].voice;u.rate=.9;
   const v=s.getVoices().find(v=>v.lang&&v.lang.replace("_","-").startsWith(LANGS[lang].voice.slice(0,2)));if(v)u.voice=v;s.speak(u)}catch(e){}}
-function renderTrain(){
-  const el=$("train");overview();
+/* ===== lobby ===== */
+function renderLobby(){
+  const el=$("lobby");overview();
   if(!CARDS.length){el.innerHTML=`<div class="card done"><h2>${LANGS[lang].name} chegando</h2><p class="hintline">As palavras desta língua estão sendo preparadas e aparecem aqui em breve.</p></div>`;return}
-  if(!cur){cur=queue.shift()||null;revealed=false}
-  if(!cur){const left=pool().filter(c=>!prog[c.id]).length;const seen=pool().some(c=>prog[c.id]);
-    el.innerHTML=`<div class="card done"><h2>${free?"Treino livre feito":"Tudo em dia"}</h2>
+  const rev=queue.filter(c=>prog[c.id]).length,nov=queue.length-rev;
+  const left=pool().filter(c=>!prog[c.id]).length,seen=pool().some(c=>prog[c.id]);
+  if(queue.length){
+    el.innerHTML=`<div class="card start"><h2>Pronto para jogar?</h2>
+      <p class="hintline">${queue.length} carta${queue.length>1?"s":""} esperando por você em ${LANGS[lang].name.toLowerCase()}.</p>
+      <div class="counts">${rev?`<span>${rev} revis${rev>1?"ões":"ão"}</span>`:""}${nov?`<span>${nov} nova${nov>1?"s":""}</span>`:""}</div>
+      <button class="btn play" id="play">Jogar</button></div>`;
+    $("play").onclick=()=>startGame(false);
+  }else{
+    el.innerHTML=`<div class="card start"><h2>Tudo em dia</h2>
       <p class="hintline">${left?`Ainda há ${left} palavras novas ${level==="all"?"em "+LANGS[lang].name.toLowerCase():"neste nível"}.`:"Você já começou todas as palavras deste nível."}</p>
-      <div class="more">${left?`<button class="btn primary" id="more10">Liberar mais 10 novas</button>`:""}
+      <div class="more">${left?`<button class="btn play" id="more10">Jogar com mais 10 novas</button>`:""}
       ${seen?`<button class="btn" id="freeplay">Treino livre: repassar o que já vi</button>`:""}</div>
       ${seen?`<p class="hintline" style="margin-top:12px">O treino livre conta para a meta do dia e não mexe nas datas de revisão.</p>`:""}</div>`;
-    const m=$("more10");if(m)m.onclick=()=>{extraNew+=10;store.set("vb-extra-"+lang,{d:dayKey(),n:extraNew});free=false;buildQueue();renderTrain()};
-    const f=$("freeplay");if(f)f.onclick=()=>{free=true;queue=pool().filter(c=>prog[c.id]).sort(()=>Math.random()-.5);renderTrain()};
-    if(lastCardId!=="done"){lastCardId="done";setTimeout(()=>mascot("happy","done"),400)}
+    const m=$("more10");if(m)m.onclick=()=>{unlock10();startGame(false)};
+    const f=$("freeplay");if(f)f.onclick=()=>startGame(true);
+  }
+}
+function unlock10(){extraNew+=10;store.set("vb-extra-"+lang,{d:dayKey(),n:extraNew});free=false;buildQueue()}
+function startFree(){free=true;queue=pool().filter(c=>prog[c.id]).sort(()=>Math.random()-.5)}
+
+/* ===== partida ===== */
+function startGame(isFree){
+  if(isFree)startFree();else{free=false;buildQueue()}
+  cur=null;lastCardId=null;ses={ok:0,mid:0,bad:0};playing=true;
+  $("coach").appendChild(document.querySelector(".mascot-wrap"));
+  $("game").hidden=false;document.body.classList.add("playing");$("game").scrollTop=0;
+  const b=$("bubble");b.hidden=false;
+  mascot("happy",isFree?"freego":"go");
+  renderTrain();setTimeout(()=>$("g-close").focus({preventScroll:true}),50);
+}
+function closeGame(){
+  playing=false;clearTimeout(thinkT);
+  document.body.appendChild(document.querySelector(".mascot-wrap"));
+  $("game").hidden=true;document.body.classList.remove("playing");$("bubble").hidden=true;$("mascot").dataset.face="idle";
+  cur=null;free=false;buildQueue();renderLobby();
+}
+function gameHud(){
+  const n=ses.ok+ses.mid+ses.bad,rest=queue.length+(cur?1:0);
+  $("g-bar").style.width=(n+rest?n/(n+rest)*100:100)+"%";
+  $("g-ok").textContent=`${ses.ok} cert${ses.ok===1?"a":"as"}`;$("g-left").textContent=`${rest} restante${rest===1?"":"s"}`;
+}
+function renderTrain(){
+  const el=$("train");
+  if(!cur){cur=queue.shift()||null;revealed=false}
+  gameHud();
+  if(!cur){const left=pool().filter(c=>!prog[c.id]).length;const seen=pool().some(c=>prog[c.id]);const n=ses.ok+ses.mid+ses.bad;
+    el.innerHTML=`<div class="card done"><h2>${n?"Partida concluída!":free?"Treino livre feito":"Tudo em dia"}</h2>
+      ${n?`<div class="sum"><div class="s1"><b>${ses.ok}</b><span>sabia</span></div><div class="s2"><b>${ses.mid}</b><span>difícil</span></div><div class="s3"><b>${ses.bad}</b><span>errei</span></div></div>`:""}
+      <p class="hintline">${total.toLocaleString("pt-BR")} palavras verificadas no total.</p>
+      <div class="more" style="margin-top:16px">${left&&!free?`<button class="btn primary" id="more10">Continuar com mais 10 novas</button>`:""}
+      ${seen?`<button class="btn" id="freeplay">Treino livre: repassar o que já vi</button>`:""}
+      <button class="btn" id="tolobby">Voltar ao lobby</button></div></div>`;
+    const m=$("more10");if(m)m.onclick=()=>{unlock10();cur=null;renderTrain();mascot("happy","go")};
+    const f=$("freeplay");if(f)f.onclick=()=>{startFree();cur=null;renderTrain();mascot("happy","freego")};
+    $("tolobby").onclick=closeGame;
+    if(lastCardId!=="done"){lastCardId="done";clearTimeout(thinkT);setTimeout(()=>{if(playing&&!cur)mascot(partyNext?"party":"happy",partyNext?"party":"done");partyNext=false},500)}
     return}
   const isNew=!prog[cur.id];const tg=LANGS[lang].code;
   const front=dir==="pt"?`<div class="prompt">${esc(cur.pt)}</div><p class="hintline">Diga em ${LANGS[lang].name.toLowerCase()}, em voz alta${cur.g?", com o artigo":""}.</p>`
@@ -471,21 +594,24 @@ function renderTrain(){
       <button class="btn b2" data-r="1">Difícil<small>amanhã</small></button>
       <button class="btn b3" data-r="2">Sabia<small>${free?"treino livre":INTERVALS[Math.min(5,box+1)]+" dia(s)"}</small></button>
     </div></div>`}
-  if(!revealed&&lastCardId!==cur.id+dir){lastCardId=cur.id+dir;if($("bubble").hidden)$("mascot").dataset.face="think"}
-  el.innerHTML=`<div class="card"><div class="card-top"><span class="pill">Nível ${cur.lv} · ${tg}</span><span class="pill">${free?"treino livre":isNew?"nova":"revisão"} · faltam ${queue.length+1}</span></div>${front}${revealed?back:`<button class="btn primary" id="reveal">Mostrar resposta</button>`}</div>`;
-  if(!revealed){$("reveal").onclick=()=>{revealed=true;renderTrain();mascot("idle","reveal");if(dir==="pt")speak(full(cur))}}
+  if(!revealed&&lastCardId!==cur.id+dir){lastCardId=cur.id+dir;const id=lastCardId;clearTimeout(thinkT);
+    const first=ses.ok+ses.mid+ses.bad===0;
+    thinkT=setTimeout(()=>{if(playing&&cur&&!revealed&&cur.id+dir===id)mascot("think",isNew?"thinknew":"think")},first?1600:1900)}
+  el.innerHTML=`<div class="card"><div class="card-top"><span class="pill">Nível ${cur.lv} · ${tg}</span><span class="pill">${free?"treino livre":isNew?"nova":"revisão"}</span></div>${front}${revealed?back:`<button class="btn primary" id="reveal">Mostrar resposta</button>`}</div>`;
+  if(!revealed){$("reveal").onclick=()=>{revealed=true;clearTimeout(thinkT);renderTrain();mascot("idle","reveal");if(dir==="pt")speak(full(cur))}}
   else{$("say-w").onclick=()=>speak(full(cur));const se=$("say-e");if(se)se.onclick=()=>speak(cur.ex);
     el.querySelectorAll("[data-r]").forEach(b=>b.onclick=()=>grade(+b.dataset.r))}
 }
 function grade(r){
   addActivity();
-  if(partyNext){partyNext=false;mascot("party","party")}else mascot(r===2?"happy":r===1?"idle":"sad",r===2?"good":r===1?"hard":"bad");
-  if(free){if(r===0)queue.splice(Math.min(3,queue.length),0,cur);cur=null;renderTrain();return}
+  if(r===2)ses.ok++;else if(r===1)ses.mid++;else ses.bad++;
+  if(partyNext&&queue.length){partyNext=false;mascot("party","party")}else mascot(r===2?"happy":r===1?"idle":"sad",r===2?"good":r===1?"hard":"bad");
+  if(free){if(r===0)queue.splice(Math.min(3,queue.length),0,cur);cur=null;renderTrain();$("game").scrollTop=0;return}
   const now=Date.now();const p=prog[cur.id]||{box:0,first:now};
   if(r===0){p.box=0;p.due=now;queue.splice(Math.min(3,queue.length),0,cur)}
   else if(r===1){p.box=Math.max(1,p.box);p.due=today0()+DAY}
   else{p.box=Math.min(5,p.box+1);p.due=today0()+INTERVALS[p.box]*DAY}
-  prog[cur.id]=p;store.set("vb-prog-"+lang,prog);cur=null;renderTrain()}
+  prog[cur.id]=p;store.set("vb-prog-"+lang,prog);cur=null;renderTrain();$("game").scrollTop=0}
 
 /* ===== lista ===== */
 function renderList(){
@@ -549,15 +675,17 @@ function renderMethod(){
 }
 
 /* ===== eventos ===== */
-function tab(name){["train","list","method"].forEach(n=>{$("tab-"+n).setAttribute("aria-selected",n===name);$("view-"+n).hidden=n!==name});if(name==="list")renderList();if(name==="train")renderTrain()}
+function tab(name){["train","list","method"].forEach(n=>{$("tab-"+n).setAttribute("aria-selected",n===name);$("view-"+n).hidden=n!==name});if(name==="list")renderList();if(name==="train"){buildQueue();renderLobby()}}
 $("tab-train").onclick=()=>tab("train");$("tab-list").onclick=()=>tab("list");$("tab-method").onclick=()=>tab("method");
 document.querySelectorAll(".langs button").forEach(b=>b.onclick=()=>{if(b.dataset.lang!==lang)setLang(b.dataset.lang)});
-$("sel-level").onchange=e=>{level=e.target.value;cur=null;free=false;buildQueue();renderTrain()};
+$("sel-level").onchange=e=>{level=e.target.value;cur=null;free=false;buildQueue();renderLobby()};
 $("sel-level-list").onchange=e=>{listLevel=e.target.value;$("search").value="";renderList()};
 $("search").oninput=()=>renderList();
-$("dir-pt").onclick=()=>{dir="pt";$("dir-pt").setAttribute("aria-pressed",true);$("dir-tg").setAttribute("aria-pressed",false);renderTrain()};
-$("dir-tg").onclick=()=>{dir="tg";$("dir-tg").setAttribute("aria-pressed",true);$("dir-pt").setAttribute("aria-pressed",false);renderTrain()};
-document.addEventListener("visibilitychange",()=>{if(!document.hidden){renderStreak();if(!cur){buildQueue();renderTrain()}}});
+$("dir-pt").onclick=()=>{dir="pt";$("dir-pt").setAttribute("aria-pressed",true);$("dir-tg").setAttribute("aria-pressed",false)};
+$("dir-tg").onclick=()=>{dir="tg";$("dir-tg").setAttribute("aria-pressed",true);$("dir-pt").setAttribute("aria-pressed",false)};
+$("g-close").onclick=closeGame;
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&playing)closeGame()});
+document.addEventListener("visibilitychange",()=>{if(!document.hidden){renderStreak();if(!playing){buildQueue();renderLobby()}}});
 renderStreak();setLang(LANGS[lang]?lang:"de");
 if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(()=>{}))}
 </script>
