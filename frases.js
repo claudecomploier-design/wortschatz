@@ -13,6 +13,7 @@
   let rank = {};         // lema -> posição na lista das 1000
   let cur = null;        // frase atual montada
   let opened = false;    // tradução aberta nesta frase
+  let peeked = new Set(); // blocos tocados para tradução rápida
   let loadedFor = null;
 
   /* ---------- estado ---------- */
@@ -113,9 +114,14 @@
     const shown = new Set(); cur.chunks.forEach(c => { if (c.foreign) c.ids.forEach(id => shown.add(id)); });
     if (cur.allForeign) cur.chunks.forEach(c => c.ids.forEach(id => shown.add(id)));
     const tg = new Set(cur.targets);
+    const peekIds = new Set(); peeked.forEach(i => cur.chunks[i].ids.forEach(id => peekIds.add(id)));
     shown.forEach(id => {
       const w = W(id); w.s++; w.l = Date.now();
-      if (opened) {
+      if (!opened && peekIds.has(id)) {                          // tocou só nesse trecho: dificuldade pontual
+        w.t++; w.st = 0;
+        w.h = Math.max(0, w.h - (tg.has(id) ? 0.1 : 0.05));
+        w.d = H.tick + 2 + Math.floor(Math.random() * 3);
+      } else if (opened) {
         w.t++; w.st = 0;
         w.h = Math.max(0, w.h - (tg.has(id) ? 0.12 : 0.06));
         w.d = H.tick + 2 + Math.floor(Math.random() * 3);        // volta logo, em outra frase
@@ -129,7 +135,7 @@
     const st = H.s[cur.idx] || (H.s[cur.idx] = { n: 0, o: 0, l: 0 });
     st.n++; if (opened) st.o++; st.l = H.tick;
     H.recent.push(cur.idx); if (H.recent.length > 60) H.recent.splice(0, H.recent.length - 60);
-    H.log.push({ i: cur.idx, k: H.tick, r: Math.round(cur.ratio * 100), o: opened ? 1 : 0, tg: cur.targets });
+    H.log.push({ i: cur.idx, k: H.tick, r: Math.round(cur.ratio * 100), o: opened ? 1 : 0, p: peeked.size, tg: cur.targets });
     if (H.log.length > LOG_MAX) H.log.splice(0, H.log.length - LOG_MAX);
     save();
     if (typeof addActivity === "function") addActivity();
@@ -137,11 +143,21 @@
 
   /* ---------- tela ---------- */
   function sentenceHTML(c){
-    if (c.allForeign) return `<span class="hy-fl">${esc(c.fl)}</span>`;
-    return c.chunks.map(ch => ch.foreign
-      ? `<span class="hy-fl${ch.ids.some(id => c.targets.includes(id)) ? " hy-tg" : ""}">${esc(ch.fl)}</span>`
+    return c.chunks.map((ch, i) => (ch.foreign || c.allForeign)
+      ? `<button type="button" class="hy-fl${!c.allForeign && ch.ids.some(id => c.targets.includes(id)) ? " hy-tg" : ""}${peeked.has(i) ? " hy-peeked" : ""}" data-ci="${i}" aria-label="Traduzir: ${esc(ch.fl)}">${esc(ch.fl)}</button>`
       : `<span class="hy-pt">${esc(ch.pt)}</span>`).join(" ")
       .replace(/ ([,.!?;:])/g, "$1");
+  }
+  const clean = t => t.replace(/[,.!?;:]+$/, "").replace(/^[¿¡]/, "");
+  function peekHTML(c){
+    if (!peeked.size || opened) return "";
+    const rows = [...peeked].sort((a, b) => a - b).map(i => {
+      const ch = c.chunks[i];
+      const words = ch.ids.filter(id => clean(ch.fl).toLowerCase() !== id.toLowerCase())
+        .map(id => { const card = CARDS[rank[id]]; return card ? `<span>${esc(id)}: ${esc(card.pt)}</span>` : ""; }).join("");
+      return `<li><b>${esc(clean(ch.fl))}</b> <i>→</i> ${esc(clean(ch.pt))}${words ? `<small>${words}</small>` : ""}</li>`;
+    }).join("");
+    return `<ul class="hy-peek" aria-live="polite">${rows}</ul>`;
   }
   function glossHTML(c){
     const seen = new Set(), rows = [];
@@ -166,7 +182,7 @@
     if (!VB_FRASES[lang] || !VB_FRASES[lang].length) {
       el.innerHTML = `<div class="hy-empty"><p>As frases de ${LANGS[lang].name.toLowerCase()} ainda estão sendo preparadas.</p></div>`; return;
     }
-    if (!cur) { cur = pick(); opened = false; }
+    if (!cur) { cur = pick(); opened = false; peeked = new Set(); }
     const p = progressLine();
     el.innerHTML = `
       <div class="hy-top" aria-label="Progresso">
@@ -176,6 +192,7 @@
       <div class="hy-bar"><i style="width:${p.pct}%"></i></div>
       <figure class="hy-stage">
         <blockquote class="hy-sent" lang="${lang}">${sentenceHTML(cur)}</blockquote>
+        ${peekHTML(cur)}
         ${opened ? `<figcaption class="hy-trans"><p class="hy-full">${esc(cur.pt)}</p>${cur.allForeign ? "" : `<p class="hy-orig" lang="${lang}">${esc(cur.fl)}</p>`}${glossHTML(cur)}</figcaption>` : ""}
       </figure>
       <div class="hy-actions">
@@ -184,7 +201,10 @@
         <button class="btn small hy-say" id="hy-say" aria-label="Ouvir a frase em ${LANGS[lang].name.toLowerCase()}">Ouvir</button>
       </div>`;
     const sh = $("hy-show"); if (sh) sh.onclick = () => { opened = true; render(); };
-    $("hy-next").onclick = () => { commit(); cur = null; render(); };
+    $("hy-next").onclick = () => { commit(); cur = null; peeked = new Set(); render(); };
+    el.querySelectorAll(".hy-sent [data-ci]").forEach(b => b.onclick = () => {
+      const i = +b.dataset.ci; if (peeked.has(i)) peeked.delete(i); else peeked.add(i); render();
+    });
     $("hy-say").onclick = () => speak(cur.fl);
   }
 
@@ -198,7 +218,7 @@
 
   window.HYB = {
     open(){ ensureData(() => { if (loadedFor !== lang) { load(); loadedFor = lang; cur = null; } render(); }); },
-    onLang(){ loadedFor = null; cur = null; if (!$("view-frases").hidden) this.open(); },
+    onLang(){ loadedFor = null; cur = null; peeked = new Set(); if (!$("view-frases").hidden) this.open(); },
     /* para depuração no console */
     _state(){ return { H, cur, frontier: frontier() }; },
     _fam: id => ({ f: fam(id), stage: stage(fam(id)) })

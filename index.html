@@ -287,7 +287,14 @@ body.playing{overflow:hidden}
 .hy-bar i{display:block;height:100%;background:var(--accent);transition:width .4s ease}
 .hy-stage{margin:0;min-height:min(30vh,260px);display:grid;align-content:center;gap:22px;padding:18px 4px}
 .hy-sent{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(1.5rem,5.4vw,2.1rem);line-height:1.38;color:var(--muted);text-wrap:pretty}
-.hy-sent .hy-fl{color:var(--fg);font-weight:500}
+.hy-sent .hy-fl{color:var(--fg);font-weight:500;font:inherit;font-weight:500;background:none;border:0;padding:0 1px;margin:0;cursor:pointer;border-radius:4px;text-decoration:underline dotted rgba(151,162,177,.45);text-underline-offset:6px;text-decoration-thickness:1px;-webkit-tap-highlight-color:transparent}
+.hy-sent .hy-fl:hover{background:var(--raised)}
+.hy-sent .hy-fl.hy-peeked{background:var(--accent-soft)}
+.hy-peek{list-style:none;margin:-6px 0 0;padding:12px 14px;display:grid;gap:8px;background:var(--surface);border:1px solid var(--line-soft);border-radius:var(--r-md);font-size:.95rem}
+.hy-peek li{display:block;line-height:1.45}
+.hy-peek b{font-family:var(--serif);font-weight:500;color:var(--accent-hi)}
+.hy-peek i{font-style:normal;color:var(--dim)}
+.hy-peek small{margin-top:2px;display:flex;flex-wrap:wrap;gap:2px 12px;color:var(--dim);font-size:.8rem}
 .hy-sent .hy-tg{color:var(--accent-hi);border-bottom:1px solid rgba(200,164,100,.45)}
 .hy-trans{display:grid;gap:10px;padding-top:18px;border-top:1px solid var(--line-soft)}
 .hy-full{margin:0;font-size:1.08rem;color:var(--fg)}
@@ -789,6 +796,6 @@ if("serviceWorker" in navigator){
   window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js",{updateViaCache:"none"}).then(r=>{r.update();document.addEventListener("visibilitychange",()=>{if(!document.hidden)r.update()})}).catch(()=>{}));
 }
 </script>
-<script src="frases.js?v=1"></script>
+<script src="frases.js?v=2"></script>
 </body>
 </html>
