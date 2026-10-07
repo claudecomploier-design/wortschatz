@@ -879,6 +879,14 @@ $("g-close").onclick=closeGame;
 document.addEventListener("keydown",e=>{if(e.key==="Escape"&&playing)closeGame()});
 document.addEventListener("visibilitychange",()=>{if(!document.hidden){renderStreak();if(!playing){buildQueue();renderLobby()}}});
 renderStreak();setLang(LANGS[lang]?lang:"de");
+/* prévia da comemoração: não altera nenhum dado */
+function previewStreak(){const n=streakInfo();const t=act[dayKey()]||0;celebrateStreak(t>=GOAL?Math.max(1,n):n+1)}
+$("flame").setAttribute("role","button");$("flame").setAttribute("tabindex","0");$("flame").setAttribute("aria-label","Ver a comemoração da sequência");
+$("flame").style.cursor="pointer";$("flame").onclick=previewStreak;
+$("flame").onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();previewStreak()}};
+if(location.hash==="#testar-racha")setTimeout(previewStreak,600);
+window.addEventListener("hashchange",()=>{if(location.hash==="#testar-racha")previewStreak()});
+
 if("serviceWorker" in navigator){
   let reloaded=false;const hadCtrl=!!navigator.serviceWorker.controller;
   navigator.serviceWorker.addEventListener("controllerchange",()=>{if(hadCtrl&&!reloaded&&!playing){reloaded=true;location.reload()}});
