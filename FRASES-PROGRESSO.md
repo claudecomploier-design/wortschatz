@@ -23,8 +23,8 @@ Arquivo de controle para retomar o trabalho se a sessão parar no meio.
 ## Status
 
 - [x] Plano e estrutura
-- [ ] frases.js (motor + tela) e integração no index.html
-- [ ] Frases alemão
+- [x] frases.js (motor + tela) e integração no index.html (aba Frases)
+- [x] Frases alemão (130 frases, validadas; simulação em /tmp: progressão ok)
 - [ ] Frases italiano
 - [ ] Frases francês
 - [ ] Verificação no navegador e publicação
