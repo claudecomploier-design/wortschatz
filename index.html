@@ -134,8 +134,13 @@ input[type=search]::placeholder{color:var(--dim)}
 .hook{border-left:2px solid var(--accent);background:var(--raised);border-radius:0 var(--r-md) var(--r-md) 0;padding:12px 14px}
 .hook .tag{display:block;font-size:.78rem;font-weight:600;color:var(--accent);margin-bottom:4px}
 .hook p{margin:0}
-.hook.pre{margin-top:18px;border-left-style:dashed}
-.mask{font-weight:600;letter-spacing:.14em;color:var(--accent)}
+.cloze{margin-top:20px;padding-top:16px;border-top:1px dashed var(--line);display:grid;gap:6px;justify-items:start}
+.cloze .s{margin:0;font-family:var(--serif);font-size:1.3rem;line-height:1.55}
+.cloze .t{margin:0;color:var(--muted);font-size:.9rem}
+.gap{display:inline-block;border-bottom:2px solid var(--accent);color:var(--accent);font-weight:600;line-height:1.15;padding:0 2px;margin:0 1px;vertical-align:baseline}
+.hl{color:var(--accent);font-weight:600}
+.hintbtn{margin-top:8px}
+.hintbtn[disabled]{cursor:default;color:var(--accent);border-color:var(--accent);opacity:1}
 .ex{display:grid;gap:2px}.ex .d{font-family:var(--serif);font-size:1.12rem;font-weight:500}.ex .p{color:var(--muted);font-size:.9rem}
 .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .grade{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:6px}
@@ -279,7 +284,7 @@ body.playing{overflow:hidden}
 <body>
 <div class="wrap">
   <header>
-    <h1>Vokabel 1000 <small class="ver">v11</small></h1>
+    <h1>Vokabel 1000 <small class="ver">v12</small></h1>
     <div class="langs" role="group" aria-label="Língua">
       <button id="lang-de" data-lang="de">Alemão</button>
       <button id="lang-it" data-lang="it">Italiano</button>
@@ -411,7 +416,7 @@ let CARDS=[], prog={}, fixes={}, queue=[], cur=null, revealed=false, free=false,
 let act=store.get("vb-activity",{}); // {"AAAA-MM-DD": cartas respondidas}
 let best=store.get("vb-best",0);let partyNext=false,lastCardId=null;
 let total=store.get("vb-total",null);if(total==null){total=Object.values(act).reduce((a,b)=>a+(+b||0),0);store.set("vb-total",total)}
-let playing=false,ses={ok:0,mid:0,bad:0},thinkT=null;
+let hinted=false,playing=false,ses={ok:0,mid:0,bad:0},thinkT=null;
 
 /* ===== artigo ===== */
 function article(w,g){
@@ -423,24 +428,55 @@ function article(w,g){
   if(lang==="fr"){if(v)return "l'";return g==="f"?"la":"le"}
   return "";
 }
-/* pista: gancho com a resposta escondida (só a primeira letra) */
-function hideWord(w){let first=true;return w.replace(/\p{L}/gu,ch=>{if(first){first=false;return ch}return "_"})}
-function maskHook(text,terms){
-  const L="\\p{L}";let out=String(text||"");
-  const list=[...new Set(terms.map(t=>String(t||"").trim()).filter(t=>t.length>=2))].sort((a,b)=>b.length-a.length);
-  const rx=t=>t.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
-  for(const t of list){
-    out=out.replace(new RegExp(`(^|[^${L}\u0001\u0002])(${rx(t)})(?=$|[^${L}])`,"giu"),(m,a,b)=>a+"\u0001"+hideWord(b)+"\u0002");
-    const tk=t.split(/\s+/);
-    if(tk.length===1&&t.length>=6){const stem=t.slice(0,t.length-2);
-      out=out.replace(new RegExp(`(^|[^${L}\u0001\u0002])(${rx(stem)}${L}*)`,"giu"),(m,a,b)=>a+"\u0001"+hideWord(b)+"\u0002")}
-  }
-  return esc(out).replace(/\u0001/g,'<span class="mask">').replace(/\u0002/g,"</span>");
+/* frase de contexto: a frase de exemplo com a palavra faltando */
+function normW(x){return x.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/ß/g,"ss")}
+function lev(a,b){const d=[];for(let i=0;i<=a.length;i++){d[i]=[i];for(let j=1;j<=b.length;j++)d[i][j]=i?Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1)):j}return d[a.length][b.length]}
+const STOPW={de:"ich du er sie es wir ihr man der die das den dem des ein eine einen einem einer nicht und mir dich mich dir uns euch noch was wie wo wann bitte",
+  it:"io tu lui lei noi voi loro il lo la i gli le un una uno di a da in con su per non e mi ti ci si vi che",
+  fr:"je tu il elle on nous vous ils elles le la les un une des de du au aux en et ne pas me te se y que qu ce"};
+const ARTS={de:"der die das den dem des ein eine einen einem einer eines",it:"il lo la l i gli le un una uno",fr:"le la l les un une"};
+/* verbos irregulares e separáveis: qual palavra apagar na frase */
+const CLOZE_FIX={
+  de:{sein:["bin"],geben:["Gib"],mal:["mal"],anfangen:["fängst","an"],essen:["isst"],"mögen":["mag"],ankommen:["kommst","an"],anrufen:["rufe","an"],anziehen:["ziehe","an"],umziehen:["ziehen","um"],zumachen:["Mach","zu"],abholen:["hole","ab"],retten:["gerettet"],brechen:["gebrochen"],ablehnen:["lehnt","ab"],annehmen:["nehme","an"],abfahren:["fährt","ab"],"töten":["getötet"],Saft:["saft"]},
+  it:{essere:["Sono"],avere:["Ho"],potere:["Posso"],volere:["Voglio"],dovere:["Devo"],vedere:["vediamo"],sapere:["so"],morire:["Muoio"],amare:["amo"],tenere:["Tieni"],sedere:["Siediti"],rompere:["rotto"],nascere:["nato"],ci:["C"],notte:["notte"],sedersi:["sieda"]},
+  fr:{"être":["suis"],avoir:["ai"],pouvoir:["peux"],vouloir:["veux"],aller:["va"],venir:["viens"],"naître":["né"],vivre:["vis"],tenir:["Tiens"],"s'asseoir":["Asseyez"],"s'habiller":["habille"],falloir:["faut"],valoir:["vaut"],"s'occuper":["occupe"],"s'amuser":["Amuse"],"ne...pas":["ne","pas"],ce:["C"],"œil":["yeux"],"s'excuser":["excuse"],"s'inquiéter":["inquiète"],"s'appeler":["appelles"]}
+};
+const rxEsc=t=>t.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
+function findPart(ex,t,from){
+  const m=new RegExp("(^|[^\\p{L}])("+rxEsc(t)+")(?![\\p{L}])","iu").exec(ex.slice(from));
+  if(m)return [from+m.index+m[1].length,from+m.index+m[1].length+m[2].length];
+  const i=ex.toLowerCase().indexOf(t.toLowerCase(),from);return i<0?null:[i,i+t.length];
 }
-function hintFor(c){
-  const terms=dir==="pt"?[c.w,full(c),...c.w.split(/\s+/).filter(x=>x.length>=3)]
-    :String(c.pt).split(/[,;/()]/).flatMap(x=>{x=x.trim();return [x,...x.split(/\s+/).filter(y=>y.length>=3)]});
-  return maskHook(c.hook,terms);
+function gapOf(c){
+  const ex=c.ex||"";if(!ex)return null;
+  let ranges=[];const fix=(CLOZE_FIX[lang]||{})[c.w];
+  if(fix){let from=0;for(const t of fix){const r=findPart(ex,t,from);if(r){ranges.push(r);from=r[1]}}}
+  if(!ranges.length){
+    const m=new RegExp("(^|[^\\p{L}])("+rxEsc(c.w)+")(?![\\p{L}])","iu").exec(ex);
+    if(m)ranges=[[m.index+m[1].length,m.index+m[1].length+m[2].length]];
+  }
+  if(!ranges.length){
+    const toks=[...ex.matchAll(/\p{L}+/gu)],key=normW(c.w.split(/\s+/).pop()),stop=new Set((STOPW[lang]||"").split(" "));
+    let best=null;
+    for(const t of toks){const n=normW(t[0]);let p=0;while(p<n.length&&p<key.length&&n[p]===key[p])p++;
+      if(p>=Math.max(3,Math.min(key.length,n.length)-2)&&(!best||p>best.p))best={p,r:[t.index,t.index+t[0].length]}}
+    if(!best)for(const t of toks){const n=normW(t[0]);if(stop.has(n)||n.length<2||n[0]!==key[0])continue;
+      const q=1-lev(n,key)/Math.max(n.length,key.length);if(q>=.45&&(!best||q>best.q))best={q,r:[t.index,t.index+t[0].length]}}
+    if(best)ranges=[best.r];
+  }
+  if(!ranges.length)return null;
+  let main=0;
+  if(c.g){const m=/(\p{L}+)(['’]|\s+)$/u.exec(ex.slice(0,ranges[0][0]));
+    if(m&&(ARTS[lang]||"").split(" ").includes(m[1].toLowerCase())){ranges.unshift([ranges[0][0]-m[0].length,ranges[0][0]-m[2].length]);main=1}}
+  return {ranges,main};
+}
+function clozeHTML(ex,g,mode){
+  let out="",pos=0;
+  g.ranges.forEach(([s,e],i)=>{out+=esc(ex.slice(pos,s));const w=ex.slice(s,e);
+    if(mode==="hl")out+=`<span class="hl">${esc(w)}</span>`;
+    else{const show=mode==="hint"&&i===g.main?w[0]:"";out+=`<span class="gap" style="min-width:${Math.max(2.2,w.length*.62).toFixed(1)}em">${esc(show)}</span>`}
+    pos=e});
+  return out+esc(ex.slice(pos));
 }
 function full(c){const a=article(c.w,c.g);if(!a)return c.w;return a.endsWith("'")?a+c.w:a+" "+c.w}
 function label(c){const a=article(c.w,c.g);if(!a)return c.g?`<span class="g-${c.g}">${esc(c.w)}</span>`:esc(c.w);const sep=a.endsWith("'")?"":" ";return `<span class="g-${c.g}"><span class="art">${esc(a)}</span>${sep}${esc(c.w)}</span>`}
@@ -593,7 +629,7 @@ function gameHud(){
 }
 function renderTrain(){
   const el=$("train");
-  if(!cur){cur=queue.shift()||null;revealed=false}
+  if(!cur){cur=queue.shift()||null;revealed=false;hinted=false}
   gameHud();
   if(!cur){const left=pool().filter(c=>!prog[c.id]).length;const seen=pool().some(c=>prog[c.id]);const n=ses.ok+ses.mid+ses.bad;
     el.innerHTML=`<div class="card done"><h2>${n?"Partida concluída!":free?"Treino livre feito":"Tudo em dia"}</h2>
@@ -610,20 +646,27 @@ function renderTrain(){
   const isNew=!prog[cur.id];const tg=LANGS[lang].code;
   const front=dir==="pt"?`<div class="prompt">${esc(cur.pt)}</div><p class="hintline">Diga em ${LANGS[lang].name.toLowerCase()}, em voz alta${cur.g?", com o artigo":""}.</p>`
     :`<div class="prompt">${label(cur)}</div><p class="hintline">O que significa?</p>`;
+  const gp=gapOf(cur);
   let back="";
   if(revealed){const box=(prog[cur.id]||{box:0}).box;back=`<div class="answer">
     ${dir==="pt"?`<div class="word">${label(cur)}</div>`:`<div class="prompt" style="margin:0">${esc(cur.pt)}</div>`}
     <div class="row">${cur.pron?`<span class="pron">[${esc(cur.pron)}]</span>`:""}<button class="btn small" id="say-w">Ouvir palavra</button></div>
     ${cur.hook?`<div class="hook"><span class="tag">Gancho (${esc(cur.tipo)})</span><p>${esc(cur.hook)}</p></div>`:""}
-    ${cur.ex?`<div class="ex"><span class="d">${esc(cur.ex)}</span><span class="p">${esc(cur.exPt)}</span></div><div class="row"><button class="btn small" id="say-e">Ouvir frase e repetir</button></div>`:""}
+    ${cur.ex?`<div class="ex"><span class="d">${gp?clozeHTML(cur.ex,gp,"hl"):esc(cur.ex)}</span><span class="p">${esc(cur.exPt)}</span></div><div class="row"><button class="btn small" id="say-e">Ouvir frase e repetir</button></div>`:""}
     <div class="grade">
       <button class="btn b1" data-r="0">Errei<small>volta agora</small></button>
       <button class="btn b2" data-r="1">Difícil<small>amanhã</small></button>
       <button class="btn b3" data-r="2">Sabia<small>${free?"treino livre":INTERVALS[Math.min(5,box+1)]+" dia(s)"}</small></button>
     </div></div>`}
-  const pre=!revealed?`<div class="hook pre"><span class="tag">Pista (${esc(cur.tipo||"gancho")})</span><p>${cur.hook?hintFor(cur):"Começa com <span class=\"mask\">"+esc(hideWord(dir==="pt"?cur.w:cur.pt))+"</span>"}</p></div>`:"";
+  let pre="";
+  if(!revealed){
+    const first=dir==="pt"?(gp?cur.ex.slice(gp.ranges[gp.main][0],gp.ranges[gp.main][0]+1):cur.w[0]):String(cur.pt).trim()[0];
+    const sent=!cur.ex?"":dir==="pt"?(gp?`<p class="s">${clozeHTML(cur.ex,gp,hinted?"hint":"blank")}</p><p class="t">${esc(cur.exPt)}</p>`:`<p class="t">${esc(cur.exPt)}</p>`)
+      :`<p class="s">${gp?clozeHTML(cur.ex,gp,"hl"):esc(cur.ex)}</p>`;
+    pre=`<div class="cloze">${sent}<button class="btn small hintbtn" id="hint"${hinted?" disabled":""}>${hinted?`Começa com “${esc(first)}”`:"Dica: primeira letra"}</button></div>`;
+  }
   el.innerHTML=`<div class="card"><div class="card-top"><span class="pill">Nível ${cur.lv}</span><span class="pill">${free?"Treino livre":isNew?"Palavra nova":"Revisão"}</span></div>${front}${pre}${revealed?back:`<button class="btn primary" id="reveal">Mostrar resposta</button>`}</div>`;
-  if(!revealed){$("reveal").onclick=()=>{revealed=true;renderTrain();if(dir==="pt")speak(full(cur))}}
+  if(!revealed){$("reveal").onclick=()=>{revealed=true;renderTrain();if(dir==="pt")speak(full(cur))};$("hint").onclick=()=>{hinted=true;renderTrain()}}
   else{$("say-w").onclick=()=>speak(full(cur));const se=$("say-e");if(se)se.onclick=()=>speak(cur.ex);
     el.querySelectorAll("[data-r]").forEach(b=>b.onclick=()=>grade(+b.dataset.r))}
 }
