@@ -55,7 +55,7 @@ Pedido: outro modo com textos do tamanho de um parágrafo (~4x as frases) e part
 - Motor: frases.js ganha o tipo de partida (`f` = frases, 10 por partida; `t` = parágrafos, 3 por partida). Estatística por texto em `H.s["t"+idx]`. Familiaridade das palavras é a mesma (compartilhada).
 - Jogo: XP por frase (base + blocos em língua estrangeira), combo de frases sem abrir a tradução (multiplicador), som curto subindo de tom com o combo (botão de silenciar), marcos com mini confete e vibração, estrelas (1 a 3) e XP total no resumo; XP acumulado por língua no lobby (`vb-xp-<lang>`).
 
-- [ ] Textos alemão
+- [x] Textos alemão (18 parágrafos, 29 a 39 palavras)
 - [ ] Textos italiano
 - [ ] Textos francês
 - [ ] Motor + lobby com os dois modos
