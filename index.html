@@ -711,6 +711,151 @@ body.playing{overflow:hidden}
 .hx .hx-pt{opacity:.75}
 .hx .hx-fl{font-weight:600}
 .hx-full{display:block;font-style:italic;opacity:.75;margin-top:2px}
+
+/* ===== tema visual v1: Vokabel Dark Pop (somente CSS; facil de reverter) ===== */
+:root{
+  --bg:#161d27;
+  --surface:#202b38;
+  --raised:#2b3949;
+  --line:#3b4b5e;
+  --line-soft:#2e3b4b;
+  --fg:#f1f5fa;
+  --muted:#b0bdca;
+  --dim:#8596a8;
+  --accent:#64d893;
+  --accent-hi:#86edb0;
+  --accent-ink:#123022;
+  --accent-soft:rgba(100,216,147,.15);
+  --m:#70bdf1;
+  --f:#efa1c8;
+  --n:#82dbb1;
+  --m-bg:rgba(112,189,241,.14);
+  --f-bg:rgba(239,161,200,.13);
+  --n-bg:rgba(130,219,177,.13);
+  --good:#64d893;
+  --mid:#f6b94c;
+  --bad:#ee7f89;
+  --r-lg:16px;
+  --r-md:11px;
+  --r-sm:8px;
+}
+body{
+  background:radial-gradient(ellipse 105% 420px at 50% -180px,rgba(94,132,174,.13),transparent 72%),var(--bg);
+}
+.langs{border-radius:13px;background:rgba(255,255,255,.02);box-shadow:inset 0 1px 0 rgba(255,255,255,.04)}
+.langs button[aria-pressed="true"]{background:var(--raised);color:var(--fg);box-shadow:0 2px 6px rgba(0,0,0,.13)}
+/* Recompensas: dourado reservado para racha e meta diaria */
+.streak{
+  --accent:#f6b94c;
+  --accent-hi:#ffd36b;
+  --accent-ink:#34250e;
+  --accent-soft:rgba(246,185,76,.15);
+  border-radius:19px;
+  box-shadow:0 7px 23px rgba(3,8,15,.16),inset 0 1px 0 rgba(255,255,255,.035);
+}
+.streak.is-active{
+  border-color:rgba(246,185,76,.46);
+  background:linear-gradient(125deg,rgba(246,185,76,.1),var(--surface) 55%);
+}
+.streak .flame{border-radius:18px;background:rgba(246,185,76,.08);transition:transform .2s ease,box-shadow .2s ease}
+.streak.is-active .flame{box-shadow:0 0 0 6px rgba(246,185,76,.08),0 0 23px rgba(246,185,76,.15)}
+.streak .bar{height:9px;border-radius:99px;background:#384353}
+.streak .bar i{
+  border-radius:99px;
+  background:linear-gradient(90deg,#e8a740,#ffd878);
+  box-shadow:0 0 15px rgba(246,185,76,.36);
+}
+.streak-milestone .milestone-bar{height:5px;border-radius:99px}
+.streak-milestone .milestone-bar i{border-radius:99px}
+.week .dot{border-radius:11px}
+.week .dot.lit{box-shadow:inset 0 1px 0 rgba(255,255,255,.25)}
+/* Cartoes de exercicios: destaque sem alterar o grid */
+.exercise-link{
+  --exercise-color:#64d893;
+  border-radius:18px;
+  border-color:#394858;
+  background:linear-gradient(155deg,rgba(255,255,255,.045),transparent 58%),var(--surface);
+  box-shadow:0 5px 0 rgba(10,17,26,.48),0 9px 20px rgba(0,0,0,.12);
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease,background .18s ease;
+}
+.exercise-link:nth-child(1){--exercise-color:#b69af6}
+.exercise-link:nth-child(2){--exercise-color:#70bdf1}
+.exercise-link:nth-child(3){--exercise-color:#64d893}
+.exercise-link:nth-child(4){--exercise-color:#ee98c3}
+.exercise-link:nth-child(5){--exercise-color:#79d7d5}
+.exercise-link:nth-child(6){--exercise-color:#f6b94c}
+.exercise-link .exercise-symbol{
+  min-width:49px;
+  height:49px;
+  min-height:49px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 8px;
+  border-radius:14px;
+  background:color-mix(in srgb,var(--exercise-color) 19%,var(--surface));
+  border:1px solid color-mix(in srgb,var(--exercise-color) 29%,transparent);
+  color:var(--exercise-color);
+  font-size:1.65rem;
+  font-family:var(--sans);
+  font-weight:700;
+}
+.exercise-link .exercise-cta{color:var(--exercise-color);font-weight:600}
+.exercise-link:hover,.exercise-link:focus-visible{
+  border-color:var(--exercise-color);
+  background:linear-gradient(155deg,color-mix(in srgb,var(--exercise-color) 9%,transparent),transparent 65%),var(--surface);
+  box-shadow:0 6px 0 rgba(10,17,26,.45),0 13px 24px rgba(0,0,0,.17);
+  transform:translateY(-2px);
+}
+.exercise-link:active{transform:translateY(2px);box-shadow:0 2px 0 rgba(10,17,26,.5)}
+.card:not(.game .card){border-radius:16px}
+/* Botões com relevo discreto e feedback ao toque */
+.btn{
+  border-radius:11px;
+  background:var(--surface);
+  box-shadow:0 3px 0 rgba(9,15,23,.55),inset 0 1px 0 rgba(255,255,255,.055);
+  transition:background .15s ease,border-color .15s ease,transform .15s ease,box-shadow .15s ease;
+}
+.btn:hover{border-color:#60748a;background:var(--raised)}
+.btn:active{transform:translateY(2px);box-shadow:0 1px 0 rgba(9,15,23,.55)}
+.btn.primary,.btn.play{
+  border-color:#64d893;
+  background:linear-gradient(180deg,#78e7a4,#57ce87);
+  color:#123022;
+  border-radius:13px;
+  box-shadow:0 4px 0 #2c8c59,0 9px 18px rgba(5,31,20,.16);
+}
+.btn.primary:hover,.btn.play:hover{background:linear-gradient(180deg,#8aefb3,#64d893)}
+.btn.primary:active,.btn.play:active{transform:translateY(3px);box-shadow:0 1px 0 #2c8c59}
+.game .card .btn{box-shadow:none}
+.game .card .btn.primary,.game .card .btn.play{background:var(--accent);border-color:var(--accent);box-shadow:none;color:var(--accent-ink)}
+/* Dock com aspecto de pecas de jogo, sem mudar tamanho ou navegacao */
+.bottom-nav{
+  background:rgba(23,32,43,.97);
+  border-top-color:rgba(146,172,197,.23);
+  box-shadow:0 -8px 34px rgba(0,0,0,.3);
+}
+.bottom-nav .dock-action[data-view="exercicios"]{--dock-color:#f6b94c}
+.bottom-nav .dock-action[data-view="train"]{--dock-color:#70bdf1}
+.bottom-nav .dock-action[data-view="historias"]{--dock-color:#b69af6}
+.bottom-nav .dock-action[data-view="amigos"]{--dock-color:#f6b94c}
+.bottom-nav .dock-action[data-view="avatar"]{--dock-color:#64d893}
+.bottom-nav .dock-action[data-view="method"]{--dock-color:#ee98c3}
+.bottom-nav .dock-icon{
+  background:color-mix(in srgb,var(--dock-color) 13%,var(--surface));
+  border-color:color-mix(in srgb,var(--dock-color) 16%,transparent);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.085),0 3px 0 rgba(6,12,20,.25);
+}
+.bottom-nav .dock-action[aria-current="page"] .dock-icon{
+  background:color-mix(in srgb,var(--dock-color) 23%,var(--surface));
+  border-color:var(--dock-color);
+  box-shadow:0 0 0 3px color-mix(in srgb,var(--dock-color) 10%,transparent),0 4px 0 rgba(6,12,20,.3);
+}
+@media(prefers-reduced-motion:reduce){
+  .exercise-link,.btn,.streak .flame{transition:none!important}
+  .exercise-link:hover,.exercise-link:focus-visible,.exercise-link:active,
+  .btn:active,.btn.primary:active,.btn.play:active{transform:none}
+}
 </style>
 </head>
 <body>
