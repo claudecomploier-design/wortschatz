@@ -380,6 +380,35 @@ body.playing{overflow:hidden}
 .avp-grid img,.avp-grid svg{width:100%;height:100%;display:block;object-fit:cover}
 @keyframes avUp{from{transform:translateY(40px);opacity:.4}to{transform:none;opacity:1}}
 @media (max-width:420px){.avp-grid{gap:10px}.me{width:34px;height:34px}}
+
+/* ===== frases: lobby, partida e proporção ===== */
+.hy-lobby h2,.hy-sum h2{font-family:var(--serif);font-weight:500;font-size:1.6rem;margin:0 0 6px}
+.hy-lb-h{font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--dim);margin:22px 0 10px}
+.hy-sum .hy-lb-h{color:var(--muted)}
+.hy-lb-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:18px;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+.hy-lb-stats div{padding:12px 4px;text-align:center;min-width:0}
+.hy-lb-stats div+div{border-left:1px solid var(--line-soft)}
+.hy-lb-stats b{display:block;font-family:var(--serif);font-weight:500;font-size:1.5rem;line-height:1.1;font-variant-numeric:lining-nums tabular-nums}
+.hy-lb-stats span{font-size:.74rem;color:var(--muted);line-height:1.25;display:block}
+.hy-ratio{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:2px;padding:3px;border:1px solid var(--line);border-radius:var(--r-md)}
+.hy-ratio button{border:0;background:transparent;color:var(--muted);font-weight:500;font-size:.86rem;padding:9px 2px;border-radius:var(--r-sm);cursor:pointer;font-variant-numeric:tabular-nums}
+.hy-ratio button:hover{color:var(--fg)}
+.hy-ratio button[aria-checked="true"]{background:var(--accent);color:var(--accent-ink);font-weight:600}
+.hy-ratio-desc{margin-top:8px;font-size:.86rem}
+.hy-hard{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.hy-hard li{display:flex;justify-content:space-between;gap:12px;font-size:.95rem}
+.hy-hard b{font-family:var(--serif);font-weight:500}
+.hy-hard span{color:var(--muted)}
+.hg-prog{color:var(--muted);font-size:.9rem;font-variant-numeric:tabular-nums}
+.hg-bar{height:3px;background:var(--line-soft);border-radius:3px;overflow:hidden}
+.hg-bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .35s ease}
+.hgame .hy-stage{min-height:min(42vh,340px)}
+.hy-tip{text-align:center;font-size:.84rem;color:var(--dim);min-height:1.2em}
+@media (max-width:420px){.hy-lb-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.hy-lb-stats div:nth-child(3){border-left:0}.hy-lb-stats div:nth-child(n+3){border-top:1px solid var(--line-soft)}.hy-ratio button{font-size:.8rem}}
+/* frase de exemplo misturada nas cartas */
+.hx .hx-pt{opacity:.75}
+.hx .hx-fl{font-weight:600}
+.hx-full{display:block;font-style:italic;opacity:.75;margin-top:2px}
 </style>
 </head>
 <body>
@@ -467,6 +496,7 @@ body.playing{overflow:hidden}
         <button id="dir-pt" aria-pressed="true">PT → <span class="lcode">DE</span></button>
         <button id="dir-tg" aria-pressed="false"><span class="lcode">DE</span> → PT</button>
       </div>
+      <select id="sel-ratio" aria-label="Frase de exemplo: quanto em língua estrangeira"></select>
     </div>
     <div id="lobby"><div class="loading">Carregando palavras...</div></div>
   </main>
@@ -727,6 +757,7 @@ function setLang(l){
     cur=null;free=false;buildQueue();renderLobby();renderMethod();
     if(!$("view-list").hidden)renderList();
     if(window.HYB)HYB.onLang();
+    fillRatioSel();
   });
 }
 
@@ -785,6 +816,21 @@ function gameHud(){
   const n=ses.ok+ses.mid+ses.bad,rest=queue.length+(cur?1:0);
   $("g-ok").textContent=`${ses.ok} cert${ses.ok===1?"a":"as"}`;$("g-left").textContent=`${rest} restante${rest===1?"":"s"}`;
 }
+
+/* ===== proporção nas cartas: frase de exemplo misturada ===== */
+const RATIO=()=>window.HYB?HYB.ratio():"auto";
+function hybEx(c){const r=RATIO();if(r==="auto"||r===100||!window.HYB)return null;return HYB.hybridFor(c.id,r)}
+function hybHTML(h,c,mode){
+  return h.chunks.map(ch=>{
+    if(!ch.foreign)return `<span class="hx-pt">${esc(ch.pt)}</span>`;
+    if(ch.target){const g=gapOf({ex:ch.fl,w:c.w});return `<span class="hx-fl">${g?clozeHTML(ch.fl,g,mode):(mode==="hl"?`<span class="hl">${esc(ch.fl)}</span>`:`<span class="gap" style="min-width:3em"></span>`)}</span>`}
+    return `<span class="hx-fl">${esc(ch.fl)}</span>`}).join(" ").replace(/ ([,.!?;:])/g,"$1");
+}
+function hybFirst(h,c){const t=h.chunks.find(x=>x.target);if(!t)return c.w[0];const g=gapOf({ex:t.fl,w:c.w});return g?t.fl.slice(g.ranges[g.main][0],g.ranges[g.main][0]+1):c.w[0]}
+function fillRatioSel(){const sel=$("sel-ratio");if(!sel||!window.HYB)return;const L=LANGS[lang].name.toLowerCase();
+  sel.innerHTML=HYB.RATIOS.map(r=>`<option value="${r}">${r==="auto"?"Exemplo: original":r===100?`Exemplo: 100% ${L}`:`Exemplo: ${r}% ${L}`}</option>`).join("");
+  sel.value=String(RATIO())}
+window.onRatioChange=()=>{fillRatioSel()};
 function renderTrain(){
   const el=$("train");
   if(!cur){cur=queue.shift()||null;revealed=false;hinted=false}
@@ -804,13 +850,14 @@ function renderTrain(){
   const isNew=!prog[cur.id];const tg=LANGS[lang].code;
   const front=dir==="pt"?`<div class="prompt">${esc(cur.pt)}</div><p class="hintline">Diga em ${LANGS[lang].name.toLowerCase()}, em voz alta${cur.g?", com o artigo":""}.</p>`
     :`<div class="prompt">${label(cur)}</div><p class="hintline">O que significa?</p>`;
-  const gp=gapOf(cur);
+  const gp=gapOf(cur);const hx=hybEx(cur);
   let back="";
   if(revealed){const box=(prog[cur.id]||{box:0}).box;back=`<div class="answer">
     ${dir==="pt"?`<div class="word">${label(cur)}</div>`:`<div class="prompt" style="margin:0">${esc(cur.pt)}</div>`}
     <div class="row">${cur.pron?`<span class="pron">[${esc(cur.pron)}]</span>`:""}<button class="btn small" id="say-w">Ouvir palavra</button></div>
     ${cur.hook?`<div class="hook"><span class="tag">Gancho (${esc(cur.tipo)})</span><p>${esc(cur.hook)}</p></div>`:""}
-    ${cur.ex?`<div class="ex"><span class="d">${gp?clozeHTML(cur.ex,gp,"hl"):esc(cur.ex)}</span><span class="p">${esc(cur.exPt)}</span></div><div class="row"><button class="btn small" id="say-e">Ouvir frase e repetir</button></div>`:""}
+    ${hx?`<div class="ex hx"><span class="d">${hybHTML(hx,cur,"hl")}</span><span class="p">${esc(hx.pt)}</span><span class="p hx-full" lang="${lang}">${esc(hx.fl)}</span></div><div class="row"><button class="btn small" id="say-e">Ouvir frase e repetir</button></div>`
+      :cur.ex?`<div class="ex"><span class="d">${gp?clozeHTML(cur.ex,gp,"hl"):esc(cur.ex)}</span><span class="p">${esc(cur.exPt)}</span></div><div class="row"><button class="btn small" id="say-e">Ouvir frase e repetir</button></div>`:""}
     <div class="grade">
       <button class="btn b1" data-r="0">Errei<small>volta agora</small></button>
       <button class="btn b2" data-r="1">Difícil<small>amanhã</small></button>
@@ -818,14 +865,15 @@ function renderTrain(){
     </div></div>`}
   let pre="";
   if(!revealed){
-    const first=dir==="pt"?(gp?cur.ex.slice(gp.ranges[gp.main][0],gp.ranges[gp.main][0]+1):cur.w[0]):String(cur.pt).trim()[0];
-    const sent=!cur.ex?"":dir==="pt"?(gp?`<p class="s">${clozeHTML(cur.ex,gp,hinted?"hint":"blank")}</p><p class="t">${esc(cur.exPt)}</p>`:`<p class="t">${esc(cur.exPt)}</p>`)
+    const first=dir==="pt"?(hx?hybFirst(hx,cur):gp?cur.ex.slice(gp.ranges[gp.main][0],gp.ranges[gp.main][0]+1):cur.w[0]):String(cur.pt).trim()[0];
+    const sent=hx?(dir==="pt"?`<p class="s hx">${hybHTML(hx,cur,hinted?"hint":"blank")}</p><p class="t">${esc(hx.pt)}</p>`:`<p class="s hx">${hybHTML(hx,cur,"hl")}</p>`)
+      :!cur.ex?"":dir==="pt"?(gp?`<p class="s">${clozeHTML(cur.ex,gp,hinted?"hint":"blank")}</p><p class="t">${esc(cur.exPt)}</p>`:`<p class="t">${esc(cur.exPt)}</p>`)
       :`<p class="s">${gp?clozeHTML(cur.ex,gp,"hl"):esc(cur.ex)}</p>`;
     pre=`<div class="cloze">${sent}<button class="btn small hintbtn" id="hint"${hinted?" disabled":""}>${hinted?`Começa com “${esc(first)}”`:"Dica: primeira letra"}</button></div>`;
   }
   el.innerHTML=`<div class="card"><div class="card-top"><span class="pill">Nível ${cur.lv}</span><span class="pill">${free?"Treino livre":isNew?"Palavra nova":"Revisão"}</span></div>${front}${pre}${revealed?back:`<button class="btn primary" id="reveal">Mostrar resposta</button>`}</div>`;
   if(!revealed){$("reveal").onclick=()=>{revealed=true;renderTrain();if(dir==="pt")speak(full(cur))};$("hint").onclick=()=>{hinted=true;renderTrain()}}
-  else{$("say-w").onclick=()=>speak(full(cur));const se=$("say-e");if(se)se.onclick=()=>speak(cur.ex);
+  else{$("say-w").onclick=()=>speak(full(cur));const se=$("say-e");if(se)se.onclick=()=>speak(hx?hx.fl:cur.ex);
     el.querySelectorAll("[data-r]").forEach(b=>b.onclick=()=>grade(+b.dataset.r))}
 }
 function grade(r){
@@ -903,6 +951,7 @@ function renderMethod(){
 function tab(name){["train","frases","list","method"].forEach(n=>{$("tab-"+n).setAttribute("aria-selected",n===name);$("view-"+n).hidden=n!==name});if(name==="list")renderList();if(name==="frases"&&window.HYB)HYB.open();if(name==="train"){buildQueue();renderLobby()}}
 $("tab-train").onclick=()=>tab("train");$("tab-frases").onclick=()=>tab("frases");$("tab-list").onclick=()=>tab("list");$("tab-method").onclick=()=>tab("method");
 document.querySelectorAll(".langs button").forEach(b=>b.onclick=()=>{if(b.dataset.lang!==lang)setLang(b.dataset.lang)});
+$("sel-ratio").onchange=e=>{const v=e.target.value;if(window.HYB)HYB.setRatio(v==="auto"?"auto":+v)};
 $("sel-level").onchange=e=>{level=e.target.value;cur=null;free=false;buildQueue();renderLobby()};
 $("sel-level-list").onchange=e=>{listLevel=e.target.value;$("search").value="";renderList()};
 $("search").oninput=()=>renderList();
@@ -948,10 +997,10 @@ window.addEventListener("hashchange",()=>{if(location.hash==="#testar-racha")pre
 
 if("serviceWorker" in navigator){
   let reloaded=false;const hadCtrl=!!navigator.serviceWorker.controller;
-  navigator.serviceWorker.addEventListener("controllerchange",()=>{if(hadCtrl&&!reloaded&&!playing){reloaded=true;location.reload()}});
+  navigator.serviceWorker.addEventListener("controllerchange",()=>{if(hadCtrl&&!reloaded&&!playing&&!(window.HYB&&HYB.playing())){reloaded=true;location.reload()}});
   window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js",{updateViaCache:"none"}).then(r=>{r.update();document.addEventListener("visibilitychange",()=>{if(!document.hidden)r.update()})}).catch(()=>{}));
 }
 </script>
-<script src="frases.js?v=2"></script>
+<script src="frases.js?v=3"></script>
 </body>
 </html>

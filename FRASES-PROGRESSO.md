@@ -39,8 +39,10 @@ Arquivo de controle para retomar o trabalho se a sessão parar no meio.
 
 Pedido: aba Frases com lobby e partida (como Treinar); proporções 30/50/70/100% do idioma estrangeiro como opção extra ao automático, valendo também para as cartas (frase de exemplo e pista).
 
-- [ ] frases.js: `buildFixed` (proporção fixa), lobby, partida de 10 frases com resumo, `HYB.hybridFor(id, ratio)` para as cartas, `HYB.ratio()/setRatio()` (chave `vb-ratio`, compartilhada)
-- [ ] index.html: seletor de proporção no lobby do Treinar; frase de exemplo e pista das cartas usam `hybridFor` quando a proporção é 30/50/70 (automático e 100% mantêm o exemplo original)
+- [x] frases.js: `buildFixed` (proporção fixa), lobby, partida de 10 frases com resumo, `HYB.hybridFor(id, ratio)` para as cartas, `HYB.ratio()/setRatio()` (chave `vb-ratio`, compartilhada)
+- [x] index.html: seletor de proporção no lobby do Treinar; frase de exemplo e pista das cartas usam `hybridFor` quando a proporção é 30/50/70 (automático e 100% mantêm o exemplo original)
 - [ ] Testes (Playwright) e publicação
 
 Limite conhecido: nas cartas, a frase misturada só existe para palavras que aparecem nas frases (cerca de 250 por língua); as demais mostram o exemplo original.
+
+Nota: tools/simular_frases.js foi escrito para a versão sem lobby; para simular agora, chame HYB.prepare e use HYB._state() ou adapte para a partida (#hgame).
