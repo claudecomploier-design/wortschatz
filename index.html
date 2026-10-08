@@ -78,6 +78,7 @@ h1 .ver{font-family:var(--sans);font-size:.7rem;font-weight:500;color:var(--dim)
 .banner{margin-top:12px;border:1px solid var(--accent);background:var(--accent-soft);color:var(--fg);border-radius:var(--r-md);padding:12px 16px;font-size:.95rem;text-align:center}
 
 /* ===== central de exercícios ===== */
+.exercise-back{margin:0 0 18px;display:inline-flex;align-items:center}
 .exercise-intro h2{font:500 1.8rem var(--serif);margin:0 0 6px}
 .exercise-intro p{color:var(--muted);margin:0 0 18px}
 .exercise-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
@@ -597,16 +598,13 @@ body.playing{overflow:hidden}
   </section>
   <div class="banner" id="banner" hidden></div>
 
-  <nav role="tablist">
-    <button role="tab" id="tab-train" aria-selected="true">Treinar</button>
-    <button role="tab" id="tab-frases" aria-selected="false">Frases</button>
-    <button role="tab" id="tab-historias" aria-selected="false">Histórias</button>
-    <button role="tab" id="tab-exercicios" aria-selected="false">Exercícios</button>
-    <button role="tab" id="tab-list" aria-selected="false">Palavras</button>
-    <button role="tab" id="tab-method" aria-selected="false">Método</button>
+  <nav role="tablist" aria-label="Navegação principal">
+    <button role="tab" id="tab-exercicios" aria-selected="true" aria-controls="view-exercicios">Exercícios</button>
+    <button role="tab" id="tab-method" aria-selected="false" aria-controls="view-method">Método</button>
   </nav>
 
-  <main id="view-train">
+  <main id="view-train" hidden>
+    <button class="btn small exercise-back" type="button">← Voltar aos exercícios</button>
     <div class="mascot-wrap">
     <button class="mascot" id="mascot" data-face="idle" aria-label="Raposa gatuna, mascote. Toque para ela fazer um gesto.">
       <svg viewBox="0 0 120 120" aria-hidden="true">
@@ -660,6 +658,7 @@ body.playing{overflow:hidden}
   </main>
 
   <main id="view-list" hidden>
+    <button class="btn small exercise-back" type="button">← Voltar aos exercícios</button>
     <div class="controls">
       <select id="sel-level-list" aria-label="Nível"></select>
       <input type="search" id="search" placeholder="Buscar palavra" aria-label="Buscar palavra">
@@ -673,17 +672,21 @@ body.playing{overflow:hidden}
     <textarea id="copy-fallback" hidden readonly aria-label="Correções para copiar"></textarea>
   </main>
 
-  <main id="view-frases" hidden><section class="hy" id="frases" aria-live="polite"></section></main>
-  <main id="view-historias" hidden><section class="hy st" id="historias" aria-live="polite"></section></main>
+  <main id="view-frases" hidden><button class="btn small exercise-back" type="button">← Voltar aos exercícios</button><section class="hy" id="frases" aria-live="polite"></section></main>
+  <main id="view-historias" hidden><button class="btn small exercise-back" type="button">← Voltar aos exercícios</button><section class="hy st" id="historias" aria-live="polite"></section></main>
 
-  <main id="view-exercicios" hidden>
+  <main id="view-exercicios">
     <section class="exercise-intro"><h2>Central de exercícios</h2><p>Escolha como quer praticar. Todos os modos ficam reunidos aqui.</p></section>
     <div class="exercise-grid">
       <button type="button" class="exercise-link" data-exercise="historias"><span class="exercise-symbol">◫</span><strong>Histórias</strong><small>Leia, escolha caminhos e pratique a compreensão.</small><span class="exercise-cta">Abrir histórias →</span></button>
       <button type="button" class="exercise-link" data-exercise="vocabulario"><span class="exercise-symbol">Aa</span><strong>Vocabulário</strong><small>Treine a memória com as palavras do seu nível.</small><span class="exercise-cta">Treinar palavras →</span></button>
       <button type="button" class="exercise-link" data-exercise="frases"><span class="exercise-symbol">“”</span><strong>Frases híbridas</strong><small>Pratique com proporções de 30%, 50%, 70% e 100% de alemão.</small><span class="exercise-cta">Praticar frases →</span></button>
-      <button type="button" class="exercise-link" data-exercise="quiz"><span class="exercise-symbol">✓</span><strong>Quiz de compreensão</strong><small>Responda perguntas rápidas com correção imediata.</small><span class="exercise-cta">Começar quiz →</span></button>
+      <button type="button" class="exercise-link" data-exercise="quiz"><span class="exercise-symbol">✓</span><strong>Quiz de compreensão</strong><small>Responda perguntas de alemão com correção imediata.</small><span class="exercise-cta">Começar quiz →</span></button>
+      <button type="button" class="exercise-link" data-exercise="list"><span class="exercise-symbol">≡</span><strong>Consultar palavras</strong><small>Explore a lista, busque palavras e revise exemplos.</small><span class="exercise-cta">Abrir lista →</span></button>
     </div>
+    </main>
+  <main id="view-quiz" hidden>
+    <button class="btn small exercise-back" type="button">← Voltar aos exercícios</button>
     <section id="exercise-quiz" class="card exercise-quiz" hidden aria-live="polite"></section>
   </main>
 
@@ -914,39 +917,6 @@ function loadLang(l,cb){
 }
 function setLang(l){
   lang=l;store.set("vb-lang",l);
-  const EXERCISE_QUESTIONS=[
- {q:"O que significa «Ich brauche Hilfe»?",a:["Eu preciso de ajuda","Eu tenho tempo","Eu quero água"],ok:0,ex:"brauchen = precisar; Hilfe = ajuda."},
- {q:"Complete: «Ich ___ aus Brasilien.»",a:["komme","habe","binnen"],ok:0,ex:"Ich komme aus Brasilien = Eu venho do Brasil."},
- {q:"Como dizer «Eu gostaria de um café»?",a:["Ich möchte einen Kaffee.","Ich muss ein Haus.","Ich habe eine Frage."],ok:0,ex:"möchte expressa um desejo educadamente."},
- {q:"O que significa «Heute habe ich Zeit»?",a:["Hoje tenho tempo","Ontem estava cansado","Amanhã trabalho"],ok:0,ex:"heute = hoje; Zeit haben = ter tempo."},
- {q:"O que significa «Wo ist der Bahnhof?»",a:["Onde fica a estação?","Quanto custa o bilhete?","Quando sai o trem?"],ok:0,ex:"wo = onde; Bahnhof = estação de trem."},
- {q:"Qual frase diz «Preciso trabalhar amanhã»?",a:["Ich muss morgen arbeiten.","Ich will heute schlafen.","Ich kann gut lesen."],ok:0,ex:"müssen + infinitivo indica necessidade."},
- {q:"«Ich verstehe nicht» quer dizer:",a:["Eu não entendo","Eu não vou","Eu não gosto"],ok:0,ex:"verstehen = compreender; nicht = não."},
- {q:"Como dizer «Ela mora em Berlim»?",a:["Sie wohnt in Berlin.","Sie kommt morgen.","Er wohnt hier."],ok:0,ex:"sie = ela; wohnen = morar."}
-];
-let exerciseIndex=0,exerciseCorrect=0,exerciseAnswered=false;
-function renderExerciseQuiz(){
- const box=$("exercise-quiz");box.hidden=false;
- const item=EXERCISE_QUESTIONS[exerciseIndex];
- if(!item){box.innerHTML='<h3>Quiz concluído</h3><p>Você acertou '+exerciseCorrect+' de '+EXERCISE_QUESTIONS.length+' questões.</p><button class="btn primary" id="quiz-restart">Recomeçar</button>';$("quiz-restart").onclick=()=>{exerciseIndex=0;exerciseCorrect=0;renderExerciseQuiz()};return}
- exerciseAnswered=false;
- const order=[0,1,2].sort((a,b)=>((a+exerciseIndex)%3)-((b+exerciseIndex)%3));
- box.innerHTML='<p class="hintline">Questão '+(exerciseIndex+1)+' de '+EXERCISE_QUESTIONS.length+' · Acertos: '+exerciseCorrect+'</p><h3>'+item.q+'</h3><div class="exercise-answers">'+order.map(i=>'<button class="btn" data-answer="'+i+'">'+item.a[i]+'</button>').join('')+'</div><div id="quiz-feedback" class="exercise-feedback" aria-live="polite"></div>';
- box.querySelectorAll("[data-answer]").forEach(b=>b.onclick=()=>{
-  if(exerciseAnswered)return;exerciseAnswered=true;
-  const right=+b.dataset.answer===item.ok;if(right)exerciseCorrect++;
-  box.querySelectorAll("[data-answer]").forEach(x=>{x.disabled=true;if(+x.dataset.answer===item.ok)x.style.borderColor="var(--good)";else if(x===b)x.style.borderColor="var(--bad)"});
-  $("quiz-feedback").innerHTML='<p>'+(right?"Correto!":"Resposta correta: "+item.a[item.ok]+'.')+' '+item.ex+'</p><button class="btn primary" id="quiz-next">'+(exerciseIndex===EXERCISE_QUESTIONS.length-1?"Ver resultado":"Próxima questão")+'</button>';
-  $("quiz-next").onclick=()=>{exerciseIndex++;renderExerciseQuiz()};
- });
-}
-$("tab-exercicios").onclick=()=>tab("exercicios");
-document.querySelectorAll("[data-exercise]").forEach(b=>b.onclick=()=>{
- const mode=b.dataset.exercise;
- if(mode==="quiz"){exerciseIndex=0;exerciseCorrect=0;renderExerciseQuiz();$("exercise-quiz").scrollIntoView({behavior:"smooth",block:"nearest"})}
- else if(mode==="vocabulario"){tab("train");$("play")?.click()}
- else tab(mode);
-});
 document.querySelectorAll(".langs button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.lang===l));
   document.querySelectorAll(".lcode").forEach(e=>e.textContent=LANGS[l].code);
   $("lobby").innerHTML='<div class="loading">Carregando palavras...</div>';
@@ -1151,8 +1121,55 @@ function renderMethod(){
 }
 
 /* ===== eventos ===== */
-function tab(name){["train","frases","historias","exercicios","list","method"].forEach(n=>{$("tab-"+n).setAttribute("aria-selected",n===name);$("view-"+n).hidden=n!==name});if(name==="list")renderList();if(name==="frases"&&window.HYB)HYB.open();if(name==="historias"&&window.HIST)HIST.open();if(name==="train"){buildQueue();renderLobby()}}
-$("tab-train").onclick=()=>tab("train");$("tab-frases").onclick=()=>tab("frases");$("tab-historias").onclick=()=>tab("historias");$("tab-list").onclick=()=>tab("list");$("tab-method").onclick=()=>tab("method");
+  const EXERCISE_QUESTIONS=[
+ {q:"O que significa «Ich brauche Hilfe»?",a:["Eu preciso de ajuda","Eu tenho tempo","Eu quero água"],ok:0,ex:"brauchen = precisar; Hilfe = ajuda."},
+ {q:"Complete: «Ich ___ aus Brasilien.»",a:["komme","habe","binnen"],ok:0,ex:"Ich komme aus Brasilien = Eu venho do Brasil."},
+ {q:"Como dizer «Eu gostaria de um café»?",a:["Ich möchte einen Kaffee.","Ich muss ein Haus.","Ich habe eine Frage."],ok:0,ex:"möchte expressa um desejo educadamente."},
+ {q:"O que significa «Heute habe ich Zeit»?",a:["Hoje tenho tempo","Ontem estava cansado","Amanhã trabalho"],ok:0,ex:"heute = hoje; Zeit haben = ter tempo."},
+ {q:"O que significa «Wo ist der Bahnhof?»",a:["Onde fica a estação?","Quanto custa o bilhete?","Quando sai o trem?"],ok:0,ex:"wo = onde; Bahnhof = estação de trem."},
+ {q:"Qual frase diz «Preciso trabalhar amanhã»?",a:["Ich muss morgen arbeiten.","Ich will heute schlafen.","Ich kann gut lesen."],ok:0,ex:"müssen + infinitivo indica necessidade."},
+ {q:"«Ich verstehe nicht» quer dizer:",a:["Eu não entendo","Eu não vou","Eu não gosto"],ok:0,ex:"verstehen = compreender; nicht = não."},
+ {q:"Como dizer «Ela mora em Berlim»?",a:["Sie wohnt in Berlin.","Sie kommt morgen.","Er wohnt hier."],ok:0,ex:"sie = ela; wohnen = morar."}
+];
+let exerciseIndex=0,exerciseCorrect=0,exerciseAnswered=false;
+function renderExerciseQuiz(){
+ const box=$("exercise-quiz");box.hidden=false;
+ const item=EXERCISE_QUESTIONS[exerciseIndex];
+ if(!item){box.innerHTML='<h3>Quiz concluído</h3><p>Você acertou '+exerciseCorrect+' de '+EXERCISE_QUESTIONS.length+' questões.</p><button class="btn primary" id="quiz-restart">Recomeçar</button>';$("quiz-restart").onclick=()=>{exerciseIndex=0;exerciseCorrect=0;renderExerciseQuiz()};return}
+ exerciseAnswered=false;
+ const order=[0,1,2].sort((a,b)=>((a+exerciseIndex)%3)-((b+exerciseIndex)%3));
+ box.innerHTML='<p class="hintline">Questão '+(exerciseIndex+1)+' de '+EXERCISE_QUESTIONS.length+' · Acertos: '+exerciseCorrect+'</p><h3>'+item.q+'</h3><div class="exercise-answers">'+order.map(i=>'<button class="btn" data-answer="'+i+'">'+item.a[i]+'</button>').join('')+'</div><div id="quiz-feedback" class="exercise-feedback" aria-live="polite"></div>';
+ box.querySelectorAll("[data-answer]").forEach(b=>b.onclick=()=>{
+  if(exerciseAnswered)return;exerciseAnswered=true;
+  const right=+b.dataset.answer===item.ok;if(right)exerciseCorrect++;
+  box.querySelectorAll("[data-answer]").forEach(x=>{x.disabled=true;if(+x.dataset.answer===item.ok)x.style.borderColor="var(--good)";else if(x===b)x.style.borderColor="var(--bad)"});
+  $("quiz-feedback").innerHTML='<p>'+(right?"Correto!":"Resposta correta: "+item.a[item.ok]+'.')+' '+item.ex+'</p><button class="btn primary" id="quiz-next">'+(exerciseIndex===EXERCISE_QUESTIONS.length-1?"Ver resultado":"Próxima questão")+'</button>';
+  $("quiz-next").onclick=()=>{exerciseIndex++;renderExerciseQuiz()};
+ });
+}
+
+document.querySelectorAll("[data-exercise]").forEach(b=>b.onclick=()=>{
+ const mode=b.dataset.exercise;
+ if(mode==="quiz"){exerciseIndex=0;exerciseCorrect=0;tab("quiz");renderExerciseQuiz()}
+ else if(mode==="vocabulario"){tab("train")}
+ else tab(mode);
+});
+
+function tab(name){
+  const views=["exercicios","train","frases","historias","list","quiz","method"];
+  const target=views.includes(name)?name:"exercicios";
+  views.forEach(n=>{$("view-"+n).hidden=n!==target});
+  $("tab-exercicios").setAttribute("aria-selected",target!=="method");
+  $("tab-method").setAttribute("aria-selected",target==="method");
+  if(target==="list")renderList();
+  if(target==="frases"&&window.HYB)HYB.open();
+  if(target==="historias"&&window.HIST)HIST.open();
+  if(target==="train"){buildQueue();renderLobby()}
+  if(target==="exercicios")$("exercise-quiz").hidden=true;
+}
+$("tab-exercicios").onclick=()=>tab("exercicios");
+$("tab-method").onclick=()=>tab("method");
+document.querySelectorAll(".exercise-back").forEach(b=>b.onclick=()=>tab("exercicios"));
 document.querySelectorAll(".langs button").forEach(b=>b.onclick=()=>{if(b.dataset.lang!==lang)setLang(b.dataset.lang)});
 $("sel-ratio").onchange=e=>{const v=e.target.value;if(window.HYB)HYB.setRatio(v==="auto"?"auto":+v)};
 $("sel-level").onchange=e=>{level=e.target.value;cur=null;free=false;buildQueue();renderLobby()};
