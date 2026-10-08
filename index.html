@@ -155,6 +155,65 @@ h1 .ver{font-family:var(--sans);font-size:.7rem;font-weight:500;color:var(--dim)
 .wr-note{font-size:.79rem;line-height:1.55;color:var(--dim);margin:17px 3px 3px}
 @media(max-width:500px){.wr-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.wr-stat{padding:15px 13px}.wr-panel{padding:16px}.wr-chart{gap:3px}.wr-rail{height:100px}.wr-period{width:100%;justify-content:space-between}.wr-period span{min-width:0}}
 
+
+/* ===== social: ranking e mini-avatar do projeto Forja ===== */
+.cm-heading{margin:2px 0 20px}
+.cm-eyebrow{display:block;color:var(--accent);font-size:.72rem;font-weight:600;letter-spacing:.11em;margin-bottom:8px}
+.cm-heading h2{font:500 clamp(1.65rem,5vw,2.15rem)/1.1 var(--serif);margin:0 0 10px}
+.cm-heading p,.cm-muted{color:var(--muted);font-size:.88rem;line-height:1.55;margin:0}
+.cm-profile-header svg{width:100%;height:100%;object-fit:contain}
+.cm-avatar-overview{display:flex;gap:18px;align-items:center;border:1px solid var(--line);border-radius:var(--r-lg);padding:20px;background:linear-gradient(120deg,var(--surface),var(--raised))}
+.cm-mini-hero{width:100px;height:110px;flex:0 0 100px;border-radius:var(--r-lg);border:1px solid var(--line);background:var(--bg);display:grid;place-items:center;overflow:hidden;padding:6px}
+.cm-mini-hero svg{display:block;width:100%;height:100%;max-height:98px}
+.cm-hero-text{display:grid;gap:7px;min-width:0}
+.cm-hero-text strong{font:500 1.35rem var(--serif);overflow-wrap:anywhere}
+.cm-hero-text span{color:var(--accent);font-size:.85rem}
+.cm-hero-text small,.cm-mini-caption{color:var(--muted);font-size:.79rem}
+.cm-mini-caption{line-height:1.45}
+.cm-panel{border:1px solid var(--line-soft);border-radius:var(--r-lg);background:var(--surface);padding:20px;margin-top:14px}
+.cm-panel h3{font:500 1.28rem var(--serif);margin:0 0 12px}
+.cm-panel h3:not(:first-child){margin-top:19px}
+.cm-inline{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:10px 0}
+.cm-inline .btn.primary{margin:0;width:auto;min-width:130px}
+.cm-inline input{flex:1;min-width:150px;background:var(--bg);border:1px solid var(--line);border-radius:var(--r-md);color:var(--fg);font:inherit;padding:10px}
+.cm-options{display:flex;flex-wrap:wrap;gap:7px}
+.cm-chip{border:1px solid var(--line);background:var(--raised);border-radius:99px;padding:7px 11px;color:var(--muted);font-size:.82rem;display:inline-flex;align-items:center;gap:7px;cursor:pointer}
+.cm-chip[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft);color:var(--fg)}
+.cm-chip:hover{border-color:var(--muted)}
+.cm-dot{display:inline-block;width:13px;height:13px;border:1px solid rgba(255,255,255,.22);border-radius:50%}
+.cm-shuffle{margin-top:18px}
+.cm-fine{color:var(--dim);font-size:.79rem;line-height:1.55;margin:16px 2px}
+.cm-ranking-score{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:16px;display:flex;gap:14px;align-items:center}
+.cm-cat-summary{width:72px;height:72px;flex:0 0 72px;display:grid;place-items:center}
+.cm-cat-summary svg{display:block;width:100%;height:100%}
+.cm-ranking-score>div{display:grid;gap:4px;min-width:0}
+.cm-ranking-score strong{font:500 2rem/1 var(--serif);color:var(--accent)}
+.cm-ranking-score span,.cm-ranking-score small{color:var(--muted);font-size:.81rem}
+.cm-tabs{display:flex;gap:6px;margin:20px 0 12px}
+.cm-tabs button{border:1px solid var(--line);border-radius:99px;padding:9px 14px;background:transparent;color:var(--muted);font-size:.84rem;cursor:pointer}
+.cm-tabs button[aria-pressed="true"]{color:var(--fg);border-color:var(--accent);background:var(--accent-soft)}
+.cm-board{background:var(--surface);border:1px solid var(--line-soft);border-radius:var(--r-lg);overflow:hidden}
+.cm-board-title{display:flex;justify-content:space-between;gap:10px;padding:14px 17px;border-bottom:1px solid var(--line);font-weight:600;font-size:.87rem}
+.cm-board-title span{font-weight:400;color:var(--muted);font-size:.78rem}
+.cm-rank-row{display:flex;align-items:center;gap:10px;padding:11px 14px;border-bottom:1px solid var(--line-soft)}
+.cm-rank-row:last-child{border:0}
+.cm-rank-row.cm-me{background:var(--accent-soft)}
+.cm-rank-n{font:500 1.2rem var(--serif);color:var(--muted);width:19px;flex:none}
+.cm-rank-cat{display:grid;place-items:center;width:46px;height:46px;flex:0 0 46px}
+.cm-rank-cat svg{display:block;width:100%;height:100%}
+.cm-rank-person{flex:1;min-width:0;display:grid;gap:3px}
+.cm-rank-person strong{font-size:.85rem;font-weight:600;overflow-wrap:anywhere}
+.cm-rank-person small{font-size:.7rem;color:var(--dim);overflow-wrap:anywhere}
+.cm-rank-points{text-align:right;display:grid;gap:1px}
+.cm-rank-points strong{font:500 1.17rem var(--serif);font-variant-numeric:tabular-nums}
+.cm-rank-points small{font-size:.69rem;color:var(--dim)}
+.cm-remove{background:transparent;border:0;color:var(--muted);font-size:1.2rem;cursor:pointer;padding:5px 2px}
+.cm-remove:hover{color:var(--bad)}
+#cm-import,#cm-share-code{width:100%;margin:10px 0;background:var(--bg)}
+.cm-divider{height:1px;background:var(--line-soft);margin:20px 0}
+#cm-import-status{margin:10px 0 0;min-height:1.2em}
+@media(max-width:450px){.cm-avatar-overview{padding:14px;gap:12px}.cm-mini-hero{width:84px;height:98px;flex-basis:84px}.cm-panel{padding:16px}.cm-ranking-score strong{font-size:1.75rem}.cm-rank-row{gap:7px;padding:9px 10px}.cm-rank-cat{width:38px;height:38px;flex-basis:38px}.cm-rank-person strong{font-size:.8rem}}
+
 /* ===== abas ===== */
 nav{display:flex;gap:20px;margin:26px 0 20px;border-bottom:1px solid var(--line-soft);overflow-x:auto;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
 nav button{font-weight:500;font-size:.95rem;background:none;border:0;color:var(--muted);padding:10px 0;margin-bottom:-1px;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:color .2s,border-color .2s}
@@ -632,7 +691,7 @@ body.playing{overflow:hidden}
 <body>
 <div class="wrap">
   <header>
-    <div class="brand"><button class="me" id="me" aria-label="Escolher personagem" title="Escolher personagem"></button><h1>Vokabel 1000 <small class="ver">v16</small></h1></div>
+    <div class="brand"><button class="me" id="me" aria-label="Escolher personagem" title="Escolher personagem"></button><h1>Vokabel 1000 <small class="ver">v17</small></h1></div>
     <div class="langs" role="group" aria-label="Língua">
       <button id="lang-de" data-lang="de">Alemão</button>
       <button id="lang-it" data-lang="it">Italiano</button>
@@ -665,6 +724,8 @@ body.playing{overflow:hidden}
 
   <nav role="tablist" aria-label="Navegação principal">
     <button role="tab" id="tab-exercicios" aria-selected="true" aria-controls="view-exercicios">Exercícios</button>
+    <button role="tab" id="tab-amigos" aria-selected="false" aria-controls="view-amigos">Amigos</button>
+    <button role="tab" id="tab-avatar" aria-selected="false" aria-controls="view-avatar">Avatar</button>
     <button role="tab" id="tab-method" aria-selected="false" aria-controls="view-method">Método</button>
   </nav>
 
@@ -760,6 +821,8 @@ body.playing{overflow:hidden}
     <button class="btn small exercise-back" type="button">← Voltar aos exercícios</button>
     <div id="weekly-report" aria-live="polite"></div>
   </main>
+  <main id="view-amigos" hidden><section id="cm-friends-root" aria-live="polite"></section></main>
+  <main id="view-avatar" hidden><section id="cm-avatar-root" aria-live="polite"></section></main>
   <main id="view-method" hidden><div class="method" id="method"></div></main>
 </div>
 
@@ -1150,6 +1213,7 @@ function renderTrain(){
     el.querySelectorAll("[data-r]").forEach(b=>b.onclick=()=>grade(+b.dataset.r))}
 }
 function grade(r){
+  if(window.HYB&&HYB.addXP)HYB.addXP(r===2?12:r===1?8:5,lang);
   if(window.VB_REPORT)VB_REPORT.track("vocab",{grade:r,isNew:!free&&!prog[cur.id]},lang);
   addActivity();
   if(r===2)ses.ok++;else if(r===1)ses.mid++;else ses.bad++;
@@ -1245,6 +1309,7 @@ function renderExerciseQuiz(){
   const right=+b.dataset.answer===item.ok;if(right)exerciseCorrect++;
   addActivity();
   if(window.VB_REPORT)VB_REPORT.track("quiz",{correct:right},lang);
+  if(window.HYB&&HYB.addXP)HYB.addXP(right?12:4,"de");
   box.querySelectorAll("[data-answer]").forEach(x=>{x.disabled=true;if(+x.dataset.answer===item.ok)x.style.borderColor="var(--good)";else if(x===b)x.style.borderColor="var(--bad)"});
   $("quiz-feedback").innerHTML='<p>'+(right?"Correto!":"Resposta correta: "+item.a[item.ok]+'.')+' '+item.ex+'</p><button class="btn primary" id="quiz-next">'+(exerciseIndex===EXERCISE_QUESTIONS.length-1?"Ver resultado":"Próxima questão")+'</button>';
   $("quiz-next").onclick=()=>{exerciseIndex++;renderExerciseQuiz()};
@@ -1259,19 +1324,25 @@ document.querySelectorAll("[data-exercise]").forEach(b=>b.onclick=()=>{
 });
 
 function tab(name){
-  const views=["exercicios","train","frases","historias","list","quiz","relatorio","method"];
+  const views=["exercicios","train","frases","historias","list","quiz","relatorio","amigos","avatar","method"];
   const target=views.includes(name)?name:"exercicios";
   views.forEach(n=>{$("view-"+n).hidden=n!==target});
-  $("tab-exercicios").setAttribute("aria-selected",target!=="method");
+  $("tab-exercicios").setAttribute("aria-selected",["exercicios","train","frases","historias","list","quiz","relatorio"].includes(target));
+  $("tab-amigos").setAttribute("aria-selected",target==="amigos");
+  $("tab-avatar").setAttribute("aria-selected",target==="avatar");
   $("tab-method").setAttribute("aria-selected",target==="method");
   if(target==="list")renderList();
   if(target==="frases"&&window.HYB)HYB.open();
   if(target==="historias"&&window.HIST)HIST.open();
   if(target==="train"){buildQueue();renderLobby()}
   if(target==="relatorio"&&window.VB_REPORT)VB_REPORT.open();
+  if(target==="amigos"&&window.VB_COMMUNITY)VB_COMMUNITY.openFriends();
+  if(target==="avatar"&&window.VB_COMMUNITY)VB_COMMUNITY.openAvatar();
   if(target==="exercicios")$("exercise-quiz").hidden=true;
 }
 $("tab-exercicios").onclick=()=>tab("exercicios");
+$("tab-amigos").onclick=()=>tab("amigos");
+$("tab-avatar").onclick=()=>tab("avatar");
 $("tab-method").onclick=()=>tab("method");
 document.querySelectorAll(".exercise-back").forEach(b=>b.onclick=()=>tab("exercicios"));
 document.querySelectorAll(".langs button").forEach(b=>b.onclick=()=>{if(b.dataset.lang!==lang)setLang(b.dataset.lang)});
@@ -1331,5 +1402,8 @@ if("serviceWorker" in navigator){
 <script src="relatorio.js?v=1"></script>
 <script src="frases.js?v=6"></script>
 <script src="historias.js?v=1"></script>
+<script src="forja-acessorios.js?v=1"></script>
+<script src="forja-gato.js?v=1"></script>
+<script src="comunidade.js?v=1"></script>
 </body>
 </html>
