@@ -1,4 +1,4 @@
-// Histórias interativas originais em italiano. Mesmo formato do motor de histórias e textos híbridos.
+// Histórias interativas em italiano (A1–A2): escolhas, tradução contextual e múltiplos finais.
 window.VB_HIST=window.VB_HIST||{};
 window.VB_HIST.it=[
   {
@@ -210,7 +210,7 @@ window.VB_HIST.it=[
         ],
         "fim": {
           "tipo": "bom",
-          "titulo": "Uma boa decisão"
+          "titulo": "A caminho de Florença"
         }
       },
       "f_neutro": {
@@ -255,7 +255,7 @@ window.VB_HIST.it=[
         ],
         "fim": {
           "tipo": "neutro",
-          "titulo": "Uma nova perspectiva"
+          "titulo": "Um plano diferente"
         }
       }
     }
@@ -469,7 +469,7 @@ window.VB_HIST.it=[
         ],
         "fim": {
           "tipo": "bom",
-          "titulo": "Uma boa decisão"
+          "titulo": "Uma manhã mais doce"
         }
       },
       "f_neutro": {
@@ -514,7 +514,7 @@ window.VB_HIST.it=[
         ],
         "fim": {
           "tipo": "neutro",
-          "titulo": "Uma nova perspectiva"
+          "titulo": "Um sabor inesperado"
         }
       }
     }
@@ -690,8 +690,8 @@ window.VB_HIST.it=[
         "cap": "Una porta aperta",
         "p": [
           [
-            "Apri la porta blu con attenzione e trovi Anna dentro. Lei sta bene, ma era rimasta senza il telefono. Ti ringrazia perché hai letto il messaggio. Marco porta una torcia e vi aiuta a chiudere la stanza. Il giorno dopo Anna lascia una torta davanti alla tua porta. Finalmente conosci meglio i vicini del tuo palazzo.",
-            "Você abre a porta azul com cuidado e encontra Anna lá dentro. Ela está bem, mas tinha ficado sem o celular. Ela agradece porque você leu a mensagem. Marco traz uma lanterna e ajuda vocês a fechar o cômodo. No dia seguinte, Anna deixa um bolo diante da sua porta. Finalmente você conhece melhor os vizinhos do seu prédio.",
+            "Apri la porta blu con attenzione e trovi Anna dentro. Lei sta bene, ma era rimasta senza il telefono. Ti dice grazie perché hai letto il messaggio. Marco porta una torcia e vi aiuta a chiudere la stanza. Il giorno dopo Anna lascia una torta davanti alla tua porta. Finalmente conosci meglio i vicini del tuo palazzo.",
+            "Você abre a porta azul com cuidado e encontra Anna lá dentro. Ela está bem, mas tinha ficado sem o celular. Ela diz obrigado porque você leu a mensagem. Marco traz uma lanterna e ajuda vocês a fechar o cômodo. No dia seguinte, Anna deixa um bolo diante da sua porta. Finalmente você conhece melhor os vizinhos do seu prédio.",
             [
               [
                 "Apri la porta blu con attenzione e trovi Anna dentro.",
@@ -704,9 +704,9 @@ window.VB_HIST.it=[
                 "stare"
               ],
               [
-                "Ti ringrazia perché hai letto il messaggio.",
-                "Ela agradece porque você leu a mensagem.",
-                "ringraziare"
+                "Ti dice grazie perché hai letto il messaggio.",
+                "Ela diz obrigado porque você leu a mensagem.",
+                "dire"
               ],
               [
                 "Marco porta una torcia e vi aiuta a chiudere la stanza.",
@@ -728,7 +728,7 @@ window.VB_HIST.it=[
         ],
         "fim": {
           "tipo": "bom",
-          "titulo": "Uma boa decisão"
+          "titulo": "A vizinha encontrada"
         }
       },
       "f_neutro": {
@@ -773,7 +773,7 @@ window.VB_HIST.it=[
         ],
         "fim": {
           "tipo": "neutro",
-          "titulo": "Uma nova perspectiva"
+          "titulo": "Um recado misterioso"
         }
       }
     }
@@ -949,8 +949,8 @@ window.VB_HIST.it=[
         "cap": "Una buona collaborazione",
         "p": [
           [
-            "Dici con chiarezza che hai bisogno di una spiegazione. Giulia ti aiuta e il cliente risponde con pazienza. Proponi una piccola idea per migliorare il progetto. Il responsabile ascolta e dice che è una buona proposta. Alla fine tutti sorridono e fissano un nuovo incontro. Tornando a casa, sei contento del tuo primo giorno.",
-            "Você diz com clareza que precisa de uma explicação. Giulia ajuda você e o cliente responde com paciência. Você propõe uma pequena ideia para melhorar o projeto. O responsável escuta e diz que é uma boa proposta. No final todos sorriem e marcam outra reunião. Voltando para casa, você está contente com o primeiro dia.",
+            "Dici con chiarezza che hai bisogno di una spiegazione. Giulia ti aiuta e il cliente risponde con pazienza. Proponi una piccola idea per migliorare il progetto. Il responsabile ascolta e dice che è una buona proposta. Alla fine tutti sorridono e fanno un nuovo piano. Tornando a casa, sei contento del tuo primo giorno.",
+            "Você diz com clareza que precisa de uma explicação. Giulia ajuda você e o cliente responde com paciência. Você propõe uma pequena ideia para melhorar o projeto. O responsável escuta e diz que é uma boa proposta. No final todos sorriem e fazem um novo plano. Voltando para casa, você está contente com o primeiro dia.",
             [
               [
                 "Dici con chiarezza che hai bisogno di una spiegazione.",
@@ -973,9 +973,9 @@ window.VB_HIST.it=[
                 "dire"
               ],
               [
-                "Alla fine tutti sorridono e fissano un nuovo incontro.",
-                "No final todos sorriem e marcam outra reunião.",
-                "incontro"
+                "Alla fine tutti sorridono e fanno un nuovo piano.",
+                "No final todos sorriem e fazem um novo plano.",
+                "fare"
               ],
               [
                 "Tornando a casa, sei contento del tuo primo giorno.",
@@ -987,7 +987,7 @@ window.VB_HIST.it=[
         ],
         "fim": {
           "tipo": "bom",
-          "titulo": "Uma boa decisão"
+          "titulo": "Uma boa primeira impressão"
         }
       },
       "f_neutro": {
@@ -1032,7 +1032,7 @@ window.VB_HIST.it=[
         ],
         "fim": {
           "tipo": "neutro",
-          "titulo": "Uma nova perspectiva"
+          "titulo": "Aprendendo com calma"
         }
       }
     }
@@ -1155,8 +1155,8 @@ window.VB_HIST.it=[
         "cap": "Un dolce da condividere",
         "p": [
           [
-            "Decidi di comprare una torta nella pasticceria vicina. La commessa ti consiglia una torta con mele e cannella. Arrivi a casa di Sofia e senti musica nella sala. Un vicino prende la torta e ti ringrazia. Qualcuno propone di giocare a un piccolo gioco dopo cena. Non sai se partecipare, perché conosci poche parole.",
-            "Você decide comprar um bolo na confeitaria próxima. A atendente recomenda um bolo de maçã e canela. Você chega à casa de Sofia e ouve música na sala. Um vizinho pega o bolo e agradece. Alguém propõe brincar de um jogo depois do jantar. Você não sabe se deve participar, pois conhece poucas palavras.",
+            "Decidi di comprare una torta nella pasticceria vicina. La commessa ti dice che la torta con mele e cannella è buona. Arrivi a casa di Sofia e senti musica nella sala. Un vicino prende la torta e ti ringrazia. Qualcuno propone di giocare a un piccolo gioco dopo cena. Non sai se partecipare, perché conosci poche parole.",
+            "Você decide comprar um bolo na confeitaria próxima. A atendente diz que o bolo de maçã e canela é bom. Você chega à casa de Sofia e ouve música na sala. Um vizinho pega o bolo e agradece. Alguém propõe brincar de um jogo depois do jantar. Você não sabe se deve participar, pois conhece poucas palavras.",
             [
               [
                 "Decidi di comprare una torta nella pasticceria vicina.",
@@ -1164,9 +1164,9 @@ window.VB_HIST.it=[
                 "comprare"
               ],
               [
-                "La commessa ti consiglia una torta con mele e cannella.",
-                "A atendente recomenda um bolo de maçã e canela.",
-                "consigliare"
+                "La commessa ti dice che la torta con mele e cannella è buona.",
+                "A atendente diz que o bolo de maçã e canela é bom.",
+                "dire"
               ],
               [
                 "Arrivi a casa di Sofia e senti musica nella sala.",
@@ -1246,7 +1246,7 @@ window.VB_HIST.it=[
         ],
         "fim": {
           "tipo": "bom",
-          "titulo": "Uma boa decisão"
+          "titulo": "Amigos novos"
         }
       },
       "f_neutro": {
@@ -1291,7 +1291,7 @@ window.VB_HIST.it=[
         ],
         "fim": {
           "tipo": "neutro",
-          "titulo": "Uma nova perspectiva"
+          "titulo": "Uma conversa tranquila"
         }
       }
     }
@@ -1505,7 +1505,7 @@ window.VB_HIST.it=[
         ],
         "fim": {
           "tipo": "bom",
-          "titulo": "Uma boa decisão"
+          "titulo": "O farol voltou a brilhar"
         }
       },
       "f_neutro": {
@@ -1550,7 +1550,7 @@ window.VB_HIST.it=[
         ],
         "fim": {
           "tipo": "neutro",
-          "titulo": "Uma nova perspectiva"
+          "titulo": "Uma espera segura"
         }
       }
     }
