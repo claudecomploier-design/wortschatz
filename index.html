@@ -32,7 +32,7 @@
 html{-webkit-text-size-adjust:100%}
 body{margin:0;min-height:100vh;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.5;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);-webkit-font-smoothing:antialiased}
 [hidden]{display:none!important}
-.wrap{max-width:680px;margin:0 auto;padding-inline:20px;padding-block:22px 48px}
+.wrap{max-width:680px;margin:0 auto;padding-inline:20px;padding-block:22px calc(140px + env(safe-area-inset-bottom,0px))}
 button{font:inherit}
 button:focus-visible,select:focus-visible,textarea:focus-visible,input:focus-visible,.mascot:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
@@ -222,11 +222,28 @@ h1 .ver{font-family:var(--sans);font-size:.7rem;font-weight:500;color:var(--dim)
 .cm-bot-label{display:inline-block;padding:2px 5px;border:1px solid var(--line);border-radius:4px;background:var(--raised);color:var(--muted);font:600 .59rem/1.1 var(--sans);letter-spacing:.055em}
 @media(max-width:450px){.cm-avatar-overview{padding:14px;gap:12px}.cm-mini-hero{width:84px;height:98px;flex-basis:84px}.cm-panel{padding:16px}.cm-ranking-score strong{font-size:1.75rem}.cm-rank-row{gap:7px;padding:9px 10px}.cm-rank-cat{width:38px;height:38px;flex-basis:38px}.cm-rank-person strong{font-size:.8rem}}
 
-/* ===== abas ===== */
-nav{display:flex;gap:20px;margin:26px 0 20px;border-bottom:1px solid var(--line-soft);overflow-x:auto;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
-nav button{font-weight:500;font-size:.95rem;background:none;border:0;color:var(--muted);padding:10px 0;margin-bottom:-1px;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:color .2s,border-color .2s}
-nav button:hover{color:var(--fg)}
-nav button[aria-selected="true"]{color:var(--fg);border-bottom-color:var(--accent)}
+/* ===== dock inferior: ícones ilustrados e atalhos acessíveis ===== */
+.bottom-nav{position:fixed;z-index:24;bottom:0;left:0;right:0;width:100%;margin:0;padding:10px max(10px,env(safe-area-inset-right,0px)) calc(9px + env(safe-area-inset-bottom,0px)) max(10px,env(safe-area-inset-left,0px));border:0;border-top:1px solid rgba(147,165,188,.2);background:rgba(19,25,33,.96);box-shadow:0 -10px 40px rgba(4,8,13,.3);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);overflow:visible}
+.bottom-nav .dock-inner{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));align-items:stretch;gap:clamp(2px,1.2vw,9px);max-width:650px;margin:0 auto}
+.bottom-nav .dock-action{--dock-color:var(--accent);appearance:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;position:relative;min-width:0;min-height:68px;padding:2px 1px 4px;margin:0;border:0;border-radius:12px;background:transparent;color:var(--muted);cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation;transition:background .2s ease,color .2s ease,transform .2s ease}
+.bottom-nav .dock-action[data-view="exercicios"]{--dock-color:#f3c16e}
+.bottom-nav .dock-action[data-view="train"]{--dock-color:#77bfe0}
+.bottom-nav .dock-action[data-view="historias"]{--dock-color:#bf9be9}
+.bottom-nav .dock-action[data-view="amigos"]{--dock-color:#f1af83}
+.bottom-nav .dock-action[data-view="avatar"]{--dock-color:#8ad0aa}
+.bottom-nav .dock-action[data-view="method"]{--dock-color:#e49cc6}
+.bottom-nav .dock-icon{width:43px;height:43px;flex:none;display:grid;place-items:center;border:2px solid transparent;border-radius:13px;background:rgba(255,255,255,.035);color:var(--dock-color);transition:transform .24s cubic-bezier(.2,.8,.2,1.15),background .2s ease,border-color .2s ease,box-shadow .2s ease}
+.bottom-nav .dock-icon svg{display:block;width:29px;height:29px;overflow:visible;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;fill:none}
+.bottom-nav .dock-label{display:block;max-width:100%;font:600 clamp(.58rem,1.7vw,.69rem)/1.2 var(--sans);text-align:center;letter-spacing:-.01em;white-space:nowrap}
+.bottom-nav .dock-action:hover{background:rgba(255,255,255,.035);color:var(--fg)}
+.bottom-nav .dock-action:hover .dock-icon{background:rgba(255,255,255,.075);transform:translateY(-2px)}
+.bottom-nav .dock-action:active{transform:scale(.95)}
+.bottom-nav .dock-action[aria-current="page"]{color:var(--dock-color)}
+.bottom-nav .dock-action[aria-current="page"] .dock-icon{background:color-mix(in srgb,var(--dock-color) 15%,#202937);border-color:var(--dock-color);box-shadow:0 0 0 3px color-mix(in srgb,var(--dock-color) 9%,transparent),inset 0 1px 0 rgba(255,255,255,.12);transform:translateY(-2px)}
+.bottom-nav .dock-action[aria-current="page"] .dock-label{font-weight:600}
+.bottom-nav .dock-action:focus-visible{outline:2px solid var(--dock-color);outline-offset:-1px}
+@media(max-width:359px){.bottom-nav{padding-inline:5px}.bottom-nav .dock-inner{gap:0}.bottom-nav .dock-icon{width:39px;height:39px}.bottom-nav .dock-icon svg{width:27px;height:27px}.bottom-nav .dock-label{font-size:.54rem}}
+@media(prefers-reduced-motion:reduce){.bottom-nav .dock-action,.bottom-nav .dock-icon{transition:none!important}}
 
 .controls{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
 select,input[type=search]{font:inherit;font-size:.88rem;padding:8px 12px;border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:var(--r-md);max-width:100%}
@@ -614,7 +631,7 @@ body.playing{overflow:hidden}
 .hy-lvlup{text-align:center;color:var(--accent-hi);font-weight:600;margin:8px 0 0}
 @media (prefers-reduced-motion:reduce){.hy-enter,.hg-pop,.hgame .hg-combo,.hy-stars span{animation:none!important}.hy-stars span{transform:none;opacity:1}}
 /* ===== histórias interativas ===== */
-@media (max-width:420px){nav{gap:16px;overflow-x:auto;scrollbar-width:none}nav::-webkit-scrollbar{display:none}nav button{font-size:.9rem}}
+@media (max-width:420px){.bottom-nav .dock-inner{gap:2px}}
 .st,.st-lib{min-width:0;max-width:100%}.st-lib{overflow:hidden}
 .st-chips{max-width:100%}
 .st-act .btn{width:auto}
@@ -699,7 +716,7 @@ body.playing{overflow:hidden}
 <body>
 <div class="wrap">
   <header>
-    <div class="brand"><button class="me" id="me" aria-label="Escolher personagem" title="Escolher personagem"></button><h1>Vokabel 1000 <small class="ver">v17</small></h1></div>
+    <div class="brand"><button class="me" id="me" aria-label="Escolher personagem" title="Escolher personagem"></button><h1>Vokabel 1000 <small class="ver">v18</small></h1></div>
     <div class="langs" role="group" aria-label="Língua">
       <button id="lang-de" data-lang="de">Alemão</button>
       <button id="lang-it" data-lang="it">Italiano</button>
@@ -730,11 +747,15 @@ body.playing{overflow:hidden}
   </section>
   <div class="banner" id="banner" hidden></div>
 
-  <nav role="tablist" aria-label="Navegação principal">
-    <button role="tab" id="tab-exercicios" aria-selected="true" aria-controls="view-exercicios">Exercícios</button>
-    <button role="tab" id="tab-amigos" aria-selected="false" aria-controls="view-amigos">Amigos</button>
-    <button role="tab" id="tab-avatar" aria-selected="false" aria-controls="view-avatar">Avatar</button>
-    <button role="tab" id="tab-method" aria-selected="false" aria-controls="view-method">Método</button>
+  <nav class="bottom-nav" aria-label="Navegação principal">
+    <div class="dock-inner">
+      <button type="button" class="dock-action" id="tab-exercicios" data-view="exercicios" aria-controls="view-exercicios" aria-current="page" title="Central de exercícios"><span class="dock-icon" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><path d="M4 13 16 4l12 9v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/><path d="m12 18 4-3 4 3-1.5 5h-5Z" fill="currentColor" fill-opacity=".25"/><path d="M10 10.5h.01M22 10.5h.01"/></svg></span><span class="dock-label">Exercícios</span></button>
+      <button type="button" class="dock-action" id="tab-vocabulario" data-view="train" aria-controls="view-train" title="Treinar vocabulário"><span class="dock-icon" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><rect x="5" y="7" width="20" height="22" rx="3"/><path d="M10 7V4h16a2 2 0 0 1 2 2v18h-3"/><path d="m11 23 4-10 4 10M12.5 19h5"/></svg></span><span class="dock-label">Palavras</span></button>
+      <button type="button" class="dock-action" id="tab-historias" data-view="historias" aria-controls="view-historias" title="Histórias interativas"><span class="dock-icon" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><path d="M16 27c-3-2-7-3-12-2V6c5-1 9 0 12 2 3-2 7-3 12-2v19c-5-1-9 0-12 2Z"/><path d="M16 8v19M8 12h4M20 12h4M8 17h4M20 17h4"/></svg></span><span class="dock-label">Histórias</span></button>
+      <button type="button" class="dock-action" id="tab-amigos" data-view="amigos" aria-controls="view-amigos" title="Ranking de amigos"><span class="dock-icon" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><path d="M10 4h12v8c0 5-3 8-6 8s-6-3-6-8V4Z" fill="currentColor" fill-opacity=".2"/><path d="M10 7H5v3c0 4 3 6 7 6M22 7h5v3c0 4-3 6-7 6M16 20v5M11 28h10M12 25h8"/><path d="m16 8 1 2.2 2.4.3-1.7 1.7.4 2.4-2.1-1.1-2.1 1.1.4-2.4-1.7-1.7 2.4-.3Z" fill="currentColor" stroke="none"/></svg></span><span class="dock-label">Amigos</span></button>
+      <button type="button" class="dock-action" id="tab-avatar" data-view="avatar" aria-controls="view-avatar" title="Personalizar avatar"><span class="dock-icon" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><path d="M6 13 5 5l7 4a13 13 0 0 1 8 0l7-4-1 8c2 2 3 4 3 7 0 7-6 10-13 10S3 27 3 20c0-3 1-5 3-7Z" fill="currentColor" fill-opacity=".16"/><path d="M10 18h.01M22 18h.01" stroke-width="3.8"/><path d="m14 23 2 2 2-2M16 25v2M9 24l-5-1M23 24l5-1"/></svg></span><span class="dock-label">Avatar</span></button>
+      <button type="button" class="dock-action" id="tab-method" data-view="method" aria-controls="view-method" title="Método de estudo"><span class="dock-icon" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><circle cx="16" cy="16" r="12"/><path d="m19.5 12.5-2 7-7 2 2-7 7-2Z" fill="currentColor" fill-opacity=".32"/><path d="M16 5v2M16 25v2M5 16h2M25 16h2"/></svg></span><span class="dock-label">Método</span></button>
+    </div>
   </nav>
 
   <main id="view-train" hidden>
@@ -1335,10 +1356,12 @@ function tab(name){
   const views=["exercicios","train","frases","historias","list","quiz","relatorio","amigos","avatar","method"];
   const target=views.includes(name)?name:"exercicios";
   views.forEach(n=>{$("view-"+n).hidden=n!==target});
-  $("tab-exercicios").setAttribute("aria-selected",["exercicios","train","frases","historias","list","quiz","relatorio"].includes(target));
-  $("tab-amigos").setAttribute("aria-selected",target==="amigos");
-  $("tab-avatar").setAttribute("aria-selected",target==="avatar");
-  $("tab-method").setAttribute("aria-selected",target==="method");
+  // As atividades extras pertencem à central; os atalhos recebem destaque próprio.
+  const active=target==="train"||target==="list"?"train":target==="historias"?"historias":(["amigos","avatar","method"].includes(target)?target:"exercicios");
+  document.querySelectorAll(".bottom-nav .dock-action").forEach(button=>{
+    if(button.dataset.view===active)button.setAttribute("aria-current","page");
+    else button.removeAttribute("aria-current");
+  });
   if(target==="list")renderList();
   if(target==="frases"&&window.HYB)HYB.open();
   if(target==="historias"&&window.HIST)HIST.open();
@@ -1347,11 +1370,11 @@ function tab(name){
   if(target==="amigos"&&window.VB_COMMUNITY)VB_COMMUNITY.openFriends();
   if(target==="avatar"&&window.VB_COMMUNITY)VB_COMMUNITY.openAvatar();
   if(target==="exercicios")$("exercise-quiz").hidden=true;
+  window.scrollTo(0,0);
 }
-$("tab-exercicios").onclick=()=>tab("exercicios");
-$("tab-amigos").onclick=()=>tab("amigos");
-$("tab-avatar").onclick=()=>tab("avatar");
-$("tab-method").onclick=()=>tab("method");
+document.querySelectorAll(".bottom-nav .dock-action").forEach(button=>{
+  button.addEventListener("click",()=>tab(button.dataset.view));
+});
 document.querySelectorAll(".exercise-back").forEach(b=>b.onclick=()=>tab("exercicios"));
 document.querySelectorAll(".langs button").forEach(b=>b.onclick=()=>{if(b.dataset.lang!==lang)setLang(b.dataset.lang)});
 $("sel-ratio").onchange=e=>{const v=e.target.value;if(window.HYB)HYB.setRatio(v==="auto"?"auto":+v)};
