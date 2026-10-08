@@ -228,13 +228,15 @@ h1 .ver{font-family:var(--sans);font-size:.7rem;font-weight:500;color:var(--dim)
 .bottom-nav .dock-action{--dock-color:var(--accent);appearance:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;position:relative;min-width:0;min-height:68px;padding:2px 1px 4px;margin:0;border:0;border-radius:12px;background:transparent;color:var(--muted);cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation;transition:background .2s ease,color .2s ease,transform .2s ease}
 .bottom-nav .dock-action[data-view="exercicios"]{--dock-color:#f3c16e}
 .bottom-nav .dock-action[data-view="train"]{--dock-color:#77bfe0}
-.bottom-nav .dock-action[data-view="historias"]{--dock-color:#bf9be9}
+.bottom-nav .dock-action[data-view="relatorio"]{--dock-color:#79d7d5}
 .bottom-nav .dock-action[data-view="amigos"]{--dock-color:#f1af83}
 .bottom-nav .dock-action[data-view="avatar"]{--dock-color:#8ad0aa}
 .bottom-nav .dock-action[data-view="method"]{--dock-color:#e49cc6}
 .bottom-nav .dock-icon{width:43px;height:43px;flex:none;display:grid;place-items:center;border:2px solid transparent;border-radius:13px;background:rgba(255,255,255,.035);color:var(--dock-color);transition:transform .24s cubic-bezier(.2,.8,.2,1.15),background .2s ease,border-color .2s ease,box-shadow .2s ease}
 .bottom-nav .dock-icon svg{display:block;width:29px;height:29px;overflow:visible;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;fill:none}
 .bottom-nav .dock-label{display:block;max-width:100%;font:600 clamp(.58rem,1.7vw,.69rem)/1.2 var(--sans);text-align:center;letter-spacing:-.01em;white-space:nowrap}
+.bottom-nav .dock-action[data-view="relatorio"] .dock-label{white-space:normal;line-height:1.1}
+.bottom-nav .dock-sub{display:block}
 .bottom-nav .dock-action:hover{background:rgba(255,255,255,.035);color:var(--fg)}
 .bottom-nav .dock-action:hover .dock-icon{background:rgba(255,255,255,.075);transform:translateY(-2px)}
 .bottom-nav .dock-action:active{transform:scale(.95)}
@@ -783,7 +785,6 @@ body{
 .exercise-link:nth-child(3){--exercise-color:#64d893}
 .exercise-link:nth-child(4){--exercise-color:#ee98c3}
 .exercise-link:nth-child(5){--exercise-color:#79d7d5}
-.exercise-link:nth-child(6){--exercise-color:#f6b94c}
 .exercise-link .exercise-symbol{
   min-width:49px;
   height:49px;
@@ -837,7 +838,7 @@ body{
 }
 .bottom-nav .dock-action[data-view="exercicios"]{--dock-color:#f6b94c}
 .bottom-nav .dock-action[data-view="train"]{--dock-color:#70bdf1}
-.bottom-nav .dock-action[data-view="historias"]{--dock-color:#b69af6}
+.bottom-nav .dock-action[data-view="relatorio"]{--dock-color:#79d7d5}
 .bottom-nav .dock-action[data-view="amigos"]{--dock-color:#f6b94c}
 .bottom-nav .dock-action[data-view="avatar"]{--dock-color:#64d893}
 .bottom-nav .dock-action[data-view="method"]{--dock-color:#ee98c3}
@@ -896,10 +897,10 @@ body{
     <div class="dock-inner">
       <button type="button" class="dock-action" id="tab-exercicios" data-view="exercicios" aria-controls="view-exercicios" aria-current="page" title="Central de exercícios"><span class="dock-icon" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><path d="M4 13 16 4l12 9v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/><path d="m12 18 4-3 4 3-1.5 5h-5Z" fill="currentColor" fill-opacity=".25"/><path d="M10 10.5h.01M22 10.5h.01"/></svg></span><span class="dock-label">Exercícios</span></button>
       <button type="button" class="dock-action" id="tab-vocabulario" data-view="train" aria-controls="view-train" title="Treinar vocabulário"><span class="dock-icon" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><rect x="5" y="7" width="20" height="22" rx="3"/><path d="M10 7V4h16a2 2 0 0 1 2 2v18h-3"/><path d="m11 23 4-10 4 10M12.5 19h5"/></svg></span><span class="dock-label">Palavras</span></button>
-      <button type="button" class="dock-action" id="tab-historias" data-view="historias" aria-controls="view-historias" title="Histórias interativas"><span class="dock-icon" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><path d="M16 27c-3-2-7-3-12-2V6c5-1 9 0 12 2 3-2 7-3 12-2v19c-5-1-9 0-12 2Z"/><path d="M16 8v19M8 12h4M20 12h4M8 17h4M20 17h4"/></svg></span><span class="dock-label">Histórias</span></button>
+      <button type="button" class="dock-action" id="tab-relatorio" data-view="relatorio" aria-controls="view-relatorio" aria-label="Progresso semanal" title="Progresso semanal"><span class="dock-icon" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><rect x="4" y="4" width="24" height="24" rx="6"/><path d="M10 22v-5M16 22V11M22 22v-8" stroke-width="3" stroke-linecap="round"/><path d="M9 25h14" stroke-width="1.5"/></svg></span><span class="dock-label">Progresso <span class="dock-sub">semanal</span></span></button>
       <button type="button" class="dock-action" id="tab-amigos" data-view="amigos" aria-controls="view-amigos" title="Ranking de amigos"><span class="dock-icon" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><path d="M10 4h12v8c0 5-3 8-6 8s-6-3-6-8V4Z" fill="currentColor" fill-opacity=".2"/><path d="M10 7H5v3c0 4 3 6 7 6M22 7h5v3c0 4-3 6-7 6M16 20v5M11 28h10M12 25h8"/><path d="m16 8 1 2.2 2.4.3-1.7 1.7.4 2.4-2.1-1.1-2.1 1.1.4-2.4-1.7-1.7 2.4-.3Z" fill="currentColor" stroke="none"/></svg></span><span class="dock-label">Amigos</span></button>
-      <button type="button" class="dock-action" id="tab-avatar" data-view="avatar" aria-controls="view-avatar" title="Personalizar avatar"><span class="dock-icon" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><path d="M6 13 5 5l7 4a13 13 0 0 1 8 0l7-4-1 8c2 2 3 4 3 7 0 7-6 10-13 10S3 27 3 20c0-3 1-5 3-7Z" fill="currentColor" fill-opacity=".16"/><path d="M10 18h.01M22 18h.01" stroke-width="3.8"/><path d="m14 23 2 2 2-2M16 25v2M9 24l-5-1M23 24l5-1"/></svg></span><span class="dock-label">Avatar</span></button>
       <button type="button" class="dock-action" id="tab-method" data-view="method" aria-controls="view-method" title="Método de estudo"><span class="dock-icon" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><circle cx="16" cy="16" r="12"/><path d="m19.5 12.5-2 7-7 2 2-7 7-2Z" fill="currentColor" fill-opacity=".32"/><path d="M16 5v2M16 25v2M5 16h2M25 16h2"/></svg></span><span class="dock-label">Método</span></button>
+      <button type="button" class="dock-action" id="tab-avatar" data-view="avatar" aria-controls="view-avatar" title="Meu perfil e avatar"><span class="dock-icon" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><path d="M6 13 5 5l7 4a13 13 0 0 1 8 0l7-4-1 8c2 2 3 4 3 7 0 7-6 10-13 10S3 27 3 20c0-3 1-5 3-7Z" fill="currentColor" fill-opacity=".16"/><path d="M10 18h.01M22 18h.01" stroke-width="3.8"/><path d="m14 23 2 2 2-2M16 25v2M9 24l-5-1M23 24l5-1"/></svg></span><span class="dock-label">Perfil</span></button>
     </div>
   </nav>
 
@@ -983,7 +984,6 @@ body{
       <button type="button" class="exercise-link" data-exercise="frases"><span class="exercise-symbol">“”</span><strong>Frases híbridas</strong><small>Pratique com proporções de 30%, 50%, 70% e 100% de alemão.</small><span class="exercise-cta">Praticar frases →</span></button>
       <button type="button" class="exercise-link" data-exercise="quiz"><span class="exercise-symbol">✓</span><strong>Quiz de compreensão</strong><small>Responda perguntas de alemão com correção imediata.</small><span class="exercise-cta">Começar quiz →</span></button>
       <button type="button" class="exercise-link" data-exercise="list"><span class="exercise-symbol">≡</span><strong>Consultar palavras</strong><small>Explore a lista, busque palavras e revise exemplos.</small><span class="exercise-cta">Abrir lista →</span></button>
-      <button type="button" class="exercise-link" data-exercise="relatorio"><span class="exercise-symbol" aria-hidden="true">▥</span><strong>Relatório semanal</strong><small>Veja dias de estudo, vocabulário, histórias, frases e acertos nos quizzes.</small><span class="exercise-cta">Ver meu progresso →</span></button>
     </div>
     </main>
   <main id="view-quiz" hidden>
@@ -1502,7 +1502,7 @@ function tab(name){
   const target=views.includes(name)?name:"exercicios";
   views.forEach(n=>{$("view-"+n).hidden=n!==target});
   // As atividades extras pertencem à central; os atalhos recebem destaque próprio.
-  const active=target==="train"||target==="list"?"train":target==="historias"?"historias":(["amigos","avatar","method"].includes(target)?target:"exercicios");
+  const active=target==="train"||target==="list"?"train":target==="relatorio"?"relatorio":(["amigos","avatar","method"].includes(target)?target:"exercicios");
   document.querySelectorAll(".bottom-nav .dock-action").forEach(button=>{
     if(button.dataset.view===active)button.setAttribute("aria-current","page");
     else button.removeAttribute("aria-current");
