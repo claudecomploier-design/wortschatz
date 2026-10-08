@@ -171,6 +171,7 @@
     if (ses) { ses.n++; if (opened) ses.opened++; ses.peeks += peeked.size; ses.r += cur.ratio; }
     const gain = award();
     if (typeof addActivity === "function") addActivity();
+    if (window.VB_REPORT) VB_REPORT.track(K === "t" ? "text" : "phrase", {}, lang);
     return gain;
   }
   /* registra a leitura de um item montado (frase, parágrafo ou trecho de história) */
