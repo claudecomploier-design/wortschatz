@@ -56,7 +56,7 @@ Pedido: outro modo com textos do tamanho de um parágrafo (~4x as frases) e part
 - Jogo: XP por frase (base + blocos em língua estrangeira), combo de frases sem abrir a tradução (multiplicador), som curto subindo de tom com o combo (botão de silenciar), marcos com mini confete e vibração, estrelas (1 a 3) e XP total no resumo; XP acumulado por língua no lobby (`vb-xp-<lang>`).
 
 - [x] Textos alemão (18 parágrafos, 29 a 39 palavras)
-- [ ] Textos italiano
+- [x] Textos italiano (18 parágrafos, 25 a 38 palavras)
 - [ ] Textos francês
 - [ ] Motor + lobby com os dois modos
 - [ ] Camada de jogo (XP, combo, som, marcos, estrelas)
