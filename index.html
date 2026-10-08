@@ -468,6 +468,80 @@ body.playing{overflow:hidden}
 .hy-xpbig span{color:var(--muted);font-weight:600}
 .hy-lvlup{text-align:center;color:var(--accent-hi);font-weight:600;margin:8px 0 0}
 @media (prefers-reduced-motion:reduce){.hy-enter,.hg-pop,.hgame .hg-combo,.hy-stars span{animation:none!important}.hy-stars span{transform:none;opacity:1}}
+/* ===== histórias interativas ===== */
+@media (max-width:420px){nav{gap:16px;overflow-x:auto;scrollbar-width:none}nav::-webkit-scrollbar{display:none}nav button{font-size:.9rem}}
+.st-lib h2{font-family:var(--serif);font-weight:500;font-size:1.6rem;margin:0 0 6px}
+.st-msg{padding:40px 16px;text-align:center;color:var(--muted);display:grid;gap:14px;justify-items:center}
+.st-spin{width:22px;height:22px;border-radius:50%;border:2px solid var(--line);border-top-color:var(--accent);animation:stSpin .8s linear infinite}
+@keyframes stSpin{to{transform:rotate(360deg)}}
+.st-cover{flex:none;width:58px;height:72px;border-radius:var(--r-md);display:grid;place-items:center;color:hsl(var(--h) 45% 78%);background:linear-gradient(160deg,hsl(var(--h) 28% 30%),hsl(var(--h) 30% 16%));border:1px solid hsl(var(--h) 25% 34%)}
+.st-cover svg{width:28px;height:28px}
+.st-cont{display:flex;align-items:center;gap:14px;width:100%;margin:16px 0 4px;padding:12px;border-radius:var(--r-lg);border:1px solid var(--accent);background:var(--accent-soft);color:var(--fg);text-align:left;cursor:pointer}
+.st-cont .st-cover{width:46px;height:56px}
+.st-cont-t{flex:1;min-width:0;display:grid;gap:2px}
+.st-cont-t small{font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--accent-hi);font-weight:600}
+.st-cont-t b{font-family:var(--serif);font-weight:500;font-size:1.15rem}
+.st-cont-t span{font-size:.82rem;color:var(--muted)}
+.st-go{font-size:1.8rem;color:var(--accent);line-height:1}
+.st-chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:18px -2px 6px;padding:2px}
+.st-chips::-webkit-scrollbar{display:none}
+.st-chips button{flex:none;border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:999px;padding:6px 12px;font-size:.82rem;cursor:pointer;white-space:nowrap}
+.st-chips button[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.st-list{display:grid;gap:2px;margin-top:8px}
+.st-item{display:flex;gap:14px;padding:16px 0;border-top:1px solid var(--line-soft)}
+.st-item:first-child{border-top:0}
+.st-item-b{flex:1;min-width:0}
+.st-meta{margin:0;font-size:.74rem;color:var(--dim);letter-spacing:.02em}
+.st-item h3{font-family:var(--serif);font-weight:500;font-size:1.25rem;margin:2px 0 4px}
+.st-desc{margin:0;font-size:.9rem;color:var(--muted);line-height:1.45}
+.st-prog{margin:8px 0 0;font-size:.78rem;color:var(--dim)}
+.st-prog.on{color:var(--accent-hi)}.st-prog.done{color:var(--good)}
+.st-act{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.sgame .g-top{justify-content:flex-start}
+.sg-title{flex:1;min-width:0;font-family:var(--serif);font-size:1.05rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sg-rbtn{font-variant-numeric:tabular-nums}
+.sg-ratio{margin:12px 0 0}
+.st-scene{max-width:640px;margin:0 auto;padding:18px 2px 30px}
+.st-cap{margin:0 0 6px;font-size:.74rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--dim)}
+.st-prev{margin:0 0 14px;font-size:.84rem;color:var(--muted);font-style:italic}
+.st-nota{margin:0 0 14px;font-size:.84rem;color:var(--accent-hi)}
+.st-para{margin:0 0 18px}
+.st .st-text,.sgame .st-text{font-size:clamp(1.1rem,4.2vw,1.3rem);line-height:1.68;text-align:left;margin:0;color:var(--muted)}
+.st-tbtn{border:0;background:none;color:var(--dim);font-size:.78rem;padding:6px 0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.st-tbtn:hover{color:var(--fg)}
+.st-trans{margin:8px 0 0;padding:10px 12px;border-left:2px solid var(--line);font-size:.92rem;line-height:1.5;color:var(--muted)}
+.st-tools{margin:-4px 0 18px}
+.st-choices{display:grid;gap:10px;padding-top:16px;border-top:1px solid var(--line-soft)}
+.st-q{margin:0 0 2px;font-weight:600;font-size:.95rem}
+.st-choice{display:flex;align-items:flex-start;gap:12px;width:100%;text-align:left;padding:13px 14px;border-radius:var(--r-lg);border:1px solid var(--line);background:var(--surface);color:var(--fg);cursor:pointer;transition:border-color .15s,transform .1s,background .15s}
+.st-choice:hover{border-color:var(--accent)}
+.st-choice:active{transform:scale(.99)}
+.st-choice:disabled{cursor:default;opacity:.45}
+.st-choice.picked{opacity:1;border-color:var(--accent);background:var(--accent-soft)}
+.st-l{flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:.78rem;font-weight:700;border:1px solid var(--line);color:var(--muted)}
+.st-ct{display:grid;gap:3px}
+.st-ct b{font-weight:500;font-size:.98rem;line-height:1.35}
+.st-ct small{font-size:.8rem;color:var(--dim)}
+.st-end{padding:20px 0 0;border-top:1px solid var(--line-soft);text-align:center}
+.st-end-k{margin:0;font-size:.74rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.st-end-bom .st-end-k{color:var(--good)}.st-end-ruim .st-end-k{color:var(--bad)}.st-end-neutro .st-end-k{color:var(--mid)}
+.st-end h3{font-family:var(--serif);font-weight:500;font-size:1.6rem;margin:4px 0 8px}
+.st-route{display:flex;flex-direction:column;gap:6px;margin:16px 0;text-align:left}
+.st-route span{font-size:.84rem;color:var(--muted);padding-left:14px;border-left:2px solid var(--line)}
+.st-end .more{display:grid;gap:8px}
+.sg-pop{position:fixed;z-index:62;padding:14px;border-radius:var(--r-lg);background:var(--raised);border:1px solid var(--line);box-shadow:0 14px 40px rgba(0,0,0,.4);display:grid;gap:8px}
+.sg-pop[hidden]{display:none}
+.sg-pop-h{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
+.sg-pop-h b{font-family:var(--serif);font-weight:500;font-size:1.2rem;color:var(--accent-hi)}
+.sg-pop-x{border:0;background:none;color:var(--muted);font-size:1.3rem;line-height:1;cursor:pointer;padding:0 2px}
+.sg-pop-pt{margin:0;font-size:1rem}
+.sg-pop-k{margin:4px 0 0;font-size:.72rem;color:var(--dim);text-transform:uppercase;letter-spacing:.06em}
+.sg-pop-w{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.sg-pop-w li{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:.88rem}
+.sg-pop-w i{font-style:normal;color:var(--muted)}
+.st-add{flex:none;border:1px solid var(--line);background:transparent;color:var(--accent-hi);border-radius:999px;padding:3px 10px;font-size:.74rem;cursor:pointer}
+.st-add.on{color:var(--good);border-color:transparent}
+.sg-pop .btn{justify-self:start}
 /* frase de exemplo misturada nas cartas */
 .hx .hx-pt{opacity:.75}
 .hx .hx-fl{font-weight:600}
@@ -477,7 +551,7 @@ body.playing{overflow:hidden}
 <body>
 <div class="wrap">
   <header>
-    <div class="brand"><button class="me" id="me" aria-label="Escolher personagem" title="Escolher personagem"></button><h1>Vokabel 1000 <small class="ver">v13</small></h1></div>
+    <div class="brand"><button class="me" id="me" aria-label="Escolher personagem" title="Escolher personagem"></button><h1>Vokabel 1000 <small class="ver">v14</small></h1></div>
     <div class="langs" role="group" aria-label="Língua">
       <button id="lang-de" data-lang="de">Alemão</button>
       <button id="lang-it" data-lang="it">Italiano</button>
@@ -507,6 +581,7 @@ body.playing{overflow:hidden}
   <nav role="tablist">
     <button role="tab" id="tab-train" aria-selected="true">Treinar</button>
     <button role="tab" id="tab-frases" aria-selected="false">Frases</button>
+    <button role="tab" id="tab-historias" aria-selected="false">Histórias</button>
     <button role="tab" id="tab-list" aria-selected="false">Palavras</button>
     <button role="tab" id="tab-method" aria-selected="false">Método</button>
   </nav>
@@ -579,6 +654,7 @@ body.playing{overflow:hidden}
   </main>
 
   <main id="view-frases" hidden><section class="hy" id="frases" aria-live="polite"></section></main>
+  <main id="view-historias" hidden><section class="hy st" id="historias" aria-live="polite"></section></main>
 
   <main id="view-method" hidden><div class="method" id="method"></div></main>
 </div>
@@ -819,7 +895,7 @@ function setLang(l){
     $("sel-level").innerHTML=o;$("sel-level-list").innerHTML=o2;level="all";listLevel="1";
     cur=null;free=false;buildQueue();renderLobby();renderMethod();
     if(!$("view-list").hidden)renderList();
-    if(window.HYB)HYB.onLang();
+    if(window.HYB)HYB.onLang();if(window.HIST)HIST.onLang();
     fillRatioSel();
   });
 }
@@ -1011,8 +1087,8 @@ function renderMethod(){
 }
 
 /* ===== eventos ===== */
-function tab(name){["train","frases","list","method"].forEach(n=>{$("tab-"+n).setAttribute("aria-selected",n===name);$("view-"+n).hidden=n!==name});if(name==="list")renderList();if(name==="frases"&&window.HYB)HYB.open();if(name==="train"){buildQueue();renderLobby()}}
-$("tab-train").onclick=()=>tab("train");$("tab-frases").onclick=()=>tab("frases");$("tab-list").onclick=()=>tab("list");$("tab-method").onclick=()=>tab("method");
+function tab(name){["train","frases","historias","list","method"].forEach(n=>{$("tab-"+n).setAttribute("aria-selected",n===name);$("view-"+n).hidden=n!==name});if(name==="list")renderList();if(name==="frases"&&window.HYB)HYB.open();if(name==="historias"&&window.HIST)HIST.open();if(name==="train"){buildQueue();renderLobby()}}
+$("tab-train").onclick=()=>tab("train");$("tab-frases").onclick=()=>tab("frases");$("tab-historias").onclick=()=>tab("historias");$("tab-list").onclick=()=>tab("list");$("tab-method").onclick=()=>tab("method");
 document.querySelectorAll(".langs button").forEach(b=>b.onclick=()=>{if(b.dataset.lang!==lang)setLang(b.dataset.lang)});
 $("sel-ratio").onchange=e=>{const v=e.target.value;if(window.HYB)HYB.setRatio(v==="auto"?"auto":+v)};
 $("sel-level").onchange=e=>{level=e.target.value;cur=null;free=false;buildQueue();renderLobby()};
@@ -1060,10 +1136,11 @@ window.addEventListener("hashchange",()=>{if(location.hash==="#testar-racha")pre
 
 if("serviceWorker" in navigator){
   let reloaded=false;const hadCtrl=!!navigator.serviceWorker.controller;
-  navigator.serviceWorker.addEventListener("controllerchange",()=>{if(hadCtrl&&!reloaded&&!playing&&!(window.HYB&&HYB.playing())){reloaded=true;location.reload()}});
+  navigator.serviceWorker.addEventListener("controllerchange",()=>{if(hadCtrl&&!reloaded&&!playing&&!(window.HYB&&HYB.playing())&&!(window.HIST&&HIST.playing())){reloaded=true;location.reload()}});
   window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js",{updateViaCache:"none"}).then(r=>{r.update();document.addEventListener("visibilitychange",()=>{if(!document.hidden)r.update()})}).catch(()=>{}));
 }
 </script>
-<script src="frases.js?v=5"></script>
+<script src="frases.js?v=6"></script>
+<script src="historias.js?v=1"></script>
 </body>
 </html>

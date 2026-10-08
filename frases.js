@@ -123,8 +123,8 @@
   }
 
   /* modo automático: decide pelo conhecimento de cada palavra */
-  function build(idx, fr){
-    const s = list()[idx];
+  function build(idx, fr, src, lim){
+    const s = (src || list())[idx], L = lim || MAXT[K];
     const chunks = chunkInfo(s, fr);
     const targets = new Set(); let newCnt = 0;
     const order = chunks.filter(c => !c.foreign && !c.tooFar && c.ids.length)
@@ -133,7 +133,7 @@
     for (const c of order) {
       const add = c.unknown.filter(id => !targets.has(id));
       const addNew = add.filter(id => !introduced(id)).length;
-      if (targets.size + add.length > MAXT[K][0] || newCnt + addNew > MAXT[K][1]) continue;
+      if (targets.size + add.length > L[0] || newCnt + addNew > L[1]) continue;
       add.forEach(id => targets.add(id)); newCnt += addNew; c.foreign = true;
     }
     for (const c of chunks) if (!c.foreign && c.unknown.length && c.unknown.every(id => targets.has(id))) c.foreign = true;
@@ -165,6 +165,16 @@
   /* ---------- registro ---------- */
   function commit(){
     if (!cur) return;
+    learn(cur, opened, peeked, sk(cur.idx));
+    const ra = recentArr(); ra.push(cur.idx); if (ra.length > 60) ra.splice(0, ra.length - 60);
+    save();
+    if (ses) { ses.n++; if (opened) ses.opened++; ses.peeks += peeked.size; ses.r += cur.ratio; }
+    const gain = award();
+    if (typeof addActivity === "function") addActivity();
+    return gain;
+  }
+  /* registra a leitura de um item montado (frase, parágrafo ou trecho de história) */
+  function learn(cur, opened, peeked, key){
     H.tick++;
     const shown = new Set(); cur.chunks.forEach(c => { if (c.foreign || cur.allForeign) c.ids.forEach(id => shown.add(id)); });
     const tg = new Set(cur.targets);
@@ -188,16 +198,11 @@
         w.d = H.tick + Math.round(3 * Math.pow(2, Math.min(w.st, 6)));   // espaçamento cresce
       }
     });
-    const st = H.s[sk(cur.idx)] || (H.s[sk(cur.idx)] = { n: 0, o: 0, l: 0 });
+    const st = H.s[key] || (H.s[key] = { n: 0, o: 0, l: 0 });
     st.n++; if (opened) st.o++; st.l = H.tick;
-    const ra = recentArr(); ra.push(cur.idx); if (ra.length > 60) ra.splice(0, ra.length - 60);
-    H.log.push({ i: sk(cur.idx), k: H.tick, r: Math.round(cur.ratio * 100), o: opened ? 1 : 0, p: peeked.size, m: ratio, tg: cur.targets });
+    H.log.push({ i: key, k: H.tick, r: Math.round(cur.ratio * 100), o: opened ? 1 : 0, p: peeked.size, m: ratio, tg: cur.targets });
     if (H.log.length > LOG_MAX) H.log.splice(0, H.log.length - LOG_MAX);
     save();
-    if (ses) { ses.n++; if (opened) ses.opened++; ses.peeks += peeked.size; ses.r += cur.ratio; }
-    const gain = award();
-    if (typeof addActivity === "function") addActivity();
-    return gain;
   }
 
   /* ---------- camada de jogo: XP, combo, nível, som ---------- */
@@ -569,6 +574,19 @@
     ratioName, ratioDesc, RATIOS,
     hybridFor,
     playing: () => playing,
+    /* usado pelas Histórias: monta um parágrafo [de, pt, blocos] na proporção atual e registra a leitura */
+    para(p, r){
+      if (!H || loadedFor !== lang) return null;
+      const src = [["", p[0], p[1], p[2]]], rr = r === undefined ? ratio : r;
+      return rr === "auto" ? build(0, frontier(), src, MAXT.t) : buildFixed(0, rr, null, src);
+    },
+    learn(c, op, pk, key){
+      if (!H || !c) return;
+      learn(c, !!op, pk || new Set(), key);
+      if (typeof addActivity === "function") addActivity();
+    },
+    xp(n){ if (!XP) xpLoad(); XP.total += n; XP.days[today()] = (XP.days[today()] || 0) + n; xpSave(); },
+    lemmaInfo: id => (id in rank) ? CARDS[rank[id]] : null,
     /* para depuração e testes */
     _state(){ return { H, cur, frontier: frontier(), ratio, ses }; },
     _fam: id => ({ f: fam(id), stage: stage(fam(id)) })
