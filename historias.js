@@ -1,5 +1,5 @@
 /* Histórias Interativas: narrativas ramificadas com parágrafos híbridos.
-   Dados: data/historias-<lang>.js (VB_HIST[lang]); hoje só alemão.
+   Dados: data/historias-<lang>.js (VB_HIST[lang]); alemão, italiano e francês.
    Usa o motor das Frases (window.HYB): proporção compartilhada (vb-ratio), montagem dos parágrafos, familiaridade das palavras.
    Progresso em vb-story-<lang>: { last, h: { id: { cena, rota:[{c, e}], flags:{}, fim, finais:[] } } } */
 (function(){
@@ -34,11 +34,13 @@
 
   /* ---------- dados ---------- */
   function ensureData(cb, fail){
-    if (VB_HIST[lang]) { cb(); return; }
-    if (lang !== "de") { VB_HIST[lang] = []; cb(); return; }
-    const s = document.createElement("script"); s.src = `data/historias-${lang}.js?v=1`;
+    const requested = lang;
+    if (Array.isArray(VB_HIST[requested])) { cb(); return; }
+    const s = document.createElement("script");
+    s.src = `data/historias-${requested}.js?v=2`;
     s.onload = () => {
-      if (!VB_HIST[lang]) VB_HIST[lang] = [];
+      if (!Array.isArray(VB_HIST[requested])) { fail && fail(); return; }
+      if (requested !== "de") { cb(); return; }
       const extra = document.createElement("script");
       extra.src = "data/historias-extra-de.js?v=1";
       extra.onload = () => cb();
@@ -74,7 +76,7 @@
     const el = $("historias"); if (!el) return;
     const L = LANGS[lang].name.toLowerCase();
     if (!list().length) {
-      el.innerHTML = `<div class="card start st-lib"><h2>Histórias interativas</h2><p class="hintline">As histórias estão disponíveis por enquanto só em alemão. Troque a língua no topo para ler.</p></div>`;
+      el.innerHTML = `<div class="card start st-lib"><h2>Histórias interativas</h2><p class="hintline">Ainda não há histórias disponíveis neste idioma. Escolha outro no menu Idiomas.</p></div>`;
       return;
     }
     const gens = ["Todas", ...new Set(list().map(h => h.genero))];
@@ -193,7 +195,8 @@
   }
   function choiceHTML(e, i){
     const r = HYB.ratio(), deFirst = r !== "auto" && r >= 70;
-    const main = r === 100 ? e.de : deFirst ? e.de : e.pt, sub = r === 100 ? "" : deFirst ? e.pt : e.de;
+    const foreign = e.fl || e.de; // compatibilidade com histórias antigas em alemão
+    const main = r === 100 ? foreign : deFirst ? foreign : e.pt, sub = r === 100 ? "" : deFirst ? e.pt : foreign;
     return `<button type="button" class="st-choice" data-ch="${i}"><span class="st-l" aria-hidden="true">${"ABC"[i]}</span><span class="st-ct"><b${deFirst || r === 100 ? ` lang="${lang}"` : ""}>${esc(main)}</b>${sub ? `<small${deFirst ? "" : ` lang="${lang}"`}>${esc(sub)}</small>` : ""}</span></button>`;
   }
   const visible = (es, flags) => es.map((e, i) => [e, i]).filter(([e]) => (!e.req || flags[e.req]) && (!e.sem || !flags[e.sem]));
@@ -278,7 +281,7 @@
     const clean = t => t.replace(/[,.!?;:„“"»«]+/g, "").trim();
     const words = ch.ids.map(id => {
       const k = HYB.lemmaInfo(id); if (!k) return "";
-      const art = k.g === "m" ? "der " : k.g === "f" ? "die " : k.g === "n" ? "das " : "";
+      const art = lang === "de" ? (k.g === "m" ? "der " : k.g === "f" ? "die " : k.g === "n" ? "das " : "") : "";
       const has = !!prog[id];
       return `<li><span><b lang="${lang}">${esc(art + id)}</b> <i>${esc(k.pt)}</i></span>
         <button type="button" class="st-add${has ? " on" : ""}" data-add="${esc(id)}"${has ? " disabled" : ""}>${has ? "Nos cartões" : "+ Cartões"}</button></li>`;
