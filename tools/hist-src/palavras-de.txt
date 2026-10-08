@@ -1,0 +1,1012 @@
+0	ich	eu
+1	du	você (informal)
+2	er	ele
+3	sie	ela / eles / o senhor (Sie)
+4	es	isso / ele, ela (neutro)
+5	wir	nós
+6	ihr	vocês (informal)
+7	man	a gente / se (indeterminado)
+8	sich	se (reflexivo)
+9	Mensch	ser humano, pessoa
+10	Mann	homem
+11	Frau	mulher / senhora
+12	Kind	criança
+13	sein	ser / estar
+14	haben	ter
+15	werden	tornar-se / vai (futuro)
+16	können	poder / conseguir
+17	müssen	ter que
+18	sollen	dever (por regra ou ordem)
+19	wollen	querer
+20	sagen	dizer
+21	machen	fazer
+22	geben	dar
+23	kommen	vir
+24	gehen	ir (a pé)
+25	sehen	ver
+26	wissen	saber (um fato)
+27	finden	achar, encontrar
+28	stehen	estar de pé
+29	lassen	deixar
+30	bleiben	ficar, permanecer
+31	nehmen	pegar, tomar
+32	der	o (masculino)
+33	die	a (feminino) / os, as (plural)
+34	das	o (neutro) / isso
+35	ein	um, uma
+36	kein	nenhum
+37	und	e
+38	oder	ou
+39	aber	mas
+40	dass	que (eu sei que...)
+41	weil	porque
+42	wenn	se / quando
+43	als	do que / como / quando (passado)
+44	dieser	este, esta
+45	in	em, dentro de
+46	auf	em cima de / aberto
+47	an	encostado em, junto a
+48	bei	na casa de / junto a
+49	mit	com
+50	von	de (origem, posse)
+51	zu	para (pessoa, lugar) / demais
+52	aus	de (origem) / fora / desligado
+53	nach	para (cidade, país) / depois
+54	über	sobre, acima de
+55	unter	debaixo de
+56	vor	diante de / antes de
+57	durch	através de
+58	für	para (em benefício de)
+59	um	às (horas) / em volta de
+60	bis	até
+61	dann	então, depois
+62	noch	ainda
+63	schon	já
+64	immer	sempre
+65	heute	hoje
+66	mal	vez
+67	Zeit	tempo
+68	Jahr	ano
+69	Tag	dia
+70	Ende	fim
+71	was	o quê
+72	wie	como
+73	wo	onde
+74	hier	aqui
+75	da	ali, aí / presente
+76	nicht	não
+77	ja	sim
+78	doch	sim! (contrariando um não)
+79	auch	também
+80	nur	só, apenas
+81	so	assim / tão
+82	also	então, portanto
+83	sehr	muito (intensidade)
+84	viel	muito (quantidade)
+85	mehr	mais
+86	alle	todos
+87	ganz	inteiro / totalmente
+88	zwei	dois
+89	gut	bom, bem
+90	groß	grande, alto
+91	neu	novo
+92	alt	velho
+93	Haus	casa
+94	Stadt	cidade
+95	Land	país, campo
+96	Welt	mundo
+97	Leben	vida
+98	Geld	dinheiro
+99	Weg	caminho
+100	liegen	estar deitado, ficar (situado)
+101	heißen	chamar-se
+102	denken	pensar
+103	glauben	acreditar, achar
+104	halten	segurar, parar
+105	bringen	trazer, levar
+106	zeigen	mostrar
+107	führen	conduzir, liderar
+108	sprechen	falar
+109	fragen	perguntar
+110	spielen	jogar, brincar, tocar
+111	arbeiten	trabalhar
+112	brauchen	precisar
+113	folgen	seguir
+114	lernen	aprender, estudar
+115	verstehen	entender
+116	setzen	colocar, sentar-se (sich setzen)
+117	bekommen	receber, ganhar
+118	beginnen	começar
+119	erzählen	contar (história)
+120	versuchen	tentar
+121	schreiben	escrever
+122	laufen	correr, andar
+123	erklären	explicar
+124	sitzen	estar sentado
+125	ziehen	puxar, mudar-se
+126	scheinen	brilhar, parecer
+127	fallen	cair
+128	gehören	pertencer
+129	entstehen	surgir, originar-se
+130	erhalten	receber, manter
+131	treffen	encontrar (alguém)
+132	suchen	procurar
+133	legen	colocar deitado
+134	handeln	agir, negociar
+135	erreichen	alcançar
+136	tragen	carregar, vestir
+137	schaffen	conseguir, criar
+138	lesen	ler
+139	verlieren	perder
+140	erkennen	reconhecer
+141	entwickeln	desenvolver
+142	reden	falar, conversar
+143	aussehen	parecer (aparência)
+144	bilden	formar
+145	anfangen	começar
+146	erwarten	esperar (expectativa)
+147	wohnen	morar
+148	warten	esperar (aguardar)
+149	helfen	ajudar
+150	gewinnen	ganhar, vencer
+151	schließen	fechar
+152	fühlen	sentir
+153	bieten	oferecer
+154	erinnern	lembrar
+155	studieren	estudar (faculdade)
+156	verbinden	ligar, conectar
+157	fehlen	faltar
+158	bedeuten	significar
+159	leben	viver
+160	essen	comer
+161	trinken	beber
+162	schlafen	dormir
+163	kaufen	comprar
+164	bezahlen	pagar
+165	fahren	ir (de veículo), dirigir
+166	fliegen	voar
+167	öffnen	abrir
+168	hören	ouvir
+169	rufen	chamar, gritar
+170	antworten	responder
+171	lieben	amar
+172	mögen	gostar
+173	dürfen	poder (ter permissão)
+174	kennen	conhecer
+175	tun	fazer
+176	sterben	morrer
+177	gefallen	agradar
+178	passieren	acontecer
+179	vergessen	esquecer
+180	verkaufen	vender
+181	kochen	cozinhar
+182	waschen	lavar
+183	schwimmen	nadar
+184	singen	cantar
+185	tanzen	dançar
+186	lachen	rir
+187	weinen	chorar
+188	stellen	colocar (em pé)
+189	holen	buscar, ir pegar
+190	schicken	enviar
+191	zahlen	pagar
+192	ändern	mudar, alterar
+193	bauen	construir
+194	wählen	escolher, votar
+195	teilen	dividir, compartilhar
+196	besuchen	visitar
+197	bitten	pedir
+198	danken	agradecer
+199	feiern	festejar
+200	hoffen	esperar (ter esperança)
+201	meinen	achar, querer dizer
+202	nennen	nomear, chamar
+203	reisen	viajar
+204	regnen	chover
+205	sparen	economizar
+206	springen	pular
+207	steigen	subir
+208	stimmen	estar certo, votar
+209	stören	incomodar
+210	träumen	sonhar
+211	üben	praticar
+212	vermissen	sentir falta
+213	wachsen	crescer
+214	wechseln	trocar
+215	werfen	jogar, atirar
+216	wünschen	desejar
+217	zählen	contar (números)
+218	zeichnen	desenhar
+219	benutzen	usar
+220	erleben	vivenciar
+221	entscheiden	decidir
+222	beschreiben	descrever
+223	kosten	custar
+224	schauen	olhar
+225	fangen	pegar (capturar)
+226	drücken	apertar, empurrar
+227	klingen	soar
+228	vorbereiten	preparar
+229	ankommen	chegar
+230	aufstehen	levantar-se
+231	einladen	convidar
+232	mitbringen	trazer junto
+233	anrufen	telefonar
+234	aufhören	parar (de fazer)
+235	ausgehen	sair (à noite)
+236	einkaufen	fazer compras
+237	fernsehen	assistir TV
+238	kennenlernen	conhecer (alguém pela 1ª vez)
+239	empfehlen	recomendar
+240	vergleichen	comparar
+241	gelten	valer
+242	verdienen	ganhar (salário), merecer
+243	verlassen	deixar, sair de
+244	vorschlagen	sugerir
+245	wiederholen	repetir
+246	Ding	coisa
+247	Teil	parte
+248	Frage	pergunta
+249	Problem	problema
+250	Arbeit	trabalho
+251	Hand	mão
+252	Kopf	cabeça
+253	Auge	olho
+254	Name	nome
+255	Wort	palavra
+256	Seite	lado, página
+257	Leute	pessoas (plural, die Leute)
+258	Freund	amigo, namorado
+259	Familie	família
+260	Vater	pai
+261	Mutter	mãe
+262	Bruder	irmão
+263	Schwester	irmã
+264	Sohn	filho
+265	Tochter	filha
+266	Eltern	pais (plural, die Eltern)
+267	Schule	escola
+268	Firma	empresa
+269	Büro	escritório
+270	Woche	semana
+271	Monat	mês
+272	Stunde	hora (duração)
+273	Minute	minuto
+274	Morgen	manhã
+275	Abend	noite (início), tarde-noite
+276	Nacht	noite
+277	Wasser	água
+278	Essen	comida, refeição
+279	Brot	pão
+280	Kaffee	café
+281	Tee	chá
+282	Milch	leite
+283	Bier	cerveja
+284	Wein	vinho
+285	Auto	carro
+286	Zug	trem
+287	Bus	ônibus
+288	Straße	rua
+289	Tür	porta
+290	Fenster	janela
+291	Zimmer	quarto, cômodo
+292	Tisch	mesa
+293	Stuhl	cadeira
+294	Bett	cama
+295	Küche	cozinha
+296	Garten	jardim
+297	Baum	árvore
+298	Blume	flor
+299	Sonne	sol
+300	Mond	lua
+301	Himmel	céu
+302	Regen	chuva
+303	Schnee	neve
+304	Wetter	tempo (clima)
+305	Luft	ar
+306	Feuer	fogo
+307	Erde	terra
+308	Meer	mar
+309	See	lago
+310	Berg	montanha
+311	Fluss	rio
+312	Tier	animal
+313	Hund	cachorro
+314	Katze	gato
+315	Vogel	pássaro
+316	Pferd	cavalo
+317	Fisch	peixe
+318	Körper	corpo
+319	Herz	coração
+320	Gesicht	rosto
+321	Mund	boca
+322	Nase	nariz
+323	Ohr	orelha, ouvido
+324	Haar	cabelo
+325	Bein	perna
+326	Fuß	pé
+327	Arm	braço
+328	Finger	dedo
+329	Zahn	dente
+330	Buch	livro
+331	Brief	carta
+332	Zeitung	jornal
+333	Bild	imagem, quadro
+334	Film	filme
+335	Musik	música
+336	Lied	canção
+337	Spiel	jogo
+338	Ball	bola
+339	Geschichte	história
+340	Sprache	língua, idioma
+341	Staat	Estado
+342	Regierung	governo
+343	Politik	política
+344	Gesetz	lei
+345	Recht	direito
+346	Gericht	tribunal; prato (comida)
+347	Polizei	polícia
+348	Krieg	guerra
+349	Frieden	paz
+350	Kirche	igreja
+351	Gott	Deus
+352	Liebe	amor
+353	Glück	sorte, felicidade
+354	Angst	medo
+355	Freude	alegria
+356	Hilfe	ajuda
+357	Idee	ideia
+358	Grund	motivo; chão
+359	Fall	caso
+360	Art	tipo, jeito
+361	Platz	lugar, praça
+362	Ort	lugar, local
+363	Raum	espaço, sala
+364	Zahl	número
+365	Nummer	número (de telefone, casa)
+366	Preis	preço; prêmio
+367	Markt	mercado
+368	Geschäft	loja, negócio
+369	Bank	banco (dinheiro e assento)
+370	Arzt	médico
+371	Krankenhaus	hospital
+372	Lehrer	professor
+373	Student	estudante (universitário)
+374	Chef	chefe
+375	Kunde	cliente
+376	Nachbar	vizinho
+377	Gast	convidado, hóspede
+378	Mädchen	menina
+379	Junge	menino
+380	Tod	morte
+381	Gesundheit	saúde
+382	Uhr	relógio; hora
+383	Moment	momento
+384	Anfang	começo
+385	Mitte	meio
+386	Ziel	meta, objetivo
+387	Plan	plano
+388	Antwort	resposta
+389	Beispiel	exemplo
+390	Nachricht	mensagem, notícia
+391	Information	informação
+392	Erfahrung	experiência
+393	Entwicklung	desenvolvimento
+394	Möglichkeit	possibilidade
+395	Unternehmen	empresa
+396	Gesellschaft	sociedade
+397	Kultur	cultura
+398	Natur	natureza
+399	Wirtschaft	economia
+400	Kraft	força
+401	Macht	poder
+402	Wahrheit	verdade
+403	Fehler	erro
+404	Hälfte	metade
+405	Stück	pedaço, peça
+406	Reise	viagem
+407	Urlaub	férias
+408	Hotel	hotel
+409	Flughafen	aeroporto
+410	Bahnhof	estação de trem
+411	Karte	cartão, mapa, ingresso
+412	Koffer	mala
+413	Kleidung	roupa
+414	Hose	calça
+415	Hemd	camisa
+416	Schuh	sapato
+417	Jacke	jaqueta
+418	Farbe	cor
+419	Telefon	telefone
+420	Handy	celular
+421	Computer	computador
+422	Programm	programa
+423	Frühstück	café da manhã
+424	Fleisch	carne
+425	Obst	fruta
+426	Gemüse	legume, verdura
+427	Apfel	maçã
+428	Ei	ovo
+429	Zucker	açúcar
+430	Salz	sal
+431	Geburtstag	aniversário
+432	Weihnachten	Natal
+433	Geschenk	presente
+434	Wochenende	fim de semana
+435	Montag	segunda-feira
+436	Sonntag	domingo
+437	Sommer	verão
+438	Winter	inverno
+439	Frühling	primavera
+440	Herbst	outono
+441	Licht	luz
+442	Stimme	voz; voto
+443	Gefühl	sentimento
+444	Gedanke	pensamento
+445	Traum	sonho
+446	Mitglied	membro
+447	Kuchen	bolo
+448	Kartoffel	batata
+449	Käse	queijo
+450	Glas	copo, vidro
+451	Flasche	garrafa
+452	Tasche	bolsa
+453	Schlüssel	chave
+454	Wand	parede
+455	Boden	chão
+456	Dorf	aldeia, vila
+457	Wald	floresta
+458	Insel	ilha
+459	Brücke	ponte
+460	Gebäude	edifício
+461	Wohnung	apartamento
+462	Miete	aluguel
+463	Ecke	esquina, canto
+464	Ausgang	saída
+465	Eingang	entrada
+466	klein	pequeno
+467	lang	longo, comprido
+468	kurz	curto
+469	hoch	alto
+470	tief	fundo, profundo
+471	schnell	rápido
+472	langsam	devagar
+473	schön	bonito
+474	hässlich	feio
+475	jung	jovem
+476	warm	quente, morno
+477	kalt	frio
+478	heiß	quente (muito)
+479	richtig	certo, correto
+480	falsch	errado, falso
+481	wichtig	importante
+482	einfach	simples, fácil
+483	schwer	pesado, difícil
+484	leicht	leve, fácil
+485	möglich	possível
+486	unmöglich	impossível
+487	eigen	próprio
+488	letzte	último
+489	erste	primeiro
+490	nächste	próximo
+491	ander	outro
+492	gleich	igual; já, logo
+493	verschieden	diferente
+494	klar	claro
+495	sicher	seguro, certo
+496	frei	livre, grátis
+497	voll	cheio
+498	leer	vazio
+499	offen	aberto
+500	geschlossen	fechado
+501	teuer	caro
+502	billig	barato
+503	reich	rico
+504	arm	pobre
+505	stark	forte
+506	schwach	fraco
+507	krank	doente
+508	gesund	saudável
+509	müde	cansado
+510	glücklich	feliz
+511	traurig	triste
+512	froh	contente
+513	böse	mau, bravo
+514	nett	legal, simpático
+515	freundlich	amigável, gentil
+516	lieb	querido, carinhoso
+517	ruhig	calmo, tranquilo
+518	laut	alto (som), barulhento
+519	leise	baixo (som), silencioso
+520	hell	claro (luz)
+521	dunkel	escuro
+522	rot	vermelho
+523	blau	azul
+524	grün	verde
+525	gelb	amarelo
+526	schwarz	preto
+527	weiß	branco
+528	grau	cinza
+529	braun	marrom
+530	deutsch	alemão
+531	fremd	estranho, estrangeiro
+532	bekannt	conhecido
+533	berühmt	famoso
+534	interessant	interessante
+535	langweilig	chato, entediante
+536	lustig	engraçado
+537	ernst	sério
+538	toll	ótimo, incrível
+539	schlecht	ruim
+540	besser	melhor
+541	best	melhor (o)
+542	fertig	pronto, terminado
+543	bereit	pronto, preparado
+544	früh	cedo
+545	spät	tarde
+546	oft	frequentemente
+547	selten	raramente
+548	manchmal	às vezes
+549	nie	nunca
+550	jetzt	agora
+551	bald	logo, em breve
+552	gestern	ontem
+553	morgen	amanhã
+554	wieder	de novo
+555	zusammen	junto
+556	allein	sozinho
+557	gern	com prazer (gostar de fazer)
+558	leider	infelizmente
+559	vielleicht	talvez
+560	natürlich	claro, naturalmente
+561	wirklich	realmente
+562	genau	exatamente
+563	fast	quase
+564	ungefähr	aproximadamente
+565	eigentlich	na verdade
+566	sofort	imediatamente
+567	gerade	agora mesmo; reto
+568	endlich	finalmente
+569	zuerst	primeiro (antes)
+570	später	mais tarde
+571	danach	depois disso
+572	trotzdem	mesmo assim
+573	deshalb	por isso
+574	dort	lá
+575	oben	em cima
+576	unten	embaixo
+577	links	à esquerda
+578	rechts	à direita
+579	draußen	lá fora
+580	überall	em todo lugar
+581	weit	longe; largo
+582	nah	perto
+583	zurück	de volta
+584	weg	embora, fora
+585	los	solto; vamos!
+586	sogar	até, inclusive
+587	sondern	mas sim
+588	denn	pois, porque
+589	ob	se (dúvida)
+590	obwohl	embora
+591	damit	para que; com isso
+592	während	durante; enquanto
+593	seit	desde, há (tempo)
+594	gegen	contra
+595	ohne	sem
+596	außer	exceto
+597	zwischen	entre
+598	neben	ao lado de
+599	hinter	atrás de
+600	wegen	por causa de
+601	jeder	cada, todo
+602	viele	muitos
+603	wenige	poucos
+604	einige	alguns
+605	etwas	algo; um pouco
+606	nichts	nada
+607	alles	tudo
+608	jemand	alguém
+609	niemand	ninguém
+610	mein	meu
+611	dein	teu, seu (informal)
+612	unser	nosso
+613	welcher	qual
+614	wer	quem
+615	wann	quando
+616	warum	por que
+617	wohin	para onde
+618	woher	de onde
+619	eins	um (número)
+620	drei	três
+621	vier	quatro
+622	fünf	cinco
+623	sechs	seis
+624	sieben	sete
+625	acht	oito
+626	neun	nove
+627	zehn	dez
+628	elf	onze
+629	zwölf	doze
+630	zwanzig	vinte
+631	hundert	cem
+632	tausend	mil
+633	Million	milhão
+634	bitte	por favor; de nada
+635	danke	obrigado
+636	hallo	oi
+637	tschüss	tchau
+638	Entschuldigung	desculpa; com licença
+639	nein	não
+640	okay	ok
+641	anziehen	vestir
+642	ausziehen	despir; mudar-se (sair)
+643	umziehen	mudar de casa
+644	aufmachen	abrir
+645	zumachen	fechar
+646	einsteigen	embarcar
+647	aussteigen	desembarcar
+648	umsteigen	fazer baldeação
+649	mitnehmen	levar junto
+650	abholen	buscar (alguém)
+651	aufpassen	prestar atenção, cuidar
+652	bestellen	pedir, encomendar
+653	buchen	reservar
+654	mieten	alugar
+655	leihen	emprestar
+656	schenken	presentear
+657	gratulieren	parabenizar
+658	heiraten	casar
+659	freuen	alegrar-se (sich freuen)
+660	ärgern	irritar (sich ärgern)
+661	beeilen	apressar-se (sich beeilen)
+662	verlieben	apaixonar-se (sich verlieben)
+663	vorstellen	apresentar; imaginar
+664	interessieren	interessar
+665	unterrichten	dar aula
+666	prüfen	verificar, testar
+667	bestehen	passar (prova); existir
+668	schlagen	bater
+669	kämpfen	lutar
+670	retten	salvar
+671	schützen	proteger
+672	verletzen	machucar, ferir
+673	atmen	respirar
+674	riechen	cheirar
+675	schmecken	ter gosto, saborear
+676	berühren	tocar
+677	greifen	agarrar
+678	schieben	empurrar
+679	heben	levantar (objeto)
+680	drehen	girar
+681	brechen	quebrar
+682	schneiden	cortar
+683	reparieren	consertar
+684	putzen	limpar
+685	aufräumen	arrumar
+686	malen	pintar
+687	fotografieren	fotografar
+688	telefonieren	telefonar
+689	diskutieren	discutir
+690	organisieren	organizar
+691	funktionieren	funcionar
+692	probieren	provar, experimentar
+693	übersetzen	traduzir
+694	beweisen	provar (demonstrar)
+695	behaupten	afirmar
+696	erlauben	permitir
+697	verbieten	proibir
+698	verlangen	exigir
+699	akzeptieren	aceitar
+700	ablehnen	recusar
+701	annehmen	aceitar; supor
+702	aufgeben	desistir
+703	entdecken	descobrir
+704	erfinden	inventar
+705	gründen	fundar
+706	herstellen	fabricar
+707	liefern	entregar
+708	ausgeben	gastar
+709	rechnen	calcular
+710	messen	medir
+711	beobachten	observar
+712	bemerken	perceber, notar
+713	merken	notar, guardar na memória
+714	fürchten	temer
+715	sorgen	preocupar-se (sich sorgen)
+716	lügen	mentir
+717	schweigen	calar-se
+718	schreien	gritar
+719	klopfen	bater (na porta)
+720	klingeln	tocar (campainha)
+721	verpassen	perder (trem, chance)
+722	begleiten	acompanhar
+723	landen	pousar
+724	parken	estacionar
+725	abfahren	partir (veículo)
+726	spazieren	passear (a pé)
+727	wandern	fazer trilha
+728	frühstücken	tomar café da manhã
+729	backen	assar (forno)
+730	aufwachen	acordar
+731	einschlafen	adormecer
+732	duschen	tomar banho (chuveiro)
+733	küssen	beijar
+734	umarmen	abraçar
+735	streiten	brigar, discutir
+736	verzeihen	perdoar
+737	entschuldigen	desculpar
+738	grüßen	cumprimentar
+739	rauchen	fumar
+740	tauschen	trocar
+741	verbringen	passar (tempo)
+742	benötigen	necessitar
+743	erwähnen	mencionar
+744	vertrauen	confiar
+745	zweifeln	duvidar
+746	passen	servir, caber, combinar
+747	brennen	queimar
+748	fließen	fluir
+749	sinken	afundar, baixar
+750	steuern	pilotar, controlar
+751	wiegen	pesar
+752	drucken	imprimir
+753	sammeln	colecionar, juntar
+754	töten	matar
+755	Person	pessoa
+756	Herr	senhor
+757	Dame	senhora
+758	Onkel	tio
+759	Tante	tia
+760	Opa	avô
+761	Oma	avó
+762	Hochzeit	casamento (festa)
+763	Partner	parceiro
+764	Kollege	colega
+765	Gruppe	grupo
+766	Verein	clube, associação
+767	Hauptstadt	capital
+768	Zentrum	centro
+769	Park	parque
+770	Museum	museu
+771	Kino	cinema
+772	Theater	teatro
+773	Restaurant	restaurante
+774	Supermarkt	supermercado
+775	Apotheke	farmácia
+776	Post	correio
+777	Kasse	caixa (pagamento)
+778	Rechnung	conta, fatura
+779	Euro	euro
+780	Konto	conta bancária
+781	Steuer	imposto
+782	Vertrag	contrato
+783	Anwalt	advogado
+784	Richter	juiz
+785	Urteil	sentença
+786	Strafe	pena, multa
+787	Verbrechen	crime
+788	Dieb	ladrão
+789	Opfer	vítima; sacrifício
+790	Zeuge	testemunha
+791	Beweis	prova
+792	Prozess	processo
+793	Pflicht	dever, obrigação
+794	Verantwortung	responsabilidade
+795	Entscheidung	decisão
+796	Meinung	opinião
+797	Ergebnis	resultado
+798	Erfolg	sucesso
+799	Aufgabe	tarefa
+800	Prüfung	prova, exame
+801	Note	nota
+802	Klasse	turma, classe
+803	Universität	universidade
+804	Wissen	conhecimento
+805	Wissenschaft	ciência
+806	Forschung	pesquisa
+807	Kunst	arte
+808	Roman	romance (livro)
+809	Gedicht	poema
+810	Text	texto
+811	Satz	frase
+812	Buchstabe	letra
+813	Thema	tema
+814	Beruf	profissão
+815	Job	emprego
+816	Stelle	vaga, posição, lugar
+817	Gehalt	salário
+818	Mitarbeiter	funcionário
+819	Termin	compromisso, horário marcado
+820	Projekt	projeto
+821	Netz	rede
+822	Bildschirm	tela
+823	E-Mail	e-mail
+824	Paket	pacote
+825	Adresse	endereço
+826	Dach	telhado
+827	Treppe	escada
+828	Keller	porão
+829	Bad	banheiro; banho
+830	Toilette	banheiro (vaso)
+831	Spiegel	espelho
+832	Schrank	armário
+833	Sofa	sofá
+834	Lampe	luminária
+835	Kühlschrank	geladeira
+836	Ofen	forno
+837	Teller	prato
+838	Tasse	xícara
+839	Löffel	colher
+840	Gabel	garfo
+841	Messer	faca
+842	Topf	panela
+843	Suppe	sopa
+844	Reis	arroz
+845	Nudel	macarrão
+846	Wurst	linguiça, salsicha
+847	Butter	manteiga
+848	Saft	suco
+849	Schokolade	chocolate
+850	Eis	gelo; sorvete
+851	Tomate	tomate
+852	Zwiebel	cebola
+853	Hunger	fome
+854	Durst	sede
+855	Geschmack	gosto, sabor
+856	Rezept	receita
+857	Mittagessen	almoço
+858	Abendessen	jantar
+859	Krankheit	doença
+860	Schmerz	dor
+861	Fieber	febre
+862	Medikament	remédio
+863	Rücken	costas
+864	Bauch	barriga
+865	Blut	sangue
+866	Haut	pele
+867	Schlaf	sono
+868	Alter	idade; velhice
+869	Kindheit	infância
+870	Jugend	juventude
+871	Zukunft	futuro
+872	Vergangenheit	passado
+873	Jahrhundert	século
+874	Datum	data
+875	Sekunde	segundo
+876	Ferien	férias (escolares, die Ferien)
+877	Ausflug	passeio, excursão
+878	Strand	praia
+879	Sand	areia
+880	Stein	pedra
+881	Holz	madeira
+882	Gold	ouro
+883	Papier	papel
+884	Wolke	nuvem
+885	Wind	vento
+886	Sturm	tempestade
+887	Stern	estrela
+888	Kuh	vaca
+889	Schwein	porco
+890	Huhn	galinha
+891	Maus	rato; mouse
+892	Blatt	folha
+893	Gras	grama
+894	Pflanze	planta
+895	Feld	campo
+896	Bauer	agricultor
+897	Ausland	exterior
+898	Grenze	fronteira
+899	Volk	povo
+900	Bürger	cidadão
+901	Präsident	presidente
+902	Partei	partido
+903	Wahl	eleição; escolha
+904	Soldat	soldado
+905	Waffe	arma
+906	Gefahr	perigo
+907	Sicherheit	segurança
+908	Unfall	acidente
+909	Feuerwehr	bombeiros
+910	Notfall	emergência
+911	Ruhe	sossego, silêncio
+912	Lärm	barulho
+913	Form	forma
+914	Größe	tamanho
+915	Gewicht	peso
+916	Menge	quantidade
+917	Rest	resto
+918	Prozent	por cento
+919	Paar	par
+920	Sache	coisa, assunto
+921	Weise	maneira
+922	Richtung	direção
+923	Linie	linha
+924	Punkt	ponto
+925	Kreis	círculo
+926	Foto	foto
+927	Spielzeug	brinquedo
+928	Sport	esporte
+929	Mannschaft	time, equipe
+930	Tor	gol; portão
+931	Sieg	vitória
+932	Spieler	jogador
+933	Fußball	futebol
+934	Fahrrad	bicicleta
+935	Flugzeug	avião
+936	Schiff	navio
+937	Taxi	táxi
+938	Ampel	semáforo
+939	Verkehr	trânsito
+940	Stau	engarrafamento
+941	Fahrkarte	passagem, bilhete
+942	Pass	passaporte
+943	Gepäck	bagagem
+944	Lüge	mentira
+945	Geheimnis	segredo
+946	Witz	piada
+947	Spaß	diversão
+948	Lust	vontade
+949	Sorge	preocupação
+950	Mut	coragem
+951	Hoffnung	esperança
+952	Vertrauen	confiança
+953	Respekt	respeito
+954	Seele	alma
+955	Geist	espírito, fantasma
+956	Hölle	inferno
+957	Wunder	milagre, maravilha
+958	Zufall	acaso, coincidência
+959	Schicksal	destino
+960	Chance	chance
+961	Risiko	risco
+962	Ehe	casamento (instituição)
+963	Kirschbaum	cerejeira
+964	Dienstag	terça-feira
+965	Mittwoch	quarta-feira
+966	Donnerstag	quinta-feira
+967	Freitag	sexta-feira
+968	Samstag	sábado
+969	Mittag	meio-dia
+970	Nachmittag	tarde
+971	Feiertag	feriado
+972	Haltestelle	ponto de ônibus
+973	Straßenbahn	bonde
+974	Fernseher	televisor
+975	Radio	rádio
+976	Brille	óculos
+977	Rucksack	mochila
+978	Regenschirm	guarda-chuva
+979	Kleid	vestido
+980	Mantel	casaco, sobretudo
+981	Hut	chapéu
+982	Freundin	amiga, namorada
+983	Baby	bebê
+984	Ordnung	ordem
+985	Unterschied	diferença
+986	Vorteil	vantagem
+987	Nachteil	desvantagem
+988	Dank	agradecimento
+989	Gruß	saudação
+990	Wunsch	desejo
+991	Ahnung	noção, ideia
+992	Ärger	irritação, problema
+993	Streit	briga
+994	Gegenteil	oposto, contrário
+995	dünn	fino, magro
+996	dick	grosso, gordo
+997	breit	largo
+998	eng	estreito, apertado
+999	nass	molhado
+1000	trocken	seco
+1001	sauber	limpo
+1002	schmutzig	sujo
+1003	scharf	afiado; apimentado
+1004	süß	doce, fofo
+1005	sauer	azedo; bravo
+1006	lecker	gostoso
+1007	satt	satisfeito (comida)
+1008	pünktlich	pontual
+1009	fleißig	esforçado
+1010	faul	preguiçoso; podre
+1011	Mai	maio
