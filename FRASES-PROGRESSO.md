@@ -58,6 +58,6 @@ Pedido: outro modo com textos do tamanho de um parágrafo (~4x as frases) e part
 - [x] Textos alemão (18 parágrafos, 29 a 39 palavras)
 - [x] Textos italiano (18 parágrafos, 25 a 38 palavras)
 - [x] Textos francês (18 parágrafos, 28 a 41 palavras)
-- [ ] Motor + lobby com os dois modos
-- [ ] Camada de jogo (XP, combo, som, marcos, estrelas)
-- [ ] Testes e publicação
+- [x] Motor + lobby com os dois modos (alvos por parágrafo: até 6, 4 novas)
+- [x] Camada de jogo (XP, nível, combo com multiplicador até x2, som, marcos 3/5/10 com confete e vibração, calor na barra, estrelas, contagem de XP)
+- [x] Testes (Playwright, celular, sem erros) e publicação (v13, cache vokabel-v20)

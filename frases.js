@@ -211,7 +211,7 @@
   function award(){
     if (!ses) return null;
     const nF = cur.allForeign ? cur.chunks.length : cur.chunks.filter(c => c.foreign).length;
-    let base = (K === "t" ? 24 : 8) + nF * (K === "t" ? 2 : 3);
+    let base = (K === "t" ? 30 : 8) + nF * 3;
     if (opened) base = Math.round(base * 0.35);
     else base = Math.max(Math.round(base * 0.5), base - peeked.size * 2);
     if (!opened) ses.combo++; else ses.combo = 0;

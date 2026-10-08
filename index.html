@@ -406,6 +406,68 @@ body.playing{overflow:hidden}
 .hgame .hy-stage{min-height:min(42vh,340px)}
 .hy-tip{text-align:center;font-size:.84rem;color:var(--dim);min-height:1.2em}
 @media (max-width:420px){.hy-lb-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.hy-lb-stats div:nth-child(3){border-left:0}.hy-lb-stats div:nth-child(n+3){border-top:1px solid var(--line-soft)}.hy-ratio button{font-size:.8rem}}
+/* ===== frases: modos, nível, combo e efeitos ===== */
+.hy-lb-head{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.hy-snd{flex:none;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--accent);font-size:1rem;cursor:pointer;line-height:1}
+.hy-snd.off{color:var(--dim)}
+.hy-lvl{display:flex;gap:14px;align-items:center;margin:12px 0 14px;padding:12px 14px;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--accent-soft)}
+.hy-lvl-badge{flex:none;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:var(--accent-ink);font-family:var(--serif);font-size:1.5rem;font-weight:600;box-shadow:0 0 0 4px var(--accent-soft)}
+.hy-lvl-info{flex:1;min-width:0}
+.hy-lvl-top,.hy-lvl-sub{display:flex;justify-content:space-between;gap:8px;font-size:.84rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.hy-lvl-top b{color:var(--fg);font-size:.95rem}
+.hy-lvl-sub{margin-top:6px;font-size:.78rem}.hy-lvl-sub b{color:var(--fg);font-weight:600}
+.hy-lvl-bar{height:8px;border-radius:8px;background:var(--line-soft);overflow:hidden;margin-top:6px}
+.hy-lvl-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent-hi));border-radius:8px;transition:width 1s cubic-bezier(.2,.8,.2,1)}
+.hy-modes{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.hy-mode{display:flex;flex-direction:column;align-items:flex-start;gap:4px;text-align:left;padding:14px;border-radius:var(--r-lg);border:1px solid var(--line);background:var(--raised);color:var(--fg);cursor:pointer;transition:transform .12s,border-color .15s}
+.hy-mode:hover{border-color:var(--accent);transform:translateY(-1px)}
+.hy-mode:active{transform:scale(.98)}
+.hy-mode b{font-family:var(--serif);font-weight:500;font-size:1.2rem}
+.hy-mode span{font-size:.82rem;color:var(--muted);line-height:1.35;flex:1}
+.hy-mode em{font-style:normal;margin-top:8px;padding:6px 14px;border-radius:999px;background:var(--accent);color:var(--accent-ink);font-weight:600;font-size:.86rem}
+@media (max-width:420px){.hy-modes{grid-template-columns:1fr}}
+.hgame .g-top{justify-content:flex-start}
+.hgame .hg-prog{flex:1}
+.hg-combo{display:inline-flex;align-items:center;gap:3px;font-weight:700;color:var(--accent-hi);font-variant-numeric:tabular-nums;transition:transform .2s}
+.hg-combo:empty{display:none}
+.hg-combo small{font-size:.72rem;font-weight:600;color:var(--accent-ink);background:var(--accent);border-radius:999px;padding:1px 6px;margin-left:3px}
+.hg-combo.lost{opacity:.4;filter:grayscale(1)}
+.hg-xp{font-size:.82rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.hgame .hy-snd{width:30px;height:30px;font-size:.9rem}
+.hgame.heat-1 .hg-bar i{background:linear-gradient(90deg,var(--accent),#e8a14a)}
+.hgame.heat-2 .hg-bar i{background:linear-gradient(90deg,#e8a14a,#e07a5f);box-shadow:0 0 8px #e07a5f}
+.hgame.heat-3 .hg-bar i{background:linear-gradient(90deg,#e07a5f,#f0c060,#e07a5f);background-size:200% 100%;animation:hgHeat 1.2s linear infinite;box-shadow:0 0 12px #f0a050}
+.hgame.heat-1 .hg-bar,.hgame.heat-2 .hg-bar,.hgame.heat-3 .hg-bar{height:5px}
+.hgame.heat-2 .hg-combo,.hgame.heat-3 .hg-combo{animation:hgPulse 1s ease-in-out infinite}
+@keyframes hgHeat{to{background-position:200% 0}}
+@keyframes hgPulse{50%{transform:scale(1.12)}}
+.hy-enter{animation:hyIn .32s cubic-bezier(.2,.8,.2,1)}
+@keyframes hyIn{from{opacity:0;transform:translateX(26px)}to{opacity:1;transform:none}}
+.hy-para .hy-sent{font-size:clamp(1.12rem,4.2vw,1.42rem);line-height:1.62;text-align:left}
+.hy-para{align-content:start}
+.hy-theme{margin:0;font-size:.74rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--dim)}
+.hy-para .hy-trans .hy-full{font-size:1rem;line-height:1.55}
+.hg-fx{position:fixed;inset:0;pointer-events:none;z-index:60;overflow:hidden}
+.hg-pop{position:fixed;transform:translate(-50%,0);font-weight:700;color:var(--accent-hi);font-size:1.05rem;white-space:nowrap;text-shadow:0 2px 6px rgba(0,0,0,.35);animation:hgPop 1.05s ease-out forwards}
+.hg-pop.big{font-size:1.3rem;color:#f0b25a}
+@keyframes hgPop{0%{opacity:0;transform:translate(-50%,6px) scale(.7)}18%{opacity:1;transform:translate(-50%,-14px) scale(1.15)}100%{opacity:0;transform:translate(-50%,-70px) scale(1)}}
+.hg-cf{position:fixed;width:8px;height:12px;border-radius:2px;animation:hgCf 1.35s cubic-bezier(.15,.7,.3,1) forwards}
+@keyframes hgCf{0%{transform:translate(0,0) rotate(0);opacity:1}70%{opacity:1}100%{transform:translate(var(--dx),calc(var(--dy) + 55vh)) rotate(var(--r));opacity:0}}
+.hg-toast{position:fixed;left:50%;top:18%;transform:translate(-50%,-10px) scale(.9);opacity:0;pointer-events:none;z-index:61;display:flex;flex-direction:column;align-items:center;gap:2px;padding:12px 22px;border-radius:16px;background:var(--accent);color:var(--accent-ink);box-shadow:0 10px 30px rgba(0,0,0,.35);transition:opacity .2s,transform .25s cubic-bezier(.3,1.6,.5,1);text-align:center}
+.hg-toast.show{opacity:1;transform:translate(-50%,0) scale(1)}
+.hg-toast b{font-family:var(--serif);font-size:1.5rem;font-weight:600}
+.hg-toast span{font-size:.82rem;font-weight:500}
+.hg-toast.lv{background:linear-gradient(135deg,#e8c37a,#d4a24c)}
+.hy-stars{display:flex;justify-content:center;gap:10px;font-size:2.6rem;line-height:1;margin:4px 0 10px}
+.hy-stars span{color:var(--line);transform:scale(.4);opacity:.4;animation:hyStar .45s cubic-bezier(.3,1.7,.5,1) forwards}
+.hy-stars span.on{color:var(--accent-hi);text-shadow:0 0 14px rgba(232,195,122,.45)}
+@keyframes hyStar{to{transform:scale(1);opacity:1}}
+.hy-sum h2{text-align:center}
+.hy-xpbig{display:flex;justify-content:center;align-items:baseline;gap:6px;margin:6px 0 12px}
+.hy-xpbig b{font-family:var(--serif);font-size:2.6rem;font-weight:600;color:var(--accent-hi);font-variant-numeric:tabular-nums}
+.hy-xpbig span{color:var(--muted);font-weight:600}
+.hy-lvlup{text-align:center;color:var(--accent-hi);font-weight:600;margin:8px 0 0}
+@media (prefers-reduced-motion:reduce){.hy-enter,.hg-pop,.hgame .hg-combo,.hy-stars span{animation:none!important}.hy-stars span{transform:none;opacity:1}}
 /* frase de exemplo misturada nas cartas */
 .hx .hx-pt{opacity:.75}
 .hx .hx-fl{font-weight:600}
@@ -415,7 +477,7 @@ body.playing{overflow:hidden}
 <body>
 <div class="wrap">
   <header>
-    <div class="brand"><button class="me" id="me" aria-label="Escolher personagem" title="Escolher personagem"></button><h1>Vokabel 1000 <small class="ver">v12</small></h1></div>
+    <div class="brand"><button class="me" id="me" aria-label="Escolher personagem" title="Escolher personagem"></button><h1>Vokabel 1000 <small class="ver">v13</small></h1></div>
     <div class="langs" role="group" aria-label="Língua">
       <button id="lang-de" data-lang="de">Alemão</button>
       <button id="lang-it" data-lang="it">Italiano</button>
@@ -1002,6 +1064,6 @@ if("serviceWorker" in navigator){
   window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js",{updateViaCache:"none"}).then(r=>{r.update();document.addEventListener("visibilitychange",()=>{if(!document.hidden)r.update()})}).catch(()=>{}));
 }
 </script>
-<script src="frases.js?v=4"></script>
+<script src="frases.js?v=5"></script>
 </body>
 </html>
