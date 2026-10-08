@@ -57,7 +57,7 @@ Pedido: outro modo com textos do tamanho de um parágrafo (~4x as frases) e part
 
 - [x] Textos alemão (18 parágrafos, 29 a 39 palavras)
 - [x] Textos italiano (18 parágrafos, 25 a 38 palavras)
-- [ ] Textos francês
+- [x] Textos francês (18 parágrafos, 28 a 41 palavras)
 - [ ] Motor + lobby com os dois modos
 - [ ] Camada de jogo (XP, combo, som, marcos, estrelas)
 - [ ] Testes e publicação
