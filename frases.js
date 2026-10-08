@@ -76,6 +76,11 @@
     if (!usable) return ratio === "auto" ? -50 : -5;                            // nos fixos, frases conhecidas também servem
     if (newCnt > 3) score -= (newCnt - 3) * (ratio === "auto" ? 1.5 : 0.6);
     const st = H.s[idx]; if (st) score -= Math.min(st.n, 6) * 0.6;
+    if (ratio !== "auto" && ratio < 100) {                                      // modo fixo: frase precisa permitir a % pedida
+      const n = s[3].filter(ch => lemmas(ch).length).length;
+      const ach = n ? Math.max(1, Math.round(n * ratio / 100)) / n : 0;
+      score -= Math.abs(ach - ratio / 100) * 12;
+    }
     return score + Math.random() * 0.8;                                          // variedade
   }
 
@@ -222,7 +227,7 @@
   }
   function ratioPicker(idp){
     return `<div class="hy-ratio" role="radiogroup" aria-label="Proporção de ${esc(LANGS[lang].name.toLowerCase())}">${
-      RATIOS.map(r => `<button type="button" role="radio" aria-checked="${r === ratio}" data-ratio="${r}" id="${idp}-${r}">${ratioName(r)}</button>`).join("")
+      RATIOS.map(r => `<button type="button" role="radio" aria-checked="${r === ratio}" data-ratio="${r}" id="${idp}-${r}" aria-label="${ratioName(r)}">${r === "auto" ? "Auto" : ratioName(r)}</button>`).join("")
     }</div><p class="hintline hy-ratio-desc">${esc(ratioDesc(ratio))}</p>`;
   }
   function bindRatio(root, after){
@@ -362,7 +367,10 @@
     if (!H || loadedFor !== lang || !VB_FRASES[lang] || !(id in rank)) return null;
     const cand = []; VB_FRASES[lang].forEach((s, i) => { if (s[3].some(ch => lemmas(ch).includes(id))) cand.push(i); });
     if (!cand.length) return null;
-    const idx = cand[hashStr(id + (typeof dayKey === "function" ? dayKey() : "")) % cand.length];
+    const nC = i => VB_FRASES[lang][i][3].filter(ch => lemmas(ch).length).length;
+    cand.sort((a, b) => nC(b) - nC(a));                      // frases com mais blocos misturam melhor
+    const top = cand.slice(0, Math.min(3, cand.length));
+    const idx = top[hashStr(id + (typeof dayKey === "function" ? dayKey() : "")) % top.length];
     const b = buildFixed(idx, r === "auto" ? 50 : r, id);
     return { fl: b.fl, pt: b.pt, chunks: b.chunks.map(c => ({ fl: c.fl, pt: c.pt, foreign: c.foreign || b.allForeign, target: c.ids.includes(id) })) };
   }

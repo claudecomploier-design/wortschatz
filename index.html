@@ -382,6 +382,7 @@ body.playing{overflow:hidden}
 @media (max-width:420px){.avp-grid{gap:10px}.me{width:34px;height:34px}}
 
 /* ===== frases: lobby, partida e proporção ===== */
+.game .card.hy-sum{background-image:none}
 .hy-lobby h2,.hy-sum h2{font-family:var(--serif);font-weight:500;font-size:1.6rem;margin:0 0 6px}
 .hy-lb-h{font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--dim);margin:22px 0 10px}
 .hy-sum .hy-lb-h{color:var(--muted)}
@@ -1001,6 +1002,6 @@ if("serviceWorker" in navigator){
   window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js",{updateViaCache:"none"}).then(r=>{r.update();document.addEventListener("visibilitychange",()=>{if(!document.hidden)r.update()})}).catch(()=>{}));
 }
 </script>
-<script src="frases.js?v=3"></script>
+<script src="frases.js?v=4"></script>
 </body>
 </html>
