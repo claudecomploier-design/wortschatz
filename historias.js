@@ -249,6 +249,7 @@
   }
   function commitScene(){
     built.forEach((c, pi) => HYB.learn(c, opened.has(pi), peeked[pi], `h:${story.id}:${st(story.id).cena}:${pi}`));
+    if (window.VB_REPORT) VB_REPORT.track("storyScene", {}, lang);
   }
   function choose(i){
     if (busy) return; busy = true;                                   // evita clique duplo
@@ -261,7 +262,11 @@
     if (e.marca) s.flags[e.marca] = 1;
     s.cena = e.ir;
     const nx = story.cenas[e.ir];
-    if (nx.fim) { s.fim = e.ir; if (!s.finais.includes(e.ir)) s.finais.push(e.ir); }
+    if (nx.fim) {
+      s.fim = e.ir;
+      if (!s.finais.includes(e.ir)) s.finais.push(e.ir);
+      if (window.VB_REPORT) VB_REPORT.track("storyFinish", {id:story.id}, lang);
+    }
     saveS();
     setTimeout(() => { busy = false; enterScene(true); $("sgame").scrollTop = 0; if (nx.fim) commitScene(); }, 260);
   }
