@@ -72,6 +72,67 @@ function parse(text){
  }catch(e){return null}
 }
 function friends(){const obj=get(FRIEND_KEY,[]);return Array.isArray(obj)?obj.filter(x=>x&&typeof x==="object").slice(0,50):[]}
+
+/* Competidores simulados: perfis distintos e sessões de estudo determinísticas.
+   Eles nunca entram na lista de amigos reais e aparecem sempre marcados como BOT. */
+const BOT_ORIGIN_KEY="vb-bots-origin-v1",BOT_VIS_KEY="vb-show-bots-v1";
+const BOT_PROFILES=[
+ {id:"bot-hana",n:"Hana",av:{pelo:"creme",padrao:"siames",olhos:"azul"},eq:{chapeu:"gorro"},base:1880,range:[130,230],chance:.90},
+ {id:"bot-mila",n:"Mila",av:{pelo:"cinza",padrao:"tigrado",olhos:"verde"},eq:{rosto:"oculos_redondo"},base:740,range:[60,135],chance:.86},
+ {id:"bot-rafa",n:"Rafa",av:{pelo:"preto",padrao:"liso",olhos:"amarelo"},eq:{chapeu:"bone"},base:540,range:[30,100],chance:.71},
+ {id:"bot-bia",n:"Bia",av:{pelo:"branco",padrao:"malhado",olhos:"cobre"},eq:{pescoco:"cachecol"},base:1020,range:[70,155],chance:.81},
+ {id:"bot-davi",n:"Davi",av:{pelo:"marrom",padrao:"liso",olhos:"verde"},eq:{chapeu:"cowboy"},base:340,range:[20,70],chance:.46},
+ {id:"bot-teo",n:"Téo",av:{pelo:"laranja",padrao:"tigrado",olhos:"amarelo"},eq:{},base:220,range:[12,54],chance:.31},
+ {id:"bot-iris",n:"Íris",av:{pelo:"cinza",padrao:"liso",olhos:"azul"},eq:{chapeu:"cartola"},base:1550,range:[90,190],chance:.83},
+ {id:"bot-noah",n:"Noah",av:{pelo:"preto",padrao:"liso",olhos:"cobre"},eq:{pescoco:"gravata"},base:910,range:[40,125],chance:.58}
+];
+let showBots=get(BOT_VIS_KEY,true)!==false;
+function botHash(source){let n=2166136261;for(let i=0;i<source.length;i++){n^=source.charCodeAt(i);n=Math.imul(n,16777619)}return n>>>0}
+const botRandom=key=>botHash(key)/4294967296;
+function botDateKey(d){return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")}
+function botWeekKey(d){const x=new Date(d);x.setHours(12,0,0,0);x.setDate(x.getDate()-(x.getDay()+6)%7);return botDateKey(x)}
+function botActivityForDay(bot,key){
+ const date=new Date(key+"T12:00:00"),weekend=date.getDay()===0||date.getDay()===6;
+ const probability=Math.min(.97,bot.chance+(weekend?-.07:0));
+ if(botRandom(bot.id+key+"rest")>=probability)return [];
+ const dailyXP=Math.round((bot.range[0]+botRandom(bot.id+key+"effort")*(bot.range[1]-bot.range[0]))/4)*4;
+ const steps=Math.max(1,Math.min(12,Math.round(dailyXP/(15+botRandom(bot.id+key+"chunks")*11))));
+ const sessions=dailyXP>=130?3:dailyXP>=60?2:1;
+ const windows=sessions===3?[460,760,1120]:sessions===2?[760,1120]:[botRandom(bot.id+key+"period")>.43?1120:570];
+ const points=[],value=Math.floor(dailyXP/steps);
+ for(let i=0;i<steps;i++){
+  const group=Math.min(sessions-1,Math.floor(i*sessions/steps));
+  const prior=Math.ceil(group*steps/sessions);
+  const moment=windows[group]+Math.floor(botRandom(bot.id+key+"start"+group)*95)+(i-prior)*Math.floor(13+botRandom(bot.id+key+"spacing"+group)*15);
+  const xp=value+(i<dailyXP%steps?1:0);
+  points.push({minute:Math.min(1435,moment),xp});
+ }
+ return points.sort((a,b)=>a.minute-b.minute);
+}
+function botOrigin(now){
+ const candidate=get(BOT_ORIGIN_KEY,null);
+ if(candidate&&typeof candidate.start==="string"&&/^\d{4}-\d\d-\d\d$/.test(candidate.start)&&candidate.start<=botDateKey(now))return candidate.start;
+ const start=botWeekKey(now);
+ put(BOT_ORIGIN_KEY,{start});
+ return start;
+}
+function simulatedBots(at){
+ const now=at instanceof Date?at:new Date(),todayKey=botDateKey(now),weekKey=botWeekKey(now);
+ const start=botOrigin(now),time=now.getHours()*60+now.getMinutes();
+ return BOT_PROFILES.map(bot=>{
+  let earnedTotal=0,earnedWeek=0,earnedToday=0;
+  const date=new Date(start+"T12:00:00"),stop=new Date(todayKey+"T12:00:00");
+  for(let i=0;i<1800&&date<=stop;i++,date.setDate(date.getDate()+1)){
+   const key=botDateKey(date),sum=botActivityForDay(bot,key).reduce((n,point)=>n+(key!==todayKey||point.minute<=time?point.xp:0),0);
+   earnedTotal+=sum;
+   if(key>=weekKey)earnedWeek+=sum;
+   if(key===todayKey)earnedToday=sum;
+  }
+  const xp=bot.base+earnedTotal;
+  return {v:1,id:bot.id,n:bot.n,av:bot.av,eq:bot.eq,xp,sem:earnedWeek,sid:weekKey,nv:level(xp),ts:todayKey,todayXP:earnedToday,bot:true};
+ });
+}
+
 function saveFriend(data){
  if(data.id===profile.id){importMessage="Este código é do seu próprio perfil.";return false}
  let all=friends();const i=all.findIndex(x=>x.id===data.id);if(i>=0)all[i]=data;else if(all.length<50)all.push(data);else {importMessage="Limite de 50 amigos atingido.";return false}
@@ -114,22 +175,23 @@ function avatar(){
 }
 function rank(){
  const node=$("cm-friends-root");if(!node)return;
- const self=me(),week=monday(),people=[{...self,self:true},...friends()];
+ const self=me(),week=monday(),people=[{...self,self:true},...friends(),...(showBots?simulatedBots():[])];
  const value=o=>mode==="semana"?(o.sid===week?o.sem:0):o.xp;
  people.sort((a,b)=>value(b)-value(a)||b.xp-a.xp||a.n.localeCompare(b.n));
  const rows=people.map((p,i)=>{
-  const stale=!p.self&&p.ts<today();const score=value(p);
+  const stale=!p.self&&!p.bot&&p.ts<today();const score=value(p);
   return `<div class="cm-rank-row${p.self?" cm-me":""}">
     <span class="cm-rank-n">${i+1}</span>
     <span class="cm-rank-cat">${miniature(p.av,p.eq)}</span>
-    <div class="cm-rank-person"><strong>${esc(p.n)}${p.self?" (você)":""}</strong><small>${p.self?"Seu progresso atual":stale?"Enviado em "+esc(p.ts.split("-").reverse().join("/")):"Compartilhado hoje"}</small></div>
+    <div class="cm-rank-person"><strong>${esc(p.n)}${p.self?" (você)":""}${p.bot?'<span class="cm-bot-label">BOT</span>':""}</strong><small>${p.bot?(p.todayXP?`+${p.todayXP} XP hoje`:"Sem atividade hoje"):p.self?"Seu progresso atual":stale?"Enviado em "+esc(p.ts.split("-").reverse().join("/")):"Compartilhado hoje"}</small></div>
     <div class="cm-rank-points"><strong>${score.toLocaleString("pt-BR")}</strong><small>XP</small></div>
-    ${p.self?"":`<button type="button" class="cm-remove" data-remove="${esc(p.id)}" aria-label="Remover ${esc(p.n)}">×</button>`}
+    ${p.self||p.bot?"":`<button type="button" class="cm-remove" data-remove="${esc(p.id)}" aria-label="Remover ${esc(p.n)}">×</button>`}
   </div>`
  }).join("");
- node.innerHTML=`<div class="cm-heading"><span class="cm-eyebrow">DESAFIO ENTRE AMIGOS</span><h2>Quem estudou mais?</h2><p>Compare seus pontos e mantenha a motivação. Os números são compartilhados pelos próprios amigos.</p></div>
+ node.innerHTML=`<div class="cm-heading"><span class="cm-eyebrow">DESAFIO ENTRE AMIGOS</span><h2>Quem estudou mais?</h2><p>Dispute XP com amigos reais e competidores virtuais, sempre identificados como bots.</p></div>
  <div class="cm-ranking-score"><span class="cm-cat-summary">${miniature(profile.cat,profile.equip)}</span><div><strong>${self.sem.toLocaleString("pt-BR")} XP</strong><span>seus pontos nesta semana</span><small>${self.xp.toLocaleString("pt-BR")} XP acumulados · Nível ${self.nv}</small></div></div>
  <div class="cm-tabs"><button type="button" data-mode="semana" aria-pressed="${mode==="semana"}">Esta semana</button><button type="button" data-mode="total" aria-pressed="${mode==="total"}">XP total</button></div>
+ <div class="cm-bot-controls"><span>🤖 ${BOT_PROFILES.length} bots de treino · pontuações simuladas conforme sessões ao longo do dia</span><button type="button" id="cm-toggle-bots" aria-pressed="${showBots}">${showBots?"Ocultar bots":"Mostrar bots"}</button></div>
  <div class="cm-board"><div class="cm-board-title">Classificação <span>${people.length} participante${people.length===1?"":"s"}</span></div>${rows}</div>
  <section class="cm-panel"><h3>Convidar amigo</h3><p class="cm-muted">Compartilhe seu código; ele contém apenas seu nome, avatar e XP. Nada de senhas.</p>
   <div class="cm-inline"><button class="btn primary" id="cm-copy" type="button">Copiar meu código</button><button class="btn" id="cm-share-link" type="button">Copiar convite</button></div>
@@ -139,8 +201,9 @@ function rank(){
   <button class="btn" id="cm-add" type="button">Adicionar ao ranking</button>
   <p id="cm-import-status" class="cm-muted" role="status">${esc(importMessage)}</p>
  </section>
- <p class="cm-fine">Os resultados dos amigos são fotografias do momento em que compartilharam o código, não dados em tempo real. Peça um código novo para atualizar. O ranking é guardado apenas neste aparelho.</p>`;
+ <p class="cm-fine">Bots: simulação local de hábitos de estudo, com dias de descanso e ganhos graduais ao longo do dia; não representam pessoas reais. Amigos reais: a pontuação só muda quando compartilham um novo código. O ranking fica neste aparelho.</p>`;
  node.querySelectorAll("[data-mode]").forEach(b=>b.onclick=()=>{mode=b.dataset.mode;rank()});
+ $("cm-toggle-bots").onclick=()=>{showBots=!showBots;put(BOT_VIS_KEY,showBots);rank()};
  node.querySelectorAll("[data-remove]").forEach(b=>b.onclick=()=>{put(FRIEND_KEY,friends().filter(x=>x.id!==b.dataset.remove));rank()});
  $("cm-copy").onclick=()=>{const code=shareCode();$("cm-share-code").value=code;$("cm-share-code").hidden=false;copy(code,$("cm-copy"))};
  $("cm-share-link").onclick=()=>{const url=shareUrl();$("cm-share-code").value=url;$("cm-share-code").hidden=false;copy(url,$("cm-share-link"))};
@@ -151,8 +214,18 @@ function importHash(){
  const f=parse(m[1]);if(f&&saveFriend(f)){history.replaceState(null,"",location.pathname+location.search);if(typeof tab==="function")tab("amigos")}
 }
 function start(){header();importHash()}
-window.VB_COMMUNITY={openFriends:rank,openAvatar:avatar,mountHeader:header,stats,parse,shareCode,importHash,_debug:{normalizeCat,cleanEquip}};
+window.VB_COMMUNITY={openFriends:rank,openAvatar:avatar,mountHeader:header,stats,parse,shareCode,importHash,_debug:{normalizeCat,cleanEquip,simulatedBots,botActivityForDay,BOT_PROFILES}};
 start();
 window.addEventListener("storage",e=>{if([PROFILE_KEY,FRIEND_KEY,"vb-xp-de","vb-xp-fr","vb-xp-it"].includes(e.key)){profile=get(PROFILE_KEY,profile);header();if($("view-amigos")&&!$("view-amigos").hidden)rank();if($("view-avatar")&&!$("view-avatar").hidden)avatar()}});
 window.addEventListener("hashchange",importHash);
+function refreshVisibleRanking(){
+ const view=$("view-amigos");
+ if(!view||view.hidden)return;
+ const active=document.activeElement;
+ if(active&&active.closest&&active.closest("#cm-friends-root .cm-panel"))return;
+ rank();
+}
+setInterval(refreshVisibleRanking,60000);
+window.addEventListener("focus",refreshVisibleRanking);
+window.addEventListener("vb-xp-updated",refreshVisibleRanking);
 })();
