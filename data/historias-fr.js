@@ -1,4 +1,4 @@
-// Histórias interativas originais em francês, formato A1-A2 compatível com o motor híbrido.
+// Histórias interativas em francês (A1–A2): escolhas, tradução contextual e múltiplos finais.
 window.VB_HIST=window.VB_HIST||{};
 window.VB_HIST.fr=[
   {
@@ -210,7 +210,7 @@ window.VB_HIST.fr=[
         ],
         "fim": {
           "tipo": "bom",
-          "titulo": "Um encontro feliz"
+          "titulo": "No caminho certo"
         }
       },
       "f_neutro": {
@@ -255,7 +255,7 @@ window.VB_HIST.fr=[
         ],
         "fim": {
           "tipo": "neutro",
-          "titulo": "Um outro caminho"
+          "titulo": "Outra rota por Paris"
         }
       }
     }
@@ -431,8 +431,8 @@ window.VB_HIST.fr=[
         "cap": "Une lettre retrouvée",
         "p": [
           [
-            "La destinataire arrive au café un peu plus tard. Elle prend la lettre et la garde contre son cœur. Elle explique que son frère lui écrit rarement. Elle est très heureuse de recevoir enfin des nouvelles. Le serveur offre un café à tout le monde pour fêter la rencontre. Tu quittes le café avec un grand sourire.",
-            "A destinatária chega ao café um pouco mais tarde. Ela pega a carta e a segura junto ao coração. Ela explica que o irmão dela raramente escreve. Ela está muito feliz por finalmente receber notícias. O garçom oferece um café a todos para celebrar o encontro. Você deixa o café com um grande sorriso.",
+            "La destinataire arrive au café un peu plus tard. Elle prend la lettre et la garde contre son cœur. Elle explique que son frère lui écrit rarement. Elle est très heureuse de recevoir enfin des nouvelles. Le serveur offre un café à tout le monde pour fêter la rencontre. Tu sors du café avec un grand sourire.",
+            "A destinatária chega ao café um pouco mais tarde. Ela pega a carta e a segura junto ao coração. Ela explica que o irmão dela raramente escreve. Ela está muito feliz por finalmente receber notícias. O garçom oferece um café a todos para celebrar o encontro. Você sai do café com um grande sorriso.",
             [
               [
                 "La destinataire arrive au café un peu plus tard.",
@@ -460,16 +460,16 @@ window.VB_HIST.fr=[
                 "offrir"
               ],
               [
-                "Tu quittes le café avec un grand sourire.",
-                "Você deixa o café com um grande sorriso.",
-                "quitter"
+                "Tu sors du café avec un grand sourire.",
+                "Você sai do café com um grande sorriso.",
+                "sortir"
               ]
             ]
           ]
         ],
         "fim": {
           "tipo": "bom",
-          "titulo": "Um encontro feliz"
+          "titulo": "Uma carta devolvida"
         }
       },
       "f_neutro": {
@@ -514,7 +514,7 @@ window.VB_HIST.fr=[
         ],
         "fim": {
           "tipo": "neutro",
-          "titulo": "Um outro caminho"
+          "titulo": "Um recado seguro"
         }
       }
     }
@@ -584,8 +584,8 @@ window.VB_HIST.fr=[
         "cap": "La bibliothécaire",
         "p": [
           [
-            "Tu expliques à la bibliothécaire où tu as trouvé le parapluie. Elle reconnaît le nom de Camille sur l'étiquette. Camille vient souvent ici pour lire des romans. La bibliothécaire cherche son numéro dans le registre. Elle trouve un contact mais hésite à appeler sans raison. Vous pouvez laisser un message à l'accueil.",
-            "Você explica à bibliotecária onde encontrou o guarda-chuva. Ela reconhece o nome de Camille na etiqueta. Camille vem aqui com frequência para ler romances. A bibliotecária procura o número dela no cadastro. Ela encontra um contato, mas hesita em telefonar sem motivo. Vocês podem deixar um recado na recepção.",
+            "Tu expliques à la bibliothécaire où tu as trouvé le parapluie. Elle connaît le nom de Camille sur l'étiquette. Camille vient souvent ici pour lire des romans. La bibliothécaire cherche son numéro dans le registre. Elle trouve un contact mais hésite à appeler sans raison. Vous pouvez laisser un message à l'accueil.",
+            "Você explica à bibliotecária onde encontrou o guarda-chuva. Ela conhece o nome de Camille na etiqueta. Camille vem aqui com frequência para ler romances. A bibliotecária procura o número dela no cadastro. Ela encontra um contato, mas hesita em telefonar sem motivo. Vocês podem deixar um recado na recepção.",
             [
               [
                 "Tu expliques à la bibliothécaire où tu as trouvé le parapluie.",
@@ -593,9 +593,9 @@ window.VB_HIST.fr=[
                 "trouver"
               ],
               [
-                "Elle reconnaît le nom de Camille sur l'étiquette.",
-                "Ela reconhece o nome de Camille na etiqueta.",
-                "reconnaître"
+                "Elle connaît le nom de Camille sur l'étiquette.",
+                "Ela conhece o nome de Camille na etiqueta.",
+                "connaître"
               ],
               [
                 "Camille vient souvent ici pour lire des romans.",
@@ -690,13 +690,13 @@ window.VB_HIST.fr=[
         "cap": "Le bon propriétaire",
         "p": [
           [
-            "Camille retrouve son parapluie et te remercie avec un sourire. Elle explique que c'est un cadeau de son grand-père. Tu es content d'avoir pris le temps de chercher. Camille t'invite à une rencontre de lecture à la bibliothèque. Tu acceptes parce que tu aimes découvrir de nouveaux livres. La pluie continue, mais la journée est devenue plus belle.",
-            "Camille recupera seu guarda-chuva e agradece sorrindo. Ela explica que é um presente de seu avô. Você está contente por ter dedicado tempo para procurar. Camille convida você para um encontro de leitura na biblioteca. Você aceita porque gosta de descobrir livros novos. A chuva continua, mas o dia ficou mais bonito.",
+            "Camille trouve son parapluie et te remercie avec un sourire. Elle explique que c'est un cadeau de son grand-père. Tu es content d'avoir pris le temps de chercher. Camille t'invite à une rencontre de lecture à la bibliothèque. Tu acceptes parce que tu aimes découvrir de nouveaux livres. La pluie continue, mais la journée est devenue plus belle.",
+            "Camille encontra seu guarda-chuva e agradece sorrindo. Ela explica que é um presente de seu avô. Você está contente por ter dedicado tempo para procurar. Camille convida você para um encontro de leitura na biblioteca. Você aceita porque gosta de descobrir livros novos. A chuva continua, mas o dia ficou mais bonito.",
             [
               [
-                "Camille retrouve son parapluie et te remercie avec un sourire.",
-                "Camille recupera seu guarda-chuva e agradece sorrindo.",
-                "retrouver"
+                "Camille trouve son parapluie et te remercie avec un sourire.",
+                "Camille encontra seu guarda-chuva e agradece sorrindo.",
+                "trouver"
               ],
               [
                 "Elle explique que c'est un cadeau de son grand-père.",
@@ -728,7 +728,7 @@ window.VB_HIST.fr=[
         ],
         "fim": {
           "tipo": "bom",
-          "titulo": "Um encontro feliz"
+          "titulo": "Camille reencontra seu guarda-chuva"
         }
       },
       "f_neutro": {
@@ -773,7 +773,7 @@ window.VB_HIST.fr=[
         ],
         "fim": {
           "tipo": "neutro",
-          "titulo": "Um outro caminho"
+          "titulo": "Uma boa ação discreta"
         }
       }
     }
@@ -843,8 +843,8 @@ window.VB_HIST.fr=[
         "cap": "Les mots importants",
         "p": [
           [
-            "Tu demandes à Léa d'expliquer trois mots que tu ne connais pas. Elle prend un papier et écrit des exemples très simples. Tu répètes les expressions à voix basse. Maintenant tu peux expliquer ton idée en deux phrases. La réunion commence et le responsable te regarde. Tu peux parler tout de suite ou attendre la fin.",
-            "Você pede a Léa para explicar três palavras que não conhece. Ela pega um papel e escreve exemplos muito simples. Você repete as expressões em voz baixa. Agora você consegue explicar sua ideia em duas frases. A reunião começa e o responsável olha para você. Você pode falar imediatamente ou esperar até o final.",
+            "Tu demandes à Léa d'expliquer trois mots que tu ne connais pas. Elle prend un papier et écrit des exemples très simples. Tu dis les expressions à voix basse. Maintenant tu peux expliquer ton idée en deux phrases. La réunion commence et le responsable te regarde. Tu peux parler tout de suite ou attendre la fin.",
+            "Você pede a Léa para explicar três palavras que não conhece. Ela pega um papel e escreve exemplos muito simples. Você diz as expressões em voz baixa. Agora você consegue explicar sua ideia em duas frases. A reunião começa e o responsável olha para você. Você pode falar imediatamente ou esperar até o final.",
             [
               [
                 "Tu demandes à Léa d'expliquer trois mots que tu ne connais pas.",
@@ -857,9 +857,9 @@ window.VB_HIST.fr=[
                 "écrire"
               ],
               [
-                "Tu répètes les expressions à voix basse.",
-                "Você repete as expressões em voz baixa.",
-                "répéter"
+                "Tu dis les expressions à voix basse.",
+                "Você diz as expressões em voz baixa.",
+                "dire"
               ],
               [
                 "Maintenant tu peux expliquer ton idée en deux phrases.",
@@ -987,7 +987,7 @@ window.VB_HIST.fr=[
         ],
         "fim": {
           "tipo": "bom",
-          "titulo": "Um encontro feliz"
+          "titulo": "Uma ideia compartilhada"
         }
       },
       "f_neutro": {
@@ -1032,7 +1032,7 @@ window.VB_HIST.fr=[
         ],
         "fim": {
           "tipo": "neutro",
-          "titulo": "Um outro caminho"
+          "titulo": "Um bom começo"
         }
       }
     }
@@ -1102,8 +1102,8 @@ window.VB_HIST.fr=[
         "cap": "Le marchand de fromages",
         "p": [
           [
-            "Tu demandes au marchand un fromage doux pour une salade. Il te montre deux fromages et explique leurs différences. Tu peux goûter un petit morceau de chaque fromage. Ta tante reconnaît le goût du fromage de son enfance. Elle te remercie et ajoute du fromage à la liste. Vous cherchez maintenant une bonne boulangerie.",
-            "Você pede ao vendedor um queijo suave para uma salada. Ele mostra dois queijos e explica as diferenças. Você pode provar um pedacinho de cada queijo. Sua tia reconhece o sabor do queijo de sua infância. Ela agradece e acrescenta o queijo à lista. Vocês agora procuram uma boa padaria.",
+            "Tu demandes au marchand un fromage doux pour une salade. Il te montre deux fromages et explique leurs différences. Tu peux goûter un petit morceau de chaque fromage. Ta tante reconnaît le goût du fromage de son enfance. Elle te remercie et écrit le nom du fromage sur la liste. Vous cherchez maintenant une bonne boulangerie.",
+            "Você pede ao vendedor um queijo suave para uma salada. Ele mostra dois queijos e explica as diferenças. Você pode provar um pedacinho de cada queijo. Sua tia reconhece o sabor do queijo de sua infância. Ela agradece e anota o nome do queijo na lista. Vocês agora procuram uma boa padaria.",
             [
               [
                 "Tu demandes au marchand un fromage doux pour une salade.",
@@ -1126,9 +1126,9 @@ window.VB_HIST.fr=[
                 "enfance"
               ],
               [
-                "Elle te remercie et ajoute du fromage à la liste.",
-                "Ela agradece e acrescenta o queijo à lista.",
-                "liste"
+                "Elle te remercie et écrit le nom du fromage sur la liste.",
+                "Ela agradece e anota o nome do queijo na lista.",
+                "écrire"
               ],
               [
                 "Vous cherchez maintenant une bonne boulangerie.",
@@ -1208,8 +1208,8 @@ window.VB_HIST.fr=[
         "cap": "Un déjeuner réussi",
         "p": [
           [
-            "Vous achetez le fromage et le pain encore chaud. À la maison, toute la famille aide à préparer la table. Ta grand-mère goûte la salade et reconnaît sa recette. Elle sourit et raconte un souvenir de son enfance. Après le déjeuner, vous buvez un café ensemble. Tu es heureux d'avoir découvert une tradition de famille.",
-            "Vocês compram o queijo e o pão ainda quente. Em casa, toda a família ajuda a preparar a mesa. Sua avó prova a salada e reconhece sua receita. Ela sorri e conta uma lembrança de sua infância. Depois do almoço, vocês tomam café juntos. Você está feliz por ter conhecido uma tradição de família.",
+            "Vous achetez le fromage et le pain encore chaud. À la maison, toute la famille aide à préparer la table. Ta grand-mère goûte la salade et connaît bien cette recette. Elle sourit et raconte un souvenir de son enfance. Après le déjeuner, vous buvez un café ensemble. Tu es heureux d'avoir découvert une tradition de famille.",
+            "Vocês compram o queijo e o pão ainda quente. Em casa, toda a família ajuda a preparar a mesa. Sua avó prova a salada e conhece bem essa receita. Ela sorri e conta uma lembrança de sua infância. Depois do almoço, vocês tomam café juntos. Você está feliz por ter conhecido uma tradição de família.",
             [
               [
                 "Vous achetez le fromage et le pain encore chaud.",
@@ -1222,9 +1222,9 @@ window.VB_HIST.fr=[
                 "famille"
               ],
               [
-                "Ta grand-mère goûte la salade et reconnaît sa recette.",
-                "Sua avó prova a salada e reconhece sua receita.",
-                "reconnaître"
+                "Ta grand-mère goûte la salade et connaît bien cette recette.",
+                "Sua avó prova a salada e conhece bem essa receita.",
+                "connaître"
               ],
               [
                 "Elle sourit et raconte un souvenir de son enfance.",
@@ -1246,7 +1246,7 @@ window.VB_HIST.fr=[
         ],
         "fim": {
           "tipo": "bom",
-          "titulo": "Um encontro feliz"
+          "titulo": "A receita da família"
         }
       },
       "f_neutro": {
@@ -1291,7 +1291,7 @@ window.VB_HIST.fr=[
         ],
         "fim": {
           "tipo": "neutro",
-          "titulo": "Um outro caminho"
+          "titulo": "Uma receita reinventada"
         }
       }
     }
@@ -1467,13 +1467,13 @@ window.VB_HIST.fr=[
         "cap": "La lumière revient",
         "p": [
           [
-            "Vous apportez une nouvelle batterie au phare. La gardienne la met en place et vérifie le système. La lumière recommence à tourner régulièrement sur la mer. À la radio, le capitaine dit que le bateau arrive bientôt. Le pêcheur te remercie pour ton aide. Tu regardes le phare et tu te sens enfin tranquille.",
-            "Vocês levam uma bateria nova ao farol. A responsável instala a bateria e confere o sistema. A luz volta a girar regularmente sobre o mar. Pelo rádio, o capitão diz que o barco logo chegará. O pescador agradece por sua ajuda. Você observa o farol e finalmente se sente tranquilo.",
+            "Vous portez une nouvelle batterie jusqu'au phare. La gardienne la met en place et vérifie le système. La lumière recommence à tourner régulièrement sur la mer. À la radio, le capitaine dit que le bateau arrive bientôt. Le pêcheur te remercie pour ton aide. Tu regardes le phare et tu te sens enfin tranquille.",
+            "Vocês carregam uma bateria nova até o farol. A responsável instala a bateria e confere o sistema. A luz volta a girar regularmente sobre o mar. Pelo rádio, o capitão diz que o barco logo chegará. O pescador agradece por sua ajuda. Você observa o farol e finalmente se sente tranquilo.",
             [
               [
-                "Vous apportez une nouvelle batterie au phare.",
-                "Vocês levam uma bateria nova ao farol.",
-                "apporter"
+                "Vous portez une nouvelle batterie jusqu'au phare.",
+                "Vocês carregam uma bateria nova até o farol.",
+                "porter"
               ],
               [
                 "La gardienne la met en place et vérifie le système.",
@@ -1505,15 +1505,15 @@ window.VB_HIST.fr=[
         ],
         "fim": {
           "tipo": "bom",
-          "titulo": "Um encontro feliz"
+          "titulo": "O farol voltou a funcionar"
         }
       },
       "f_neutro": {
         "cap": "Une attente prudente",
         "p": [
           [
-            "Vous appelez les techniciens et restez dans un endroit sûr. Ils arrivent avec le matériel nécessaire pour réparer le phare. Le travail prend plus de temps que prévu. Le pêcheur te propose un thé chaud pendant l'attente. Une heure plus tard, la lumière du phare fonctionne de nouveau. Tu comprends que demander de l'aide est parfois la meilleure décision.",
-            "Vocês chamam os técnicos e ficam em um lugar seguro. Eles chegam com o material necessário para consertar o farol. O trabalho leva mais tempo do que o previsto. O pescador oferece um chá quente durante a espera. Uma hora depois, a luz do farol funciona de novo. Você entende que pedir ajuda às vezes é a melhor decisão.",
+            "Vous appelez les techniciens et restez dans un endroit sûr. Ils arrivent avec le matériel nécessaire pour réparer le phare. Le travail prend plus de temps que prévu. Le pêcheur te donne un thé chaud pendant l'attente. Une heure plus tard, la lumière du phare fonctionne de nouveau. Tu comprends que demander de l'aide est parfois la meilleure décision.",
+            "Vocês chamam os técnicos e ficam em um lugar seguro. Eles chegam com o material necessário para consertar o farol. O trabalho leva mais tempo do que o previsto. O pescador lhe dá um chá quente durante a espera. Uma hora depois, a luz do farol funciona de novo. Você entende que pedir ajuda às vezes é a melhor decisão.",
             [
               [
                 "Vous appelez les techniciens et restez dans un endroit sûr.",
@@ -1531,9 +1531,9 @@ window.VB_HIST.fr=[
                 "prendre"
               ],
               [
-                "Le pêcheur te propose un thé chaud pendant l'attente.",
-                "O pescador oferece um chá quente durante a espera.",
-                "proposer"
+                "Le pêcheur te donne un thé chaud pendant l'attente.",
+                "O pescador lhe dá um chá quente durante a espera.",
+                "donner"
               ],
               [
                 "Une heure plus tard, la lumière du phare fonctionne de nouveau.",
@@ -1550,7 +1550,7 @@ window.VB_HIST.fr=[
         ],
         "fim": {
           "tipo": "neutro",
-          "titulo": "Um outro caminho"
+          "titulo": "Uma espera segura"
         }
       }
     }
