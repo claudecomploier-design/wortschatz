@@ -46,3 +46,18 @@ Pedido: aba Frases com lobby e partida (como Treinar); proporções 30/50/70/100
 Limite conhecido: nas cartas, a frase misturada só existe para palavras que aparecem nas frases (cerca de 250 por língua); as demais mostram o exemplo original.
 
 Nota: tools/simular_frases.js foi escrito para a versão sem lobby; para simular agora, chame HYB.prepare e use HYB._state() ou adapte para a partida (#hgame).
+
+## Etapa 3 (08/10): modo Parágrafos + jogo mais dinâmico
+
+Pedido: outro modo com textos do tamanho de um parágrafo (~4x as frases) e partidas mais dinâmicas e recompensadoras.
+
+- Dados: `data/textos-<lang>.js` define `VB_TEXTOS[lang]`, mesmo formato das frases (`[tema, texto estrangeiro, texto PT, blocos]`), 10 a 16 blocos por texto. Validar com `node tools/check_frases.js <lang> textos`.
+- Motor: frases.js ganha o tipo de partida (`f` = frases, 10 por partida; `t` = parágrafos, 3 por partida). Estatística por texto em `H.s["t"+idx]`. Familiaridade das palavras é a mesma (compartilhada).
+- Jogo: XP por frase (base + blocos em língua estrangeira), combo de frases sem abrir a tradução (multiplicador), som curto subindo de tom com o combo (botão de silenciar), marcos com mini confete e vibração, estrelas (1 a 3) e XP total no resumo; XP acumulado por língua no lobby (`vb-xp-<lang>`).
+
+- [ ] Textos alemão
+- [ ] Textos italiano
+- [ ] Textos francês
+- [ ] Motor + lobby com os dois modos
+- [ ] Camada de jogo (XP, combo, som, marcos, estrelas)
+- [ ] Testes e publicação
