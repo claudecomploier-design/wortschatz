@@ -945,28 +945,6 @@ body{
     </div>
   </header>
 
-  <section class="streak" aria-label="Dias seguidos">
-    <div class="flame" id="flame">
-      <svg viewBox="-1 -1 18 20" aria-hidden="true"><path class="fl" d="M8 0c1 3 4 4 5 8 1.4 5-1.6 10-5 10S1.6 14 3 9.5C4 7 6 6.5 6 4c1 1 2 2.5 2 4 1-2 1-5 0-8z"/></svg>
-    </div>
-    <div class="st-nums">
-      <div class="streak-status" id="streak-status" aria-live="polite">Preparando sua racha</div>
-      <div class="st-main"><b id="streak-n">0</b><span id="streak-l">dias seguidos</span></div>
-      <div class="st-sub">
-        <div><b id="total-n">0</b><span>atividades realizadas</span></div>
-        <div><b id="best-n">0</b><span>recorde de dias</span></div>
-      </div>
-      <div class="streak-milestone" id="streak-milestone" aria-live="polite"></div>
-    </div>
-    <div class="goal">
-      <div class="goal-top"><span id="goal-msg">Desafio extra de hoje</span><b id="goal-t">0 / 20</b></div>
-      <div class="bar"><i id="goal-bar" style="width:0%"></i></div>
-      <p class="goal-note" id="goal-note">Uma atividade concluída mantém a racha. Faça 20 para o desafio extra.</p>
-    </div>
-    <div class="week-label"><span>Sua semana de estudo</span><b id="week-detail">0 / 7 dias</b></div>
-    <div class="week" id="week"></div>
-  </section>
-  <div class="banner" id="banner" hidden></div>
 
   <nav class="bottom-nav" aria-label="Navegação principal">
     <div class="dock-inner">
@@ -1067,7 +1045,28 @@ body{
   </main>
 
   <main id="view-relatorio" hidden>
-    <button class="btn small exercise-back" type="button">← Voltar aos exercícios</button>
+  <section class="streak" aria-label="Dias seguidos">
+    <div class="flame" id="flame">
+      <svg viewBox="-1 -1 18 20" aria-hidden="true"><path class="fl" d="M8 0c1 3 4 4 5 8 1.4 5-1.6 10-5 10S1.6 14 3 9.5C4 7 6 6.5 6 4c1 1 2 2.5 2 4 1-2 1-5 0-8z"/></svg>
+    </div>
+    <div class="st-nums">
+      <div class="streak-status" id="streak-status" aria-live="polite">Preparando sua racha</div>
+      <div class="st-main"><b id="streak-n">0</b><span id="streak-l">dias seguidos</span></div>
+      <div class="st-sub">
+        <div><b id="total-n">0</b><span>atividades realizadas</span></div>
+        <div><b id="best-n">0</b><span>recorde de dias</span></div>
+      </div>
+      <div class="streak-milestone" id="streak-milestone" aria-live="polite"></div>
+    </div>
+    <div class="goal">
+      <div class="goal-top"><span id="goal-msg">Desafio extra de hoje</span><b id="goal-t">0 / 20</b></div>
+      <div class="bar"><i id="goal-bar" style="width:0%"></i></div>
+      <p class="goal-note" id="goal-note">Uma atividade concluída mantém a racha. Faça 20 para o desafio extra.</p>
+    </div>
+    <div class="week-label"><span>Sua semana de estudo</span><b id="week-detail">0 / 7 dias</b></div>
+    <div class="week" id="week"></div>
+  </section>
+  <div class="banner" id="banner" hidden></div>
     <div id="weekly-report" aria-live="polite"></div>
   </main>
   <main id="view-amigos" hidden><section id="cm-friends-root" aria-live="polite"></section></main>
