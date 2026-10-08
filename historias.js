@@ -90,7 +90,7 @@
           <p class="st-desc">${esc(h.desc)}</p>
           <p class="st-prog ${p.cls}">${p.t}</p>
           <div class="st-act">
-            <button class="btn ${inProg ? "primary" : "play"} small" data-open="${h.id}">${inProg ? "Continuar" : started ? "Jogar de novo" : "Começar"}</button>
+            <button class="btn primary small" data-open="${h.id}">${inProg ? "Continuar" : started ? "Jogar de novo" : "Começar"}</button>
             ${inProg ? `<button class="btn small" data-restart="${h.id}">Recomeçar</button>` : ""}
           </div>
         </div>
