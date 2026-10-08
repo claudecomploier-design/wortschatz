@@ -1609,7 +1609,7 @@ function openLangMenu(focusOption=false){
   $("lang-menu").hidden=false;
   $("lang-toggle").setAttribute("aria-expanded","true");
   if(focusOption){
-    const selected=$('.lang-option[aria-pressed="true"]');
+    const selected=document.querySelector('.lang-option[aria-pressed="true"]');
     if(selected)selected.focus();
   }
 }
