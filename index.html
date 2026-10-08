@@ -857,16 +857,91 @@ body{
   .exercise-link:hover,.exercise-link:focus-visible,.exercise-link:active,
   .btn:active,.btn.primary:active,.btn.play:active{transform:none}
 }
+
+/* ===== refinamento do dock e seletor de idiomas (v2) ===== */
+/* Somente Exercícios recebe a moldura; os outros atalhos ficam leves. */
+.bottom-nav .dock-action:not([data-view="exercicios"]) .dock-icon,
+.bottom-nav .dock-action:not([data-view="exercicios"]):hover .dock-icon,
+.bottom-nav .dock-action:not([data-view="exercicios"])[aria-current="page"] .dock-icon{
+  background:transparent;
+  border-color:transparent;
+  box-shadow:none;
+  transform:none;
+}
+.bottom-nav .dock-action:not([data-view="exercicios"]):hover .dock-icon{
+  color:var(--fg);
+  transform:translateY(-2px);
+}
+.bottom-nav .dock-action:not([data-view="exercicios"])[aria-current="page"] .dock-icon{
+  color:var(--dock-color);
+}
+.bottom-nav .dock-action:not([data-view="exercicios"])[aria-current="page"] .dock-label{
+  color:var(--dock-color);
+}
+.bottom-nav .dock-action[data-view="exercicios"] .dock-icon{
+  border-color:color-mix(in srgb,var(--dock-color) 35%,transparent);
+  background:color-mix(in srgb,var(--dock-color) 18%,var(--surface));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 3px 0 rgba(6,12,20,.3);
+}
+.bottom-nav .dock-action[data-view="exercicios"][aria-current="page"] .dock-icon{
+  border-color:var(--dock-color);
+  background:color-mix(in srgb,var(--dock-color) 26%,var(--surface));
+  box-shadow:0 0 0 3px color-mix(in srgb,var(--dock-color) 10%,transparent),0 4px 0 rgba(6,12,20,.3);
+}
+/* Botão Idiomas + escolha flutuante, sem ocupar o cabeçalho. */
+.langs{position:relative;display:block;padding:0;border:0;background:transparent;box-shadow:none;flex:none}
+.langs .lang-toggle{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  min-height:40px;padding:8px 11px;
+  border:1px solid var(--line);border-radius:12px;
+  background:var(--surface);color:var(--fg);
+  font-weight:600;font-size:.85rem;
+  cursor:pointer;transition:border-color .15s,background .15s;
+}
+.langs .lang-toggle:hover,.langs .lang-toggle[aria-expanded="true"]{
+  background:var(--raised);border-color:var(--accent);
+}
+.lang-globe{display:grid;place-items:center;color:var(--accent)}
+.lang-globe svg{width:17px;height:17px}
+.lang-current{display:inline-flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:700;color:var(--accent);padding:2px 5px;background:var(--accent-soft);border-radius:5px;letter-spacing:.02em}
+.lang-chevron{width:14px;height:14px;color:var(--muted);transition:transform .18s}
+.lang-toggle[aria-expanded="true"] .lang-chevron{transform:rotate(180deg)}
+.lang-menu{
+  position:absolute;z-index:80;top:calc(100% + 8px);right:0;
+  width:max-content;min-width:190px;max-width:min(280px,calc(100vw - 32px));
+  padding:6px;display:grid;gap:2px;
+  border:1px solid var(--line);border-radius:14px;
+  background:#222e3c;box-shadow:0 15px 35px rgba(0,0,0,.35);
+}
+.lang-menu[hidden]{display:none!important}
+.langs .lang-option{
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+  padding:11px 12px;border:0;border-radius:9px;background:transparent;
+  color:var(--fg);text-align:left;font-size:.87rem;cursor:pointer;
+}
+.langs .lang-option:hover,.langs .lang-option:focus-visible{background:var(--raised)}
+.langs .lang-option[aria-pressed="true"]{background:var(--accent-soft);color:var(--accent-hi);box-shadow:none}
+.lang-check{visibility:hidden;color:var(--accent);font-size:.95rem}
+.lang-option[aria-pressed="true"] .lang-check{visibility:visible}
+@media(max-width:420px){.langs .lang-toggle{gap:5px;padding:7px 9px}.lang-globe svg{width:16px;height:16px}}
+@media(prefers-reduced-motion:reduce){.lang-chevron,.langs .lang-toggle{transition:none!important}}
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
     <div class="brand"><button class="me" id="me" aria-label="Escolher personagem" title="Escolher personagem"></button><h1>Vokabel 1000 <small class="ver">v18</small></h1></div>
-    <div class="langs" role="group" aria-label="Língua">
-      <button id="lang-de" data-lang="de">Alemão</button>
-      <button id="lang-it" data-lang="it">Italiano</button>
-      <button id="lang-fr" data-lang="fr">Francês</button>
+    <div class="langs" id="language-picker">
+      <button type="button" id="lang-toggle" class="lang-toggle" aria-controls="lang-menu" aria-expanded="false" aria-haspopup="true" aria-label="Idiomas. Selecionar idioma">
+        <span class="lang-globe" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c-5 5-5 13 0 18M12 3c5 5 5 13 0 18"/></svg></span>
+        <span>Idiomas</span><span class="lang-current" id="lang-current">DE</span>
+        <svg class="lang-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </button>
+      <div class="lang-menu" id="lang-menu" role="group" aria-label="Selecionar idioma" hidden>
+        <button type="button" class="lang-option" data-lang="de" aria-pressed="true"><span>Alemão</span><span class="lang-check" aria-hidden="true">✓</span></button>
+        <button type="button" class="lang-option" data-lang="it" aria-pressed="false"><span>Italiano</span><span class="lang-check" aria-hidden="true">✓</span></button>
+        <button type="button" class="lang-option" data-lang="fr" aria-pressed="false"><span>Francês</span><span class="lang-check" aria-hidden="true">✓</span></button>
+      </div>
     </div>
   </header>
 
@@ -1253,8 +1328,11 @@ function loadLang(l,cb){
   document.head.appendChild(s);
 }
 function setLang(l){
+  if(!LANGS[l])return;
   lang=l;store.set("vb-lang",l);
-document.querySelectorAll(".langs button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.lang===l));
+  document.querySelectorAll(".lang-option").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.lang===l)));
+  $("lang-current").textContent=LANGS[l].code;
+  $("lang-toggle").setAttribute("aria-label","Idiomas. Atual: "+LANGS[l].name+". Selecionar idioma");
   document.querySelectorAll(".lcode").forEach(e=>e.textContent=LANGS[l].code);
   $("lobby").innerHTML='<div class="loading">Carregando palavras...</div>';
   loadLang(l,()=>{
@@ -1521,7 +1599,39 @@ document.querySelectorAll(".bottom-nav .dock-action").forEach(button=>{
   button.addEventListener("click",()=>tab(button.dataset.view));
 });
 document.querySelectorAll(".exercise-back").forEach(b=>b.onclick=()=>tab("exercicios"));
-document.querySelectorAll(".langs button").forEach(b=>b.onclick=()=>{if(b.dataset.lang!==lang)setLang(b.dataset.lang)});
+/* Idiomas: menu compacto; não altera a persistência de idioma existente. */
+function closeLangMenu(returnFocus=false){
+  $("lang-menu").hidden=true;
+  $("lang-toggle").setAttribute("aria-expanded","false");
+  if(returnFocus)$("lang-toggle").focus();
+}
+function openLangMenu(focusOption=false){
+  $("lang-menu").hidden=false;
+  $("lang-toggle").setAttribute("aria-expanded","true");
+  if(focusOption){
+    const selected=$('.lang-option[aria-pressed="true"]');
+    if(selected)selected.focus();
+  }
+}
+$("lang-toggle").addEventListener("click",()=>{
+  if($("lang-menu").hidden)openLangMenu();
+  else closeLangMenu();
+});
+$("lang-toggle").addEventListener("keydown",e=>{
+  if(e.key==="ArrowDown"){e.preventDefault();openLangMenu(true)}
+});
+document.querySelectorAll(".lang-option").forEach(button=>{
+  button.addEventListener("click",()=>{
+    if(button.dataset.lang!==lang)setLang(button.dataset.lang);
+    closeLangMenu(true);
+  });
+});
+document.addEventListener("click",e=>{
+  if(!$("language-picker").contains(e.target)&&!$("lang-menu").hidden)closeLangMenu();
+});
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape"&&!$("lang-menu").hidden){e.preventDefault();closeLangMenu(true)}
+});
 $("sel-ratio").onchange=e=>{const v=e.target.value;if(window.HYB)HYB.setRatio(v==="auto"?"auto":+v)};
 $("sel-level").onchange=e=>{level=e.target.value;cur=null;free=false;buildQueue();renderLobby()};
 $("sel-level-list").onchange=e=>{listLevel=e.target.value;$("search").value="";renderList()};
