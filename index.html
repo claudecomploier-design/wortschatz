@@ -224,10 +224,9 @@ h1 .ver{font-family:var(--sans);font-size:.7rem;font-weight:500;color:var(--dim)
 
 /* ===== dock inferior: ícones ilustrados e atalhos acessíveis ===== */
 .bottom-nav{position:fixed;z-index:24;bottom:0;left:0;right:0;width:100%;margin:0;padding:10px max(10px,env(safe-area-inset-right,0px)) calc(9px + env(safe-area-inset-bottom,0px)) max(10px,env(safe-area-inset-left,0px));border:0;border-top:1px solid rgba(147,165,188,.2);background:rgba(19,25,33,.96);box-shadow:0 -10px 40px rgba(4,8,13,.3);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);overflow:visible}
-.bottom-nav .dock-inner{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));align-items:stretch;gap:clamp(2px,1.2vw,9px);max-width:650px;margin:0 auto}
+.bottom-nav .dock-inner{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));align-items:stretch;gap:clamp(2px,1.2vw,9px);max-width:650px;margin:0 auto}
 .bottom-nav .dock-action{--dock-color:var(--accent);appearance:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;position:relative;min-width:0;min-height:68px;padding:2px 1px 4px;margin:0;border:0;border-radius:12px;background:transparent;color:var(--muted);cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation;transition:background .2s ease,color .2s ease,transform .2s ease}
 .bottom-nav .dock-action[data-view="exercicios"]{--dock-color:#f3c16e}
-.bottom-nav .dock-action[data-view="train"]{--dock-color:#77bfe0}
 .bottom-nav .dock-action[data-view="relatorio"]{--dock-color:#79d7d5}
 .bottom-nav .dock-action[data-view="amigos"]{--dock-color:#f1af83}
 .bottom-nav .dock-action[data-view="avatar"]{--dock-color:#8ad0aa}
@@ -837,7 +836,6 @@ body{
   box-shadow:0 -8px 34px rgba(0,0,0,.3);
 }
 .bottom-nav .dock-action[data-view="exercicios"]{--dock-color:#f6b94c}
-.bottom-nav .dock-action[data-view="train"]{--dock-color:#70bdf1}
 .bottom-nav .dock-action[data-view="relatorio"]{--dock-color:#79d7d5}
 .bottom-nav .dock-action[data-view="amigos"]{--dock-color:#f6b94c}
 .bottom-nav .dock-action[data-view="avatar"]{--dock-color:#64d893}
@@ -949,7 +947,6 @@ body{
   <nav class="bottom-nav" aria-label="Navegação principal">
     <div class="dock-inner">
       <button type="button" class="dock-action" id="tab-exercicios" data-view="exercicios" aria-controls="view-exercicios" aria-current="page" title="Central de exercícios"><span class="dock-icon" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><path d="M4 13 16 4l12 9v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/><path d="m12 18 4-3 4 3-1.5 5h-5Z" fill="currentColor" fill-opacity=".25"/><path d="M10 10.5h.01M22 10.5h.01"/></svg></span><span class="dock-label">Exercícios</span></button>
-      <button type="button" class="dock-action" id="tab-vocabulario" data-view="train" aria-controls="view-train" title="Treinar vocabulário"><span class="dock-icon" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><rect x="5" y="7" width="20" height="22" rx="3"/><path d="M10 7V4h16a2 2 0 0 1 2 2v18h-3"/><path d="m11 23 4-10 4 10M12.5 19h5"/></svg></span><span class="dock-label">Palavras</span></button>
       <button type="button" class="dock-action" id="tab-relatorio" data-view="relatorio" aria-controls="view-relatorio" aria-label="Progresso semanal" title="Progresso semanal"><span class="dock-icon" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><rect x="4" y="4" width="24" height="24" rx="6"/><path d="M10 22v-5M16 22V11M22 22v-8" stroke-width="3" stroke-linecap="round"/><path d="M9 25h14" stroke-width="1.5"/></svg></span><span class="dock-label">Progresso <span class="dock-sub">semanal</span></span></button>
       <button type="button" class="dock-action" id="tab-amigos" data-view="amigos" aria-controls="view-amigos" title="Ranking de amigos"><span class="dock-icon" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><path d="M10 4h12v8c0 5-3 8-6 8s-6-3-6-8V4Z" fill="currentColor" fill-opacity=".2"/><path d="M10 7H5v3c0 4 3 6 7 6M22 7h5v3c0 4-3 6-7 6M16 20v5M11 28h10M12 25h8"/><path d="m16 8 1 2.2 2.4.3-1.7 1.7.4 2.4-2.1-1.1-2.1 1.1.4-2.4-1.7-1.7 2.4-.3Z" fill="currentColor" stroke="none"/></svg></span><span class="dock-label">Amigos</span></button>
       <button type="button" class="dock-action" id="tab-method" data-view="method" aria-controls="view-method" title="Método de estudo"><span class="dock-icon" aria-hidden="true"><svg viewBox="0 0 32 32" focusable="false"><circle cx="16" cy="16" r="12"/><path d="m19.5 12.5-2 7-7 2 2-7 7-2Z" fill="currentColor" fill-opacity=".32"/><path d="M16 5v2M16 25v2M5 16h2M25 16h2"/></svg></span><span class="dock-label">Método</span></button>
@@ -1579,7 +1576,7 @@ function tab(name){
   const target=views.includes(name)?name:"exercicios";
   views.forEach(n=>{$("view-"+n).hidden=n!==target});
   // As atividades extras pertencem à central; os atalhos recebem destaque próprio.
-  const active=target==="train"||target==="list"?"train":target==="relatorio"?"relatorio":(["amigos","avatar","method"].includes(target)?target:"exercicios");
+  const active=target==="relatorio"?"relatorio":(["amigos","avatar","method"].includes(target)?target:"exercicios");
   document.querySelectorAll(".bottom-nav .dock-action").forEach(button=>{
     if(button.dataset.view===active)button.setAttribute("aria-current","page");
     else button.removeAttribute("aria-current");
