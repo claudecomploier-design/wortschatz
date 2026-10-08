@@ -837,29 +837,56 @@ function clozeHTML(ex,g,mode){
 function full(c){const a=article(c.w,c.g);if(!a)return c.w;return a.endsWith("'")?a+c.w:a+" "+c.w}
 function label(c){const a=article(c.w,c.g);if(!a)return c.g?`<span class="g-${c.g}">${esc(c.w)}</span>`:esc(c.w);const sep=a.endsWith("'")?"":" ";return `<span class="g-${c.g}"><span class="art">${esc(a)}</span>${sep}${esc(c.w)}</span>`}
 
-/* ===== racha ===== */
+/* ===== racha: qualquer atividade concluída protege o dia; 20 são opcionais ===== */
+const STREAK_MARKS=[3,7,14,30,60,100,150,200,300,365];
 function streakInfo(){
-  let n=0,d=new Date();d.setHours(12);
-  if((act[dayKey(d.getTime())]||0)<GOAL)d.setDate(d.getDate()-1);
-  while((act[dayKey(d.getTime())]||0)>=GOAL){n++;d.setDate(d.getDate()-1)}
+  let n=0,d=new Date();d.setHours(12,0,0,0);
+  if(!(Number(act[dayKey(d.getTime())])>0))d.setDate(d.getDate()-1);
+  while(Number(act[dayKey(d.getTime())])>0){n++;d.setDate(d.getDate()-1)}
   return n;
+}
+function longestStreak(){
+  const keys=Object.keys(act).filter(k=>/^\d{4}-\d{2}-\d{2}$/.test(k)&&Number(act[k])>0).sort();
+  let run=0,max=0,prev="";
+  for(const k of keys){
+    if(prev){
+      const [y,m,d]=prev.split("-").map(Number);
+      run=dayKey(new Date(y,m-1,d+1,12).getTime())===k?run+1:1;
+    }else run=1;
+    max=Math.max(max,run);prev=k;
+  }
+  return max;
 }
 const MINI='<svg viewBox="0 0 16 18" aria-hidden="true"><path d="M8 0c1 3 4 4 5 8 1.4 5-1.6 10-5 10S1.6 14 3 9.5C4 7 6 6.5 6 4c1 1 2 2.5 2 4 1-2 1-5 0-8z"/></svg>';
 function renderStreak(){
-  const n=streakInfo();if(n>best){best=n;store.set("vb-best",best)}
-  const t=act[dayKey()]||0;const doneToday=t>=GOAL;
+  const n=streakInfo(),t=Math.max(0,Number(act[dayKey()])||0),doneToday=t>0;
+  const top=Math.max(best,n,longestStreak());
+  if(top>best){best=top;store.set("vb-best",best)}
   $("streak-n").textContent=n;$("streak-l").textContent=n===1?"dia seguido":"dias seguidos";
   $("total-n").textContent=total.toLocaleString("pt-BR");$("best-n").textContent=best;
-  document.querySelector(".streak").classList.toggle("cold",n===0);
+  const card=document.querySelector(".streak");card.classList.toggle("is-active",doneToday);card.classList.toggle("is-pending",!doneToday);
+  $("streak-status").textContent=doneToday?"✓ Racha protegida hoje":n>0?"Racha em risco hoje":"Comece sua primeira sequência";
+  $("streak-status").title=doneToday?"Sua atividade de hoje foi registrada.":"Faça uma atividade até o fim do dia para continuar a sequência.";
   $("g-goal").textContent=`${Math.min(t,GOAL)}/${GOAL}`;
   const fl=$("flame");fl.classList.toggle("off",!doneToday);fl.classList.toggle("on",doneToday);
   $("goal-t").textContent=`${Math.min(t,GOAL)} / ${GOAL}`+(t>GOAL?` +${t-GOAL}`:"");
-  $("goal-msg").textContent=doneToday?"Meta batida hoje!":t===0?(n>0?"Não deixe a chama apagar!":"Vamos acender a chama?"):`Faltam ${GOAL-t} cartas`;
+  $("goal-msg").textContent=t>=GOAL?"Desafio extra concluído!":doneToday?"Racha salva! Continue para o bônus":n>0?"Proteja sua racha com 1 exercício":"Conclua 1 exercício para começar";
+  $("goal-note").textContent=t>=GOAL?"Incrível! Você completou as 20 práticas extras de hoje.":doneToday?`Você já garantiu sua racha. Faltam ${GOAL-t} práticas para o desafio extra.`:"Qualquer exercício concluído mantém a racha. O desafio extra é opcional.";
   $("goal-bar").style.width=Math.min(100,t/GOAL*100)+"%";
-  const names=["dom","seg","ter","qua","qui","sex","sáb"];let h="";
-  for(let i=6;i>=0;i--){const d=new Date();d.setHours(12);d.setDate(d.getDate()-i);const k=dayKey(d.getTime());
-    h+=`<div class="day${i===0?" is-today":""}"><div class="dot${(act[k]||0)>=GOAL?" lit":""}${i===0?" today":""}">${MINI}</div>${i===0?"hoje":names[d.getDay()]}</div>`}
-  $("week").innerHTML=h;
+  const next=STREAK_MARKS.find(x=>x>n)||Math.ceil((n+1)/50)*50;
+  const previous=[0,...STREAK_MARKS].filter(x=>x<=n).pop();
+  const progress=Math.max(0,Math.min(100,(n-previous)/Math.max(1,next-previous)*100));
+  $("streak-milestone").innerHTML=`<span>Próxima conquista: <strong>${next} dias seguidos</strong> · ${n} / ${next}</span><div class="milestone-bar" aria-label="Progresso para ${next} dias"><i style="width:${progress}%"></i></div>`;
+  const names=["dom","seg","ter","qua","qui","sex","sáb"];let h="",days=0;
+  for(let i=6;i>=0;i--){
+    const d=new Date();d.setHours(12,0,0,0);d.setDate(d.getDate()-i);
+    const k=dayKey(d.getTime()),count=Math.max(0,Number(act[k])||0),lit=count>0;
+    if(lit)days++;
+    const label=i===0?"hoje":names[d.getDay()];
+    const message=`${label}: ${count} atividade${count===1?"":"s"}`;
+    h+=`<div class="day${i===0?" is-today":""}" title="${message}"><div class="dot${lit?" lit":""}${i===0?" today":""}" aria-label="${message}">${MINI}</div>${label}</div>`;
+  }
+  $("week").innerHTML=h;$("week-detail").textContent=`${days} / 7 dias`;
 }
 /* ===== mascote (só no lobby, gestos ao tocar) ===== */
 const HI={de:"Hallo!",it:"Ciao!",fr:"Salut !"};
@@ -875,7 +902,7 @@ function gestures(){
     {c:"g-laugh",f:"happy",t:"Hahaha, para! Isso faz cócegas!"},
     {c:"g-wow",f:"wow",t:"Opa! Que susto!"},
     {c:"g-flex",f:"happy",t:`Já são ${total.toLocaleString("pt-BR")} palavras verificadas. Que memória!`},
-    {c:"g-nod",f:"idle",t:t>=GOAL?"Meta de hoje batida. Tô orgulhoso!":`Faltam ${GOAL-t} cartas para a meta de hoje.`}
+    {c:"g-nod",f:"idle",t:t>0?"Sua racha já está salva hoje!":"Conclua um exercício hoje para salvar a racha."}
   ];
   if(n>0)g.push({c:"g-jump",f:"party",t:`${n} dia${n>1?"s":""} seguido${n>1?"s":""}! Não para agora.`});
   return g;
@@ -883,7 +910,7 @@ function gestures(){
 let gestT=null,lastG=-1;
 function idleBubble(){
   const t=act[dayKey()]||0;
-  return t>=GOAL?"Meta batida hoje! Quer jogar mais?":t?`Faltam ${GOAL-t} cartas. Bora!`:"Oi! Toque em mim.";
+  return t>=GOAL?"Racha salva e desafio extra completo!":t>0?`Racha salva! Mais ${GOAL-t} práticas para o bônus.`:"Conclua uma atividade e acenda sua racha!";
 }
 function gesture(){
   const m=$("mascot"),b=$("bubble"),list=gestures();
@@ -899,10 +926,10 @@ function celebrateStreak(n){
   const o=$("sp");if(!o)return;
   const fox=$("sp-fox");fox.innerHTML=$("mascot").innerHTML;fox.dataset.face="think";
   const num=$("sp-num");num.textContent=Math.max(0,n-1);num.classList.remove("bump");
-  $("sp-title").textContent=n===1?"1º dia de sequência!":`${n} dias seguidos!`;
-  $("sp-sub").textContent=n>=best&&n>1?"Novo recorde! Volte amanhã para manter a chama acesa.":"Meta de hoje cumprida. Volte amanhã para manter a chama acesa.";
+  $("sp-title").textContent=n===1?"Primeiro dia garantido!":`${n} dias de racha!`;
+  $("sp-sub").textContent=STREAK_MARKS.includes(n)?`Conquista desbloqueada: ${n} dias! Continue sua jornada amanhã.`:n>best?"Novo recorde pessoal! A racha está protegida hoje.":"Racha protegida hoje! Um passo por dia faz a diferença.";
   const names=["D","S","T","Q","Q","S","S"];let h="";
-  for(let i=6;i>=0;i--){const d=new Date();d.setHours(12);d.setDate(d.getDate()-i);const lit=(act[dayKey(d.getTime())]||0)>=GOAL;
+  for(let i=6;i>=0;i--){const d=new Date();d.setHours(12);d.setDate(d.getDate()-i);const lit=Number(act[dayKey(d.getTime())])>0;
     h+=`<div style="display:grid;gap:4px;justify-items:center;font-size:.7rem;color:var(--dim)"><div class="dot${lit?" lit":""}${i===0?" now":""}">${MINI}</div>${i===0?"hoje":names[d.getDay()]}</div>`}
   $("sp-week").innerHTML=h;
   const cols=["#c8a464","#d8b878","#e8823f","#88c4a3","#8aacdc","#e9edf2"];let c="";
@@ -921,14 +948,17 @@ function celebrateStreak(n){
 }
 function addActivity(){
   total++;store.set("vb-total",total);
-  const k=dayKey();const before=act[k]||0;act[k]=before+1;
+  const k=dayKey(),before=Math.max(0,Number(act[k])||0);
+  act[k]=before+1;
   const keys=Object.keys(act).sort();while(keys.length>400)delete act[keys.shift()];
   store.set("vb-activity",act);
-  if(before<GOAL&&act[k]>=GOAL){const n=streakInfo();
-    celebrateStreak(n);partyNext=true}
   renderStreak();
+  if(before===0){celebrateStreak(streakInfo());partyNext=true}
+  if(before<GOAL&&act[k]>=GOAL){
+    const b=$("banner");b.textContent="★ Desafio extra do dia concluído: 20 atividades! Continue no seu ritmo.";
+    b.hidden=false;
+  }
 }
-
 /* ===== dados ===== */
 function loadLang(l,cb){
   if(VB_DATA[l])return cb();
@@ -1163,6 +1193,7 @@ function renderExerciseQuiz(){
  box.querySelectorAll("[data-answer]").forEach(b=>b.onclick=()=>{
   if(exerciseAnswered)return;exerciseAnswered=true;
   const right=+b.dataset.answer===item.ok;if(right)exerciseCorrect++;
+  addActivity();
   box.querySelectorAll("[data-answer]").forEach(x=>{x.disabled=true;if(+x.dataset.answer===item.ok)x.style.borderColor="var(--good)";else if(x===b)x.style.borderColor="var(--bad)"});
   $("quiz-feedback").innerHTML='<p>'+(right?"Correto!":"Resposta correta: "+item.a[item.ok]+'.')+' '+item.ex+'</p><button class="btn primary" id="quiz-next">'+(exerciseIndex===EXERCISE_QUESTIONS.length-1?"Ver resultado":"Próxima questão")+'</button>';
   $("quiz-next").onclick=()=>{exerciseIndex++;renderExerciseQuiz()};
@@ -1200,7 +1231,14 @@ $("dir-pt").onclick=()=>{dir="pt";$("dir-pt").setAttribute("aria-pressed",true);
 $("dir-tg").onclick=()=>{dir="tg";$("dir-tg").setAttribute("aria-pressed",true);$("dir-pt").setAttribute("aria-pressed",false)};
 $("g-close").onclick=closeGame;
 document.addEventListener("keydown",e=>{if(e.key==="Escape"&&playing)closeGame()});
-document.addEventListener("visibilitychange",()=>{if(!document.hidden){renderStreak();if(!playing){buildQueue();renderLobby()}}});
+function syncStreakFromStorage(){
+  act=store.get("vb-activity",{})||{};
+  total=Math.max(0,Number(store.get("vb-total",total))||0);
+  best=Math.max(best,Number(store.get("vb-best",0))||0);
+  renderStreak();
+}
+document.addEventListener("visibilitychange",()=>{if(!document.hidden){syncStreakFromStorage();if(!playing){buildQueue();renderLobby()}}});
+window.addEventListener("storage",e=>{if(["vb-activity","vb-total","vb-best"].includes(e.key))syncStreakFromStorage()});
 
 /* ===== personagem / avatares ===== */
 const AVATARS=[["fox","Raposa gatuna"],["01-cowboy","Cowboy"],["02-gorro","De gorro"],["03-chuva","Na chuva"],["04-mago","Mago"],["05-esboco","Esboço"],["06-bone","De boné"],["07-explorador","Explorador"],["08-surfista","Surfista"],["09-neve","Na neve"],["10-girassol","Girassóis"],["11-acampamento","Acampamento"],["12-outono","Outono"],["13-leitor","Leitor"],["14-pirata","Pirata"],["15-rede","Na rede"],["16-noite","Noite na cidade"]];
@@ -1228,13 +1266,9 @@ $("avp").addEventListener("click",e=>{if(e.target.id==="avp")closeAvatars()});
 document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("avp").hidden)closeAvatars()});
 applyAvatar();
 renderStreak();setLang(LANGS[lang]?lang:"de");
-/* prévia da comemoração: não altera nenhum dado */
-function previewStreak(){const n=streakInfo();const t=act[dayKey()]||0;celebrateStreak(t>=GOAL?Math.max(1,n):n+1)}
-$("flame").setAttribute("role","button");$("flame").setAttribute("tabindex","0");$("flame").setAttribute("aria-label","Ver a comemoração da sequência");
-$("flame").style.cursor="pointer";$("flame").onclick=previewStreak;
-$("flame").onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();previewStreak()}};
-if(location.hash==="#testar-racha")setTimeout(previewStreak,600);
-window.addEventListener("hashchange",()=>{if(location.hash==="#testar-racha")previewStreak()});
+/* A comemoração ocorre somente após a conclusão de uma atividade. */
+$("flame").title="Uma atividade concluída por dia mantém sua sequência.";
+$("flame").setAttribute("aria-label","Indicador da racha diária");
 
 if("serviceWorker" in navigator){
   let reloaded=false;const hadCtrl=!!navigator.serviceWorker.controller;
