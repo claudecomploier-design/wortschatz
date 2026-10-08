@@ -37,7 +37,14 @@
     if (VB_HIST[lang]) { cb(); return; }
     if (lang !== "de") { VB_HIST[lang] = []; cb(); return; }
     const s = document.createElement("script"); s.src = `data/historias-${lang}.js?v=1`;
-    s.onload = () => { if (!VB_HIST[lang]) VB_HIST[lang] = []; cb(); };
+    s.onload = () => {
+      if (!VB_HIST[lang]) VB_HIST[lang] = [];
+      const extra = document.createElement("script");
+      extra.src = "data/historias-extra-de.js?v=1";
+      extra.onload = () => cb();
+      extra.onerror = () => { extra.remove(); cb(); };
+      document.head.appendChild(extra);
+    };
     s.onerror = () => { s.remove(); fail && fail(); };
     document.head.appendChild(s);
   }
