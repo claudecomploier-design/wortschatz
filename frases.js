@@ -229,6 +229,7 @@
     const ks = Object.keys(XP.days).sort(); while (ks.length > 120) delete XP.days[ks.shift()];
     XP.best = Math.max(XP.best, ses.bestCombo);
     xpSave(); ses.xp += gain;
+    window.dispatchEvent(new Event("vb-xp-updated"));
     return { gain, mult, combo: ses.combo, levelUp: lvlAt(XP.total) > before ? lvlAt(XP.total) : 0 };
   }
   let AC = null, sound = store.get("vb-sound", true);
@@ -586,7 +587,21 @@
       learn(c, !!op, pk || new Set(), key);
       if (typeof addActivity === "function") addActivity();
     },
-    xp(n){ if (!XP) xpLoad(); XP.total += n; XP.days[today()] = (XP.days[today()] || 0) + n; xpSave(); },
+    xp(n){ if (!XP) xpLoad(); XP.total += n; XP.days[today()] = (XP.days[today()] || 0) + n; xpSave(); window.dispatchEvent(new Event("vb-xp-updated")); },
+    addXP(n,language){
+      const l=["de","fr","it"].includes(language)?language:lang;
+      const amount=Math.max(0,Math.min(1000,Math.floor(Number(n)||0)));
+      if(!amount)return;
+      const k="vb-xp-"+l;
+      const x=(l===lang&&XP)?XP:(store.get(k,null)||{total:0,best:0,days:{}});
+      x.total=Math.max(0,Number(x.total)||0)+amount;
+      x.days=x.days||{};
+      x.days[today()]=Math.max(0,Number(x.days[today()])||0)+amount;
+      const dates=Object.keys(x.days).sort();while(dates.length>120)delete x.days[dates.shift()];
+      store.set(k,x);
+      if(l===lang&&XP)XP=x;
+      window.dispatchEvent(new Event("vb-xp-updated"));
+    },
     lemmaInfo: id => (id in rank) ? CARDS[rank[id]] : null,
     /* para depuração e testes */
     _state(){ return { H, cur, frontier: frontier(), ratio, ses }; },
