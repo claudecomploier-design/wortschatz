@@ -77,6 +77,22 @@ h1 .ver{font-family:var(--sans);font-size:.7rem;font-weight:500;color:var(--dim)
 .day.is-today{color:var(--accent);font-weight:600}
 .banner{margin-top:12px;border:1px solid var(--accent);background:var(--accent-soft);color:var(--fg);border-radius:var(--r-md);padding:12px 16px;font-size:.95rem;text-align:center}
 
+/* ===== central de exercícios ===== */
+.exercise-intro h2{font:500 1.8rem var(--serif);margin:0 0 6px}
+.exercise-intro p{color:var(--muted);margin:0 0 18px}
+.exercise-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.exercise-link{text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:20px;cursor:pointer;color:var(--fg);display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-height:210px}
+.exercise-link:hover,.exercise-link:focus-visible{border-color:var(--accent);background:var(--raised)}
+.exercise-symbol{color:var(--accent);font:500 1.6rem var(--serif);min-height:32px}
+.exercise-link strong{font:500 1.3rem var(--serif)}
+.exercise-link small{color:var(--muted);font:400 .85rem/1.5 var(--sans)}
+.exercise-cta{color:var(--accent);font-size:.83rem;margin-top:auto}
+.exercise-quiz{margin-top:16px}
+.exercise-quiz h3{font:500 1.45rem var(--serif);margin:8px 0}
+.exercise-answers{display:grid;gap:8px;margin-top:15px}
+.exercise-answers button{width:100%;text-align:left}
+.exercise-feedback{margin-top:15px;color:var(--accent);line-height:1.6}
+@media(max-width:450px){.exercise-grid{grid-template-columns:1fr}.exercise-link{min-height:155px}}
 /* ===== abas ===== */
 nav{display:flex;gap:24px;margin:26px 0 20px;border-bottom:1px solid var(--line-soft)}
 nav button{font-weight:500;font-size:.95rem;background:none;border:0;color:var(--muted);padding:10px 0;margin-bottom:-1px;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:color .2s,border-color .2s}
@@ -585,6 +601,7 @@ body.playing{overflow:hidden}
     <button role="tab" id="tab-train" aria-selected="true">Treinar</button>
     <button role="tab" id="tab-frases" aria-selected="false">Frases</button>
     <button role="tab" id="tab-historias" aria-selected="false">Histórias</button>
+    <button role="tab" id="tab-exercicios" aria-selected="false">Exercícios</button>
     <button role="tab" id="tab-list" aria-selected="false">Palavras</button>
     <button role="tab" id="tab-method" aria-selected="false">Método</button>
   </nav>
@@ -658,6 +675,17 @@ body.playing{overflow:hidden}
 
   <main id="view-frases" hidden><section class="hy" id="frases" aria-live="polite"></section></main>
   <main id="view-historias" hidden><section class="hy st" id="historias" aria-live="polite"></section></main>
+
+  <main id="view-exercicios" hidden>
+    <section class="exercise-intro"><h2>Central de exercícios</h2><p>Escolha como quer praticar. Todos os modos ficam reunidos aqui.</p></section>
+    <div class="exercise-grid">
+      <button type="button" class="exercise-link" data-exercise="historias"><span class="exercise-symbol">◫</span><strong>Histórias</strong><small>Leia, escolha caminhos e pratique a compreensão.</small><span class="exercise-cta">Abrir histórias →</span></button>
+      <button type="button" class="exercise-link" data-exercise="vocabulario"><span class="exercise-symbol">Aa</span><strong>Vocabulário</strong><small>Treine a memória com as palavras do seu nível.</small><span class="exercise-cta">Treinar palavras →</span></button>
+      <button type="button" class="exercise-link" data-exercise="frases"><span class="exercise-symbol">“”</span><strong>Frases híbridas</strong><small>Pratique com proporções de 30%, 50%, 70% e 100% de alemão.</small><span class="exercise-cta">Praticar frases →</span></button>
+      <button type="button" class="exercise-link" data-exercise="quiz"><span class="exercise-symbol">✓</span><strong>Quiz de compreensão</strong><small>Responda perguntas rápidas com correção imediata.</small><span class="exercise-cta">Começar quiz →</span></button>
+    </div>
+    <section id="exercise-quiz" class="card exercise-quiz" hidden aria-live="polite"></section>
+  </main>
 
   <main id="view-method" hidden><div class="method" id="method"></div></main>
 </div>
@@ -1090,7 +1118,7 @@ function renderMethod(){
 }
 
 /* ===== eventos ===== */
-function tab(name){["train","frases","historias","list","method"].forEach(n=>{$("tab-"+n).setAttribute("aria-selected",n===name);$("view-"+n).hidden=n!==name});if(name==="list")renderList();if(name==="frases"&&window.HYB)HYB.open();if(name==="historias"&&window.HIST)HIST.open();if(name==="train"){buildQueue();renderLobby()}}
+function tab(name){["train","frases","historias","exercicios","list","method"].forEach(n=>{$("tab-"+n).setAttribute("aria-selected",n===name);$("view-"+n).hidden=n!==name});if(name==="list")renderList();if(name==="frases"&&window.HYB)HYB.open();if(name==="historias"&&window.HIST)HIST.open();if(name==="train"){buildQueue();renderLobby()}}
 $("tab-train").onclick=()=>tab("train");$("tab-frases").onclick=()=>tab("frases");$("tab-historias").onclick=()=>tab("historias");$("tab-list").onclick=()=>tab("list");$("tab-method").onclick=()=>tab("method");
 document.querySelectorAll(".langs button").forEach(b=>b.onclick=()=>{if(b.dataset.lang!==lang)setLang(b.dataset.lang)});
 $("sel-ratio").onchange=e=>{const v=e.target.value;if(window.HYB)HYB.setRatio(v==="auto"?"auto":+v)};
