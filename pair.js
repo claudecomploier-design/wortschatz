@@ -1,17 +1,19 @@
-/* Vokabel 1000: base/target language pair, using free online translation
-   for non-native pairs, with per-browser caching. No personal API keys. */
+/* Vokabel 1000: content bundled for 30 language directions.
+   No runtime remote translation service. The cross-language packs are generated
+   at build time and installed into the site's offline cache. */
 (function(){
 "use strict";
 const keys=Object.keys(LANGS), defaults=t=>t==="pt"?"en":"pt";
 const NAME=l=>LANGS[l]?LANGS[l].name:l;
 let base=store.get("vb-base","pt");
 if(!keys.includes(base))base="pt";
-const mem=new Map(), inflight=new Map();
-const key=(a,b,t)=>"vb-pair:"+a+":"+b+":"+t;
+window.VB_OFFLINE=window.VB_OFFLINE||{};
+const requests=new Map();
+const key=(target,known)=>target+"-"+known;
 const isPrimary=(target=lang)=>base===defaults(target);
+
 function setBase(next){
- if(!keys.includes(next))return false;
- if(next===lang)return false;
+ if(!keys.includes(next)||next===lang)return false;
  base=next;store.set("vb-base",base);
  window.dispatchEvent(new CustomEvent("vb-base-changed",{detail:{base,target:lang}}));
  return true;
@@ -20,89 +22,82 @@ function allowedTarget(target){
  if(base===target){base=defaults(target);store.set("vb-base",base)}
  return base;
 }
-function translated(from,to,text){
- text=String(text||"").trim();if(!text||from===to)return Promise.resolve(text);
- if(!keys.includes(from)||!keys.includes(to))return Promise.reject(Error("Par inválido"));
- const k=key(from,to,text),cached=mem.get(k)||store.get(k,null);
- if(typeof cached==="string"&&cached&&cached!==text){mem.set(k,cached);return Promise.resolve(cached)}
- if(inflight.has(k))return inflight.get(k);
- // The MyMemory GET endpoint has a 500-byte request limit; avoid silent truncation.
- if(new TextEncoder().encode(text).length>490)return Promise.reject(Error("Trecho muito longo"));
- const url="https://api.mymemory.translated.net/get?q="+encodeURIComponent(text)+"&langpair="+encodeURIComponent(from+"|"+to);
- const task=(async()=>{
-  const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),8500);
-  try{
-   const res=await fetch(url,{signal:controller.signal,mode:"cors",headers:{Accept:"application/json"}});
-   if(!res.ok)throw Error("HTTP "+res.status);
-   const body=await res.json();const response=body.responseData;
-   const value=String(response?.translatedText||"").trim();
-   if(Number(body.responseStatus)!==200||!value||/MYMEMORY WARNING|QUOTA EXCEEDED/i.test(value))throw Error("Tradução indisponível");
-   if(/<[^>]+>/.test(value))throw Error("Resposta inesperada");
-   mem.set(k,value);
-   // Bounded single-entry caches are used because full-corpus translations are too large for localStorage.
-   try{localStorage.setItem(k,JSON.stringify(value))}catch(e){}
-   return value;
-  }finally{clearTimeout(timer);inflight.delete(k)}
- })();inflight.set(k,task);return task;
+function load(target=lang,known=base){
+ if(target===known)return Promise.reject(Error("Idiomas precisam ser diferentes."));
+ if(known===defaults(target))return Promise.resolve(null);
+ const id=key(target,known);
+ if(window.VB_OFFLINE[id])return Promise.resolve(window.VB_OFFLINE[id]);
+ if(requests.has(id))return requests.get(id);
+ const task=new Promise((resolve,reject)=>{
+  const script=document.createElement("script");
+  script.src="data/ov/"+id+".js?v=1";
+  script.async=true;
+  script.onload=()=>window.VB_OFFLINE[id]?resolve(window.VB_OFFLINE[id]):reject(Error("Pacote offline inválido: "+id));
+  script.onerror=()=>{script.remove();reject(Error("Pacote offline não encontrado: "+id))};
+  document.head.appendChild(script);
+ }).finally(()=>requests.delete(id));
+ requests.set(id,task);
+ return task;
 }
-const errors=new Map();
-const failed=(l,target)=>errors.set(target+":"+l,Date.now());
-const recentFail=(l,target)=>Date.now()-(errors.get(target+":"+l)||0)<30000;
-async function card(c,target=lang,from=base){
- if(!c||from===defaults(target))return true;
- const signature=target+":"+from;
+function lookupWord(doc,c){
+ const row=doc&&doc.w&&doc.w[c.i];
+ if(!Array.isArray(row)||row.length!==2||!row.every(x=>typeof x==="string"&&x.trim()))throw Error("Palavra sem tradução offline: "+c.i);
+ return row;
+}
+async function card(c,target=lang,known=base){
+ if(!c||known===defaults(target))return true;
+ const signature=key(target,known);
  if(c._pair===signature)return true;
- if(recentFail(from,target))return false;
- const saved=c._source||{pt:c.pt,exPt:c.exPt,pron:c.pron,hook:c.hook};c._source=saved;
  try{
-  const [gloss,example]=await Promise.all([translated(target,from,c.w),translated(target,from,c.ex)]);
-  if(lang!==target||base!==from)return false;
+  const doc=await load(target,known);
+  const [gloss,example]=lookupWord(doc,c);
+  if(lang!==target||base!==known)return false;
+  c._source=c._source||{pt:c.pt,exPt:c.exPt,pron:c.pron,hook:c.hook};
   c.pt=gloss;c.exPt=example;
-  const help={
-    pt:["Ouça a pronúncia pelo botão de áudio.","Compare a palavra com seu exemplo e repita em voz alta."],
-    en:["Listen using the audio button.","Connect the word to its example and repeat it aloud."],
-    es:["Escucha la pronunciación con el botón de audio.","Relaciona la palabra con su ejemplo y repítela en voz alta."],
-    it:["Ascolta la pronuncia con il pulsante audio.","Associa la parola all'esempio e ripetila ad alta voce."],
-    fr:["Écoutez la prononciation avec le bouton audio.","Associez le mot à son exemple et répétez-le à voix haute."],
-    de:["Höre die Aussprache mit der Audio-Taste an.","Verbinde das Wort mit dem Beispiel und wiederhole es laut."]
+  const hints={
+    pt:["Ouça pelo botão de áudio.","Compare com o exemplo e repita em voz alta."],
+    en:["Listen using the audio button.","Connect the word to its example and repeat aloud."],
+    es:["Escucha con el botón de audio.","Relaciona la palabra con el ejemplo y repítela."],
+    it:["Ascolta con il pulsante audio.","Associa la parola all'esempio e ripetila."],
+    fr:["Écoutez avec le bouton audio.","Associez le mot à l'exemple et répétez-le."],
+    de:["Höre mit der Audiotaste zu.","Verbinde das Wort mit dem Beispiel und wiederhole es."]
   };
-  [c.pron,c.hook]=help[from]||help.pt;
+  [c.pron,c.hook]=hints[known]||hints.pt;
   c._pair=signature;return true;
- }catch(e){failed(from,target);return false}
+ }catch(e){console.warn(e);return false}
 }
-async function built(c,target=lang,from=base){
- if(!c||from===defaults(target))return true;
- const signature=target+":"+from;
+async function built(c,target=lang,known=base,kind="f"){
+ if(!c||known===defaults(target))return true;
+ const signature=key(target,known);
  if(c._pair===signature)return true;
- if(recentFail(from,target))return false;
  try{
-  const original=defaults(target);
-  const translateBlock=p=>translated(original,from,p);
-  const pieces=await Promise.all(c.chunks.map(x=>translateBlock(x.pt)));
-  if(lang!==target||base!==from)return false;
-  c.pt=pieces.join(" ").replace(/ ([,.!?;:])/g,"$1");
-  c.chunks.forEach((ch,i)=>ch.pt=pieces[i]);
+  const doc=await load(target,known);
+  const pair=(kind==="t"?doc.t:doc.f)[c.idx];
+  if(!Array.isArray(pair)||!Array.isArray(pair[1])||pair[1].length!==c.chunks.length
+      ||pair[1].some(t=>!t||typeof t!=="string"))throw Error("Frase incompleta: "+target+"-"+known+":"+c.idx);
+  if(lang!==target||base!==known)return false;
+  c.pt=pair[0];c.chunks.forEach((chunk,i)=>chunk.pt=pair[1][i]);
   c._pair=signature;return true;
- }catch(e){failed(from,target);return false}
+ }catch(e){console.warn(e);return false}
 }
-async function scene(p,target=lang,from=base){
- if(!p||from===defaults(target))return true;
- const signature=target+":"+from;
- if(p._pair===signature)return true;
- const src=defaults(target);
- try{
-  const txt=await Promise.all([translated(src,from,p[1]),...p[2].map(ch=>translated(src,from,ch[1]))]);
-  if(lang!==target||base!==from)return false;
-  p[1]=txt[0];p[2].forEach((ch,i)=>ch[1]=txt[i+1]);p._pair=signature;
-  return true;
- }catch(e){return false}
+async function story(storyId,sceneId,target=lang,known=base){
+ const doc=await load(target,known);
+ const scene=doc?.h?.[storyId]?.[sceneId];
+ if(!scene||!Array.isArray(scene.p)||!Array.isArray(scene.e))throw Error("Cena offline incompleta: "+storyId+"/"+sceneId);
+ return scene;
 }
-function restoreCards(cards,target){
+function restoreCards(cards){
  if(!cards)return;
  cards.forEach(c=>{if(c._source){Object.assign(c,c._source);delete c._pair;}});
 }
-function glossary(){const from=base,target=lang;return [...mem.entries()].filter(([k])=>k.startsWith("vb-pair:"+target+":"+from+":")).map(([,v])=>v).filter(Boolean)}
-
+function glossary(){
+ const doc=window.VB_OFFLINE[key(lang,base)];
+ if(!doc)return [];
+ const out=new Set();
+ for(const data of [doc.f||[],doc.t||[]])for(const row of data)for(const chunk of row[1]||[])if(chunk)out.add(chunk);
+ return [...out];
+}
+function clearErrors(){requests.clear()}
 const LABELS={
 pt:["Eu sei","Aprender","Exercícios","Progresso semanal","Amigos","Método","Perfil","← Voltar aos exercícios","Central de exercícios","Escolha como quer praticar. Todos os modos ficam reunidos aqui.","Histórias","Vocabulário","Frases híbridas","Quiz de compreensão","Consultar palavras","Mostrar resposta","Ouvir palavra","Ouvir frase e repetir","Errei","Difícil","Sabia","Dica: primeira letra","O que significa?"],
 en:["I speak","Learn","Exercises","Weekly progress","Friends","Method","Profile","← Back to exercises","Exercise hub","Choose how to practice. All activities are here.","Stories","Vocabulary","Mixed-language sentences","Comprehension quiz","Word list","Show answer","Listen to word","Listen and repeat","I missed it","Difficult","I knew it","Hint: first letter","What does it mean?"],
@@ -141,21 +136,18 @@ function decorateCard(root){
 
 
 const METHOD={
-pt:"<h2>Estude na língua que você conhece</h2><p>Leia a tradução antes de virar o cartão. Ouça a palavra, repita a frase e faça o teste de compreensão. Os outros pares usam tradução automática gratuita e precisam de internet na primeira utilização.</p>",
-en:"<h2>Learn from a language you already know</h2><p>Read the translation, say the target word aloud, then flip the card. Listen to the complete example sentence and test your understanding. New language pairs use an online free translation service the first time.</p>",
-es:"<h2>Aprende desde tu propio idioma</h2><p>Lee el significado, pronuncia la palabra y después gira la tarjeta. Escucha el ejemplo completo y comprueba si lo entiendes. Los pares nuevos necesitan conexión a internet para la traducción automática.</p>",
-it:"<h2>Impara partendo dalla tua lingua</h2><p>Leggi la traduzione, pronuncia la nuova parola, poi gira la scheda. Ascolta la frase intera e verifica quanto hai capito. Le nuove combinazioni di lingue richiedono internet per la traduzione automatica.</p>",
-fr:"<h2>Apprenez à partir de votre langue</h2><p>Lisez la traduction, prononcez le mot, puis retournez la carte. Écoutez l'exemple complet et testez votre compréhension. Les nouvelles paires de langues nécessitent une connexion pour la traduction automatique.</p>",
-de:"<h2>Lerne von deiner eigenen Sprache aus</h2><p>Lies die Übersetzung, sprich das Wort aus und drehe dann die Karte um. Höre den ganzen Beispielsatz und teste dein Verständnis. Neue Sprachpaare benötigen beim ersten Mal Internet für die automatische Übersetzung.</p>"
+pt:"<h2>Aprenda no seu idioma</h2><p>Você tem pacotes de tradução instalados para estudar sem internet, inclusive entre idiomas diferentes. Leia o significado e teste seus conhecimentos. As traduções automáticas foram geradas previamente e podem conter imprecisões.</p>",
+en:"<h2>Learn from your own language</h2><p>Language pair translations are bundled for offline study. Read the meaning, say the answer aloud and test your understanding. The automatically produced translations may occasionally contain errors.</p>",
+es:"<h2>Aprende desde tu idioma</h2><p>Los paquetes de traducción ya están incluidos para estudiar sin conexión. Lee el significado, practica la respuesta y comprueba tu comprensión. Las traducciones automáticas pueden contener errores.</p>",
+it:"<h2>Impara dalla tua lingua</h2><p>I pacchetti di traduzione sono inclusi per studiare senza internet. Leggi il significato, pronuncia la risposta e metti alla prova la tua comprensione. Le traduzioni automatiche possono contenere errori.</p>",
+fr:"<h2>Apprenez depuis votre langue</h2><p>Les packs de traduction sont intégrés pour apprendre hors ligne. Lisez le sens, prononcez la réponse et testez votre compréhension. Les traductions automatiques peuvent comporter des erreurs.</p>",
+de:"<h2>Lerne in deiner Sprache</h2><p>Die Übersetzungspakete sind bereits für die Offline-Nutzung enthalten. Lies die Bedeutung, sprich die Antwort aus und teste dein Verständnis. Automatische Übersetzungen können Fehler enthalten.</p>"
 };
 function methodHTML(target){
- const baseName=NAME(base),targetName=NAME(target);
- return '<section>'+METHOD[base]+'</section><section><h2>'+baseName+' → '+targetName+'</h2><p>MyMemory · translation service. Online translations may have usage limits and mistakes. Source text is sent to a third-party translation service.</p></section>';
+ return '<section>'+METHOD[base]+'</section><section><h2>'+NAME(base)+' → '+NAME(target)+'</h2><p>Offline-Übersetzung / Offline translations / Traduções offline: open-source Argos Translate. Bundled content; no online translation requests during lessons.</p></section>';
 }
-
-window.VBPAIR={base:()=>base,primary:defaults,isPrimary,setBase,allowedTarget,translated,card,built,scene,restoreCards,glossary,clearErrors:()=>errors.clear(),name:NAME,msg,applyUI,decorateCard,methodHTML};
+window.VBPAIR={base:()=>base,primary:defaults,isPrimary,setBase,allowedTarget,load,card,built,story,restoreCards,glossary,clearErrors,name:NAME,msg,applyUI,decorateCard,methodHTML};
 allowedTarget(lang);
-// The inline app initializes before this module is loaded; refresh once with the persisted source language.
 if(typeof setLang==="function")setLang(lang);
 applyUI();
 })();
