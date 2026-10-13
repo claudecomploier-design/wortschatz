@@ -957,7 +957,7 @@ body{
 <body>
 <div class="wrap">
   <header>
-    <div class="brand"><button class="me" id="me" aria-label="Escolher personagem" title="Escolher personagem"></button><h1>Vokabel 1000 <small class="ver">v18</small></h1></div>
+    <div class="brand"><button class="me" id="me" aria-label="Escolher personagem" title="Escolher personagem"></button><h1>Vokabel 1000 <small class="ver">v19</small></h1></div>
     <div class="langs" id="language-picker">
       <button type="button" id="lang-toggle" class="lang-toggle" aria-controls="lang-menu" aria-expanded="false" aria-haspopup="true" aria-label="Idiomas. Selecionar idioma">
         <span class="lang-globe" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c-5 5-5 13 0 18M12 3c5 5 5 13 0 18"/></svg></span>
@@ -1565,8 +1565,11 @@ function shuffleQuiz(a){
 function createExerciseQuestions(){
   const cards=CARDS.filter(c=>c.w&&c.pt&&c.ex&&c.exPt);
   if(cards.length<3)return [];
+  // Prioriza palavras já estudadas, completando com o início da lista para iniciantes.
+  const studied=shuffleQuiz(cards.filter(c=>prog[c.id]));
+  const starters=shuffleQuiz(cards.slice(0,Math.min(cards.length,60)).filter(c=>!prog[c.id]));
+  const chosen=[...studied.slice(0,8),...starters.slice(0,Math.max(0,8-studied.length))];
   const pool=cards.slice(0,Math.min(cards.length,350));
-  const chosen=shuffleQuiz([...pool]).slice(0,Math.min(8,pool.length));
   const L=LANGS[lang].name.toLowerCase();
   return chosen.map((c,i)=>{
     const kind=i%3;
