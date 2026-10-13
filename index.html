@@ -1474,7 +1474,7 @@ function gameHud(){
 
 /* ===== proporção nas cartas: frase de exemplo misturada ===== */
 const RATIO=()=>window.HYB?HYB.ratio():"auto";
-function hybEx(c){const r=RATIO();if(r==="auto"||r===100||!window.HYB)return null;return HYB.hybridFor(c.id,r)}
+function hybEx(c){const r=RATIO();if(window.VBPAIR&&!VBPAIR.isPrimary())return null;if(r==="auto"||r===100||!window.HYB)return null;return HYB.hybridFor(c.id,r)}
 function hybHTML(h,c,mode){
   return h.chunks.map(ch=>{
     if(!ch.foreign)return `<span class="hx-pt">${esc(ch.pt)}</span>`;
