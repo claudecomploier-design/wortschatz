@@ -20,6 +20,7 @@ jobs:
       - name: Validar frases e parágrafos
         run: |
           for lang in en es pt; do
+            node tools/check_words.js "$lang"
             node tools/check_frases.js "$lang" frases
             node tools/check_frases.js "$lang" textos
           done
