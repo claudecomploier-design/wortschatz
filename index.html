@@ -966,7 +966,7 @@ body{
 <body>
 <div class="wrap">
   <header>
-    <div class="brand"><button class="me" id="me" aria-label="Escolher personagem" title="Escolher personagem"></button><h1>Vokabel 1000 <small class="ver">v20</small></h1></div>
+    <div class="brand"><button class="me" id="me" aria-label="Escolher personagem" title="Escolher personagem"></button><h1>Vokabel 1000 <small class="ver">v21</small></h1></div>
     <div class="base-lang-wrap"><label for="base-language">Eu sei</label><select id="base-language" aria-label="Idioma que você já conhece">
       <option value="pt">Português</option><option value="en">Inglês</option><option value="es">Espanhol</option><option value="de">Alemão</option><option value="it">Italiano</option><option value="fr">Francês</option>
     </select></div><div class="langs" id="language-picker">
@@ -1506,10 +1506,10 @@ function renderTrain(){
     const chosen=cur,target=lang,wanted=VBPAIR.base(),signature=target+":"+wanted;
     if(cur._pair!==signature){
       if(cur._pairError){
-        el.innerHTML='<div class="card"><p>Não foi possível obter a tradução gratuita para '+esc(LANGS[wanted].name)+'. Verifique a conexão ou tente novamente.</p><button class="btn primary" id="pair-retry">Tentar tradução novamente</button></div>';
+        el.innerHTML='<div class="card"><p>Pacote offline não encontrado para '+esc(LANGS[wanted].name)+'. Atualize o aplicativo pela internet uma vez e tente novamente.</p><button class="btn primary" id="pair-retry">Tentar tradução novamente</button></div>';
         $("pair-retry").onclick=()=>{VBPAIR.clearErrors();cur._pairError=false;renderTrain()};return;
       }
-      el.innerHTML='<div class="card"><p class="loading">Preparando palavra em '+esc(LANGS[wanted].name)+'…</p><p class="hintline">Traduções de outros pares exigem internet na primeira utilização.</p></div>';
+      el.innerHTML='<div class="card"><p class="loading">Abrindo tradução offline em '+esc(LANGS[wanted].name)+'…</p><p class="hintline">As traduções entre idiomas estão incluídas no aplicativo para usar sem internet.</p></div>';
       if(!cur._pairLoading){cur._pairLoading=true;VBPAIR.card(chosen,target,wanted).then(ok=>{
         if(!playing||lang!==target||VBPAIR.base()!==wanted||cur!==chosen)return;
         chosen._pairLoading=false;chosen._pairError=!ok;renderTrain();
@@ -1669,7 +1669,7 @@ document.querySelectorAll("[data-exercise]").forEach(b=>b.onclick=()=>{
    exerciseIndex=0;exerciseCorrect=0;if(window.VBXP)VBXP.reset();tab("quiz");
    if(window.VBPAIR&&!VBPAIR.isPrimary()){
      const target=lang,known=VBPAIR.base(),box=$("exercise-quiz");box.hidden=false;
-     box.innerHTML='<p class="loading">Preparando questões com traduções em '+esc(LANGS[known].name)+'…</p>';
+     box.innerHTML='<p class="loading">Carregando as traduções offline em '+esc(LANGS[known].name)+'…</p>';
      Promise.all(CARDS.slice(0,12).map(c=>VBPAIR.card(c,target,known).catch(()=>false))).then(()=>{
        if(lang!==target||VBPAIR.base()!==known||$("view-quiz").hidden)return;
        exerciseQuestions=createExerciseQuestions();renderExerciseQuiz();
@@ -1837,8 +1837,8 @@ if("serviceWorker" in navigator){
   window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js",{updateViaCache:"none"}).then(r=>{r.update();document.addEventListener("visibilitychange",()=>{if(!document.hidden)r.update()})}).catch(()=>{}));
 }
 </script>
-<script src="pair.js?v=1"></script>
-<script src="voice.js?v=1"></script>
+<script src="pair.js?v=2"></script>
+<script src="voice.js?v=2"></script>
 <script src="relatorio.js?v=1"></script>
 <script src="frases.js?v=8"></script>
 <script src="historias.js?v=2"></script>
