@@ -908,12 +908,14 @@ body{
 .lang-chevron{width:14px;height:14px;color:var(--muted);transition:transform .18s}
 .lang-toggle[aria-expanded="true"] .lang-chevron{transform:rotate(180deg)}
 .lang-menu{
-  position:absolute;z-index:80;top:calc(100% + 8px);left:0;
-  width:max-content;min-width:200px;max-width:calc(100vw - 24px);
-  padding:6px;display:grid;gap:2px;
+  position:fixed;z-index:1000;inset:auto;left:12px;top:65px;
+  box-sizing:border-box;width:234px;max-width:calc(100vw - 24px);max-height:min(440px,calc(100dvh - 24px));
+  padding:7px;display:grid;gap:3px;overflow-y:auto;overscroll-behavior:contain;
   border:1px solid var(--line);border-radius:14px;
   background:#222e3c;box-shadow:0 15px 35px rgba(0,0,0,.35);
 }
+.lang-option span:first-child{min-width:0;overflow-wrap:anywhere;white-space:normal;flex:1;}
+.lang-menu .lang-option{width:100%;max-width:100%;box-sizing:border-box;min-height:43px}
 .lang-menu[hidden]{display:none!important}
 .langs .lang-option{
   display:flex;align-items:center;justify-content:space-between;gap:20px;white-space:nowrap;
@@ -924,6 +926,13 @@ body{
 .langs .lang-option[aria-pressed="true"]{background:var(--accent-soft);color:var(--accent-hi);box-shadow:none}
 .lang-check{visibility:hidden;color:var(--accent);font-size:.95rem}
 .lang-option[aria-pressed="true"] .lang-check{visibility:visible}
+.base-lang-wrap{display:flex;align-items:center;gap:7px;min-width:0}
+.base-lang-wrap label{font-size:.77rem;color:var(--muted);font-weight:700;white-space:nowrap}
+.base-lang-wrap select{width:auto;max-width:150px;min-width:95px;font-size:.83rem;padding:8px 21px 8px 9px;min-height:40px}
+@media(max-width:520px){header{gap:9px}.brand{flex-basis:100%}.base-lang-wrap{flex:1}.base-lang-wrap select{width:100%;max-width:170px}}
+.voice-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:8px}
+.voice-row select{min-width:0;flex:1;width:100%;max-width:100%}
+.voice-row .btn{flex-shrink:0}
 @media(max-width:420px){.langs .lang-toggle{gap:5px;padding:7px 9px}.lang-globe svg{width:16px;height:16px}}
 @media(prefers-reduced-motion:reduce){.lang-chevron,.langs .lang-toggle{transition:none!important}}
 .hy-quiz{margin-top:16px;padding-top:14px;border-top:1px dashed var(--line);display:grid;gap:10px}
@@ -958,10 +967,12 @@ body{
 <div class="wrap">
   <header>
     <div class="brand"><button class="me" id="me" aria-label="Escolher personagem" title="Escolher personagem"></button><h1>Vokabel 1000 <small class="ver">v20</small></h1></div>
-    <div class="langs" id="language-picker">
+    <div class="base-lang-wrap"><label for="base-language">Eu sei</label><select id="base-language" aria-label="Idioma que você já conhece">
+      <option value="pt">Português</option><option value="en">Inglês</option><option value="es">Espanhol</option><option value="de">Alemão</option><option value="it">Italiano</option><option value="fr">Francês</option>
+    </select></div><div class="langs" id="language-picker">
       <button type="button" id="lang-toggle" class="lang-toggle" aria-controls="lang-menu" aria-expanded="false" aria-haspopup="true" aria-label="Idiomas. Selecionar idioma">
         <span class="lang-globe" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c-5 5-5 13 0 18M12 3c5 5 5 13 0 18"/></svg></span>
-        <span>Idiomas</span><span class="lang-current" id="lang-current">DE</span>
+        <span>Aprender</span><span class="lang-current" id="lang-current">DE</span>
         <svg class="lang-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
       </button>
       <div class="lang-menu" id="lang-menu" role="group" aria-label="Selecionar idioma" hidden>
@@ -1100,7 +1111,7 @@ body{
   </main>
   <main id="view-amigos" hidden><section id="cm-friends-root" aria-live="polite"></section></main>
   <main id="view-avatar" hidden><section id="cm-avatar-root" aria-live="polite"></section></main>
-  <main id="view-method" hidden><div class="method" id="method"></div></main>
+  <main id="view-method" hidden><div class="method" id="method"></div><div class="method"><section id="voice-settings" aria-label="Configurar voz"></section></div></main>
 </div>
 
 <section class="game" id="game" hidden aria-label="Partida">
@@ -1366,11 +1377,16 @@ function loadLang(l,cb){
 }
 function setLang(l){
   if(!LANGS[l]) l="de";
-  lang=l;store.set("vb-lang",l);
+  if(window.VBPAIR)VBPAIR.allowedTarget(l);
+  lang=l;
+  const baseSel=$("base-language");if(baseSel){
+    baseSel.value=window.VBPAIR?VBPAIR.base():(l==="pt"?"en":"pt");
+    [...baseSel.options].forEach(o=>o.disabled=o.value===l);
+  }store.set("vb-lang",l);
   setTimeout(()=>window.dispatchEvent(new Event("vb-lang-changed")),0);
   document.querySelectorAll(".lang-option").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.lang===l)));
   $("lang-current").textContent=LANGS[l].code;
-  const baseCode=l==="pt"?"EN":"PT";
+  const baseCode=window.VBPAIR?LANGS[VBPAIR.base()].code:(l==="pt"?"EN":"PT");
   $("dir-pt").innerHTML=baseCode+" → <span class=\"lcode\">"+LANGS[l].code+"</span>";
   $("dir-tg").innerHTML='<span class="lcode">'+LANGS[l].code+"</span> → "+baseCode;
   const modeDesc=document.querySelector('[data-exercise="frases"] small');
@@ -1379,12 +1395,16 @@ function setLang(l){
   if(quizDesc)quizDesc.textContent="Responda perguntas de "+LANGS[l].name.toLowerCase()+" com correção imediata.";
   $("lang-toggle").setAttribute("aria-label","Idiomas. Atual: "+LANGS[l].name+". Selecionar idioma");
   document.querySelectorAll(".lcode").forEach(e=>e.textContent=LANGS[l].code);
+  if($("base-language"))$("base-language").title="Idioma que você conhece: "+LANGS[window.VBPAIR?VBPAIR.base():(l==="pt"?"en":"pt")].name;
+  if(window.VBPAIR)VBPAIR.applyUI();
   $("lobby").innerHTML='<div class="loading">Carregando palavras...</div>';
   loadLang(l,()=>{
     if(lang!==l)return; // Ignora respostas antigas ao trocar rapidamente de idioma.
     if(!Array.isArray(VB_DATA[l])){ $("lobby").innerHTML='<div class="card done"><h2>Idioma em preparação</h2><p class="hintline">Ainda não há vocabulário validado para esta língua.</p></div>';return; }
     CARDS=VB_DATA[l].map((r,i)=>({i,id:r[0],w:r[0],g:r[1],pt:r[2],pron:r[3],tipo:TYPES[r[4]]||r[4],hook:r[5],ex:r[6],exPt:r[7],lv:Math.floor(i/LEVEL)+1}));
-    prog=store.get("vb-prog-"+l,{});fixes=store.get("vb-fix-"+l,{});
+    const trackSuffix=(window.VBPAIR&&!VBPAIR.isPrimary(l))?"-"+VBPAIR.base():"";
+    prog=store.get("vb-prog-"+l+trackSuffix,{});fixes=store.get("vb-fix-"+l+trackSuffix,{});
+    window.vbTrackKey=()=>trackSuffix;
     const x=store.get("vb-extra-"+l,{d:"",n:0});extraNew=x.d===dayKey()?x.n:0;
     const nl=Math.ceil(CARDS.length/LEVEL);let o=`<option value="all">Todos os níveis, em ordem</option>`,o2="";
     for(let i=1;i<=nl;i++){const a=(i-1)*LEVEL+1,b=Math.min(i*LEVEL,CARDS.length);o+=`<option value="${i}">Nível ${i} (palavras ${a} a ${b})</option>`;o2+=`<option value="${i}">Nível ${i} (${a} a ${b})</option>`}
@@ -1409,8 +1429,7 @@ function buildQueue(){
 }
 function overview(){const now=Date.now();let d=0,l=0,k=0;CARDS.forEach(c=>{const p=prog[c.id];if(!p)return;if(p.due<=now)d++;if(p.box>=4)k++;else l++});
   $("ov-due").textContent=d+Math.min(newRoom(),CARDS.filter(c=>!prog[c.id]).length);$("ov-learn").textContent=l;$("ov-known").textContent=k}
-function speak(t){try{const s=window.speechSynthesis;if(!s)return;s.cancel();const u=new SpeechSynthesisUtterance(t);u.lang=LANGS[lang].voice;u.rate=.9;
-  const v=s.getVoices().find(v=>v.lang&&v.lang.replace("_","-").startsWith(LANGS[lang].voice.slice(0,2)));if(v)u.voice=v;s.speak(u)}catch(e){}}
+function speak(t){if(window.VBTTS)return VBTTS.speak(t,lang);try{const s=window.speechSynthesis;if(!s)return;s.cancel();const u=new SpeechSynthesisUtterance(t);u.lang=LANGS[lang].voice;u.rate=.96;s.speak(u)}catch(e){}}
 /* ===== lobby ===== */
 function renderLobby(){
   const el=$("lobby");overview();
@@ -1455,7 +1474,7 @@ function gameHud(){
 
 /* ===== proporção nas cartas: frase de exemplo misturada ===== */
 const RATIO=()=>window.HYB?HYB.ratio():"auto";
-function hybEx(c){const r=RATIO();if(r==="auto"||r===100||!window.HYB)return null;return HYB.hybridFor(c.id,r)}
+function hybEx(c){const r=RATIO();if(window.VBPAIR&&!VBPAIR.isPrimary())return null;if(r==="auto"||r===100||!window.HYB)return null;return HYB.hybridFor(c.id,r)}
 function hybHTML(h,c,mode){
   return h.chunks.map(ch=>{
     if(!ch.foreign)return `<span class="hx-pt">${esc(ch.pt)}</span>`;
@@ -1483,6 +1502,21 @@ function renderTrain(){
     $("tolobby").onclick=closeGame;
     partyNext=false;
     return}
+  if(window.VBPAIR&&!VBPAIR.isPrimary(lang)){
+    const chosen=cur,target=lang,wanted=VBPAIR.base(),signature=target+":"+wanted;
+    if(cur._pair!==signature){
+      if(cur._pairError){
+        el.innerHTML='<div class="card"><p>Não foi possível obter a tradução gratuita para '+esc(LANGS[wanted].name)+'. Verifique a conexão ou tente novamente.</p><button class="btn primary" id="pair-retry">Tentar tradução novamente</button></div>';
+        $("pair-retry").onclick=()=>{VBPAIR.clearErrors();cur._pairError=false;renderTrain()};return;
+      }
+      el.innerHTML='<div class="card"><p class="loading">Preparando palavra em '+esc(LANGS[wanted].name)+'…</p><p class="hintline">Traduções de outros pares exigem internet na primeira utilização.</p></div>';
+      if(!cur._pairLoading){cur._pairLoading=true;VBPAIR.card(chosen,target,wanted).then(ok=>{
+        if(!playing||lang!==target||VBPAIR.base()!==wanted||cur!==chosen)return;
+        chosen._pairLoading=false;chosen._pairError=!ok;renderTrain();
+      })}
+      return;
+    }
+  }
   const isNew=!prog[cur.id];const tg=LANGS[lang].code;
   const front=dir==="pt"?`<div class="prompt">${esc(cur.pt)}</div><p class="hintline">${lang==="pt"?"Say it in Brazilian Portuguese.":("Diga em "+LANGS[lang].name.toLowerCase()+", em voz alta")}${cur.g?(lang==="pt"?", with its article":", com o artigo"):""}.</p>`
     :`<div class="prompt">${label(cur)}</div><p class="hintline">O que significa?</p>`;
@@ -1508,6 +1542,7 @@ function renderTrain(){
     pre=`<div class="cloze">${sent}<button class="btn small hintbtn" id="hint"${hinted?" disabled":""}>${hinted?`Começa com “${esc(first)}”`:"Dica: primeira letra"}</button></div>`;
   }
   el.innerHTML=`<div class="card"><div class="card-top"><span class="pill">Nível ${cur.lv}</span><span class="pill">${free?"Treino livre":isNew?"Palavra nova":"Revisão"}</span></div>${front}${pre}${revealed?back:`<button class="btn primary" id="reveal">Mostrar resposta</button>`}</div>`;
+  if(window.VBPAIR&&!VBPAIR.isPrimary())VBPAIR.decorateCard(el);
   if(!revealed){$("reveal").onclick=()=>{revealed=true;renderTrain();if(dir==="pt")speak(full(cur))};$("hint").onclick=()=>{hinted=true;renderTrain()}}
   else{$("say-w").onclick=()=>speak(full(cur));const se=$("say-e");if(se)se.onclick=()=>speak(hx?hx.fl:cur.ex);
     el.querySelectorAll("[data-r]").forEach(b=>b.onclick=()=>grade(+b.dataset.r))}
@@ -1522,7 +1557,7 @@ function grade(r){
   if(r===0){p.box=0;p.due=now;queue.splice(Math.min(3,queue.length),0,cur)}
   else if(r===1){p.box=Math.max(1,p.box);p.due=today0()+DAY}
   else{p.box=Math.min(5,p.box+1);p.due=today0()+INTERVALS[p.box]*DAY}
-  prog[cur.id]=p;store.set("vb-prog-"+lang,prog);cur=null;renderTrain();$("game").scrollTop=0}
+  prog[cur.id]=p;store.set("vb-prog-"+lang+((window.VBPAIR&&!VBPAIR.isPrimary())?"-"+VBPAIR.base():""),prog);cur=null;renderTrain();$("game").scrollTop=0}
 
 /* ===== lista ===== */
 function renderList(){
@@ -1540,7 +1575,7 @@ function renderList(){
   $("list").querySelectorAll("[data-fix]").forEach(b=>b.onclick=()=>{fixes[b.dataset.fix]={s:"fix",n:(fixes[b.dataset.fix]||{}).n||""};saveFix();renderList();const t=document.querySelector(`[data-note="${CSS.escape(b.dataset.fix)}"]`);if(t)t.focus()});
   $("list").querySelectorAll("[data-note]").forEach(t=>t.oninput=()=>{fixes[t.dataset.note].n=t.value;saveFix()});
   countFix()}
-function saveFix(){store.set("vb-fix-"+lang,fixes);countFix()}
+function saveFix(){store.set("vb-fix-"+lang+((window.VBPAIR&&!VBPAIR.isPrimary())?"-"+VBPAIR.base():""),fixes);countFix()}
 function countFix(){const v=Object.values(fixes);$("fixcount").textContent=`${v.filter(f=>f.s==="ok").length} bons, ${v.filter(f=>f.s==="fix").length} para corrigir`}
 $("btn-copy").onclick=()=>{
   const fx=CARDS.filter(c=>(fixes[c.id]||{}).s==="fix");
@@ -1565,8 +1600,10 @@ function renderMethod(){
       <li>One completed activity per day protects your streak. The 20-activity goal is optional.</li>
       <li>Learn Portuguese nouns with their article when they have grammatical gender.</li>
     </ol></section>`:common;
-  $("method").innerHTML=methodIntro+(window.VB_METODO&&VB_METODO[lang]||"");
-  if(!window.VB_METODO||!VB_METODO[lang])loadData(`data/metodo-${lang}.js?v=1`,()=>{if(VB_METODO[lang])renderMethod()});
+  const cross=window.VBPAIR&&!VBPAIR.isPrimary(lang);
+  $("method").innerHTML=cross?VBPAIR.methodHTML(lang):(methodIntro+(window.VB_METODO&&VB_METODO[lang]||""));
+  if(window.VBTTS)VBTTS.mount();
+  if(!cross&&(!window.VB_METODO||!VB_METODO[lang]))loadData(`data/metodo-${lang}.js?v=1`,()=>{if(VB_METODO[lang])renderMethod()});
 }
 
 /* ===== eventos ===== */
@@ -1578,7 +1615,7 @@ function shuffleQuiz(a){
   return a;
 }
 function createExerciseQuestions(){
-  const cards=CARDS.filter(c=>c.w&&c.pt&&c.ex&&c.exPt);
+  const cards=CARDS.filter(c=>c.w&&c.pt&&c.ex&&c.exPt&&(!window.VBPAIR||VBPAIR.isPrimary()||c._pair===lang+":"+VBPAIR.base()));
   if(cards.length<3)return [];
   // Prioriza palavras já estudadas, completando com o início da lista para iniciantes.
   const studied=shuffleQuiz(cards.filter(c=>prog[c.id]));
@@ -1628,7 +1665,17 @@ function renderExerciseQuiz(){
 
 document.querySelectorAll("[data-exercise]").forEach(b=>b.onclick=()=>{
  const mode=b.dataset.exercise;
- if(mode==="quiz"){exerciseIndex=0;exerciseCorrect=0;exerciseQuestions=createExerciseQuestions();if(window.VBXP)VBXP.reset();tab("quiz");renderExerciseQuiz()}
+ if(mode==="quiz"){
+   exerciseIndex=0;exerciseCorrect=0;if(window.VBXP)VBXP.reset();tab("quiz");
+   if(window.VBPAIR&&!VBPAIR.isPrimary()){
+     const target=lang,known=VBPAIR.base(),box=$("exercise-quiz");box.hidden=false;
+     box.innerHTML='<p class="loading">Preparando questões com traduções em '+esc(LANGS[known].name)+'…</p>';
+     Promise.all(CARDS.slice(0,12).map(c=>VBPAIR.card(c,target,known).catch(()=>false))).then(()=>{
+       if(lang!==target||VBPAIR.base()!==known||$("view-quiz").hidden)return;
+       exerciseQuestions=createExerciseQuestions();renderExerciseQuiz();
+     });
+   }else{exerciseQuestions=createExerciseQuestions();renderExerciseQuiz()}
+ }
  else if(mode==="vocabulario"){tab("train")}
  else tab(mode);
 });
@@ -1686,13 +1733,19 @@ function closeLangMenu(returnFocus=false){
 }
 /* mantém o menu inteiro dentro da tela, para qualquer posição do botão */
 function fitLangMenu(){
-  const m=$("lang-menu"),pad=12;
-  m.style.left="0";m.style.right="auto";
-  const r=m.getBoundingClientRect(),vw=document.documentElement.clientWidth;
-  let shift=0;
-  if(r.right>vw-pad)shift=(vw-pad)-r.right;
-  if(r.left+shift<pad)shift=pad-r.left;
-  m.style.left=shift+"px";
+  const m=$("lang-menu"),button=$("lang-toggle"),pad=12;
+  const vw=document.documentElement.clientWidth,vh=window.innerHeight;
+  const anchor=button.getBoundingClientRect();
+  m.style.width=Math.min(234,Math.max(140,vw-2*pad))+"px";
+  m.style.maxHeight=Math.max(125,vh-2*pad)+"px";
+  const mw=m.getBoundingClientRect().width;
+  m.style.left=Math.max(pad,Math.min(anchor.right-mw,vw-pad-mw))+"px";
+  const menuH=m.scrollHeight+16;
+  const spaceBelow=vh-anchor.bottom-pad-8;
+  const spaceAbove=anchor.top-pad-8;
+  const placeAbove=menuH>spaceBelow&&spaceAbove>spaceBelow;
+  m.style.maxHeight=Math.max(100,Math.min(440,placeAbove?spaceAbove:spaceBelow))+"px";
+  m.style.top=(placeAbove?Math.max(pad,anchor.top-Math.min(menuH,spaceAbove)-8):Math.min(vh-pad,anchor.bottom+8))+"px";
 }
 window.addEventListener("resize",()=>{if(!$("lang-menu").hidden)fitLangMenu()});
 function openLangMenu(focusOption=false){
@@ -1710,6 +1763,14 @@ $("lang-toggle").addEventListener("click",()=>{
 });
 $("lang-toggle").addEventListener("keydown",e=>{
   if(e.key==="ArrowDown"){e.preventDefault();openLangMenu(true)}
+});
+$("base-language").addEventListener("change",e=>{
+  if(!window.VBPAIR)return;
+  const next=e.target.value;
+  if(next===lang){e.target.value=VBPAIR.base();return}
+  VBPAIR.setBase(next);
+  if(playing)closeGame();
+  setLang(lang);
 });
 document.querySelectorAll(".lang-option").forEach(button=>{
   button.addEventListener("click",()=>{
@@ -1776,6 +1837,8 @@ if("serviceWorker" in navigator){
   window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js",{updateViaCache:"none"}).then(r=>{r.update();document.addEventListener("visibilitychange",()=>{if(!document.hidden)r.update()})}).catch(()=>{}));
 }
 </script>
+<script src="pair.js?v=1"></script>
+<script src="voice.js?v=1"></script>
 <script src="relatorio.js?v=1"></script>
 <script src="frases.js?v=8"></script>
 <script src="historias.js?v=2"></script>

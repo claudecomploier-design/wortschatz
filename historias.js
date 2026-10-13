@@ -20,7 +20,7 @@
 
   let S = null, loadedFor = null, filtro = "Todas";
   let story = null, scene = null, built = [], opened = new Set(), peeked = [], busy = false, reading = false;
-  const key = () => "vb-story-" + lang;
+  const key = () => "vb-story-" + lang + ((window.VBPAIR&&!VBPAIR.isPrimary())?"-"+VBPAIR.base():"");
   const list = () => VB_HIST[lang] || [];
   const byId = id => list().find(h => h.id === id);
   const st = id => S.h[id] || (S.h[id] = { cena: null, rota: [], flags: {}, fim: null, finais: [] });
@@ -165,10 +165,24 @@
     renderLibrary();
   }
   function enterScene(anim){
-    const s = st(story.id); scene = story.cenas[s.cena];
-    built = scene.p.map(p => HYB.para(p) || plainPara(p));
-    opened = new Set(); peeked = scene.p.map(() => new Set());
-    renderScene(anim);
+    const s=st(story.id),id=s.cena,source=story.cenas[id],target=lang;
+    scene={...source,p:source.p.map(p=>[p[0],p[1],p[2].map(ch=>ch.slice())]),
+      escolhas:source.escolhas?source.escolhas.map(e=>({...e})):undefined};
+    const show=()=>{built=scene.p.map(p=>HYB.para(p)||plainPara(p));opened=new Set();peeked=scene.p.map(()=>new Set());renderScene(anim)};
+    if(window.VBPAIR&&!VBPAIR.isPrimary()){
+      const known=VBPAIR.base(),current=scene,original=VBPAIR.primary(target);
+      $("sg-area").innerHTML='<div class="card"><p class="loading">Preparando cena em '+esc(LANGS[known].name)+'…</p></div>';
+      const jobs=[...scene.p.map(p=>VBPAIR.scene(p,target,known))];
+      if(scene.escolhas)scene.escolhas.forEach(e=>jobs.push(VBPAIR.translated(original,known,e.pt).then(txt=>{e.pt=txt;return true})));
+      Promise.all(jobs).then(ok=>{
+        if(!reading||lang!==target||VBPAIR.base()!==known||s.cena!==id||scene!==current)return;
+        if(!ok.every(Boolean))throw Error("Tradução incompleta");show();
+      }).catch(()=>{
+        if(!reading||lang!==target||VBPAIR.base()!==known||scene!==current)return;
+        $("sg-area").innerHTML='<div class="card"><h2>Tradução indisponível</h2><p>O serviço gratuito não conseguiu traduzir esta cena. Tente novamente com internet.</p><button class="btn primary" id="st-translate-retry">Tentar outra vez</button></div>';
+        $("st-translate-retry").onclick=()=>enterScene(false);
+      });
+    }else show();
   }
   function plainPara(p){              // reserva caso o motor não esteja pronto: texto todo em português
     return { fl: p[0], pt: p[1], allForeign: false, targets: [], ratio: 0, chunks: p[2].map(c => ({ fl: c[0], pt: c[1], ids: [], foreign: false })) };
