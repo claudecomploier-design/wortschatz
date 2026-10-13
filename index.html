@@ -926,6 +926,10 @@ body{
 .langs .lang-option[aria-pressed="true"]{background:var(--accent-soft);color:var(--accent-hi);box-shadow:none}
 .lang-check{visibility:hidden;color:var(--accent);font-size:.95rem}
 .lang-option[aria-pressed="true"] .lang-check{visibility:visible}
+.base-lang-wrap{display:flex;align-items:center;gap:7px;min-width:0}
+.base-lang-wrap label{font-size:.77rem;color:var(--muted);font-weight:700;white-space:nowrap}
+.base-lang-wrap select{width:auto;max-width:150px;min-width:95px;font-size:.83rem;padding:8px 21px 8px 9px;min-height:40px}
+@media(max-width:520px){header{gap:9px}.brand{flex-basis:100%}.base-lang-wrap{flex:1}.base-lang-wrap select{width:100%;max-width:170px}}
 .voice-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:8px}
 .voice-row select{min-width:0;flex:1;width:100%;max-width:100%}
 .voice-row .btn{flex-shrink:0}
@@ -963,10 +967,12 @@ body{
 <div class="wrap">
   <header>
     <div class="brand"><button class="me" id="me" aria-label="Escolher personagem" title="Escolher personagem"></button><h1>Vokabel 1000 <small class="ver">v20</small></h1></div>
-    <div class="langs" id="language-picker">
+    <div class="base-lang-wrap"><label for="base-language">Eu sei</label><select id="base-language" aria-label="Idioma que você já conhece">
+      <option value="pt">Português</option><option value="en">Inglês</option><option value="es">Espanhol</option><option value="de">Alemão</option><option value="it">Italiano</option><option value="fr">Francês</option>
+    </select></div><div class="langs" id="language-picker">
       <button type="button" id="lang-toggle" class="lang-toggle" aria-controls="lang-menu" aria-expanded="false" aria-haspopup="true" aria-label="Idiomas. Selecionar idioma">
         <span class="lang-globe" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c-5 5-5 13 0 18M12 3c5 5 5 13 0 18"/></svg></span>
-        <span>Idiomas</span><span class="lang-current" id="lang-current">DE</span>
+        <span>Aprender</span><span class="lang-current" id="lang-current">DE</span>
         <svg class="lang-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
       </button>
       <div class="lang-menu" id="lang-menu" role="group" aria-label="Selecionar idioma" hidden>
@@ -1371,11 +1377,16 @@ function loadLang(l,cb){
 }
 function setLang(l){
   if(!LANGS[l]) l="de";
-  lang=l;store.set("vb-lang",l);
+  if(window.VBPAIR)VBPAIR.allowedTarget(l);
+  lang=l;
+  const baseSel=$("base-language");if(baseSel){
+    baseSel.value=window.VBPAIR?VBPAIR.base():(l==="pt"?"en":"pt");
+    [...baseSel.options].forEach(o=>o.disabled=o.value===l);
+  }store.set("vb-lang",l);
   setTimeout(()=>window.dispatchEvent(new Event("vb-lang-changed")),0);
   document.querySelectorAll(".lang-option").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.lang===l)));
   $("lang-current").textContent=LANGS[l].code;
-  const baseCode=l==="pt"?"EN":"PT";
+  const baseCode=window.VBPAIR?LANGS[VBPAIR.base()].code:(l==="pt"?"EN":"PT");
   $("dir-pt").innerHTML=baseCode+" → <span class=\"lcode\">"+LANGS[l].code+"</span>";
   $("dir-tg").innerHTML='<span class="lcode">'+LANGS[l].code+"</span> → "+baseCode;
   const modeDesc=document.querySelector('[data-exercise="frases"] small');
@@ -1384,12 +1395,15 @@ function setLang(l){
   if(quizDesc)quizDesc.textContent="Responda perguntas de "+LANGS[l].name.toLowerCase()+" com correção imediata.";
   $("lang-toggle").setAttribute("aria-label","Idiomas. Atual: "+LANGS[l].name+". Selecionar idioma");
   document.querySelectorAll(".lcode").forEach(e=>e.textContent=LANGS[l].code);
+  if($("base-language"))$("base-language").title="Idioma que você conhece: "+LANGS[window.VBPAIR?VBPAIR.base():(l==="pt"?"en":"pt")].name;
   $("lobby").innerHTML='<div class="loading">Carregando palavras...</div>';
   loadLang(l,()=>{
     if(lang!==l)return; // Ignora respostas antigas ao trocar rapidamente de idioma.
     if(!Array.isArray(VB_DATA[l])){ $("lobby").innerHTML='<div class="card done"><h2>Idioma em preparação</h2><p class="hintline">Ainda não há vocabulário validado para esta língua.</p></div>';return; }
     CARDS=VB_DATA[l].map((r,i)=>({i,id:r[0],w:r[0],g:r[1],pt:r[2],pron:r[3],tipo:TYPES[r[4]]||r[4],hook:r[5],ex:r[6],exPt:r[7],lv:Math.floor(i/LEVEL)+1}));
-    prog=store.get("vb-prog-"+l,{});fixes=store.get("vb-fix-"+l,{});
+    const trackSuffix=(window.VBPAIR&&!VBPAIR.isPrimary(l))?"-"+VBPAIR.base():"";
+    prog=store.get("vb-prog-"+l+trackSuffix,{});fixes=store.get("vb-fix-"+l+trackSuffix,{});
+    window.vbTrackKey=()=>trackSuffix;
     const x=store.get("vb-extra-"+l,{d:"",n:0});extraNew=x.d===dayKey()?x.n:0;
     const nl=Math.ceil(CARDS.length/LEVEL);let o=`<option value="all">Todos os níveis, em ordem</option>`,o2="";
     for(let i=1;i<=nl;i++){const a=(i-1)*LEVEL+1,b=Math.min(i*LEVEL,CARDS.length);o+=`<option value="${i}">Nível ${i} (palavras ${a} a ${b})</option>`;o2+=`<option value="${i}">Nível ${i} (${a} a ${b})</option>`}
@@ -1487,6 +1501,21 @@ function renderTrain(){
     $("tolobby").onclick=closeGame;
     partyNext=false;
     return}
+  if(window.VBPAIR&&!VBPAIR.isPrimary(lang)){
+    const chosen=cur,target=lang,wanted=VBPAIR.base(),signature=target+":"+wanted;
+    if(cur._pair!==signature){
+      if(cur._pairError){
+        el.innerHTML='<div class="card"><p>Não foi possível obter a tradução gratuita para '+esc(LANGS[wanted].name)+'. Verifique a conexão ou tente novamente.</p><button class="btn primary" id="pair-retry">Tentar tradução novamente</button></div>';
+        $("pair-retry").onclick=()=>{VBPAIR.clearErrors();cur._pairError=false;renderTrain()};return;
+      }
+      el.innerHTML='<div class="card"><p class="loading">Preparando palavra em '+esc(LANGS[wanted].name)+'…</p><p class="hintline">Traduções de outros pares exigem internet na primeira utilização.</p></div>';
+      if(!cur._pairLoading){cur._pairLoading=true;VBPAIR.card(chosen,target,wanted).then(ok=>{
+        if(!playing||lang!==target||VBPAIR.base()!==wanted||cur!==chosen)return;
+        chosen._pairLoading=false;chosen._pairError=!ok;renderTrain();
+      })}
+      return;
+    }
+  }
   const isNew=!prog[cur.id];const tg=LANGS[lang].code;
   const front=dir==="pt"?`<div class="prompt">${esc(cur.pt)}</div><p class="hintline">${lang==="pt"?"Say it in Brazilian Portuguese.":("Diga em "+LANGS[lang].name.toLowerCase()+", em voz alta")}${cur.g?(lang==="pt"?", with its article":", com o artigo"):""}.</p>`
     :`<div class="prompt">${label(cur)}</div><p class="hintline">O que significa?</p>`;
@@ -1526,7 +1555,7 @@ function grade(r){
   if(r===0){p.box=0;p.due=now;queue.splice(Math.min(3,queue.length),0,cur)}
   else if(r===1){p.box=Math.max(1,p.box);p.due=today0()+DAY}
   else{p.box=Math.min(5,p.box+1);p.due=today0()+INTERVALS[p.box]*DAY}
-  prog[cur.id]=p;store.set("vb-prog-"+lang,prog);cur=null;renderTrain();$("game").scrollTop=0}
+  prog[cur.id]=p;store.set("vb-prog-"+lang+((window.VBPAIR&&!VBPAIR.isPrimary())?"-"+VBPAIR.base():""),prog);cur=null;renderTrain();$("game").scrollTop=0}
 
 /* ===== lista ===== */
 function renderList(){
@@ -1544,7 +1573,7 @@ function renderList(){
   $("list").querySelectorAll("[data-fix]").forEach(b=>b.onclick=()=>{fixes[b.dataset.fix]={s:"fix",n:(fixes[b.dataset.fix]||{}).n||""};saveFix();renderList();const t=document.querySelector(`[data-note="${CSS.escape(b.dataset.fix)}"]`);if(t)t.focus()});
   $("list").querySelectorAll("[data-note]").forEach(t=>t.oninput=()=>{fixes[t.dataset.note].n=t.value;saveFix()});
   countFix()}
-function saveFix(){store.set("vb-fix-"+lang,fixes);countFix()}
+function saveFix(){store.set("vb-fix-"+lang+((window.VBPAIR&&!VBPAIR.isPrimary())?"-"+VBPAIR.base():""),fixes);countFix()}
 function countFix(){const v=Object.values(fixes);$("fixcount").textContent=`${v.filter(f=>f.s==="ok").length} bons, ${v.filter(f=>f.s==="fix").length} para corrigir`}
 $("btn-copy").onclick=()=>{
   const fx=CARDS.filter(c=>(fixes[c.id]||{}).s==="fix");
@@ -1583,7 +1612,7 @@ function shuffleQuiz(a){
   return a;
 }
 function createExerciseQuestions(){
-  const cards=CARDS.filter(c=>c.w&&c.pt&&c.ex&&c.exPt);
+  const cards=CARDS.filter(c=>c.w&&c.pt&&c.ex&&c.exPt&&(!window.VBPAIR||VBPAIR.isPrimary()||c._pair===lang+":"+VBPAIR.base()));
   if(cards.length<3)return [];
   // Prioriza palavras já estudadas, completando com o início da lista para iniciantes.
   const studied=shuffleQuiz(cards.filter(c=>prog[c.id]));
@@ -1633,7 +1662,17 @@ function renderExerciseQuiz(){
 
 document.querySelectorAll("[data-exercise]").forEach(b=>b.onclick=()=>{
  const mode=b.dataset.exercise;
- if(mode==="quiz"){exerciseIndex=0;exerciseCorrect=0;exerciseQuestions=createExerciseQuestions();if(window.VBXP)VBXP.reset();tab("quiz");renderExerciseQuiz()}
+ if(mode==="quiz"){
+   exerciseIndex=0;exerciseCorrect=0;if(window.VBXP)VBXP.reset();tab("quiz");
+   if(window.VBPAIR&&!VBPAIR.isPrimary()){
+     const target=lang,known=VBPAIR.base(),box=$("exercise-quiz");box.hidden=false;
+     box.innerHTML='<p class="loading">Preparando questões com traduções em '+esc(LANGS[known].name)+'…</p>';
+     Promise.all(CARDS.slice(0,12).map(c=>VBPAIR.card(c,target,known).catch(()=>false))).then(()=>{
+       if(lang!==target||VBPAIR.base()!==known||$("view-quiz").hidden)return;
+       exerciseQuestions=createExerciseQuestions();renderExerciseQuiz();
+     });
+   }else{exerciseQuestions=createExerciseQuestions();renderExerciseQuiz()}
+ }
  else if(mode==="vocabulario"){tab("train")}
  else tab(mode);
 });
@@ -1722,6 +1761,14 @@ $("lang-toggle").addEventListener("click",()=>{
 $("lang-toggle").addEventListener("keydown",e=>{
   if(e.key==="ArrowDown"){e.preventDefault();openLangMenu(true)}
 });
+$("base-language").addEventListener("change",e=>{
+  if(!window.VBPAIR)return;
+  const next=e.target.value;
+  if(next===lang){e.target.value=VBPAIR.base();return}
+  VBPAIR.setBase(next);
+  if(playing)closeGame();
+  setLang(lang);
+});
 document.querySelectorAll(".lang-option").forEach(button=>{
   button.addEventListener("click",()=>{
     if(button.dataset.lang!==lang)setLang(button.dataset.lang);
@@ -1787,6 +1834,7 @@ if("serviceWorker" in navigator){
   window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js",{updateViaCache:"none"}).then(r=>{r.update();document.addEventListener("visibilitychange",()=>{if(!document.hidden)r.update()})}).catch(()=>{}));
 }
 </script>
+<script src="pair.js?v=1"></script>
 <script src="voice.js?v=1"></script>
 <script src="relatorio.js?v=1"></script>
 <script src="frases.js?v=8"></script>
