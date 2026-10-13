@@ -95,8 +95,46 @@ function restoreCards(cards,target){
  cards.forEach(c=>{if(c._source){Object.assign(c,c._source);delete c._pair;}});
 }
 function glossary(){const from=base,target=lang;return [...mem.entries()].filter(([k])=>k.startsWith("vb-pair:"+target+":"+from+":")).map(([,v])=>v).filter(Boolean)}
-window.VBPAIR={base:()=>base,primary:defaults,isPrimary,setBase,allowedTarget,translated,card,built,scene,restoreCards,glossary,clearErrors:()=>errors.clear(),name:NAME};
+
+const LABELS={
+pt:["Eu sei","Aprender","Exercícios","Progresso semanal","Amigos","Método","Perfil","← Voltar aos exercícios","Central de exercícios","Escolha como quer praticar. Todos os modos ficam reunidos aqui.","Histórias","Vocabulário","Frases híbridas","Quiz de compreensão","Consultar palavras","Mostrar resposta","Ouvir palavra","Ouvir frase e repetir","Errei","Difícil","Sabia","Dica: primeira letra","O que significa?"],
+en:["I speak","Learn","Exercises","Weekly progress","Friends","Method","Profile","← Back to exercises","Exercise hub","Choose how to practice. All activities are here.","Stories","Vocabulary","Mixed-language sentences","Comprehension quiz","Word list","Show answer","Listen to word","Listen and repeat","I missed it","Difficult","I knew it","Hint: first letter","What does it mean?"],
+es:["Hablo","Aprender","Ejercicios","Progreso semanal","Amigos","Método","Perfil","← Volver a ejercicios","Centro de ejercicios","Elige cómo quieres practicar. Todas las actividades están aquí.","Historias","Vocabulario","Frases mixtas","Prueba de comprensión","Lista de palabras","Mostrar respuesta","Escuchar palabra","Escuchar y repetir","Fallé","Difícil","Lo sabía","Pista: primera letra","¿Qué significa?"],
+it:["Parlo","Imparare","Esercizi","Progresso settimanale","Amici","Metodo","Profilo","← Torna agli esercizi","Centro esercizi","Scegli come esercitarti. Tutte le attività sono qui.","Storie","Vocabolario","Frasi miste","Quiz di comprensione","Elenco parole","Mostra risposta","Ascolta la parola","Ascolta e ripeti","Sbagliato","Difficile","Lo sapevo","Indizio: prima lettera","Che cosa significa?"],
+fr:["Je parle","Apprendre","Exercices","Progrès hebdomadaires","Amis","Méthode","Profil","← Retour aux exercices","Espace exercices","Choisissez comment vous entraîner. Toutes les activités sont ici.","Histoires","Vocabulaire","Phrases mixtes","Quiz de compréhension","Liste des mots","Afficher la réponse","Écouter le mot","Écouter et répéter","Raté","Difficile","Je savais","Indice : première lettre","Que signifie ce mot ?"],
+de:["Ich spreche","Lernen","Übungen","Wochenfortschritt","Freunde","Methode","Profil","← Zurück zu den Übungen","Übungsbereich","Wähle aus, wie du üben möchtest.","Geschichten","Wortschatz","Gemischte Sätze","Verständnistest","Wortliste","Antwort zeigen","Wort anhören","Anhören und wiederholen","Falsch","Schwierig","Gewusst","Hinweis: erster Buchstabe","Was bedeutet das?"]
+};
+const UI_IDS=["speak","learn","exercises","weekly","friends","method","profile","back","hub","intro","stories","vocabulary","phrases","quiz","words","reveal","listenword","listenphrase","wrong","hard","knew","hint","meaning"];
+const UI=Object.fromEntries(UI_IDS.map((k,i)=>[k,i]));
+const msg=(id,l=base)=>{const row=LABELS[l]||LABELS.pt;return row[UI[id]]||LABELS.pt[UI[id]]||id};
+function applyUI(){
+ const label=document.querySelector('label[for="base-language"]');
+ if(label)label.textContent=msg("speak");
+ const name=document.querySelector("#lang-toggle > span:nth-child(2)");
+ if(name)name.textContent=msg("learn");
+ const tabs=["exercises","weekly","friends","method","profile"];
+ document.querySelectorAll(".bottom-nav .dock-action").forEach((b,i)=>{
+  const name=b.querySelector(".dock-label");if(name&&tabs[i])name.textContent=msg(tabs[i]);
+ });
+ const title=document.querySelector(".exercise-intro h2");if(title)title.textContent=msg("hub");
+ const intro=document.querySelector(".exercise-intro p");if(intro)intro.textContent=msg("intro");
+ document.querySelectorAll(".exercise-back").forEach(b=>b.textContent=msg("back"));
+ document.querySelectorAll(".exercise-link strong").forEach((e,i)=>e.textContent=msg(["stories","vocabulary","phrases","quiz","words"][i]));
+}
+function decorateCard(root){
+ if(!root)return;
+ const ids={"reveal":"reveal","say-w":"listenword","say-e":"listenphrase","hint":"hint"};
+ for(const [id,t] of Object.entries(ids)){const el=root.querySelector("#"+id);if(el&&!el.disabled)el.textContent=msg(t)}
+ root.querySelectorAll(".grade button").forEach((b,i)=>{
+  const t=b.firstChild;if(t&&t.nodeType===Node.TEXT_NODE)t.textContent=msg(["wrong","hard","knew"][i]);
+ });
+ const labels=root.querySelectorAll(".hintline");
+ labels.forEach(e=>{if(e.textContent.trim()==="O que significa?")e.textContent=msg("meaning")});
+}
+
+window.VBPAIR={base:()=>base,primary:defaults,isPrimary,setBase,allowedTarget,translated,card,built,scene,restoreCards,glossary,clearErrors:()=>errors.clear(),name:NAME,msg,applyUI,decorateCard};
 allowedTarget(lang);
 // The inline app initializes before this module is loaded; refresh once with the persisted source language.
 if(typeof setLang==="function")setLang(lang);
+applyUI();
 })();
