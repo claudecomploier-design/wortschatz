@@ -46,7 +46,7 @@ function lookupWord(doc,c){
 }
 async function card(c,target=lang,known=base){
  if(!c||known===defaults(target))return true;
- const signature=key(target,known);
+ const signature=target+":"+known;
  if(c._pair===signature)return true;
  try{
   const doc=await load(target,known);
@@ -68,7 +68,7 @@ async function card(c,target=lang,known=base){
 }
 async function built(c,target=lang,known=base,kind="f"){
  if(!c||known===defaults(target))return true;
- const signature=key(target,known);
+ const signature=target+":"+known;
  if(c._pair===signature)return true;
  try{
   const doc=await load(target,known);
