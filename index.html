@@ -957,7 +957,7 @@ body{
 <body>
 <div class="wrap">
   <header>
-    <div class="brand"><button class="me" id="me" aria-label="Escolher personagem" title="Escolher personagem"></button><h1>Vokabel 1000 <small class="ver">v19</small></h1></div>
+    <div class="brand"><button class="me" id="me" aria-label="Escolher personagem" title="Escolher personagem"></button><h1>Vokabel 1000 <small class="ver">v20</small></h1></div>
     <div class="langs" id="language-picker">
       <button type="button" id="lang-toggle" class="lang-toggle" aria-controls="lang-menu" aria-expanded="false" aria-haspopup="true" aria-label="Idiomas. Selecionar idioma">
         <span class="lang-globe" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c-5 5-5 13 0 18M12 3c5 5 5 13 0 18"/></svg></span>
@@ -968,9 +968,9 @@ body{
         <button type="button" class="lang-option" data-lang="de" aria-pressed="true"><span>Alemão</span><span class="lang-check" aria-hidden="true">✓</span></button>
         <button type="button" class="lang-option" data-lang="it" aria-pressed="false"><span>Italiano</span><span class="lang-check" aria-hidden="true">✓</span></button>
         <button type="button" class="lang-option" data-lang="fr" aria-pressed="false"><span>Francês</span><span class="lang-check" aria-hidden="true">✓</span></button>
-        <button type="button" class="lang-option" data-lang="en" aria-pressed="false" disabled title="Vocabulário em preparação"><span>Inglês · em preparação</span></button>
-        <button type="button" class="lang-option" data-lang="es" aria-pressed="false" disabled title="Vocabulário em preparação"><span>Espanhol · em preparação</span></button>
-        <button type="button" class="lang-option" data-lang="pt" aria-pressed="false" disabled title="Vocabulário em preparação"><span>Português · em preparação</span></button>
+        <button type="button" class="lang-option" data-lang="en" aria-pressed="false"><span>Inglês</span><span class="lang-check" aria-hidden="true">✓</span></button>
+        <button type="button" class="lang-option" data-lang="es" aria-pressed="false"><span>Espanhol</span><span class="lang-check" aria-hidden="true">✓</span></button>
+        <button type="button" class="lang-option" data-lang="pt" aria-pressed="false"><span>Português</span><span class="lang-check" aria-hidden="true">✓</span></button>
       </div>
     </div>
   </header>
@@ -1365,11 +1365,18 @@ function loadLang(l,cb){
   document.head.appendChild(s);
 }
 function setLang(l){
-  if(!LANGS[l] || (!["de","it","fr"].includes(l) && !Array.isArray(VB_DATA[l]))) l="de";
+  if(!LANGS[l]) l="de";
   lang=l;store.set("vb-lang",l);
   setTimeout(()=>window.dispatchEvent(new Event("vb-lang-changed")),0);
   document.querySelectorAll(".lang-option").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.lang===l)));
   $("lang-current").textContent=LANGS[l].code;
+  const baseCode=l==="pt"?"EN":"PT";
+  $("dir-pt").innerHTML=baseCode+" → <span class=\"lcode\">"+LANGS[l].code+"</span>";
+  $("dir-tg").innerHTML='<span class="lcode">'+LANGS[l].code+"</span> → "+baseCode;
+  const modeDesc=document.querySelector('[data-exercise="frases"] small');
+  if(modeDesc)modeDesc.textContent="Pratique com proporções de 30%, 50%, 70% e 100% de "+LANGS[l].name.toLowerCase()+".";
+  const quizDesc=document.querySelector('[data-exercise="quiz"] small');
+  if(quizDesc)quizDesc.textContent="Responda perguntas de "+LANGS[l].name.toLowerCase()+" com correção imediata.";
   $("lang-toggle").setAttribute("aria-label","Idiomas. Atual: "+LANGS[l].name+". Selecionar idioma");
   document.querySelectorAll(".lcode").forEach(e=>e.textContent=LANGS[l].code);
   $("lobby").innerHTML='<div class="loading">Carregando palavras...</div>';
@@ -1477,7 +1484,7 @@ function renderTrain(){
     partyNext=false;
     return}
   const isNew=!prog[cur.id];const tg=LANGS[lang].code;
-  const front=dir==="pt"?`<div class="prompt">${esc(cur.pt)}</div><p class="hintline">Diga em ${LANGS[lang].name.toLowerCase()}, em voz alta${cur.g?", com o artigo":""}.</p>`
+  const front=dir==="pt"?`<div class="prompt">${esc(cur.pt)}</div><p class="hintline">${lang==="pt"?"Say it in Brazilian Portuguese.":("Diga em "+LANGS[lang].name.toLowerCase()+", em voz alta")}${cur.g?(lang==="pt"?", with its article":", com o artigo"):""}.</p>`
     :`<div class="prompt">${label(cur)}</div><p class="hintline">O que significa?</p>`;
   const gp=gapOf(cur);const hx=hybEx(cur);
   let back="";
@@ -1544,13 +1551,21 @@ $("btn-copy").onclick=()=>{
 
 /* ===== método ===== */
 function renderMethod(){
-  const common=`<section><h2>Como estudar (15 minutos por dia)</h2><ol>
+  const common=`<section><h2>${lang==="pt"?"How to study (15 minutes a day)":"Como estudar (15 minutos por dia)"}</h2><ol>
     <li><b>Leia a tradução e diga a palavra em voz alta antes de virar.</b> Lembrar com esforço é o que fixa.</li>
     <li><b>Ouça e repita a frase inteira.</b> A frase curta fica; a palavra solta some.</li>
     <li><b>Seja honesto na nota.</b> Errei volta na hora, Difícil volta amanhã, Sabia volta em 1, 3, 7, 16 e 35 dias.</li>
     <li><b>Racha: uma atividade concluída por dia.</b> A meta de ${GOAL} práticas é um desafio extra opcional. Novas: 10 palavras por dia por padrão.</li>
     <li><b>Substantivos com gênero: estude sempre com artigo e cor.</b></li></ol></section>`;
-  $("method").innerHTML=common+(window.VB_METODO&&VB_METODO[lang]||"");
+  const methodIntro=lang==="pt"?
+    `<section><h2>How to study (15 minutes a day)</h2><ol>
+      <li>Read the English meaning and say the Portuguese word aloud before flipping the card.</li>
+      <li>Listen to the Portuguese example and repeat the whole sentence.</li>
+      <li>Be honest when reviewing: mistakes return sooner; remembered words come back later.</li>
+      <li>One completed activity per day protects your streak. The 20-activity goal is optional.</li>
+      <li>Learn Portuguese nouns with their article when they have grammatical gender.</li>
+    </ol></section>`:common;
+  $("method").innerHTML=methodIntro+(window.VB_METODO&&VB_METODO[lang]||"");
   if(!window.VB_METODO||!VB_METODO[lang])loadData(`data/metodo-${lang}.js?v=1`,()=>{if(VB_METODO[lang])renderMethod()});
 }
 
