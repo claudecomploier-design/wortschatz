@@ -173,4 +173,5 @@ window.VBPAIR={base:()=>base,primary:defaults,isPrimary,setBase,allowedTarget,lo
 allowedTarget(lang);
 if(typeof setLang==="function")setLang(lang);
 applyUI();
+if("serviceWorker" in navigator)navigator.serviceWorker.addEventListener("controllerchange",()=>setTimeout(renderOfflineStatus,250));
 })();
