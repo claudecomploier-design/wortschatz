@@ -19,14 +19,15 @@ function rank(v,l){
  if(v.default)points+=2;
  return points;
 }
-function selected(l){const p=prefs(),choices=matching(l);const wanted=p[l];return choices.find(v=>v.voiceURI===wanted)||choices.sort((a,b)=>rank(b,l)-rank(a,l))[0]||null}
+function selected(l){const p=prefs(),choices=matching(l);const wanted=p[l];return choices.find(v=>v.voiceURI===wanted)||(choices.filter(v=>v.localService!==false).sort((a,b)=>rank(b,l)-rank(a,l))[0]||null)}
 function speak(text,l){
  try{
  if(!window.speechSynthesis||!window.SpeechSynthesisUtterance)return false;
  const s=speechSynthesis; s.cancel();
  const utterance=new SpeechSynthesisUtterance(String(text||"").slice(0,1100));
  utterance.lang=langCode(l);utterance.rate=.96;utterance.pitch=1;utterance.volume=1;
- const voice=selected(l);if(voice){utterance.voice=voice;utterance.lang=voice.lang}
+ const voice=selected(l);if(!voice)return false;
+ utterance.voice=voice;utterance.lang=voice.lang;
  s.speak(utterance);return true;
  }catch(e){return false}
 }
@@ -36,7 +37,7 @@ function mount(){
  const language=typeof lang==="string"?lang:"de";
  const voices=matching(language).sort((a,b)=>rank(b,language)-rank(a,language));
  const options=['<option value="">Automática offline (voz instalada)</option>'].concat(voices.map(v=>'<option value="'+esc(v.voiceURI)+'">'+esc(v.name)+' · '+esc(v.lang)+(v.localService===false?" · requer internet":v.localService===true?" · offline":" · disponibilidade variável")+'</option>'));
- el.innerHTML='<h2>Pronúncia e voz</h2><p class="hintline">O modo automático prioriza vozes instaladas no dispositivo e funciona sem internet. Vozes marcadas como online podem precisar de conexão. A qualidade depende do sistema operacional.</p><label for="voice-select">Voz de '+esc(LANGS[language].name)+'</label><div class="voice-row"><select id="voice-select">'+options.join("")+'</select><button type="button" class="btn small" id="voice-preview">▶ Ouvir exemplo</button></div><p class="hintline" id="voice-status">'+(voices.length?voices.length+" vozes disponíveis.":"Nenhuma voz detectada neste navegador.")+'</p>';
+ el.innerHTML='<h2>Pronúncia e voz</h2><p class="hintline">O modo automático prioriza vozes instaladas no dispositivo e funciona sem internet. Vozes marcadas como online podem precisar de conexão. A qualidade depende do sistema operacional.</p><label for="voice-select">Voz de '+esc(LANGS[language].name)+'</label><div class="voice-row"><select id="voice-select">'+options.join("")+'</select><button type="button" class="btn small" id="voice-preview">▶ Ouvir exemplo</button></div><p class="hintline" id="voice-status">'+(voices.length?voices.length+" vozes disponíveis.":"Nenhuma voz detectada neste navegador. A reprodução offline pode não estar disponível.")+'</p>';
  const select=document.getElementById("voice-select");
  const wanted=prefs()[language]||"";select.value=voices.some(v=>v.voiceURI===wanted)?wanted:"";
  select.onchange=()=>{const p=prefs();p[language]=select.value;put(p)};
