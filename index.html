@@ -95,7 +95,8 @@ h1 .ver{font-family:var(--sans);font-size:.7rem;font-weight:500;color:var(--dim)
 @media(prefers-reduced-motion:no-preference){.streak.is-active .flame{animation:streak-glow 2.6s ease-in-out infinite}}
 @keyframes streak-glow{0%,100%{box-shadow:0 0 0 6px rgba(200,164,100,.06),0 0 10px rgba(200,164,100,.08)}50%{box-shadow:0 0 0 8px rgba(200,164,100,.12),0 0 22px rgba(200,164,100,.22)}}
 /* ===== central de exercícios ===== */
-.exercise-back{margin:0 0 18px;display:inline-flex;align-items:center}
+.exercise-back{margin:0 0 18px;display:inline-flex;align-items:center;gap:6px;min-height:42px;padding:0 16px 0 12px;border-radius:999px!important;border:2px solid var(--accent)!important;background:var(--accent-soft)!important;color:var(--accent-hi)!important;font-weight:700;box-shadow:0 3px 0 rgba(6,12,20,.35)}
+.exercise-back:hover,.exercise-back:focus-visible{background:var(--accent)!important;color:#0d1520!important}
 .exercise-intro h2{font:500 1.8rem var(--serif);margin:0 0 6px}
 .exercise-intro p{color:var(--muted);margin:0 0 18px}
 .exercise-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
@@ -349,8 +350,10 @@ body.playing{overflow:hidden}
 .game{position:fixed;inset:0;z-index:30;overflow-y:auto;background:#12171e;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 .game-in{position:relative;max-width:600px;margin:0 auto;padding:16px 18px 36px;min-height:100%;display:flex;flex-direction:column;gap:16px}
 .g-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
-.g-x{flex:none;width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--muted);font-size:1.3rem;line-height:1;cursor:pointer;display:grid;place-items:center}
-.g-x:hover{color:var(--fg);border-color:var(--muted)}
+.g-x{flex:none;display:inline-flex;align-items:center;gap:6px;min-height:42px;padding:0 15px 0 11px;border-radius:999px;border:2px solid var(--accent);background:var(--accent-soft);color:var(--accent-hi);font:inherit;font-weight:700;font-size:.92rem;line-height:1;cursor:pointer;box-shadow:0 3px 0 rgba(6,12,20,.35)}
+.g-x-ic{font-size:1.15rem;line-height:1}
+.g-x:hover,.g-x:focus-visible{background:var(--accent);color:#0d1520}
+.g-x:active{transform:translateY(2px);box-shadow:0 1px 0 rgba(6,12,20,.35)}
 .g-chip{flex:none;display:flex;align-items:center;gap:6px;color:var(--muted);font-size:.9rem;font-variant-numeric:tabular-nums}
 .g-chip svg{width:11px;height:13px}
 .g-chip svg path{fill:var(--accent)}
@@ -1074,7 +1077,7 @@ body{
 <section class="game" id="game" hidden aria-label="Partida">
   <div class="game-in">
     <div class="g-top">
-      <button class="g-x" id="g-close" aria-label="Sair da partida e voltar ao lobby">×</button>
+      <button class="g-x" id="g-close" aria-label="Sair da partida e voltar ao lobby"><span class="g-x-ic" aria-hidden="true">←</span><span class="g-x-t">Sair</span></button>
       <span class="g-chip" title="Meta de hoje"><svg viewBox="0 0 16 18" aria-hidden="true"><path d="M8 0c1 3 4 4 5 8 1.4 5-1.6 10-5 10S1.6 14 3 9.5C4 7 6 6.5 6 4c1 1 2 2.5 2 4 1-2 1-5 0-8z"/></svg><span id="g-goal">0/20</span></span>
     </div>
     <div class="g-score"><span id="g-ok">0 certas</span><span id="g-left">0 restantes</span></div>
@@ -1595,6 +1598,27 @@ document.querySelectorAll(".bottom-nav .dock-action").forEach(button=>{
   button.addEventListener("click",()=>tab(button.dataset.view));
 });
 document.querySelectorAll(".exercise-back").forEach(b=>b.onclick=()=>tab("exercicios"));
+/* Botão voltar do celular: fecha a partida aberta ou volta à central, sem sair do app. */
+(function(){
+  let depth=0,selfNav=0;
+  const SUB=["train","frases","historias","list","quiz"];
+  const openGame=()=>[...document.querySelectorAll("section.game")].find(x=>!x.hidden);
+  const inSub=()=>SUB.some(n=>{const e=$("view-"+n);return e&&!e.hidden});
+  const level=()=>(inSub()?1:0)+(openGame()?1:0);
+  const sync=()=>{
+    const want=level();
+    while(depth<want){try{history.pushState({vb:depth+1},"")}catch(e){}depth++}
+    if(depth>want){const n=depth-want;depth=want;selfNav++;try{history.go(-n)}catch(e){selfNav--}}
+  };
+  window.addEventListener("popstate",()=>{
+    if(selfNav>0){selfNav--;return}
+    depth=Math.max(0,depth-1);
+    const g=openGame();
+    if(g){const b=g.querySelector(".g-x");if(b)b.click()}
+    else if(inSub())tab("exercicios");
+  });
+  new MutationObserver(()=>setTimeout(sync,0)).observe(document.body,{subtree:true,attributes:true,attributeFilter:["hidden"],childList:true});
+})();
 /* Idiomas: menu compacto; não altera a persistência de idioma existente. */
 function closeLangMenu(returnFocus=false){
   $("lang-menu").hidden=true;

@@ -126,7 +126,7 @@
     sec.className = "game sgame"; sec.id = "sgame"; sec.hidden = true; sec.setAttribute("aria-label", "História interativa");
     sec.innerHTML = `<div class="game-in">
       <div class="g-top">
-        <button class="g-x" id="sg-close" aria-label="Voltar à biblioteca (o progresso fica salvo)">×</button>
+        <button class="g-x" id="sg-close" aria-label="Voltar à biblioteca (o progresso fica salvo)"><span class="g-x-ic" aria-hidden="true">←</span><span class="g-x-t">Sair</span></button>
         <span class="sg-title" id="sg-title"></span>
         <button class="btn small sg-rbtn" id="sg-ratio" aria-haspopup="true" aria-expanded="false"></button>
       </div>

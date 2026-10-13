@@ -366,7 +366,7 @@
     sec.className = "game hgame"; sec.id = "hgame"; sec.hidden = true; sec.setAttribute("aria-label", "Partida de frases");
     sec.innerHTML = `<div class="game-in">
       <div class="g-top">
-        <button class="g-x" id="hg-close" aria-label="Sair da partida e voltar ao lobby">×</button>
+        <button class="g-x" id="hg-close" aria-label="Sair da partida e voltar ao lobby"><span class="g-x-ic" aria-hidden="true">←</span><span class="g-x-t">Sair</span></button>
         <span class="hg-prog" id="hg-prog" aria-live="polite"></span>
         <span class="hg-combo" id="hg-combo" aria-live="polite"></span>
         <span class="hg-xp" id="hg-xp"></span>
