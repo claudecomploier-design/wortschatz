@@ -19,6 +19,7 @@
   let cur = null;         // frase atual montada
   let opened = false;     // tradução aberta nesta frase
   let peeked = new Set(); // blocos tocados para tradução rápida
+  let quiz = null;        // teste da frase: {qs:[{ci,opts,ans,picked}], i, done, right, wrong}
   let loadedFor = null;
   let playing = false, ses = null;
   let K = "f";            // tipo da partida: "f" frases curtas, "t" parágrafos
@@ -220,9 +221,11 @@
     let base = (K === "t" ? 30 : 8) + nF * 3;
     if (opened) base = Math.round(base * 0.35);
     else base = Math.max(Math.round(base * 0.5), base - peeked.size * 2);
-    if (!opened) ses.combo++; else ses.combo = 0;
+    if (quiz) base += quiz.right * 4;
+    const broke = opened || (quiz && quiz.wrong > 0);
+    if (!broke) ses.combo++; else ses.combo = 0;
     ses.bestCombo = Math.max(ses.bestCombo, ses.combo);
-    const mult = opened ? 1 : 1 + Math.min(Math.max(ses.combo - 1, 0), 4) * 0.25;   // x1 a x2
+    const mult = broke ? 1 : 1 + Math.min(Math.max(ses.combo - 1, 0), 4) * 0.25;   // x1 a x2
     const gain = Math.round(base * mult);
     const before = lvlAt(XP.total);
     XP.total += gain; XP.days[today()] = (XP.days[today()] || 0) + gain;
@@ -254,10 +257,77 @@
   };
   const buzz = p => { try { navigator.vibrate && navigator.vibrate(p); } catch (e) {} };
 
+  const t = (k, d) => (typeof window.t === "function" ? window.t(k, d) : d);
+  /* ---------- teste de múltipla escolha ---------- */
+  const norm = t => clean(String(t || "")).toLowerCase().replace(/\s+/g, " ").trim();
+  let poolCache = { k: null, list: [] };
+  function glossPool(){
+    const k = lang + K;
+    if (poolCache.k === k) return poolCache.list;
+    const seen = new Set(), out = [];
+    [VB_FRASES[lang] || [], VB_TEXTOS[lang] || []].forEach(L => L.forEach(s => (s[3] || []).forEach(b => {
+      const p = clean(String(b[1] || "")).trim(); const key = p.toLowerCase();
+      if (p && !seen.has(key)) { seen.add(key); out.push(p); }
+    })));
+    poolCache = { k, list: out }; return out;
+  }
+  const wc = t => t.split(/\s+/).filter(Boolean).length;
+  function makeQuiz(c){
+    const cand = c.chunks.map((ch, i) => ({ ch, i }))
+      .filter(({ ch, i }) => (ch.foreign || c.allForeign) && ch.ids.length && !peeked.has(i) && norm(ch.fl) !== norm(ch.pt) && norm(ch.pt));
+    if (!cand.length) return null;
+    const isT = ch => ch.ids.some(id => c.targets.includes(id)) ? 1 : 0;
+    cand.sort((a, b) => isT(b.ch) - isT(a.ch) || wc(b.ch.fl) - wc(a.ch.fl));
+    const max = K === "t" ? 4 : 3;
+    const pick = cand.slice(0, max).sort((a, b) => a.i - b.i);
+    const pool = glossPool();
+    const inSent = new Set(c.chunks.map(ch => norm(ch.pt)));
+    const qs = pick.map(({ ch, i }) => {
+      const ans = clean(ch.pt).trim(), n = wc(ans), used = new Set([norm(ans)]);
+      const near = pool.filter(p => !used.has(p.toLowerCase()) && !inSent.has(p.toLowerCase()) && Math.abs(wc(p) - n) <= 1);
+      const far = pool.filter(p => !used.has(p.toLowerCase()) && !inSent.has(p.toLowerCase()));
+      const opts = [ans];
+      const src = near.length >= 6 ? near : far;
+      while (opts.length < 4 && src.length) {
+        const p = src.splice(Math.floor(Math.random() * src.length), 1)[0];
+        if (!used.has(p.toLowerCase())) { used.add(p.toLowerCase()); opts.push(p); }
+      }
+      for (let k = opts.length - 1; k > 0; k--) { const j = Math.floor(Math.random() * (k + 1)); [opts[k], opts[j]] = [opts[j], opts[k]]; }
+      return { ci: i, opts, ans: opts.indexOf(ans), picked: -1 };
+    });
+    return { qs, i: 0, done: false, right: 0, wrong: 0 };
+  }
+  function quizHTML(c){
+    if (!quiz || quiz.done) return "";
+    const q = quiz.qs[quiz.i], ch = c.chunks[q.ci];
+    return `<div class="hy-quiz" aria-live="polite">
+      <p class="hy-q-n">${t("hy.test","Teste")} ${quiz.i + 1} ${t("hy.of","de")} ${quiz.qs.length}</p>
+      <p class="hy-q">${t("hy.whatmeans","O que significa")} <b lang="${lang}">${esc(clean(ch.fl))}</b>?</p>
+      <div class="hy-opts">${q.opts.map((o, k) => {
+        const st = q.picked === -1 ? "" : k === q.ans ? " ok" : k === q.picked ? " bad" : " dim";
+        return `<button type="button" class="hy-opt${st}" data-opt="${k}"${q.picked !== -1 ? " disabled" : ""}>${esc(o)}</button>`;
+      }).join("")}</div>
+      <button type="button" class="hy-idk" id="hy-idk"${q.picked !== -1 ? " disabled" : ""}>${t("hy.idk","Não sei")}</button>
+    </div>`;
+  }
+  function answerQuiz(k){
+    const q = quiz.qs[quiz.i]; if (q.picked !== -1) return;
+    q.picked = k < 0 ? 99 : k;
+    const ok = k === q.ans;
+    if (ok) { quiz.right++; sfx.good(Math.max(1, ses ? ses.combo + 1 : 1)); buzz(15); }
+    else { quiz.wrong++; peeked.add(q.ci); sfx.help(); buzz([30, 40, 30]); if (ses) { ses.combo = 0; setHeat(0); } }
+    renderGame();
+    setTimeout(() => {
+      if (!quiz) return;
+      if (quiz.i + 1 < quiz.qs.length) quiz.i++; else quiz.done = true;
+      renderGame();
+    }, ok ? 650 : 1500);
+  }
+
   /* ---------- pedaços de tela ---------- */
   function sentenceHTML(c){
     return c.chunks.map((ch, i) => (ch.foreign || c.allForeign)
-      ? `<button type="button" class="hy-fl${!c.allForeign && ch.ids.some(id => c.targets.includes(id)) ? " hy-tg" : ""}${peeked.has(i) ? " hy-peeked" : ""}" data-ci="${i}" aria-label="Traduzir: ${esc(ch.fl)}">${esc(ch.fl)}</button>`
+      ? `<button type="button" class="hy-fl${!c.allForeign && ch.ids.some(id => c.targets.includes(id)) ? " hy-tg" : ""}${peeked.has(i) ? " hy-peeked" : ""}${quiz && !quiz.done && quiz.qs[quiz.i].ci === i ? " hy-ask" : ""}" data-ci="${i}" aria-label="Traduzir: ${esc(ch.fl)}">${esc(ch.fl)}</button>`
       : `<span class="hy-pt">${esc(ch.pt)}</span>`).join(" ")
       .replace(/ ([,.!?;:])/g, "$1");
   }
@@ -420,33 +490,44 @@
     const L = LANGS[lang].name.toLowerCase(), kd = KIND[K];
     topBar();
     if (ses.n >= ROUND()) { renderSummary(el); return; }
-    if (!cur) { cur = pick(); opened = false; peeked = new Set(); }
+    if (!cur) { cur = pick(); opened = false; peeked = new Set(); quiz = null; }
     if (!cur) { ses.n = ROUND(); renderSummary(el); return; }
     const last = ses.n + 1 >= ROUND();
+    const testing = quiz && !quiz.done, tested = quiz && quiz.done;
+    const showTr = opened || tested;
+    const canTest = !opened && !quiz && makeQuiz(cur) !== null;
+    const nextLbl = last ? t("hy.finish","Concluir") : K === "t" ? t("hy.nexttext","Próximo texto") : t("hy.nextsent","Próxima frase");
+    const resLine = tested ? (quiz.wrong ? `<p class="hy-qres bad">${quiz.right}/${quiz.qs.length} ${t("hy.right","certas")}. ${t("hy.backsoon","Os trechos que você errou voltam logo.")}</p>` : `<p class="hy-qres ok">${t("hy.allright","Acertou tudo!")} +${quiz.right * 4} XP ${t("hy.bonus","de bônus")}</p>`) : "";
     el.innerHTML = `
       <figure class="hy-stage${K === "t" ? " hy-para" : ""}${enter ? " hy-enter" : ""}">
         ${K === "t" ? `<p class="hy-theme">${esc(cur.theme)}</p>` : ""}
-        <blockquote class="hy-sent" lang="${lang}">${sentenceHTML(cur)}</blockquote>
-        ${peekHTML(cur)}
-        ${opened ? `<figcaption class="hy-trans"><p class="hy-full">${esc(cur.pt)}</p>${cur.allForeign ? "" : `<p class="hy-orig" lang="${lang}">${esc(cur.fl)}</p>`}${glossHTML(cur)}</figcaption>` : ""}
+        <blockquote class="hy-sent${testing ? " hy-testing" : ""}" lang="${lang}">${sentenceHTML(cur)}</blockquote>
+        ${testing || tested ? "" : peekHTML(cur)}
+        ${quizHTML(cur)}
+        ${resLine}
+        ${showTr ? `<figcaption class="hy-trans"><p class="hy-full">${esc(cur.pt)}</p>${cur.allForeign ? "" : `<p class="hy-orig" lang="${lang}">${esc(cur.fl)}</p>`}${glossHTML(cur)}</figcaption>` : ""}
       </figure>
-      <p class="hintline hy-tip">${opened ? (ses.combo > 0 ? "Combo zerado. Na próxima ele recomeça." : "") : "Toque num trecho em " + esc(L) + " para traduzir só ele." + (ses.combo > 0 ? " Abrir a tradução inteira zera o combo." : "")}</p>
+      <p class="hintline hy-tip">${testing ? t("hy.tip.test","Escolha o significado do trecho destacado. Errar zera o combo.") : opened ? (ses.combo > 0 ? t("hy.tip.lost","Combo zerado. Na próxima ele recomeça.") : "") : tested ? "" : t("hy.tip.read","Leia a frase e toque em Testar. Tocar num trecho mostra a tradução, mas ele sai do teste.")}</p>
       <div class="hy-actions">
-        ${opened ? "" : `<button class="btn" id="hy-show">Mostrar tradução</button>`}
-        <button class="btn ${opened ? "primary" : "hy-next"}" id="hy-next">${last ? "Concluir" : K === "t" ? "Próximo texto" : "Próxima frase"}</button>
-        <button class="btn small hy-say" id="hy-say" aria-label="Ouvir em ${esc(L)}">Ouvir</button>
+        ${testing ? "" : canTest ? `<button class="btn primary hy-next" id="hy-test">${t("hy.testbtn","Testar")}</button><button class="btn" id="hy-show">${t("hy.giveup","Não sei, mostrar tradução")}</button>`
+          : `${opened || tested ? "" : `<button class="btn" id="hy-show">${t("hy.show","Mostrar tradução")}</button>`}<button class="btn ${showTr ? "primary" : "hy-next"}" id="hy-next">${nextLbl}</button>`}
+        <button class="btn small hy-say" id="hy-say" aria-label="${t("hy.listen","Ouvir")}">${t("hy.listen","Ouvir")}</button>
       </div>`;
-    const sh = $("hy-show"); if (sh) sh.onclick = () => { opened = true; sfx.help(); renderGame(); };
-    $("hy-next").onclick = e => next(e.currentTarget);
+    const sh = $("hy-show"); if (sh) sh.onclick = () => { opened = true; quiz = null; sfx.help(); renderGame(); };
+    const tb = $("hy-test"); if (tb) tb.onclick = () => { quiz = makeQuiz(cur); renderGame(); };
+    const nb = $("hy-next"); if (nb) nb.onclick = e => next(e.currentTarget);
+    el.querySelectorAll("[data-opt]").forEach(b => b.onclick = () => answerQuiz(+b.dataset.opt));
+    const idk = $("hy-idk"); if (idk) idk.onclick = () => answerQuiz(-2);
     el.querySelectorAll(".hy-sent [data-ci]").forEach(b => b.onclick = () => {
+      if (quiz && !quiz.done) return;
       const i = +b.dataset.ci; if (peeked.has(i)) peeked.delete(i); else { peeked.add(i); sfx.peek(); } renderGame();
     });
     $("hy-say").onclick = () => speak(cur.fl);
   }
   function next(btn){
-    const wasOpened = opened;
+    const wasOpened = opened || !!(quiz && quiz.wrong);
     const r = commit();
-    cur = null; peeked = new Set(); opened = false;
+    cur = null; peeked = new Set(); opened = false; quiz = null;
     if (r) {
       floatXP(btn, r);
       if (wasOpened) sfx.help(); else sfx.good(r.combo);
@@ -604,7 +685,7 @@
     },
     lemmaInfo: id => (id in rank) ? CARDS[rank[id]] : null,
     /* para depuração e testes */
-    _state(){ return { H, cur, frontier: frontier(), ratio, ses }; },
+    _state(){ return { H, cur, frontier: frontier(), ratio, ses, quiz }; },
     _fam: id => ({ f: fam(id), stage: stage(fam(id)) })
   };
 })();

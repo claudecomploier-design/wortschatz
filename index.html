@@ -926,6 +926,21 @@ body{
 .lang-option[aria-pressed="true"] .lang-check{visibility:visible}
 @media(max-width:420px){.langs .lang-toggle{gap:5px;padding:7px 9px}.lang-globe svg{width:16px;height:16px}}
 @media(prefers-reduced-motion:reduce){.lang-chevron,.langs .lang-toggle{transition:none!important}}
+.hy-quiz{margin-top:16px;padding-top:14px;border-top:1px dashed var(--line);display:grid;gap:10px}
+.hy-q-n{margin:0;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.hy-q{margin:0;font-size:1.05rem}.hy-q b{color:var(--accent-hi)}
+.hy-opts{display:grid;gap:8px}
+.hy-opt{text-align:left;padding:12px 14px;border-radius:12px;border:2px solid var(--line);background:var(--surface);color:var(--fg);font:inherit;font-size:.98rem;cursor:pointer;transition:border-color .12s,background .12s}
+.hy-opt:hover:not(:disabled){border-color:var(--accent)}
+.hy-opt.ok{border-color:var(--good);background:color-mix(in srgb,var(--good) 18%,var(--surface))}
+.hy-opt.bad{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 18%,var(--surface));animation:hyShake .35s}
+.hy-opt.dim{opacity:.55}
+.hy-idk{justify-self:start;background:none;border:0;color:var(--muted);text-decoration:underline;font:inherit;font-size:.88rem;cursor:pointer;padding:4px 0}
+.hy-fl.hy-ask{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px;background:var(--accent-soft)}
+.hy-testing .hy-fl:not(.hy-ask){cursor:default}
+.hy-qres{margin:12px 0 0;font-weight:700}.hy-qres.ok{color:var(--good)}.hy-qres.bad{color:var(--bad)}
+@keyframes hyShake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+@media(prefers-reduced-motion:reduce){.hy-opt.bad{animation:none}}
 .xp-chip{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;background:color-mix(in srgb,#f2c14e 14%,var(--surface));border:1px solid color-mix(in srgb,#f2c14e 45%,transparent);color:#f6d27a;font-size:.78rem;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
 .xp-star{font-size:.9rem}.xp-bar{width:38px;height:5px;border-radius:9px;background:rgba(255,255,255,.12);overflow:hidden}.xp-bar i{display:block;height:100%;background:#f2c14e;border-radius:9px}
 .xp-row{margin:-6px 0 14px}
@@ -1730,7 +1745,7 @@ if("serviceWorker" in navigator){
 }
 </script>
 <script src="relatorio.js?v=1"></script>
-<script src="frases.js?v=7"></script>
+<script src="frases.js?v=8"></script>
 <script src="historias.js?v=2"></script>
 <script src="forja-acessorios.js?v=1"></script>
 <script src="forja-gato.js?v=1"></script>
