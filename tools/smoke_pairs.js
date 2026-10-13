@@ -43,6 +43,7 @@ const assert=require('node:assert/strict');
  assert(!(await page.locator('#pair-retry').count()),'vocab translation failed');
  assert((await page.locator('#train .prompt').textContent()).includes('[es|it]'),'vocab did not use base');
  await page.locator('#g-close').click();
+ await page.locator('#view-train .exercise-back').click();
  // phrases use base and verify quiz remains available
  await page.locator('[data-exercise="frases"]').click();
  await page.waitForSelector('#hy-play');await page.locator('#hy-play').click();
