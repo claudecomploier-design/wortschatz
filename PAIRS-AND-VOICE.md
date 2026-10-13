@@ -4,7 +4,7 @@ O aplicativo tem seis idiomas: alemão (de), italiano (it), francês (fr), ingl�
 
 ## O que é usado sem internet
 
-Depois que o site for aberto online e o service worker `vokabel-v35` terminar de instalar **todos os arquivos**, o aplicativo funciona sem conexão para:
+Depois que o site for aberto online e o service worker `vokabel-v36` terminar de instalar **todos os arquivos**, o aplicativo funciona sem conexão para:
 
 - As seis listas originais de vocabulário, frases, parágrafos e histórias.
 - Os **24 pacotes complementares** em `data/ov/<alvo>-<base>.js`, criados previamente, que armazenam a tradução das palavras, exemplos, frases, blocos de parágrafos e histórias para cada idioma-base alternativo.
