@@ -15,7 +15,7 @@ const assert=require("node:assert/strict");
   await page.goto("http://127.0.0.1:8765/",{waitUntil:"domcontentloaded"});
   await page.waitForFunction(async()=>{
    if(!navigator.serviceWorker?.controller)return false;
-   const cache=await caches.open("vokabel-v35");
+   const cache=await caches.open("vokabel-v36");
    const entries=await Promise.all([
     cache.match("pair.js?v=2"),
     cache.match("data/ov/de-en.js?v=1"),
