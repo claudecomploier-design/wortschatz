@@ -23,4 +23,5 @@ jobs:
             node tools/check_words.js "$lang"
             node tools/check_frases.js "$lang" frases
             node tools/check_frases.js "$lang" textos
+            node tools/check_historias.js --lang="$lang"
           done
