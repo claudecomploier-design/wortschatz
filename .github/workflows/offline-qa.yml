@@ -1,0 +1,39 @@
+name: Validar 30 idiomas offline
+on:
+  pull_request:
+    paths:
+      - 'data/ov/**'
+      - 'data/*.js'
+      - 'pair.js'
+      - 'frases.js'
+      - 'historias.js'
+      - 'sw.js'
+      - 'index.html'
+      - 'voice.js'
+      - 'tools/check_offline_packs.js'
+      - 'tools/smoke_offline_pairs.js'
+      - '.github/workflows/offline-qa.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  offline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify complete static packages
+        run: |
+          node tools/check_ui.js
+          node tools/check_offline_packs.js
+      - run: npm install --no-save playwright-core@1.56.1
+      - name: Verify no internet required after install
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/vb-http.log 2>&1 &
+          node tools/smoke_langs.js
+          node tools/smoke_offline_pairs.js

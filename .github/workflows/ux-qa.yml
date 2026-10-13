@@ -1,4 +1,4 @@
-name: Validar idiomas e voz
+name: Validar idiomas e voz offline
 on:
   push:
     branches: [melhorias-idiomas-voz-menu]
@@ -21,4 +21,4 @@ jobs:
         run: |
           python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/vb-http.log 2>&1 &
           node tools/smoke_langs.js
-          node tools/smoke_pairs.js
+          node tools/smoke_offline_pairs.js

@@ -171,15 +171,21 @@
     const show=()=>{built=scene.p.map(p=>HYB.para(p)||plainPara(p));opened=new Set();peeked=scene.p.map(()=>new Set());renderScene(anim)};
     if(window.VBPAIR&&!VBPAIR.isPrimary()){
       const known=VBPAIR.base(),current=scene,original=VBPAIR.primary(target);
-      $("sg-area").innerHTML='<div class="card"><p class="loading">Preparando cena em '+esc(LANGS[known].name)+'…</p></div>';
-      const jobs=[...scene.p.map(p=>VBPAIR.scene(p,target,known))];
-      if(scene.escolhas)scene.escolhas.forEach(e=>jobs.push(VBPAIR.translated(original,known,e.pt).then(txt=>{e.pt=txt;return true})));
-      Promise.all(jobs).then(ok=>{
+      $("sg-area").innerHTML='<div class="card"><p class="loading">Abrindo cena offline em '+esc(LANGS[known].name)+'…</p></div>';
+      VBPAIR.story(story.id,id,target,known).then(translated=>{
         if(!reading||lang!==target||VBPAIR.base()!==known||s.cena!==id||scene!==current)return;
-        if(!ok.every(Boolean))throw Error("Tradução incompleta");show();
+        if(translated.p.length!==scene.p.length||translated.e.length!==(scene.escolhas||[]).length)
+          throw Error("Cena offline incompleta");
+        scene.p.forEach((p,i)=>{
+          const [full,chunks]=translated.p[i];
+          if(!full||chunks.length!==p[2].length)throw Error("Blocos offline incompletos");
+          p[1]=full;p[2].forEach((ch,j)=>ch[1]=chunks[j]);
+        });
+        (scene.escolhas||[]).forEach((choice,i)=>{choice.pt=translated.e[i]});
+        show();
       }).catch(()=>{
         if(!reading||lang!==target||VBPAIR.base()!==known||scene!==current)return;
-        $("sg-area").innerHTML='<div class="card"><h2>Tradução indisponível</h2><p>O serviço gratuito não conseguiu traduzir esta cena. Tente novamente com internet.</p><button class="btn primary" id="st-translate-retry">Tentar outra vez</button></div>';
+        $("sg-area").innerHTML='<div class="card"><h2>Tradução indisponível</h2><p>O pacote de idiomas desta cena está ausente ou incompleto. Reinstale o conteúdo offline e tente novamente.</p><button class="btn primary" id="st-translate-retry">Tentar outra vez</button></div>';
         $("st-translate-retry").onclick=()=>enterScene(false);
       });
     }else show();

@@ -1,27 +1,36 @@
-# Aprender entre seis idiomas
+# Vokabel 1000: aprendizagem offline entre seis idiomas
 
-## O que foi implementado
-- Menu global **Eu sei → Aprender**. Todas as 30 combinações dirigidas entre **alemão, italiano, francês, inglês, espanhol e português** são selecionáveis.
-- Mantém os cartões, o progresso das frases híbridas e o progresso das histórias separados por alvo e, para pares fora da língua-base original, também por idioma de origem.
-- Para o par original, usa os dados editoriais do curso sem solicitar traduções externas.
-- Para pares alternativos, consulta o serviço público **MyMemory** por palavra, frase e bloco de história, conforme aparecem no estudo. Guarda traduções individualmente no navegador para reduzir requisições.
-- As frases do modo de teste usam somente respostas e alternativas já traduzidas para a língua de origem. O modo «Não sei» continua contando erro, e XP/combo continuam funcionando.
-- Nas histórias, texto e opções são traduzidos antes da cena ser exibida. Se o serviço não estiver disponível, um aviso substitui a tradução errada, com botão de tentar novamente.
-- Rótulos principais de navegação, método simplificado e dicas genéricas dos cartões aparecem no idioma de origem nos novos pares.
-- Os modos existentes, racha, XP, avatar e três cursos originais foram mantidos.
+O aplicativo tem seis idiomas: alemão (de), italiano (it), francês (fr), inglês (en), espanhol (es) e português (pt). Existem **30 combinações direcionais** de idioma conhecido e idioma aprendido.
 
-## Limitações importantes
-1. **A tradução automática de pares novos requer internet**, a menos que a mesma tradução tenha sido guardada anteriormente. O provedor gratuito pode limitar, bloquear ou interromper requisições. Sem acesso ao serviço, não existe conversão offline garantida das 30 combinações.
-2. As traduções não passaram por revisão humana e podem falhar com palavras polissêmicas, expressões idiomáticas, artigos e orações.
-3. A localização da interface abrange comandos essenciais, mas telas como relatório, ranking e opções secundárias ainda usam português.
-4. Conteúdos editoriais e mnemônicos originais estão completos principalmente para os pares iniciais (alemão, italiano, francês, inglês, espanhol com base portuguesa, e português com base inglesa). Os demais são derivados por tradução automática no momento do uso.
-5. O serviço MyMemory recebe somente o trecho solicitado e os códigos dos idiomas na URL HTTPS. Não coloque informações privadas nos exercícios. Não há conta nem senha conectada ao provedor.
-6. O áudio foi melhorado **sem API key**: o seletor em «Método» prioriza vozes de maior qualidade e opções online disponibilizadas pelo navegador, especialmente vozes Microsoft Natural no Edge. Na ausência dessas vozes, usa a voz disponível no dispositivo; portanto a naturalidade varia.
-7. No modo de vocabulário cruzado, o exemplo da carta é mostrado na língua estudada com tradução na língua conhecida; não exibe um exemplo híbrido antigo em português quando a base não é portuguesa. O minijogo separado Frases traduz os próprios blocos.
+## O que é usado sem internet
 
-## Validação
-`node tools/check_ui.js` e `node tools/smoke_langs.js`, `node tools/smoke_pairs.js` em Google Chrome/Playwright. Em `smoke_pairs.js`, o serviço de tradução é simulado para que todos os pares, cenas e testes sejam determinísticos. Isso **não comprova disponibilidade real ou precisão linguística do MyMemory**.
+Depois que o site for aberto online e o service worker `vokabel-v36` terminar de instalar **todos os arquivos**, o aplicativo funciona sem conexão para:
 
-## Serviços
-- https://mymemory.translated.net/doc/spec.php
-- https://learn.microsoft.com/en-us/deployedge/microsoft-edge-browser-policies/configureonlinetexttospeech
+- As seis listas originais de vocabulário, frases, parágrafos e histórias.
+- Os **24 pacotes complementares** em `data/ov/<alvo>-<base>.js`, criados previamente, que armazenam a tradução das palavras, exemplos, frases, blocos de parágrafos e histórias para cada idioma-base alternativo.
+- Revisões espaçadas, testes de compreensão, registro de XP, racha, ranking fictício e progresso local.
+- O uso de uma voz de leitura já **instalada no aparelho**. Uma voz escolhida manualmente como “requer internet” continuará dependendo da conexão, por escolha explícita da pessoa.
+
+Não existe chamada a MyMemory, LibreTranslate nem qualquer serviço de tradução online enquanto se estuda. O app não baixa modelos de tradução durante a sessão; consulta apenas pacotes JS estáticos incluídos na instalação.
+
+**Importante:** o primeiro acesso ao endereço GitHub Pages, a instalação ou atualização do app e o download de novas versões exigem conexão à internet. Para garantir que todos os 24 pacotes estejam disponíveis, o service worker só conclui a instalação quando todos os arquivos forem salvos no cache.
+
+## Como as traduções são geradas
+
+O arquivo `tools/generate_offline_pairs.py` executa [Argos Translate](https://github.com/argosopentech/argos-translate) durante o **processo de construção no GitHub Actions**, não no navegador. O gerador usa modelos gratuitos pt→en e en→alemão, espanhol, italiano ou francês, com tradução intermediária pelo inglês quando não há rota direta necessária.
+
+As traduções são geradas a partir dos textos originais do próprio curso e gravadas em `data/ov`. Seus dados vêm de `tools/export_translation_sources.js`. Os textos devem ser revistos linguisticamente: modelos automáticos podem confundir sinônimos, contextos, tempos verbais, gênero e pontuação.
+
+## Armazenamento e privacidade
+
+O conteúdo do idioma é um arquivo estático no GitHub Pages. Progresso, XP e racha continuam guardados localmente no navegador. Não é necessário cadastrar usuário num servidor externo de tradução. Limpar os dados do navegador pode apagar o progresso e os pacotes em cache.
+
+As vozes locais dependem do sistema operacional e podem soar menos naturais do que uma voz neural online opcional. O modo automático prioriza as vozes locais. O app usa apenas o mecanismo de fala que o navegador disponibiliza, sem servidor de áudio do projeto.
+
+## Testes
+
+- `node tools/check_offline_packs.js`: exige todos os 24 arquivos, confere contagens, blocos e cenas.
+- `node tools/smoke_langs.js`: verifica os seis idiomas originais.
+- `node tools/smoke_offline_pairs.js`: instala o PWA, **desativa a internet no Chrome** e verifica os 30 pares e o carregamento de jogos reais com pacotes locais.
+
+A validação sintática e a navegação não equivalem a uma revisão humana das traduções.
