@@ -3,6 +3,7 @@ on:
   pull_request:
     paths:
       - 'data/ov/**'
+      - 'data/*.js'
       - 'pair.js'
       - 'frases.js'
       - 'historias.js'
