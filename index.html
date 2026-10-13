@@ -908,12 +908,14 @@ body{
 .lang-chevron{width:14px;height:14px;color:var(--muted);transition:transform .18s}
 .lang-toggle[aria-expanded="true"] .lang-chevron{transform:rotate(180deg)}
 .lang-menu{
-  position:absolute;z-index:80;top:calc(100% + 8px);left:0;
-  width:max-content;min-width:200px;max-width:calc(100vw - 24px);
-  padding:6px;display:grid;gap:2px;
+  position:fixed;z-index:1000;inset:auto;left:12px;top:65px;
+  box-sizing:border-box;width:234px;max-width:calc(100vw - 24px);max-height:min(440px,calc(100dvh - 24px));
+  padding:7px;display:grid;gap:3px;overflow-y:auto;overscroll-behavior:contain;
   border:1px solid var(--line);border-radius:14px;
   background:#222e3c;box-shadow:0 15px 35px rgba(0,0,0,.35);
 }
+.lang-option span:first-child{min-width:0;overflow-wrap:anywhere;white-space:normal;flex:1;}
+.lang-menu .lang-option{width:100%;max-width:100%;box-sizing:border-box;min-height:43px}
 .lang-menu[hidden]{display:none!important}
 .langs .lang-option{
   display:flex;align-items:center;justify-content:space-between;gap:20px;white-space:nowrap;
@@ -1686,13 +1688,19 @@ function closeLangMenu(returnFocus=false){
 }
 /* mantém o menu inteiro dentro da tela, para qualquer posição do botão */
 function fitLangMenu(){
-  const m=$("lang-menu"),pad=12;
-  m.style.left="0";m.style.right="auto";
-  const r=m.getBoundingClientRect(),vw=document.documentElement.clientWidth;
-  let shift=0;
-  if(r.right>vw-pad)shift=(vw-pad)-r.right;
-  if(r.left+shift<pad)shift=pad-r.left;
-  m.style.left=shift+"px";
+  const m=$("lang-menu"),button=$("lang-toggle"),pad=12;
+  const vw=document.documentElement.clientWidth,vh=window.innerHeight;
+  const anchor=button.getBoundingClientRect();
+  m.style.width=Math.min(234,Math.max(140,vw-2*pad))+"px";
+  m.style.maxHeight=Math.max(125,vh-2*pad)+"px";
+  const mw=m.getBoundingClientRect().width;
+  m.style.left=Math.max(pad,Math.min(anchor.right-mw,vw-pad-mw))+"px";
+  const menuH=m.scrollHeight+16;
+  const spaceBelow=vh-anchor.bottom-pad-8;
+  const spaceAbove=anchor.top-pad-8;
+  const placeAbove=menuH>spaceBelow&&spaceAbove>spaceBelow;
+  m.style.maxHeight=Math.max(100,Math.min(440,placeAbove?spaceAbove:spaceBelow))+"px";
+  m.style.top=(placeAbove?Math.max(pad,anchor.top-Math.min(menuH,spaceAbove)-8):Math.min(vh-pad,anchor.bottom+8))+"px";
 }
 window.addEventListener("resize",()=>{if(!$("lang-menu").hidden)fitLangMenu()});
 function openLangMenu(focusOption=false){
