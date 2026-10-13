@@ -146,7 +146,30 @@ de:"<h2>Lerne in deiner Sprache</h2><p>Die Übersetzungspakete sind bereits für
 function methodHTML(target){
  return '<section>'+METHOD[base]+'</section><section><h2>'+NAME(base)+' → '+NAME(target)+'</h2><p>Offline-Übersetzung / Offline translations / Traduções offline: open-source Argos Translate. Bundled content; no online translation requests during lessons.</p></section>';
 }
-window.VBPAIR={base:()=>base,primary:defaults,isPrimary,setBase,allowedTarget,load,card,built,story,restoreCards,glossary,clearErrors,name:NAME,msg,applyUI,decorateCard,methodHTML};
+async function offlineStatus(){
+ const languages=["de","it","fr","en","es","pt"],need=[];
+ for(const target of languages)for(const known of languages)
+  if(known!==target&&known!==defaults(target))need.push("data/ov/"+target+"-"+known+".js?v=1");
+ try{
+  const names=await caches.keys();
+  if(!names.includes("vokabel-v35"))return {ready:false,done:0,total:need.length};
+  const cache=await caches.open("vokabel-v35");
+  let done=0;
+  for(const item of need)if(await cache.match(item))done++;
+  return {ready:done===need.length,done,total:need.length};
+ }catch(e){return {ready:false,done:0,total:need.length}}
+}
+async function renderOfflineStatus(){
+ const root=document.getElementById("offline-status");if(!root)return;
+ root.textContent="Verificando pacotes offline…";
+ const status=await offlineStatus();
+ const ok=status.ready;
+ root.innerHTML='<section><h2>'+(ok?"✓ ":"")+ "Conteúdo offline" +
+  '</h2><p class="hintline">'+(ok?"Os "+status.total+" pacotes complementares estão salvos neste navegador. Você pode usar os 30 pares de idiomas sem conexão.":"Pacotes complementares instalados: "+status.done+" de "+status.total+". Conecte-se à internet e recarregue o aplicativo para terminar a instalação.")+
+  '</p><button type="button" class="btn small" id="offline-recheck">Verificar novamente</button></section>';
+ const b=document.getElementById("offline-recheck");if(b)b.onclick=renderOfflineStatus;
+}
+window.VBPAIR={base:()=>base,primary:defaults,isPrimary,setBase,allowedTarget,load,card,built,story,restoreCards,glossary,clearErrors,name:NAME,msg,applyUI,decorateCard,methodHTML,offlineStatus,renderOfflineStatus};
 allowedTarget(lang);
 if(typeof setLang==="function")setLang(lang);
 applyUI();
