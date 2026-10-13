@@ -1396,6 +1396,7 @@ function setLang(l){
   $("lang-toggle").setAttribute("aria-label","Idiomas. Atual: "+LANGS[l].name+". Selecionar idioma");
   document.querySelectorAll(".lcode").forEach(e=>e.textContent=LANGS[l].code);
   if($("base-language"))$("base-language").title="Idioma que você conhece: "+LANGS[window.VBPAIR?VBPAIR.base():(l==="pt"?"en":"pt")].name;
+  if(window.VBPAIR)VBPAIR.applyUI();
   $("lobby").innerHTML='<div class="loading">Carregando palavras...</div>';
   loadLang(l,()=>{
     if(lang!==l)return; // Ignora respostas antigas ao trocar rapidamente de idioma.
@@ -1541,6 +1542,7 @@ function renderTrain(){
     pre=`<div class="cloze">${sent}<button class="btn small hintbtn" id="hint"${hinted?" disabled":""}>${hinted?`Começa com “${esc(first)}”`:"Dica: primeira letra"}</button></div>`;
   }
   el.innerHTML=`<div class="card"><div class="card-top"><span class="pill">Nível ${cur.lv}</span><span class="pill">${free?"Treino livre":isNew?"Palavra nova":"Revisão"}</span></div>${front}${pre}${revealed?back:`<button class="btn primary" id="reveal">Mostrar resposta</button>`}</div>`;
+  if(window.VBPAIR&&!VBPAIR.isPrimary())VBPAIR.decorateCard(el);
   if(!revealed){$("reveal").onclick=()=>{revealed=true;renderTrain();if(dir==="pt")speak(full(cur))};$("hint").onclick=()=>{hinted=true;renderTrain()}}
   else{$("say-w").onclick=()=>speak(full(cur));const se=$("say-e");if(se)se.onclick=()=>speak(hx?hx.fl:cur.ex);
     el.querySelectorAll("[data-r]").forEach(b=>b.onclick=()=>grade(+b.dataset.r))}
