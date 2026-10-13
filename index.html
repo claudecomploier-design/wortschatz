@@ -905,15 +905,15 @@ body{
 .lang-chevron{width:14px;height:14px;color:var(--muted);transition:transform .18s}
 .lang-toggle[aria-expanded="true"] .lang-chevron{transform:rotate(180deg)}
 .lang-menu{
-  position:absolute;z-index:80;top:calc(100% + 8px);right:0;
-  width:max-content;min-width:190px;max-width:min(280px,calc(100vw - 32px));
+  position:absolute;z-index:80;top:calc(100% + 8px);left:0;
+  width:max-content;min-width:200px;max-width:calc(100vw - 24px);
   padding:6px;display:grid;gap:2px;
   border:1px solid var(--line);border-radius:14px;
   background:#222e3c;box-shadow:0 15px 35px rgba(0,0,0,.35);
 }
 .lang-menu[hidden]{display:none!important}
 .langs .lang-option{
-  display:flex;align-items:center;justify-content:space-between;gap:20px;
+  display:flex;align-items:center;justify-content:space-between;gap:20px;white-space:nowrap;
   padding:11px 12px;border:0;border-radius:9px;background:transparent;
   color:var(--fg);text-align:left;font-size:.87rem;cursor:pointer;
 }
@@ -1601,9 +1601,21 @@ function closeLangMenu(returnFocus=false){
   $("lang-toggle").setAttribute("aria-expanded","false");
   if(returnFocus)$("lang-toggle").focus();
 }
+/* mantém o menu inteiro dentro da tela, para qualquer posição do botão */
+function fitLangMenu(){
+  const m=$("lang-menu"),pad=12;
+  m.style.left="0";m.style.right="auto";
+  const r=m.getBoundingClientRect(),vw=document.documentElement.clientWidth;
+  let shift=0;
+  if(r.right>vw-pad)shift=(vw-pad)-r.right;
+  if(r.left+shift<pad)shift=pad-r.left;
+  m.style.left=shift+"px";
+}
+window.addEventListener("resize",()=>{if(!$("lang-menu").hidden)fitLangMenu()});
 function openLangMenu(focusOption=false){
   $("lang-menu").hidden=false;
   $("lang-toggle").setAttribute("aria-expanded","true");
+  fitLangMenu();
   if(focusOption){
     const selected=document.querySelector('.lang-option[aria-pressed="true"]');
     if(selected)selected.focus();
