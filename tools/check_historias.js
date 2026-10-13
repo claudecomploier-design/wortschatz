@@ -1,17 +1,19 @@
 // Uso: node tools/check_historias.js <arquivo.js> [<arquivo2.js> ...]   (padrão: data/historias-de.js)
 // Valida estrutura (cenas, escolhas, finais, alcance, ciclos) e os parágrafos híbridos (blocos e lemas).
 const fs = require("fs"), vm = require("vm");
-const files = process.argv.slice(2); if (!files.length) files.push("data/historias-de.js");
-const ctx = { window: {} }; ctx.window.VB_DATA = {}; ctx.window.VB_HIST = { de: [] };
+// Outras línguas: node tools/check_historias.js --lang=en tools/hist-src-en/<id>.js
+const args = process.argv.slice(2), LG = (args.find(a => a.startsWith("--lang=")) || "--lang=de").slice(7);
+const files = args.filter(a => !a.startsWith("--")); if (!files.length) files.push(`data/historias-${LG}.js`);
+const ctx = { window: {} }; ctx.window.VB_DATA = {}; ctx.window.VB_HIST = { [LG]: [] };
 ctx.VB_DATA = ctx.window.VB_DATA; ctx.VB_HIST = ctx.window.VB_HIST;
-vm.runInNewContext(fs.readFileSync("data/de.js", "utf8"), ctx);
+vm.runInNewContext(fs.readFileSync(`data/${LG}.js`, "utf8"), ctx);
 files.forEach(f => vm.runInNewContext(fs.readFileSync(f, "utf8"), ctx));
-const rank = {}; ctx.VB_DATA.de.forEach((r, i) => rank[r[0]] = i);
+const rank = {}; ctx.VB_DATA[LG].forEach((r, i) => rank[r[0]] = i);
 const norm = t => t.replace(/\s+/g, " ").replace(/ ([,.!?;:])/g, "$1").trim();
 const GEN = ["Mistério", "Viagem", "Cotidiano", "Relações", "Suspense", "Trabalho", "Ficção científica", "Sobrevivência"];
 let bad = 0; const err = (s, m) => { console.log(`[${s}] ${m}`); bad++; };
 const ids = new Set();
-for (const h of ctx.VB_HIST.de) {
+for (const h of ctx.VB_HIST[LG]) {
   const S = h.id || "?";
   if (ids.has(h.id)) err(S, "id repetido"); ids.add(h.id);
   for (const k of ["id", "titulo", "genero", "nivel", "desc", "inicio", "cenas"]) if (!h[k]) err(S, `falta ${k}`);
@@ -43,7 +45,7 @@ for (const h of ctx.VB_HIST.de) {
     } else {
       if (E.length < 2 || E.length > 3) err(T, `precisa de 2 ou 3 escolhas (tem ${E.length})`);
       E.forEach((e, ei) => {
-        if (!e.pt || !e.de) err(T, `escolha ${ei} sem pt/de`);
+        if (!e.pt || !(e.fl || e.de)) err(T, `escolha ${ei} sem pt/fl`);
         if (!C[e.ir]) err(T, `escolha ${ei} vai para cena inexistente ${e.ir}`);
         if (e.marca) flagsSet.add(e.marca); if (e.req) flagsUsed.add(e.req); if (e.sem) flagsUsed.add(e.sem);
       });

@@ -1138,9 +1138,12 @@ body{
 const LANGS={
   de:{name:"Alemão",code:"DE",voice:"de-DE",arts:{m:"der",f:"die",n:"das"}},
   it:{name:"Italiano",code:"IT",voice:"it-IT"},
-  fr:{name:"Francês",code:"FR",voice:"fr-FR"}
+  fr:{name:"Francês",code:"FR",voice:"fr-FR"},
+  en:{name:"Inglês",code:"EN",voice:"en-US"},
+  es:{name:"Espanhol",code:"ES",voice:"es-MX"},
+  pt:{name:"Português",code:"PT",voice:"pt-BR",primary:"en"}
 };
-const TYPES={EN:"Inglês",PT:"Português",ES:"Espanhol",IT:"Italiano",FR:"Francês",LA:"Latim",CA:"Catalão",DE:"Alemão",SOM:"Som PT",IMG:"Imagem",REGRA:"Regra",FALSO:"Falso amigo",ONO:"Onomatopeia",PAD:"Padrão",FRASE:"Frase famosa"};
+const TYPES={NOME:"Nome famoso",EN:"Inglês",PT:"Português",ES:"Espanhol",IT:"Italiano",FR:"Francês",LA:"Latim",CA:"Catalão",DE:"Alemão",SOM:"Som PT",IMG:"Imagem",REGRA:"Regra",FALSO:"Falso amigo",ONO:"Onomatopeia",PAD:"Padrão",FRASE:"Frase famosa"};
 const LEVEL=50, GOAL=20, NEW_DEFAULT=10, INTERVALS=[0,1,3,7,16,35], DAY=864e5;
 window.VB_DATA=window.VB_DATA||{};
 
@@ -1168,6 +1171,8 @@ function article(w,g){
   const v=/^[aeiouàâäéèêëíìîïóòôöúùûüœæh]/i.test(w);
   if(lang==="it"){if(g==="f")return /^[aeiouàéèìòù]/i.test(w)?"l'":"la";if(/^[aeiouàéèìòù]/i.test(w))return "l'";if(/^(s[^aeiou]|z|gn|ps|x|y|pn)/i.test(w))return "lo";return "il"}
   if(lang==="fr"){if(v)return "l'";return g==="f"?"la":"le"}
+  if(lang==="es")return g==="f"?"la":g==="m"?"el":"";
+  if(lang==="pt")return g==="f"?"a":g==="m"?"o":"";
   return "";
 }
 /* frase de contexto: a frase de exemplo com a palavra faltando */
@@ -1175,8 +1180,11 @@ function normW(x){return x.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"")
 function lev(a,b){const d=[];for(let i=0;i<=a.length;i++){d[i]=[i];for(let j=1;j<=b.length;j++)d[i][j]=i?Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1)):j}return d[a.length][b.length]}
 const STOPW={de:"ich du er sie es wir ihr man der die das den dem des ein eine einen einem einer nicht und mir dich mich dir uns euch noch was wie wo wann bitte",
   it:"io tu lui lei noi voi loro il lo la i gli le un una uno di a da in con su per non e mi ti ci si vi che",
-  fr:"je tu il elle on nous vous ils elles le la les un une des de du au aux en et ne pas me te se y que qu ce"};
-const ARTS={de:"der die das den dem des ein eine einen einem einer eines",it:"il lo la l i gli le un una uno",fr:"le la l les un une"};
+  fr:"je tu il elle on nous vous ils elles le la les un une des de du au aux en et ne pas me te se y que qu ce",
+  en:"i you he she it we they the a an of to in on at for and not is are am my your me him her us them this that do does",
+  es:"yo tú él ella nosotros vosotros ellos ellas el la los las un una unos unas de del a al en con por para y no me te se le lo nos que",
+  pt:"eu você ele ela nós eles elas o a os as um uma de do da dos das em no na com por para e não me te se lhe que"};
+const ARTS={de:"der die das den dem des ein eine einen einem einer eines",it:"il lo la l i gli le un una uno",fr:"le la l les un une",en:"the a an",es:"el la los las un una",pt:"o a os as um uma"};
 /* verbos irregulares e separáveis: qual palavra apagar na frase */
 const CLOZE_FIX={
   de:{sein:["bin"],geben:["Gib"],mal:["mal"],anfangen:["fängst","an"],essen:["isst"],"mögen":["mag"],ankommen:["kommst","an"],anrufen:["rufe","an"],anziehen:["ziehe","an"],umziehen:["ziehen","um"],zumachen:["Mach","zu"],abholen:["hole","ab"],retten:["gerettet"],brechen:["gebrochen"],ablehnen:["lehnt","ab"],annehmen:["nehme","an"],abfahren:["fährt","ab"],"töten":["getötet"],Saft:["saft"]},
@@ -1346,6 +1354,7 @@ function addActivity(){
   }
 }
 /* ===== dados ===== */
+function loadData(src,ok,fail){const s=document.createElement("script");s.src=src;s.onload=ok;s.onerror=fail||(()=>{});document.head.appendChild(s)}
 function loadLang(l,cb){
   if(VB_DATA[l])return cb();
   const s=document.createElement("script");s.src=`data/${l}.js?v=4`;s.onload=cb;
@@ -1535,32 +1544,8 @@ function renderMethod(){
     <li><b>Seja honesto na nota.</b> Errei volta na hora, Difícil volta amanhã, Sabia volta em 1, 3, 7, 16 e 35 dias.</li>
     <li><b>Meta diária: ${GOAL} cartas.</b> Bater a meta mantém a sequência de dias. Novas: 10 por dia por padrão, libere mais quando quiser.</li>
     <li><b>Substantivo sempre com artigo e cor.</b></li></ol></section>`;
-  const de=`<section><h2>Atalho: o alemão é primo do inglês</h2><p>Cinco trocas de som explicam centenas de palavras:</p><div class="tbl"><table><thead><tr><th>Inglês</th><th>Alemão</th><th>Exemplos</th></tr></thead><tbody>
-    <tr><td class="mono">th</td><td class="mono">d</td><td>that → dass, then → dann, through → durch, thing → Ding</td></tr>
-    <tr><td class="mono">t</td><td class="mono">z / ss</td><td>two → zwei, time → Zeit, water → Wasser, what → was</td></tr>
-    <tr><td class="mono">d</td><td class="mono">t</td><td>day → Tag, good → gut, under → unter, word → Wort</td></tr>
-    <tr><td class="mono">v / f</td><td class="mono">b</td><td>have → haben, give → geben, live → leben</td></tr>
-    <tr><td class="mono">p</td><td class="mono">f / pf</td><td>ship → Schiff, apple → Apfel, open → offen</td></tr>
-    <tr><td class="mono">k</td><td class="mono">ch</td><td>make → machen, book → Buch, week → Woche</td></tr></tbody></table></div></section>
-    <section><h2>Gênero</h2><div class="gbox"><div style="background:var(--m-bg)"><b class="g-m">der</b>masculino, azul</div><div style="background:var(--f-bg)"><b class="g-f">die</b>feminino e plural, vermelho</div><div style="background:var(--n-bg)"><b class="g-n">das</b>neutro, verde</div></div>
-    <p>Verbo virado substantivo é <b class="g-n">das</b> (das Leben). Final -ung, -heit, -keit, -schaft, -ion é <b class="g-f">die</b>. Final -chen e -lein é <b class="g-n">das</b>. Dias, meses e estações são <b class="g-m">der</b>.</p></section>`;
-  const it=`<section><h2>Atalho: italiano é quase português</h2><ul>
-    <li><b>Mais de 70% das palavras têm parente direto</b> em português ou espanhol. O gancho mostra o parente e a troca de som.</li>
-    <li><b>-ção vira -zione:</b> nação → nazione, informação → informazione.</li>
-    <li><b>-dade vira -tà:</b> cidade → città, verdade → verità, liberdade → libertà.</li>
-    <li><b>pl/cl/fl viram pi/chi/fi:</b> pleno → pieno, chave → chiave, flor → fiore, praça → piazza.</li>
-    <li><b>Consoante dobrada se pronuncia mais longa:</b> fato → fatto, ano → anno (e anno é diferente de ano!).</li></ul></section>
-    <section><h2>Gênero</h2><div class="gbox"><div style="background:var(--m-bg)"><b class="g-m">il / lo / l'</b>masculino, azul</div><div style="background:var(--f-bg)"><b class="g-f">la / l'</b>feminino, vermelho</div></div>
-    <p>Final -o quase sempre é masculino, -a quase sempre feminino. Final -e pode ser os dois: decore pela cor. "Lo" vem antes de s+consoante e z (lo studente, lo zio).</p></section>`;
-  const fr=`<section><h2>Atalho: francês escreve como latim e fala encurtado</h2><ul>
-    <li><b>A escrita entrega o parente:</b> table, porte, temps (tempo), mer (mar). A dificuldade é a pronúncia, por isso ouça sempre.</li>
-    <li><b>Letras finais quase nunca soam:</b> petit = "ptí", vous = "vu", grand = "grã".</li>
-    <li><b>Acento circunflexo marca um S que caiu:</b> forêt → floresta, hôpital → hospital, fête → festa.</li>
-    <li><b>-ção vira -tion, -dade vira -té:</b> nation, liberté, vérité.</li>
-    <li><b>Falsos amigos são poucos, mas perigosos:</b> eles vêm marcados como "Falso amigo".</li></ul></section>
-    <section><h2>Gênero</h2><div class="gbox"><div style="background:var(--m-bg)"><b class="g-m">le / l'</b>masculino, azul</div><div style="background:var(--f-bg)"><b class="g-f">la / l'</b>feminino, vermelho</div></div>
-    <p>Diante de vogal ou h mudo o artigo vira l', e aí só a cor mostra o gênero. Final -tion, -té, -ure costuma ser feminino; -ment, -age costuma ser masculino. Atenção: la mer, le lait, la fleur são diferentes do português.</p></section>`;
-  $("method").innerHTML=common+({de,it,fr})[lang];
+  $("method").innerHTML=common+(window.VB_METODO&&VB_METODO[lang]||"");
+  if(!window.VB_METODO||!VB_METODO[lang])loadData(`data/metodo-${lang}.js?v=1`,()=>{if(VB_METODO[lang])renderMethod()});
 }
 
 /* ===== eventos ===== */
