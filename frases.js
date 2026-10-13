@@ -33,13 +33,14 @@
   const ratioName = r => r === "auto" ? "Automático" : `${r}%`;
   function ratioDesc(r){
     const L = LANGS[lang].name.toLowerCase();
-    return r === "auto" ? `O app decide pelo seu nível: começa quase tudo em português e vai trocando por ${L} conforme você aprende.`
+    const baseLang=window.VBPAIR?LANGS[VBPAIR.base()].name.toLowerCase():(lang==="pt"?"inglês":"português");
+    return r === "auto" ? `O app decide pelo seu nível: começa quase tudo em ${baseLang} e vai trocando por ${L} conforme você aprende.`
       : r === 100 ? `Frases inteiras em ${L}. Toque num trecho para traduzir.`
-      : `Cerca de ${r}% de cada frase em ${L} e ${100 - r}% em português.`;
+      : `Cerca de ${r}% de cada frase em ${L} e ${100 - r}% em ${baseLang}.`;
   }
 
   /* ---------- estado ---------- */
-  const key = () => "vb-hyb-" + lang;
+  const key = () => "vb-hyb-" + lang + ((window.VBPAIR&&!VBPAIR.isPrimary())?"-"+VBPAIR.base():"");
   function load(){
     H = store.get(key(), null) || { tick: 0, w: {}, s: {}, log: [], recent: [] };
     rank = {}; CARDS.forEach((c, i) => { rank[c.id] = i; });
@@ -280,7 +281,9 @@
     cand.sort((a, b) => isT(b.ch) - isT(a.ch) || wc(b.ch.fl) - wc(a.ch.fl));
     const max = K === "t" ? 4 : 3;
     const pick = cand.slice(0, max).sort((a, b) => a.i - b.i);
-    const pool = glossPool();
+    const pool = (window.VBPAIR&&!VBPAIR.isPrimary())
+      ? [...new Set([...c.chunks.map(ch=>clean(ch.pt)),...VBPAIR.glossary()].filter(Boolean))]
+      : glossPool();
     const inSent = new Set(c.chunks.map(ch => norm(ch.pt)));
     const qs = pick.map(({ ch, i }) => {
       const ans = clean(ch.pt).trim(), n = wc(ans), used = new Set([norm(ans)]);
@@ -295,7 +298,7 @@
       for (let k = opts.length - 1; k > 0; k--) { const j = Math.floor(Math.random() * (k + 1)); [opts[k], opts[j]] = [opts[j], opts[k]]; }
       return { ci: i, opts, ans: opts.indexOf(ans), picked: -1 };
     });
-    return { qs, i: 0, done: false, right: 0, wrong: 0 };
+    return qs.some(q=>q.opts.length<2)?null:{ qs, i: 0, done: false, right: 0, wrong: 0 };
   }
   function quizHTML(c){
     if (!quiz || quiz.done) return "";
@@ -409,7 +412,7 @@
       <div class="card start hy-lobby">
         <div class="hy-lb-head"><h2>Frases em ${esc(L)}</h2>${soundBtn("hy-snd-l")}</div>
         ${levelHTML()}
-        <p class="hintline">Leia textos que misturam português e ${esc(L)}. Entenda pelo contexto e siga sem abrir a tradução para manter o combo e multiplicar o XP.</p>
+        <p class="hintline">Leia textos que misturam ${esc(window.VBPAIR?LANGS[VBPAIR.base()].name.toLowerCase():"português")} e ${esc(L)}. Entenda pelo contexto e siga sem abrir a tradução para manter o combo e multiplicar o XP.</p>
         <div class="hy-modes">
           <button type="button" class="hy-mode" id="hy-play"><b>${KIND.f.name}</b><span>${KIND.f.desc}</span><em>Jogar</em></button>
           ${hasT ? `<button type="button" class="hy-mode hy-mode-t" id="hy-play-t"><b>${KIND.t.name}</b><span>${KIND.t.desc}</span><em>Jogar</em></button>` : ""}
@@ -492,6 +495,21 @@
     if (ses.n >= ROUND()) { renderSummary(el); return; }
     if (!cur) { cur = pick(); opened = false; peeked = new Set(); quiz = null; }
     if (!cur) { ses.n = ROUND(); renderSummary(el); return; }
+    if(window.VBPAIR&&!VBPAIR.isPrimary()){
+      const current=cur,target=lang,known=VBPAIR.base(),signature=target+":"+known;
+      if(cur._pair!==signature){
+        if(cur._pairError){
+          el.innerHTML='<div class="card"><h2>Tradução temporariamente indisponível</h2><p>O serviço gratuito não respondeu. Não exibiremos uma mistura com o idioma errado.</p><button class="btn primary" id="hy-translation-retry">Tentar novamente</button></div>';
+          $("hy-translation-retry").onclick=()=>{VBPAIR.clearErrors();current._pairError=false;renderGame()};return;
+        }
+        el.innerHTML='<div class="card"><p class="loading">Traduzindo esta atividade para '+esc(LANGS[known].name)+'…</p><p class="hintline">Primeira utilização do par de idiomas requer internet.</p></div>';
+        if(!cur._pairLoading){cur._pairLoading=true;VBPAIR.built(current,target,known).then(ok=>{
+          if(!playing||cur!==current||lang!==target||VBPAIR.base()!==known)return;
+          current._pairLoading=false;current._pairError=!ok;renderGame();
+        })}
+        return;
+      }
+    }
     const last = ses.n + 1 >= ROUND();
     const testing = quiz && !quiz.done, tested = quiz && quiz.done;
     const showTr = opened || tested;
