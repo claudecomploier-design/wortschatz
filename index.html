@@ -1111,7 +1111,7 @@ body{
   </main>
   <main id="view-amigos" hidden><section id="cm-friends-root" aria-live="polite"></section></main>
   <main id="view-avatar" hidden><section id="cm-avatar-root" aria-live="polite"></section></main>
-  <main id="view-method" hidden><div class="method" id="method"></div><div class="method"><section id="voice-settings" aria-label="Configurar voz"></section></div></main>
+  <main id="view-method" hidden><div class="method" id="offline-status" aria-live="polite"></div><div class="method" id="method"></div><div class="method"><section id="voice-settings" aria-label="Configurar voz"></section></div></main>
 </div>
 
 <section class="game" id="game" hidden aria-label="Partida">
@@ -1603,6 +1603,7 @@ function renderMethod(){
   const cross=window.VBPAIR&&!VBPAIR.isPrimary(lang);
   $("method").innerHTML=cross?VBPAIR.methodHTML(lang):(methodIntro+(window.VB_METODO&&VB_METODO[lang]||""));
   if(window.VBTTS)VBTTS.mount();
+  if(window.VBPAIR)VBPAIR.renderOfflineStatus();
   if(!cross&&(!window.VB_METODO||!VB_METODO[lang]))loadData(`data/metodo-${lang}.js?v=1`,()=>{if(VB_METODO[lang])renderMethod()});
 }
 
