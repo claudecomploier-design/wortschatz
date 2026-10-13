@@ -1,0 +1,33 @@
+name: Validar expansão de idiomas
+on:
+  push:
+    branches: [conteudo-en-es-pt-lote-inicial]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validar-conteudo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Conferir lotes
+        run: node tools/check_expansion_draft.js
+      - name: Validar frases e parágrafos
+        run: |
+          for lang in en es pt; do
+            node tools/check_words.js "$lang"
+            node tools/check_frases.js "$lang" frases
+            node tools/check_frases.js "$lang" textos
+            node tools/check_historias.js --lang="$lang"
+          done
+      - name: Instalar Playwright Core
+        run: npm install --no-save playwright-core@1.56.1
+      - name: Testar os seis idiomas no Chrome
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/vokabel-http.log 2>&1 &
+          node tools/smoke_langs.js
