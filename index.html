@@ -1600,9 +1600,10 @@ function renderMethod(){
       <li>One completed activity per day protects your streak. The 20-activity goal is optional.</li>
       <li>Learn Portuguese nouns with their article when they have grammatical gender.</li>
     </ol></section>`:common;
-  $("method").innerHTML=methodIntro+(window.VB_METODO&&VB_METODO[lang]||"");
+  const cross=window.VBPAIR&&!VBPAIR.isPrimary(lang);
+  $("method").innerHTML=cross?VBPAIR.methodHTML(lang):(methodIntro+(window.VB_METODO&&VB_METODO[lang]||""));
   if(window.VBTTS)VBTTS.mount();
-  if(!window.VB_METODO||!VB_METODO[lang])loadData(`data/metodo-${lang}.js?v=1`,()=>{if(VB_METODO[lang])renderMethod()});
+  if(!cross&&(!window.VB_METODO||!VB_METODO[lang]))loadData(`data/metodo-${lang}.js?v=1`,()=>{if(VB_METODO[lang])renderMethod()});
 }
 
 /* ===== eventos ===== */
