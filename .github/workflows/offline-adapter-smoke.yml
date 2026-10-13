@@ -1,0 +1,24 @@
+name: Testar motor de pares offline
+on:
+  push:
+    branches: [offline-30-language-packs]
+    paths:
+      - .github/workflows/offline-adapter-smoke.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  mock-ui:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-save playwright-core@1.56.1
+      - run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/vb-http.log 2>&1 &
+          node tools/smoke_adapter_mock.js
