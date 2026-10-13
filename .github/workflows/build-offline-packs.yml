@@ -1,0 +1,77 @@
+name: Gerar 24 pacotes offline
+on:
+  push:
+    branches: [offline-30-language-packs]
+    paths:
+      - .github/workflows/build-offline-packs.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix:
+        base: [en, de, it, fr, es]
+    env:
+      ARGOS_DEVICE_TYPE: cpu
+      ARGOS_CHUNK_TYPE: MINISBD
+      OMP_NUM_THREADS: '2'
+      OPENBLAS_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install build-time translation models
+        run: python -m pip install --quiet 'argostranslate>=1.9,<2'
+      - name: Generate offline bundles for base ${{ matrix.base }}
+        run: python tools/generate_offline_pairs.py --base ${{ matrix.base }}
+      - name: Store translated bundles
+        uses: actions/upload-artifact@v4
+        with:
+          name: pair-packs-${{ matrix.base }}
+          path: data/ov/*.js
+          if-no-files-found: error
+          retention-days: 7
+  assemble:
+    needs: translate
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: offline-30-language-packs
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Download generated translations
+        uses: actions/download-artifact@v4
+        with:
+          pattern: pair-packs-*
+          path: data/ov
+          merge-multiple: true
+      - name: Verify all 24 full packs
+        run: node tools/check_offline_packs.js
+      - name: Commit generated static packages to feature branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/ov/*.js
+          if git diff --cached --quiet; then
+            echo 'No changes to commit'
+          else
+            git commit -m 'content: add all 24 complete offline language-pair bundles'
+            git fetch origin offline-30-language-packs
+            git rebase origin/offline-30-language-packs
+            git push origin HEAD:offline-30-language-packs
+          fi
