@@ -53,8 +53,8 @@ const assert=require('node:assert/strict');
  await page.locator('#view-frases .exercise-back').click();
  // stories use base in story choices
  await page.locator('[data-exercise="historias"]').click();
- await page.waitForSelector('#historias [data-story]',{timeout:10000});
- await page.locator('#historias [data-story]').first().click();
+ await page.waitForSelector('#historias [data-open]',{timeout:10000});
+ await page.locator('#historias [data-open]').first().click();
  await page.waitForSelector('#sg-area [data-ch]',{timeout:30000});
  assert((await page.locator('#sg-area').textContent()).includes('[pt|it]'),'story not translated to base');
  await page.locator('#sg-close').click();
