@@ -58,8 +58,15 @@ async function card(c,target=lang,from=base){
   const [gloss,example]=await Promise.all([translated(target,from,c.w),translated(target,from,c.ex)]);
   if(lang!==target||base!==from)return false;
   c.pt=gloss;c.exPt=example;
-  c.pron="Ouça a pronúncia pelo botão de áudio.";
-  c.hook="Compare a palavra com seu exemplo e repita em voz alta.";
+  const help={
+    pt:["Ouça a pronúncia pelo botão de áudio.","Compare a palavra com seu exemplo e repita em voz alta."],
+    en:["Listen using the audio button.","Connect the word to its example and repeat it aloud."],
+    es:["Escucha la pronunciación con el botón de audio.","Relaciona la palabra con su ejemplo y repítela en voz alta."],
+    it:["Ascolta la pronuncia con il pulsante audio.","Associa la parola all'esempio e ripetila ad alta voce."],
+    fr:["Écoutez la prononciation avec le bouton audio.","Associez le mot à son exemple et répétez-le à voix haute."],
+    de:["Höre die Aussprache mit der Audio-Taste an.","Verbinde das Wort mit dem Beispiel und wiederhole es laut."]
+  };
+  [c.pron,c.hook]=help[from]||help.pt;
   c._pair=signature;return true;
  }catch(e){failed(from,target);return false}
 }
@@ -132,7 +139,21 @@ function decorateCard(root){
  labels.forEach(e=>{if(e.textContent.trim()==="O que significa?")e.textContent=msg("meaning")});
 }
 
-window.VBPAIR={base:()=>base,primary:defaults,isPrimary,setBase,allowedTarget,translated,card,built,scene,restoreCards,glossary,clearErrors:()=>errors.clear(),name:NAME,msg,applyUI,decorateCard};
+
+const METHOD={
+pt:"<h2>Estude na língua que você conhece</h2><p>Leia a tradução antes de virar o cartão. Ouça a palavra, repita a frase e faça o teste de compreensão. Os outros pares usam tradução automática gratuita e precisam de internet na primeira utilização.</p>",
+en:"<h2>Learn from a language you already know</h2><p>Read the translation, say the target word aloud, then flip the card. Listen to the complete example sentence and test your understanding. New language pairs use an online free translation service the first time.</p>",
+es:"<h2>Aprende desde tu propio idioma</h2><p>Lee el significado, pronuncia la palabra y después gira la tarjeta. Escucha el ejemplo completo y comprueba si lo entiendes. Los pares nuevos necesitan conexión a internet para la traducción automática.</p>",
+it:"<h2>Impara partendo dalla tua lingua</h2><p>Leggi la traduzione, pronuncia la nuova parola, poi gira la scheda. Ascolta la frase intera e verifica quanto hai capito. Le nuove combinazioni di lingue richiedono internet per la traduzione automatica.</p>",
+fr:"<h2>Apprenez à partir de votre langue</h2><p>Lisez la traduction, prononcez le mot, puis retournez la carte. Écoutez l'exemple complet et testez votre compréhension. Les nouvelles paires de langues nécessitent une connexion pour la traduction automatique.</p>",
+de:"<h2>Lerne von deiner eigenen Sprache aus</h2><p>Lies die Übersetzung, sprich das Wort aus und drehe dann die Karte um. Höre den ganzen Beispielsatz und teste dein Verständnis. Neue Sprachpaare benötigen beim ersten Mal Internet für die automatische Übersetzung.</p>"
+};
+function methodHTML(target){
+ const baseName=NAME(base),targetName=NAME(target);
+ return '<section>'+METHOD[base]+'</section><section><h2>'+baseName+' → '+targetName+'</h2><p>MyMemory · translation service. Online translations may have usage limits and mistakes. Source text is sent to a third-party translation service.</p></section>';
+}
+
+window.VBPAIR={base:()=>base,primary:defaults,isPrimary,setBase,allowedTarget,translated,card,built,scene,restoreCards,glossary,clearErrors:()=>errors.clear(),name:NAME,msg,applyUI,decorateCard,methodHTML};
 allowedTarget(lang);
 // The inline app initializes before this module is loaded; refresh once with the persisted source language.
 if(typeof setLang==="function")setLang(lang);
