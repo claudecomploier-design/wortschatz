@@ -71,9 +71,10 @@ async function built(c,target=lang,from=base){
  try{
   const original=defaults(target);
   const translateBlock=p=>translated(original,from,p);
-  const pieces=await Promise.all([translateBlock(c.pt),...c.chunks.map(x=>translateBlock(x.pt))]);
+  const pieces=await Promise.all(c.chunks.map(x=>translateBlock(x.pt)));
   if(lang!==target||base!==from)return false;
-  c.pt=pieces[0];c.chunks.forEach((ch,i)=>ch.pt=pieces[i+1]);
+  c.pt=pieces.join(" ").replace(/ ([,.!?;:])/g,"$1");
+  c.chunks.forEach((ch,i)=>ch.pt=pieces[i]);
   c._pair=signature;return true;
  }catch(e){failed(from,target);return false}
 }
@@ -95,4 +96,7 @@ function restoreCards(cards,target){
 }
 function glossary(){const from=base,target=lang;return [...mem.entries()].filter(([k])=>k.startsWith("vb-pair:"+target+":"+from+":")).map(([,v])=>v).filter(Boolean)}
 window.VBPAIR={base:()=>base,primary:defaults,isPrimary,setBase,allowedTarget,translated,card,built,scene,restoreCards,glossary,clearErrors:()=>errors.clear(),name:NAME};
+allowedTarget(lang);
+// The inline app initializes before this module is loaded; refresh once with the persisted source language.
+if(typeof setLang==="function")setLang(lang);
 })();
