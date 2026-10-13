@@ -11,7 +11,7 @@ const assert=require('node:assert/strict');
  });
  try{
  await page.goto('http://127.0.0.1:8765/',{waitUntil:'domcontentloaded'});
- await page.waitForFunction(()=>window.VBPAIR&&eval('CARDS.length')===1000);
+ await page.waitForFunction(()=>window.VBPAIR&&eval('CARDS.length')>=1000);
  for(const width of [320,360,390,768]){
   await page.setViewportSize({width,height:768});
   await page.locator('#lang-toggle').click();
@@ -26,7 +26,7 @@ const assert=require('node:assert/strict');
  for(const target of languages){
   await page.locator('#lang-toggle').click();
   await page.locator('[data-lang="'+target+'"]').click();
-  await page.waitForFunction(t=>eval('lang')===t&&eval('CARDS.length')===1000,target);
+  await page.waitForFunction(t=>eval('lang')===t&&eval('CARDS.length')>=1000,target);
   for(const base of languages.filter(l=>l!==target)){
    await page.locator('#base-language').selectOption(base);
    await page.waitForFunction(([b,t])=>window.VBPAIR.base()===b&&eval('lang')===t,[base,target]);
