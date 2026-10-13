@@ -10,7 +10,7 @@ assert(scripts.length > 0, "Script principal ausente");
 scripts.forEach((code, i) => new vm.Script(code, { filename: "index.html#script-" + i }));
 
 const sourceFiles = ["frases.js", "historias.js", "xp-ui.js", "relatorio.js",
-  "comunidade.js", "perfil-avatar.js", "forja-gato.js", "forja-acessorios.js"];
+  "comunidade.js", "forja-gato.js", "forja-acessorios.js"];
 sourceFiles.forEach(file => {
   if (fs.existsSync(file)) new vm.Script(fs.readFileSync(file, "utf8"), { filename: file });
 });
