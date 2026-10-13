@@ -25,3 +25,9 @@ jobs:
             node tools/check_frases.js "$lang" textos
             node tools/check_historias.js --lang="$lang"
           done
+      - name: Instalar Playwright Core
+        run: npm install --no-save playwright-core@1.56.1
+      - name: Testar os seis idiomas no Chrome
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/vokabel-http.log 2>&1 &
+          node tools/smoke_langs.js
