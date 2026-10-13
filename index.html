@@ -926,6 +926,9 @@ body{
 .langs .lang-option[aria-pressed="true"]{background:var(--accent-soft);color:var(--accent-hi);box-shadow:none}
 .lang-check{visibility:hidden;color:var(--accent);font-size:.95rem}
 .lang-option[aria-pressed="true"] .lang-check{visibility:visible}
+.voice-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:8px}
+.voice-row select{min-width:0;flex:1;width:100%;max-width:100%}
+.voice-row .btn{flex-shrink:0}
 @media(max-width:420px){.langs .lang-toggle{gap:5px;padding:7px 9px}.lang-globe svg{width:16px;height:16px}}
 @media(prefers-reduced-motion:reduce){.lang-chevron,.langs .lang-toggle{transition:none!important}}
 .hy-quiz{margin-top:16px;padding-top:14px;border-top:1px dashed var(--line);display:grid;gap:10px}
@@ -1102,7 +1105,7 @@ body{
   </main>
   <main id="view-amigos" hidden><section id="cm-friends-root" aria-live="polite"></section></main>
   <main id="view-avatar" hidden><section id="cm-avatar-root" aria-live="polite"></section></main>
-  <main id="view-method" hidden><div class="method" id="method"></div></main>
+  <main id="view-method" hidden><div class="method" id="method"></div><div class="method"><section id="voice-settings" aria-label="Configurar voz"></section></div></main>
 </div>
 
 <section class="game" id="game" hidden aria-label="Partida">
@@ -1411,8 +1414,7 @@ function buildQueue(){
 }
 function overview(){const now=Date.now();let d=0,l=0,k=0;CARDS.forEach(c=>{const p=prog[c.id];if(!p)return;if(p.due<=now)d++;if(p.box>=4)k++;else l++});
   $("ov-due").textContent=d+Math.min(newRoom(),CARDS.filter(c=>!prog[c.id]).length);$("ov-learn").textContent=l;$("ov-known").textContent=k}
-function speak(t){try{const s=window.speechSynthesis;if(!s)return;s.cancel();const u=new SpeechSynthesisUtterance(t);u.lang=LANGS[lang].voice;u.rate=.9;
-  const v=s.getVoices().find(v=>v.lang&&v.lang.replace("_","-").startsWith(LANGS[lang].voice.slice(0,2)));if(v)u.voice=v;s.speak(u)}catch(e){}}
+function speak(t){if(window.VBTTS)return VBTTS.speak(t,lang);try{const s=window.speechSynthesis;if(!s)return;s.cancel();const u=new SpeechSynthesisUtterance(t);u.lang=LANGS[lang].voice;u.rate=.96;s.speak(u)}catch(e){}}
 /* ===== lobby ===== */
 function renderLobby(){
   const el=$("lobby");overview();
@@ -1568,6 +1570,7 @@ function renderMethod(){
       <li>Learn Portuguese nouns with their article when they have grammatical gender.</li>
     </ol></section>`:common;
   $("method").innerHTML=methodIntro+(window.VB_METODO&&VB_METODO[lang]||"");
+  if(window.VBTTS)VBTTS.mount();
   if(!window.VB_METODO||!VB_METODO[lang])loadData(`data/metodo-${lang}.js?v=1`,()=>{if(VB_METODO[lang])renderMethod()});
 }
 
@@ -1784,6 +1787,7 @@ if("serviceWorker" in navigator){
   window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js",{updateViaCache:"none"}).then(r=>{r.update();document.addEventListener("visibilitychange",()=>{if(!document.hidden)r.update()})}).catch(()=>{}));
 }
 </script>
+<script src="voice.js?v=1"></script>
 <script src="relatorio.js?v=1"></script>
 <script src="frases.js?v=8"></script>
 <script src="historias.js?v=2"></script>
