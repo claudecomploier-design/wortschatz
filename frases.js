@@ -499,11 +499,11 @@
       const current=cur,target=lang,known=VBPAIR.base(),signature=target+":"+known;
       if(cur._pair!==signature){
         if(cur._pairError){
-          el.innerHTML='<div class="card"><h2>Tradução temporariamente indisponível</h2><p>O serviço gratuito não respondeu. Não exibiremos uma mistura com o idioma errado.</p><button class="btn primary" id="hy-translation-retry">Tentar novamente</button></div>';
+          el.innerHTML='<div class="card"><h2>Tradução temporariamente indisponível</h2><p>O pacote offline está ausente ou incompleto. Confira se o aplicativo foi instalado com todos os idiomas.</p><button class="btn primary" id="hy-translation-retry">Tentar novamente</button></div>';
           $("hy-translation-retry").onclick=()=>{VBPAIR.clearErrors();current._pairError=false;renderGame()};return;
         }
-        el.innerHTML='<div class="card"><p class="loading">Traduzindo esta atividade para '+esc(LANGS[known].name)+'…</p><p class="hintline">Primeira utilização do par de idiomas requer internet.</p></div>';
-        if(!cur._pairLoading){cur._pairLoading=true;VBPAIR.built(current,target,known).then(ok=>{
+        el.innerHTML='<div class="card"><p class="loading">Abrindo a tradução instalada para '+esc(LANGS[known].name)+'…</p><p class="hintline">O conteúdo funciona offline depois da instalação do aplicativo.</p></div>';
+        if(!cur._pairLoading){cur._pairLoading=true;VBPAIR.built(current,target,known,K).then(ok=>{
           if(!playing||cur!==current||lang!==target||VBPAIR.base()!==known)return;
           current._pairLoading=false;current._pairError=!ok;renderGame();
         })}
