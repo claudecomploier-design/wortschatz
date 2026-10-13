@@ -589,7 +589,7 @@
     },
     xp(n){ if (!XP) xpLoad(); XP.total += n; XP.days[today()] = (XP.days[today()] || 0) + n; xpSave(); window.dispatchEvent(new Event("vb-xp-updated")); },
     addXP(n,language){
-      const l=["de","fr","it"].includes(language)?language:lang;
+      const l=(typeof LANGS==="object"&&language in LANGS)?language:lang;
       const amount=Math.max(0,Math.min(1000,Math.floor(Number(n)||0)));
       if(!amount)return;
       const k="vb-xp-"+l;

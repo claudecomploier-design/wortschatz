@@ -926,6 +926,17 @@ body{
 .lang-option[aria-pressed="true"] .lang-check{visibility:visible}
 @media(max-width:420px){.langs .lang-toggle{gap:5px;padding:7px 9px}.lang-globe svg{width:16px;height:16px}}
 @media(prefers-reduced-motion:reduce){.lang-chevron,.langs .lang-toggle{transition:none!important}}
+.xp-chip{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border-radius:999px;background:color-mix(in srgb,#f2c14e 14%,var(--surface));border:1px solid color-mix(in srgb,#f2c14e 45%,transparent);color:#f6d27a;font-size:.78rem;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+.xp-star{font-size:.9rem}.xp-bar{width:38px;height:5px;border-radius:9px;background:rgba(255,255,255,.12);overflow:hidden}.xp-bar i{display:block;height:100%;background:#f2c14e;border-radius:9px}
+.xp-row{margin:-6px 0 14px}
+.sgame .xp-chip .xp-bar,.sgame .xp-chip .xp-lv{display:none}.sgame .xp-chip{padding:5px 8px;flex:none}
+@media(max-width:380px){.xp-bar{display:none}}
+.xp-toasts{position:fixed;left:50%;top:calc(70px + env(safe-area-inset-top,0px));transform:translateX(-50%);z-index:120;display:grid;gap:6px;justify-items:center;pointer-events:none}
+.xp-toast{padding:6px 14px;border-radius:999px;background:#f2c14e;color:#1b1406;font-weight:800;font-size:.95rem;box-shadow:0 6px 18px rgba(0,0,0,.35);animation:xpUp 1.3s ease-out forwards}
+.xp-toast.big{font-size:1.1rem;padding:9px 18px;animation-duration:2.2s}
+@keyframes xpUp{0%{opacity:0;transform:translateY(12px) scale(.9)}15%{opacity:1;transform:translateY(0) scale(1.05)}25%{transform:scale(1)}80%{opacity:1}100%{opacity:0;transform:translateY(-18px)}}
+@media(prefers-reduced-motion:reduce){.xp-toast{animation:none}}
+.xp-sum{margin:6px 0 10px;color:var(--muted)}.xp-sum b{color:#f6d27a;font-size:1.15rem}
 </style>
 </head>
 <body>
@@ -1329,6 +1340,7 @@ function loadLang(l,cb){
 function setLang(l){
   if(!LANGS[l])return;
   lang=l;store.set("vb-lang",l);
+  setTimeout(()=>window.dispatchEvent(new Event("vb-lang-changed")),0);
   document.querySelectorAll(".lang-option").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.lang===l)));
   $("lang-current").textContent=LANGS[l].code;
   $("lang-toggle").setAttribute("aria-label","Idiomas. Atual: "+LANGS[l].name+". Selecionar idioma");
@@ -1390,7 +1402,7 @@ function startFree(){free=true;queue=pool().filter(c=>prog[c.id]).sort(()=>Math.
 /* ===== partida ===== */
 function startGame(isFree){
   if(isFree)startFree();else{free=false;buildQueue()}
-  cur=null;lastCardId=null;ses={ok:0,mid:0,bad:0};playing=true;
+  cur=null;lastCardId=null;ses={ok:0,mid:0,bad:0};playing=true;if(window.VBXP)VBXP.reset();
   $("game").hidden=false;document.body.classList.add("playing");$("game").scrollTop=0;
   renderTrain();setTimeout(()=>$("g-close").focus({preventScroll:true}),50);
 }
@@ -1425,7 +1437,7 @@ function renderTrain(){
   if(!cur){const left=pool().filter(c=>!prog[c.id]).length;const seen=pool().some(c=>prog[c.id]);const n=ses.ok+ses.mid+ses.bad;
     el.innerHTML=`<div class="card done"><h2>${n?"Partida concluída!":free?"Treino livre feito":"Tudo em dia"}</h2>
       ${n?`<div class="sum"><div class="s1"><b>${ses.ok}</b><span>sabia</span></div><div class="s2"><b>${ses.mid}</b><span>difícil</span></div><div class="s3"><b>${ses.bad}</b><span>errei</span></div></div>`:""}
-      <p class="hintline">${total.toLocaleString("pt-BR")} palavras verificadas no total.</p>
+      ${window.VBXP?VBXP.sumHTML():""}<p class="hintline">${total.toLocaleString("pt-BR")} palavras verificadas no total.</p>
       <div class="more" style="margin-top:16px">${left&&!free?`<button class="btn primary" id="more10">Continuar com mais 10 novas</button>`:""}
       ${seen?`<button class="btn" id="freeplay">Treino livre: repassar o que já vi</button>`:""}
       <button class="btn" id="tolobby">Voltar ao lobby</button></div></div>`;
@@ -1464,7 +1476,7 @@ function renderTrain(){
     el.querySelectorAll("[data-r]").forEach(b=>b.onclick=()=>grade(+b.dataset.r))}
 }
 function grade(r){
-  if(window.HYB&&HYB.addXP)HYB.addXP(r===2?12:r===1?8:5,lang);
+  if(window.VBXP)VBXP.answer(r>0,r===2?12:7);else if(window.HYB&&HYB.addXP)HYB.addXP(r===2?12:r===1?8:5,lang);
   if(window.VB_REPORT)VB_REPORT.track("vocab",{grade:r,isNew:!free&&!prog[cur.id]},lang);
   addActivity();
   if(r===2)ses.ok++;else if(r===1)ses.mid++;else ses.bad++;
@@ -1551,7 +1563,7 @@ let exerciseIndex=0,exerciseCorrect=0,exerciseAnswered=false;
 function renderExerciseQuiz(){
  const box=$("exercise-quiz");box.hidden=false;
  const item=EXERCISE_QUESTIONS[exerciseIndex];
- if(!item){box.innerHTML='<h3>Quiz concluído</h3><p>Você acertou '+exerciseCorrect+' de '+EXERCISE_QUESTIONS.length+' questões.</p><button class="btn primary" id="quiz-restart">Recomeçar</button>';$("quiz-restart").onclick=()=>{exerciseIndex=0;exerciseCorrect=0;renderExerciseQuiz()};return}
+ if(!item){box.innerHTML='<h3>Quiz concluído</h3><p>Você acertou '+exerciseCorrect+' de '+EXERCISE_QUESTIONS.length+' questões.</p>'+(window.VBXP?VBXP.sumHTML():'')+'<button class="btn primary" id="quiz-restart">Recomeçar</button>';$("quiz-restart").onclick=()=>{exerciseIndex=0;exerciseCorrect=0;renderExerciseQuiz()};return}
  exerciseAnswered=false;
  const order=[0,1,2].sort((a,b)=>((a+exerciseIndex)%3)-((b+exerciseIndex)%3));
  box.innerHTML='<p class="hintline">Questão '+(exerciseIndex+1)+' de '+EXERCISE_QUESTIONS.length+' · Acertos: '+exerciseCorrect+'</p><h3>'+item.q+'</h3><div class="exercise-answers">'+order.map(i=>'<button class="btn" data-answer="'+i+'">'+item.a[i]+'</button>').join('')+'</div><div id="quiz-feedback" class="exercise-feedback" aria-live="polite"></div>';
@@ -1560,7 +1572,7 @@ function renderExerciseQuiz(){
   const right=+b.dataset.answer===item.ok;if(right)exerciseCorrect++;
   addActivity();
   if(window.VB_REPORT)VB_REPORT.track("quiz",{correct:right},lang);
-  if(window.HYB&&HYB.addXP)HYB.addXP(right?12:4,"de");
+  if(window.VBXP)VBXP.answer(right,12);else if(window.HYB&&HYB.addXP)HYB.addXP(right?12:4,lang);
   box.querySelectorAll("[data-answer]").forEach(x=>{x.disabled=true;if(+x.dataset.answer===item.ok)x.style.borderColor="var(--good)";else if(x===b)x.style.borderColor="var(--bad)"});
   $("quiz-feedback").innerHTML='<p>'+(right?"Correto!":"Resposta correta: "+item.a[item.ok]+'.')+' '+item.ex+'</p><button class="btn primary" id="quiz-next">'+(exerciseIndex===EXERCISE_QUESTIONS.length-1?"Ver resultado":"Próxima questão")+'</button>';
   $("quiz-next").onclick=()=>{exerciseIndex++;renderExerciseQuiz()};
@@ -1569,7 +1581,7 @@ function renderExerciseQuiz(){
 
 document.querySelectorAll("[data-exercise]").forEach(b=>b.onclick=()=>{
  const mode=b.dataset.exercise;
- if(mode==="quiz"){exerciseIndex=0;exerciseCorrect=0;tab("quiz");renderExerciseQuiz()}
+ if(mode==="quiz"){exerciseIndex=0;exerciseCorrect=0;if(window.VBXP)VBXP.reset();tab("quiz");renderExerciseQuiz()}
  else if(mode==="vocabulario"){tab("train")}
  else tab(mode);
 });
@@ -1718,10 +1730,11 @@ if("serviceWorker" in navigator){
 }
 </script>
 <script src="relatorio.js?v=1"></script>
-<script src="frases.js?v=6"></script>
+<script src="frases.js?v=7"></script>
 <script src="historias.js?v=2"></script>
 <script src="forja-acessorios.js?v=1"></script>
 <script src="forja-gato.js?v=1"></script>
 <script src="comunidade.js?v=2"></script>
+<script src="xp-ui.js?v=1"></script>
 </body>
 </html>
