@@ -152,8 +152,8 @@ async function offlineStatus(){
   if(known!==target&&known!==defaults(target))need.push("data/ov/"+target+"-"+known+".js?v=1");
  try{
   const names=await caches.keys();
-  if(!names.includes("vokabel-v35"))return {ready:false,done:0,total:need.length};
-  const cache=await caches.open("vokabel-v35");
+  if(!names.includes("vokabel-v36"))return {ready:false,done:0,total:need.length};
+  const cache=await caches.open("vokabel-v36");
   let done=0;
   for(const item of need)if(await cache.match(item))done++;
   return {ready:done===need.length,done,total:need.length};
