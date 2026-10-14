@@ -1,0 +1,453 @@
+{
+ "titulo": "Nieve antes de tiempo",
+ "desc": "Una caminata por los Alpes bávaros con tu colega Sophie y su hermano. El clima cambia antes de lo previsto, y cada decisión tiene un precio.",
+ "cenas": {
+  "c1": {
+   "cap": "Estacionamiento",
+   "p": [
+    [
+     "Son las ocho de la mañana, en un estacionamiento de los Alpes bávaros. Tu colega Sophie y su hermano Felix ya se están poniendo los zapatos. Felix tiene veinticuatro años, es rápido e impaciente.",
+     [
+      "Son las ocho de la mañana,",
+      "en un estacionamiento",
+      "de los Alpes bávaros.",
+      "Tu colega Sophie",
+      "y su hermano Felix",
+      "ya se están poniendo los zapatos.",
+      "Felix tiene veinticuatro años,",
+      "es rápido e impaciente."
+     ]
+    ],
+    [
+     "La aplicación del clima dice: nieve recién en la noche. En el carro hay una cobija vieja de lana. Sophie pregunta: “¿La llevamos?” Felix se ríe. “Pesa demasiado. A las cinco ya estamos de vuelta aquí.”",
+     [
+      "La aplicación del clima dice:",
+      "nieve recién en la noche.",
+      "En el carro hay",
+      "una cobija vieja de lana.",
+      "Sophie pregunta:",
+      "“¿La llevamos?”",
+      "Felix se ríe.",
+      "“Pesa demasiado.",
+      "A las cinco",
+      "ya estamos de vuelta aquí.”"
+     ]
+    ]
+   ],
+   "e": [
+    "Meter la cobija en tu mochila.",
+    "Dejar la cobija en el carro."
+   ]
+  },
+  "c2a": {
+   "cap": "Niebla",
+   "p": [
+    [
+     "Tu mochila pesa, y caminan despacio. Felix se detiene a esperar a menudo y mira el reloj. A las dos llega la niebla, mucho antes de lo previsto. Luego empieza a nevar.",
+     [
+      "Tu mochila pesa,",
+      "y caminan despacio.",
+      "Felix espera a menudo",
+      "y mira el reloj.",
+      "A las dos",
+      "llega la niebla,",
+      "mucho antes de lo previsto.",
+      "Luego empieza",
+      "a nevar."
+     ]
+    ],
+    [
+     "Felix se cae en una piedra mojada. Se agarra el pie y casi no puede ponerse de pie. Tu celular tiene veinte por ciento y casi nada de señal. Sophie señala el mapa: “Un refugio viejo, a treinta minutos de aquí. Hasta el pueblo son tres horas.”",
+     [
+      "En una piedra mojada",
+      "se cae Felix.",
+      "Se agarra el pie",
+      "y casi no puede ponerse de pie.",
+      "Tu celular tiene",
+      "veinte por ciento",
+      "y casi nada de señal.",
+      "Sophie señala el mapa:",
+      "“Un refugio viejo,",
+      "a treinta minutos de aquí.",
+      "Hasta el pueblo",
+      "son tres horas.”"
+     ]
+    ]
+   ],
+   "e": [
+    "Mandarle tu ubicación a tu amigo Jonas, en Múnich, y llevar a Felix al refugio.",
+    "Bajar solo ahora mismo a buscar ayuda, mientras Sophie lleva a Felix al refugio."
+   ]
+  },
+  "c2b": {
+   "cap": "Niebla",
+   "p": [
+    [
+     "Sin la cobija, van rápido. Felix quiere subir todavía más, y ustedes lo siguen. A las dos llega la niebla, mucho antes de lo previsto. Luego empieza a nevar, y hace frío.",
+     [
+      "Sin la cobija,",
+      "van rápido.",
+      "Felix quiere",
+      "subir todavía más,",
+      "y ustedes lo siguen.",
+      "A las dos",
+      "llega la niebla,",
+      "mucho antes de lo previsto.",
+      "Luego empieza",
+      "a nevar,",
+      "y hace frío."
+     ]
+    ],
+    [
+     "Felix se cae en una piedra mojada. Se agarra el pie y casi no puede ponerse de pie. Tu celular tiene veinte por ciento y casi nada de señal. Sophie señala el mapa: “Un refugio viejo, a cuarenta minutos de aquí. Hasta el pueblo son casi cuatro horas.”",
+     [
+      "En una piedra mojada",
+      "se cae Felix.",
+      "Se agarra el pie",
+      "y casi no puede ponerse de pie.",
+      "Tu celular tiene",
+      "veinte por ciento",
+      "y casi nada de señal.",
+      "Sophie señala el mapa:",
+      "“Un refugio viejo,",
+      "a cuarenta minutos de aquí.",
+      "Hasta el pueblo",
+      "son casi cuatro horas.”"
+     ]
+    ]
+   ],
+   "e": [
+    "Mandarle tu ubicación a tu amigo Jonas, en Múnich, y llevar a Felix al refugio.",
+    "Bajar solo ahora mismo a buscar ayuda, mientras Sophie lleva a Felix al refugio."
+   ]
+  },
+  "c3": {
+   "cap": "El refugio",
+   "p": [
+    [
+     "Le escribes a tu amigo Jonas, en Múnich: “Emergencia, Felix herido, vamos al refugio viejo.” Además le mandas tu ubicación. Luego llevan a Felix despacio por la nieve. Tardan una hora.",
+     [
+      "Le escribes a tu amigo",
+      "Jonas, en Múnich:",
+      "“Emergencia, Felix herido,",
+      "vamos al refugio viejo.”",
+      "Además le mandas",
+      "tu ubicación.",
+      "Luego llevan a Felix",
+      "despacio por la nieve.",
+      "Tardan una hora."
+     ]
+    ],
+    [
+     "El refugio es pequeño y está vacío. Hay una estufa vieja, pero la leña está mojada. Afuera está oscureciendo. A Felix le duele mucho y está muy pálido. Tu celular solo tiene ocho por ciento. Sophie te mira: “¿Y ahora?”",
+     [
+      "El refugio es pequeño y está vacío.",
+      "Hay una estufa vieja,",
+      "pero la leña está mojada.",
+      "Afuera está oscureciendo.",
+      "A Felix le duele mucho",
+      "y está muy pálido.",
+      "Tu celular tiene",
+      "solo ocho por ciento.",
+      "Sophie te mira:",
+      "“¿Y ahora?”"
+     ]
+    ]
+   ],
+   "e": [
+    "Usar la última batería para llamar al rescate de montaña.",
+    "Usar el celular como linterna y bajar solo.",
+    "Ahorrar batería y esperar en el refugio."
+   ]
+  },
+  "c4": {
+   "cap": "Solo en el sendero",
+   "p": [
+    [
+     "Sophie se queda con su hermano. Tú sales solo. La niebla es espesa, la nieve es cada vez más profunda, y pronto va a oscurecer. Después de una hora, llegas a un cruce.",
+     [
+      "Sophie se queda",
+      "con su hermano.",
+      "Tú sales solo.",
+      "La niebla es espesa,",
+      "la nieve es cada vez más profunda,",
+      "y pronto va a oscurecer.",
+      "Después de una hora,",
+      "llegas",
+      "a un cruce."
+     ]
+    ],
+    [
+     "A la izquierda, un camino corto baja empinado, sobre piedras mojadas. Una hora, quizás menos. A la derecha, un camino ancho cruza el bosque. Es seguro, pero es largo: tres horas o más.",
+     [
+      "A la izquierda, un camino corto baja",
+      "empinado,",
+      "sobre piedras mojadas.",
+      "Una hora, quizás menos.",
+      "A la derecha, un camino ancho cruza",
+      "el bosque.",
+      "Es seguro,",
+      "pero es largo:",
+      "tres horas o más."
+     ]
+    ]
+   ],
+   "e": [
+    "Tomar el atajo por las piedras.",
+    "Tomar el camino largo por el bosque."
+   ]
+  },
+  "c5": {
+   "cap": "La llamada",
+   "p": [
+    [
+     "Detrás del refugio, te subes a una roca. Ahí tienes un poco de señal. Un hombre del rescate de montaña contesta enseguida. “Jonas nos mandó su ubicación. El helicóptero no puede volar con esta niebla. Un equipo va a pie, en tres o cuatro horas. ¡Quédense en el refugio!”",
+     [
+      "Detrás del refugio,",
+      "te subes a una roca.",
+      "Ahí tienes",
+      "un poco de señal.",
+      "Un hombre del rescate de montaña",
+      "contesta enseguida.",
+      "“Jonas nos",
+      "mandó su ubicación.",
+      "El helicóptero no puede",
+      "volar con esta niebla.",
+      "Un equipo va a pie,",
+      "en tres o cuatro horas.",
+      "¡Quédense en el refugio!”"
+     ]
+    ],
+    [
+     "Entonces el celular se apaga. Ya no hay luz, ni teléfono. En el refugio hace mucho frío. Sophie no quiere esperar: “Nunca nos van a encontrar con esta niebla. ¡Ve a su encuentro!”",
+     [
+      "Entonces el celular se apaga.",
+      "Ya no hay luz,",
+      "ni teléfono.",
+      "En el refugio",
+      "hace mucho frío.",
+      "Sophie no quiere esperar:",
+      "“Nunca nos van a encontrar",
+      "con esta niebla.",
+      "¡Ve a su encuentro!”"
+     ]
+    ]
+   ],
+   "e": [
+    "Quedarte en el refugio, como pidió el rescate.",
+    "Salir en la oscuridad por el atajo, al encuentro del equipo."
+   ]
+  },
+  "c6": {
+   "cap": "La noche",
+   "p": [
+    [
+     "Las horas son largas. Los tres están sentados en el suelo, muy juntos. El viento golpea la puerta. Felix ya casi no habla, y sus manos están frías como el hielo.",
+     [
+      "Las horas son largas.",
+      "Los tres están sentados",
+      "en el suelo,",
+      "muy juntos.",
+      "El viento golpea",
+      "la puerta.",
+      "Felix ya casi no habla,",
+      "y sus manos",
+      "están frías como el hielo."
+     ]
+    ],
+    [
+     "Sophie le sostiene las manos y dice en voz baja: “No puede dormirse.” Tú lo sabes: la noche se va a poner todavía más fría. Ahora necesita calor, más que cualquier otra cosa.",
+     [
+      "Sophie le sostiene las manos",
+      "y dice en voz baja:",
+      "“No puede dormirse.”",
+      "Tú lo sabes:",
+      "la noche se va a poner todavía más fría.",
+      "Ahora necesita calor,",
+      "más que cualquier otra cosa."
+     ]
+    ]
+   ],
+   "e": [
+    "Envolver a Felix en la cobija del carro.",
+    "Darle tu chaqueta a Felix."
+   ]
+  },
+  "c7": {
+   "cap": "El pueblo",
+   "p": [
+    [
+     "Después de tres horas, ves luces. Un pueblo pequeño. Tocas la primera puerta, y una señora mayor te presta su teléfono. Te tiemblan las manos. El rescate de montaña contesta enseguida.",
+     [
+      "Después de tres horas,",
+      "ves luces.",
+      "Un pueblo pequeño.",
+      "Tocas",
+      "la primera puerta,",
+      "y una señora mayor",
+      "te presta su teléfono.",
+      "Te tiemblan las manos.",
+      "El rescate de montaña contesta enseguida."
+     ]
+    ],
+    [
+     "“¿Dónde está exactamente el refugio?”, pregunta una mujer. “Con esta niebla, solo lo encontramos con una ubicación exacta.” Piensas en tu celular, en el mapa, en las últimas horas.",
+     [
+      "“¿Dónde está exactamente el refugio?”,",
+      "pregunta una mujer.",
+      "“Con esta niebla,",
+      "solo lo encontramos",
+      "con una ubicación exacta.”",
+      "Piensas",
+      "en tu celular,",
+      "en el mapa,",
+      "en las últimas horas."
+     ]
+    ]
+   ],
+   "e": [
+    "Decir que Jonas tiene la ubicación exacta.",
+    "Describir el refugio lo mejor posible."
+   ]
+  },
+  "f_noite": {
+   "cap": "Medianoche",
+   "p": [
+    [
+     "Poco después de la medianoche, el rescate de montaña llega al refugio viejo. Con la ubicación de Jonas, el equipo encontró el camino en la niebla enseguida. Felix está cansado y pálido, pero está despierto y hasta sonríe.",
+     [
+      "Poco después de la medianoche,",
+      "el rescate de montaña llega",
+      "al refugio viejo.",
+      "Con la ubicación de Jonas,",
+      "el equipo encontró el camino",
+      "en la niebla enseguida.",
+      "Felix está cansado y pálido,",
+      "pero está despierto",
+      "y hasta sonríe."
+     ]
+    ],
+    [
+     "En la mañana, los tres están sentados en el hospital de Garmisch. Felix tiene el pie hinchado y ya está haciendo bromas otra vez. Sophie te abraza largo rato. “El mensaje a Jonas”, dice, “fue la mejor idea de todo el día.”",
+     [
+      "En la mañana,",
+      "los tres están sentados",
+      "en el hospital de Garmisch.",
+      "Felix tiene el pie hinchado",
+      "y ya está haciendo bromas otra vez.",
+      "Sophie te abraza largo rato.",
+      "“El mensaje a Jonas”,",
+      "dice,",
+      "“fue la mejor idea",
+      "de todo el día.”"
+     ]
+    ]
+   ],
+   "fim": "Luces en la niebla"
+  },
+  "f_frio": {
+   "cap": "Sin cobija",
+   "p": [
+    [
+     "Te quitas la chaqueta y se la pones a Felix. Ahora el que tiene frío eres tú. Recién a las dos llega el rescate de montaña. Felix ya no tiembla y casi no habla. Los hombres lo llevan directo al hospital.",
+     [
+      "Te quitas la chaqueta",
+      "y se la pones a Felix.",
+      "Ahora el que tiene frío eres tú.",
+      "Recién a las dos",
+      "llega el rescate de montaña.",
+      "Felix ya no tiembla",
+      "y casi no habla.",
+      "Los hombres lo llevan",
+      "directo al hospital."
+     ]
+    ],
+    [
+     "Se queda cinco días ahí y se recupera. Tú pasas una semana con fiebre. En la oficina, Sophie habla poco. Una vez solo dice: “La cobija estuvo todo el tiempo en el carro.”",
+     [
+      "Se queda cinco días ahí",
+      "y se recupera.",
+      "Tú pasas una semana con fiebre.",
+      "En la oficina,",
+      "Sophie habla poco.",
+      "Una vez solo dice:",
+      "“La cobija estuvo",
+      "todo el tiempo",
+      "en el carro.”"
+     ]
+    ]
+   ],
+   "fim": "La cobija en el carro"
+  },
+  "f_queda": {
+   "cap": "El atajo",
+   "p": [
+    [
+     "El atajo es empinado, y las piedras están mojadas. En la niebla, ves el borde demasiado tarde. Caes unos metros y te quedas tirado en la nieve. Te duele mucho la pierna y no puedes levantarte.",
+     [
+      "El atajo es empinado,",
+      "y las piedras están mojadas.",
+      "En la niebla,",
+      "ves el borde demasiado tarde.",
+      "Caes unos metros",
+      "y te quedas tirado en la nieve.",
+      "Te duele mucho la pierna,",
+      "y no puedes levantarte."
+     ]
+    ],
+    [
+     "Recién en la mañana te encuentra el rescate de montaña. Felix y Sophie también están a salvo. Pero tienes la pierna rota y pasas seis semanas en el hospital. Del atajo, nunca más vuelven a hablar.",
+     [
+      "Recién en la mañana",
+      "te encuentra el rescate de montaña.",
+      "Felix y Sophie también",
+      "están a salvo.",
+      "Pero tienes la pierna rota,",
+      "y pasas seis semanas",
+      "en el hospital.",
+      "Del atajo,",
+      "nunca más vuelven a hablar."
+     ]
+    ]
+   ],
+   "fim": "El camino corto"
+  },
+  "f_manha": {
+   "cap": "Mañana",
+   "p": [
+    [
+     "El rescate de montaña busca toda la noche. Estás sentado en la cocina de la señora y tomas té, pero no puedes dormir. Cada hora preguntas: “¿Hay noticias?” Y cada hora ella dice en voz baja: “Todavía no.”",
+     [
+      "El rescate de montaña busca",
+      "toda la noche.",
+      "Estás sentado en la cocina",
+      "de la señora",
+      "y tomas té,",
+      "pero no puedes dormir.",
+      "Cada hora preguntas:",
+      "“¿Hay noticias?”",
+      "Y cada hora",
+      "ella dice en voz baja: “Todavía no.”"
+     ]
+    ],
+    [
+     "A las seis de la mañana, por fin suena el teléfono. El equipo encontró el refugio. Felix y Sophie están cansados y tienen frío, pero están bien. Sales afuera. La niebla se fue, y sobre las montañas el cielo se aclara.",
+     [
+      "A las seis de la mañana,",
+      "por fin suena el teléfono.",
+      "El equipo",
+      "encontró el refugio.",
+      "Felix y Sophie",
+      "están cansados y tienen frío,",
+      "pero están bien.",
+      "Sales afuera.",
+      "La niebla se fue,",
+      "y sobre las montañas",
+      "el cielo se aclara."
+     ]
+    ]
+   ],
+   "fim": "Cielo despejado"
+  }
+ }
+}

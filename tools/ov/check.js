@@ -2,6 +2,7 @@
 // Uso: node tools/ov/check.js <alvo> <base> [w|f|t|m|h]   (sem a parte, confere tudo o que existe)
 const fs = require("fs"), path = require("path");
 const { P, load, storySkeleton, shapeDiff, readJSON, PRIMARY } = require("./lib");
+const Q = require("../lib/quality");
 const [target, base, only] = process.argv.slice(2);
 if (!target || !base || base === target || base === PRIMARY(target)) { console.log("par inválido"); process.exit(1); }
 const dir = P("tools/ov-src", `${target}-${base}`);
@@ -42,6 +43,9 @@ if (want("w")) {
       if (r[0] === src[2]) same++;
       r.forEach(x => dash(String(x), tag));
     }
+    const rr = D.words.map((src, i) => [W.rows[i], src, i]).filter(x => Array.isArray(x[0]) && x[0].length === 5);
+    rr.forEach(([r, src, i]) => { if (Q.BANNED_PRON.test(r[1])) E(`w#${i} ${src[0]}: pronúncia vaga`); if (Q.BANNED_TEXT.test(r[3])) E(`w#${i} ${src[0]}: gancho de modelo`); });
+    Q.skeletons(rr.map(([r, src, i]) => [r[3], [src[0], r[0]], "#" + i]), 4, "gancho").forEach(E);
     if (W.rows.length > D.words.length) E(`palavras: ${W.rows.length} linhas, a lista tem ${D.words.length}`);
     if (same > D.words.length * 0.25) E(`palavras: ${same} traduções idênticas à língua primária; parece não traduzido`);
     console.log(`palavras: ${Math.min(W.rows.filter(Boolean).length, D.words.length)}/${D.words.length}`);

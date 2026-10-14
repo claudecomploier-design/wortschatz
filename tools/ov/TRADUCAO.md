@@ -57,6 +57,11 @@ Reescreva o texto da aba Método para quem fala a base, mantendo o HTML (as mesm
 ## 4. Histórias (`h/<id>.json`)
 Gere o esqueleto com `node tools/ov/source.js <alvo> skel <id>` e substitua cada texto pela versão na base, mantendo exatamente a mesma estrutura (mesmas chaves, mesmas listas, mesmo número de blocos). Use `node tools/ov/source.js <alvo> h <id>` para ver o texto estrangeiro de cada parte. Campos: `titulo`, `desc`, e por cena `cap`, `nota` (se houver), `p` = lista de `[tradução completa do parágrafo, [traduções dos blocos]]`, `e` = textos das escolhas, `fim` = título do final. A narração é em 2ª pessoa (you / tú / du / tu...), presente. Mantenha os nomes próprios.
 
+## Trabalho já começado e rascunhos
+- Se a pasta do seu par já tiver arquivos de uma tentativa anterior (ex.: `w-0.json`, `w-100.json`), revise-os rapidamente, corrija o que estiver fraco e continue a partir de onde pararam.
+- Outras pessoas trabalham ao mesmo tempo em outros pares. Use uma pasta de rascunho só sua: `/tmp/claude-0/-home-claude-wortschatz/3aed04db-b1fe-5c49-88e6-718c108d5d2d/scratchpad/<alvo>-<base>-<parte>/`.
+- O validador também recusa ganchos de modelo (a mesma frase com só a palavra trocada) e pronúncias vagas ("listen to the audio"). Cada gancho precisa ser específico.
+
 ## Regras gerais
 - Nunca use o travessão "—". Use vírgula, dois-pontos ou ponto.
 - Ortografia e acentuação corretas da base; nada de texto em português ou inglês sobrando (exceto quando a base é essa língua, ou num gancho que cite de propósito um parente em inglês).

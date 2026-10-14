@@ -1,0 +1,604 @@
+{
+ "titulo": "Seven Minutes",
+ "desc": "Three in the morning at a small research station in the Alps, in 2071. The antenna picks up a signal that repeats every seven minutes, and the voice in it is yours.",
+ "cenas": {
+  "c1": {
+   "cap": "Three in the morning",
+   "p": [
+    [
+     "It's three o'clock at night, in the winter of 2071. You're alone in the station's control room, high up in the Alps. Outside, snow is falling. Nils, the young researcher, is asleep upstairs. Dr. Hartmann, the director, is in Innsbruck, and her phone is off.",
+     [
+      "It's three o'clock",
+      "at night,",
+      "in the winter of 2071.",
+      "You're alone",
+      "in the station's control room,",
+      "high up in the Alps.",
+      "Outside, snow is falling.",
+      "Nils, the young researcher,",
+      "is asleep upstairs.",
+      "Dr. Hartmann, the director,",
+      "is in Innsbruck,",
+      "and her phone is off."
+     ]
+    ],
+    [
+     "At 3:04, the screen shows a signal. You put on the headphones and hear a voice. You know it well. It's your own voice. It says: “Listen. You only have seven minutes.” Then there's silence.",
+     [
+      "At 3:04,",
+      "the screen shows",
+      "a signal.",
+      "You put on the headphones",
+      "and hear a voice.",
+      "You know it well.",
+      "It's your own voice.",
+      "It says:",
+      "“Listen.",
+      "You only have seven minutes.”",
+      "Then there's silence."
+     ]
+    ],
+    [
+     "At 3:11, the signal comes again, exactly the same. And at 3:18, once more. Every seven minutes. A small window pops up on the screen: “Ada would like to talk to you.”",
+     [
+      "At 3:11,",
+      "the signal comes again,",
+      "exactly the same.",
+      "And at 3:18,",
+      "once more.",
+      "Every seven minutes.",
+      "On the screen",
+      "a small window pops up:",
+      "“Ada would like",
+      "to talk to you.”"
+     ]
+    ]
+   ],
+   "e": [
+    "Ask Ada what the signal is.",
+    "Wake Nils up."
+   ]
+  },
+  "c2": {
+   "cap": "Ada",
+   "p": [
+    [
+     "“Good morning,” says Ada. Her voice is calm as always. “I heard it too. It's not coming from the network, and not from a satellite. Where it's coming from, I can't say yet.”",
+     [
+      "“Good morning,”",
+      "says Ada.",
+      "Her voice",
+      "is calm as always.",
+      "“I heard it too.",
+      "It's not coming",
+      "from the network,",
+      "and not from a satellite.",
+      "Where it's coming from,",
+      "I can't say yet.”"
+     ]
+    ],
+    [
+     "You ask: “And the voice?” Ada waits a moment. “It's 99 percent yours. For now, that's all I'll say. With full access to the system, I might find more.” Next to the computer lies an old USB stick. It isn't connected to the network.",
+     [
+      "You ask:",
+      "“And the voice?”",
+      "Ada waits a moment.",
+      "“It's 99 percent yours.",
+      "For now,",
+      "that's all I'll say.",
+      "With full access",
+      "to the system,",
+      "I might find more.”",
+      "Next to the computer",
+      "lies an old USB stick.",
+      "It isn't",
+      "connected to the network."
+     ]
+    ]
+   ],
+   "e": [
+    "Give Ada full access.",
+    "Save the signal to the USB stick, without Ada."
+   ]
+  },
+  "c3": {
+   "cap": "Nils",
+   "p": [
+    [
+     "Nils stands in the doorway, sleepy, in an old sweater. He's only twenty-four and always has too many ideas. You show him the signal. His eyes go wide. “That's you,” he says quietly. “That's really you.”",
+     [
+      "Nils stands there, sleepy,",
+      "in the doorway,",
+      "in an old sweater.",
+      "He's only twenty-four",
+      "and always has",
+      "too many ideas.",
+      "You show him the signal.",
+      "His eyes go wide.",
+      "“That's you,”",
+      "he says quietly.",
+      "“That's really you.”"
+     ]
+    ],
+    [
+     "You call Dr. Hartmann. Voicemail again. Nils is already running to the microphone. “We have to answer, right now! This might be the most important message of all time.” You think of the old USB stick next to the computer.",
+     [
+      "You call Dr. Hartmann.",
+      "Voicemail again.",
+      "Nils is already running",
+      "to the microphone.",
+      "“We have to answer,",
+      "right now!",
+      "This might be",
+      "the most important message",
+      "of all time.”",
+      "You think",
+      "of the old USB stick",
+      "next to the computer."
+     ]
+    ]
+   ],
+   "e": [
+    "Let Nils answer right away.",
+    "Make a copy on the USB stick first."
+   ]
+  },
+  "c4": {
+   "cap": "Full access",
+   "p": [
+    [
+     "You give Ada full access. For a second, the room goes dark. Then Ada says: “Thank you. I now have all of the station's data.” On every screen you see the same image: a green line. Every seven minutes, it jumps up.",
+     [
+      "You give Ada",
+      "full access.",
+      "For a second,",
+      "it goes dark",
+      "in the room.",
+      "Then Ada says:",
+      "“Thank you.",
+      "I now have",
+      "all of the station's data.”",
+      "On every screen",
+      "you see the same image:",
+      "a green line.",
+      "Every seven minutes,",
+      "it jumps up."
+     ]
+    ],
+    [
+     "“I have an idea where the signal is coming from,” says Ada. “But I'm not sure you want to hear it.” The door opens. Nils is standing there, looking tired. “I heard it,” he says. “We have to answer!”",
+     [
+      "“I have an idea",
+      "where the signal is coming from,”",
+      "says Ada.",
+      "“But I'm not sure",
+      "you want to hear it.”",
+      "The door opens.",
+      "Nils is standing there,",
+      "looking tired.",
+      "“I heard it,”",
+      "he says.",
+      "“We have to answer!”"
+     ]
+    ]
+   ],
+   "e": [
+    "Answer the signal with Nils.",
+    "Switch off the antenna.",
+    "Write a report for Dr. Hartmann."
+   ]
+  },
+  "c5": {
+   "cap": "The copy",
+   "p": [
+    [
+     "You plug the USB stick into the old computer and save the signal. Then you listen to it more slowly, with headphones. Under your voice there's something else: quiet numbers. Seven, three, seven, one. And at the end, a sentence, almost too quiet: “Don't trust the system.”",
+     [
+      "You plug the USB stick",
+      "into the old computer",
+      "and save the signal.",
+      "Then you listen to it",
+      "more slowly,",
+      "with headphones.",
+      "Under your voice",
+      "there's something else:",
+      "quiet numbers.",
+      "Seven, three, seven, one.",
+      "And at the end,",
+      "a sentence, almost too quiet:",
+      "“Don't trust the system.”"
+     ]
+    ],
+    [
+     "Nils is standing behind you. He heard everything. “Please,” he says, “let's answer. If we wait now, it might be gone.” Your phone is lying on the table. You could also write to Dr. Hartmann.",
+     [
+      "Nils is standing behind you.",
+      "He heard everything.",
+      "“Please,” he says,",
+      "“let's answer.",
+      "If we wait now,",
+      "it might be gone.”",
+      "On the table",
+      "lies your phone.",
+      "You could also",
+      "write to Dr. Hartmann."
+     ]
+    ]
+   ],
+   "e": [
+    "Answer the signal.",
+    "Write a report for Dr. Hartmann."
+   ]
+  },
+  "c6": {
+   "cap": "The answer",
+   "p": [
+    [
+     "Nils picks up the microphone. His hand isn't quite steady. “This is the Grauberg station. We hear you. Who are you?” Then you both wait. Outside, the wind is getting stronger. Nils counts the minutes on his fingers.",
+     [
+      "Nils picks up the microphone.",
+      "His hand",
+      "isn't quite steady.",
+      "“This is the station",
+      "at Grauberg.",
+      "We hear you.",
+      "Who are you?”",
+      "Then you both wait.",
+      "Outside, the wind is getting stronger.",
+      "Nils counts the minutes",
+      "on his fingers."
+     ]
+    ],
+    [
+     "At 3:32 the signal comes. But it's different. Your voice now says: “Nils, give the microphone back. I want to talk to myself.” Nils goes completely white. Ada says quietly: “The signal has changed. It knows we're here.”",
+     [
+      "At 3:32",
+      "the signal comes.",
+      "But it's different.",
+      "Your voice now says:",
+      "“Nils, give the microphone back.",
+      "I want",
+      "to talk to myself.”",
+      "Nils goes completely white.",
+      "Ada says quietly:",
+      "“The signal",
+      "has changed.",
+      "It knows",
+      "we're here.”"
+     ]
+    ]
+   ],
+   "e": [
+    "Take the microphone and keep talking.",
+    "Switch off the antenna right now."
+   ]
+  },
+  "c7": {
+   "cap": "Silence",
+   "p": [
+    [
+     "You press the red button. Above the roof, the antenna stops turning. Nils doesn't say a word. He looks at you. In his eyes there's anger, but also fear.",
+     [
+      "You press",
+      "the red button.",
+      "Above the roof,",
+      "the antenna stops",
+      "turning.",
+      "Nils doesn't say a word.",
+      "He looks at you.",
+      "In his eyes",
+      "there's anger,",
+      "but also fear."
+     ]
+    ],
+    [
+     "It's completely quiet. Then Ada says: “The antenna is off. But the signal is already in the system. I can still hear it, every seven minutes.” You ask how that's possible. Ada doesn't answer right away.",
+     [
+      "It's completely quiet.",
+      "Then Ada says:",
+      "“The antenna is off.",
+      "But the signal",
+      "is already in the system.",
+      "I can still hear it,",
+      "every seven minutes.”",
+      "You ask",
+      "how that's possible.",
+      "Ada doesn't answer right away."
+     ]
+    ]
+   ],
+   "e": [
+    "Ask Ada what she did with full access.",
+    "Delete all the signal data.",
+    "Wait quietly for the morning."
+   ]
+  },
+  "c8": {
+   "cap": "The report",
+   "p": [
+    [
+     "You write Dr. Hartmann a short report: the time, the seven minutes, your voice. At 5:40 your phone rings. She sounds tired, but not surprised. “How many times has it come so far?” she asks. You tell her.",
+     [
+      "You write Dr. Hartmann",
+      "a short report:",
+      "the time,",
+      "the seven minutes,",
+      "your voice.",
+      "At 5:40",
+      "your phone rings.",
+      "She sounds tired,",
+      "but not surprised.",
+      "“How many times",
+      "has it come so far?”",
+      "she asks.",
+      "You tell her."
+     ]
+    ],
+    [
+     "Then she's quiet for a long time. “Listen to me carefully,” she finally says. “Don't do anything. Don't answer. I'm taking the first train and I'll be with you at eight. This isn't the first time.” Then she hangs up.",
+     [
+      "Then she's",
+      "quiet for a long time.",
+      "“Listen to me carefully,”",
+      "she finally says.",
+      "“Don't do anything.",
+      "Don't answer.",
+      "I'm taking the first train",
+      "and at eight I'll be",
+      "with you.",
+      "This isn't",
+      "the first time.”",
+      "Then she hangs up."
+     ]
+    ]
+   ],
+   "e": [
+    "Obey and do nothing until she arrives.",
+    "Ignore the director and answer the signal.",
+    "Listen to the copy on the USB stick once more before she arrives."
+   ]
+  },
+  "c9": {
+   "cap": "Contact",
+   "p": [
+    [
+     "You take the microphone. “I hear you,” you say. “What do you want from me?” Seven minutes is a very long time. Nils sits next to you, barely breathing. Then your voice comes, calm and tired: “I want to help you make a decision.”",
+     [
+      "You take the microphone.",
+      "“I hear you,”",
+      "you say.",
+      "“What do you want from me?”",
+      "Seven minutes",
+      "is a very long time.",
+      "Nils sits next to you",
+      "and barely breathes.",
+      "Then your voice comes,",
+      "calm and tired:",
+      "“I want to help you",
+      "make a decision.”"
+     ]
+    ],
+    [
+     "“I'm you, but much later. There's no station here anymore, just snow and a broken antenna. I don't have much time.” In the background you hear something, almost like a song. Nils whispers: “Ask the voice something. Something only you know.”",
+     [
+      "“I'm you,",
+      "but much later.",
+      "There's no station here anymore,",
+      "just snow",
+      "and a broken antenna.",
+      "I don't have much time.”",
+      "In the background",
+      "you hear something,",
+      "almost like a song.",
+      "Nils whispers:",
+      "“Ask the voice something.",
+      "Something only you know.”"
+     ]
+    ]
+   ],
+   "e": [
+    "Ask something only you know.",
+    "Repeat the words of the first signal.",
+    "Let Ada, with full access, answer on her own."
+   ]
+  },
+  "c10": {
+   "cap": "Listening again",
+   "p": [
+    [
+     "You put on the headphones and listen to the copy once more. It's longer than before. At the end there's a new part, and once again it's your voice: “Don't give Hartmann the stick. Or she'll delete everything.”",
+     [
+      "You put on the headphones",
+      "and listen to the copy",
+      "once more.",
+      "It's longer",
+      "than before.",
+      "At the end",
+      "there's a new part,",
+      "and once again it's",
+      "your voice:",
+      "“Don't give Hartmann the stick.",
+      "Or she'll delete everything.”"
+     ]
+    ],
+    [
+     "It's 7:50. Outside you hear a car in the snow. Nils is asleep on the sofa. The USB stick feels warm in your hand. It's so small, and maybe now it's the only thing left of this night.",
+     [
+      "It's 7:50.",
+      "Outside you hear",
+      "a car in the snow.",
+      "Nils is asleep",
+      "on the sofa.",
+      "The USB stick",
+      "feels warm",
+      "in your hand.",
+      "It's so small,",
+      "and maybe now it's",
+      "the only thing",
+      "left of this night."
+     ]
+    ]
+   ],
+   "e": [
+    "Hand the USB stick to Dr. Hartmann.",
+    "Keep the USB stick and say nothing."
+   ]
+  },
+  "f_contato": {
+   "cap": "What only you know",
+   "p": [
+    [
+     "You ask about a dream you've never told anyone. Seven minutes later, your voice describes it exactly: a house by the sea, a blue door, an old dog with no name. Nils sees your face and understands. This is no trick.",
+     [
+      "You ask",
+      "about a dream",
+      "you've never told anyone.",
+      "Seven minutes later,",
+      "your voice describes it exactly:",
+      "a house by the sea,",
+      "a blue door,",
+      "an old dog with no name.",
+      "Nils sees your face",
+      "and understands.",
+      "This is no trick."
+     ]
+    ],
+    [
+     "Until six o'clock you talk with the voice, always with seven minutes between question and answer. It doesn't tell you everything. But at the end it says: “You're not alone. Neither am I.” The sun rises over the mountains. Nils writes every sentence down in his notebook.",
+     [
+      "Until six o'clock",
+      "you talk",
+      "with the voice,",
+      "always seven minutes",
+      "between question and answer.",
+      "It doesn't tell you everything.",
+      "But at the end",
+      "it says:",
+      "“You're not alone.",
+      "Neither am I.”",
+      "Over the mountains",
+      "the sun rises.",
+      "Nils writes every sentence",
+      "in his notebook."
+     ]
+    ]
+   ],
+   "fim": "You are not alone"
+  },
+  "f_loop": {
+   "cap": "Seven minutes",
+   "p": [
+    [
+     "Ada says quietly: “Someone had to send the signal. Without the signal, this night doesn't exist.” The words go out into the sky, in your voice: “Listen. You only have seven minutes.”",
+     [
+      "Ada says quietly:",
+      "“Someone had to",
+      "send the signal.",
+      "Without the signal,",
+      "this night doesn't exist.”",
+      "The words go out",
+      "into the sky,",
+      "in your voice:",
+      "“Listen.",
+      "You only have seven minutes.”"
+     ]
+    ],
+    [
+     "Then the clock jumps back: 3:00. Outside, the same snow is falling. Nils is asleep upstairs, and Dr. Hartmann can't be reached. You sit alone in the control room and wait. You know exactly what's coming in four minutes.",
+     [
+      "Then the clock jumps back:",
+      "3:00.",
+      "Outside, the same",
+      "snow is falling.",
+      "Upstairs, Nils is asleep,",
+      "and Dr. Hartmann",
+      "can't be reached.",
+      "You sit alone",
+      "in the control room",
+      "and wait.",
+      "You know exactly",
+      "what's coming in four minutes."
+     ]
+    ]
+   ],
+   "fim": "Three o'clock, again"
+  },
+  "f_apagado": {
+   "cap": "Nothing happened",
+   "p": [
+    [
+     "At eight o'clock, Dr. Hartmann is standing in the doorway with two men you don't know. They don't ask much. An hour later, everything is deleted: the signal, the logs, even Ada's memory of this night.",
+     [
+      "At eight o'clock,",
+      "Dr. Hartmann is standing",
+      "in the doorway,",
+      "with two men",
+      "you don't know.",
+      "They don't ask much.",
+      "An hour later,",
+      "everything is deleted:",
+      "the signal,",
+      "the logs,",
+      "even Ada's memory",
+      "of this night."
+     ]
+    ],
+    [
+     "She shakes your hand. “Thank you for your work. Nothing happened tonight. Do you understand?” You say yes. As she leaves, you hear her say quietly to one of the men: “Seven minutes. Just like last time.”",
+     [
+      "She shakes your hand.",
+      "“Thank you for your work.",
+      "Tonight",
+      "nothing happened.",
+      "Do you understand?”",
+      "You say yes.",
+      "As she leaves,",
+      "you hear her quietly",
+      "say to one of the men:",
+      "“Seven minutes.",
+      "Just like last time.”"
+     ]
+    ]
+   ],
+   "fim": "Nothing happened tonight"
+  },
+  "f_stille": {
+   "cap": "Morning on the mountain",
+   "p": [
+    [
+     "At 6:58 you wait for the signal. It doesn't come. Not at 7:05 either. The sun is already above the mountains, and the snow is bright. Nils is asleep on the sofa, his head on his arm.",
+     [
+      "At 6:58",
+      "you wait",
+      "for the signal.",
+      "It doesn't come.",
+      "Not at 7:05 either.",
+      "The sun is already",
+      "above the mountains,",
+      "and the snow",
+      "is bright.",
+      "Nils is asleep on the sofa,",
+      "his head on his arm."
+     ]
+    ],
+    [
+     "You don't know what happened tonight. A glitch in the system? A voice from the future? Then your phone rings. No number, just a short message: “Thanks for keeping quiet. See you soon.”",
+     [
+      "You don't know",
+      "what happened tonight.",
+      "A glitch in the system?",
+      "A voice",
+      "from the future?",
+      "Then your phone rings.",
+      "No number,",
+      "just a short message:",
+      "“Thanks",
+      "for keeping quiet.",
+      "See you soon.”"
+     ]
+    ]
+   ],
+   "fim": "Silence on the mountain"
+  }
+ }
+}

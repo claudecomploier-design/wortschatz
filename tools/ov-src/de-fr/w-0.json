@@ -1,0 +1,702 @@
+[
+[
+"je",
+"ich (ch doux, comme un chat qui souffle)",
+"SOM",
+"« Hic ! », c'est moi qui ai le hoquet. Ich = je, avec un ch soufflé.",
+"Je suis fatigué."
+],
+[
+"tu",
+"dou",
+"SOM",
+"Du, c'est « doux » : on tutoie les gens avec qui on est doux et proche.",
+"Tu es mon ami."
+],
+[
+"il",
+"èr",
+"EN",
+"Comme l'anglais « he/her » : er = il. Le R final rappelle der, l'article masculin.",
+"Il est grand."
+],
+[
+"elle / ils, elles / vous (Sie, politesse)",
+"zi",
+"EN",
+"L'anglais « she » est devenu sie. Avec une majuscule, Sie = vous de politesse.",
+"Elle est ici."
+],
+[
+"ça / il, elle (neutre)",
+"èss",
+"EN",
+"L'anglais « it's » donne es ist. C'est le sujet de la météo : es regnet, il pleut.",
+"Il fait froid."
+],
+[
+"nous",
+"vir",
+"EN",
+"L'anglais « we're » donne wir. Le W allemand se prononce V.",
+"Nous sommes amis."
+],
+[
+"vous (tutoiement pluriel)",
+"ir",
+"SOM",
+"« Vous allez IR avec moi ? » Ihr = vous, à des amis que l'on tutoie.",
+"Vous êtes bruyants."
+],
+[
+"on",
+"man",
+"FR",
+"C'est notre « on » ! Man sagt = on dit. Avec un seul N : der Mann (deux N) est un homme précis.",
+"Ça ne se dit pas."
+],
+[
+"se (réfléchi)",
+"zich (ch doux)",
+"FR",
+"Le « soi » français : sich = se, soi. Er wäscht sich, il se lave.",
+"Il se lave."
+],
+[
+"être humain, personne",
+"MÈNNch (ch doux)",
+"EN",
+"En anglais (yiddish), « a mensch » est une personne bien. Der Mensch : l'humain.",
+"L'être humain a besoin de temps."
+],
+[
+"homme",
+"mann",
+"EN",
+"L'anglais « man » avec deux N. Der Mann, l'homme en chair et en os.",
+"L'homme est vieux."
+],
+[
+"femme / madame",
+"fraou",
+"IMG",
+"Frau Müller = Madame Müller. Pense à la « Fräulein » des vieux films : die Frau, la femme.",
+"La femme est nouvelle ici."
+],
+[
+"enfant",
+"kinnt",
+"EN",
+"Comme le « kindergarten » (jardin d'enfants). Das Kind, neutre comme un bébé.",
+"L'enfant joue."
+],
+[
+"être",
+"zaïnn",
+"REGRA",
+"Verbe irrégulier de base : ich bin, du bist, er ist (comme l'anglais « is »), wir sind.",
+"Je suis étudiant."
+],
+[
+"avoir",
+"HA-benn",
+"EN",
+"L'anglais « have » : le V anglais devient B en allemand. Ich habe = j'ai.",
+"J'ai le temps."
+],
+[
+"devenir / (futur)",
+"VÈR-denn",
+"REGRA",
+"Werden = devenir. Avec un infinitif, il fait le futur : ich werde kommen, je viendrai.",
+"Il commence à faire froid."
+],
+[
+"pouvoir / savoir faire",
+"KEU-nenn",
+"EN",
+"L'anglais « can » : ich kann = je peux, je sais (faire).",
+"Je sais nager."
+],
+[
+"devoir (obligation)",
+"MU-ssenn (u français)",
+"EN",
+"L'anglais « must » : ich muss = je dois, il le faut.",
+"Je dois partir."
+],
+[
+"devoir (selon une règle, un ordre)",
+"ZO-lenn",
+"EN",
+"L'anglais « shall/should » : du sollst = tu dois (on te l'a demandé).",
+"Tu dois étudier."
+],
+[
+"vouloir",
+"VO-lenn",
+"EN",
+"L'anglais « will » (volonté) : ich will = je veux. Attention, ce n'est pas le futur !",
+"Je veux du café."
+],
+[
+"dire",
+"ZA-guenn",
+"EN",
+"L'anglais « say » : sagen = dire. Une saga, c'est ce qu'on raconte.",
+"Qu'est-ce que tu dis ?"
+],
+[
+"faire",
+"MA-rhenn (ch raclé, comme la jota espagnole)",
+"EN",
+"L'anglais « make » : le K devient CH. Was machst du ? Qu'est-ce que tu fais ?",
+"Qu'est-ce que tu fais ?"
+],
+[
+"donner",
+"GUÉ-benn",
+"EN",
+"L'anglais « give » : V devient B. Gib mir ! Donne-moi !",
+"Donne-moi ça !"
+],
+[
+"venir",
+"KO-menn",
+"EN",
+"L'anglais « come » : komm her ! Viens ici !",
+"Viens ici !"
+],
+[
+"aller (à pied)",
+"GUÉ-enn",
+"EN",
+"L'anglais « go » : gehen = aller, surtout à pied.",
+"Je rentre à la maison."
+],
+[
+"voir",
+"ZÉ-enn",
+"EN",
+"L'anglais « see » : sehen = voir. Le h ne se prononce pas.",
+"Je te vois."
+],
+[
+"savoir (un fait)",
+"VI-ssenn",
+"LA",
+"Comme « vision » ou l'anglais « wisdom » : savoir, c'est avoir vu. Ich weiß = je sais.",
+"Je ne sais pas."
+],
+[
+"trouver / penser (un avis)",
+"FINN-denn",
+"EN",
+"L'anglais « find » : ich finde das gut = je trouve ça bien.",
+"Je trouve ça bien."
+],
+[
+"être debout",
+"CHTÉ-enn",
+"EN",
+"L'anglais « stand » : stehen = être debout. Le st- se dit « cht ».",
+"Il est debout à la porte."
+],
+[
+"laisser",
+"LA-ssenn",
+"EN",
+"L'anglais « let » : lass mich ! Laisse-moi !",
+"Laisse-moi !"
+],
+[
+"rester",
+"BLAÏ-benn",
+"SOM",
+"On reste « blême » ? Non : imagine un ami collé au canapé qui dit « bleib ! », reste !",
+"Je reste ici."
+],
+[
+"prendre",
+"NÉ-menn",
+"IMG",
+"Nehmen : imagine une main qui prend avec un « Mmm » gourmand. Ich nehme das = je prends ça.",
+"Je prends ça."
+],
+[
+"le (masculin)",
+"dèr",
+"REGRA",
+"Article masculin au nominatif. Retiens les noms avec leur article : der Mann, der Tag.",
+"L'homme est ici."
+],
+[
+"la (féminin) / les (pluriel)",
+"di",
+"REGRA",
+"Article féminin, et aussi article de tous les pluriels : die Frau, die Kinder.",
+"La femme est ici."
+],
+[
+"le, la (neutre) / ça, cela",
+"dass",
+"REGRA",
+"Article neutre : das Kind. Seul, il veut dire « ça » : das ist gut, c'est bien.",
+"L'enfant est ici."
+],
+[
+"un, une",
+"aïnn",
+"EN",
+"Comme l'anglais « an » et « one » : ein Haus, une maison.",
+"J'ai une maison."
+],
+[
+"aucun, pas de",
+"kaïnn",
+"REGRA",
+"C'est ein avec un K de négation : kein Geld = pas d'argent.",
+"Je n'ai pas d'argent."
+],
+[
+"et",
+"ount",
+"EN",
+"L'anglais « and » : du und ich, toi et moi.",
+"toi et moi"
+],
+[
+"ou",
+"O-der",
+"EN",
+"L'anglais « or » + der. Ja oder nein ? Oui ou non ?",
+"Oui ou non ?"
+],
+[
+"mais",
+"A-ber",
+"SOM",
+"« Habère », mais pas tout de suite ! Aber = mais.",
+"Petit, mais bon."
+],
+[
+"que (je sais que...)",
+"dass",
+"EN",
+"L'anglais « that » : TH devient D. Ich weiß, dass... = je sais que...",
+"Je sais que tu es ici."
+],
+[
+"parce que",
+"vaïl",
+"SOM",
+"« Il pleut, c'est pour ça que je mets un VOILE » : weil = parce que. Le verbe part à la fin.",
+"Je reste parce qu'il pleut."
+],
+[
+"si / quand",
+"vènn",
+"EN",
+"L'anglais « when » : wenn du kommst = si / quand tu viens.",
+"Si tu viens, je fais à manger."
+],
+[
+"que (comparaison) / comme / quand (passé)",
+"als",
+"FALSO",
+"Größer als = plus grand que. Attention : als n'a rien à voir avec « aussi ».",
+"Il est plus grand que moi."
+],
+[
+"ce, cette, celui-ci",
+"DI-zer",
+"EN",
+"L'anglais « this » : TH devient D. Dieser Weg = ce chemin-ci.",
+"Ce chemin est long."
+],
+[
+"dans, en",
+"inn",
+"EN",
+"Comme l'anglais « in » : ich wohne in Berlin.",
+"J'habite à Berlin."
+],
+[
+"sur / ouvert",
+"aouf",
+"EN",
+"L'anglais « up/on » : sur une surface. Die Tür ist auf = la porte est ouverte.",
+"Le livre est sur la table."
+],
+[
+"à, contre (en contact)",
+"ann",
+"EN",
+"L'anglais « on » pour un mur : an der Wand = au mur, contre le mur.",
+"Le tableau est accroché au mur."
+],
+[
+"chez / près de",
+"baï",
+"EN",
+"L'anglais « by » : bei meiner Oma = chez ma grand-mère.",
+"J'habite chez ma grand-mère."
+],
+[
+"avec",
+"mitt",
+"IMG",
+"Une « mitaine » sur la main : la main AVEC sa mitaine. Kaffee mit Milch.",
+"café au lait"
+],
+[
+"de (origine, possession)",
+"fonn",
+"IMG",
+"Comme le « von » des nobles : Otto von Bismarck, Bismarck DE quelque part.",
+"un ami à moi"
+],
+[
+"chez, vers (une personne) / trop",
+"tsou",
+"EN",
+"L'anglais « to » : T devient Z. Ich gehe zu Anna = je vais chez Anna. Zu groß = trop grand.",
+"Je vais chez Anna."
+],
+[
+"de (provenance) / dehors / éteint",
+"aouss",
+"EN",
+"L'anglais « out » : sortir de. Ich komme aus Frankreich = je viens de France.",
+"Je viens du Brésil."
+],
+[
+"à, vers (ville, pays) / après",
+"nahr (ch raclé)",
+"IMG",
+"Nachmittag = après-midi. Ich fahre nach Berlin = je vais à Berlin.",
+"Je vais à Berlin."
+],
+[
+"au-dessus de / sur (un sujet)",
+"U-ber (u français)",
+"EN",
+"L'anglais « over », comme l'Uber qui passe au-dessus des bouchons.",
+"L'avion survole la ville."
+],
+[
+"sous",
+"OUN-ter",
+"EN",
+"L'anglais « under » : D devient T. Unter dem Bett = sous le lit.",
+"Le chat est sous le lit."
+],
+[
+"devant / avant",
+"for",
+"EN",
+"L'anglais « before/fore » : vor dem Haus = devant la maison. Le V se dit F.",
+"Il attend devant la maison."
+],
+[
+"à travers, par",
+"dourch (ch doux)",
+"EN",
+"L'anglais « through » : TH devient D. Durch die Stadt = à travers la ville.",
+"Nous marchons dans la ville."
+],
+[
+"pour",
+"fur (u français)",
+"EN",
+"L'anglais « for » : das ist für dich = c'est pour toi.",
+"C'est pour toi."
+],
+[
+"à (heure) / autour de",
+"oumm",
+"IMG",
+"Um acht Uhr = à huit heures. Imagine l'aiguille qui tourne AUTOUR du cadran.",
+"J'arrive à huit heures."
+],
+[
+"jusqu'à",
+"biss",
+"SOM",
+"« Bis ! » comme on crie « bis » au concert : encore jusqu'à la fin. Bis morgen ! À demain !",
+"À demain !"
+],
+[
+"ensuite, alors",
+"dann",
+"EN",
+"L'anglais « then » : TH devient D. Erst essen, dann schlafen.",
+"D'abord manger, ensuite dormir."
+],
+[
+"encore",
+"norh (ch raclé)",
+"SOM",
+"Noch : tu es « encore » là, comme un vieux NOUNOURS qu'on garde. Noch einmal = encore une fois.",
+"Je suis encore ici."
+],
+[
+"déjà",
+"chône",
+"SOM",
+"« Schön, déjà fini ! » Schon = déjà ; ne pas confondre avec schön (beau).",
+"Je suis déjà là."
+],
+[
+"toujours",
+"I-mer",
+"SOM",
+"« Il est toujours dans l'IMMEuble. » Immer = toujours.",
+"Il est toujours fatigué."
+],
+[
+"aujourd'hui",
+"HOÏ-te",
+"ES",
+"Comme l'espagnol « hoy » (aujourd'hui) : heute, le eu se dit « oï ».",
+"Aujourd'hui, c'est lundi."
+],
+[
+"fois",
+"mal",
+"FALSO",
+"Pas le « mal » français ! Einmal = une fois, zweimal = deux fois.",
+"Encore une fois, s'il te plaît !"
+],
+[
+"temps",
+"tsaït",
+"EN",
+"L'anglais « time/tide » : T devient Z. Die Zeit, féminine comme l'heure.",
+"Je n'ai pas le temps."
+],
+[
+"an, année",
+"yar",
+"EN",
+"L'anglais « year » : Das Jahr. Le J allemand se dit Y.",
+"L'année est presque finie."
+],
+[
+"jour",
+"tak",
+"EN",
+"L'anglais « day » : D devient T. Guten Tag ! Bonjour !",
+"Bonjour !"
+],
+[
+"fin",
+"ÈN-de",
+"EN",
+"L'anglais « end » : das Ende = la fin.",
+"C'est la fin."
+],
+[
+"quoi, qu'est-ce que",
+"vass",
+"EN",
+"L'anglais « what » : T devient S. Was ist das ? Qu'est-ce que c'est ?",
+"Qu'est-ce que c'est ?"
+],
+[
+"comment",
+"vi",
+"SOM",
+"Wie se dit « vi », presque « oui » : « Oui ? Comment ? » Wie geht's ? Comment ça va ?",
+"Comment vas-tu ?"
+],
+[
+"où",
+"vo",
+"EN",
+"L'anglais « where » raccourci : wo bist du ? Où es-tu ?",
+"Où es-tu ?"
+],
+[
+"ici",
+"hir",
+"EN",
+"L'anglais « here » : ich bin hier, je suis ici.",
+"Je suis ici."
+],
+[
+"là / présent",
+"da",
+"IMG",
+"« Da ! » en montrant du doigt : là ! Ich bin da = je suis là.",
+"Le voilà !"
+],
+[
+"ne... pas",
+"nicht (ch doux)",
+"EN",
+"L'anglais « not » : das ist nicht gut, ce n'est pas bien.",
+"Ce n'est pas bien."
+],
+[
+"oui",
+"ya",
+"IMG",
+"Ja ! Comme le « yeah » enthousiaste.",
+"Oui, avec plaisir !"
+],
+[
+"si ! (pour contredire un non)",
+"dorh (ch raclé)",
+"FR",
+"C'est exactement notre « si ! » : Du kommst nicht ? Doch ! Tu ne viens pas ? Si !",
+"Tu ne viens pas ? Mais si !"
+],
+[
+"aussi",
+"aourh (ch raclé)",
+"SOM",
+"« Aouh, moi aussi ! » Ich auch ! Moi aussi !",
+"Moi aussi !"
+],
+[
+"seulement, juste",
+"nour",
+"SOM",
+"« Juste de la NOURriture. » Nur = seulement.",
+"Juste un café, s'il vous plaît."
+],
+[
+"ainsi, comme ça / si, tellement",
+"zo",
+"EN",
+"Comme l'anglais « so » : das ist so gut ! C'est tellement bon !",
+"C'est tellement bon !"
+],
+[
+"donc, alors",
+"AL-zo",
+"FALSO",
+"Faux ami de l'anglais « also » ! Also = donc, alors. Aussi se dit auch.",
+"Bon, on y va !"
+],
+[
+"très",
+"zèr",
+"SOM",
+"« Très sérieux » : sehr gut = très bien.",
+"Très bien !"
+],
+[
+"beaucoup (quantité)",
+"fil",
+"SOM",
+"Un FIL très long, beaucoup de fil ! Viel Glück = bonne chance (beaucoup de chance).",
+"Bonne chance !"
+],
+[
+"plus, davantage",
+"mèr",
+"EN",
+"L'anglais « more » : mehr Zeit = plus de temps.",
+"Je veux plus de temps."
+],
+[
+"tous",
+"A-le",
+"EN",
+"L'anglais « all » : alle sind hier, tout le monde est là.",
+"Tout le monde est là."
+],
+[
+"entier / tout à fait",
+"gannts",
+"IMG",
+"Un GANT entier qui couvre toute la main : ganz = entier, complètement.",
+"toute la ville"
+],
+[
+"deux",
+"tsvaï",
+"EN",
+"L'anglais « two/twin » : T devient Z. Zwei = deux.",
+"deux enfants"
+],
+[
+"bon, bien",
+"gout",
+"EN",
+"L'anglais « good » : D devient T. Alles gut ! Tout va bien.",
+"Tout va bien."
+],
+[
+"grand",
+"gross",
+"FR",
+"Comme notre « gros » : groß = grand. Le ß se lit SS.",
+"La maison est grande."
+],
+[
+"nouveau, neuf",
+"noï",
+"LA",
+"Comme « neuf » et l'anglais « new » : das Auto ist neu.",
+"La voiture est neuve."
+],
+[
+"vieux, âgé",
+"alt",
+"EN",
+"L'anglais « old » : D devient T. Mein Opa ist alt.",
+"Mon grand-père est vieux."
+],
+[
+"maison",
+"haous",
+"EN",
+"L'anglais « house » : das Haus. Nach Hause = à la maison.",
+"La maison est vieille."
+],
+[
+"ville",
+"chtatt",
+"SOM",
+"Une ville avec son grand STADe de foot. Die Stadt, la ville.",
+"Berlin est une grande ville."
+],
+[
+"pays / campagne",
+"lannt",
+"EN",
+"L'anglais « land » : das Land = le pays, la campagne.",
+"Le Brésil est un grand pays."
+],
+[
+"monde",
+"vèlt",
+"EN",
+"L'anglais « world » : die Welt. Weltmeister = champion du monde.",
+"Le monde est petit."
+],
+[
+"vie",
+"LÉ-benn",
+"EN",
+"L'anglais « live » : V devient B, leben = vivre. Das Leben = la vie.",
+"La vie est belle."
+],
+[
+"argent",
+"guèlt",
+"IMG",
+"Geld rappelle « Gold » : l'or, l'argent. Das Geld.",
+"Le temps, c'est de l'argent."
+],
+[
+"chemin",
+"vék",
+"EN",
+"L'anglais « way » : der Weg = le chemin. Weg ! = dégage, va-t'en !",
+"Le chemin est long."
+]
+]

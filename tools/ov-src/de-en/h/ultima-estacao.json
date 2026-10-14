@@ -1,0 +1,138 @@
+{
+ "titulo": "Last Stop",
+ "desc": "You arrive in Berlin late at night, with your phone almost dead and an address that seems to be wrong.",
+ "cenas": {
+  "c1": {
+   "cap": "Arrival",
+   "p": [
+    ["It's eleven o'clock at night. Your train finally pulls into Ostbahnhof station. You have a flat in Berlin for a week. Mr Weber, the landlord, sent you the address: Lindenstraße 21.",
+     ["It's eleven o'clock", "at night.", "Your train finally pulls", "into Ostbahnhof station.", "For a week", "you have a flat", "in Berlin.", "Mr Weber, the landlord,", "sent you the address:", "Lindenstraße 21."]],
+    ["Your phone has only three percent left. The map shows a Lindenstraße, but there's no number 21 there. Mr Weber isn't answering. A man is standing outside the station, smoking. Next to you is a small café, and it's still open.",
+     ["Your phone has", "only three percent left.", "The map shows", "a Lindenstraße,", "but a number 21", "doesn't exist there.", "Mr Weber isn't answering.", "Outside the station", "a man is standing", "and smoking.", "Next to you", "is a small café,", "and it's still open."]]
+   ],
+   "e": ["Ask the man outside the station.", "Keep looking on your own.", "Go into the café and ask for help."]
+  },
+  "c2a": {
+   "cap": "The Taxi Driver",
+   "p": [
+    ["The man's name is Udo and he drives a taxi, but tonight he's off duty. He reads the address and laughs out loud. “Lindenstraße? There are four Lindenstraßes in Berlin, my friend! Which one do you mean?” You don't know.",
+     ["The man's name is Udo", "and he drives a taxi,", "but tonight he's off duty.", "He reads the address", "and laughs out loud.", "“Lindenstraße?", "In Berlin there are", "four Lindenstraßes,", "my friend!", "Which one do you mean?”", "You don't know."]],
+    ["Udo shows you his card: “Here's my number. I'm driving to Kreuzberg now. That's where the best-known Lindenstraße is. Come along, it won't cost you anything.” He's friendly, but his car smells strongly of onions.",
+     ["Udo shows you", "his card:", "“Here's my number.", "I'm driving now", "to Kreuzberg.", "That's where", "the best-known Lindenstraße is.", "Come along,", "it won't cost anything.”", "He's friendly,", "but his car", "smells strongly", "of onions."]]
+   ],
+   "e": ["Ride with Udo.", "Take Udo's card and catch the night bus."]
+  },
+  "c2b": {
+   "cap": "Alone in the Street",
+   "p": [
+    ["You walk alone through the dark streets. It's cold, and your suitcase is heavy. After ten minutes you ask a woman, but she doesn't speak German. Then a young man comes up to you. He's very friendly.",
+     ["You walk alone", "through the dark streets.", "It's cold,", "and your suitcase", "is heavy.", "After ten minutes", "you ask a woman,", "but she doesn't speak German.", "Then", "a young man", "comes up to you.", "He's very friendly."]],
+    ["“Looking for a room? I've got one near here, only twenty euros a night.” That's very cheap for Berlin. But the man wants the money right away, and he keeps glancing at your bag.",
+     ["“Looking for a room?", "I've got one", "near here,", "only twenty euros", "a night.”", "That's very cheap", "for Berlin.", "But the man wants", "the money right away", "and keeps glancing", "at your bag."]]
+   ],
+   "e": ["Go and see the room.", "Say no and take the night bus."]
+  },
+  "c2c": {
+   "cap": "The Café",
+   "p": [
+    ["The café is small and warm. Behind the till stands a woman with short hair. Her name is Selin, and the café is hers. You show her the message. “Mr Weber? I know him! He has his coffee here every morning.”",
+     ["The café is small", "and warm.", "Behind the till", "stands a woman", "with short hair.", "Her name is Selin,", "and the café is hers.", "You show her", "the message.", "“Mr Weber?", "I know him!", "He has here", "every morning", "his coffee.”"]],
+    ["Selin calls Mr Weber, but he doesn't pick up. “He's probably asleep already. He lives on Lindenstraße, but I don't know the number.” Then she points at your phone: “You can charge it here if you like.”",
+     ["Selin calls Mr Weber,", "but he doesn't pick up.", "“He's probably asleep already.", "He lives", "on Lindenstraße,", "but the number", "I don't know.”", "Then she points", "at your phone:", "“You can charge it here", "if you like.”"]]
+   ],
+   "e": ["Wait in the café and charge your phone.", "Go straight to Lindenstraße."]
+  },
+  "c3a": {
+   "cap": "The Wrong Lindenstraße",
+   "p": [
+    ["Udo drives fast and tells you stories about his passengers the whole way. After twenty minutes he stops outside Lindenstraße 21. But the building is an office, and everything is dark. No Weber, no flat.",
+     ["Udo drives fast", "and tells you the whole way", "stories about his passengers.", "After twenty minutes", "he stops", "outside Lindenstraße 21.", "But the building", "is an office,", "and everything is dark.", "No Weber,", "no flat."]],
+    ["Then your phone goes black: zero percent. Udo thinks for a moment. “I know a café by Ostbahnhof. The woman there knows everybody. Or I can take you to a hostel. It's not expensive.”",
+     ["Then your phone goes", "black:", "zero percent.", "Udo thinks for a moment.", "“I know a café", "by Ostbahnhof.", "The woman there", "knows everybody.", "Or I can take you", "to a hostel.", "It's not expensive.”"]]
+   ],
+   "e": ["Drive to the café with Udo.", "Ask Udo to take you to a hostel."]
+  },
+  "c3b": {
+   "cap": "Last Stop",
+   "p": [
+    ["The night bus is warm and almost empty. Only an old man is sleeping at the back. You're very tired, and your eyes are getting heavy. “Just for a moment,” you think. Then you fall asleep.",
+     ["The night bus is warm", "and almost empty.", "Only an old man", "is sleeping at the back.", "You're very tired,", "and your eyes", "are getting heavy.", "“Just for a moment,”", "you think.", "Then you fall asleep."]],
+    ["When you wake up, the bus has stopped. “Last stop! Everybody off!” the driver shouts. Outside you see nothing but fields and a bus stop. Your phone has one percent left. At the stop a man is waiting, and he's looking at you.",
+     ["When you wake up,", "the bus has stopped.", "“Last stop!", "Everybody off!”", "the driver shouts.", "Outside you see", "nothing but fields", "and a bus stop.", "Your phone has", "one percent left.", "At the bus stop", "a man is waiting", "and looking at you."]],
+    ["The driver says: “The next bus doesn't leave until five o'clock. There's a hostel over there.” The man comes up to you: “Need a room? Really cheap, only twenty euros.”",
+     ["The driver says:", "“The next bus", "doesn't leave until five o'clock.", "Over there", "is a hostel.”", "The man comes", "up to you:", "“Need a room?", "Really cheap,", "only twenty euros.”"]]
+   ],
+   "e": ["Call Udo with your last one percent.", "Go to the hostel.", "Go and see the room with the man."]
+  },
+  "c3d": {
+   "cap": "Waiting in the Café",
+   "p": [
+    ["Selin, the woman behind the till, makes you a cup of tea. Your phone is lying next to the till, charging slowly. She calls Mr Weber, but he doesn't pick up. “He lives on Lindenstraße, I know that much. But I don't know the number.”",
+     ["Selin, the woman", "behind the till,", "gives you a tea.", "Your phone is lying", "next to the till", "and charging slowly.", "She calls Mr Weber,", "but he doesn't pick up.", "“He lives", "on Lindenstraße,", "I know that much.", "But the number", "I don't know.”"]],
+    ["At one o'clock Selin wants to close the café. A man with a beer is sitting at one of the tables. He heard everything. “I've got a room, really close by. Twenty euros. Come on, I'll show you.” Selin says nothing. But her face is very serious.",
+     ["At one o'clock", "Selin wants", "to close the café.", "At one of the tables", "sits a man", "with a beer.", "He heard everything.", "“I've got a room,", "really close by.", "Twenty euros.", "Come on, I'll show you.”", "Selin says nothing.", "But her face", "is very serious."]]
+   ],
+   "e": ["Go with the man.", "Walk to Lindenstraße on your own."]
+  },
+  "c3c": {
+   "cap": "The Cheap Room",
+   "p": [
+    ["The man walks quickly, and you follow him through a dark courtyard. He stops in front of an old door. “The room is upstairs. But first the money: a hundred euros for the whole week. I'll bring you the key afterwards.”",
+     ["The man walks quickly,", "and you follow him", "through a dark courtyard.", "In front of an old door", "he stops.", "“The room is upstairs.", "But first the money:", "a hundred euros", "for the whole week.", "The key", "I'll bring you afterwards.”"]],
+    ["There's no light in the courtyard. There's no name on the door. The man looks at his watch. “Hurry up, I haven't got much time!” In your bag there's exactly a hundred euros. It's all the money you have.",
+     ["In the courtyard", "there's no light.", "On the door", "there's no name.", "The man looks", "at his watch.", "“Hurry up,", "I haven't got much time!”", "In your bag", "there's exactly a hundred euros.", "It's all the money you have."]]
+   ],
+   "e": ["Pay the hundred euros.", "Say no and look for a hostel."]
+  },
+  "c4": {
+   "cap": "Number 21",
+   "p": [
+    ["Late at night you're finally standing on Lindenstraße, outside number 21. You read all the names by the door, but there's no Weber. Then you notice the building next door: number 12. And there, right at the top, it says “Weber”!",
+     ["Late at night", "you're finally standing", "on Lindenstraße,", "outside number 21.", "You read", "all the names by the door,", "but no Weber.", "Then you notice", "the building next door:", "number 12.", "And there, right at the top,", "it says “Weber”!"]],
+    ["He wrote the numbers the wrong way round! You ring the bell once, twice, three times. Nobody opens. The whole building is dark, only on the first floor is a light still on. It's cold, and you're very tired.",
+     ["He wrote the numbers", "the wrong way round!", "You ring the bell", "once, twice, three times.", "Nobody opens.", "In the building", "everything is dark,", "only on the first floor", "is a light still on.", "It's cold,", "and you're very tired."]]
+   ],
+   "e": ["Call Mr Weber one more time.", "Ring the bell on the first floor.", "Give up and look for a hostel."]
+  },
+  "f_bom": {
+   "cap": "The Key",
+   "p": [
+    ["Luckily your phone is fully charged now. You call Mr Weber, and at last he answers, half asleep. “Number 21? Oh no, that's my mistake! It's 12. Wait there, I'll be right down.”",
+     ["Luckily", "your phone is fully charged now.", "You call Mr Weber,", "and at last", "he answers,", "half asleep.", "“Number 21?", "Oh no,", "that's my mistake!", "It's 12.", "Wait there,", "I'll be right down.”"]],
+    ["Two minutes later Mr Weber opens the door, in his pyjamas, with the key in his hand. The flat is small but lovely. In the morning you have breakfast at Selin's café. She laughs: “Welcome to Berlin! Now you've got a friend here.”",
+     ["Two minutes later", "Mr Weber opens the door,", "in his pyjamas,", "with the key", "in his hand.", "The flat is small", "but lovely.", "In the morning", "you have breakfast", "at Selin's.", "She laughs:", "“Welcome to Berlin!", "Now you've got here", "a friend.”"]]
+   ],
+   "fim": "A Key and a Friend"
+  },
+  "f_vizinha": {
+   "cap": "The Neighbour",
+   "p": [
+    ["You ring the bell on the first floor. A window opens, and a young woman looks down. “Do you know what time it is?” You explain everything: the address, the phone, the long night. The woman listens and then laughs.",
+     ["You ring the bell", "on the first floor.", "A window opens,", "and a young woman", "looks down.", "“Do you know", "what time it is?”", "You explain everything:", "the address,", "the phone,", "the long night.", "The woman listens", "and then laughs."]],
+    ["Her name is Jana and she's a student. “Mr Weber is staying with his daughter until tomorrow. You can sleep on my sofa.” In the morning Mr Weber turns up with the key and a cake. He keeps apologising. Afterwards you all have coffee together.",
+     ["Her name is Jana", "and she's a student.", "“Mr Weber is staying", "until tomorrow", "with his daughter.", "You can", "sleep on my sofa.”", "In the morning", "Mr Weber turns up", "with the key", "and a cake.", "He apologises", "again and again.", "Afterwards you all have", "coffee together."]]
+   ],
+   "fim": "An Unexpected Neighbour"
+  },
+  "f_hostel": {
+   "cap": "The Hostel",
+   "p": [
+    ["The hostel is noisy and smells of beer. A bed in a room with eight people costs thirty euros. Above you, a man sings until three in the morning. You hardly sleep at all.",
+     ["The hostel is noisy", "and smells of beer.", "A bed", "in a room", "with eight people", "costs thirty euros.", "Above you", "a man sings", "until three in the morning.", "You hardly sleep at all."]],
+    ["In the morning a message from Mr Weber finally arrives: “Sorry! The right number is 12, not 21.” You're tired, but you still have your money and your bag. For a first night, that's not too bad.",
+     ["In the morning", "finally arrives", "a message", "from Mr Weber:", "“Sorry!", "The right number", "is 12, not 21.”", "You're tired,", "but you still have", "your money", "and your bag.", "For a first night,", "that's not too bad."]]
+   ],
+   "fim": "A Night in the Hostel"
+  },
+  "f_golpe": {
+   "cap": "A Hundred Euros",
+   "p": [
+    ["You give the man the hundred euros. “Wait here, I'll get the key,” he says, and leaves. You wait ten minutes, then twenty. He doesn't come back. The door is locked, and nobody lives here.",
+     ["You give the man", "the hundred euros.", "“Wait here,", "I'll get the key,”", "he says, and leaves.", "You wait ten minutes,", "then twenty.", "He doesn't come back.", "The door is locked,", "and nobody lives here."]],
+    ["You spend the night on a cold bench. In the morning Mr Weber writes: “Sorry, the right number is 12!” You find the flat, but your money is gone. You've learned something: in Berlin, cheap can turn out very expensive.",
+     ["You spend the night", "on a cold bench.", "In the morning", "Mr Weber writes:", "“Sorry,", "the right number is 12!”", "You find the flat,", "but your money is gone.", "You've learned something:", "cheap, in Berlin, can", "turn out very expensive."]]
+   ],
+   "fim": "Cheap Can Cost You"
+  }
+ }
+}

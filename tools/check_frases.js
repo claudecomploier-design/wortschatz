@@ -23,6 +23,11 @@ list.forEach((s, i) => {
     });
   });
 });
+const sk = new Map(); list.forEach((s, i) => { const k = s[1].toLowerCase().replace(/[^\p{L} ]/gu, "").split(" ").slice(0, 3).join(" "); sk.set(k, (sk.get(k) || 0) + 1); });
+for (const [k, n] of sk) if (n > (kind === "textos" ? 2 : 5)) { console.log(`início repetido ${n}x: "${k}..." (varie as frases)`); bad++; }
+list.forEach((s, i) => { if (/learned the word|la palabra «|a palavra «|the word "/i.test(s[1] + s[2])) { console.log(`#${i} frase de modelo`); bad++; } });
+const minUsed = kind === "textos" ? 180 : 200;
+if (list.length >= 100 && used.size < minUsed) { console.log(`poucas palavras diferentes: ${used.size} (mínimo ${minUsed}); use mais vocabulário da lista`); bad++; }
 const ranks = [...used.keys()].map(l => rank[l]).sort((a, b) => a - b);
 const top = n => ranks.filter(r => r < n).length;
 const nb = list.map(s => s[3].length), nw = list.map(s => s[1].split(/\s+/).length);
