@@ -1,8 +1,64 @@
 name: Gerar vozes
+
 on:
+  push:
+    branches: [main]
+    paths:
+      - "data/**"
+      - "tools/tts/**"
   workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: tts
+  cancel-in-progress: false
+
 jobs:
-  noop:
+  vozes:
     runs-on: ubuntu-latest
+    timeout-minutes: 300
     steps:
-      - run: echo "placeholder"
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Instalar edge-tts
+        run: pip install edge-tts
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Listar textos falados
+        run: node tools/tts/collect.js
+      - name: Gerar áudios
+        run: |
+          for lang in de it fr en es pt; do
+            if [ -f "tools/tts/jobs-$lang.json" ]; then
+              python tools/tts/gen.py "$lang"
+            fi
+          done
+      - name: Commit e push dos áudios
+        id: push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add audio/
+          if git diff --cached --quiet; then
+            echo "Nenhum áudio novo."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git commit -m "Vozes: atualização automática [skip ci]"
+          for i in 1 2 3; do
+            git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && break
+            if [ "$i" = 3 ]; then echo "Push falhou após 3 tentativas"; exit 1; fi
+            sleep $((i * 10))
+          done
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+      - name: Publicar no GitHub Pages
+        if: steps.push.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run static.yml --ref "${GITHUB_REF_NAME}"
