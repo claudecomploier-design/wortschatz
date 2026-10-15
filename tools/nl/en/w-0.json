@@ -2998,5 +2998,1005 @@
     "PRINT é imprimir; -ER indica quem faz: PRINTER imprime as folhas. A bandeja cheia de papel mostra o trabalho da máquina.",
     "The printer needs more paper now.",
     "A impressora precisa de mais papel agora."
+  ],
+  [
+    "end",
+    "",
+    "fim / terminar",
+    "ÉND",
+    "FRASE",
+    "\"The end\" fecha o filme: O FIM. O D final bate como a porta se fechando depois da última cena.",
+    "The bus stop is at the end.",
+    "O ponto de ônibus fica no fim."
+  ],
+  [
+    "notebook",
+    "",
+    "caderno",
+    "NÔUT-buk",
+    "FALSO",
+    "NOTE é anotação e BOOK é livro: um CADERNO de notas. Para o computador que chamamos de notebook, o inglês americano prefere laptop.",
+    "I write new words in my notebook.",
+    "Eu escrevo palavras novas no meu caderno."
+  ],
+  [
+    "phone",
+    "",
+    "telefone / telefonar",
+    "FÔUN",
+    "PT",
+    "TELEFONE perde o começo e fica PHONE; PH tem som de F. Imagine o telefone encolhendo até caber no bolso.",
+    "My phone is charging in the kitchen.",
+    "Meu telefone está carregando na cozinha."
+  ],
+  [
+    "play",
+    "",
+    "jogar / brincar / tocar",
+    "PLÊI",
+    "PT",
+    "O botão PLAY manda a música TOCAR. A mesma palavra deixa a criança brincar ou o time jogar, conforme o que vem depois.",
+    "The children play outside after school.",
+    "As crianças brincam lá fora depois da escola."
+  ],
+  [
+    "folder",
+    "",
+    "pasta (de arquivos)",
+    "FÔUL-dâr",
+    "PAD",
+    "FOLD é dobrar: uma folha dobrada vira PASTA para guardar documentos. No computador, a pasta digital imita essa capa.",
+    "Save the document in this folder.",
+    "Salve o documento nesta pasta."
+  ],
+  [
+    "problem",
+    "",
+    "problema",
+    "PRÁ-blâm",
+    "PT",
+    "PROBLEMA perde o A final e muda a tônica para o começo: PROBLEM. O problema cabe agora em duas sílabas.",
+    "We have a problem with the car.",
+    "Nós temos um problema com o carro."
+  ],
+  [
+    "few",
+    "",
+    "poucos / poucas",
+    "FIÚ",
+    "SOM",
+    "\"FIU, sobraram POUCOS!\" O som curto acompanha só três biscoitos no prato. A few indica alguns; few enfatiza a pouca quantidade.",
+    "I have a few questions for you.",
+    "Eu tenho algumas perguntas para você."
+  ],
+  [
+    "envelope",
+    "",
+    "envelope",
+    "ÉN-vâ-loup (também ÁN-vâ-loup)",
+    "PT",
+    "ENVELOPE já tem a mesma escrita, mas a tônica inglesa vai para o começo. Visualize um selo sobre o primeiro E.",
+    "Put the letter in an envelope.",
+    "Coloque a carta num envelope."
+  ],
+  [
+    "ago",
+    "",
+    "atrás (tempo decorrido)",
+    "â-GÔU",
+    "IMG",
+    "Uma seta AGO aponta para trás no calendário. Vem DEPOIS da medida: two days ago, dois dias atrás.",
+    "We moved here three years ago.",
+    "Nós nos mudamos para cá três anos atrás."
+  ],
+  [
+    "open",
+    "",
+    "abrir / aberto",
+    "ÔU-pân",
+    "PT",
+    "A placa OPEN na loja significa ABERTO. Imagine as duas metades do O virando as portas que se abrem.",
+    "Please open the window a little.",
+    "Por favor, abra um pouco a janela."
+  ],
+  [
+    "anyone",
+    "",
+    "qualquer pessoa / alguém",
+    "É-ni-uân",
+    "PAD",
+    "ANY libera qualquer escolha; ONE representa uma pessoa. A porta ANYONE admite QUALQUER PESSOA que queira entrar.",
+    "Does anyone know where the library is?",
+    "Alguém sabe onde fica a biblioteca?"
+  ],
+  [
+    "hope",
+    "",
+    "esperar / ter esperança / esperança",
+    "HÔUP (h soprado)",
+    "IMG",
+    "Uma muda nasce no chão seco: HOPE, ESPERANÇA de que chova. É esperar desejando algo, não aguardar na fila, wait.",
+    "I hope you feel better tomorrow.",
+    "Eu espero que você se sinta melhor amanhã."
+  ],
+  [
+    "face",
+    "",
+    "rosto / enfrentar",
+    "FÊIS",
+    "PT",
+    "FACE existe em português como rosto. Em inglês, o A desliza para êi; numa moeda, você vê uma face.",
+    "Wash your face before you go to bed.",
+    "Lave o rosto antes de dormir."
+  ],
+  [
+    "until",
+    "",
+    "até (tempo)",
+    "ân-TÍL",
+    "IMG",
+    "UNTIL põe uma cancela no relógio: você espera ATÉ aquela hora. Para distância física, normalmente se usa to ou as far as.",
+    "The shop is open until nine.",
+    "A loja fica aberta até as nove."
+  ],
+  [
+    "lost",
+    "",
+    "perdido / perdida",
+    "LÓST",
+    "FRASE",
+    "A placa \"Lost dog\" anuncia um cachorro PERDIDO. Lost também é passado de lose, perder; aqui descreve o estado de quem não acha o caminho.",
+    "We are lost in this big city.",
+    "Nós estamos perdidos nesta cidade grande."
+  ],
+  [
+    "police",
+    "",
+    "polícia",
+    "pâ-LÍIS",
+    "PT",
+    "POLÍCIA perde o final -ia e vira POLICE. Em inglês, trate o grupo no plural: the police are here.",
+    "The police are outside the station.",
+    "A polícia está do lado de fora da estação."
+  ],
+  [
+    "excuse",
+    "",
+    "desculpa / desculpar / dar licença",
+    "ik-SKIÚZ (verbo); ik-SKIÚS (substantivo)",
+    "PT",
+    "\"Excuse me\" pede licença, como ESCUSE o incômodo. O verbo termina em Z; a desculpa pronta, an excuse, termina em S.",
+    "Excuse me, is this seat free?",
+    "Com licença, este lugar está livre?"
+  ],
+  [
+    "turn",
+    "",
+    "virar / vez / volta",
+    "TÂRN (r americano)",
+    "IMG",
+    "Uma seta TURN dobra a esquina: VIRE. No jogo, a seta passa para você e vira sua VEZ: your turn.",
+    "Turn left after the next traffic light.",
+    "Vire à esquerda depois do próximo semáforo."
+  ],
+  [
+    "business",
+    "",
+    "negócio / empresa / negócios",
+    "BÍZ-nâs",
+    "PT",
+    "O cartão de BUSINESS de um empresário apresenta seu NEGÓCIO. A escrita é comprida, mas a fala tem só duas sílabas.",
+    "Her family runs a small business.",
+    "A família dela administra um pequeno negócio."
+  ],
+  [
+    "case",
+    "",
+    "caso / estojo / processo",
+    "KÊIS",
+    "PT",
+    "Um CASE de apresentação é um CASO estudado. A palavra também guarda coisas num estojo: a pencil case.",
+    "Take your glasses out of the case.",
+    "Tire seus óculos do estojo."
+  ],
+  [
+    "stamp",
+    "",
+    "selo / carimbo / carimbar",
+    "STÉMP",
+    "PT",
+    "ESTAMPAR deixa uma marca, assim como STAMP. Imagine um carimbo enorme imprimindo um selo no envelope.",
+    "I need a stamp for this letter.",
+    "Eu preciso de um selo para esta carta."
+  ],
+  [
+    "eraser",
+    "",
+    "borracha de apagar",
+    "i-RÊI-sâr",
+    "PAD",
+    "ERASE é apagar; -ER indica quem faz. A ERASER é a borracha que apaga o erro do lápis.",
+    "Can I borrow your eraser, please?",
+    "Posso pegar sua borracha emprestada, por favor?"
+  ],
+  [
+    "true",
+    "",
+    "verdadeiro / certo",
+    "TRÚ",
+    "FRASE",
+    "\"True or false\" é VERDADEIRO ou falso num teste. Uma marca verde ao lado de true confirma o fato.",
+    "Is that story about your dog true?",
+    "Aquela história sobre seu cachorro é verdadeira?"
+  ],
+  [
+    "die",
+    "",
+    "morrer",
+    "DÁI",
+    "IMG",
+    "Uma vela se apaga quando chega ao fim: DIE, MORRER. Dead descreve o resultado, morto; die é o acontecimento.",
+    "Plants die without enough water and light.",
+    "As plantas morrem sem água e luz suficientes."
+  ],
+  [
+    "heart",
+    "",
+    "coração",
+    "HÁRT (h soprado; r americano)",
+    "IMG",
+    "Um HEART desenhado no cartão de amor tem forma de CORAÇÃO. Sopre o H, como quem suspira ao abrir o cartão.",
+    "My heart beats fast when I run.",
+    "Meu coração bate rápido quando eu corro."
+  ],
+  [
+    "soon",
+    "",
+    "logo / em breve",
+    "SÚUN",
+    "FRASE",
+    "\"See you soon\" promete um reencontro EM BREVE. Imagine a próxima visita já dobrando a esquina.",
+    "The doctor will see you soon.",
+    "O médico vai atender você em breve."
+  ],
+  [
+    "each",
+    "",
+    "cada",
+    "ÍITCH",
+    "IMG",
+    "EACH entrega uma maçã a CADA criança, uma de cada vez. O som termina em tch, como o clique da contagem.",
+    "Each student needs a pen and notebook.",
+    "Cada aluno precisa de uma caneta e um caderno."
+  ],
+  [
+    "worry",
+    "",
+    "preocupar-se / preocupação",
+    "UÂ-ri",
+    "FRASE",
+    "\"Don't worry\" acalma quem está PREOCUPADO. Desenhe uma testa franzida e depois apague as rugas com essa frase.",
+    "Do not worry about the broken plate.",
+    "Não se preocupe com o prato quebrado."
+  ],
+  [
+    "later",
+    "",
+    "mais tarde / depois",
+    "LÊI-târ (t breve americano)",
+    "PAD",
+    "LATE é tarde; -ER empurra o encontro para MAIS TARDE. A seta pula do horário atual para o próximo.",
+    "I can help you with that later.",
+    "Eu posso ajudar você com isso mais tarde."
+  ],
+  [
+    "year",
+    "",
+    "ano",
+    "IÍR (r americano)",
+    "IMG",
+    "Um calendário YEAR termina depois de doze meses: um ANO inteiro. O começo é i, sem som de j.",
+    "We visit our cousins every year.",
+    "Nós visitamos nossos primos todos os anos."
+  ],
+  [
+    "watch",
+    "",
+    "assistir / observar / relógio de pulso",
+    "UÁTCH",
+    "PT",
+    "O smartWATCH é o relógio inteligente que você observa. Como verbo, watch acompanha algo por um tempo: assistir a um filme.",
+    "We watch a movie every Friday.",
+    "Nós assistimos a um filme toda sexta-feira."
+  ],
+  [
+    "music",
+    "",
+    "música",
+    "MIÚ-zik",
+    "PT",
+    "MÚSICA perde o A final e ganha o som miú no começo. O S continua com som de Z no meio da melodia.",
+    "I listen to music on the bus.",
+    "Eu escuto música no ônibus."
+  ],
+  [
+    "hand",
+    "",
+    "mão",
+    "HÉND (h soprado)",
+    "PT",
+    "No HANDEBOL, a bola vai de MÃO em mão. Separe HAND do nome do esporte e veja a mão segurando a bola.",
+    "Please raise your hand to ask questions.",
+    "Por favor, levante a mão para fazer perguntas."
+  ],
+  [
+    "sharpener",
+    "",
+    "apontador",
+    "CHÁR-pâ-nâr",
+    "PAD",
+    "SHARP é afiado; SHARPEN é afiar. Acrescente -ER e surge quem afia o lápis, o APONTADOR.",
+    "My pencil sharpener is in the drawer.",
+    "Meu apontador está na gaveta."
+  ],
+  [
+    "probably",
+    "",
+    "provavelmente",
+    "PRÁ-bâ-bli",
+    "PT",
+    "PROVAVELMENTE e PROBABLY compartilham a ideia de provável. Imagine uma previsão com grande chance, mas ainda sem certeza.",
+    "It will probably rain this afternoon.",
+    "Provavelmente vai chover esta tarde."
+  ],
+  [
+    "beautiful",
+    "",
+    "bonito / lindo",
+    "BIÚ-tâ-fâl",
+    "PAD",
+    "BEAUTY é beleza; -FUL indica cheio de algo. BEAUTIFUL fica cheio de beleza, como um jardim florido.",
+    "That is a beautiful view of the river.",
+    "Essa é uma vista linda do rio."
+  ],
+  [
+    "doctor",
+    "",
+    "médico / médica / doutor",
+    "DÁK-târ",
+    "PT",
+    "DOUTOR e DOCTOR têm o mesmo ancestral. No consultório, doctor costuma ser o médico; a tônica inglesa fica no começo.",
+    "The doctor asked me to rest.",
+    "O médico me pediu para descansar."
+  ],
+  [
+    "sit",
+    "",
+    "sentar / sentar-se",
+    "SÍT",
+    "IMG",
+    "A cadeira de uma sílaba chama SIT: SENTE. O i é curto; seat, assento, alonga a vogal.",
+    "Please sit near the front of the bus.",
+    "Por favor, sente-se perto da frente do ônibus."
+  ],
+  [
+    "eat",
+    "",
+    "comer",
+    "ÍIT",
+    "IMG",
+    "Um garfo comprido desenha o I longo de EAT: COMER. Termine com T sem acrescentar uma vogal depois.",
+    "We eat lunch at school every day.",
+    "Nós almoçamos na escola todos os dias."
+  ],
+  [
+    "checkout",
+    "",
+    "caixa (pagamento) / finalização de compra",
+    "TCHÉK-aut",
+    "PAD",
+    "CHECK OUT confere a compra antes da saída. Juntas, as palavras dão CHECKOUT, o caixa da loja ou a etapa de pagar online.",
+    "There is a line at the checkout.",
+    "Tem uma fila no caixa."
+  ],
+  [
+    "young",
+    "",
+    "jovem / novo",
+    "IÂNG (ng nasal)",
+    "PT",
+    "JOVEM e YOUNG começam com movimentos diferentes da boca. Imagine um JOVEM dizendo \"iâng\" ao pular uma corda; o Y soa como i.",
+    "Their young daughter loves reading books.",
+    "A filha pequena deles adora ler livros."
+  ],
+  [
+    "second",
+    "",
+    "segundo / segundo lugar",
+    "SÉ-kând",
+    "PT",
+    "SEGUNDO troca o G por C na escrita e encurta: SECOND. Serve tanto para a unidade do relógio quanto para a medalha número dois.",
+    "Our classroom is on the second floor.",
+    "Nossa sala de aula fica no segundo andar."
+  ],
+  [
+    "cashier",
+    "",
+    "operador de caixa / caixa (pessoa)",
+    "ké-CHÍR",
+    "PAD",
+    "CASH é dinheiro e CASHIER é a pessoa que o recebe no caixa. O destaque cai no final, onde o dinheiro chega.",
+    "The cashier gave me the wrong change.",
+    "O caixa me deu o troco errado."
+  ],
+  [
+    "water",
+    "",
+    "água",
+    "UÓ-târ (t entre vogais soa como r breve)",
+    "IMG",
+    "Uma gota cai no copo fazendo \"uóter\": WATER, ÁGUA. No inglês americano, o T do meio costuma ficar bem breve.",
+    "Can I have some cold water?",
+    "Posso tomar um pouco de água fria?"
+  ],
+  [
+    "person",
+    "",
+    "pessoa",
+    "PÂR-sân (r americano)",
+    "PT",
+    "PERSON lembra PERSONAGEM, mas é uma PESSOA real. Para várias pessoas, o plural cotidiano é people.",
+    "One person is waiting at the door.",
+    "Uma pessoa está esperando na porta."
+  ],
+  [
+    "part",
+    "",
+    "parte / papel",
+    "PÁRT (r americano)",
+    "PT",
+    "PARTE perde o E final e vira PART. Pode ser um pedaço do bolo ou o papel de alguém num filme.",
+    "This part of the city is quiet.",
+    "Esta parte da cidade é tranquila."
+  ],
+  [
+    "aisle",
+    "",
+    "corredor (entre assentos ou prateleiras)",
+    "ÁIL (s mudo)",
+    "IMG",
+    "O S de AISLE sai do caminho e deixa o CORREDOR livre. Imagine carrinhos passando entre as prateleiras sem esbarrar nessa letra.",
+    "The milk is in the next aisle.",
+    "O leite fica no próximo corredor."
+  ],
+  [
+    "late",
+    "",
+    "tarde / atrasado",
+    "LÊIT",
+    "FRASE",
+    "\"Too late\" significa TARDE DEMAIS. Imagine o portão fechando na sua frente enquanto o relógio mostra o atraso.",
+    "Sorry, I am late for the meeting.",
+    "Desculpe, estou atrasado para a reunião."
+  ],
+  [
+    "stuff",
+    "",
+    "coisas / material",
+    "STÂF",
+    "IMG",
+    "Uma caixa STUFF guarda COISAS misturadas, sem contar cada peça. Não coloque S no final para fazer esse sentido de plural.",
+    "Please keep your stuff off the table.",
+    "Por favor, tire suas coisas de cima da mesa."
+  ],
+  [
+    "exactly",
+    "",
+    "exatamente",
+    "ig-ZÉKT-li",
+    "PT",
+    "EXATO troca -o por -ly e vira EXACTLY, EXATAMENTE. Imagine dois ponteiros sobrepostos no mesmo segundo.",
+    "That is exactly what I wanted.",
+    "Isso é exatamente o que eu queria."
+  ],
+  [
+    "under",
+    "",
+    "debaixo de / sob",
+    "ÂN-dâr",
+    "IMG",
+    "O gato está UNDER a mesa: DEBAIXO DELA. A curva do U vira um abrigo sobre o animal.",
+    "The cat is sleeping under the chair.",
+    "O gato está dormindo debaixo da cadeira."
+  ],
+  [
+    "death",
+    "",
+    "morte",
+    "DÉTH (língua entre os dentes no th)",
+    "FRASE",
+    "\"Life and death\" contrapõe VIDA e MORTE. Die é morrer, dead é morto e death dá nome ao acontecimento.",
+    "The family is sad after his death.",
+    "A família está triste depois da morte dele."
+  ],
+  [
+    "minute",
+    "",
+    "minuto",
+    "MÍ-nât",
+    "FALSO",
+    "MINUTE é MINUTO quando mede tempo, não a ata de reunião isoladamente. O relógio precisa de sessenta seconds para completar um minute.",
+    "Please wait here for one minute.",
+    "Por favor, espere aqui por um minuto."
+  ],
+  [
+    "pay",
+    "",
+    "pagar",
+    "PÊI",
+    "PT",
+    "PAGAR encolhe para PAY: tire o GAR e deslize de ê para i. A mão entrega o dinheiro no caixa.",
+    "Can I pay with my credit card?",
+    "Posso pagar com meu cartão de crédito?"
+  ],
+  [
+    "crazy",
+    "",
+    "louco / maluco",
+    "KRÊI-zi",
+    "FRASE",
+    "\"Are you crazy?\" reage a uma ideia MALUCA. Imagine alguém levando um guarda-sol para uma tempestade de neve.",
+    "That is a crazy idea for dinner.",
+    "Essa é uma ideia maluca para o jantar."
+  ],
+  [
+    "forget",
+    "",
+    "esquecer",
+    "fâr-GUÉT",
+    "IMG",
+    "Na porta de casa, alguém procura a chave ESQUECIDA: FORGET. Imagine a chave ficando para trás enquanto a pessoa sai.",
+    "Do not forget your keys again.",
+    "Não esqueça suas chaves de novo."
+  ],
+  [
+    "everybody",
+    "",
+    "todos / todo mundo",
+    "É-vri-bá-di",
+    "PAD",
+    "EVERY, cada, reúne BODY, corpo: todos os corpos da sala, TODO MUNDO. Como everyone, recebe verbo no singular.",
+    "Everybody is ready for the school trip.",
+    "Todo mundo está pronto para a excursão escolar."
+  ],
+  [
+    "kid",
+    "",
+    "criança / garoto / brincar (verbo)",
+    "KÍD",
+    "FRASE",
+    "Um KID de filme infantil é uma CRIANÇA. Em \"Are you kidding?\", a ideia muda para estar brincando, não falar sério.",
+    "The kid next door plays the piano.",
+    "A criança da casa ao lado toca piano."
+  ],
+  [
+    "change",
+    "",
+    "mudar / trocar / troco / mudança",
+    "TCHÊINDJ",
+    "PT",
+    "Uma casa de CÂMBIO troca dinheiro: CHANGE. A mesma palavra troca planos, roupas ou devolve o troco da compra.",
+    "Can you change this twenty-dollar bill?",
+    "Você pode trocar esta nota de vinte dólares?"
+  ],
+  [
+    "cart",
+    "",
+    "carrinho",
+    "KÁRT (r americano)",
+    "PT",
+    "O KART é um carrinho de corrida; o CART do supermercado carrega compras. Imagine o carrinho fazendo uma curva entre as prateleiras.",
+    "Put the heavy bags in the cart.",
+    "Coloque as bolsas pesadas no carrinho."
+  ],
+  [
+    "happen",
+    "",
+    "acontecer",
+    "HÉ-pân (h soprado)",
+    "FRASE",
+    "\"What happened?\" pergunta o que ACONTECEU. Happen dá nome ao evento que ocorre, sem alguém precisar decidir fazê-lo.",
+    "Accidents can happen on wet roads.",
+    "Acidentes podem acontecer em estradas molhadas."
+  ],
+  [
+    "five",
+    "",
+    "cinco",
+    "FÁIV",
+    "PT",
+    "O cumprimento HIGH FIVE levanta CINCO dedos. Abra a mão e veja cada dedo ocupando seu lugar no número.",
+    "The bus leaves in five minutes.",
+    "O ônibus sai em cinco minutos."
+  ],
+  [
+    "drink",
+    "",
+    "beber / bebida",
+    "DRÍNK",
+    "PT",
+    "Um DRINK é uma BEBIDA; em inglês, a mesma palavra vira o verbo BEBER. Não exige álcool: water também se bebe.",
+    "I drink water with every meal.",
+    "Eu bebo água em todas as refeições."
+  ],
+  [
+    "far",
+    "",
+    "longe / distante",
+    "FÁR (r americano)",
+    "IMG",
+    "Um FAROL aparece LONGE no horizonte. A primeira parte da imagem, FAR, guarda a distância.",
+    "Is the airport far from your house?",
+    "O aeroporto fica longe da sua casa?"
+  ],
+  [
+    "basket",
+    "",
+    "cesta",
+    "BÉS-kât",
+    "PT",
+    "No BASQUETE, a bola deve entrar na CESTA: basket. Leve a mesma cesta para as compras ou para um piquenique.",
+    "We packed fruit in a picnic basket.",
+    "Nós colocamos frutas numa cesta de piquenique."
+  ],
+  [
+    "its",
+    "",
+    "seu / sua / dele / dela (coisa ou animal)",
+    "ÍTS",
+    "REGRA",
+    "IT ganha S para indicar posse: its color, a cor dele. Sem apóstrofo; it's com apóstrofo significa it is ou it has.",
+    "The dog is sleeping in its bed.",
+    "O cachorro está dormindo na cama dele."
+  ],
+  [
+    "whatever",
+    "",
+    "qualquer coisa que / seja o que for",
+    "uât-É-vâr",
+    "PAD",
+    "WHAT pergunta o que; EVER tira o limite da escolha. WHATEVER deixa você escolher seja o que for.",
+    "You can choose whatever you like.",
+    "Você pode escolher o que quiser."
+  ],
+  [
+    "coupon",
+    "",
+    "cupom",
+    "KÚ-pan (também KIÚ-pan nos EUA)",
+    "PT",
+    "CUPOM reaparece como COUPON: o pedaço de papel que corta o preço. Imagine os dois O como moedas economizadas.",
+    "This coupon gives you a free drink.",
+    "Este cupom dá direito a uma bebida grátis."
+  ],
+  [
+    "shut",
+    "",
+    "fechar / fechado",
+    "CHÂT",
+    "FRASE",
+    "\"Shut the door\" pede para FECHAR a porta. Um CHAT barulhento se cala quando a porta faz shut.",
+    "Please shut the window before we leave.",
+    "Por favor, feche a janela antes de sairmos."
+  ],
+  [
+    "hit",
+    "",
+    "bater / atingir / sucesso",
+    "HÍT (h soprado)",
+    "PT",
+    "Um HIT musical ATINGE o público e vira sucesso. Como verbo, é bater ou acertar um alvo, mantendo hit no passado.",
+    "The ball hit the kitchen window.",
+    "A bola atingiu a janela da cozinha."
+  ],
+  [
+    "discount",
+    "",
+    "desconto / descontar",
+    "DÍS-kaunt (substantivo); dis-KÁUNT (verbo)",
+    "PT",
+    "DESCONTO e DISCOUNT aparecem juntos na etiqueta de promoção. No substantivo, a voz destaca DÍS, como quem destaca o preço menor.",
+    "Do students get a discount here?",
+    "Estudantes têm desconto aqui?"
+  ],
+  [
+    "easy",
+    "",
+    "fácil",
+    "Í-zi",
+    "FRASE",
+    "O modo EASY do jogo é o FÁCIL. Imagine a primeira fase com um único obstáculo bem baixo.",
+    "This recipe is easy to make.",
+    "Esta receita é fácil de fazer."
+  ],
+  [
+    "vacuum",
+    "",
+    "aspirador de pó / aspirar / vácuo",
+    "VÉ-kiuum",
+    "PT",
+    "VÁCUO cria a sucção do VACUUM: o aspirador puxa a poeira. O grupo UU vira um som comprido no meio.",
+    "The vacuum is in the hall closet.",
+    "O aspirador está no armário do corredor."
+  ],
+  [
+    "check",
+    "",
+    "verificar / conferir / cheque",
+    "TCHÉK",
+    "PT",
+    "Um CHECK numa lista confirma que você CONFERIU o item. Nos Estados Unidos, a mesma grafia também serve para cheque bancário.",
+    "Please check the address before we leave.",
+    "Por favor, confira o endereço antes de sairmos."
+  ],
+  [
+    "balcony",
+    "",
+    "sacada / varanda",
+    "BÉL-kâ-ni",
+    "FALSO",
+    "BALCONY lembra balcão, mas é uma SACADA ou varanda. O balcão de atendimento se chama counter.",
+    "We have breakfast on the balcony.",
+    "Nós tomamos café da manhã na varanda."
+  ],
+  [
+    "hallway",
+    "",
+    "corredor (dentro de prédio)",
+    "HÓL-uêi",
+    "PAD",
+    "HALL é a área de entrada; WAY é caminho. HALLWAY prolonga o caminho pelo corredor entre os quartos.",
+    "Your shoes are in the hallway.",
+    "Seus sapatos estão no corredor."
+  ],
+  [
+    "deal",
+    "",
+    "acordo / negócio / lidar",
+    "DÍIL",
+    "FRASE",
+    "\"It's a deal\" sela um ACORDO com um aperto de mão. Em deal with, você lida com uma situação.",
+    "We got a good deal on this car.",
+    "Nós fizemos um bom negócio neste carro."
+  ],
+  [
+    "different",
+    "",
+    "diferente",
+    "DÍ-fâr-ânt",
+    "PT",
+    "DIFERENTE fica quase inteiro em DIFFERENT. O destaque inglês pula para DÍ, marcando justamente uma diferença de som.",
+    "We take a different route on Fridays.",
+    "Nós fazemos um trajeto diferente às sextas-feiras."
+  ],
+  [
+    "stair",
+    "",
+    "degrau",
+    "STÉR (r americano)",
+    "IMG",
+    "Um STAIR é um único DEGRAU. Adicione S para montar a escada inteira: stairs, como várias peças empilhadas.",
+    "Be careful on the last stair.",
+    "Cuidado com o último degrau."
+  ],
+  [
+    "point",
+    "",
+    "ponto / apontar",
+    "PÓINT",
+    "PT",
+    "Um POINTER aponta para um PONTO na tela. Tire o final -er e guarde point tanto como ponto quanto como apontar.",
+    "Point to the city on the map.",
+    "Aponte a cidade no mapa."
+  ],
+  [
+    "inside",
+    "",
+    "dentro / interior",
+    "in-SÁID",
+    "PAD",
+    "IN é dentro e SIDE é lado: o lado de DENTRO. Veja a parede por dentro da casa, não pelo jardim.",
+    "Your keys are inside the blue bag.",
+    "Suas chaves estão dentro da bolsa azul."
+  ],
+  [
+    "driveway",
+    "",
+    "entrada de garagem",
+    "DRÁIV-uêi",
+    "PAD",
+    "DRIVE é dirigir; WAY é caminho. O caminho por onde o carro entra da rua até a garagem é o DRIVEWAY.",
+    "Our car is parked in the driveway.",
+    "Nosso carro está estacionado na entrada da garagem."
+  ],
+  [
+    "garage",
+    "",
+    "garagem",
+    "gâ-RÁJ (j de janela)",
+    "PT",
+    "GARAGEM perde o M final e vira GARAGE. Na pronúncia americana, o destaque costuma ficar no final, como o carro ao fim da entrada.",
+    "My bicycle is in the garage.",
+    "Minha bicicleta está na garagem."
+  ],
+  [
+    "somebody",
+    "",
+    "alguém",
+    "SÂM-bá-di",
+    "PAD",
+    "SOME, algum, mais BODY, corpo: ALGUMA pessoa. Uma silhueta anônima atrás da cortina representa somebody.",
+    "Somebody left a coat on this chair.",
+    "Alguém deixou um casaco nesta cadeira."
+  ],
+  [
+    "mine",
+    "",
+    "meu / minha (sem substantivo depois)",
+    "MÁIN",
+    "REGRA",
+    "MY acompanha a coisa: my bag. MINE segura a posse sozinho: this bag is mine, esta bolsa é minha.",
+    "This blue umbrella is mine.",
+    "Este guarda-chuva azul é meu."
+  ],
+  [
+    "basement",
+    "",
+    "porão",
+    "BÊIS-mânt",
+    "PAD",
+    "BASE sustenta a casa, e BASEMENT fica lá embaixo: o PORÃO. Imagine a escada descendo até a base do prédio.",
+    "We keep old books in the basement.",
+    "Nós guardamos livros velhos no porão."
+  ],
+  [
+    "body",
+    "",
+    "corpo",
+    "BÁ-di",
+    "PT",
+    "O BODY da roupa cobre o CORPO. Em inglês, body também é seu corpo inteiro, dos pés à cabeça.",
+    "My whole body hurts after the game.",
+    "Meu corpo inteiro dói depois do jogo."
+  ],
+  [
+    "afraid",
+    "",
+    "com medo / receoso",
+    "â-FRÊID",
+    "IMG",
+    "Uma criança fica AFRAID atrás do sofá quando ouve um trovão: COM MEDO. Afraid descreve o estado, não o verbo temer.",
+    "The little girl is afraid of spiders.",
+    "A garotinha tem medo de aranhas."
+  ],
+  [
+    "sleep",
+    "",
+    "dormir / sono",
+    "SLÍIP",
+    "FRASE",
+    "O modo SLEEP do computador o faz DORMIR. Imagine a tela fechando os olhos enquanto você alonga o i.",
+    "I sleep better with the window open.",
+    "Eu durmo melhor com a janela aberta."
+  ],
+  [
+    "chance",
+    "",
+    "chance / oportunidade / possibilidade",
+    "TCHÉNS",
+    "PT",
+    "CHANCE já existe no português, mas o CH inglês soa tch. Uma porta entreaberta oferece uma oportunidade de entrar.",
+    "This is your chance to ask questions.",
+    "Esta é sua oportunidade de fazer perguntas."
+  ],
+  [
+    "dear",
+    "",
+    "querido / querida / caro",
+    "DÍR (r americano)",
+    "FRASE",
+    "\"Dear Anna\" abre uma carta: QUERIDA Anna. No inglês americano, o uso afetivo é mais cotidiano que o sentido de caro no preço.",
+    "My dear friend sent me a postcard.",
+    "Meu querido amigo me enviou um cartão-postal."
+  ],
+  [
+    "quite",
+    "",
+    "bastante / bem / completamente",
+    "KUÁIT",
+    "IMG",
+    "O medidor QUITE sobe para BASTANTE cheio. A intensidade depende do adjetivo e do contexto; quite sure pode ser completamente certo.",
+    "This book is quite easy to read.",
+    "Este livro é bem fácil de ler."
+  ],
+  [
+    "four",
+    "",
+    "quatro",
+    "FÓR (r americano)",
+    "SOM",
+    "FOUR e FOR soam iguais. Imagine QUATRO presentes FOR you, para você, alinhados na mesa.",
+    "There are four cups in the cupboard.",
+    "Há quatro xícaras no armário."
+  ],
+  [
+    "anyway",
+    "",
+    "de qualquer maneira / enfim",
+    "É-ni-uêi",
+    "PAD",
+    "ANY, qualquer, encontra WAY, caminho: por QUALQUER CAMINHO que a conversa siga. Anyway retoma ou encerra um assunto: enfim.",
+    "It was raining, but we went anyway.",
+    "Estava chovendo, mas fomos mesmo assim."
+  ],
+  [
+    "close",
+    "",
+    "fechar / perto",
+    "KLÔUZ (verbo); KLÔUS (adjetivo)",
+    "REGRA",
+    "CLOSE fecha a loja com som de Z. Para dizer que algo está PERTO, o final muda para S: close to home.",
+    "Please close the gate after you leave.",
+    "Por favor, feche o portão depois de sair."
+  ],
+  [
+    "party",
+    "",
+    "festa / partido / grupo",
+    "PÁR-ti",
+    "FALSO",
+    "PARTY costuma ser FESTA, não uma parte de algo, part. Em política, vira partido; o convite com balões guarda o sentido mais comum.",
+    "The party starts at eight tonight.",
+    "A festa começa às oito hoje à noite."
+  ],
+  [
+    "fun",
+    "",
+    "diversão / divertido",
+    "FÂN",
+    "IMG",
+    "O parque FUN enche a tarde de DIVERSÃO. Algo pode ser fun sem ser engraçado; funny é que costuma provocar risada.",
+    "We had fun at the park today.",
+    "Nós nos divertimos no parque hoje."
+  ],
+  [
+    "against",
+    "",
+    "contra / encostado em",
+    "â-GUÉNST",
+    "IMG",
+    "Duas equipes ficam AGAINST uma à outra: CONTRA. Uma bicicleta against the wall fica apoiada contra a parede.",
+    "Our team plays against them tomorrow.",
+    "Nosso time joga contra eles amanhã."
+  ],
+  [
+    "word",
+    "",
+    "palavra",
+    "UÂRD (r americano)",
+    "PT",
+    "O programa WORD trabalha com PALAVRAS. O som central é â com R, diferente de world, mundo, que ainda recebe um L.",
+    "What does this word mean in Portuguese?",
+    "O que esta palavra significa em português?"
+  ],
+  [
+    "attic",
+    "",
+    "sótão",
+    "É-tik",
+    "IMG",
+    "Uma caixa de objetos ANTIGOS fica no ATTIC, o SÓTÃO. Suba até debaixo do telhado para buscar as lembranças.",
+    "The old toys are in the attic.",
+    "Os brinquedos velhos estão no sótão."
   ]
 ]
