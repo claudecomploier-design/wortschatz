@@ -1,0 +1,1002 @@
+[
+  [
+    "de",
+    "",
+    "de",
+    "DÊ (dental)",
+    "PT",
+    "DE se escreve como em português; mantenha a língua nos dentes, sem transformar o D em dj.",
+    "La casa de Ana está cerca.",
+    "A casa da Ana fica perto."
+  ],
+  [
+    "que",
+    "",
+    "que",
+    "KÊ",
+    "PT",
+    "QUE mantém o parentesco português, mas o U continua mudo. Liga duas ideias sem precisar de acento.",
+    "Creo que el tren llega pronto.",
+    "Eu acho que o trem chega logo."
+  ],
+  [
+    "no",
+    "",
+    "não",
+    "NÔ",
+    "PT",
+    "NÃO perde a nasalidade e encurta para NO. A vogal sai pela boca, sem virar nãu.",
+    "No puedo salir esta noche.",
+    "Eu não posso sair esta noite."
+  ],
+  [
+    "a",
+    "",
+    "a / para",
+    "Á",
+    "REGRA",
+    "A aponta o destino: voy a casa. Antes de pessoa como objeto, também aparece: veo a Ana.",
+    "Voy a la escuela en autobús.",
+    "Eu vou de ônibus para a escola."
+  ],
+  [
+    "la",
+    "",
+    "a (artigo feminino)",
+    "LÁ",
+    "PT",
+    "A nossa A ganha L e vira LA. Uma etiqueta LA acompanha a mesa feminina.",
+    "La mesa está junto a la ventana.",
+    "A mesa fica junto à janela."
+  ],
+  [
+    "el",
+    "",
+    "o (artigo masculino)",
+    "ÉL",
+    "REGRA",
+    "EL sem acento acompanha um nome masculino. ÉL com acento substitui a pessoa: ele.",
+    "El perro duerme cerca de la puerta.",
+    "O cachorro dorme perto da porta."
+  ],
+  [
+    "y",
+    "",
+    "e",
+    "Í",
+    "SOM",
+    "Y tem som de i, mas significa E. Imagine uma ponte juntando pão Y queijo.",
+    "Compramos pan y queso para el desayuno.",
+    "Nós compramos pão e queijo para o café da manhã."
+  ],
+  [
+    "bolso",
+    "m",
+    "bolsa",
+    "BÓL-so",
+    "FALSO",
+    "BOLSO é BOLSA; o bolso da roupa é bolsillo. Imagine a bolsa inteira pendurada no ombro.",
+    "Mi bolso está debajo de la silla.",
+    "Minha bolsa está debaixo da cadeira."
+  ],
+  [
+    "en",
+    "",
+    "em / dentro de",
+    "ÉN",
+    "PT",
+    "EM troca o M escrito por N e vira EN. A vogal não ganha o i extra do português falado.",
+    "Las llaves están en la mesa.",
+    "As chaves estão na mesa."
+  ],
+  [
+    "lo",
+    "",
+    "o / isso / aquilo que",
+    "LÔ",
+    "REGRA",
+    "LO pode retomar algo: lo veo, eu o vejo. Antes de adjetivo, resume uma ideia: lo bueno, o que é bom.",
+    "Lo importante es llegar a tiempo.",
+    "O importante é chegar na hora."
+  ],
+  [
+    "un",
+    "",
+    "um",
+    "ÚN",
+    "PT",
+    "UM troca o M por N: UN. Não nasalize como o português; a língua fecha no N.",
+    "Necesito un vaso de agua fría.",
+    "Eu preciso de um copo de água fria."
+  ],
+  [
+    "por",
+    "",
+    "por / através de",
+    "PÓR (r breve)",
+    "PT",
+    "POR conserva a forma portuguesa. Marca causa, percurso ou troca, como passar por uma praça.",
+    "Gracias por venir a nuestra casa.",
+    "Obrigado por vir à nossa casa."
+  ],
+  [
+    "qué",
+    "",
+    "o que / que (pergunta)",
+    "KÊ",
+    "REGRA",
+    "QUÉ põe um acento na pergunta: o que você quer? A versão que sem acento costuma ligar frases.",
+    "¿Qué quieres comer después de clase?",
+    "O que você quer comer depois da aula?"
+  ],
+  [
+    "me",
+    "",
+    "me / mim",
+    "MÊ",
+    "PT",
+    "ME já existe em português, mas o E espanhol não vira i. Imagine a seta da ação voltando para mim.",
+    "Mi hermana me llama todos los días.",
+    "Minha irmã me liga todos os dias."
+  ],
+  [
+    "una",
+    "",
+    "uma",
+    "Ú-na",
+    "PT",
+    "UMA muda M para N e vira UNA. A primeira sílaba continua forte, sem nasalizar o U.",
+    "Hay una farmacia cerca del parque.",
+    "Tem uma farmácia perto do parque."
+  ],
+  [
+    "los",
+    "",
+    "os (artigo masculino plural)",
+    "LÔS",
+    "PAD",
+    "EL vira LOS no plural. Veja o L puxando vários livros: los libros, os livros.",
+    "Los niños juegan en el jardín.",
+    "As crianças brincam no jardim."
+  ],
+  [
+    "se",
+    "",
+    "se (pronome)",
+    "SÊ",
+    "PT",
+    "SE se reconhece no português: se lava, lava-se. O E espanhol fica E, sem virar i.",
+    "Ella se lava las manos antes de comer.",
+    "Ela lava as mãos antes de comer."
+  ],
+  [
+    "te",
+    "",
+    "te / você (objeto informal)",
+    "TÊ (sem som de tch)",
+    "PT",
+    "TE mantém o nosso pronome, mas o T não vira tch. A língua toca perto dos dentes.",
+    "Te espero junto a la entrada.",
+    "Eu espero você junto à entrada."
+  ],
+  [
+    "con",
+    "",
+    "com",
+    "KÓN",
+    "PT",
+    "COM troca o M escrito por N: CON. Veja café COM leite, café con leche.",
+    "Quiero café con leche y sin azúcar.",
+    "Eu quero café com leite e sem açúcar."
+  ],
+  [
+    "para",
+    "",
+    "para",
+    "PÁ-ra (r breve)",
+    "PT",
+    "PARA tem a mesma função de destino ou finalidade: um presente para você, para ti.",
+    "Este regalo es para tu hermana.",
+    "Este presente é para sua irmã."
+  ],
+  [
+    "mochila",
+    "f",
+    "mochila",
+    "mo-TCHÍ-la",
+    "PT",
+    "MOCHILA se escreve igual, mas CH em espanhol soa tch. Imagine o clique do fecho antes de colocá-la nas costas.",
+    "Tu mochila está al lado de la puerta.",
+    "Sua mochila está ao lado da porta."
+  ],
+  [
+    "mi",
+    "",
+    "meu / minha",
+    "MÍ",
+    "REGRA",
+    "MI sem acento mostra posse: mi casa. MÍ com acento vem depois de preposição: para mí, para mim.",
+    "Mi hermano trabaja en ese hospital.",
+    "Meu irmão trabalha naquele hospital."
+  ],
+  [
+    "pero",
+    "",
+    "mas",
+    "PÊ-ro (r breve)",
+    "FALSO",
+    "PERO com um R é MAS; PERRO com RR é cachorro. Um cachorrinho barra o caminho: eu iria, mas...",
+    "El cuarto es pequeño, pero tiene una ventana.",
+    "O quarto é pequeno, mas tem uma janela."
+  ],
+  [
+    "sí",
+    "",
+    "sim",
+    "SÍ",
+    "REGRA",
+    "SÍ com acento confirma: SIM. Sem acento, si apresenta uma condição, se.",
+    "Sí, podemos ir después del almuerzo.",
+    "Sim, podemos ir depois do almoço."
+  ],
+  [
+    "si",
+    "",
+    "se (condição)",
+    "SÍ",
+    "REGRA",
+    "SI sem acento abre uma hipótese: SE chover, ficamos. O acento de sí transforma a hipótese numa confirmação.",
+    "Llámame si necesitas ayuda con las bolsas.",
+    "Me ligue se precisar de ajuda com as bolsas."
+  ],
+  [
+    "bien",
+    "",
+    "bem",
+    "BIÉN",
+    "PT",
+    "BEM abre um I e troca M por N: BIEN. A vogal final não vira o nosso som nasal.",
+    "Mi abuela duerme bien por la noche.",
+    "Minha avó dorme bem à noite."
+  ],
+  [
+    "eso",
+    "",
+    "isso",
+    "É-so",
+    "PT",
+    "ISSO muda I para E e vira ESO. Aponta algo sem dizer seu nome, sem precisar combinar com gênero.",
+    "Eso cuesta más de lo que pensaba.",
+    "Isso custa mais do que eu pensava."
+  ],
+  [
+    "su",
+    "",
+    "seu / sua / dele / dela",
+    "SÚ",
+    "REGRA",
+    "SU guarda a posse dele, dela, de você formal ou deles. O contexto diz de quem é a bolsa.",
+    "Ana busca su bolso en el coche.",
+    "Ana procura a bolsa dela no carro."
+  ],
+  [
+    "las",
+    "",
+    "as (artigo feminino plural)",
+    "LÁS",
+    "PAD",
+    "LA recebe S e vira LAS: várias coisas femininas. Veja duas mesas com a mesma etiqueta.",
+    "Las tiendas cierran a las ocho.",
+    "As lojas fecham às oito."
+  ],
+  [
+    "yo",
+    "",
+    "eu",
+    "IÔ (também djô em variedades latino-americanas)",
+    "SOM",
+    "\"IÔ, fui EU!\" Guarde YO como quem fala. A realização do Y varia entre regiões.",
+    "Yo preparo la cena los domingos.",
+    "Eu preparo o jantar aos domingos."
+  ],
+  [
+    "del",
+    "",
+    "do / de + o",
+    "DÉL (sem dj)",
+    "PAD",
+    "DE mais EL se fundem em DEL. A porta DO quarto vira la puerta del cuarto, sem duas palavras separadas.",
+    "El baño está al final del pasillo.",
+    "O banheiro fica no fim do corredor."
+  ],
+  [
+    "como",
+    "",
+    "como / conforme",
+    "KÓ-mo",
+    "PT",
+    "COMO sem acento compara: como una flor. CÓMO com acento pergunta de que jeito.",
+    "Mi hermano cocina como nuestra madre.",
+    "Meu irmão cozinha como nossa mãe."
+  ],
+  [
+    "aquí",
+    "",
+    "aqui",
+    "a-KÍ",
+    "PT",
+    "AQUI ganha acento na última sílaba e perde o U escrito: AQUÍ. Aponte o chão bem perto de você.",
+    "Puedes dejar tus zapatos aquí.",
+    "Você pode deixar seus sapatos aqui."
+  ],
+  [
+    "tu",
+    "",
+    "teu / tua / seu / sua",
+    "TÚ",
+    "REGRA",
+    "TU sem acento mostra posse: tu libro. TÚ com acento é a pessoa, você, em uso informal.",
+    "¿Dónde está tu botella de agua?",
+    "Onde está sua garrafa de água?"
+  ],
+  [
+    "al",
+    "",
+    "ao / a + o",
+    "ÁL",
+    "PAD",
+    "A mais EL se contraem em AL. Ir AO mercado vira ir al mercado, sem escrever a el.",
+    "Vamos al mercado después del desayuno.",
+    "Vamos ao mercado depois do café da manhã."
+  ],
+  [
+    "más",
+    "",
+    "mais",
+    "MÁS",
+    "PT",
+    "MAIS perde o I e ganha acento: MÁS. O sinal + ao lado da palavra marca quantidade maior.",
+    "Necesitamos más sillas para la reunión.",
+    "Precisamos de mais cadeiras para a reunião."
+  ],
+  [
+    "le",
+    "",
+    "lhe / a ele / a ela",
+    "LÊ",
+    "REGRA",
+    "LE entrega algo a alguém: le doy agua, dou água a ele ou a ela. Imagine o copo chegando ao destinatário.",
+    "Le doy las gracias a mi profesora.",
+    "Eu agradeço à minha professora."
+  ],
+  [
+    "esto",
+    "",
+    "isto",
+    "ÉS-to",
+    "PT",
+    "ISTO vira ESTO, com E no começo. Apresenta algo sem nomear se é masculino ou feminino.",
+    "Esto es para nuestra clase de mañana.",
+    "Isto é para nossa aula de amanhã."
+  ],
+  [
+    "todo",
+    "",
+    "tudo / todo",
+    "TÓ-do",
+    "PT",
+    "TODO conserva a forma portuguesa. Todo está listo diz que TUDO está pronto.",
+    "Todo está listo para la fiesta.",
+    "Tudo está pronto para a festa."
+  ],
+  [
+    "ya",
+    "",
+    "já / agora mesmo",
+    "IÁ (também djá)",
+    "PT",
+    "JÁ troca J por Y e vira YA. Uma tarefa concluída recebe o carimbo: ya terminé.",
+    "Ya tengo los boletos para mañana.",
+    "Eu já tenho as passagens para amanhã."
+  ],
+  [
+    "cartera",
+    "f",
+    "carteira / bolsa (varia por região)",
+    "kar-TÉ-ra",
+    "PT",
+    "CARTEIRA perde o I e vira CARTERA. Pode guardar notas no bolso ou ser uma bolsa, conforme a região.",
+    "Mi cartera está en el bolsillo.",
+    "Minha carteira está no bolso."
+  ],
+  [
+    "ahora",
+    "",
+    "agora",
+    "a-Ó-ra (h mudo)",
+    "PT",
+    "AGORA troca G por H silencioso: AHORA. A voz passa direto de a para ó.",
+    "Tenemos que salir de casa ahora.",
+    "Nós temos que sair de casa agora."
+  ],
+  [
+    "muy",
+    "",
+    "muito (antes de adjetivo ou advérbio)",
+    "MÚI",
+    "REGRA",
+    "MUY intensifica bonito ou bien: MUITO bonito, muito bem. Para quantidade de coisas, use mucho, não muy.",
+    "El café está muy caliente todavía.",
+    "O café ainda está muito quente."
+  ],
+  [
+    "haber",
+    "",
+    "haver / ter (auxiliar)",
+    "a-BÉR (h mudo; b suave)",
+    "PT",
+    "HAVER muda V para B e vira HABER; o H continua mudo. Forma tempos compostos: he comido, comi.",
+    "Debe haber una farmacia cerca de aquí.",
+    "Deve haver uma farmácia perto daqui."
+  ],
+  [
+    "esta",
+    "",
+    "esta",
+    "ÉS-ta",
+    "REGRA",
+    "ESTA sem acento aponta uma coisa feminina. ESTÁ com acento é forma de estar: duas funções, uma pequena marca.",
+    "Esta mesa es para cuatro personas.",
+    "Esta mesa é para quatro pessoas."
+  ],
+  [
+    "así",
+    "",
+    "assim / desse jeito",
+    "a-SÍ",
+    "PT",
+    "ASSIM troca o final por Í e vira ASÍ. O acento guarda o destaque no fim.",
+    "Así puedes abrir la puerta sin llave.",
+    "Assim você pode abrir a porta sem chave."
+  ],
+  [
+    "maleta",
+    "f",
+    "mala",
+    "ma-LÉ-ta",
+    "PT",
+    "MALETA lembra uma mala menor, mas em espanhol também é a MALA de viagem comum.",
+    "Mi maleta pesa demasiado para este viaje.",
+    "Minha mala pesa demais para esta viagem."
+  ],
+  [
+    "algo",
+    "",
+    "algo / alguma coisa",
+    "ÁL-go",
+    "PT",
+    "ALGO já se escreve igual: uma coisa ainda sem nome. O G entre vogais sai suave.",
+    "Quiero comer algo antes de salir.",
+    "Eu quero comer alguma coisa antes de sair."
+  ],
+  [
+    "pantalón",
+    "m",
+    "calça",
+    "pan-ta-LÓN",
+    "PT",
+    "PANTALONA ajuda a lembrar PANTALÓN, uma CALÇA. A palavra singular espanhola pode vestir as duas pernas.",
+    "Este pantalón tiene dos bolsillos grandes.",
+    "Esta calça tem dois bolsos grandes."
+  ],
+  [
+    "bueno",
+    "",
+    "bom / boa (buena)",
+    "BUÊ-no",
+    "PAD",
+    "BOM ganha o ditongo UE e vira BUENO, como novo vira nuevo. O pão bueno acabou de sair do forno.",
+    "Este pan es bueno para hacer tostadas.",
+    "Este pão é bom para fazer torradas."
+  ],
+  [
+    "jabón",
+    "m",
+    "sabão / sabonete",
+    "rra-BÓN (j como r forte)",
+    "PT",
+    "SABÃO troca S por J e ÃO por ÓN: JABÓN. O J espanhol sopra forte na garganta.",
+    "Necesito jabón para lavarme las manos.",
+    "Eu preciso de sabonete para lavar as mãos."
+  ],
+  [
+    "él",
+    "",
+    "ele",
+    "ÉL",
+    "REGRA",
+    "ÉL com acento é ELE. EL sem acento é o artigo o; o acento distingue a pessoa do acompanhante do nome.",
+    "Él trabaja cerca de nuestra casa.",
+    "Ele trabalha perto da nossa casa."
+  ],
+  [
+    "cuando",
+    "",
+    "quando",
+    "KUÁN-do",
+    "PT",
+    "QUANDO vira CUANDO. Sem acento liga ações; CUÁNDO com acento pergunta em que momento.",
+    "Te llamo cuando llegue a casa.",
+    "Eu te ligo quando chegar em casa."
+  ],
+  [
+    "toalla",
+    "f",
+    "toalha",
+    "to-Á-ia (ll latino-americano)",
+    "PT",
+    "TOALHA troca LH por LL e vira TOALLA. O LL neutro latino-americano pode soar como i ou dj.",
+    "Hay una toalla limpia sobre la cama.",
+    "Tem uma toalha limpa sobre a cama."
+  ],
+  [
+    "cuchara",
+    "f",
+    "colher",
+    "ku-TCHÁ-ra",
+    "SOM",
+    "Uma COLHER faz \"cu-tchá\" ao mexer o chá: CUCHARA. O CH espanhol sempre tem som de tch.",
+    "Dame una cuchara para probar la sopa.",
+    "Me dê uma colher para provar a sopa."
+  ],
+  [
+    "tú",
+    "",
+    "tu / você (informal)",
+    "TÚ",
+    "REGRA",
+    "TÚ com acento é a pessoa. TU sem acento indica posse: tú tienes tu libro, você tem seu livro.",
+    "Tú puedes sentarte junto a la ventana.",
+    "Você pode se sentar junto à janela."
+  ],
+  [
+    "nos",
+    "",
+    "nos / a nós",
+    "NÓS",
+    "PT",
+    "NOS existe em português com a mesma direção: a ação alcança a nós. O O espanhol fica aberto e limpo.",
+    "Nuestra amiga nos espera en la estación.",
+    "Nossa amiga nos espera na estação."
+  ],
+  [
+    "nada",
+    "",
+    "nada",
+    "NÁ-da",
+    "PT",
+    "NADA mantém a forma portuguesa; nenhuma coisa sobra na caixa. O D entre vogais é suave.",
+    "No hay nada dentro de esta caja.",
+    "Não tem nada dentro desta caixa."
+  ],
+  [
+    "cómo",
+    "",
+    "como (pergunta)",
+    "KÓ-mo",
+    "REGRA",
+    "CÓMO com acento pergunta o jeito: COMO faço? COMO sem acento normalmente compara ou liga frases.",
+    "¿Cómo se llega al hospital desde aquí?",
+    "Como se chega ao hospital daqui?"
+  ],
+  [
+    "este",
+    "",
+    "este",
+    "ÉS-te (t sem tch)",
+    "PT",
+    "ESTE é igual ao português na escrita. Diga te, sem transformar a última sílaba em tchi.",
+    "Este libro tiene muchas fotos de animales.",
+    "Este livro tem muitas fotos de animais."
+  ],
+  [
+    "o",
+    "",
+    "ou",
+    "Ô",
+    "PT",
+    "OU perde o U e vira O. Duas xícaras oferecem a escolha: café o té.",
+    "¿Quieres agua fría o café caliente?",
+    "Você quer água fria ou café quente?"
+  ],
+  [
+    "tenedor",
+    "m",
+    "garfo",
+    "te-ne-DÓR",
+    "PAD",
+    "TENEDOR vem da ideia de ter, segurar: o GARFO segura a comida nos dentes. A colher é cuchara.",
+    "El tenedor está junto al plato.",
+    "O garfo está ao lado do prato."
+  ],
+  [
+    "ser",
+    "",
+    "ser",
+    "SÉR (r breve)",
+    "PT",
+    "SER mantém a forma portuguesa. Identidade e origem entram aqui: soy Ana, sou Ana.",
+    "Quiero ser profesor de música.",
+    "Eu quero ser professor de música."
+  ],
+  [
+    "plato",
+    "m",
+    "prato",
+    "PLÁ-to",
+    "PAD",
+    "PRATO troca R por L e vira PLATO. Veja o prato redondo no lugar marcado à mesa.",
+    "Pon el pan en este plato.",
+    "Coloque o pão neste prato."
+  ],
+  [
+    "servilleta",
+    "f",
+    "guardanapo",
+    "ser-bi-IÉ-ta (ll latino-americano)",
+    "IMG",
+    "Uma pequena serva de papel limpa as migalhas e depois vai embora: a SERVILLETA é o GUARDANAPO.",
+    "Necesito una servilleta para limpiar la mesa.",
+    "Eu preciso de um guardanapo para limpar a mesa."
+  ],
+  [
+    "ella",
+    "",
+    "ela",
+    "É-ia (também É-dja)",
+    "PT",
+    "ELA dobra o L e vira ELLA. O LL muda de som entre regiões latino-americanas.",
+    "Ella toma el autobús todas las mañanas.",
+    "Ela pega o ônibus todas as manhãs."
+  ],
+  [
+    "aceite",
+    "m",
+    "óleo / azeite",
+    "a-SÊI-te",
+    "FALSO",
+    "ACEITE é ÓLEO, não o imperativo aceite do português. Para azeite, diga aceite de oliva.",
+    "Añade un poco de aceite a la sartén.",
+    "Coloque um pouco de óleo na frigideira."
+  ],
+  [
+    "hacer",
+    "",
+    "fazer",
+    "a-SÉR (h mudo; c latino-americano)",
+    "PAD",
+    "FAZER troca F por H mudo: HACER. O C antes de E soa S na América Latina.",
+    "Voy a hacer la cena para todos.",
+    "Eu vou fazer o jantar para todos."
+  ],
+  [
+    "nevera",
+    "f",
+    "geladeira",
+    "ne-BÉ-ra (v como b)",
+    "PAD",
+    "NEVE ajuda a lembrar NEVERA: a caixa fria que mantém a comida gelada. Refrigerador também é comum.",
+    "La leche está dentro de la nevera.",
+    "O leite está dentro da geladeira."
+  ],
+  [
+    "gracias",
+    "",
+    "obrigado / obrigada",
+    "GRÁ-sias",
+    "FRASE",
+    "\"Gracias a Dios\" lembra graças a Deus. GRACIAS sozinho é o agradecimento cotidiano, obrigado.",
+    "Muchas gracias por ayudarme con las bolsas.",
+    "Muito obrigado por me ajudar com as bolsas."
+  ],
+  [
+    "vez",
+    "f",
+    "vez / ocasião",
+    "BÉS (z latino-americano)",
+    "PT",
+    "VEZ se escreve como em português, mas V soa b e Z soa s na variedade latino-americana.",
+    "Esta vez vamos a salir temprano.",
+    "Desta vez vamos sair cedo."
+  ],
+  [
+    "horno",
+    "m",
+    "forno",
+    "ÓR-no (h mudo)",
+    "PAD",
+    "FORNO troca F por H silencioso: HORNO. A mesma troca aparece em fazer e hacer.",
+    "El pan está todavía en el horno.",
+    "O pão ainda está no forno."
+  ],
+  [
+    "fregadero",
+    "m",
+    "pia da cozinha",
+    "fre-ga-DÉ-ro",
+    "PAD",
+    "FREGAR é esfregar ou lavar; FREGADERO é a pia onde você lava a louça. O banheiro costuma ter lavabo.",
+    "Los platos sucios están en el fregadero.",
+    "Os pratos sujos estão na pia."
+  ],
+  [
+    "enchufe",
+    "m",
+    "tomada / plugue",
+    "en-TCHÚ-fe",
+    "IMG",
+    "O plugue faz \"en-tchuf\" ao entrar na TOMADA: ENCHUFE. A palavra pode indicar a conexão de cada lado.",
+    "Hay un enchufe cerca de la cama.",
+    "Tem uma tomada perto da cama."
+  ],
+  [
+    "cargador",
+    "m",
+    "carregador",
+    "kar-ga-DÓR",
+    "PT",
+    "CARREGADOR perde uma sílaba e vira CARGADOR. O cabo devolve carga à bateria do celular.",
+    "Mi cargador está dentro de la mochila.",
+    "Meu carregador está dentro da mochila."
+  ],
+  [
+    "porque",
+    "",
+    "porque",
+    "PÓR-ke",
+    "REGRA",
+    "PORQUE junto responde à causa. POR QUÉ separado e com acento pergunta: por quê?",
+    "Me quedo aquí porque está lloviendo.",
+    "Eu fico aqui porque está chovendo."
+  ],
+  [
+    "pantalla",
+    "f",
+    "tela / ecrã",
+    "pan-TÁ-ia (ll latino-americano)",
+    "IMG",
+    "Uma PANTALLA é a TELA que parece uma parede luminosa. Visualize a imagem ocupando toda a superfície.",
+    "La pantalla de mi teléfono está rota.",
+    "A tela do meu telefone está quebrada."
+  ],
+  [
+    "teclado",
+    "m",
+    "teclado",
+    "te-KLÁ-do",
+    "PT",
+    "TECLADO mantém a forma portuguesa. As teclas só mudam de som se você trocar de idioma.",
+    "Este teclado tiene una tecla rota.",
+    "Este teclado tem uma tecla quebrada."
+  ],
+  [
+    "contraseña",
+    "f",
+    "senha",
+    "kon-tra-SÊ-nha",
+    "PAD",
+    "SEÑA é sinal; CONTRASEÑA é o sinal secreto que confirma sua identidade: SENHA. O Ñ soa como nosso NH.",
+    "No recuerdo la contraseña de mi correo.",
+    "Eu não lembro a senha do meu e-mail."
+  ],
+  [
+    "calcetín",
+    "m",
+    "meia",
+    "kal-se-TÍN",
+    "PAD",
+    "CALÇAR ajuda com CALCETÍN: a MEIA que veste o pé. O C antes de E soa S na América Latina.",
+    "Falta un calcetín de este par.",
+    "Falta uma meia deste par."
+  ],
+  [
+    "guante",
+    "m",
+    "luva",
+    "GUÁN-te",
+    "IMG",
+    "Um GUANTE gigante guarda a mão como um guarda-chuva dos dedos: LUVA. O U é pronunciado.",
+    "Necesito un guante para sacar la bandeja.",
+    "Eu preciso de uma luva para tirar a assadeira."
+  ],
+  [
+    "bufanda",
+    "f",
+    "cachecol",
+    "bu-FÁN-da",
+    "IMG",
+    "Uma BUFANDA abraça o pescoço e deixa escapar um bufo quente: CACHECOL contra o frio.",
+    "Lleva una bufanda si hace frío.",
+    "Leve um cachecol se estiver frio."
+  ],
+  [
+    "cinturón",
+    "m",
+    "cinto",
+    "sin-tu-RÓN",
+    "PAD",
+    "CINTURA ganha -ón e vira CINTURÓN: o CINTO que passa ao redor da cintura.",
+    "Ponte el cinturón antes de arrancar.",
+    "Coloque o cinto antes de dar a partida."
+  ],
+  [
+    "almohada",
+    "f",
+    "travesseiro",
+    "al-mo-Á-da (h mudo)",
+    "FALSO",
+    "ALMOHADA é TRAVESSEIRO, não qualquer almofada. A almofada decorativa costuma ser cojín.",
+    "Quiero una almohada más suave para dormir.",
+    "Eu quero um travesseiro mais macio para dormir."
+  ],
+  [
+    "ese",
+    "",
+    "esse / aquele",
+    "É-se",
+    "PT",
+    "ESSE perde um S e vira ESE. Aponte o livro perto de quem está ouvindo.",
+    "Ese libro es de mi hermano.",
+    "Esse livro é do meu irmão."
+  ],
+  [
+    "usted",
+    "",
+    "o senhor / a senhora / você (formal)",
+    "us-TÉD (d final suave)",
+    "REGRA",
+    "USTED recebe tratamento de terceira pessoa: usted quiere, o senhor quer. A palavra serve para homem ou mulher.",
+    "Usted puede esperar en esta sala.",
+    "O senhor pode esperar nesta sala."
+  ],
+  [
+    "entonces",
+    "",
+    "então / naquela época",
+    "en-TÓN-ses",
+    "PT",
+    "ENTÃO se alonga em ENTONCES. Liga uma consequência ou aponta aquele momento anterior.",
+    "Entonces podemos salir después de comer.",
+    "Então podemos sair depois de comer."
+  ],
+  [
+    "hola",
+    "",
+    "olá / oi",
+    "Ó-la (h mudo)",
+    "PT",
+    "OLÁ muda a tônica e ganha H mudo: HOLA. A voz abre no primeiro O, não no final.",
+    "Hola, ¿cómo está tu familia hoy?",
+    "Olá, como está sua família hoje?"
+  ],
+  [
+    "solo",
+    "",
+    "sozinho / só / somente",
+    "SÓ-lo",
+    "REGRA",
+    "SOLO pode ser sozinho ou somente. Aqui usamos a grafia sem acento também no sentido de só.",
+    "Hoy prefiero caminar solo por el parque.",
+    "Hoje eu prefiro caminhar sozinho pelo parque."
+  ],
+  [
+    "verdad",
+    "f",
+    "verdade",
+    "ber-DÁD (d final suave)",
+    "PAD",
+    "VERDADE troca -dade por -dad: VERDAD. A sílaba final mantém o destaque.",
+    "Quiero saber la verdad sobre esto.",
+    "Eu quero saber a verdade sobre isto."
+  ],
+  [
+    "casa",
+    "f",
+    "casa",
+    "KÁ-sa (s surdo)",
+    "PT",
+    "CASA tem a mesma escrita, mas o S espanhol é surdo, como em caça no português. Imagine a chave na porta.",
+    "Nuestra casa tiene un jardín pequeño.",
+    "Nossa casa tem um jardim pequeno."
+  ],
+  [
+    "tan",
+    "",
+    "tão",
+    "TÁN (sem ditongo nasal)",
+    "PAD",
+    "TÃO perde a nasalidade e vira TAN. Amplia um adjetivo: tan grande, tão grande.",
+    "No sabía que el parque era tan grande.",
+    "Eu não sabia que o parque era tão grande."
+  ],
+  [
+    "quién",
+    "",
+    "quem",
+    "KIÉN",
+    "PT",
+    "QUEM ganha I e termina em N: QUIÉN. O acento marca a pergunta por uma pessoa.",
+    "¿Quién dejó las llaves en la mesa?",
+    "Quem deixou as chaves na mesa?"
+  ],
+  [
+    "sus",
+    "",
+    "seus / suas / deles / delas",
+    "SÚS",
+    "PAD",
+    "SU ganha S para acompanhar várias coisas possuídas: sus libros. O plural indica os livros, não quantos donos há.",
+    "Ana busca sus zapatos debajo de la cama.",
+    "Ana procura os sapatos dela debaixo da cama."
+  ],
+  [
+    "tiempo",
+    "m",
+    "tempo",
+    "TIÉM-po",
+    "PAD",
+    "TEMPO ganha o ditongo IE: TIEMPO. Pode contar horas ou falar das condições do tempo.",
+    "Tenemos tiempo para tomar un café.",
+    "Nós temos tempo para tomar um café."
+  ],
+  [
+    "dos",
+    "",
+    "dois / duas",
+    "DÓS",
+    "PT",
+    "DOIS perde o I e vira DOS. Serve para masculino e feminino: dos libros, dos casas.",
+    "Necesitamos dos vasos para el agua.",
+    "Precisamos de dois copos para a água."
+  ],
+  [
+    "esa",
+    "",
+    "essa / aquela",
+    "É-sa",
+    "PAD",
+    "ESE muda E final para A diante de coisa feminina: ESA casa. O S continua surdo, nunca Z.",
+    "Esa tienda vende pan recién hecho.",
+    "Essa loja vende pão recém-feito."
+  ],
+  [
+    "nunca",
+    "",
+    "nunca",
+    "NÚN-ka (sem nasalidade portuguesa)",
+    "PT",
+    "NUNCA conserva a escrita; o U é oral e o N seguinte encosta a língua. Marque o calendário sem nenhum dia.",
+    "Nunca tomo café antes de dormir.",
+    "Eu nunca tomo café antes de dormir."
+  ],
+  [
+    "dónde",
+    "",
+    "onde",
+    "DÓN-de",
+    "PT",
+    "ONDE ganha D inicial e acento: DÓNDE. Um alfinete no mapa pergunta pelo lugar.",
+    "¿Dónde está la estación de autobuses?",
+    "Onde fica a rodoviária?"
+  ],
+  [
+    "cepillo",
+    "m",
+    "escova",
+    "se-PÍ-io (ll latino-americano)",
+    "IMG",
+    "Um CEPILLO varre o cabelo ou limpa os dentes: ESCOVA. Cepillo de dientes é escova de dentes.",
+    "Necesito un cepillo de dientes nuevo.",
+    "Eu preciso de uma escova de dentes nova."
+  ]
+]
