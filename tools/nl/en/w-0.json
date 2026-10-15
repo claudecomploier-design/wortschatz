@@ -1998,5 +1998,1005 @@
     "A seta LEFT aponta a ESQUERDA no cruzamento. Também indica o que restou: two left, dois restantes.",
     "The pharmacy is on your left.",
     "A farmácia fica à sua esquerda."
+  ],
+  [
+    "dad",
+    "",
+    "pai / papai",
+    "DÉD",
+    "FRASE",
+    "\"Dad, look!\" é a criança chamando o PAPAI. Father é pai; dad é a forma familiar usada em casa.",
+    "My dad drives me to school.",
+    "Meu pai me leva de carro para a escola."
+  ],
+  [
+    "enough",
+    "",
+    "suficiente / bastante",
+    "i-NÂF (gh soa f)",
+    "IMG",
+    "Uma linha no copo marca ENOUGH: já é SUFICIENTE, pode parar. O GH final sopra como F.",
+    "We have enough food for everyone.",
+    "Temos comida suficiente para todos."
+  ],
+  [
+    "parent",
+    "",
+    "pai ou mãe",
+    "PÉ-rânt",
+    "FALSO",
+    "PARENT é pai OU mãe, não qualquer parente. Para a família ampliada, use relative; parents são os pais.",
+    "A parent must sign this form.",
+    "Um dos pais precisa assinar este formulário."
+  ],
+  [
+    "suitcase",
+    "",
+    "mala",
+    "SÚUT-kêis",
+    "PAD",
+    "SUIT é terno e CASE é estojo: a caixa onde o terno viaja. Imagine uma MALA com o paletó bem dobrado.",
+    "My suitcase is too heavy to carry.",
+    "Minha mala está pesada demais para carregar."
+  ],
+  [
+    "may",
+    "",
+    "poder / talvez (possibilidade ou permissão)",
+    "MÊI",
+    "REGRA",
+    "MAY abre uma porta com permissão: may I come in? Também deixa uma possibilidade aberta: it may rain.",
+    "May I sit next to you?",
+    "Posso me sentar ao seu lado?"
+  ],
+  [
+    "mother",
+    "",
+    "mãe",
+    "MÂ-dhâr (dh entre os dentes)",
+    "FRASE",
+    "\"Mother's Day\" é o Dia das MÃES. Mother é a palavra geral; mom é o jeito familiar de chamar a mãe.",
+    "My mother makes the best soup.",
+    "Minha mãe faz a melhor sopa."
+  ],
+  [
+    "wrong",
+    "",
+    "errado",
+    "RÓNG (w mudo; ng nasal)",
+    "IMG",
+    "Um X vermelho marca WRONG na resposta ERRADA. O W é riscado junto com a resposta: não faz som.",
+    "I think we took the wrong bus.",
+    "Eu acho que pegamos o ônibus errado."
+  ],
+  [
+    "world",
+    "",
+    "mundo",
+    "UÂRLD (r americano)",
+    "FRASE",
+    "\"World Cup\" é a Copa do MUNDO. Imagine o planeta girando dentro da taça e mantenha o D final.",
+    "People around the world drink tea.",
+    "Pessoas no mundo inteiro tomam chá."
+  ],
+  [
+    "bad",
+    "",
+    "ruim / mau",
+    "BÉD (é aberto)",
+    "FRASE",
+    "O BAD guy dos filmes é o vilão, o cara MAU. A mesma palavra descreve uma refeição ruim ou uma notícia má.",
+    "The weather is bad this morning.",
+    "O tempo está ruim esta manhã."
+  ],
+  [
+    "might",
+    "",
+    "poderia / talvez (possibilidade)",
+    "MÁIT (gh mudo)",
+    "REGRA",
+    "MIGHT deixa o plano a lápis na agenda: talvez aconteça. Não promete o futuro; mostra uma possibilidade.",
+    "We might visit the museum tomorrow.",
+    "Talvez visitemos o museu amanhã."
+  ],
+  [
+    "three",
+    "",
+    "três",
+    "THRÍI (língua entre os dentes)",
+    "PT",
+    "TRÊS perde o S e estica o i para virar THREE. O T inicial vira th, com a língua entre os dentes.",
+    "There are three apples on the table.",
+    "Há três maçãs em cima da mesa."
+  ],
+  [
+    "today",
+    "",
+    "hoje",
+    "tâ-DÊI",
+    "PAD",
+    "TO mais DAY aponta para ESTE dia do calendário: HOJE. Circule a data atual para separar today de tomorrow.",
+    "The library closes early today.",
+    "A biblioteca fecha cedo hoje."
+  ],
+  [
+    "listen",
+    "",
+    "escutar / ouvir com atenção",
+    "LÍ-sân (t mudo)",
+    "IMG",
+    "LISTEN tira o T do caminho para você ESCUTAR melhor. A pessoa põe a mão na orelha e presta atenção.",
+    "Please listen to the teacher carefully.",
+    "Por favor, escute o professor com atenção."
+  ],
+  [
+    "another",
+    "",
+    "outro / mais um",
+    "â-NÂ-dhâr (dh entre os dentes)",
+    "PAD",
+    "AN mais OTHER se fundem: um OUTRO. Depois do primeiro biscoito, sua mão já pede mais um.",
+    "Could I have another glass of water?",
+    "Eu poderia tomar mais um copo de água?"
+  ],
+  [
+    "understand",
+    "",
+    "entender / compreender",
+    "ân-dâr-STÉND",
+    "IMG",
+    "Para ENTENDER a ponte, o engenheiro fica UNDER, embaixo, e STANDS, de pé, observando a estrutura. A cena guarda as duas partes.",
+    "I do not understand this question.",
+    "Eu não entendo esta pergunta."
+  ],
+  [
+    "hear",
+    "",
+    "ouvir",
+    "HÍR (h soprado)",
+    "FRASE",
+    "\"Can you hear me?\" verifica se a voz chega aos seus ouvidos. Hear é perceber o som; listen é prestar atenção nele.",
+    "I can hear birds outside my window.",
+    "Eu consigo ouvir pássaros do lado de fora da janela."
+  ],
+  [
+    "remember",
+    "",
+    "lembrar / lembrar-se de",
+    "ri-MÉM-bâr",
+    "PAD",
+    "MEM lembra MEMória: remember busca algo guardado nela. Visualize uma gaveta de lembranças sendo aberta.",
+    "Do you remember our first day here?",
+    "Você se lembra do nosso primeiro dia aqui?"
+  ],
+  [
+    "ask",
+    "",
+    "perguntar / pedir",
+    "ÉSK",
+    "IMG",
+    "Um balão com ponto de interrogação sobe da boca: ASK. Para PERGUNTAR, ask a question; para PEDIR algo, ask for it.",
+    "Can I ask you a question?",
+    "Posso fazer uma pergunta a você?"
+  ],
+  [
+    "own",
+    "",
+    "próprio / possuir",
+    "ÔUN",
+    "FRASE",
+    "\"My own room\" é um quarto MEU mesmo, próprio, sem dividir. Own também é possuir: I own a car.",
+    "She has her own small business.",
+    "Ela tem seu próprio pequeno negócio."
+  ],
+  [
+    "same",
+    "",
+    "mesmo / igual",
+    "SÊIM",
+    "IMG",
+    "Dois gêmeos usam a SAME camisa: o MESMO modelo. Ponha the na frente: the same, como dois crachás iguais.",
+    "We take the same bus every morning.",
+    "Nós pegamos o mesmo ônibus todas as manhãs."
+  ],
+  [
+    "show",
+    "",
+    "mostrar / espetáculo",
+    "CHÔU",
+    "PT",
+    "Um SHOW mostra algo ao público. Leve a ideia de apresentação ao verbo MOSTRAR: show me, mostre para mim.",
+    "Can you show me the way?",
+    "Você pode me mostrar o caminho?"
+  ],
+  [
+    "else",
+    "",
+    "outro / mais / senão",
+    "ÉLS",
+    "FRASE",
+    "\"Anything else?\" pergunta o que MAIS falta depois das compras. Else se encaixa depois de something, someone, what ou who.",
+    "Who else is coming to dinner?",
+    "Quem mais vem jantar?"
+  ],
+  [
+    "kill",
+    "",
+    "matar",
+    "KÍL",
+    "FRASE",
+    "\"Kill the lights\" apaga as luzes como quem corta a energia. O sentido básico é MATAR, usado também para insetos.",
+    "This spray can kill the insects.",
+    "Este spray pode matar os insetos."
+  ],
+  [
+    "seatbelt",
+    "",
+    "cinto de segurança",
+    "SÍIT-bélt",
+    "PAD",
+    "SEAT é assento e BELT é cinto: o cinto do assento. Imagine as duas partes fechando com um clique.",
+    "Please fasten your seatbelt before we leave.",
+    "Por favor, coloque o cinto de segurança antes de sairmos."
+  ],
+  [
+    "crosswalk",
+    "",
+    "faixa de pedestres",
+    "KRÓS-uók",
+    "PAD",
+    "CROSS é atravessar; WALK é andar. As listras mostram onde ATRAVESSAR A PÉ, na faixa de pedestres americana.",
+    "Use the crosswalk near the school.",
+    "Use a faixa de pedestres perto da escola."
+  ],
+  [
+    "next",
+    "",
+    "próximo / seguinte",
+    "NÉKST",
+    "FRASE",
+    "O botão NEXT leva à PRÓXIMA página. Em next to, o destino fica ao lado: a cadeira vizinha.",
+    "The next bus arrives in five minutes.",
+    "O próximo ônibus chega em cinco minutos."
+  ],
+  [
+    "shampoo",
+    "",
+    "xampu",
+    "chém-PÚ",
+    "PT",
+    "XAMPU já veio do inglês SHAMPOO. Troque o X por SH e guarde os dois O como bolhas na embalagem.",
+    "This shampoo smells like fresh lemons.",
+    "Este xampu tem cheiro de limão fresco."
+  ],
+  [
+    "care",
+    "",
+    "cuidado / importar-se / cuidar",
+    "KÉR (r americano)",
+    "FRASE",
+    "\"Take care\" deseja CUIDADO a quem vai embora. Em I care, você mostra que a pessoa importa para você.",
+    "Take care of your little brother.",
+    "Cuide do seu irmãozinho."
+  ],
+  [
+    "car",
+    "",
+    "carro",
+    "KÁR (r americano)",
+    "PT",
+    "CARRO perde uma sílaba e fica CAR. O R americano não vibra como o nosso RR; a língua se curva sem tocar o céu da boca.",
+    "Our car is parked behind the house.",
+    "Nosso carro está estacionado atrás da casa."
+  ],
+  [
+    "soap",
+    "",
+    "sabão / sabonete",
+    "SÔUP",
+    "SOM",
+    "Uma bolha faz \"sôup\" ao estourar no SABONETE. Cuidado com soup, sopa, cujo som é súup.",
+    "There is soap beside the bathroom sink.",
+    "Tem sabonete ao lado da pia do banheiro."
+  ],
+  [
+    "son",
+    "",
+    "filho",
+    "SÂN",
+    "SOM",
+    "SON, FILHO, soa igual a SUN, sol. Imagine seu filho desenhado como um pequeno sol no retrato da família.",
+    "Her son starts school next week.",
+    "O filho dela começa a escola na semana que vem."
+  ],
+  [
+    "try",
+    "",
+    "tentar / experimentar",
+    "TRÁI",
+    "FRASE",
+    "No provador, \"try it on\" convida a EXPERIMENTAR a roupa. Cada tentativa é um try, mesmo se ainda não der certo.",
+    "Can I try this blue jacket on?",
+    "Posso experimentar esta jaqueta azul?"
+  ],
+  [
+    "woman",
+    "",
+    "mulher",
+    "UÚ-mân (u curto)",
+    "IMG",
+    "Uma MULHER entra pela porta WOMAN. Para várias, a placa muda para women, com som inicial de uí.",
+    "The woman in red is our teacher.",
+    "A mulher de vermelho é nossa professora."
+  ],
+  [
+    "towel",
+    "",
+    "toalha",
+    "TÁU-âl",
+    "SOM",
+    "Uma TOALHA gigantesca cai da TORRE e faz \"táu!\" no chão. A imagem ajuda a guardar o começo de towel.",
+    "Can I have a clean towel, please?",
+    "Posso pegar uma toalha limpa, por favor?"
+  ],
+  [
+    "hi",
+    "",
+    "oi",
+    "HÁI (h soprado)",
+    "SOM",
+    "HI sobe com a mão num aceno: OI! É uma saudação curta e informal; sopre o H inicial.",
+    "Hi, are you our new neighbor?",
+    "Oi, você é nosso novo vizinho?"
+  ],
+  [
+    "dead",
+    "",
+    "morto / sem funcionar",
+    "DÉD",
+    "IMG",
+    "A bateria DEAD mostra zero e o celular não reage: está morto, sem carga. Dead descreve o estado; die é morrer.",
+    "The phone battery is completely dead.",
+    "A bateria do telefone está completamente descarregada."
+  ],
+  [
+    "many",
+    "",
+    "muitos / muitas",
+    "MÉ-ni",
+    "REGRA",
+    "MANY conta maçãs, livros e cadeiras um por um. Para água ou tempo, que não se contam assim, use much.",
+    "How many chairs do we need?",
+    "De quantas cadeiras nós precisamos?"
+  ],
+  [
+    "mind",
+    "",
+    "mente / importar-se",
+    "MÁIND",
+    "IMG",
+    "Um mapa da MENTE, mind map, desenha ideias saindo da cabeça. Em do you mind, pergunta se algo incomoda.",
+    "Do you mind if I sit here?",
+    "Você se importa se eu me sentar aqui?"
+  ],
+  [
+    "friend",
+    "",
+    "amigo / amiga",
+    "FRÉND",
+    "FRASE",
+    "A série \"Friends\" reúne AMIGOS. Tire o S para falar de um só; o IE soa como é.",
+    "My friend lives across the street.",
+    "Meu amigo mora do outro lado da rua."
+  ],
+  [
+    "best",
+    "",
+    "melhor (de todos)",
+    "BÉST",
+    "FRASE",
+    "\"Best seller\" é o campeão de vendas. Best usa a medalha mais alta: o MELHOR de todos, acima de good e better.",
+    "This is the best cake here.",
+    "Este é o melhor bolo daqui."
+  ],
+  [
+    "mom",
+    "",
+    "mãe / mamãe",
+    "MÁM",
+    "FRASE",
+    "MOM é a MAMÃE na fala americana; a britânica costuma escrever mum. A criança usa mom para chamar, mother para falar de modo mais formal.",
+    "My mom is waiting in the car.",
+    "Minha mãe está esperando no carro."
+  ],
+  [
+    "morning",
+    "",
+    "manhã",
+    "MÓR-nin (ng nasal)",
+    "FRASE",
+    "\"Good morning\" abre a MANHÃ. Imagine o sol entrando pela janela enquanto você dá o primeiro bom-dia.",
+    "I walk the dog every morning.",
+    "Eu passeio com o cachorro todas as manhãs."
+  ],
+  [
+    "blanket",
+    "",
+    "cobertor / manta",
+    "BLÉNG-kât",
+    "IMG",
+    "Uma BLANca nuvem vira COBERTOR sobre a cama. Imagine puxar essa nuvem macia até o pescoço numa noite fria.",
+    "The baby needs a warm blanket.",
+    "O bebê precisa de um cobertor quente."
+  ],
+  [
+    "boy",
+    "",
+    "menino / garoto",
+    "BÓI",
+    "PT",
+    "O office BOY era o GAROTO dos recados. Boy sozinho significa menino, sem exigir trabalho nem uniforme.",
+    "The boy with the ball is my brother.",
+    "O menino com a bola é meu irmão."
+  ],
+  [
+    "together",
+    "",
+    "juntos / juntas",
+    "tâ-GUÉ-dhâr (dh entre os dentes)",
+    "IMG",
+    "Duas peças de quebra-cabeça ficam TOGETHER, JUNTAS. Imagine as bordas encaixadas, sem espaço entre elas.",
+    "We cook dinner together every Friday.",
+    "Nós preparamos o jantar juntos toda sexta-feira."
+  ],
+  [
+    "yourself",
+    "",
+    "você mesmo / si mesmo",
+    "iâr-SÉLF",
+    "PAD",
+    "YOUR, seu, mais SELF, próprio eu: VOCÊ MESMO. O espelho devolve a ação a quem está olhando.",
+    "You can make this sandwich yourself.",
+    "Você pode fazer este sanduíche sozinho."
+  ],
+  [
+    "job",
+    "",
+    "emprego / tarefa / trabalho",
+    "DJÁB",
+    "PT",
+    "Um JOB de publicidade é um trabalho com entrega definida. Job também é emprego; work é trabalho de maneira mais geral.",
+    "She has a new job downtown.",
+    "Ela tem um emprego novo no centro."
+  ],
+  [
+    "ceiling",
+    "",
+    "teto",
+    "SÍ-lin (ng nasal)",
+    "IMG",
+    "Um SELO luminoso fica colado no TETO: ceiling. Olhe para cima para separar teto de telhado, roof.",
+    "The lamp hangs from the ceiling.",
+    "A luminária está pendurada no teto."
+  ],
+  [
+    "family",
+    "",
+    "família",
+    "FÉ-mâ-li",
+    "PT",
+    "FAMÍLIA e FAMILY vêm da mesma raiz. Em inglês, o destaque pula para o começo, FÉ, como a primeira pessoa na foto.",
+    "My family lives in a small town.",
+    "Minha família mora numa cidade pequena."
+  ],
+  [
+    "real",
+    "",
+    "real / verdadeiro",
+    "RÍ-âl",
+    "PT",
+    "REAL já se escreve igual em português; a pronúncia muda para rí-âl. Pense numa fruta verdadeira ao lado de uma de plástico.",
+    "Is that a real diamond ring?",
+    "Esse é um anel de diamante verdadeiro?"
+  ],
+  [
+    "without",
+    "",
+    "sem",
+    "uith-ÁUT (th entre os dentes)",
+    "PAD",
+    "WITH é com; OUT põe para fora. Juntos, WITHOUT retira a companhia e vira SEM.",
+    "I drink my coffee without sugar.",
+    "Eu tomo meu café sem açúcar."
+  ],
+  [
+    "baby",
+    "",
+    "bebê",
+    "BÊI-bi",
+    "PT",
+    "BABY e BEBÊ quase se reconhecem no berço. Em inglês, o primeiro som desliza de ê para i.",
+    "The baby is sleeping in her room.",
+    "O bebê está dormindo no quarto dela."
+  ],
+  [
+    "room",
+    "",
+    "quarto / sala / espaço",
+    "RÚUM (r americano)",
+    "FRASE",
+    "\"Room service\" entrega no QUARTO. Room também pode ser espaço livre: there is room, há espaço.",
+    "This room has two large windows.",
+    "Este quarto tem duas janelas grandes."
+  ],
+  [
+    "already",
+    "",
+    "já",
+    "ól-RÉ-di",
+    "PAD",
+    "ALL mais READY sugere tudo pronto: algo JÁ aconteceu. O prato lavado antes de você pedir é already clean.",
+    "I already have a ticket for tomorrow.",
+    "Eu já tenho um ingresso para amanhã."
+  ],
+  [
+    "move",
+    "",
+    "mover / mudar-se / mexer",
+    "MÚUV",
+    "PT",
+    "MOVIMENTO entrega a família de MOVE. Pode ser mexer uma cadeira ou mudar de endereço: move house.",
+    "Can you move this chair for me?",
+    "Você pode mover esta cadeira para mim?"
+  ],
+  [
+    "most",
+    "",
+    "maioria / mais (superlativo)",
+    "MÔUST",
+    "REGRA",
+    "MOST recolhe a maior parte das peças: most people, a maioria das pessoas. Com the, forma o topo: the most expensive.",
+    "Most shops close at six here.",
+    "A maioria das lojas fecha às seis aqui."
+  ],
+  [
+    "curtain",
+    "",
+    "cortina",
+    "KÂR-tân",
+    "PT",
+    "CORTINA e CURTAIN fecham a mesma janela. O R americano curva a língua, e a sílaba final fica curta.",
+    "Please close the curtain before bed.",
+    "Por favor, feche a cortina antes de dormir."
+  ],
+  [
+    "live",
+    "",
+    "viver / morar",
+    "LÍV (i curto, verbo)",
+    "FRASE",
+    "\"I live here\" informa onde você MORA. Na TV, live com som láiv significa ao vivo; como verbo, diga liv.",
+    "They live in a house near school.",
+    "Eles moram numa casa perto da escola."
+  ],
+  [
+    "miss",
+    "",
+    "sentir falta de / perder / errar",
+    "MÍS",
+    "FRASE",
+    "\"I miss you\" é SENTIR SUA FALTA. A ideia de algo ausente também aparece em miss the bus, perder o ônibus.",
+    "I miss my family when I travel.",
+    "Eu sinto falta da minha família quando viajo."
+  ],
+  [
+    "actually",
+    "",
+    "na verdade / de fato",
+    "ÉK-chu-â-li",
+    "FALSO",
+    "ACTUALLY não significa atualmente: corrige ou revela um fato, NA VERDADE. Para atualmente, prefira currently ou nowadays.",
+    "Actually, I ordered tea, not coffee.",
+    "Na verdade, eu pedi chá, não café."
+  ],
+  [
+    "both",
+    "",
+    "ambos / os dois / as duas",
+    "BÔUTH (língua entre os dentes no th)",
+    "IMG",
+    "BOTH segura uma luva em cada mão: OS DOIS juntos. Não escolhe um ou outro, inclui o par inteiro.",
+    "Both my parents work at the hospital.",
+    "Meus pais trabalham no hospital, os dois."
+  ],
+  [
+    "oven",
+    "",
+    "forno",
+    "Â-vân",
+    "IMG",
+    "Uma luva AVANça para tirar o pão do FORNO: oven. O som inicial é â, embora a palavra comece com O.",
+    "The bread is still in the oven.",
+    "O pão ainda está no forno."
+  ],
+  [
+    "once",
+    "",
+    "uma vez / certa vez",
+    "UÂNS",
+    "FRASE",
+    "\"Once upon a time\" abre o conto: ERA UMA VEZ. Once também conta uma ocorrência, como once a week.",
+    "I go swimming once a week.",
+    "Eu vou nadar uma vez por semana."
+  ],
+  [
+    "ready",
+    "",
+    "pronto / pronta",
+    "RÉ-di",
+    "FRASE",
+    "\"Ready, set, go!\" pergunta se todos estão PRONTOS para a largada. Imagine o corredor já posicionado na linha.",
+    "Are you ready to leave now?",
+    "Você está pronto para sair agora?"
+  ],
+  [
+    "head",
+    "",
+    "cabeça",
+    "HÉD (h soprado)",
+    "PAD",
+    "HEADphones ficam sobre a CABEÇA. Separe head da palavra maior e veja a cabeça entre os dois fones.",
+    "My head hurts after the long trip.",
+    "Minha cabeça dói depois da viagem longa."
+  ],
+  [
+    "kettle",
+    "",
+    "chaleira",
+    "KÉ-tâl",
+    "SOM",
+    "A CHALEIRA faz \"qué, qué\" antes de ferver: kettle. Imagine o apito chamando você para preparar o chá.",
+    "The kettle is full of hot water.",
+    "A chaleira está cheia de água quente."
+  ],
+  [
+    "freezer",
+    "",
+    "congelador",
+    "FRÍ-zâr",
+    "PT",
+    "FREEZER já entrou no português. A raiz freeze significa congelar; imagine as duas letras E presas dentro de um cubo de gelo.",
+    "Put the ice cream in the freezer.",
+    "Coloque o sorvete no congelador."
+  ],
+  [
+    "idea",
+    "",
+    "ideia",
+    "ai-DÍ-â",
+    "PT",
+    "IDEIA perde o segundo I na escrita inglesa: IDEA. A lâmpada acende com o destaque sonoro no DÍ.",
+    "I have an idea for dinner.",
+    "Eu tenho uma ideia para o jantar."
+  ],
+  [
+    "dishwasher",
+    "",
+    "lava-louças",
+    "DÍCH-uó-châr",
+    "PAD",
+    "DISH é prato e WASHER é quem lava: a máquina que lava os pratos. Veja as duas palavras encaixadas na porta.",
+    "The dishwasher is full of clean plates.",
+    "A lava-louças está cheia de pratos limpos."
+  ],
+  [
+    "hold",
+    "",
+    "segurar / manter",
+    "HÔULD (h soprado)",
+    "FRASE",
+    "\"Hold my hand\" pede SEGURE minha mão. No telefone, hold mantém a chamada em espera, sem soltar a ligação.",
+    "Can you hold the door for me?",
+    "Você pode segurar a porta para mim?"
+  ],
+  [
+    "happy",
+    "",
+    "feliz",
+    "HÉ-pi (h soprado)",
+    "FRASE",
+    "\"Happy birthday\" deseja um aniversário FELIZ. Imagine o sorriso da pessoa abrindo os presentes.",
+    "The children look happy in the garden.",
+    "As crianças parecem felizes no jardim."
+  ],
+  [
+    "door",
+    "",
+    "porta",
+    "DÓR (r americano)",
+    "IMG",
+    "Os dois O de DOOR viram maçanetas de uma PORTA dupla. Abra uma folha para entrar e a outra para sair.",
+    "Please close the door behind you.",
+    "Por favor, feche a porta ao sair."
+  ],
+  [
+    "such",
+    "",
+    "tal / tão / desse tipo",
+    "SÂTCH",
+    "REGRA",
+    "SUCH aponta o tipo de coisa com surpresa: such a nice day, um dia tão bonito. Com singular contável, mantém o artigo a.",
+    "It is such a beautiful morning.",
+    "Está uma manhã tão bonita."
+  ],
+  [
+    "brother",
+    "",
+    "irmão",
+    "BRÂ-dhâr (dh entre os dentes)",
+    "FRASE",
+    "\"Big Brother\" traz o IRMÃO mais velho. O programa ajuda a guardar brother, mas o BR do início continua junto.",
+    "My brother is learning to cook.",
+    "Meu irmão está aprendendo a cozinhar."
+  ],
+  [
+    "also",
+    "",
+    "também",
+    "ÓL-sou",
+    "FRASE",
+    "\"I also want tea\" acrescenta você ao pedido: eu TAMBÉM quero chá. Also costuma entrar antes do verbo principal.",
+    "She also works at the local library.",
+    "Ela também trabalha na biblioteca do bairro."
+  ],
+  [
+    "pretty",
+    "",
+    "bonito / bem / bastante",
+    "PRÍ-ti (t breve americano)",
+    "IMG",
+    "Uma flor PRETTY é BONITA; um vaso pretty heavy é BEM pesado. O contexto troca beleza por intensidade.",
+    "Your garden looks pretty in the spring.",
+    "Seu jardim fica bonito na primavera."
+  ],
+  [
+    "bit",
+    "",
+    "pouquinho / pedaço",
+    "BÍT",
+    "PT",
+    "Um BIT de computador é uma unidade minúscula. A bit of cake guarda a mesma ideia de um pedacinho.",
+    "I need a bit of help.",
+    "Eu preciso de um pouquinho de ajuda."
+  ],
+  [
+    "charger",
+    "",
+    "carregador",
+    "TCHÁR-djâr",
+    "PT",
+    "CHARGE lembra CARGA: charger devolve carga ao celular. Imagine o fio carregando pequenas baterias até a tomada.",
+    "My phone charger is in my bag.",
+    "Meu carregador de celular está na minha bolsa."
+  ],
+  [
+    "yet",
+    "",
+    "ainda / já (pergunta)",
+    "IÉT",
+    "REGRA",
+    "YET fica no fim esperando o resultado: not yet, AINDA NÃO. Numa pergunta, busca confirmação: ready yet, já está pronto?",
+    "The train has not arrived yet.",
+    "O trem ainda não chegou."
+  ],
+  [
+    "keyboard",
+    "",
+    "teclado",
+    "KÍI-bórd",
+    "PAD",
+    "KEY é tecla e BOARD é placa: uma placa de teclas, o TECLADO. Visualize as duas palavras nas extremidades dele.",
+    "This keyboard has a broken key.",
+    "Este teclado tem uma tecla quebrada."
+  ],
+  [
+    "whole",
+    "",
+    "inteiro / toda a extensão",
+    "HÔUL (w mudo; h soprado)",
+    "IMG",
+    "Um bolo WHOLE está INTEIRO, sem uma fatia cortada. Soa como hole, buraco, mas aqui não falta nenhum pedaço.",
+    "We spent the whole day at home.",
+    "Nós passamos o dia inteiro em casa."
+  ],
+  [
+    "start",
+    "",
+    "começar / início",
+    "STÁRT (r americano)",
+    "PT",
+    "O botão START, comum em aparelhos, dá INÍCIO à atividade. Aperte mentalmente o botão antes de começar uma tarefa.",
+    "The movie will start in ten minutes.",
+    "O filme vai começar em dez minutos."
+  ],
+  [
+    "use",
+    "",
+    "usar / uso",
+    "IÚZ (verbo); IÚS (substantivo)",
+    "PT",
+    "USAR e USE compartilham o começo. O verbo termina com som de Z; o substantivo uso termina com S.",
+    "Can I use your pen for a moment?",
+    "Posso usar sua caneta por um instante?"
+  ],
+  [
+    "while",
+    "",
+    "enquanto / intervalo de tempo",
+    "UÁIL",
+    "IMG",
+    "Dois relógios andam lado a lado: WHILE mostra o que acontece ENQUANTO outra ação continua.",
+    "I read while the children play.",
+    "Eu leio enquanto as crianças brincam."
+  ],
+  [
+    "since",
+    "",
+    "desde / já que",
+    "SÍNS",
+    "IMG",
+    "Um alfinete em SINCE 2020 marca o início de uma linha do tempo: DESDE 2020. Também pode apresentar uma razão: já que.",
+    "She has lived here since April.",
+    "Ela mora aqui desde abril."
+  ],
+  [
+    "wife",
+    "",
+    "esposa / mulher",
+    "UÁIF",
+    "IMG",
+    "Uma aliança lembra WIFE, ESPOSA. Para várias esposas, o F vira V: wives; husband é marido.",
+    "His wife works at our school.",
+    "A esposa dele trabalha na nossa escola."
+  ],
+  [
+    "laptop",
+    "",
+    "notebook / computador portátil",
+    "LÉP-táp",
+    "PAD",
+    "LAP é colo e TOP é parte de cima: o computador que cabe em cima do colo. Em inglês, notebook também pode ser um caderno.",
+    "My laptop is on the kitchen table.",
+    "Meu notebook está na mesa da cozinha."
+  ],
+  [
+    "guess",
+    "",
+    "achar / supor / adivinhar",
+    "GUÉS (u não soa)",
+    "IMG",
+    "Um presente fechado pede um palpite: GUESS o que tem dentro. Não é certeza; é achar ou tentar adivinhar.",
+    "Can you guess what is inside?",
+    "Você consegue adivinhar o que tem dentro?"
+  ],
+  [
+    "tomorrow",
+    "",
+    "amanhã",
+    "tâ-MÁ-rou",
+    "FRASE",
+    "\"See you tomorrow\" agenda o encontro para AMANHÃ. A seta sai do quadrinho de hoje e cai no dia seguinte.",
+    "We are going to the beach tomorrow.",
+    "Nós vamos à praia amanhã."
+  ],
+  [
+    "matter",
+    "",
+    "assunto / matéria / importar",
+    "MÉ-târ (t breve americano)",
+    "FRASE",
+    "\"It doesn't matter\" diz que não IMPORTA. A mesma palavra põe o assunto na mesa: a serious matter.",
+    "It does not matter which bus we take.",
+    "Não importa qual ônibus vamos pegar."
+  ],
+  [
+    "meet",
+    "",
+    "conhecer / encontrar / reunir-se",
+    "MÍIT",
+    "FRASE",
+    "Um MEETing reúne pessoas para um ENCONTRO. Meet pode ser conhecer pela primeira vez ou se encontrar com alguém conhecido.",
+    "Let's meet outside the library at noon.",
+    "Vamos nos encontrar fora da biblioteca ao meio-dia."
+  ],
+  [
+    "bring",
+    "",
+    "trazer",
+    "BRÍNG (ng nasal)",
+    "IMG",
+    "A campainha faz \"brim\" quando alguém vem TRAZER a encomenda. Bring vem para perto de quem fala; take leva para lá.",
+    "Please bring your own water bottle.",
+    "Por favor, traga sua própria garrafa de água."
+  ],
+  [
+    "tonight",
+    "",
+    "hoje à noite",
+    "tâ-NÁIT",
+    "PAD",
+    "TO mais NIGHT aponta para a noite deste dia: HOJE À NOITE. Não acrescente last nem tomorrow a esse encontro já marcado.",
+    "We are having dinner at home tonight.",
+    "Nós vamos jantar em casa hoje à noite."
+  ],
+  [
+    "everyone",
+    "",
+    "todos / todo mundo",
+    "É-vri-uân",
+    "PAD",
+    "EVERY, cada, soma ONE, um: cada pessoa, TODO MUNDO. Apesar da multidão, o verbo fica no singular: everyone is.",
+    "Everyone is waiting outside the classroom.",
+    "Todo mundo está esperando fora da sala de aula."
+  ],
+  [
+    "run",
+    "",
+    "correr",
+    "RÂN (r americano)",
+    "FRASE",
+    "No aplicativo de RUNning, você registra a CORRIDA. Run é o verbo, correr, antes de ganhar o final -ning.",
+    "I run in the park every morning.",
+    "Eu corro no parque todas as manhãs."
+  ],
+  [
+    "hard",
+    "",
+    "difícil / duro / com esforço",
+    "HÁRD (h soprado; r americano)",
+    "IMG",
+    "Uma pedra HARD é DURA; carregá-la é DIFÍCIL e exige esforço. As três ideias cabem na mesma pedra pesada.",
+    "This question is hard to answer.",
+    "Esta pergunta é difícil de responder."
+  ],
+  [
+    "alone",
+    "",
+    "sozinho / sozinha",
+    "â-LÔUN",
+    "PAD",
+    "A mais LONE deixa uma única pessoa na foto: SOZINHA. Alone descreve a situação; lonely acrescenta sentimento de solidão.",
+    "I do not like eating alone.",
+    "Eu não gosto de comer sozinho."
+  ],
+  [
+    "myself",
+    "",
+    "eu mesmo / mim mesmo",
+    "mai-SÉLF",
+    "PAD",
+    "MY é meu; SELF é o próprio eu. No espelho, eu vejo a MIM MESMO, sem outra pessoa fazer a ação.",
+    "I made this cake by myself.",
+    "Eu fiz este bolo sozinho."
+  ],
+  [
+    "school",
+    "",
+    "escola",
+    "SKÚUL",
+    "PT",
+    "ESCOLA vira SCHOOL com S direto, sem o e inicial. Imagine o E esperando do lado de fora do portão.",
+    "The school is next to the park.",
+    "A escola fica ao lado do parque."
+  ],
+  [
+    "printer",
+    "",
+    "impressora",
+    "PRÍN-târ",
+    "PAD",
+    "PRINT é imprimir; -ER indica quem faz: PRINTER imprime as folhas. A bandeja cheia de papel mostra o trabalho da máquina.",
+    "The printer needs more paper now.",
+    "A impressora precisa de mais papel agora."
   ]
 ]
