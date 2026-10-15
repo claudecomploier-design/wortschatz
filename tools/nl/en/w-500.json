@@ -998,5 +998,1005 @@
     "A BOCA forma mouth: abra para máu e termine com a língua entre os dentes.",
     "Open your mouth for the doctor.",
     "Abra a boca para o médico."
+  ],
+  [
+    "birthday",
+    "",
+    "aniversário (de nascimento)",
+    "BÂRTH-dêi (th entre os dentes)",
+    "PAD",
+    "BIRTH é nascimento e DAY é dia: o dia do nascimento, ANIVERSÁRIO de uma pessoa.",
+    "My birthday is in September.",
+    "Meu aniversário é em setembro."
+  ],
+  [
+    "born",
+    "",
+    "nascido / nascida",
+    "BÓRN",
+    "FRASE",
+    "\"Born in Brazil\" conta onde alguém NASCEU. Born aparece com be: I was born, eu nasci.",
+    "She was born in a small town.",
+    "Ela nasceu numa cidade pequena."
+  ],
+  [
+    "imagine",
+    "",
+    "imaginar",
+    "i-MÉ-djin",
+    "PT",
+    "IMAGINAR perde -ar: IMAGINE. O G tem som de dj, como uma máquina projetando imagens.",
+    "Can you imagine living near the sea?",
+    "Você consegue imaginar morar perto do mar?"
+  ],
+  [
+    "information",
+    "",
+    "informação / informações",
+    "in-fâr-MÊI-chân",
+    "PAD",
+    "INFORMAÇÃO troca -ção por -tion. Em inglês, information é incontável: diga some information, sem S.",
+    "We need more information about the course.",
+    "Precisamos de mais informações sobre o curso."
+  ],
+  [
+    "instead",
+    "",
+    "em vez disso / em vez de",
+    "in-STÉD",
+    "IMG",
+    "Você troca a xícara de café por chá: tea INSTEAD. Uma opção ocupa o lugar da outra.",
+    "I was tired, so I stayed home instead.",
+    "Eu estava cansado, então preferi ficar em casa."
+  ],
+  [
+    "certainly",
+    "",
+    "certamente / com certeza",
+    "SÂR-tân-li",
+    "PAD",
+    "CERTAIN é certo; -LY faz CERTAMENTE. Um carimbo de confirmação acompanha a resposta.",
+    "I will certainly call you tomorrow.",
+    "Com certeza vou ligar para você amanhã."
+  ],
+  [
+    "month",
+    "",
+    "mês",
+    "MÂNTH (th entre os dentes)",
+    "IMG",
+    "Uma folha do calendário MONTH reúne cerca de trinta dias: um MÊS, não o ano inteiro.",
+    "We visit our grandparents every month.",
+    "Nós visitamos nossos avós todos os meses."
+  ],
+  [
+    "train",
+    "",
+    "trem / treinar",
+    "TRÊIN",
+    "PT",
+    "TREM e TRAIN seguem nos mesmos trilhos. Como verbo, train também é TREINAR uma habilidade.",
+    "The train leaves in half an hour.",
+    "O trem sai em meia hora."
+  ],
+  [
+    "seven",
+    "",
+    "sete",
+    "SÉ-vân",
+    "PT",
+    "SETE e SEVEN começam com SE; pense nos SETE dias da semana divididos em duas sílabas.",
+    "There are seven days in a week.",
+    "Há sete dias numa semana."
+  ],
+  [
+    "wear",
+    "",
+    "vestir / usar (roupa ou acessório)",
+    "UÉR",
+    "FRASE",
+    "\"What should I wear?\" abre o guarda-roupa: o que devo VESTIR? Use serve para usar ferramentas; wear veste.",
+    "I wear glasses when I read.",
+    "Eu uso óculos quando leio."
+  ],
+  [
+    "clothes",
+    "",
+    "roupas",
+    "KLÔUDHZ (dh entre os dentes)",
+    "REGRA",
+    "CLOTH é tecido; CLOTHES são as ROUPAS feitas dele. A palavra já é plural e não termina em uma sílaba es.",
+    "Your clothes are still in the dryer.",
+    "Suas roupas ainda estão na secadora."
+  ],
+  [
+    "hotel",
+    "",
+    "hotel",
+    "hou-TÉL",
+    "PT",
+    "HOTEL conserva a escrita e a tônica final, mas o H sopra como uma brisa na recepção.",
+    "Our hotel is near the station.",
+    "Nosso hotel fica perto da estação."
+  ],
+  [
+    "round",
+    "",
+    "redondo / rodada / em volta",
+    "RÁUND",
+    "IMG",
+    "Uma moeda ROUND é REDONDA; ao girar uma volta, completa uma rodada. Os sentidos seguem o círculo.",
+    "We sat around a small round table.",
+    "Nós nos sentamos ao redor de uma mesinha redonda."
+  ],
+  [
+    "expect",
+    "",
+    "esperar / ter expectativa",
+    "ik-SPÉKT",
+    "PT",
+    "EXPECTATIVA revela EXPECT: esperar que algo aconteça. Esperar na fila é wait, não expect.",
+    "We expect some rain this afternoon.",
+    "Estamos esperando um pouco de chuva esta tarde."
+  ],
+  [
+    "sing",
+    "",
+    "cantar",
+    "SÍNG (ng nasal)",
+    "FRASE",
+    "\"Sing a song\" é CANTAR uma canção. Imagine o microfone abrindo espaço para sua voz.",
+    "The children sing together every morning.",
+    "As crianças cantam juntas todas as manhãs."
+  ],
+  [
+    "terrible",
+    "",
+    "terrível",
+    "TÉ-râ-bâl",
+    "PT",
+    "TERRÍVEL muda -vel para -ble e a tônica para o começo: TERRIBLE, como uma tempestade assustadora.",
+    "We had terrible weather on our trip.",
+    "O tempo estava terrível durante nossa viagem."
+  ],
+  [
+    "bag",
+    "",
+    "bolsa / sacola",
+    "BÉG",
+    "PT",
+    "O AIRBAG é uma BOLSA de ar; tire air e sobra bag, bolsa ou sacola.",
+    "Please put the bread in this bag.",
+    "Por favor, coloque o pão nesta sacola."
+  ],
+  [
+    "history",
+    "",
+    "história (passado estudado)",
+    "HÍS-tâ-ri",
+    "FALSO",
+    "HISTORY estuda o passado; STORY conta um relato. Um livro de história é a history book.",
+    "We study history on Monday mornings.",
+    "Nós estudamos história nas manhãs de segunda-feira."
+  ],
+  [
+    "blue",
+    "",
+    "azul",
+    "BLÚU",
+    "PT",
+    "O estilo musical BLUES guarda BLUE no nome. Veja um instrumento pintado de AZUL para ligar som e cor.",
+    "The blue shirt looks good on you.",
+    "A camisa azul fica bem em você."
+  ],
+  [
+    "near",
+    "",
+    "perto / próximo de",
+    "NÍR",
+    "IMG",
+    "Um vizinho NEAR está PERTO: dá para vê-lo da janela, sem buscar no mapa inteiro.",
+    "Is there a pharmacy near here?",
+    "Tem alguma farmácia aqui perto?"
+  ],
+  [
+    "broke",
+    "",
+    "sem dinheiro",
+    "BRÔUK",
+    "FRASE",
+    "\"I'm broke\" diz que você está SEM DINHEIRO. Como passado de break, broke também indica que algo quebrou.",
+    "I cannot eat out; I am broke.",
+    "Eu não posso comer fora; estou sem dinheiro."
+  ],
+  [
+    "station",
+    "",
+    "estação / posto",
+    "STÊI-chân",
+    "PAD",
+    "ESTAÇÃO troca -ção por -tion e perde o E inicial: STATION, a parada do trem.",
+    "Meet me outside the train station.",
+    "Me encontre do lado de fora da estação de trem."
+  ],
+  [
+    "except",
+    "",
+    "exceto / menos",
+    "ik-SÉPT",
+    "PT",
+    "EXCETO e EXCEPT retiram um item da lista. Risque só a última caixa e mantenha as demais.",
+    "Everyone is here except my brother.",
+    "Todo mundo está aqui, menos meu irmão."
+  ],
+  [
+    "message",
+    "",
+    "mensagem / enviar mensagem",
+    "MÉ-sidj",
+    "PT",
+    "MENSAGEM e MESSAGE guardam o mesmo recado; o final inglês vira idj.",
+    "I left a message on your phone.",
+    "Eu deixei uma mensagem no seu telefone."
+  ],
+  [
+    "table",
+    "",
+    "mesa / tabela",
+    "TÊI-bâl",
+    "PT",
+    "TÁBUA ajuda a lembrar TABLE: uma tábua apoiada em pernas forma uma MESA.",
+    "Please put the plates on the table.",
+    "Por favor, coloque os pratos na mesa."
+  ],
+  [
+    "rock",
+    "",
+    "pedra / rocha / balançar",
+    "RÁK",
+    "PT",
+    "O ROCK musical pode fazer a plateia balançar; o substantivo também é uma ROCHA pesada.",
+    "We sat on a rock by the river.",
+    "Nós nos sentamos numa pedra perto do rio."
+  ],
+  [
+    "middle",
+    "",
+    "meio / centro",
+    "MÍ-dâl",
+    "IMG",
+    "O recheio fica no MIDDLE do sanduíche: no MEIO, entre as duas fatias.",
+    "Your house is in the middle.",
+    "Sua casa fica no meio."
+  ],
+  [
+    "protect",
+    "",
+    "proteger",
+    "prâ-TÉKT",
+    "PT",
+    "PROTEGER troca -ger por -ct: PROTECT. Imagine um escudo cobrindo quem precisa de proteção.",
+    "These gloves protect your hands from heat.",
+    "Estas luvas protegem suas mãos do calor."
+  ],
+  [
+    "floor",
+    "",
+    "chão / piso / andar",
+    "FLÓR",
+    "IMG",
+    "Uma FLOR nasce atravessando o CHÃO: floor. Num prédio, o piso também indica o andar.",
+    "Your shoes are on the floor.",
+    "Seus sapatos estão no chão."
+  ],
+  [
+    "coat",
+    "",
+    "casaco",
+    "KÔUT",
+    "IMG",
+    "Um COAT cobre você como uma capa: CASACO. Imagine pendurá-lo logo na entrada para não molhar a casa.",
+    "Take a warm coat for the trip.",
+    "Leve um casaco quente para a viagem."
+  ],
+  [
+    "spend",
+    "",
+    "gastar / passar (tempo)",
+    "SPÉND",
+    "PT",
+    "DESPENDER lembra SPEND: gastar dinheiro ou tempo. Uma carteira e um relógio dividem a mesma conta.",
+    "We spend Sundays with our family.",
+    "Nós passamos os domingos com nossa família."
+  ],
+  [
+    "situation",
+    "",
+    "situação",
+    "si-tchu-ÊI-chân",
+    "PAD",
+    "SITUAÇÃO troca -ção por -tion e vira SITUATION. Uma foto mostra como as coisas estão no momento.",
+    "This situation is difficult for everyone.",
+    "Esta situação é difícil para todos."
+  ],
+  [
+    "ring",
+    "",
+    "anel / tocar (campainha) / toque",
+    "RÍNG (ng nasal)",
+    "ONO",
+    "RING imita o toque do telefone. Um ANEL também forma um círculo, como a campainha redonda.",
+    "Please ring the bell at the door.",
+    "Por favor, toque a campainha da porta."
+  ],
+  [
+    "dangerous",
+    "",
+    "perigoso",
+    "DÊIN-djâr-âs",
+    "PAD",
+    "DANGER é perigo; -OUS vira o nosso -oso: DANGEROUS, PERIGOSO. A placa amarela avisa antes da curva.",
+    "This road is dangerous at night.",
+    "Esta estrada é perigosa à noite."
+  ],
+  [
+    "bill",
+    "",
+    "conta / nota de dinheiro / bico",
+    "BÍL",
+    "FRASE",
+    "\"The bill, please\" pede a CONTA no restaurante. A conta pode ser paga com uma bill, nota de dinheiro.",
+    "Could we have the bill, please?",
+    "Poderia trazer a conta, por favor?"
+  ],
+  [
+    "lead",
+    "",
+    "liderar / conduzir / chumbo",
+    "LÍID (verbo); LÉD (metal)",
+    "REGRA",
+    "LEAD conduz o grupo com som de i longo. O metal chumbo se escreve igual, mas soa léd.",
+    "You can lead the way from here.",
+    "Você pode mostrar o caminho daqui em diante."
+  ],
+  [
+    "jacket",
+    "",
+    "jaqueta / casaco leve",
+    "DJÉ-kât",
+    "PT",
+    "JAQUETA encurta para JACKET; o J inicial inglês vira dj. Veja a etiqueta no casaco leve.",
+    "Your jacket is hanging by the door.",
+    "Sua jaqueta está pendurada perto da porta."
+  ],
+  [
+    "fair",
+    "",
+    "justo / feira",
+    "FÉR",
+    "PT",
+    "O FAIR play pede jogo JUSTO. Como substantivo, fair reúne barracas numa feira.",
+    "That price seems fair to me.",
+    "Esse preço me parece justo."
+  ],
+  [
+    "sun",
+    "",
+    "sol",
+    "SÂN",
+    "SOM",
+    "SUN, SOL, soa igual a son, filho. Imagine o sol com o rosto do filho no desenho infantil.",
+    "The sun comes through this window.",
+    "O sol entra por esta janela."
+  ],
+  [
+    "letter",
+    "",
+    "carta / letra",
+    "LÉ-târ (t breve americano)",
+    "PT",
+    "LETRA e LETTER são parentes; várias letras escritas numa folha viram uma CARTA.",
+    "I got a letter from my aunt.",
+    "Eu recebi uma carta da minha tia."
+  ],
+  [
+    "club",
+    "",
+    "clube / taco",
+    "KLÂB",
+    "PT",
+    "CLUBE perde o E final: CLUB. Num clube de golfe, cada jogador usa um taco, também club.",
+    "She belongs to a local book club.",
+    "Ela participa de um clube de leitura local."
+  ],
+  [
+    "simple",
+    "",
+    "simples",
+    "SÍM-pâl",
+    "PT",
+    "SIMPLES perde o S final: SIMPLE. O problema simples cabe numa única linha.",
+    "This recipe is simple to make.",
+    "Esta receita é simples de fazer."
+  ],
+  [
+    "interesting",
+    "",
+    "interessante",
+    "ÍN-trâ-stin (ng nasal)",
+    "PT",
+    "INTERESSANTE vira INTERESTING. Na fala comum, o meio encurta: três sílabas seguram sua atenção.",
+    "That is an interesting question about language.",
+    "Essa é uma pergunta interessante sobre língua."
+  ],
+  [
+    "space",
+    "",
+    "espaço",
+    "SPÊIS",
+    "PT",
+    "ESPAÇO e SPACE compartilham sp e a ideia de lugar livre; tire o E inicial.",
+    "There is space for one more chair.",
+    "Tem espaço para mais uma cadeira."
+  ],
+  [
+    "test",
+    "",
+    "teste / prova / testar",
+    "TÉST",
+    "PT",
+    "TESTE perde o E: TEST, a prova que confere o que você aprendeu.",
+    "We have a math test tomorrow.",
+    "Nós temos uma prova de matemática amanhã."
+  ],
+  [
+    "box",
+    "",
+    "caixa / boxear",
+    "BÁKS",
+    "PT",
+    "O BOX do banheiro é uma CAIXA de vidro. Uma box pode guardar objetos de qualquer tipo.",
+    "The cups are in that cardboard box.",
+    "As xícaras estão naquela caixa de papelão."
+  ],
+  [
+    "group",
+    "",
+    "grupo",
+    "GRÚUP",
+    "PT",
+    "GRUPO troca o final por -oup: GROUP. Imagine os amigos reunidos para a foto.",
+    "Our group meets here every Wednesday.",
+    "Nosso grupo se reúne aqui toda quarta-feira."
+  ],
+  [
+    "single",
+    "",
+    "único / solteiro / individual",
+    "SÍNG-gâl",
+    "PT",
+    "Um SINGLE musical traz uma faixa principal. A ideia de UM SÓ também aparece em solteiro ou quarto individual.",
+    "I need a single room for tonight.",
+    "Eu preciso de um quarto individual para esta noite."
+  ],
+  [
+    "join",
+    "",
+    "juntar-se / participar / unir",
+    "DJÓIN",
+    "IMG",
+    "Duas mãos se JUNTAM formando JOIN. Pode ser unir peças ou entrar num grupo de pessoas.",
+    "Would you like to join us for lunch?",
+    "Você gostaria de almoçar conosco?"
+  ],
+  [
+    "fear",
+    "",
+    "medo / temer",
+    "FÍR",
+    "IMG",
+    "Um arrepio percorre a pele ao sentir FEAR: MEDO. Soa como fír, com a vogal bem curta antes do R.",
+    "He has a fear of flying.",
+    "Ele tem medo de voar."
+  ],
+  [
+    "force",
+    "",
+    "força / forçar",
+    "FÓRS",
+    "PT",
+    "FORÇA vira FORCE: a pessoa empurra a porta com força, sem conseguir abri-la.",
+    "Please do not force the door open.",
+    "Por favor, não force a porta para abri-la."
+  ],
+  [
+    "short",
+    "",
+    "curto / baixo / breve",
+    "CHÓRT",
+    "PT",
+    "O SHORT cobre só um trecho CURTO da perna. Para altura de pessoas, short também é baixo.",
+    "We took a short walk after lunch.",
+    "Nós demos uma caminhada curta depois do almoço."
+  ],
+  [
+    "present",
+    "",
+    "presente / atual / apresentar",
+    "PRÉ-zânt (nome e adjetivo); pri-ZÉNT (verbo)",
+    "PT",
+    "PRESENTE perde o E final; o presente embrulhado está no momento presente. O verbo apresentar muda a tônica.",
+    "This present is for your little sister.",
+    "Este presente é para sua irmãzinha."
+  ],
+  [
+    "enjoy",
+    "",
+    "aproveitar / gostar de / desfrutar",
+    "in-DJÓI",
+    "PAD",
+    "JOY é alegria; ENJOY põe alegria na experiência. É aproveitar uma refeição ou gostar de uma atividade.",
+    "I enjoy reading before I go to bed.",
+    "Eu gosto de ler antes de dormir."
+  ],
+  [
+    "horse",
+    "",
+    "cavalo",
+    "HÓRS (h soprado)",
+    "FRASE",
+    "O \"horse power\" mede força em CAVALOS. Visualize o cavalo puxando uma carroça pesada.",
+    "The horse is drinking by the river.",
+    "O cavalo está bebendo perto do rio."
+  ],
+  [
+    "ground",
+    "",
+    "chão / solo / terreno",
+    "GRÁUND",
+    "PAD",
+    "PLAYGROUND é o chão da brincadeira: ground dá o TERRENO onde tudo acontece.",
+    "The ground is wet after the rain.",
+    "O chão está molhado depois da chuva."
+  ],
+  [
+    "count",
+    "",
+    "contar / contagem",
+    "KÁUNT",
+    "PT",
+    "CONTA e COUNT começam do mesmo jeito. Imagine o caixa contando moedas uma a uma.",
+    "Can you count from one to ten?",
+    "Você sabe contar de um a dez?"
+  ],
+  [
+    "area",
+    "",
+    "área / região",
+    "É-ri-â",
+    "PT",
+    "ÁREA e AREA se escrevem quase igual; em inglês, a primeira sílaba soa é, não á.",
+    "This area is quiet during the day.",
+    "Esta área é tranquila durante o dia."
+  ],
+  [
+    "charge",
+    "",
+    "cobrar / carregar / carga",
+    "TCHÁRDJ",
+    "PT",
+    "CARGA reaparece em CHARGE: carregar a bateria. No caixa, charge também cobra o valor da compra.",
+    "How much do you charge for delivery?",
+    "Quanto vocês cobram pela entrega?"
+  ],
+  [
+    "lunch",
+    "",
+    "almoço / almoçar",
+    "LÂNTCH",
+    "FALSO",
+    "LUNCH é ALMOÇO, não apenas um lanche. Um sanduíche pode ser seu almoço, mas snack é lanche.",
+    "We usually have lunch at noon.",
+    "Nós costumamos almoçar ao meio-dia."
+  ],
+  [
+    "radio",
+    "",
+    "rádio",
+    "RÊI-di-ou",
+    "PT",
+    "RÁDIO mantém a escrita e ganha êi na primeira sílaba: RADIO, tocando notícias no carro.",
+    "The radio is on in the kitchen.",
+    "O rádio está ligado na cozinha."
+  ],
+  [
+    "ball",
+    "",
+    "bola",
+    "BÓL",
+    "PT",
+    "O FUTEBOL veio de football: ball é BOLA. Imagine a última sílaba virando a bola no gramado.",
+    "Throw the ball to your brother.",
+    "Jogue a bola para seu irmão."
+  ],
+  [
+    "surprise",
+    "",
+    "surpresa / surpreender",
+    "sâr-PRÁIZ",
+    "PT",
+    "SURPRESA e SURPRISE escondem o mesmo presente inesperado. O final inglês soa práiz.",
+    "We have a surprise for your birthday.",
+    "Nós temos uma surpresa para seu aniversário."
+  ],
+  [
+    "paper",
+    "",
+    "papel / jornal / artigo",
+    "PÊI-pâr",
+    "PT",
+    "PAPEL e PAPER são parentes; a folha branca é paper, enquanto a paper pode ser um artigo.",
+    "Please write your name on this paper.",
+    "Por favor, escreva seu nome neste papel."
+  ],
+  [
+    "key",
+    "",
+    "chave / tecla / principal",
+    "KÍI",
+    "IMG",
+    "Uma KEY abre a porta e também aciona uma tecla: duas maneiras de liberar uma ação.",
+    "I cannot find the key to this door.",
+    "Eu não consigo encontrar a chave desta porta."
+  ],
+  [
+    "boat",
+    "",
+    "barco / bote",
+    "BÔUT",
+    "PT",
+    "BOTE ajuda a reconhecer BOAT: um BARCO flutuando perto do cais.",
+    "We crossed the lake in a small boat.",
+    "Nós atravessamos o lago num barco pequeno."
+  ],
+  [
+    "quickly",
+    "",
+    "rapidamente",
+    "KUÍK-li",
+    "PAD",
+    "QUICK é rápido e -LY corresponde a -mente: QUICKLY faz a ação rapidamente, como uma flecha passando.",
+    "Please come quickly; we need your help.",
+    "Por favor, venha rápido; precisamos da sua ajuda."
+  ],
+  [
+    "gold",
+    "",
+    "ouro / dourado",
+    "GÔULD",
+    "PT",
+    "O GOLD de uma medalha lembra OURO. Veja o brilho dourado no lugar mais alto do pódio.",
+    "Her ring is made of gold.",
+    "O anel dela é de ouro."
+  ],
+  [
+    "bar",
+    "",
+    "bar / barra",
+    "BÁR",
+    "PT",
+    "BAR é igual ao português; uma bar of chocolate também é uma BARRA de chocolate.",
+    "We met at a small neighborhood bar.",
+    "Nós nos encontramos num pequeno bar do bairro."
+  ],
+  [
+    "fish",
+    "",
+    "peixe / pescar",
+    "FÍCH",
+    "PT",
+    "O prato FISH and chips traz PEIXE com batata. Fish costuma manter a mesma forma no plural.",
+    "We had fish and rice for dinner.",
+    "Nós jantamos peixe com arroz."
+  ],
+  [
+    "mark",
+    "",
+    "marca / marcar / nota",
+    "MÁRK",
+    "PT",
+    "MARCA perde o A e vira MARK. A caneta deixa uma marca na resposta escolhida.",
+    "Please mark the right answer with a cross.",
+    "Por favor, marque a resposta certa com um X."
+  ],
+  [
+    "eight",
+    "",
+    "oito",
+    "ÊIT (gh mudo)",
+    "IMG",
+    "O OITO faz dois círculos silenciosos, como as letras GH mudas de EIGHT.",
+    "The museum opens at eight tomorrow.",
+    "O museu abre às oito amanhã."
+  ],
+  [
+    "pocket",
+    "",
+    "bolso",
+    "PÁ-kât",
+    "PT",
+    "Um livro de POCKET cabe no BOLSO. Imagine o livro entrando no bolso da jaqueta.",
+    "My keys are in my coat pocket.",
+    "Minhas chaves estão no bolso do meu casaco."
+  ],
+  [
+    "cover",
+    "",
+    "cobrir / capa / tampa",
+    "KÂ-vâr",
+    "PT",
+    "COBERTURA e COVER pertencem à mesma família: a capa cobre o livro contra a chuva.",
+    "Cover the pot and turn down the heat.",
+    "Tampe a panela e abaixe o fogo."
+  ],
+  [
+    "certain",
+    "",
+    "certo / determinado",
+    "SÂR-tân",
+    "PT",
+    "CERTEZA e CERTAIN compartilham a raiz: você está certo de algo, sem dúvida.",
+    "Are you certain this is our train?",
+    "Você tem certeza de que este é o nosso trem?"
+  ],
+  [
+    "interested",
+    "",
+    "interessado",
+    "ÍN-trâ-stid",
+    "PT",
+    "INTERESSADO vira INTERESTED; a pessoa interessada se inclina para ouvir melhor.",
+    "I am interested in the cooking class.",
+    "Eu estou interessado na aula de culinária."
+  ],
+  [
+    "deep",
+    "",
+    "profundo / fundo",
+    "DÍIP",
+    "IMG",
+    "Uma corda longa desce num poço DEEP: PROFUNDO. Alongue o i enquanto a corda continua descendo.",
+    "The water is deep near the bridge.",
+    "A água é funda perto da ponte."
+  ],
+  [
+    "star",
+    "",
+    "estrela / astro",
+    "STÁR",
+    "PT",
+    "ESTRELA e STAR mantêm str; retire a primeira vogal e veja a estrela brilhando no céu.",
+    "We saw a bright star last night.",
+    "Nós vimos uma estrela brilhante ontem à noite."
+  ],
+  [
+    "sea",
+    "",
+    "mar",
+    "SÍI",
+    "SOM",
+    "SEA, MAR, soa como see, ver. Imagine alguém dizendo \"I see the sea\", eu vejo o mar.",
+    "The sea is calm this morning.",
+    "O mar está calmo esta manhã."
+  ],
+  [
+    "agree",
+    "",
+    "concordar",
+    "â-GRÍI",
+    "FRASE",
+    "\"I agree\" confirma: EU CONCORDO. Duas pessoas dão o mesmo sinal de positivo na reunião.",
+    "I agree with you about the price.",
+    "Eu concordo com você sobre o preço."
+  ],
+  [
+    "major",
+    "",
+    "principal / importante / major",
+    "MÊI-djâr",
+    "PT",
+    "MAJOR tem parentesco com MAIOR, mas costuma indicar importância: um problema principal ou de grande porte.",
+    "There is a major problem with the engine.",
+    "Há um problema sério com o motor."
+  ],
+  [
+    "stick",
+    "",
+    "graveto / vara / grudar",
+    "STÍK",
+    "PT",
+    "Um STICKer é um adesivo que GRUDA. Stick também pode ser um graveto que o cachorro pega.",
+    "The dog brought a stick from the park.",
+    "O cachorro trouxe um graveto do parque."
+  ],
+  [
+    "offer",
+    "",
+    "oferecer / oferta",
+    "Ó-fâr",
+    "PT",
+    "OFERTA e OFFER apresentam algo a alguém: uma bandeja estendida guarda o gesto de oferecer.",
+    "Can I offer you a cup of tea?",
+    "Posso lhe oferecer uma xícara de chá?"
+  ],
+  [
+    "difficult",
+    "",
+    "difícil",
+    "DÍ-fi-kâlt",
+    "PT",
+    "DIFÍCIL se alonga em DIFFICULT, com a tônica no começo. Imagine uma conta difícil enchendo a folha.",
+    "This question is difficult to answer.",
+    "Esta pergunta é difícil de responder."
+  ],
+  [
+    "smart",
+    "",
+    "esperto / inteligente / elegante",
+    "SMÁRT",
+    "PT",
+    "O SMARTphone tem funções inteligentes. Smart também elogia uma pessoa esperta ou uma roupa elegante.",
+    "That was a smart way to save money.",
+    "Esse foi um jeito inteligente de economizar dinheiro."
+  ],
+  [
+    "personal",
+    "",
+    "pessoal / particular",
+    "PÂR-sâ-nâl",
+    "PT",
+    "PESSOAL mantém o N que existia em PERSON: PERSONAL. Os dados pessoais pertencem a uma pessoa.",
+    "Please keep your personal information private.",
+    "Por favor, mantenha suas informações pessoais em sigilo."
+  ],
+  [
+    "record",
+    "",
+    "registro / disco / gravar",
+    "RÉ-kârd (nome); ri-KÓRD (verbo)",
+    "PT",
+    "RECORDE e RECORD têm a mesma raiz. O registro fica no começo do som; o verbo gravar acentua o final.",
+    "Can I record this song on my phone?",
+    "Posso gravar esta música no meu telefone?"
+  ],
+  [
+    "whether",
+    "",
+    "se (alternativas) / quer... quer",
+    "UÉ-dhâr (dh entre os dentes)",
+    "REGRA",
+    "WHETHER compara duas opções: se vou ou se fico. Pode acompanhar or not, ou não.",
+    "I cannot decide whether to walk or drive.",
+    "Eu não consigo decidir se vou a pé ou de carro."
+  ],
+  [
+    "bank",
+    "",
+    "banco / margem de rio",
+    "BÉNK",
+    "PT",
+    "BANCO perde o O e vira BANK. A margem do rio também é um bank, onde você pode se sentar.",
+    "The bank is next to the post office.",
+    "O banco fica ao lado dos correios."
+  ],
+  [
+    "trip",
+    "",
+    "viagem / tropeçar",
+    "TRÍP",
+    "PT",
+    "Um ROAD TRIP é uma VIAGEM pela estrada. Uma pedrinha no trajeto também pode fazer você tropeçar, trip.",
+    "Our trip to the mountains was wonderful.",
+    "Nossa viagem às montanhas foi maravilhosa."
+  ],
+  [
+    "relax",
+    "",
+    "relaxar / descansar",
+    "ri-LÉKS",
+    "PT",
+    "RELAXAR perde -ar e vira RELAX. Imagine os ombros descendo quando o trabalho termina.",
+    "I like to relax with a book.",
+    "Eu gosto de relaxar com um livro."
+  ],
+  [
+    "list",
+    "",
+    "lista / listar",
+    "LÍST",
+    "PT",
+    "LISTA perde o A: LIST, uma coluna de itens que você pode conferir.",
+    "Milk is on my shopping list.",
+    "Leite está na minha lista de compras."
+  ],
+  [
+    "afternoon",
+    "",
+    "tarde",
+    "éf-târ-NÚUN",
+    "PAD",
+    "AFTER é depois; NOON é meio-dia. AFTERNOON é a TARDE que vem depois do meio-dia.",
+    "We are visiting friends this afternoon.",
+    "Nós vamos visitar amigos esta tarde."
+  ],
+  [
+    "fix",
+    "",
+    "consertar / fixar",
+    "FÍKS",
+    "PT",
+    "FIXAR ajuda com FIX: pôr algo no lugar para CONSERTAR. Uma chave de fenda prende a peça solta.",
+    "Can you fix this broken chair?",
+    "Você pode consertar esta cadeira quebrada?"
+  ],
+  [
+    "tea",
+    "",
+    "chá",
+    "TÍI",
+    "FRASE",
+    "\"Tea time\" é a hora do CHÁ. O T da xícara tem o mesmo som do nome da letra inglesa.",
+    "Would you like tea with lemon?",
+    "Você gostaria de chá com limão?"
+  ],
+  [
+    "angry",
+    "",
+    "bravo / com raiva",
+    "ÉNG-gri",
+    "IMG",
+    "Uma testa enrugada e um rosnado \"éngri\" mostram alguém COM RAIVA, não com fome, hungry.",
+    "She was angry about the broken window.",
+    "Ela estava brava por causa da janela quebrada."
+  ],
+  [
+    "park",
+    "",
+    "parque / estacionar",
+    "PÁRK",
+    "PT",
+    "PARQUE encurta para PARK. O estacionamento, car park, também guarda o verbo estacionar.",
+    "Can we park near the entrance?",
+    "Podemos estacionar perto da entrada?"
+  ],
+  [
+    "rich",
+    "",
+    "rico / farto",
+    "RÍTCH",
+    "PT",
+    "RICO ganha o chiado tch no final e vira RICH. Imagine um cofre cheio de moedas.",
+    "The cake is rich and very sweet.",
+    "O bolo é encorpado e muito doce."
+  ],
+  [
+    "blow",
+    "",
+    "soprar / golpe",
+    "BLÔU",
+    "IMG",
+    "Uma boca BLÔU apaga as velas: SOPRAR. Um golpe de vento também é a blow.",
+    "Blow on the soup before you eat.",
+    "Sopre a sopa antes de comer."
+  ],
+  [
+    "dress",
+    "",
+    "vestido / vestir-se",
+    "DRÉS",
+    "PT",
+    "Um DRESS code dita como se VESTIR. O vestido pendurado no cabide dá o sentido do substantivo.",
+    "She wore a blue dress to dinner.",
+    "Ela usou um vestido azul no jantar."
   ]
 ]
