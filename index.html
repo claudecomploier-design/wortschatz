@@ -1336,7 +1336,7 @@ function celebrateStreak(n){
   const num=$("sp-num");num.textContent=Math.max(0,n-1);num.classList.remove("bump");
   $("sp-title").textContent=n===1?"Primeiro dia garantido!":`${n} dias de racha!`;
   $("sp-sub").textContent=STREAK_MARKS.includes(n)?`Conquista desbloqueada: ${n} dias! Continue sua jornada amanhã.`:n>best?"Novo recorde pessoal! A racha está protegida hoje.":"Racha protegida hoje! Um passo por dia faz a diferença.";
-  const names=["D","S","T","Q","Q","S","S"];let h="";
+  let names=["D","S","T","Q","Q","S","S"];try{if(window.VBUI&&VBUI.locale()!=="pt-BR"){const loc=VBUI.locale();names=names.map((x,i)=>new Date(2024,0,7+i,12).toLocaleDateString(loc,{weekday:"narrow"}))}}catch(e){}let h="";
   for(let i=6;i>=0;i--){const d=new Date();d.setHours(12);d.setDate(d.getDate()-i);const lit=Number(act[dayKey(d.getTime())])>0;
     h+=`<div style="display:grid;gap:4px;justify-items:center;font-size:.7rem;color:var(--dim)"><div class="dot${lit?" lit":""}${i===0?" now":""}">${MINI}</div>${i===0?"hoje":names[d.getDay()]}</div>`}
   $("sp-week").innerHTML=h;
@@ -1847,5 +1847,6 @@ if("serviceWorker" in navigator){
 <script src="forja-gato.js?v=1"></script>
 <script src="comunidade.js?v=2"></script>
 <script src="xp-ui.js?v=1"></script>
+<script src="ui-i18n.js?v=1"></script>
 </body>
 </html>
