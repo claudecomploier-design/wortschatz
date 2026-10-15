@@ -1,0 +1,4002 @@
+[
+  [
+    "oh",
+    "",
+    "ah / oh",
+    "Ô",
+    "ONO",
+    "OH é o mesmo susto curto do português: a boca forma um O redondo de surpresa.",
+    "¡Oh, se me olvidaron las llaves!",
+    "Ah, esqueci as chaves!"
+  ],
+  [
+    "favor",
+    "m",
+    "favor",
+    "fa-BÓR (v como b)",
+    "PT",
+    "FAVOR vale igual, mas o V soa como B suave: fa-BÓR. Por favor abre portas nos dois idiomas.",
+    "¿Me haces un favor pequeño?",
+    "Você me faz um pequeno favor?"
+  ],
+  [
+    "mucho",
+    "",
+    "muito",
+    "MÚ-tcho",
+    "SOM",
+    "MUITO perde o I e ganha CH com som de tch: MUCHO. Pense num mutirão de coisas, um MONTE.",
+    "Hoy hace mucho calor en la ciudad.",
+    "Hoje está fazendo muito calor na cidade."
+  ],
+  [
+    "mí",
+    "",
+    "mim (depois de preposição)",
+    "MÍ",
+    "REGRA",
+    "MÍ com acento é MIM depois de para, de, a: para mí. Sem acento, mi é meu.",
+    "Este café es para mí.",
+    "Este café é para mim."
+  ],
+  [
+    "señora",
+    "f",
+    "senhora",
+    "se-NHÔ-ra",
+    "PT",
+    "SENHORA troca NH por Ñ: SEÑORA. É também o jeito educado de chamar uma mulher desconhecida.",
+    "La señora del tercer piso tiene un gato.",
+    "A senhora do terceiro andar tem um gato."
+  ],
+  [
+    "perdón",
+    "m",
+    "perdão / desculpa",
+    "per-DÓN",
+    "PT",
+    "PERDÃO troca ÃO por ÓN, como coração vira corazón. Serve para pedir licença ao esbarrar em alguém.",
+    "Perdón, no te vi en la fila.",
+    "Desculpa, não te vi na fila."
+  ],
+  [
+    "señor",
+    "m",
+    "senhor",
+    "se-NHÔR",
+    "PT",
+    "SENHOR troca NH por Ñ: SEÑOR. O til em cima do N é o nosso NH desenhado numa letra só.",
+    "El señor de la tienda es muy amable.",
+    "O senhor da loja é muito gentil."
+  ],
+  [
+    "mejor",
+    "",
+    "melhor",
+    "me-RRÓR (j como r forte)",
+    "PT",
+    "MELHOR troca LH por J aspirado: MEJOR. Mesma troca de mulher e mujer.",
+    "Esta silla es mejor para la espalda.",
+    "Esta cadeira é melhor para as costas."
+  ],
+  [
+    "pues",
+    "",
+    "pois / então / bem",
+    "PUÊS",
+    "FRASE",
+    "POIS vira PUES e serve de muleta para pensar: pues... no sé. Começa respostas como o nosso então.",
+    "Pues no sé qué decirte.",
+    "Bom, não sei o que te dizer."
+  ],
+  [
+    "sino",
+    "",
+    "mas sim / e sim",
+    "SÍ-no",
+    "FALSO",
+    "SINO não é o sino da igreja (campana): corrige depois de uma negação. No es azul, sino verde.",
+    "No quiero té, sino café.",
+    "Não quero chá, e sim café."
+  ],
+  [
+    "decir",
+    "",
+    "dizer",
+    "de-SÍR (c latino-americano)",
+    "PAD",
+    "DIZER troca Z por C: DECIR. Na América Latina o C antes de I soa S.",
+    "¿Puedes decir tu nombre otra vez?",
+    "Você pode dizer seu nome de novo?"
+  ],
+  [
+    "también",
+    "",
+    "também",
+    "tam-BIÉN",
+    "PT",
+    "TAMBÉM abre um I e fecha em N: TAMBIÉN. Mesma troca de bem para bien.",
+    "Mi hermano también quiere venir.",
+    "Meu irmão também quer vir."
+  ],
+  [
+    "sobre",
+    "",
+    "sobre / em cima de",
+    "SÔ-bre (r breve)",
+    "PT",
+    "SOBRE conserva a forma. Pode ser o livro sobre a mesa ou um filme sobre o mar.",
+    "Dejé el libro sobre la cama.",
+    "Deixei o livro sobre a cama."
+  ],
+  [
+    "dios",
+    "m",
+    "Deus / deus",
+    "DIÓS",
+    "PT",
+    "DEUS vira DIOS, com I no lugar do E. Ouve-se muito em ¡Dios mío!, meu Deus!",
+    "¡Dios mío, qué susto me diste!",
+    "Meu Deus, que susto você me deu!"
+  ],
+  [
+    "sin",
+    "",
+    "sem",
+    "SÍN",
+    "PT",
+    "SEM troca E por I e M por N: SIN. No café: sin azúcar, sem açúcar.",
+    "Prefiero el té sin azúcar.",
+    "Prefiro o chá sem açúcar."
+  ],
+  [
+    "fuerza",
+    "f",
+    "força",
+    "FUÊR-sa (z latino-americano)",
+    "PAD",
+    "FORÇA ganha o ditongo UE e troca Ç por Z: FUERZA. Mesma abertura de porta e puerta.",
+    "Necesito fuerza para mover este sofá.",
+    "Preciso de força para mover este sofá."
+  ],
+  [
+    "allá",
+    "",
+    "lá / para lá",
+    "a-IÁ (ll latino-americano)",
+    "PT",
+    "LÁ dobra o L e ganha um A na frente: ALLÁ. Aponta um lugar distante e meio vago: allá en el norte.",
+    "Mis abuelos viven allá en el campo.",
+    "Meus avós moram lá no campo."
+  ],
+  [
+    "ti",
+    "",
+    "ti / você (depois de preposição)",
+    "TÍ (sem tch)",
+    "REGRA",
+    "TI aparece depois de preposição: para ti, contigo. Sem acento, porque não há outra palavra ti para confundir.",
+    "Compré estas flores para ti.",
+    "Comprei estas flores para você."
+  ],
+  [
+    "otro",
+    "",
+    "outro",
+    "Ô-tro",
+    "PT",
+    "OUTRO perde o U e vira OTRO. Cuidado: nunca diga un otro; diga só otro café.",
+    "Quiero otro pedazo de pastel.",
+    "Quero outro pedaço de bolo."
+  ],
+  [
+    "ver",
+    "",
+    "ver",
+    "BÉR (v como b)",
+    "PT",
+    "VER se escreve igual, mas o V espanhol soa B: BÉR. Nos vemos = a gente se vê.",
+    "Vamos a ver una película esta noche.",
+    "Vamos ver um filme hoje à noite."
+  ],
+  [
+    "hombre",
+    "m",
+    "homem",
+    "ÔM-bre (h mudo)",
+    "PAD",
+    "HOMEM ganha um B de ponte: HOMBRE, como em nome e nombre. O H não soa.",
+    "Ese hombre es el padre de Lucía.",
+    "Esse homem é o pai da Lucía."
+  ],
+  [
+    "vida",
+    "f",
+    "vida",
+    "BÍ-da (v como b)",
+    "PT",
+    "VIDA se escreve igual; só o V soa B e o D entre vogais sai suave.",
+    "Mi abuela tuvo una vida muy larga.",
+    "Minha avó teve uma vida muito longa."
+  ],
+  [
+    "siempre",
+    "",
+    "sempre",
+    "SIÊM-pre",
+    "PAD",
+    "SEMPRE ganha o ditongo IE: SIEMPRE. É a mesma abertura de tempo para tiempo.",
+    "Siempre desayuno a las siete.",
+    "Sempre tomo café da manhã às sete."
+  ],
+  [
+    "hasta",
+    "",
+    "até",
+    "ÁS-ta (h mudo)",
+    "IMG",
+    "HASTA LA VISTA, até a vista: a despedida dos filmes de ação ensina que HASTA é ATÉ.",
+    "Trabajo hasta las cinco de la tarde.",
+    "Trabalho até as cinco da tarde."
+  ],
+  [
+    "ahí",
+    "",
+    "aí",
+    "a-Í (h mudo)",
+    "PT",
+    "AÍ ganha um H mudo: AHÍ. Fica perto de quem ouve: ahí, do seu lado.",
+    "Deja la caja ahí, por favor.",
+    "Deixa a caixa aí, por favor."
+  ],
+  [
+    "lado",
+    "m",
+    "lado",
+    "LÁ-do",
+    "PT",
+    "LADO é idêntico. Al lado de = ao lado de, com al fundido.",
+    "La farmacia está al lado del banco.",
+    "A farmácia fica ao lado do banco."
+  ],
+  [
+    "ir",
+    "",
+    "ir",
+    "ÍR (r breve)",
+    "PT",
+    "IR é igual, mas é muito irregular: voy, vas, va. Ir a + verbo marca o futuro próximo.",
+    "Mañana quiero ir a la playa.",
+    "Amanhã quero ir à praia."
+  ],
+  [
+    "antes",
+    "",
+    "antes",
+    "ÁN-tes",
+    "PT",
+    "ANTES é idêntico. Antes de comer, lave as mãos: o DE é obrigatório antes de verbo.",
+    "Lávate las manos antes de comer.",
+    "Lave as mãos antes de comer."
+  ],
+  [
+    "estar",
+    "",
+    "estar",
+    "es-TÁR",
+    "REGRA",
+    "ESTAR fala de lugar e de estado passageiro: estoy cansado. Identidade fica com ser.",
+    "Quiero estar en casa a las ocho.",
+    "Quero estar em casa às oito."
+  ],
+  [
+    "poco",
+    "",
+    "pouco",
+    "PÔ-ko",
+    "PT",
+    "POUCO perde o U e vira POCO. Un poco de sal = uma pitada de sal.",
+    "Ponle un poco de sal a la sopa.",
+    "Coloca um pouco de sal na sopa."
+  ],
+  [
+    "día",
+    "m",
+    "dia",
+    "DÍ-a",
+    "REGRA",
+    "DIA ganha acento: DÍA. Termina em A, mas é masculino: el día, buenos días.",
+    "Hoy es un día muy bonito.",
+    "Hoje é um dia muito bonito."
+  ],
+  [
+    "uno",
+    "",
+    "um (número)",
+    "Ú-no",
+    "REGRA",
+    "UNO é o número um sozinho ou contando: uno, dos, tres. Antes de substantivo vira un.",
+    "Solo me queda uno en el bolsillo.",
+    "Só me sobrou um no bolso."
+  ],
+  [
+    "noche",
+    "f",
+    "noite",
+    "NÔ-tche",
+    "PAD",
+    "NOITE troca IT por CH com som de tch: NOCHE. Igual a oito e ocho, leite e leche.",
+    "Buenas noches, hasta mañana.",
+    "Boa noite, até amanhã."
+  ],
+  [
+    "hecho",
+    "m",
+    "fato / feito",
+    "Ê-tcho (h mudo)",
+    "PAD",
+    "FEITO troca F por H mudo e IT por CH: HECHO. Também é o fato: el hecho es que...",
+    "El hecho es que no tenemos dinero.",
+    "O fato é que não temos dinheiro."
+  ],
+  [
+    "acuerdo",
+    "m",
+    "acordo",
+    "a-KUÊR-do",
+    "PAD",
+    "ACORDO ganha o ditongo UE: ACUERDO. De acuerdo é o nosso combinado, tá bom.",
+    "Estoy de acuerdo con tu plan.",
+    "Concordo com o seu plano."
+  ],
+  [
+    "trabajo",
+    "m",
+    "trabalho",
+    "tra-BÁ-rro (j como r forte)",
+    "PT",
+    "TRABALHO troca LH por J aspirado: TRABAJO, como em mejor e mujer.",
+    "Mi trabajo empieza a las nueve.",
+    "Meu trabalho começa às nove."
+  ],
+  [
+    "nosotros",
+    "",
+    "nós",
+    "no-SÔ-tros",
+    "IMG",
+    "NOSOTROS é nós + outros: o grupo inteiro de nós mesmos. A forma feminina é nosotras.",
+    "Nosotros vivimos cerca del parque.",
+    "Nós moramos perto do parque."
+  ],
+  [
+    "gente",
+    "f",
+    "gente / pessoas",
+    "RRÊN-te (g como r forte)",
+    "SOM",
+    "GENTE se escreve igual, mas o G antes de E sopra como R forte: RRÊN-te. Significa pessoas, nunca a gente = nós.",
+    "Hay mucha gente en el mercado.",
+    "Tem muita gente no mercado."
+  ],
+  [
+    "padre",
+    "m",
+    "pai",
+    "PÁ-dre",
+    "FALSO",
+    "PADRE é PAI, não sacerdote (esse é sacerdote ou cura). Los padres são os pais: pai e mãe.",
+    "Mi padre cocina los domingos.",
+    "Meu pai cozinha aos domingos."
+  ],
+  [
+    "mismo",
+    "",
+    "mesmo",
+    "MÍS-mo",
+    "PT",
+    "MESMO troca E por I: MISMO. Ao mismo tiempo = ao mesmo tempo.",
+    "Tenemos el mismo teléfono.",
+    "Nós temos o mesmo telefone."
+  ],
+  [
+    "peor",
+    "",
+    "pior",
+    "pe-ÔR",
+    "PT",
+    "PIOR troca I por E: PEOR. É o oposto de mejor.",
+    "Hoy el tráfico está peor que ayer.",
+    "Hoje o trânsito está pior que ontem."
+  ],
+  [
+    "hablar",
+    "",
+    "falar",
+    "a-BLÁR (h mudo)",
+    "PAD",
+    "FALAR troca F por H mudo e ganha um B: HABLAR. Mesma troca de fazer e hacer.",
+    "¿Puedo hablar con el gerente?",
+    "Posso falar com o gerente?"
+  ],
+  [
+    "ellos",
+    "",
+    "eles",
+    "Ê-ios (ll latino-americano)",
+    "PT",
+    "ELES dobra o L: ELLOS. Para um grupo só de mulheres, ellas.",
+    "Ellos llegan en el tren de las seis.",
+    "Eles chegam no trem das seis."
+  ],
+  [
+    "tal",
+    "",
+    "tal",
+    "TÁL",
+    "FRASE",
+    "TAL vive na pergunta ¿qué tal?, como vai? Também em tal vez, talvez.",
+    "¿Qué tal el examen de ayer?",
+    "Como foi a prova de ontem?"
+  ],
+  [
+    "fuera",
+    "",
+    "fora",
+    "FUÊ-ra",
+    "PAD",
+    "FORA ganha o ditongo UE: FUERA, como porta e puerta. Fuera de casa = fora de casa.",
+    "Los niños juegan fuera de casa.",
+    "As crianças brincam fora de casa."
+  ],
+  [
+    "después",
+    "",
+    "depois",
+    "des-PUÉS",
+    "PT",
+    "DEPOIS ganha um S e o ditongo UE: DESPUÉS. Antes da ação seguinte vem de: después de comer.",
+    "Te llamo después de la reunión.",
+    "Te ligo depois da reunião."
+  ],
+  [
+    "desde",
+    "",
+    "desde / a partir de",
+    "DÊS-de",
+    "PT",
+    "DESDE é igual. Desde la ventana = da janela, ponto de onde se olha.",
+    "Vivo aquí desde el año pasado.",
+    "Moro aqui desde o ano passado."
+  ],
+  [
+    "dinero",
+    "m",
+    "dinheiro",
+    "di-NÊ-ro",
+    "PT",
+    "DINHEIRO perde o H e o I: DINERO. Plata também se ouve muito na América Latina.",
+    "No tengo dinero en efectivo.",
+    "Não tenho dinheiro em espécie."
+  ],
+  [
+    "mundo",
+    "m",
+    "mundo",
+    "MÚN-do",
+    "PT",
+    "MUNDO é idêntico. Todo el mundo = todo mundo, todas as pessoas.",
+    "Quiero viajar por todo el mundo.",
+    "Quero viajar pelo mundo todo."
+  ],
+  [
+    "claro",
+    "",
+    "claro",
+    "KLÁ-ro",
+    "PT",
+    "CLARO é igual e também responde sim com vontade: ¡claro que sí!",
+    "¡Claro que puedes venir con nosotros!",
+    "Claro que você pode vir com a gente!"
+  ],
+  [
+    "momento",
+    "m",
+    "momento",
+    "mo-MÊN-to",
+    "PT",
+    "MOMENTO é idêntico. Un momento, por favor = só um instante.",
+    "Espera un momento, ya vuelvo.",
+    "Espera um momento, já volto."
+  ],
+  [
+    "tener",
+    "",
+    "ter",
+    "te-NÉR",
+    "PAD",
+    "TER vira TENER, como em manter e mantener. Tener que = ter que.",
+    "Voy a tener una reunión a las tres.",
+    "Vou ter uma reunião às três."
+  ],
+  [
+    "estado",
+    "m",
+    "estado",
+    "es-TÁ-do",
+    "PT",
+    "ESTADO é igual: o lugar no mapa ou a condição de algo. Estados Unidos, Estado de México.",
+    "El coche está en buen estado.",
+    "O carro está em bom estado."
+  ],
+  [
+    "mañana",
+    "f",
+    "manhã / amanhã",
+    "ma-NHÁ-na",
+    "REGRA",
+    "MAÑANA é duas coisas: la mañana, a manhã; mañana sem artigo, amanhã. O Ñ é o nosso NH.",
+    "Te veo mañana en la escuela.",
+    "Te vejo amanhã na escola."
+  ],
+  [
+    "madre",
+    "f",
+    "mãe",
+    "MÁ-dre",
+    "LA",
+    "MATER, do latim, deu MADRE (pense em madrinha). Mamá é a forma carinhosa.",
+    "Mi madre trabaja en un hospital.",
+    "Minha mãe trabalha num hospital."
+  ],
+  [
+    "lugar",
+    "m",
+    "lugar",
+    "lu-GÁR",
+    "PT",
+    "LUGAR é idêntico. Tener lugar = acontecer, ter lugar.",
+    "Este es mi lugar favorito de la ciudad.",
+    "Este é meu lugar favorito da cidade."
+  ],
+  [
+    "donde",
+    "",
+    "onde (sem pergunta)",
+    "DÔN-de",
+    "REGRA",
+    "DONDE sem acento liga frases: la casa donde vivo. Com acento, dónde pergunta.",
+    "Esta es la calle donde nací.",
+    "Esta é a rua onde nasci."
+  ],
+  [
+    "seguro",
+    "",
+    "seguro / certo",
+    "se-GÚ-ro",
+    "PT",
+    "SEGURO é igual: protegido ou com certeza. ¿Estás seguro? = você tem certeza?",
+    "¿Estás seguro de que cerraste la puerta?",
+    "Você tem certeza de que fechou a porta?"
+  ],
+  [
+    "nuevo",
+    "",
+    "novo",
+    "NUÊ-bo",
+    "PAD",
+    "NOVO ganha o ditongo UE: NUEVO. Mesma troca de bom e bueno, porta e puerta.",
+    "Me compré un teléfono nuevo.",
+    "Comprei um telefone novo."
+  ],
+  [
+    "cosa",
+    "f",
+    "coisa",
+    "KÔ-sa (s surdo)",
+    "PT",
+    "COISA perde o I: COSA. O S fica surdo como em caçar, nunca com som de Z.",
+    "Tengo una cosa para ti.",
+    "Tenho uma coisa para você."
+  ],
+  [
+    "hijo",
+    "m",
+    "filho",
+    "Í-rro (h mudo; j como r forte)",
+    "PAD",
+    "FILHO troca F por H mudo e LH por J: HIJO. Duas trocas clássicas de uma vez.",
+    "Mi hijo tiene cinco años.",
+    "Meu filho tem cinco anos."
+  ],
+  [
+    "menos",
+    "",
+    "menos",
+    "MÊ-nos",
+    "PT",
+    "MENOS é idêntico. Nas horas: las tres menos cuarto = quinze para as três.",
+    "Quiero pagar menos por el alquiler.",
+    "Quero pagar menos pelo aluguel."
+  ],
+  [
+    "tipo",
+    "m",
+    "tipo",
+    "TÍ-po (t sem tch)",
+    "PT",
+    "TIPO é igual, mas diga ti sem tch. Também vira gíria para cara: ese tipo.",
+    "¿Qué tipo de música te gusta?",
+    "Que tipo de música você gosta?"
+  ],
+  [
+    "amigo",
+    "m",
+    "amigo",
+    "a-MÍ-go",
+    "PT",
+    "AMIGO é idêntico; amiga para mulher. O G entre vogais sai bem suave.",
+    "Mi amigo vive en Colombia.",
+    "Meu amigo mora na Colômbia."
+  ],
+  [
+    "gran",
+    "",
+    "grande (antes do substantivo)",
+    "GRÁN",
+    "REGRA",
+    "GRANDE perde o final antes do substantivo: un gran amigo. Antes do nome costuma ser ótimo; depois, tamanho.",
+    "Es un gran día para nuestra familia.",
+    "É um grande dia para nossa família."
+  ],
+  [
+    "nuestro",
+    "",
+    "nosso",
+    "NUÊS-tro",
+    "PAD",
+    "NOSSO ganha o ditongo UE e um T: NUESTRO. No feminino, nuestra casa.",
+    "Nuestro perro duerme en el jardín.",
+    "Nosso cachorro dorme no jardim."
+  ],
+  [
+    "mujer",
+    "f",
+    "mulher / esposa",
+    "mu-RRÉR (j como r forte)",
+    "PAD",
+    "MULHER troca LH por J aspirado: MUJER. Mi mujer também quer dizer minha esposa.",
+    "Esa mujer es la directora del colegio.",
+    "Essa mulher é a diretora da escola."
+  ],
+  [
+    "papá",
+    "m",
+    "papai / pai",
+    "pa-PÁ",
+    "PT",
+    "PAPAI encurta para PAPÁ, com acento no fim. Mamá e papá são os pais.",
+    "Mi papá me lleva a la escuela.",
+    "Meu pai me leva para a escola."
+  ],
+  [
+    "hoy",
+    "",
+    "hoje",
+    "ÔI (h mudo)",
+    "PT",
+    "HOJE encolhe para HOY: o J some e o H não soa. Hoy es lunes = hoje é segunda.",
+    "Hoy no tengo clases.",
+    "Hoje não tenho aula."
+  ],
+  [
+    "tres",
+    "",
+    "três",
+    "TRÊS (r breve)",
+    "PT",
+    "TRÊS perde só o acento: TRES. Uno, dos, tres: a contagem quase igual.",
+    "Tengo tres hermanos.",
+    "Tenho três irmãos."
+  ],
+  [
+    "hambre",
+    "f",
+    "fome",
+    "ÁM-bre (h mudo)",
+    "PAD",
+    "FOME vem do latim fames, como HAMBRE: o F virou H mudo. Tener hambre = estar com fome.",
+    "Tengo mucha hambre después del partido.",
+    "Estou com muita fome depois do jogo."
+  ],
+  [
+    "gusto",
+    "m",
+    "gosto / prazer",
+    "GÚS-to",
+    "FRASE",
+    "GOSTO perde o O: GUSTO. Mucho gusto é o muito prazer de quem se apresenta.",
+    "Mucho gusto, me llamo Pedro.",
+    "Muito prazer, meu nome é Pedro."
+  ],
+  [
+    "parte",
+    "f",
+    "parte",
+    "PÁR-te (t sem tch)",
+    "PT",
+    "PARTE é igual, só sem o tchi final. ¿De parte de quién? = quem gostaria?",
+    "Esta parte del libro es muy triste.",
+    "Esta parte do livro é muito triste."
+  ],
+  [
+    "nombre",
+    "m",
+    "nome",
+    "NÔM-bre",
+    "PAD",
+    "NOME ganha um B: NOMBRE, como homem e hombre. Ojo: sobrenome é apellido.",
+    "¿Cuál es tu nombre completo?",
+    "Qual é o seu nome completo?"
+  ],
+  [
+    "mal",
+    "",
+    "mal",
+    "MÁL",
+    "PT",
+    "MAL é igual, mas o L final é bem pronunciado, sem virar u: MÁL, não máu.",
+    "Hoy me siento un poco mal.",
+    "Hoje estou me sentindo um pouco mal."
+  ],
+  [
+    "suerte",
+    "f",
+    "sorte",
+    "SUÊR-te",
+    "PAD",
+    "SORTE ganha o ditongo UE: SUERTE. ¡Buena suerte! antes da prova.",
+    "¡Buena suerte en tu entrevista!",
+    "Boa sorte na sua entrevista!"
+  ],
+  [
+    "realmente",
+    "",
+    "realmente",
+    "re-al-MÊN-te (r inicial forte)",
+    "PT",
+    "REALMENTE é igual; o R do começo vibra forte. O -mente funciona como no português.",
+    "Realmente me gusta este barrio.",
+    "Eu realmente gosto deste bairro."
+  ],
+  [
+    "aún",
+    "",
+    "ainda",
+    "a-ÚN",
+    "REGRA",
+    "AÚN com acento é AINDA, igual a todavía. Sem acento, aun quer dizer até, mesmo.",
+    "Aún no he terminado la tarea.",
+    "Ainda não terminei a tarefa."
+  ],
+  [
+    "cada",
+    "",
+    "cada",
+    "KÁ-da",
+    "PT",
+    "CADA é idêntico. Cada día = todo dia, um por um.",
+    "Riego las plantas cada mañana.",
+    "Rego as plantas toda manhã."
+  ],
+  [
+    "razón",
+    "f",
+    "razão / motivo",
+    "ra-SÓN (r forte; z latino-americano)",
+    "PAD",
+    "RAZÃO troca ÃO por ÓN: RAZÓN. Tener razón = ter razão, estar certo.",
+    "Tienes razón, el bus ya salió.",
+    "Você tem razão, o ônibus já saiu."
+  ],
+  [
+    "saber",
+    "",
+    "saber",
+    "sa-BÉR",
+    "PT",
+    "SABER é igual. Sé, com acento, é eu sei; ¿sabes? é você sabe?",
+    "Quiero saber la hora de salida.",
+    "Quero saber o horário de saída."
+  ],
+  [
+    "cuál",
+    "",
+    "qual",
+    "KUÁL",
+    "PT",
+    "QUAL vira CUÁL, com C e acento na pergunta. Plural: cuáles.",
+    "¿Cuál es tu color favorito?",
+    "Qual é a sua cor favorita?"
+  ],
+  [
+    "serio",
+    "",
+    "sério",
+    "SÊ-rio",
+    "PT",
+    "SÉRIO perde o acento: SERIO. ¿En serio? = sério?, é verdade?",
+    "¿En serio te vas a mudar?",
+    "Sério que você vai se mudar?"
+  ],
+  [
+    "idea",
+    "f",
+    "ideia",
+    "i-DÊ-a",
+    "PT",
+    "IDEIA perde o I do meio: IDEA. Ni idea = não faço ideia.",
+    "Tengo una idea para el fin de semana.",
+    "Tenho uma ideia para o fim de semana."
+  ],
+  [
+    "tarde",
+    "f",
+    "tarde",
+    "TÁR-de",
+    "REGRA",
+    "TARDE é o período (buenas tardes) e também atrasado: llegué tarde, cheguei tarde.",
+    "Llegué tarde al trabajo por el tráfico.",
+    "Cheguei tarde ao trabalho por causa do trânsito."
+  ],
+  [
+    "problema",
+    "m",
+    "problema",
+    "pro-BLÊ-ma",
+    "REGRA",
+    "PROBLEMA termina em A, mas é masculino como no português: el problema.",
+    "No hay problema, yo te ayudo.",
+    "Não tem problema, eu te ajudo."
+  ],
+  [
+    "hora",
+    "f",
+    "hora",
+    "Ô-ra (h mudo)",
+    "PT",
+    "HORA é igual, com H mudo. ¿Qué hora es? = que horas são?",
+    "¿A qué hora empieza la película?",
+    "A que horas começa o filme?"
+  ],
+  [
+    "cierto",
+    "",
+    "certo / verdadeiro",
+    "SIÊR-to",
+    "PAD",
+    "CERTO ganha o ditongo IE: CIERTO, como tempo e tiempo. Es cierto = é verdade.",
+    "Es cierto que el museo cierra los lunes.",
+    "É verdade que o museu fecha às segundas."
+  ],
+  [
+    "conmigo",
+    "",
+    "comigo",
+    "kon-MÍ-go",
+    "PT",
+    "COMIGO ganha um N: CONMIGO, de con + migo. Ven conmigo = vem comigo.",
+    "¿Quieres ir al cine conmigo?",
+    "Quer ir ao cinema comigo?"
+  ],
+  [
+    "demasiado",
+    "",
+    "demais / demasiado",
+    "de-ma-SIÁ-do",
+    "PT",
+    "DEMASIADO existe em português formal; no dia a dia é DEMAIS. Hace demasiado calor = calor demais.",
+    "La música está demasiado alta.",
+    "A música está alta demais."
+  ],
+  [
+    "amor",
+    "m",
+    "amor",
+    "a-MÔR",
+    "PT",
+    "AMOR é idêntico. Mi amor também é chamego entre casais.",
+    "Escribió una carta de amor.",
+    "Escreveu uma carta de amor."
+  ],
+  [
+    "entre",
+    "",
+    "entre",
+    "ÊN-tre",
+    "PT",
+    "ENTRE é igual. Entre tú y yo = entre você e eu, sem mim.",
+    "El banco está entre la farmacia y el café.",
+    "O banco fica entre a farmácia e o café."
+  ],
+  [
+    "pasado",
+    "m",
+    "passado",
+    "pa-SÁ-do",
+    "PT",
+    "PASSADO perde um S: PASADO. El año pasado = o ano passado.",
+    "El verano pasado fuimos a la playa.",
+    "No verão passado fomos à praia."
+  ],
+  [
+    "familia",
+    "f",
+    "família",
+    "fa-MÍ-lia",
+    "PT",
+    "FAMÍLIA perde o acento escrito, mas a força continua no MI: fa-MÍ-lia.",
+    "Mi familia vive en el sur.",
+    "Minha família mora no sul."
+  ],
+  [
+    "policía",
+    "f",
+    "polícia / policial",
+    "po-li-SÍ-a",
+    "REGRA",
+    "POLICÍA leva o acento no I: po-li-SÍ-a. La policía é a corporação; el policía é o policial.",
+    "Llamamos a la policía después del robo.",
+    "Chamamos a polícia depois do roubo."
+  ],
+  [
+    "según",
+    "",
+    "segundo / de acordo com",
+    "se-GÚN",
+    "PT",
+    "SEGUNDO encolhe para SEGÚN quando cita alguém: según el médico, segundo o médico.",
+    "Según el mapa, el hotel está cerca.",
+    "Segundo o mapa, o hotel está perto."
+  ],
+  [
+    "chica",
+    "f",
+    "moça / garota",
+    "TCHÍ-ka",
+    "IMG",
+    "CHICA bonita é a garota das músicas latinas. O CH soa tch, como em tchau.",
+    "La chica de la tienda me ayudó.",
+    "A moça da loja me ajudou."
+  ],
+  [
+    "todavía",
+    "",
+    "ainda",
+    "to-da-BÍ-a",
+    "IMG",
+    "TODA VIA ainda segue aberta: TODAVÍA é AINDA. Todavía no = ainda não.",
+    "Todavía no he comido nada.",
+    "Ainda não comi nada."
+  ],
+  [
+    "salir",
+    "",
+    "sair",
+    "sa-LÍR",
+    "PAD",
+    "SAIR ganha um L: SALIR. Salida é a saída do metrô.",
+    "Vamos a salir a cenar el viernes.",
+    "Vamos sair para jantar na sexta."
+  ],
+  [
+    "unos",
+    "",
+    "uns / umas / cerca de",
+    "Ú-nos",
+    "REGRA",
+    "UNOS é uns; antes de número quer dizer cerca de: unos veinte, uns vinte.",
+    "Esperamos unos diez minutos.",
+    "Esperamos uns dez minutos."
+  ],
+  [
+    "hermano",
+    "m",
+    "irmão",
+    "er-MÁ-no (h mudo)",
+    "PAD",
+    "IRMÃO vem do latim germanus, e o espanhol guardou mais dele: HERMANO, com H mudo e -ano no lugar de -ão.",
+    "Mi hermano mayor vive en Lima.",
+    "Meu irmão mais velho mora em Lima."
+  ],
+  [
+    "contigo",
+    "",
+    "contigo / com você",
+    "kon-TÍ-go",
+    "PT",
+    "CONTIGO ganha um N, igual a conmigo: CON-TI-GO. Contigo, pan y cebolla: com você, até pão com cebola basta.",
+    "Me gusta pasear contigo por la playa.",
+    "Gosto de passear com você pela praia."
+  ],
+  [
+    "cabeza",
+    "f",
+    "cabeça",
+    "ka-BÊ-sa (z latino-americano)",
+    "PT",
+    "CABEÇA troca Ç por Z: CABEZA. Na América Latina o Z soa S, então quase nada muda.",
+    "Me duele la cabeza desde la mañana.",
+    "Estou com dor de cabeça desde manhã."
+  ],
+  [
+    "rato",
+    "m",
+    "momento / tempinho",
+    "RRÁ-to (r forte)",
+    "FALSO",
+    "RATO é um MOMENTO, não o bicho (esse é ratón). Un rato = um tempinho.",
+    "Espérame un rato, ya bajo.",
+    "Me espera um pouquinho, já desço."
+  ],
+  [
+    "cualquier",
+    "",
+    "qualquer",
+    "kual-KIÊR",
+    "PT",
+    "QUALQUER vira CUALQUIER antes do substantivo: cualquier día. Depois dele, cualquiera.",
+    "Puedes llamarme a cualquier hora.",
+    "Você pode me ligar a qualquer hora."
+  ],
+  [
+    "forma",
+    "f",
+    "forma / jeito",
+    "FÔR-ma",
+    "PT",
+    "FORMA é idêntica. De todas formas = de qualquer jeito.",
+    "Esta caja tiene forma de corazón.",
+    "Esta caixa tem forma de coração."
+  ],
+  [
+    "mientras",
+    "",
+    "enquanto",
+    "MIÊN-tras",
+    "IMG",
+    "MIENTRAS soa como MENTIRAS: enquanto ele falava, contava mentiras. Mientras tanto = enquanto isso.",
+    "Escucho música mientras cocino.",
+    "Escuto música enquanto cozinho."
+  ],
+  [
+    "caso",
+    "m",
+    "caso",
+    "KÁ-so (s surdo)",
+    "FALSO",
+    "CASO é um caso ou uma situação, não casamento. Hacer caso = dar ouvidos: no me hace caso.",
+    "En ese caso, nos vemos mañana.",
+    "Nesse caso, nos vemos amanhã."
+  ],
+  [
+    "genial",
+    "",
+    "ótimo / genial",
+    "rre-NIÁL (g como r forte)",
+    "PT",
+    "GENIAL existe em português, mas em espanhol é o elogio do dia a dia: ¡genial!, ótimo! O G sopra como R forte.",
+    "¡Qué genial tu nueva bicicleta!",
+    "Que demais sua bicicleta nova!"
+  ],
+  [
+    "chico",
+    "m",
+    "garoto / rapaz",
+    "TCHÍ-ko",
+    "IMG",
+    "CHICO é o garoto; pense no Chico, o menino da história em quadrinhos. Como adjetivo, chico é pequeno.",
+    "Ese chico juega en mi equipo.",
+    "Esse garoto joga no meu time."
+  ],
+  [
+    "adiós",
+    "",
+    "adeus / tchau",
+    "a-DIÓS",
+    "PT",
+    "ADEUS vira ADIÓS, com acento no fim. No espanhol é tchau comum, sem o peso dramático do nosso adeus.",
+    "Adiós, nos vemos el lunes.",
+    "Tchau, nos vemos na segunda."
+  ],
+  [
+    "culpa",
+    "f",
+    "culpa",
+    "KÚL-pa",
+    "PT",
+    "CULPA é idêntica. Tener la culpa = ser o culpado: yo no tengo la culpa.",
+    "No fue tu culpa, fue un accidente.",
+    "Não foi culpa sua, foi um acidente."
+  ],
+  [
+    "volver",
+    "",
+    "voltar",
+    "bol-BÉR (v como b)",
+    "PAD",
+    "VOLVER lembra REVOLVER, dar voltas: é VOLTAR. Volver a casa = voltar para casa.",
+    "Quiero volver a casa temprano.",
+    "Quero voltar para casa cedo."
+  ],
+  [
+    "contra",
+    "",
+    "contra",
+    "KÔN-tra",
+    "PT",
+    "CONTRA é idêntico. Pode ser um jogo contra o México ou apoiar algo contra a parede.",
+    "Mañana jugamos contra el equipo de Chile.",
+    "Amanhã jogamos contra o time do Chile."
+  ],
+  [
+    "camino",
+    "m",
+    "caminho",
+    "ka-MÍ-no",
+    "PT",
+    "CAMINHO perde o H: CAMINO. Camino a casa = no caminho para casa.",
+    "Este camino lleva al río.",
+    "Este caminho leva ao rio."
+  ],
+  [
+    "durante",
+    "",
+    "durante",
+    "du-RÁN-te",
+    "PT",
+    "DURANTE é idêntico. Durante la clase = durante a aula.",
+    "No uses el celular durante la cena.",
+    "Não use o celular durante o jantar."
+  ],
+  [
+    "muerto",
+    "",
+    "morto",
+    "MUÊR-to",
+    "PAD",
+    "MORTO ganha o ditongo UE: MUERTO, como porta e puerta. Estar muerto de cansancio = morto de cansaço.",
+    "Estoy muerto después del partido.",
+    "Estou morto depois do jogo."
+  ],
+  [
+    "persona",
+    "f",
+    "pessoa",
+    "per-SÔ-na",
+    "PT",
+    "PESSOA vira PERSONA, como a persona do teatro. Sempre feminina, mesmo para homem.",
+    "Es una persona muy generosa.",
+    "É uma pessoa muito generosa."
+  ],
+  [
+    "rápido",
+    "",
+    "rápido",
+    "RRÁ-pi-do (r forte)",
+    "PT",
+    "RÁPIDO é igual, com R inicial bem vibrado. Também é advérbio: come rápido.",
+    "El tren rápido sale a las ocho.",
+    "O trem rápido sai às oito."
+  ],
+  [
+    "ayuda",
+    "f",
+    "ajuda",
+    "a-IÚ-da",
+    "PAD",
+    "AJUDA troca J por Y: AYUDA. ¡Ayuda! é o grito de socorro.",
+    "Gracias por tu ayuda con la mudanza.",
+    "Obrigado pela sua ajuda com a mudança."
+  ],
+  [
+    "historia",
+    "f",
+    "história",
+    "is-TÔ-ria (h mudo)",
+    "PT",
+    "HISTÓRIA perde o acento escrito, mas o H continua mudo. Serve para a matéria e para uma história contada.",
+    "Mi abuelo cuenta una historia cada noche.",
+    "Meu avô conta uma história toda noite."
+  ],
+  [
+    "dentro",
+    "",
+    "dentro",
+    "DÊN-tro",
+    "PT",
+    "DENTRO é idêntico. Dentro de una hora = daqui a uma hora.",
+    "Las llaves están dentro del cajón.",
+    "As chaves estão dentro da gaveta."
+  ],
+  [
+    "casi",
+    "",
+    "quase",
+    "KÁ-si",
+    "PT",
+    "QUASE perde o U e vira CASI. Casi siempre = quase sempre.",
+    "Casi pierdo el autobús esta mañana.",
+    "Quase perdi o ônibus hoje de manhã."
+  ],
+  [
+    "puerta",
+    "f",
+    "porta",
+    "PUÊR-ta",
+    "PAD",
+    "PORTA ganha o ditongo UE: PUERTA. É o exemplo-modelo da troca O por UE.",
+    "Cierra la puerta, hace frío.",
+    "Fecha a porta, está frio."
+  ],
+  [
+    "pasar",
+    "",
+    "passar / acontecer",
+    "pa-SÁR",
+    "PT",
+    "PASSAR perde um S: PASAR. ¿Qué pasa? = o que está acontecendo?",
+    "¿Me puedes pasar la sal?",
+    "Você pode me passar o sal?"
+  ],
+  [
+    "primero",
+    "",
+    "primeiro",
+    "pri-MÊ-ro",
+    "PT",
+    "PRIMEIRO perde o I: PRIMERO. Antes de substantivo masculino encolhe: el primer día.",
+    "Primero lavamos las manos.",
+    "Primeiro lavamos as mãos."
+  ],
+  [
+    "semana",
+    "f",
+    "semana",
+    "se-MÁ-na",
+    "PT",
+    "SEMANA é idêntica. Fin de semana = fim de semana.",
+    "La próxima semana empiezo un curso.",
+    "Na semana que vem começo um curso."
+  ],
+  [
+    "hacia",
+    "",
+    "em direção a / para",
+    "Á-sia (h mudo)",
+    "IMG",
+    "HACIA soa como Ásia: imagine uma bússola apontando PARA a Ásia. Indica direção, não chegada.",
+    "Caminamos hacia el centro.",
+    "Caminhamos em direção ao centro."
+  ],
+  [
+    "quizás",
+    "",
+    "talvez",
+    "ki-SÁS",
+    "IMG",
+    "QUIZÁS soa como quiz: num quiz, você responde TALVEZ quando não tem certeza.",
+    "Quizás llueva esta tarde.",
+    "Talvez chova hoje à tarde."
+  ],
+  [
+    "juntos",
+    "",
+    "juntos",
+    "RRÚN-tos (j como r forte)",
+    "PT",
+    "JUNTOS se escreve igual, mas o J soa como R forte: RRÚN-tos.",
+    "Vamos juntos al concierto.",
+    "Vamos juntos ao show."
+  ],
+  [
+    "año",
+    "m",
+    "ano",
+    "Á-nho",
+    "REGRA",
+    "ANO ganha til: AÑO. Sem o til, ano é outra coisa bem constrangedora, então nunca esqueça o Ñ.",
+    "Este año quiero aprender a nadar.",
+    "Este ano quero aprender a nadar."
+  ],
+  [
+    "pronto",
+    "",
+    "logo / em breve",
+    "PRÔN-to",
+    "FALSO",
+    "PRONTO é LOGO, em breve; pronto (preparado) é listo. ¡Hasta pronto! = até logo!",
+    "El médico llega pronto.",
+    "O médico chega logo."
+  ],
+  [
+    "tío",
+    "m",
+    "tio",
+    "TÍ-o",
+    "PT",
+    "TIO ganha acento: TÍO. Mis tíos = meus tios.",
+    "Mi tío tiene una panadería.",
+    "Meu tio tem uma padaria."
+  ],
+  [
+    "ciudad",
+    "f",
+    "cidade",
+    "siu-DÁD (d final suave)",
+    "PAD",
+    "CIDADE vira CIUDAD: -dade passa a -dad, como verdade e verdad.",
+    "Bogotá es una ciudad muy grande.",
+    "Bogotá é uma cidade muito grande."
+  ],
+  [
+    "feliz",
+    "",
+    "feliz",
+    "fe-LÍS (z latino-americano)",
+    "PT",
+    "FELIZ é igual. ¡Feliz cumpleaños! = feliz aniversário!",
+    "Mi perro está feliz cuando llego.",
+    "Meu cachorro fica feliz quando chego."
+  ],
+  [
+    "venir",
+    "",
+    "vir",
+    "be-NÍR (v como b)",
+    "LA",
+    "VENIR guarda o N do latim venire que o português perdeu: vir. Pense em convenir, convir.",
+    "¿Puedes venir a mi fiesta el sábado?",
+    "Você pode vir à minha festa no sábado?"
+  ],
+  [
+    "hija",
+    "f",
+    "filha",
+    "Í-rra (h mudo; j como r forte)",
+    "PAD",
+    "FILHA troca F por H mudo e LH por J: HIJA, igual a hijo.",
+    "Mi hija empieza la escuela este año.",
+    "Minha filha começa a escola este ano."
+  ],
+  [
+    "muerte",
+    "f",
+    "morte",
+    "MUÊR-te",
+    "PAD",
+    "MORTE ganha o ditongo UE: MUERTE, como muerto. O Día de Muertos mexicano celebra os mortos.",
+    "La muerte del rey cambió el país.",
+    "A morte do rei mudou o país."
+  ],
+  [
+    "dejar",
+    "",
+    "deixar",
+    "de-RRÁR (j como r forte)",
+    "PAD",
+    "DEIXAR troca IX por J: DEJAR. Dejar de fumar = parar de fumar.",
+    "Puedes dejar tu abrigo aquí.",
+    "Você pode deixar seu casaco aqui."
+  ],
+  [
+    "importante",
+    "",
+    "importante",
+    "im-por-TÁN-te",
+    "PT",
+    "IMPORTANTE é idêntico. Lo importante = o importante.",
+    "Mañana tengo una reunión importante.",
+    "Amanhã tenho uma reunião importante."
+  ],
+  [
+    "corazón",
+    "m",
+    "coração",
+    "ko-ra-SÓN",
+    "PAD",
+    "CORAÇÃO troca Ç por Z e ÃO por ÓN: CORAZÓN. Mesma troca de razón e canción.",
+    "Te quiero con todo mi corazón.",
+    "Te amo com todo o meu coração."
+  ],
+  [
+    "miedo",
+    "m",
+    "medo",
+    "MIÊ-do",
+    "PAD",
+    "MEDO ganha o ditongo IE: MIEDO. Tener miedo = ter medo.",
+    "Mi hermana tiene miedo a los perros.",
+    "Minha irmã tem medo de cachorro."
+  ],
+  [
+    "agua",
+    "f",
+    "água",
+    "Á-gua",
+    "REGRA",
+    "ÁGUA é feminina, mas leva EL no singular por começar com A tônica: el agua fría, las aguas.",
+    "Bebo mucha agua cuando hace calor.",
+    "Bebo muita água quando está calor."
+  ],
+  [
+    "cuenta",
+    "f",
+    "conta",
+    "KUÊN-ta",
+    "PAD",
+    "CONTA ganha o ditongo UE: CUENTA. No restaurante: la cuenta, por favor.",
+    "Camarero, la cuenta, por favor.",
+    "Garçom, a conta, por favor."
+  ],
+  [
+    "poder",
+    "",
+    "poder",
+    "po-DÉR",
+    "REGRA",
+    "PODER é igual, mas abre o ditongo UE no presente: puedo, puedes, puede.",
+    "No voy a poder ir mañana.",
+    "Não vou poder ir amanhã."
+  ],
+  [
+    "esposa",
+    "f",
+    "esposa",
+    "es-PÔ-sa (s surdo)",
+    "PT",
+    "ESPOSA é idêntica. Esposas, no plural, também são as algemas da polícia.",
+    "Mi esposa trabaja de enfermera.",
+    "Minha esposa trabalha como enfermeira."
+  ],
+  [
+    "encontrar",
+    "",
+    "encontrar",
+    "en-kon-TRÁR",
+    "PT",
+    "ENCONTRAR é idêntico. Encontrarse con alguien = encontrar-se com alguém.",
+    "No puedo encontrar mis gafas.",
+    "Não consigo encontrar meus óculos."
+  ],
+  [
+    "mano",
+    "f",
+    "mão",
+    "MÁ-no",
+    "REGRA",
+    "MÃO vira MANO e, mesmo terminando em O, é feminina: la mano. Mano, na gíria latina, também é mano, irmão.",
+    "Dame la mano para cruzar la calle.",
+    "Me dá a mão para atravessar a rua."
+  ],
+  [
+    "cinco",
+    "",
+    "cinco",
+    "SÍN-ko",
+    "PT",
+    "CINCO é idêntico; o C inicial soa S. Cinco dedos em cada mão.",
+    "Mi hija tiene cinco años.",
+    "Minha filha tem cinco anos."
+  ],
+  [
+    "niño",
+    "m",
+    "criança / menino",
+    "NÍ-nho",
+    "IMG",
+    "NIÑO é o menino, como o fenômeno El Niño, que chega perto do Natal, do menino Jesus.",
+    "El niño juega con su perro.",
+    "O menino brinca com o cachorro dele."
+  ],
+  [
+    "tampoco",
+    "",
+    "também não",
+    "tam-PÔ-ko",
+    "REGRA",
+    "TAMPOCO é o também da negação: yo tampoco, eu também não. Nunca diga también no.",
+    "Yo tampoco quiero salir hoy.",
+    "Eu também não quero sair hoje."
+  ],
+  [
+    "cara",
+    "f",
+    "rosto / cara",
+    "KÁ-ra",
+    "FALSO",
+    "CARA é o ROSTO, nunca o rapaz (esse é tipo ou chico). Como adjetivo, cara também é cara, de preço alto.",
+    "Lávate la cara antes de dormir.",
+    "Lave o rosto antes de dormir."
+  ],
+  [
+    "cuidado",
+    "m",
+    "cuidado",
+    "kui-DÁ-do",
+    "FRASE",
+    "CUIDADO é idêntico e funciona como alerta: ¡cuidado!, tenha cuidado com o degrau.",
+    "¡Cuidado con el perro!",
+    "Cuidado com o cachorro!"
+  ],
+  [
+    "bajo",
+    "",
+    "baixo / embaixo de",
+    "BÁ-rro (j como r forte)",
+    "PAD",
+    "BAIXO troca IX por J: BAJO. Também é preposição: bajo la lluvia, debaixo de chuva.",
+    "Mi hermano es más bajo que yo.",
+    "Meu irmão é mais baixo que eu."
+  ],
+  [
+    "cerca",
+    "",
+    "perto",
+    "SÊR-ka",
+    "FALSO",
+    "CERCA é PERTO, não a cerca do jardim (essa é valla). Cerca de = perto de.",
+    "Vivo cerca de la estación.",
+    "Moro perto da estação."
+  ],
+  [
+    "viejo",
+    "",
+    "velho",
+    "BIÊ-rro (j como r forte)",
+    "PAD",
+    "VELHO ganha IE e troca LH por J: VIEJO. Mi viejo, em alguns países, é meu pai.",
+    "Este coche ya está muy viejo.",
+    "Este carro já está muito velho."
+  ],
+  [
+    "bastante",
+    "",
+    "bastante / suficiente",
+    "bas-TÁN-te",
+    "PT",
+    "BASTANTE é igual: muito ou o suficiente. Basta ya = já chega.",
+    "Hay bastante comida para todos.",
+    "Tem comida suficiente para todos."
+  ],
+  [
+    "fin",
+    "m",
+    "fim",
+    "FÍN",
+    "PT",
+    "FIM troca M por N: FIN. Fin de semana = fim de semana; por fin = finalmente.",
+    "Por fin llegamos al hotel.",
+    "Finalmente chegamos ao hotel."
+  ],
+  [
+    "tomar",
+    "",
+    "tomar / pegar / beber",
+    "to-MÁR",
+    "PT",
+    "TOMAR serve para beber, pegar transporte e segurar: tomar el autobús, pegar o ônibus.",
+    "Vamos a tomar un café en la esquina.",
+    "Vamos tomar um café na esquina."
+  ],
+  [
+    "único",
+    "",
+    "único",
+    "Ú-ni-ko",
+    "PT",
+    "ÚNICO é idêntico. Hijo único = filho único.",
+    "Es el único restaurante abierto ahora.",
+    "É o único restaurante aberto agora."
+  ],
+  [
+    "paz",
+    "f",
+    "paz",
+    "PÁS (z latino-americano)",
+    "PT",
+    "PAZ é idêntica, com Z soando S. Déjame en paz = me deixa em paz.",
+    "Quiero un poco de paz y silencio.",
+    "Quero um pouco de paz e silêncio."
+  ],
+  [
+    "suficiente",
+    "",
+    "suficiente",
+    "su-fi-SIÊN-te",
+    "PT",
+    "SUFICIENTE é quase igual; só ganha o I de ciencia. Ya es suficiente = já chega.",
+    "No tengo suficiente dinero para el viaje.",
+    "Não tenho dinheiro suficiente para a viagem."
+  ],
+  [
+    "punto",
+    "m",
+    "ponto",
+    "PÚN-to",
+    "PAD",
+    "PONTO troca O por U: PUNTO. Las ocho en punto = oito em ponto.",
+    "Llegamos a las ocho en punto.",
+    "Chegamos às oito em ponto."
+  ],
+  [
+    "cuándo",
+    "",
+    "quando (pergunta)",
+    "KUÁN-do",
+    "REGRA",
+    "CUÁNDO com acento pergunta: quando? Sem acento, cuando liga frases.",
+    "¿Cuándo es tu cumpleaños?",
+    "Quando é o seu aniversário?"
+  ],
+  [
+    "equipo",
+    "m",
+    "time / equipe / equipamento",
+    "e-KÍ-po",
+    "FALSO",
+    "EQUIPO é o TIME de futebol ou a equipe, e também o equipamento. Mi equipo ganó = meu time ganhou.",
+    "Mi equipo favorito ganó ayer.",
+    "Meu time favorito ganhou ontem."
+  ],
+  [
+    "grande",
+    "",
+    "grande",
+    "GRÁN-de",
+    "REGRA",
+    "GRANDE é igual depois do substantivo: una casa grande. Antes dele encolhe para gran.",
+    "Necesitamos una mesa más grande.",
+    "Precisamos de uma mesa maior."
+  ],
+  [
+    "llegar",
+    "",
+    "chegar",
+    "ie-GÁR (ll latino-americano)",
+    "PAD",
+    "CHEGAR troca CH por LL: LLEGAR, como chama e llama, chuva e lluvia.",
+    "Voy a llegar tarde a la cena.",
+    "Vou chegar tarde ao jantar."
+  ],
+  [
+    "incluso",
+    "",
+    "até / inclusive",
+    "in-KLÚ-so",
+    "PT",
+    "INCLUSO lembra INCLUSIVE: até mesmo. Incluso los niños bailaron = até as crianças dançaram.",
+    "Incluso mi abuela vino a la fiesta.",
+    "Até minha avó veio à festa."
+  ],
+  [
+    "alguno",
+    "",
+    "algum / alguma",
+    "al-GÚ-no",
+    "REGRA",
+    "ALGUM vira ALGUNO e encolhe para algún antes de masculino: algún día. Plural: algunos amigos.",
+    "¿Tienes alguno de estos libros?",
+    "Você tem algum destes livros?"
+  ],
+  [
+    "doctor",
+    "m",
+    "doutor / médico",
+    "dok-TÔR",
+    "PT",
+    "DOUTOR perde o U e guarda o C do latim: DOCTOR. Na fala, é o médico.",
+    "El doctor me dio una receta.",
+    "O médico me deu uma receita."
+  ],
+  [
+    "difícil",
+    "",
+    "difícil",
+    "di-FÍ-sil",
+    "PT",
+    "DIFÍCIL é idêntico, com o L final bem pronunciado, sem virar u.",
+    "Este ejercicio es muy difícil.",
+    "Este exercício é muito difícil."
+  ],
+  [
+    "coche",
+    "m",
+    "carro",
+    "KÔ-tche",
+    "IMG",
+    "COCHE lembra coche de cavalo: a carruagem virou o CARRO. Na América Latina também se diz carro.",
+    "Mi coche está en el taller.",
+    "Meu carro está na oficina."
+  ],
+  [
+    "clase",
+    "f",
+    "aula / classe",
+    "KLÁ-se",
+    "FALSO",
+    "CLASE é a AULA, não só a classe social. Tengo clase = tenho aula; a sala de aula é el aula.",
+    "Tengo clase de inglés a las diez.",
+    "Tenho aula de inglês às dez."
+  ],
+  [
+    "cuatro",
+    "",
+    "quatro",
+    "KUÁ-tro",
+    "PT",
+    "QUATRO troca QU por CU: CUATRO, como qual e cuál.",
+    "Somos cuatro en la familia.",
+    "Somos quatro na família."
+  ],
+  [
+    "pequeño",
+    "",
+    "pequeno",
+    "pe-KÊ-nho",
+    "PT",
+    "PEQUENO ganha um til: PEQUEÑO, com som de NH no fim.",
+    "Vivo en un apartamento pequeño.",
+    "Moro num apartamento pequeno."
+  ],
+  [
+    "arriba",
+    "",
+    "em cima / acima",
+    "a-RRÍ-ba (rr vibrado forte)",
+    "SOM",
+    "ARRIBA soa como subir à RIBA, ao alto. ¡Arriba! anima a levantar. O RR vibra forte.",
+    "Mi cuarto está arriba, al lado del baño.",
+    "Meu quarto fica em cima, ao lado do banheiro."
+  ],
+  [
+    "tierra",
+    "f",
+    "terra",
+    "TIÊ-rra (rr vibrado forte)",
+    "PAD",
+    "TERRA ganha o ditongo IE: TIERRA. Tierra del Fuego, no extremo sul da América.",
+    "Las plantas necesitan buena tierra.",
+    "As plantas precisam de terra boa."
+  ],
+  [
+    "pensar",
+    "",
+    "pensar",
+    "pen-SÁR",
+    "PT",
+    "PENSAR é igual, mas abre IE no presente: pienso, piensas. Pienso en ti = penso em você.",
+    "Necesito pensar antes de responder.",
+    "Preciso pensar antes de responder."
+  ],
+  [
+    "igual",
+    "",
+    "igual",
+    "i-GUÁL",
+    "PT",
+    "IGUAL é idêntico e também quer dizer tanto faz: me da igual.",
+    "Tu camisa es igual a la mía.",
+    "Sua camisa é igual à minha."
+  ],
+  [
+    "vuelta",
+    "f",
+    "volta",
+    "BUÊL-ta",
+    "PAD",
+    "VOLTA ganha o ditongo UE: VUELTA, como volver. Dar una vuelta = dar uma volta.",
+    "Vamos a dar una vuelta por el parque.",
+    "Vamos dar uma volta pelo parque."
+  ],
+  [
+    "trabajar",
+    "",
+    "trabalhar",
+    "tra-ba-RRÁR (j como r forte)",
+    "PAD",
+    "TRABALHAR troca LH por J aspirado: TRABAJAR, como trabajo.",
+    "Mañana tengo que trabajar temprano.",
+    "Amanhã tenho que trabalhar cedo."
+  ],
+  [
+    "permiso",
+    "m",
+    "licença / permissão",
+    "per-MÍ-so",
+    "FRASE",
+    "PERMISO é a licença de quem passa: con permiso, com licença. Também é a autorização escrita.",
+    "Con permiso, necesito pasar.",
+    "Com licença, preciso passar."
+  ],
+  [
+    "juego",
+    "m",
+    "jogo / brincadeira",
+    "RRUÊ-go (j como r forte)",
+    "PAD",
+    "JOGO ganha o ditongo UE: JUEGO. Videojuego = videogame.",
+    "Este juego es para niños pequeños.",
+    "Este jogo é para crianças pequenas."
+  ],
+  [
+    "cuerpo",
+    "m",
+    "corpo",
+    "KUÊR-po",
+    "PAD",
+    "CORPO ganha o ditongo UE: CUERPO, como porta e puerta.",
+    "Me duele todo el cuerpo después del gimnasio.",
+    "Meu corpo todo dói depois da academia."
+  ],
+  [
+    "entrar",
+    "",
+    "entrar",
+    "en-TRÁR",
+    "PT",
+    "ENTRAR é igual. Em espanhol se diz entrar en la casa, com EN, não a.",
+    "No puedes entrar sin zapatos.",
+    "Você não pode entrar sem sapatos."
+  ],
+  [
+    "ninguno",
+    "",
+    "nenhum",
+    "nin-GÚ-no",
+    "REGRA",
+    "NENHUM vira NINGUNO, que encolhe para ningún antes de masculino: ningún problema.",
+    "Ninguno de mis amigos vino.",
+    "Nenhum dos meus amigos veio."
+  ],
+  [
+    "oportunidad",
+    "f",
+    "oportunidade",
+    "o-por-tu-ni-DÁD",
+    "PAD",
+    "OPORTUNIDADE troca -dade por -dad: OPORTUNIDAD, como cidade e ciudad.",
+    "Es una buena oportunidad para viajar.",
+    "É uma boa oportunidade para viajar."
+  ],
+  [
+    "teléfono",
+    "m",
+    "telefone",
+    "te-LÊ-fo-no",
+    "PT",
+    "TELEFONE vira TELÉFONO, com a força na segunda sílaba: te-LÊ-fo-no.",
+    "Mi teléfono no tiene batería.",
+    "Meu telefone está sem bateria."
+  ],
+  [
+    "final",
+    "m",
+    "final / fim",
+    "fi-NÁL",
+    "PT",
+    "FINAL é igual. Al final = no fim, no final das contas.",
+    "Al final de la calle hay un parque.",
+    "No fim da rua tem um parque."
+  ],
+  [
+    "listo",
+    "",
+    "pronto / esperto",
+    "LÍS-to",
+    "FALSO",
+    "LISTO é PRONTO (com estar) ou ESPERTO (com ser). Não confunda com lista nem com pronto, que é logo.",
+    "La cena ya está lista.",
+    "O jantar já está pronto."
+  ],
+  [
+    "fiesta",
+    "f",
+    "festa",
+    "FIÊS-ta",
+    "PAD",
+    "FESTA ganha o ditongo IE: FIESTA, como tempo e tiempo.",
+    "El sábado hay una fiesta en mi casa.",
+    "No sábado tem uma festa na minha casa."
+  ],
+  [
+    "apellido",
+    "m",
+    "sobrenome",
+    "a-pe-IÍ-do (ll latino-americano)",
+    "FALSO",
+    "APELLIDO é SOBRENOME, não apelido (esse é apodo). Nos formulários: nombre y apellido.",
+    "Escribe tu nombre y tu apellido aquí.",
+    "Escreva seu nome e seu sobrenome aqui."
+  ],
+  [
+    "dar",
+    "",
+    "dar",
+    "DÁR",
+    "PT",
+    "DAR é igual, mas irregular: doy, das, da. Me da igual = tanto faz.",
+    "Te voy a dar mi número.",
+    "Vou te dar meu número."
+  ],
+  [
+    "vivir",
+    "",
+    "viver / morar",
+    "bi-BÍR (v como b)",
+    "PT",
+    "VIVER vira VIVIR e também quer dizer MORAR: vivo en Lima.",
+    "Quiero vivir cerca del mar.",
+    "Quero morar perto do mar."
+  ],
+  [
+    "posible",
+    "",
+    "possível",
+    "po-SÍ-ble",
+    "PT",
+    "POSSÍVEL vira POSIBLE: um S só e -ble no lugar de -vel, como amable.",
+    "¿Es posible cambiar la fecha?",
+    "É possível mudar a data?"
+  ],
+  [
+    "hermana",
+    "f",
+    "irmã",
+    "er-MÁ-na (h mudo)",
+    "PAD",
+    "IRMÃ ganha H mudo e N: HERMANA, par de hermano.",
+    "Mi hermana estudia medicina.",
+    "Minha irmã estuda medicina."
+  ],
+  [
+    "número",
+    "m",
+    "número",
+    "NÚ-me-ro",
+    "PT",
+    "NÚMERO é idêntico. ¿Cuál es tu número? = qual é o seu número?",
+    "Dame tu número de teléfono.",
+    "Me dá o seu número de telefone."
+  ],
+  [
+    "abajo",
+    "",
+    "embaixo / abaixo",
+    "a-BÁ-rro (j como r forte)",
+    "PAD",
+    "ABAIXO troca IX por J: ABAJO, como bajo. É o oposto de arriba.",
+    "La cocina está abajo.",
+    "A cozinha fica embaixo."
+  ],
+  [
+    "escuela",
+    "f",
+    "escola",
+    "es-KUÊ-la",
+    "PAD",
+    "ESCOLA ganha o ditongo UE: ESCUELA, como porta e puerta.",
+    "Mi hijo va a la escuela en bicicleta.",
+    "Meu filho vai para a escola de bicicleta."
+  ],
+  [
+    "fuerte",
+    "",
+    "forte",
+    "FUÊR-te",
+    "PAD",
+    "FORTE ganha o ditongo UE: FUERTE, como fuerza.",
+    "El viento está muy fuerte hoy.",
+    "O vento está muito forte hoje."
+  ],
+  [
+    "pregunta",
+    "f",
+    "pergunta",
+    "pre-GÚN-ta",
+    "PT",
+    "PERGUNTA perde o R do meio de lugar: PREGUNTA. Hacer una pregunta = fazer uma pergunta.",
+    "¿Puedo hacerte una pregunta?",
+    "Posso te fazer uma pergunta?"
+  ],
+  [
+    "embarazada",
+    "",
+    "grávida",
+    "em-ba-ra-SÁ-da",
+    "FALSO",
+    "EMBARAZADA é GRÁVIDA, não embaraçada (essa é avergonzada). Errar aqui rende uma cena constrangedora.",
+    "Mi hermana está embarazada de gemelos.",
+    "Minha irmã está grávida de gêmeos."
+  ],
+  [
+    "atrás",
+    "",
+    "atrás",
+    "a-TRÁS",
+    "PT",
+    "ATRÁS é idêntico. Hace dos años atrás é redundante; basta hace dos años.",
+    "Los niños se sientan atrás.",
+    "As crianças se sentam atrás."
+  ],
+  [
+    "malo",
+    "",
+    "mau / ruim",
+    "MÁ-lo",
+    "PAD",
+    "MAU ganha o L do latim: MALO, como mal. Antes de masculino encolhe: un mal día.",
+    "Este pescado está malo, no lo comas.",
+    "Este peixe está ruim, não coma."
+  ],
+  [
+    "bebé",
+    "m",
+    "bebê",
+    "be-BÊ",
+    "PT",
+    "BEBÊ vira BEBÉ, com acento agudo. Em vários países também se diz el bebe ou la bebé.",
+    "El bebé duerme en su cuna.",
+    "O bebê dorme no berço."
+  ],
+  [
+    "segundo",
+    "m",
+    "segundo",
+    "se-GÚN-do",
+    "PT",
+    "SEGUNDO é igual: o número ordinal e a fração do minuto. Un segundo = só um instante.",
+    "Espera un segundo, ya termino.",
+    "Espera um segundo, já termino."
+  ],
+  [
+    "comida",
+    "f",
+    "comida / refeição",
+    "ko-MÍ-da",
+    "PT",
+    "COMIDA é igual. Em alguns países, la comida é o almoço, a refeição principal.",
+    "La comida mexicana es muy picante.",
+    "A comida mexicana é muito apimentada."
+  ],
+  [
+    "morir",
+    "",
+    "morrer",
+    "mo-RÍR",
+    "PT",
+    "MORRER perde um R: MORIR. No presente abre UE: muero, como muerto.",
+    "Mi planta va a morir sin agua.",
+    "Minha planta vai morrer sem água."
+  ],
+  [
+    "fácil",
+    "",
+    "fácil",
+    "FÁ-sil",
+    "PT",
+    "FÁCIL é idêntico, com o L final pronunciado de verdade.",
+    "El examen fue más fácil de lo esperado.",
+    "A prova foi mais fácil do que o esperado."
+  ],
+  [
+    "comer",
+    "",
+    "comer",
+    "ko-MÉR",
+    "PT",
+    "COMER é idêntico. ¿Ya comiste? é a pergunta de toda avó.",
+    "Vamos a comer en el restaurante de la esquina.",
+    "Vamos comer no restaurante da esquina."
+  ],
+  [
+    "vino",
+    "m",
+    "vinho",
+    "BÍ-no (v como b)",
+    "PAD",
+    "VINHO troca NH por N: VINO. Vino tinto = vinho tinto.",
+    "Pedimos una botella de vino tinto.",
+    "Pedimos uma garrafa de vinho tinto."
+  ],
+  [
+    "lista",
+    "f",
+    "lista",
+    "LÍS-ta",
+    "PT",
+    "LISTA é igual. Lista de compras = lista do mercado. Não confunda com listo, pronto.",
+    "Hice una lista de compras para el súper.",
+    "Fiz uma lista de compras para o mercado."
+  ],
+  [
+    "probablemente",
+    "",
+    "provavelmente",
+    "pro-ba-ble-MÊN-te",
+    "PAD",
+    "PROVAVELMENTE troca V por B e -vel por -ble: PROBABLEMENTE.",
+    "Probablemente llueva mañana.",
+    "Provavelmente vai chover amanhã."
+  ],
+  [
+    "habitación",
+    "f",
+    "quarto / cômodo",
+    "a-bi-ta-SIÓN (h mudo)",
+    "PAD",
+    "HABITAÇÃO troca -ção por -ción: HABITACIÓN. No hotel, é o quarto.",
+    "Mi habitación tiene vista al mar.",
+    "Meu quarto tem vista para o mar."
+  ],
+  [
+    "creer",
+    "",
+    "crer / acreditar / achar",
+    "kre-ÉR",
+    "PT",
+    "CRER ganha um E: CREER. Creo que sí = acho que sim.",
+    "No puedo creer lo que pasó.",
+    "Não consigo acreditar no que aconteceu."
+  ],
+  [
+    "joven",
+    "",
+    "jovem",
+    "RRÔ-ben (j como r forte)",
+    "PT",
+    "JOVEM troca M por N: JOVEN, e o J sopra forte. Plural: jóvenes.",
+    "Mi profesora es muy joven.",
+    "Minha professora é muito jovem."
+  ],
+  [
+    "par",
+    "m",
+    "par",
+    "PÁR",
+    "PT",
+    "PAR é igual. Un par de días = uns dois dias.",
+    "Necesito un par de zapatos nuevos.",
+    "Preciso de um par de sapatos novos."
+  ],
+  [
+    "seguir",
+    "",
+    "seguir / continuar",
+    "se-GUÍR",
+    "PT",
+    "SEGUIR é igual e também quer dizer continuar: sigue derecho, siga em frente.",
+    "Hay que seguir las instrucciones.",
+    "É preciso seguir as instruções."
+  ],
+  [
+    "medio",
+    "",
+    "meio / médio",
+    "MÊ-dio",
+    "PT",
+    "MEIO ganha um D: MEDIO. Las tres y media = três e meia.",
+    "Compré medio kilo de tomates.",
+    "Comprei meio quilo de tomates."
+  ],
+  [
+    "sentido",
+    "m",
+    "sentido",
+    "sen-TÍ-do",
+    "PT",
+    "SENTIDO é idêntico. No tiene sentido = não faz sentido.",
+    "Esta frase no tiene sentido.",
+    "Esta frase não faz sentido."
+  ],
+  [
+    "esperar",
+    "",
+    "esperar",
+    "es-pe-RÁR",
+    "PT",
+    "ESPERAR é igual e também é ter esperança: espero que estés bien.",
+    "Tenemos que esperar el próximo tren.",
+    "Temos que esperar o próximo trem."
+  ],
+  [
+    "lejos",
+    "",
+    "longe",
+    "LÊ-rros (j como r forte)",
+    "SOM",
+    "LONGE vira LEJOS; pense em LÁ, LEJOS, bem longe. O J sopra forte.",
+    "El aeropuerto está lejos del centro.",
+    "O aeroporto fica longe do centro."
+  ],
+  [
+    "arma",
+    "f",
+    "arma",
+    "ÁR-ma",
+    "REGRA",
+    "ARMA é feminina, mas leva el no singular por começar com A tônica: el arma, las armas.",
+    "El policía guardó el arma.",
+    "O policial guardou a arma."
+  ],
+  [
+    "alto",
+    "",
+    "alto",
+    "ÁL-to",
+    "PT",
+    "ALTO é igual, com L firme. ¡Alto! também é a placa de pare em vários países.",
+    "Mi primo es muy alto.",
+    "Meu primo é muito alto."
+  ],
+  [
+    "palabra",
+    "f",
+    "palavra",
+    "pa-LÁ-bra",
+    "PAD",
+    "PALAVRA troca V por B: PALABRA. Te doy mi palabra = te dou minha palavra.",
+    "No entiendo esta palabra en el menú.",
+    "Não entendo esta palavra no cardápio."
+  ],
+  [
+    "oficina",
+    "f",
+    "escritório",
+    "o-fi-SÍ-na",
+    "FALSO",
+    "OFICINA é o ESCRITÓRIO; a oficina mecânica é el taller.",
+    "Trabajo en una oficina del centro.",
+    "Trabalho num escritório no centro."
+  ],
+  [
+    "cama",
+    "f",
+    "cama",
+    "KÁ-ma",
+    "PT",
+    "CAMA é idêntica. Ir a la cama = ir para a cama.",
+    "Los niños ya están en la cama.",
+    "As crianças já estão na cama."
+  ],
+  [
+    "último",
+    "",
+    "último",
+    "ÚL-ti-mo",
+    "PT",
+    "ÚLTIMO é idêntico, com o L firme. Por último = por fim.",
+    "Este es el último tren de la noche.",
+    "Este é o último trem da noite."
+  ],
+  [
+    "oído",
+    "m",
+    "ouvido",
+    "o-Í-do",
+    "PAD",
+    "OUVIDO perde o UV: OÍDO, com acento no I. Oreja é a orelha de fora; oído é o de dentro.",
+    "Me duele el oído derecho.",
+    "Meu ouvido direito está doendo."
+  ],
+  [
+    "exquisito",
+    "",
+    "delicioso / requintado",
+    "eks-ki-SÍ-to",
+    "FALSO",
+    "EXQUISITO é DELICIOSO, um elogio. Para estranho, diga raro.",
+    "Este postre está exquisito.",
+    "Esta sobremesa está deliciosa."
+  ],
+  [
+    "acerca",
+    "",
+    "acerca (de) / sobre",
+    "a-SÊR-ka",
+    "PT",
+    "ACERCA DE é igual ao nosso: um livro acerca de la guerra, sobre a guerra.",
+    "Hablamos acerca de tu viaje.",
+    "Falamos sobre a sua viagem."
+  ],
+  [
+    "luz",
+    "f",
+    "luz",
+    "LÚS (z latino-americano)",
+    "PT",
+    "LUZ é igual, com Z soando S. Dar a luz = dar à luz.",
+    "Apaga la luz cuando salgas.",
+    "Apaga a luz quando sair."
+  ],
+  [
+    "correcto",
+    "",
+    "correto",
+    "ko-RRÉK-to (rr vibrado forte)",
+    "LA",
+    "CORRETO guarda o C do latim correctus: CORRECTO. O RR vibra forte.",
+    "Tu respuesta es correcta.",
+    "Sua resposta está correta."
+  ],
+  [
+    "dormir",
+    "",
+    "dormir",
+    "dor-MÍR",
+    "PT",
+    "DORMIR é igual, mas abre UE no presente: duermo. A ver, ¿cuántas horas duermes?",
+    "Necesito dormir ocho horas.",
+    "Preciso dormir oito horas."
+  ],
+  [
+    "ayudar",
+    "",
+    "ajudar",
+    "a-iu-DÁR",
+    "PAD",
+    "AJUDAR troca J por Y: AYUDAR, como ayuda.",
+    "¿Me puedes ayudar con la maleta?",
+    "Você pode me ajudar com a mala?"
+  ],
+  [
+    "conseguir",
+    "",
+    "conseguir / obter",
+    "kon-se-GUÍR",
+    "PT",
+    "CONSEGUIR é igual quando se obtém algo: conseguir trabajo. Para ser capaz, prefira poder.",
+    "Quiero conseguir un trabajo nuevo.",
+    "Quero conseguir um trabalho novo."
+  ],
+  [
+    "marido",
+    "m",
+    "marido",
+    "ma-RÍ-do",
+    "PT",
+    "MARIDO é idêntico. Esposo também se usa bastante.",
+    "Mi marido cocina muy bien.",
+    "Meu marido cozinha muito bem."
+  ],
+  [
+    "plan",
+    "m",
+    "plano",
+    "PLÁN",
+    "PT",
+    "PLANO perde o O: PLAN. ¿Qué plan tienes? = qual é o plano?",
+    "¿Tienes algún plan para el sábado?",
+    "Você tem algum plano para sábado?"
+  ],
+  [
+    "música",
+    "f",
+    "música",
+    "MÚ-si-ka",
+    "PT",
+    "MÚSICA é idêntica. Poner música = colocar música.",
+    "Me gusta escuchar música en el coche.",
+    "Gosto de ouvir música no carro."
+  ],
+  [
+    "minuto",
+    "m",
+    "minuto",
+    "mi-NÚ-to",
+    "PT",
+    "MINUTO é idêntico. Cinco minutos = cinco minutos.",
+    "El autobús llega en diez minutos.",
+    "O ônibus chega em dez minutos."
+  ],
+  [
+    "llamar",
+    "",
+    "chamar / ligar",
+    "ia-MÁR (ll latino-americano)",
+    "PAD",
+    "CHAMAR troca CH por LL: LLAMAR. Também é telefonar: te llamo mañana. Me llamo Ana = meu nome é Ana.",
+    "Voy a llamar a mi madre esta noche.",
+    "Vou ligar para minha mãe hoje à noite."
+  ],
+  [
+    "país",
+    "m",
+    "país",
+    "pa-ÍS",
+    "PT",
+    "PAÍS é idêntico. País vecino = país vizinho.",
+    "Chile es un país muy largo.",
+    "O Chile é um país muito comprido."
+  ],
+  [
+    "perdido",
+    "",
+    "perdido",
+    "per-DÍ-do",
+    "PT",
+    "PERDIDO é igual. Estoy perdido = estou perdido.",
+    "Encontré un perro perdido en la calle.",
+    "Encontrei um cachorro perdido na rua."
+  ],
+  [
+    "niña",
+    "f",
+    "menina",
+    "NÍ-nha",
+    "PAD",
+    "NIÑA é o par de niño, como La Niña, o fenômeno oposto a El Niño.",
+    "La niña lleva un vestido azul.",
+    "A menina está usando um vestido azul."
+  ],
+  [
+    "señorita",
+    "f",
+    "senhorita / moça",
+    "se-nho-RÍ-ta",
+    "PT",
+    "SENHORITA troca NH por Ñ: SEÑORITA. Também é o tratamento de professoras em alguns países.",
+    "La señorita de la recepción es muy amable.",
+    "A moça da recepção é muito gentil."
+  ],
+  [
+    "hospital",
+    "m",
+    "hospital",
+    "os-pi-TÁL (h mudo)",
+    "PT",
+    "HOSPITAL é idêntico, só que o H não soa e o L final é firme.",
+    "Mi tía trabaja en el hospital.",
+    "Minha tia trabalha no hospital."
+  ],
+  [
+    "llevar",
+    "",
+    "levar / usar (roupa)",
+    "ie-BÁR (ll latino-americano)",
+    "PAD",
+    "LEVAR dobra o L: LLEVAR. Também é vestir: llevo una chaqueta, estou de jaqueta.",
+    "Voy a llevar pastel a la fiesta.",
+    "Vou levar bolo para a festa."
+  ],
+  [
+    "fuego",
+    "m",
+    "fogo",
+    "FUÊ-go",
+    "PAD",
+    "FOGO ganha o ditongo UE: FUEGO, como jogo e juego.",
+    "Los niños miran el fuego de la chimenea.",
+    "As crianças olham o fogo da lareira."
+  ],
+  [
+    "poner",
+    "",
+    "pôr / colocar",
+    "po-NÉR",
+    "LA",
+    "PÔR vem do latim ponere; o espanhol guardou o N: PONER, como em compor e componer.",
+    "¿Puedes poner la mesa?",
+    "Você pode pôr a mesa?"
+  ],
+  [
+    "calle",
+    "f",
+    "rua",
+    "KÁ-ie (ll latino-americano)",
+    "IMG",
+    "CALLE lembra CALÇADA, ao lado da RUA. Imagine a placa de esquina: calle Florida.",
+    "Mi casa está en esta calle.",
+    "Minha casa fica nesta rua."
+  ],
+  [
+    "prueba",
+    "f",
+    "prova / teste",
+    "PRUÊ-ba",
+    "PAD",
+    "PROVA ganha UE e troca V por B: PRUEBA. Prueba de embarazo = teste de gravidez.",
+    "Mañana tengo una prueba de matemáticas.",
+    "Amanhã tenho uma prova de matemática."
+  ],
+  [
+    "real",
+    "",
+    "real / verdadeiro",
+    "rre-ÁL (r inicial forte)",
+    "PT",
+    "REAL é igual: verdadeiro ou do rei. O R inicial vibra forte.",
+    "Esta historia es real.",
+    "Esta história é real."
+  ],
+  [
+    "libro",
+    "m",
+    "livro",
+    "LÍ-bro",
+    "PAD",
+    "LIVRO troca V por B: LIBRO. Librería é livraria, não biblioteca.",
+    "Estoy leyendo un libro muy bueno.",
+    "Estou lendo um livro muito bom."
+  ],
+  [
+    "orden",
+    "m",
+    "ordem",
+    "ÔR-den",
+    "REGRA",
+    "ORDEM troca M por N: ORDEN. El orden é a arrumação; la orden é o comando.",
+    "Pon tus cosas en orden, por favor.",
+    "Coloque suas coisas em ordem, por favor."
+  ],
+  [
+    "especial",
+    "",
+    "especial",
+    "es-pe-SIÁL",
+    "PT",
+    "ESPECIAL é idêntico. Nada especial = nada de mais.",
+    "Hoy es un día especial para mí.",
+    "Hoje é um dia especial para mim."
+  ],
+  [
+    "café",
+    "m",
+    "café",
+    "ka-FÊ",
+    "PT",
+    "CAFÉ é igual. Café con leche é o pingado do café da manhã.",
+    "¿Quieres un café antes de salir?",
+    "Quer um café antes de sair?"
+  ],
+  [
+    "duro",
+    "",
+    "duro",
+    "DÚ-ro",
+    "PT",
+    "DURO é igual: rígido ou difícil. Un día duro = um dia puxado.",
+    "Este pan está muy duro.",
+    "Este pão está muito duro."
+  ],
+  [
+    "empezar",
+    "",
+    "começar",
+    "em-pe-SÁR",
+    "IMG",
+    "EMPEZAR lembra EMPURRAR: dar o empurrão de COMEÇAR. No presente vira empiezo.",
+    "La clase va a empezar en cinco minutos.",
+    "A aula vai começar em cinco minutos."
+  ],
+  [
+    "perro",
+    "m",
+    "cachorro",
+    "PÊ-rro (rr vibrado forte)",
+    "SOM",
+    "PERRO com RR vibrado lembra o rosnado do CACHORRO: rrr. Pero com um R é mas.",
+    "Mi perro se llama Toby.",
+    "Meu cachorro se chama Toby."
+  ],
+  [
+    "cielo",
+    "m",
+    "céu",
+    "SIÊ-lo",
+    "LA",
+    "CÉU vem de caelum, que no espanhol deu CIELO. Pense em celeste.",
+    "El cielo está muy azul hoy.",
+    "O céu está muito azul hoje."
+  ],
+  [
+    "viaje",
+    "m",
+    "viagem",
+    "BIÁ-rre (j como r forte)",
+    "PAD",
+    "VIAGEM troca -agem por -aje: VIAJE, e é masculino: el viaje. Mesma troca de mensagem e mensaje.",
+    "¡Buen viaje! Llámame al llegar.",
+    "Boa viagem! Me liga quando chegar."
+  ],
+  [
+    "detrás",
+    "",
+    "atrás / detrás de",
+    "de-TRÁS",
+    "PT",
+    "DETRÁS é atrás, colado a algo: detrás de la puerta, atrás da porta.",
+    "El gato está detrás del sofá.",
+    "O gato está atrás do sofá."
+  ],
+  [
+    "cuarto",
+    "m",
+    "quarto / quarta parte",
+    "KUÁR-to",
+    "PT",
+    "QUARTO troca QU por CU: CUARTO. É o cômodo e também o quarto de hora: las dos y cuarto.",
+    "Mi cuarto es pequeño pero cómodo.",
+    "Meu quarto é pequeno, mas confortável."
+  ],
+  [
+    "sacar",
+    "",
+    "tirar / sacar",
+    "sa-KÁR",
+    "PT",
+    "SACAR é tirar de dentro: sacar dinero, sacar una foto. É o nosso sacar dinheiro.",
+    "Voy a sacar dinero del cajero.",
+    "Vou sacar dinheiro no caixa eletrônico."
+  ],
+  [
+    "querido",
+    "",
+    "querido",
+    "ke-RÍ-do",
+    "PT",
+    "QUERIDO é igual, de querer. Querida abuela, assim começa uma carta.",
+    "Mi querido amigo, te extraño.",
+    "Meu querido amigo, sinto sua falta."
+  ],
+  [
+    "libre",
+    "",
+    "livre",
+    "LÍ-bre",
+    "PAD",
+    "LIVRE troca V por B: LIBRE, como livro e libro. Tiempo libre = tempo livre.",
+    "¿Este asiento está libre?",
+    "Este assento está livre?"
+  ],
+  [
+    "buscar",
+    "",
+    "procurar / buscar",
+    "bus-KÁR",
+    "PT",
+    "BUSCAR é o PROCURAR do dia a dia: busco mis llaves. Também é ir buscar alguém.",
+    "Tengo que buscar mis llaves.",
+    "Tenho que procurar minhas chaves."
+  ],
+  [
+    "jugar",
+    "",
+    "jogar / brincar",
+    "rru-GÁR (j como r forte)",
+    "PAD",
+    "JOGAR troca O por U: JUGAR. Serve para jogo e brincadeira de criança.",
+    "Los niños quieren jugar en el parque.",
+    "As crianças querem brincar no parque."
+  ],
+  [
+    "cambio",
+    "m",
+    "mudança / troco / câmbio",
+    "KÁM-bio",
+    "PT",
+    "CÂMBIO é a troca de moeda; CAMBIO também é o TROCO e a mudança.",
+    "Quédese con el cambio, señor.",
+    "Pode ficar com o troco, senhor."
+  ],
+  [
+    "película",
+    "f",
+    "filme",
+    "pe-LÍ-ku-la",
+    "FALSO",
+    "PELÍCULA é o FILME do cinema, não só a película fina. Ver una película = ver um filme.",
+    "Vimos una película de terror.",
+    "Vimos um filme de terror."
+  ],
+  [
+    "llamada",
+    "f",
+    "ligação / chamada",
+    "ia-MÁ-da (ll latino-americano)",
+    "PAD",
+    "CHAMADA troca CH por LL: LLAMADA, de llamar. Hacer una llamada = fazer uma ligação.",
+    "Tengo una llamada perdida de mamá.",
+    "Tenho uma ligação perdida da mamãe."
+  ],
+  [
+    "ropa",
+    "f",
+    "roupa",
+    "RRÔ-pa (r inicial forte)",
+    "PT",
+    "ROUPA perde o U: ROPA. Ropa sucia = roupa suja.",
+    "Tengo que lavar la ropa hoy.",
+    "Tenho que lavar a roupa hoje."
+  ],
+  [
+    "perder",
+    "",
+    "perder",
+    "per-DÉR",
+    "PT",
+    "PERDER é igual, mas abre IE no presente: pierdo, pierdes.",
+    "No quiero perder el vuelo.",
+    "Não quero perder o voo."
+  ],
+  [
+    "información",
+    "f",
+    "informação",
+    "in-for-ma-SIÓN",
+    "PAD",
+    "INFORMAÇÃO troca -ção por -ción: INFORMACIÓN, regra que vale para centenas de palavras.",
+    "Necesito información sobre los horarios.",
+    "Preciso de informação sobre os horários."
+  ],
+  [
+    "usar",
+    "",
+    "usar",
+    "u-SÁR (s surdo)",
+    "PT",
+    "USAR é igual, com S surdo, nunca Z.",
+    "¿Puedo usar tu computadora?",
+    "Posso usar seu computador?"
+  ],
+  [
+    "perfecto",
+    "",
+    "perfeito",
+    "per-FÉK-to",
+    "LA",
+    "PERFEITO guarda o C do latim perfectus: PERFECTO. ¡Perfecto! = combinado!",
+    "El día está perfecto para la playa.",
+    "O dia está perfeito para a praia."
+  ],
+  [
+    "derecho",
+    "m",
+    "direito",
+    "de-RÊ-tcho",
+    "PAD",
+    "DIREITO troca IT por CH: DERECHO, como feito e hecho. Siga derecho = siga reto.",
+    "Estudio derecho en la universidad.",
+    "Estudo direito na universidade."
+  ],
+  [
+    "ayer",
+    "",
+    "ontem",
+    "a-IÊR",
+    "IMG",
+    "AYER soa como AIR, ar: o ONTEM já virou ar. Anteayer = anteontem.",
+    "Ayer fui al cine con mi novia.",
+    "Ontem fui ao cinema com minha namorada."
+  ],
+  [
+    "demás",
+    "",
+    "demais (os outros)",
+    "de-MÁS",
+    "FALSO",
+    "DEMÁS é OS OUTROS, o resto: los demás. Demais (excesso) é demasiado.",
+    "Los demás llegan más tarde.",
+    "Os outros chegam mais tarde."
+  ],
+  [
+    "noticia",
+    "f",
+    "notícia",
+    "no-TÍ-sia",
+    "PT",
+    "NOTÍCIA perde o acento escrito: NOTICIA. No plural, las noticias é o jornal da TV.",
+    "Tengo una buena noticia para ti.",
+    "Tenho uma boa notícia para você."
+  ],
+  [
+    "bajar",
+    "",
+    "descer / baixar",
+    "ba-RRÁR (j como r forte)",
+    "PAD",
+    "BAIXAR troca IX por J: BAJAR. Bajar del autobús = descer do ônibus.",
+    "Tenemos que bajar en la próxima parada.",
+    "Temos que descer na próxima parada."
+  ],
+  [
+    "frente",
+    "f",
+    "frente",
+    "FRÊN-te",
+    "PT",
+    "FRENTE é igual. Frente a = em frente a; de frente = de frente.",
+    "Hay un café frente a mi casa.",
+    "Tem um café em frente à minha casa."
+  ],
+  [
+    "divertido",
+    "",
+    "divertido / engraçado",
+    "di-ber-TÍ-do",
+    "PT",
+    "DIVERTIDO é igual: algo que diverte. Uma festa divertida, um filme divertido.",
+    "La fiesta fue muy divertida.",
+    "A festa foi muito divertida."
+  ],
+  [
+    "grupo",
+    "m",
+    "grupo",
+    "GRÚ-po",
+    "PT",
+    "GRUPO é idêntico. Grupo de WhatsApp, grupo de amigos.",
+    "Viajamos en un grupo de diez personas.",
+    "Viajamos num grupo de dez pessoas."
+  ],
+  [
+    "mensaje",
+    "m",
+    "mensagem",
+    "men-SÁ-rre (j como r forte)",
+    "PAD",
+    "MENSAGEM troca -agem por -aje: MENSAJE, e é masculino: el mensaje.",
+    "Te mandé un mensaje esta mañana.",
+    "Te mandei uma mensagem hoje de manhã."
+  ],
+  [
+    "diferente",
+    "",
+    "diferente",
+    "di-fe-RÊN-te",
+    "PT",
+    "DIFERENTE é idêntico. Diferente de = diferente de.",
+    "Mi hermano es muy diferente a mí.",
+    "Meu irmão é muito diferente de mim."
+  ],
+  [
+    "cambiar",
+    "",
+    "trocar / mudar",
+    "kam-BIÁR",
+    "PT",
+    "CAMBIAR lembra câmbio: TROCAR. Cambiar de idea = mudar de ideia.",
+    "Quiero cambiar estos zapatos por otros.",
+    "Quero trocar estes sapatos por outros."
+  ],
+  [
+    "siguiente",
+    "",
+    "seguinte",
+    "si-GUIÊN-te",
+    "PT",
+    "SEGUINTE troca E por I: SIGUIENTE. Al día siguiente = no dia seguinte.",
+    "¡El siguiente, por favor!",
+    "O próximo, por favor!"
+  ],
+  [
+    "médico",
+    "m",
+    "médico",
+    "MÊ-di-ko",
+    "PT",
+    "MÉDICO é idêntico. Ir al médico = ir ao médico.",
+    "Tengo cita con el médico a las tres.",
+    "Tenho consulta com o médico às três."
+  ],
+  [
+    "boca",
+    "f",
+    "boca",
+    "BÔ-ka",
+    "PT",
+    "BOCA é idêntica. Boca abajo = de bruços.",
+    "Abre la boca, por favor.",
+    "Abra a boca, por favor."
+  ],
+  [
+    "error",
+    "m",
+    "erro",
+    "e-RRÔR (rr vibrado forte)",
+    "LA",
+    "ERRO guarda o R final do latim: ERROR, como em inglês. O RR vibra forte.",
+    "Fue un error dejar la ventana abierta.",
+    "Foi um erro deixar a janela aberta."
+  ],
+  [
+    "jamás",
+    "",
+    "jamais / nunca",
+    "rra-MÁS (j como r forte)",
+    "PT",
+    "JAMAIS perde o I: JAMÁS. Nunca jamás = nunca, nunquinha.",
+    "Jamás olvidaré ese día.",
+    "Jamais vou esquecer aquele dia."
+  ],
+  [
+    "largo",
+    "",
+    "comprido / longo",
+    "LÁR-go",
+    "FALSO",
+    "LARGO é COMPRIDO, não largo (esse é ancho). Un camino largo = um caminho longo.",
+    "Tiene el pelo muy largo.",
+    "Ela tem o cabelo muito comprido."
+  ],
+  [
+    "futuro",
+    "m",
+    "futuro",
+    "fu-TÚ-ro",
+    "PT",
+    "FUTURO é idêntico. En el futuro = no futuro.",
+    "Quiero vivir en el campo en el futuro.",
+    "Quero morar no campo no futuro."
+  ],
+  [
+    "baño",
+    "m",
+    "banheiro / banho",
+    "BÁ-nho",
+    "PAD",
+    "BANHO troca NH por Ñ: BAÑO, e significa também o BANHEIRO: ¿dónde está el baño?",
+    "¿Dónde está el baño, por favor?",
+    "Onde fica o banheiro, por favor?"
+  ],
+  [
+    "novia",
+    "f",
+    "namorada / noiva",
+    "NÔ-bia",
+    "FALSO",
+    "NOVIA é a NAMORADA (e também a noiva do casamento). Pelo contexto se sabe.",
+    "Mi novia vive en otra ciudad.",
+    "Minha namorada mora em outra cidade."
+  ],
+  [
+    "sueño",
+    "m",
+    "sonho / sono",
+    "SUÊ-nho",
+    "PAD",
+    "SONHO ganha UE e troca NH por Ñ: SUEÑO. Também é o sono: tengo sueño, estou com sono.",
+    "Tengo mucho sueño, me voy a dormir.",
+    "Estou com muito sono, vou dormir."
+  ],
+  [
+    "ambos",
+    "",
+    "ambos",
+    "ÁM-bos",
+    "PT",
+    "AMBOS é idêntico: os dois. Ambas, no feminino.",
+    "Ambos trabajan en el mismo banco.",
+    "Ambos trabalham no mesmo banco."
+  ],
+  [
+    "edad",
+    "f",
+    "idade",
+    "e-DÁD (d final suave)",
+    "PAD",
+    "IDADE troca -dade por -dad e I por E: EDAD. ¿Qué edad tienes? = quantos anos você tem?",
+    "¿Qué edad tiene tu hijo?",
+    "Que idade tem seu filho?"
+  ],
+  [
+    "pie",
+    "m",
+    "pé",
+    "PIÊ",
+    "PAD",
+    "PÉ ganha o ditongo IE: PIE. A pie = a pé.",
+    "Vamos a pie, está cerca.",
+    "Vamos a pé, está perto."
+  ],
+  [
+    "negro",
+    "",
+    "preto / negro",
+    "NÊ-gro",
+    "PT",
+    "NEGRO é a cor PRETA no dia a dia: café negro, pelo negro. Não se usa preto.",
+    "Me compré un vestido negro.",
+    "Comprei um vestido preto."
+  ],
+  [
+    "ganar",
+    "",
+    "ganhar / vencer",
+    "ga-NÁR",
+    "PAD",
+    "GANHAR troca NH por N: GANAR. Serve para jogo e para dinheiro.",
+    "Nuestro equipo va a ganar el partido.",
+    "Nosso time vai ganhar o jogo."
+  ],
+  [
+    "aire",
+    "m",
+    "ar",
+    "ÁI-re",
+    "LA",
+    "AR vem do latim aer; o espanhol pôs um I: AIRE, como em aeromoça. Aire acondicionado = ar-condicionado.",
+    "Abre la ventana, necesito aire.",
+    "Abre a janela, preciso de ar."
+  ],
+  [
+    "cita",
+    "f",
+    "encontro / consulta",
+    "SÍ-ta",
+    "FALSO",
+    "CITA não é só citação: é o ENCONTRO marcado ou a consulta. Tengo cita con el dentista.",
+    "Tengo una cita con el dentista mañana.",
+    "Tenho consulta com o dentista amanhã."
+  ],
+  [
+    "pobre",
+    "",
+    "pobre",
+    "PÔ-bre",
+    "PT",
+    "POBRE é idêntico. ¡Pobre perrito! = coitadinho do cachorro!",
+    "El pobre gato tiene frío.",
+    "O coitado do gato está com frio."
+  ],
+  [
+    "negocio",
+    "m",
+    "negócio",
+    "ne-GÔ-sio",
+    "PT",
+    "NEGÓCIO perde o acento escrito: NEGOCIO. Hombre de negocios = homem de negócios.",
+    "Mi padre tiene un negocio de ropa.",
+    "Meu pai tem um negócio de roupas."
+  ],
+  [
+    "mente",
+    "f",
+    "mente",
+    "MÊN-te",
+    "PT",
+    "MENTE é idêntica. Tener en mente = ter em mente.",
+    "Tengo una idea en mente.",
+    "Tenho uma ideia em mente."
+  ],
+  [
+    "situación",
+    "f",
+    "situação",
+    "si-tua-SIÓN",
+    "PAD",
+    "SITUAÇÃO troca -ção por -ción: SITUACIÓN, como información.",
+    "La situación es más difícil de lo que pensaba.",
+    "A situação é mais difícil do que eu pensava."
+  ],
+  [
+    "hotel",
+    "m",
+    "hotel",
+    "o-TÉL (h mudo)",
+    "PT",
+    "HOTEL é igual, com H mudo e L final firme: o-TÉL.",
+    "Nuestro hotel está cerca de la playa.",
+    "Nosso hotel fica perto da praia."
+  ],
+  [
+    "foto",
+    "f",
+    "foto",
+    "FÔ-to",
+    "PT",
+    "FOTO é igual e feminina: la foto, de fotografía. Sacar una foto = tirar uma foto.",
+    "¿Nos sacas una foto, por favor?",
+    "Você tira uma foto da gente, por favor?"
+  ],
+  [
+    "propio",
+    "",
+    "próprio",
+    "PRÔ-pio",
+    "PT",
+    "PRÓPRIO perde o R do meio: PROPIO. Mi propia casa = minha própria casa.",
+    "Quiero tener mi propio negocio.",
+    "Quero ter meu próprio negócio."
+  ],
+  [
+    "pagar",
+    "",
+    "pagar",
+    "pa-GÁR",
+    "PT",
+    "PAGAR é idêntico. Pagar en efectivo = pagar em dinheiro.",
+    "¿Puedo pagar con tarjeta?",
+    "Posso pagar com cartão?"
+  ],
+  [
+    "personal",
+    "",
+    "pessoal",
+    "per-so-NÁL",
+    "LA",
+    "PESSOAL vem de personalis; o espanhol guardou o RS: PERSONAL. Também é o pessoal de uma empresa.",
+    "Esta es una pregunta muy personal.",
+    "Esta é uma pergunta muito pessoal."
+  ],
+  [
+    "mitad",
+    "f",
+    "metade",
+    "mi-TÁD (d final suave)",
+    "PAD",
+    "METADE troca -ade por -ad e E por I: MITAD. La mitad del pastel = metade do bolo.",
+    "Te doy la mitad de mi sándwich.",
+    "Te dou metade do meu sanduíche."
+  ],
+  [
+    "pelo",
+    "m",
+    "cabelo / pelo",
+    "PÊ-lo",
+    "FALSO",
+    "PELO é o CABELO da cabeça, não só pelo de bicho. Cortarse el pelo = cortar o cabelo.",
+    "Mañana voy a cortarme el pelo.",
+    "Amanhã vou cortar o cabelo."
+  ],
+  [
+    "cena",
+    "f",
+    "jantar",
+    "SÊ-na",
+    "FALSO",
+    "CENA é o JANTAR, não uma cena de filme (essa é escena). Pense na Santa Ceia, a última ceia.",
+    "La cena está lista a las ocho.",
+    "O jantar fica pronto às oito."
+  ],
+  [
+    "sentir",
+    "",
+    "sentir",
+    "sen-TÍR",
+    "PT",
+    "SENTIR é igual. Lo siento = sinto muito, a desculpa clássica.",
+    "Puedo sentir el frío en las manos.",
+    "Consigo sentir o frio nas mãos."
+  ],
+  [
+    "caja",
+    "f",
+    "caixa",
+    "KÁ-rra (j como r forte)",
+    "PAD",
+    "CAIXA troca IX por J: CAJA, como baixo e bajo. Também é o caixa da loja.",
+    "Pon los libros en esta caja.",
+    "Coloque os livros nesta caixa."
+  ],
+  [
+    "bonito",
+    "",
+    "bonito",
+    "bo-NÍ-to",
+    "PT",
+    "BONITO é igual. ¡Qué bonito! = que lindo!",
+    "Tienes un jardín muy bonito.",
+    "Você tem um jardim muito bonito."
+  ],
+  [
+    "línea",
+    "f",
+    "linha",
+    "LÍ-ne-a",
+    "PAD",
+    "LINHA troca NH por N e ganha E: LÍNEA. Línea de metro = linha de metrô.",
+    "Toma la línea dos del metro.",
+    "Pegue a linha dois do metrô."
+  ],
+  [
+    "tienda",
+    "f",
+    "loja",
+    "TIÊN-da",
+    "FALSO",
+    "TIENDA é a LOJA, não a tenda do circo. Tienda de ropa = loja de roupas.",
+    "Esa tienda vende ropa barata.",
+    "Essa loja vende roupa barata."
+  ],
+  [
+    "comprar",
+    "",
+    "comprar",
+    "kom-PRÁR",
+    "PT",
+    "COMPRAR é idêntico. Ir de compras = ir às compras.",
+    "Tengo que comprar pan para mañana.",
+    "Tenho que comprar pão para amanhã."
+  ],
+  [
+    "centro",
+    "m",
+    "centro",
+    "SÊN-tro",
+    "PT",
+    "CENTRO é idêntico. Ir al centro = ir ao centro da cidade.",
+    "Trabajo en el centro de la ciudad.",
+    "Trabalho no centro da cidade."
+  ],
+  [
+    "mes",
+    "m",
+    "mês",
+    "MÊS",
+    "PT",
+    "MÊS perde o acento: MES. El mes que viene = o mês que vem.",
+    "Mi cumpleaños es el próximo mes.",
+    "Meu aniversário é no mês que vem."
+  ],
+  [
+    "sol",
+    "m",
+    "sol",
+    "SÔL",
+    "PT",
+    "SOL é idêntico, com L final firme. Hace sol = faz sol.",
+    "Hoy hace mucho sol.",
+    "Hoje está fazendo muito sol."
+  ],
+  [
+    "mesa",
+    "f",
+    "mesa",
+    "MÊ-sa (s surdo)",
+    "PT",
+    "MESA é igual, com S surdo. Poner la mesa = pôr a mesa.",
+    "La comida está en la mesa.",
+    "A comida está na mesa."
+  ],
+  [
+    "respuesta",
+    "f",
+    "resposta",
+    "rres-PUÊS-ta (r inicial forte)",
+    "PAD",
+    "RESPOSTA ganha o ditongo UE: RESPUESTA, como porta e puerta.",
+    "No sé la respuesta.",
+    "Não sei a resposta."
+  ],
+  [
+    "carta",
+    "f",
+    "carta / cardápio",
+    "KÁR-ta",
+    "FALSO",
+    "CARTA é a carta de correio e também o CARDÁPIO do restaurante: ¿me trae la carta?",
+    "¿Nos trae la carta, por favor?",
+    "Pode nos trazer o cardápio, por favor?"
+  ],
+  [
+    "imposible",
+    "",
+    "impossível",
+    "im-po-SÍ-ble",
+    "PAD",
+    "IMPOSSÍVEL vira IMPOSIBLE: um S e -ble no lugar de -vel.",
+    "Es imposible dormir con este ruido.",
+    "É impossível dormir com esse barulho."
+  ],
+  [
+    "novio",
+    "m",
+    "namorado / noivo",
+    "NÔ-bio",
+    "FALSO",
+    "NOVIO é o NAMORADO, e também o noivo no casamento. Los novios = o casal.",
+    "Mi novio me regaló flores.",
+    "Meu namorado me deu flores."
+  ],
+  [
+    "dirección",
+    "f",
+    "endereço / direção",
+    "di-rek-SIÓN",
+    "FALSO",
+    "DIRECCIÓN é também o ENDEREÇO: ¿cuál es tu dirección? E ainda a direção do caminho.",
+    "¿Me das tu dirección?",
+    "Você me passa seu endereço?"
+  ],
+  [
+    "barco",
+    "m",
+    "barco",
+    "BÁR-ko",
+    "PT",
+    "BARCO é idêntico. En barco = de barco.",
+    "Cruzamos el río en barco.",
+    "Atravessamos o rio de barco."
+  ],
+  [
+    "blanco",
+    "",
+    "branco",
+    "BLÁN-ko",
+    "PAD",
+    "BRANCO troca R por L: BLANCO, como prato e plato.",
+    "Prefiero el vino blanco.",
+    "Prefiro o vinho branco."
+  ],
+  [
+    "profesor",
+    "m",
+    "professor",
+    "pro-fe-SÔR",
+    "PT",
+    "PROFESSOR perde um S: PROFESOR. La profesora, no feminino.",
+    "Mi profesor de español es de Perú.",
+    "Meu professor de espanhol é do Peru."
+  ],
+  [
+    "servicio",
+    "m",
+    "serviço / banheiro",
+    "ser-BÍ-sio",
+    "PAD",
+    "SERVIÇO troca -ço por -cio: SERVICIO. No restaurante, los servicios também são os banheiros.",
+    "El servicio en este hotel es excelente.",
+    "O serviço neste hotel é excelente."
+  ],
+  [
+    "reunión",
+    "f",
+    "reunião",
+    "rreu-NIÓN",
+    "PAD",
+    "REUNIÃO troca ÃO por ÓN: REUNIÓN.",
+    "La reunión empieza a las diez.",
+    "A reunião começa às dez."
+  ],
+  [
+    "programa",
+    "m",
+    "programa",
+    "pro-GRÁ-ma",
+    "REGRA",
+    "PROGRAMA termina em A, mas é masculino: el programa, como el problema.",
+    "Este programa de radio es muy divertido.",
+    "Este programa de rádio é muito divertido."
+  ],
+  [
+    "carrera",
+    "f",
+    "corrida / carreira / curso",
+    "ka-RRÊ-ra (rr vibrado forte)",
+    "FALSO",
+    "CARRERA é a CORRIDA e também o curso universitário: estudio la carrera de derecho.",
+    "Mi hermano ganó la carrera.",
+    "Meu irmão ganhou a corrida."
+  ],
+  [
+    "cumpleaños",
+    "m",
+    "aniversário",
+    "kum-ple-Á-nhos",
+    "IMG",
+    "CUMPLEAÑOS = cumplir + años, completar anos. Imagine o bolo que conta um ano a mais.",
+    "¡Feliz cumpleaños, mamá!",
+    "Feliz aniversário, mãe!"
+  ],
+  [
+    "canción",
+    "f",
+    "canção / música",
+    "kan-SIÓN",
+    "PAD",
+    "CANÇÃO troca -ção por -ción: CANCIÓN. É a música que se canta.",
+    "Esta canción me recuerda a ti.",
+    "Esta música me lembra você."
+  ],
+  [
+    "universidad",
+    "f",
+    "universidade",
+    "u-ni-ber-si-DÁD",
+    "PAD",
+    "UNIVERSIDADE troca -dade por -dad: UNIVERSIDAD.",
+    "Mi hija estudia en la universidad.",
+    "Minha filha estuda na universidade."
+  ],
+  [
+    "levantar",
+    "",
+    "levantar",
+    "le-ban-TÁR",
+    "PT",
+    "LEVANTAR é igual. Levantarse = levantar-se da cama.",
+    "Levanta la mano si tienes una pregunta.",
+    "Levante a mão se tiver uma pergunta."
+  ],
+  [
+    "necesario",
+    "",
+    "necessário",
+    "ne-se-SÁ-rio",
+    "PT",
+    "NECESSÁRIO perde um S: NECESARIO. No es necesario = não precisa.",
+    "No es necesario traer comida.",
+    "Não é necessário trazer comida."
+  ],
+  [
+    "sal",
+    "f",
+    "sal",
+    "SÁL",
+    "REGRA",
+    "SAL é FEMININO em espanhol: la sal. Pásame la sal, por favor.",
+    "¿Me pasas la sal?",
+    "Você me passa o sal?"
+  ],
+  [
+    "interesante",
+    "",
+    "interessante",
+    "in-te-re-SÁN-te",
+    "PT",
+    "INTERESSANTE perde um S: INTERESANTE.",
+    "Es un libro muy interesante.",
+    "É um livro muito interessante."
+  ],
+  [
+    "escuchar",
+    "",
+    "escutar / ouvir",
+    "es-ku-TCHÁR",
+    "PAD",
+    "ESCUTAR troca T por CH: ESCUCHAR. É ouvir com atenção.",
+    "Me gusta escuchar la radio.",
+    "Gosto de ouvir rádio."
+  ],
+  [
+    "abuela",
+    "f",
+    "avó",
+    "a-BUÊ-la",
+    "IMG",
+    "ABUELA é a AVÓ das novelas latinas: a matriarca que cozinha para todos.",
+    "Mi abuela hace las mejores empanadas.",
+    "Minha avó faz as melhores empanadas."
+  ],
+  [
+    "suelo",
+    "m",
+    "chão / solo",
+    "SUÊ-lo",
+    "PAD",
+    "SOLO ganha o ditongo UE: SUELO, o CHÃO. Não confunda com cielo.",
+    "Se me cayó el vaso al suelo.",
+    "Derrubei o copo no chão."
+  ],
+  [
+    "silencio",
+    "m",
+    "silêncio",
+    "si-LÊN-sio",
+    "PT",
+    "SILÊNCIO perde o acento: SILENCIO. ¡Silencio, por favor!",
+    "Necesito silencio para estudiar.",
+    "Preciso de silêncio para estudar."
+  ],
+  [
+    "club",
+    "m",
+    "clube",
+    "KLÚB",
+    "EN",
+    "CLUB vem do inglês sem o E final do português: el club de fútbol.",
+    "Mi padre juega tenis en el club.",
+    "Meu pai joga tênis no clube."
+  ],
+  [
+    "terminar",
+    "",
+    "terminar",
+    "ter-mi-NÁR",
+    "PT",
+    "TERMINAR é idêntico. ¿Ya terminaste? = já terminou?",
+    "Tengo que terminar este informe hoy.",
+    "Tenho que terminar este relatório hoje."
+  ],
+  [
+    "cámara",
+    "f",
+    "câmera",
+    "KÁ-ma-ra",
+    "PT",
+    "CÂMERA vira CÁMARA, com acento agudo. Também é a câmara dos deputados.",
+    "Olvidé la cámara en el hotel.",
+    "Esqueci a câmera no hotel."
+  ],
+  [
+    "terrible",
+    "",
+    "terrível",
+    "te-RRÍ-ble (rr vibrado forte)",
+    "PAD",
+    "TERRÍVEL troca -vel por -ble: TERRIBLE, como posible.",
+    "Hace un calor terrible.",
+    "Está um calor terrível."
+  ],
+  [
+    "amable",
+    "",
+    "gentil / amável",
+    "a-MÁ-ble",
+    "PAD",
+    "AMÁVEL troca -vel por -ble: AMABLE. Muy amable = muito gentil.",
+    "El camarero fue muy amable.",
+    "O garçom foi muito gentil."
+  ],
+  [
+    "dulce",
+    "",
+    "doce",
+    "DÚL-se",
+    "LA",
+    "DOCE vem de dulcis; o espanhol guardou o L: DULCE. Dulce de leche = doce de leite.",
+    "Este café está demasiado dulce.",
+    "Este café está doce demais."
+  ],
+  [
+    "avión",
+    "m",
+    "avião",
+    "a-BIÓN",
+    "PAD",
+    "AVIÃO troca ÃO por ÓN: AVIÓN. En avión = de avião.",
+    "El avión sale a las seis.",
+    "O avião sai às seis."
+  ],
+  [
+    "mantener",
+    "",
+    "manter",
+    "man-te-NÉR",
+    "PAD",
+    "MANTER vira MANTENER, como ter e tener.",
+    "Hay que mantener la calma.",
+    "É preciso manter a calma."
+  ],
+  [
+    "papel",
+    "m",
+    "papel",
+    "pa-PÊL",
+    "PT",
+    "PAPEL é idêntico. Papel higiénico = papel higiênico.",
+    "Necesito papel para escribir.",
+    "Preciso de papel para escrever."
+  ],
+  [
+    "gracioso",
+    "",
+    "engraçado",
+    "gra-SIÔ-so",
+    "FALSO",
+    "GRACIOSO é ENGRAÇADO, que faz rir; não é gracioso de elegante.",
+    "Mi tío cuenta chistes muy graciosos.",
+    "Meu tio conta piadas muito engraçadas."
+  ],
+  [
+    "principio",
+    "m",
+    "princípio / começo",
+    "prin-SÍ-pio",
+    "PT",
+    "PRINCÍPIO perde o acento: PRINCIPIO. Al principio = no começo.",
+    "Al principio no entendía nada.",
+    "No começo eu não entendia nada."
+  ],
+  [
+    "delante",
+    "",
+    "na frente / adiante",
+    "de-LÁN-te",
+    "PT",
+    "DELANTE lembra ADIANTE: na frente. Delante de la casa = na frente da casa.",
+    "Hay un árbol delante de mi casa.",
+    "Tem uma árvore na frente da minha casa."
+  ],
+  [
+    "esposo",
+    "m",
+    "esposo / marido",
+    "es-PÔ-so",
+    "PT",
+    "ESPOSO é igual, par de esposa.",
+    "Mi esposo trabaja de noche.",
+    "Meu marido trabalha à noite."
+  ],
+  [
+    "tren",
+    "m",
+    "trem",
+    "TRÊN",
+    "PT",
+    "TREM troca M por N: TREN. En tren = de trem.",
+    "El tren llega en cinco minutos.",
+    "O trem chega em cinco minutos."
+  ],
+  [
+    "verdadero",
+    "",
+    "verdadeiro",
+    "ber-da-DÊ-ro",
+    "PT",
+    "VERDADEIRO perde o I: VERDADERO, como dinero.",
+    "Es un amigo verdadero.",
+    "É um amigo verdadeiro."
+  ],
+  [
+    "junto",
+    "",
+    "junto",
+    "RRÚN-to (j como r forte)",
+    "PT",
+    "JUNTO é igual, com J aspirado. Junto a = ao lado de.",
+    "Siéntate junto a mí.",
+    "Senta junto de mim."
+  ],
+  [
+    "derecha",
+    "f",
+    "direita",
+    "de-RÊ-tcha",
+    "PAD",
+    "DIREITA troca IT por CH: DERECHA. A la derecha = à direita.",
+    "El baño está a la derecha.",
+    "O banheiro fica à direita."
+  ],
+  [
+    "maravilloso",
+    "",
+    "maravilhoso",
+    "ma-ra-bi-IÔ-so",
+    "PAD",
+    "MARAVILHOSO troca LH por LL: MARAVILLOSO.",
+    "Pasamos un día maravilloso en la playa.",
+    "Passamos um dia maravilhoso na praia."
+  ],
+  [
+    "espacio",
+    "m",
+    "espaço",
+    "es-PÁ-sio",
+    "PAD",
+    "ESPAÇO troca -ço por -cio: ESPACIO, como servicio.",
+    "No hay espacio en el coche.",
+    "Não tem espaço no carro."
+  ],
+  [
+    "abuelo",
+    "m",
+    "avô",
+    "a-BUÊ-lo",
+    "IMG",
+    "ABUELO é o AVÔ que conta histórias na cadeira de balanço. Los abuelos = os avós.",
+    "Mi abuelo tiene ochenta años.",
+    "Meu avô tem oitenta anos."
+  ],
+  [
+    "salud",
+    "f",
+    "saúde",
+    "sa-LÚD",
+    "FRASE",
+    "SAÚDE vira SALUD, e é também o brinde: ¡salud! E quando alguém espirra, também.",
+    "¡Salud! Por nuestra amistad.",
+    "Saúde! À nossa amizade."
+  ],
+  [
+    "triste",
+    "",
+    "triste",
+    "TRÍS-te",
+    "PT",
+    "TRISTE é idêntico, sem o tchi final.",
+    "Estoy triste porque te vas.",
+    "Estou triste porque você vai embora."
+  ],
+  [
+    "aun",
+    "",
+    "até / mesmo",
+    "Á-un",
+    "REGRA",
+    "AUN sem acento é ATÉ, MESMO: aun así, mesmo assim. Com acento, aún é ainda.",
+    "Aun así, quiero intentarlo.",
+    "Mesmo assim, quero tentar."
+  ],
+  [
+    "iglesia",
+    "f",
+    "igreja",
+    "i-GLÊ-sia",
+    "PAD",
+    "IGREJA troca R por L e J por SI: IGLESIA, como prato e plato.",
+    "La iglesia está en la plaza.",
+    "A igreja fica na praça."
+  ],
+  [
+    "tía",
+    "f",
+    "tia",
+    "TÍ-a",
+    "PT",
+    "TIA ganha acento: TÍA. Mi tía Rosa.",
+    "Mi tía vive en Buenos Aires.",
+    "Minha tia mora em Buenos Aires."
+  ],
+  [
+    "consejo",
+    "m",
+    "conselho",
+    "kon-SÊ-rro (j como r forte)",
+    "PAD",
+    "CONSELHO troca LH por J: CONSEJO, como trabalho e trabajo.",
+    "Te doy un consejo: duerme bien.",
+    "Te dou um conselho: durma bem."
+  ],
+  [
+    "piso",
+    "m",
+    "andar / chão",
+    "PÍ-so",
+    "FALSO",
+    "PISO é o ANDAR do prédio (primer piso) e o chão. Na Espanha também é apartamento.",
+    "Vivo en el quinto piso.",
+    "Moro no quinto andar."
+  ],
+  [
+    "cocina",
+    "f",
+    "cozinha / fogão",
+    "ko-SÍ-na",
+    "PAD",
+    "COZINHA troca Z por C e NH por N: COCINA. Também é o fogão.",
+    "La cocina es mi lugar favorito.",
+    "A cozinha é meu lugar favorito."
+  ],
+  [
+    "vestido",
+    "m",
+    "vestido",
+    "bes-TÍ-do",
+    "PT",
+    "VESTIDO é idêntico, com V soando B.",
+    "Me encanta tu vestido rojo.",
+    "Adoro seu vestido vermelho."
+  ],
+  [
+    "caballo",
+    "m",
+    "cavalo",
+    "ka-BÁ-io (ll latino-americano)",
+    "PAD",
+    "CAVALO troca V por B e dobra o L: CABALLO.",
+    "Mi primo tiene un caballo blanco.",
+    "Meu primo tem um cavalo branco."
+  ],
+  [
+    "bar",
+    "m",
+    "bar",
+    "BÁR",
+    "PT",
+    "BAR é idêntico. Vamos al bar = vamos ao bar.",
+    "Nos vemos en el bar de la esquina.",
+    "Nos vemos no bar da esquina."
+  ],
+  [
+    "carne",
+    "f",
+    "carne",
+    "KÁR-ne",
+    "PT",
+    "CARNE é idêntica. Carne asada = churrasco.",
+    "No como carne roja.",
+    "Não como carne vermelha."
+  ],
+  [
+    "lindo",
+    "",
+    "lindo / bonito",
+    "LÍN-do",
+    "PT",
+    "LINDO é igual, muito usado na América Latina. ¡Qué lindo día!",
+    "¡Qué lindo es tu perrito!",
+    "Que lindo é seu cachorrinho!"
+  ],
+  [
+    "mar",
+    "m",
+    "mar",
+    "MÁR",
+    "PT",
+    "MAR é idêntico. Al mar = ao mar.",
+    "Me gusta nadar en el mar.",
+    "Gosto de nadar no mar."
+  ],
+  [
+    "edificio",
+    "m",
+    "prédio / edifício",
+    "e-di-FÍ-sio",
+    "PT",
+    "EDIFÍCIO perde o acento: EDIFICIO. No dia a dia é o PRÉDIO.",
+    "Vivo en un edificio de diez pisos.",
+    "Moro num prédio de dez andares."
+  ],
+  [
+    "conocer",
+    "",
+    "conhecer",
+    "ko-no-SÉR",
+    "PAD",
+    "CONHECER troca NH por N: CONOCER. Mucho gusto en conocerte = prazer em te conhecer.",
+    "Quiero conocer a tus padres.",
+    "Quero conhecer seus pais."
+  ],
+  [
+    "luna",
+    "f",
+    "lua",
+    "LÚ-na",
+    "LA",
+    "LUA perdeu o N do latim luna; o espanhol guardou: LUNA. Pense em lunar.",
+    "Esta noche hay luna llena.",
+    "Hoje à noite tem lua cheia."
+  ],
+  [
+    "frío",
+    "",
+    "frio",
+    "FRÍ-o",
+    "PT",
+    "FRIO ganha acento: FRÍO. Hace frío = está frio.",
+    "Hace mucho frío esta mañana.",
+    "Está muito frio hoje de manhã."
+  ],
+  [
+    "baile",
+    "m",
+    "baile / dança",
+    "BÁI-le",
+    "PT",
+    "BAILE é o BAILE e também a DANÇA em si: clases de baile = aulas de dança.",
+    "Tomo clases de baile los martes.",
+    "Faço aulas de dança às terças."
+  ],
+  [
+    "izquierda",
+    "f",
+    "esquerda",
+    "is-KIÊR-da",
+    "PAD",
+    "ESQUERDA ganha IE: IZQUIERDA, como cierto. A la izquierda = à esquerda.",
+    "Gira a la izquierda en el semáforo.",
+    "Vire à esquerda no semáforo."
+  ],
+  [
+    "beber",
+    "",
+    "beber",
+    "be-BÉR",
+    "PT",
+    "BEBER é idêntico. ¿Algo de beber? = algo para beber?",
+    "Quiero beber algo frío.",
+    "Quero beber algo gelado."
+  ],
+  [
+    "entender",
+    "",
+    "entender",
+    "en-ten-DÉR",
+    "PT",
+    "ENTENDER é igual, mas abre IE no presente: no entiendo.",
+    "No puedo entender lo que dice.",
+    "Não consigo entender o que ele diz."
+  ],
+  [
+    "mirar",
+    "",
+    "olhar",
+    "mi-RÁR",
+    "FALSO",
+    "MIRAR é OLHAR, não mirar com arma. ¡Mira! = olha!",
+    "Me gusta mirar las estrellas.",
+    "Gosto de olhar as estrelas."
+  ],
+  [
+    "hermoso",
+    "",
+    "lindo / formoso",
+    "er-MÔ-so (h mudo)",
+    "PAD",
+    "FORMOSO troca F por H mudo: HERMOSO, como fazer e hacer.",
+    "Qué paisaje tan hermoso.",
+    "Que paisagem tão linda."
+  ],
+  [
+    "opinión",
+    "f",
+    "opinião",
+    "o-pi-NIÓN",
+    "PAD",
+    "OPINIÃO troca ÃO por ÓN: OPINIÓN.",
+    "¿Cuál es tu opinión sobre el libro?",
+    "Qual é a sua opinião sobre o livro?"
+  ],
+  [
+    "cerveza",
+    "f",
+    "cerveja",
+    "ser-BÊ-sa",
+    "PAD",
+    "CERVEJA troca J por Z: CERVEZA. Una cerveza bien fría.",
+    "Pedimos dos cervezas bien frías.",
+    "Pedimos duas cervejas bem geladas."
+  ],
+  [
+    "oír",
+    "",
+    "ouvir",
+    "o-ÍR",
+    "PAD",
+    "OUVIR perde o UV: OÍR, como oído. Oír é perceber o som; escuchar é prestar atenção.",
+    "No puedo oír nada con este ruido.",
+    "Não consigo ouvir nada com esse barulho."
+  ],
+  [
+    "temprano",
+    "",
+    "cedo",
+    "tem-PRÁ-no",
+    "IMG",
+    "TEMPRANO lembra TEMPO + PRA NÓS: chegar cedo para ter tempo. É o oposto de tarde.",
+    "Mañana me levanto temprano.",
+    "Amanhã eu acordo cedo."
+  ],
+  [
+    "tema",
+    "m",
+    "tema / assunto",
+    "TÊ-ma",
+    "REGRA",
+    "TEMA termina em A, mas é masculino: el tema. Cambiar de tema = mudar de assunto.",
+    "Ese tema no me interesa.",
+    "Esse assunto não me interessa."
+  ],
+  [
+    "partido",
+    "m",
+    "jogo / partida / partido",
+    "par-TÍ-do",
+    "FALSO",
+    "PARTIDO é a PARTIDA de futebol, além do partido político. Ver el partido = ver o jogo.",
+    "Esta noche vemos el partido en casa.",
+    "Hoje à noite vemos o jogo em casa."
+  ],
+  [
+    "caliente",
+    "",
+    "quente",
+    "ka-LIÊN-te",
+    "IMG",
+    "CALIENTE lembra CALOR + quente. Agua caliente = água quente; para o clima, use hace calor.",
+    "Cuidado, la sopa está caliente.",
+    "Cuidado, a sopa está quente."
+  ]
+]
