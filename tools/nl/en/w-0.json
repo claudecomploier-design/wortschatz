@@ -998,5 +998,1005 @@
     "No DOWNload, o arquivo desce até seu aparelho. A seta DOWN aponta PARA BAIXO.",
     "Please sit down next to me.",
     "Por favor, sente-se ao meu lado."
+  ],
+  [
+    "make",
+    "",
+    "fazer / criar",
+    "MÊIK",
+    "FRASE",
+    "\"Make a cake\": FAZER um bolo, criando algo. Do costuma acompanhar tarefas; make põe um resultado na mesa.",
+    "Let's make a cake for her birthday.",
+    "Vamos fazer um bolo para o aniversário dela."
+  ],
+  [
+    "very",
+    "",
+    "muito",
+    "VÉ-ri",
+    "IMG",
+    "Um termômetro no vermelho marca VERY hot: MUITO quente. Very aumenta um adjetivo, não conta objetos.",
+    "Your new apartment is very bright.",
+    "Seu apartamento novo é muito iluminado."
+  ],
+  [
+    "never",
+    "",
+    "nunca",
+    "NÉ-vâr",
+    "PAD",
+    "N + EVER fecha todas as ocasiões: NUNCA. Imagine um calendário inteiro riscado, sem um único dia permitido.",
+    "I never drink coffee before bed.",
+    "Eu nunca tomo café antes de dormir."
+  ],
+  [
+    "only",
+    "",
+    "só / somente / único",
+    "ÔUN-li",
+    "IMG",
+    "Uma única cadeira iluminada no teatro: ONLY one. A luz deixa SOMENTE aquele lugar disponível.",
+    "This shop only accepts cash payments.",
+    "Esta loja só aceita pagamentos em dinheiro."
+  ],
+  [
+    "people",
+    "",
+    "pessoas / povo",
+    "PÍ-pâl",
+    "IMG",
+    "Uma multidão ocupa o palco: PEOPLE, pessoas. Mesmo sem S final, pede verbo no plural: people are.",
+    "Many people walk to work here.",
+    "Muitas pessoas vão a pé para o trabalho aqui."
+  ],
+  [
+    "over",
+    "",
+    "sobre / por cima de / terminado",
+    "ÔU-vâr",
+    "FRASE",
+    "\"Game over\" avisa que o jogo TERMINOU. Uma bola que passa OVER a cerca vai POR CIMA dela.",
+    "The plane flew over our house.",
+    "O avião passou por cima da nossa casa."
+  ],
+  [
+    "because",
+    "",
+    "porque",
+    "bi-KÓZ",
+    "PAD",
+    "CAUSE lembra CAUSA: because apresenta a causa de algo. A criança pergunta why, e a explicação começa com because.",
+    "I stayed home because it rained.",
+    "Eu fiquei em casa porque choveu."
+  ],
+  [
+    "little",
+    "",
+    "pequeno / pouco",
+    "LÍ-tâl",
+    "IMG",
+    "Um LITTLE mouse cabe numa caixinha: um camundongo pequeno. Com água, a mesma palavra mede pouco: little water.",
+    "There is a little shop nearby.",
+    "Tem uma lojinha aqui perto."
+  ],
+  [
+    "please",
+    "",
+    "por favor",
+    "PLÍIZ",
+    "FRASE",
+    "\"Please, please!\" é o pedido insistente de uma criança. Acrescente please ao pedir, como se oferecesse um sorriso.",
+    "Could you open the door, please?",
+    "Você poderia abrir a porta, por favor?"
+  ],
+  [
+    "love",
+    "",
+    "amar / amor",
+    "LÂV",
+    "FRASE",
+    "\"I love you\" põe AMOR na frase. Um coração sobre o V transforma as duas hastes em um abraço.",
+    "I love the smell of fresh bread.",
+    "Eu amo o cheiro de pão fresco."
+  ],
+  [
+    "should",
+    "",
+    "deveria",
+    "CHÚD (l mudo)",
+    "REGRA",
+    "SHOULD é o conselho de um amigo: você DEVERIA descansar. Não é a condição se, que se diz if.",
+    "You should take a warm coat.",
+    "Você deveria levar um casaco quente."
+  ],
+  [
+    "mean",
+    "",
+    "significar / querer dizer",
+    "MÍIN",
+    "FRASE",
+    "\"What do you mean?\" pergunta o que você QUER DIZER. Uma seta liga o sinal ao significado, sem indicar desejo.",
+    "What does this road sign mean?",
+    "O que esta placa de trânsito significa?"
+  ],
+  [
+    "faucet",
+    "",
+    "torneira",
+    "FÓ-sât",
+    "IMG",
+    "Uma foca faz \"fó\" ao abrir a TORNEIRA com a nadadeira. Faucet é o nome comum nos Estados Unidos.",
+    "Please turn off the kitchen faucet.",
+    "Por favor, feche a torneira da cozinha."
+  ],
+  [
+    "sorry",
+    "",
+    "desculpe / arrependido",
+    "SÁ-ri",
+    "IMG",
+    "SORRY é o cartão que acompanha as flores depois de um erro: DESCULPE. Também expressa pesar por uma notícia triste.",
+    "I am sorry about the broken cup.",
+    "Sinto muito pela xícara quebrada."
+  ],
+  [
+    "give",
+    "",
+    "dar",
+    "GUÍV",
+    "IMG",
+    "Um presente GIGANTE passa de uma mão à outra: GIVE, DAR. O G mantém som de gu, mesmo antes do i.",
+    "Please give me a clean spoon.",
+    "Por favor, me dê uma colher limpa."
+  ],
+  [
+    "off",
+    "",
+    "desligado / fora / afastado",
+    "ÓF",
+    "FRASE",
+    "O interruptor OFF apaga a lâmpada. Imagine o contato elétrico afastado, cortando a energia.",
+    "Please turn off the bathroom light.",
+    "Por favor, apague a luz do banheiro."
+  ],
+  [
+    "outlet",
+    "",
+    "tomada / saída",
+    "ÁUT-lât",
+    "PAD",
+    "OUT, fora, mais LET, deixar: uma saída. Na parede americana, outlet é a tomada por onde a energia fica disponível.",
+    "Is there an outlet near the bed?",
+    "Tem uma tomada perto da cama?"
+  ],
+  [
+    "thank",
+    "",
+    "agradecer",
+    "THÉNK (língua entre os dentes)",
+    "FRASE",
+    "\"Thank you\" é o verbo AGRADECER seguido de você. Thanks, com S, é a resposta pronta: obrigado.",
+    "I want to thank you for dinner.",
+    "Eu quero agradecer a você pelo jantar."
+  ],
+  [
+    "any",
+    "",
+    "algum / qualquer / nenhum (com negação)",
+    "É-ni",
+    "REGRA",
+    "ANY abre a escolha para qualquer item da prateleira. Em perguntas, procura algum; com not, não sobra nenhum.",
+    "Do you have any clean cups?",
+    "Você tem alguma xícara limpa?"
+  ],
+  [
+    "two",
+    "",
+    "dois / duas",
+    "TÚ (w mudo)",
+    "SOM",
+    "TWO soa igual a to e too: \"tú\". Imagine DOIS gêmeos usando roupas idênticas para guardar os sons iguais.",
+    "We need two tickets for tomorrow.",
+    "Precisamos de dois ingressos para amanhã."
+  ],
+  [
+    "even",
+    "",
+    "até / mesmo / par",
+    "Í-vân",
+    "IMG",
+    "Até o gato veio à festa: EVEN the cat! Para números, even divide tudo em pares, sem sobrar ninguém.",
+    "Even my little brother can swim.",
+    "Até meu irmãozinho sabe nadar."
+  ],
+  [
+    "much",
+    "",
+    "muito (quantidade)",
+    "MÂTCH",
+    "REGRA",
+    "MUCH mede o que não se conta peça por peça: água, tempo, dinheiro. Um copo medidor marca how much.",
+    "How much water do we need?",
+    "De quanta água nós precisamos?"
+  ],
+  [
+    "backpack",
+    "",
+    "mochila",
+    "BÉK-pék",
+    "PAD",
+    "BACK são costas; PACK é um pacote. O pacote que você leva nas costas vira MOCHILA.",
+    "Your backpack is under the desk.",
+    "Sua mochila está debaixo da escrivaninha."
+  ],
+  [
+    "sure",
+    "",
+    "certo / seguro de algo",
+    "CHÚR (r americano)",
+    "FRASE",
+    "\"Are you sure?\" confirma se você tem CERTEZA. Visualize um cadeado fechado sobre a sua resposta.",
+    "Are you sure this is our bus?",
+    "Você tem certeza de que este é o nosso ônibus?"
+  ],
+  [
+    "thing",
+    "",
+    "coisa",
+    "THÍNG (língua entre os dentes; ng nasal)",
+    "IMG",
+    "Uma COISA sem nome fica coberta por um pano: thing. O ng termina no nariz, sem soltar um gue.",
+    "What is that thing on the shelf?",
+    "O que é aquela coisa na prateleira?"
+  ],
+  [
+    "these",
+    "",
+    "estes / estas",
+    "DHÍIZ (língua entre os dentes)",
+    "PAD",
+    "THIS traz um objeto para perto; THESE traz vários. O i fica longo para caberem ESTAS duas maçãs na mão.",
+    "These apples are ready to eat.",
+    "Estas maçãs estão prontas para comer."
+  ],
+  [
+    "help",
+    "",
+    "ajudar / ajuda",
+    "HÉLP (h soprado)",
+    "FRASE",
+    "\"Help!\" é o pedido de AJUDA de quem ficou preso. Sopre o H e mantenha o P final curto.",
+    "Can you help me carry this box?",
+    "Você pode me ajudar a carregar esta caixa?"
+  ],
+  [
+    "first",
+    "",
+    "primeiro",
+    "FÂRST (r americano)",
+    "IMG",
+    "FIRST usa a medalha número um. Na fila, ele é o PRIMEIRO a chegar ao balcão.",
+    "This is my first day here.",
+    "Este é meu primeiro dia aqui."
+  ],
+  [
+    "into",
+    "",
+    "para dentro de",
+    "ÍN-tu",
+    "PAD",
+    "IN mais TO mostra movimento PARA DENTRO. A bola sai da mão e entra na caixa, em vez de já estar lá.",
+    "Put the vegetables into the pot.",
+    "Coloque os legumes dentro da panela."
+  ],
+  [
+    "anything",
+    "",
+    "qualquer coisa / algo (pergunta)",
+    "É-ni-thin (th entre os dentes; ng nasal)",
+    "PAD",
+    "ANY libera qualquer escolha; THING é coisa. Uma caixa vazia aceita QUALQUER COISA que caiba nela.",
+    "Do you need anything from the store?",
+    "Você precisa de alguma coisa da loja?"
+  ],
+  [
+    "still",
+    "",
+    "ainda / parado",
+    "STÍL",
+    "IMG",
+    "O relógio anda, mas você AINDA está esperando: still waiting. Uma estátua fica still, parada, sem se mexer.",
+    "The children are still at school.",
+    "As crianças ainda estão na escola."
+  ],
+  [
+    "find",
+    "",
+    "encontrar / achar",
+    "FÁIND",
+    "IMG",
+    "O detetive grita \"FÁIND!\" ao ENCONTRAR a chave. Imagine o objeto brilhando no fundo da gaveta.",
+    "I cannot find my house keys.",
+    "Eu não consigo encontrar as chaves de casa."
+  ],
+  [
+    "life",
+    "",
+    "vida",
+    "LÁIF",
+    "FRASE",
+    "O LIFE de um jogo representa sua VIDA. Cada coração na tela é uma chance de continuar.",
+    "Life in this town is quiet.",
+    "A vida nesta cidade é tranquila."
+  ],
+  [
+    "nothing",
+    "",
+    "nada",
+    "NÂ-thin (th entre os dentes; ng nasal)",
+    "PAD",
+    "NO, nenhum, mais THING, coisa: NADA. Abra a caixa e veja que não há uma única coisa dentro.",
+    "There is nothing in this bag.",
+    "Não tem nada nesta bolsa."
+  ],
+  [
+    "day",
+    "",
+    "dia",
+    "DÊI",
+    "FRASE",
+    "No aniversário, \"happy birthday\" celebra o DIA do nascimento. Day também é cada quadrinho do calendário.",
+    "What day is your next appointment?",
+    "Em que dia é sua próxima consulta?"
+  ],
+  [
+    "work",
+    "",
+    "trabalhar / trabalho",
+    "UÂRK (r americano)",
+    "IMG",
+    "O crachá WORK fica ao lado do computador de TRABALHO. O som central é â, sem soar como uórk.",
+    "I work at a small bakery.",
+    "Eu trabalho numa padaria pequena."
+  ],
+  [
+    "their",
+    "",
+    "deles / delas",
+    "DHÉR (língua entre os dentes)",
+    "REGRA",
+    "THEY têm uma casa; a placa muda para THEIR house, a casa DELES. Soa como there, mas marca posse.",
+    "Their children go to our school.",
+    "Os filhos deles estudam na nossa escola."
+  ],
+  [
+    "again",
+    "",
+    "de novo / novamente",
+    "â-GUÉN",
+    "IMG",
+    "O cachorro devolve a bolinha: AGAIN! Quer a mesma brincadeira DE NOVO. Na fala americana, o final comum soa guén.",
+    "Please say your phone number again.",
+    "Por favor, diga seu número de telefone de novo."
+  ],
+  [
+    "maybe",
+    "",
+    "talvez",
+    "MÊI-bi",
+    "PAD",
+    "MAY BE se juntam: pode ser, TALVEZ. A previsão do tempo desenha metade sol, metade nuvem.",
+    "Maybe we can eat outside today.",
+    "Talvez possamos comer lá fora hoje."
+  ],
+  [
+    "must",
+    "",
+    "dever / ter que",
+    "MÂST",
+    "REGRA",
+    "MUST é a placa de obrigação na entrada: tem que usar capacete. É mais forte que o conselho should.",
+    "You must wear a helmet here.",
+    "Você tem que usar capacete aqui."
+  ],
+  [
+    "before",
+    "",
+    "antes de / antes",
+    "bi-FÓR (r americano)",
+    "IMG",
+    "BEFORE fica na foto do ANTES da reforma. O relógio dessa foto marca um momento anterior ao resultado.",
+    "Wash your hands before you eat.",
+    "Lave as mãos antes de comer."
+  ],
+  [
+    "other",
+    "",
+    "outro / outra",
+    "Â-dhâr (língua entre os dentes no dh)",
+    "IMG",
+    "Duas luvas: esta mão já está ocupada; pegue a OTHER, a OUTRA. Depois de the, aponta a alternativa restante.",
+    "The other shoe is under the bed.",
+    "O outro sapato está debaixo da cama."
+  ],
+  [
+    "wait",
+    "",
+    "esperar",
+    "UÊIT",
+    "FRASE",
+    "\"Wait a minute!\" segura quem já ia embora: ESPERE um minuto. Imagine a palma da mão pedindo uma pausa.",
+    "Please wait for me by the door.",
+    "Por favor, espere por mim perto da porta."
+  ],
+  [
+    "stop",
+    "",
+    "parar / parada",
+    "STÁP",
+    "PT",
+    "A placa STOP, vista em filmes, é a nossa PARE. Na boca americana, o O abre para um som próximo de á.",
+    "Please stop the car near the bank.",
+    "Por favor, pare o carro perto do banco."
+  ],
+  [
+    "call",
+    "",
+    "ligar / chamar / chamada",
+    "KÓL",
+    "FRASE",
+    "Uma videoCALL é uma CHAMADA por vídeo. A mesma palavra chama pelo nome ou liga pelo telefone.",
+    "I will call you after work.",
+    "Eu vou ligar para você depois do trabalho."
+  ],
+  [
+    "after",
+    "",
+    "depois de / após",
+    "ÉF-târ",
+    "PT",
+    "O AFTER de uma festa vem DEPOIS do evento principal. Imagine a pista de dança quando o show já terminou.",
+    "We usually walk home after dinner.",
+    "Nós costumamos voltar a pé para casa depois do jantar."
+  ],
+  [
+    "talk",
+    "",
+    "falar / conversar",
+    "TÓK (l mudo)",
+    "FRASE",
+    "Um TALK show é um programa de CONVERSA. O apresentador fala bastante, mas o L da palavra fica calado.",
+    "Can we talk about this tomorrow?",
+    "Podemos conversar sobre isto amanhã?"
+  ],
+  [
+    "away",
+    "",
+    "longe / para longe",
+    "â-UÊI",
+    "PAD",
+    "A mais WAY, caminho: alguém segue caminho para LONGE. A mala vai se afastando até sumir na estrada.",
+    "Please keep the dog away from here.",
+    "Por favor, mantenha o cachorro longe daqui."
+  ],
+  [
+    "than",
+    "",
+    "do que (comparação)",
+    "DHÉN (língua entre os dentes)",
+    "REGRA",
+    "THAN fica entre os dois lados da comparação: taller than, mais alto DO QUE. Then, com E, é depois.",
+    "This bag is heavier than mine.",
+    "Esta bolsa é mais pesada do que a minha."
+  ],
+  [
+    "thought",
+    "",
+    "pensamento / ideia",
+    "THÓT (língua entre os dentes; gh mudo)",
+    "IMG",
+    "Uma nuvem de PENSAMENTO sai da cabeça: thought. Também é o passado de think, mas pode ser um nome por si só.",
+    "A strange thought crossed my mind.",
+    "Um pensamento estranho passou pela minha cabeça."
+  ],
+  [
+    "home",
+    "",
+    "casa / lar",
+    "HÔUM (h soprado)",
+    "FRASE",
+    "\"Home sweet home\": LAR, doce lar. Home fala do lugar onde você se sente em casa; house, da construção.",
+    "I usually get home before six.",
+    "Eu costumo chegar em casa antes das seis."
+  ],
+  [
+    "night",
+    "",
+    "noite",
+    "NÁIT (gh mudo)",
+    "FRASE",
+    "\"Good night\" encerra o dia: boa NOITE. As letras GH adormecem e não fazem som.",
+    "We heard heavy rain last night.",
+    "Nós ouvimos chuva forte ontem à noite."
+  ],
+  [
+    "put",
+    "",
+    "colocar / pôr",
+    "PÚT (u curto)",
+    "IMG",
+    "Um dedo faz \"put!\" e COLOCA uma peça no tabuleiro. A forma também é put no passado: nenhuma peça muda.",
+    "Please put the milk in the fridge.",
+    "Por favor, coloque o leite na geladeira."
+  ],
+  [
+    "great",
+    "",
+    "ótimo / grande",
+    "GRÊIT",
+    "FRASE",
+    "\"Great!\" é o elogio entusiasmado quando tudo dá certo. Para tamanho, também aparece em grandes feitos ou grandes nomes.",
+    "We had a great day at the beach.",
+    "Nós tivemos um ótimo dia na praia."
+  ],
+  [
+    "those",
+    "",
+    "aqueles / aquelas",
+    "DHÔUZ (língua entre os dentes)",
+    "IMG",
+    "THOSE são AQUELES sapatos na vitrine, longe da mão. Para estes aqui perto, use these.",
+    "Those shoes are too expensive for me.",
+    "Aqueles sapatos são caros demais para mim."
+  ],
+  [
+    "last",
+    "",
+    "último / passado / durar",
+    "LÉST",
+    "FRASE",
+    "\"The last one\" é o ÚLTIMO biscoito da lata. Em last week, aponta a semana passada; como verbo, mede quanto dura.",
+    "I took the last seat on the bus.",
+    "Eu peguei o último lugar no ônibus."
+  ],
+  [
+    "better",
+    "",
+    "melhor",
+    "BÉ-târ (t entre vogais soa como r breve)",
+    "IMG",
+    "Um selo BETTER substitui o selo GOOD: ficou MELHOR. Não monte more good, pois a palavra muda inteira.",
+    "This chair is better for your back.",
+    "Esta cadeira é melhor para suas costas."
+  ],
+  [
+    "everything",
+    "",
+    "tudo / todas as coisas",
+    "É-vri-thin (th entre os dentes; ng nasal)",
+    "PAD",
+    "EVERY, cada, recolhe THING, coisa, até não sobrar nada fora: TUDO. A mala fecha com todas as coisas dentro.",
+    "Everything is ready for the party.",
+    "Tudo está pronto para a festa."
+  ],
+  [
+    "sunscreen",
+    "",
+    "protetor solar",
+    "SÂN-skríin",
+    "PAD",
+    "SUN é sol e SCREEN é tela: uma tela protetora entre sua pele e o sol. Pense no creme formando essa barreira.",
+    "Put on sunscreen before going outside.",
+    "Passe protetor solar antes de sair."
+  ],
+  [
+    "new",
+    "",
+    "novo / nova",
+    "NÚ (inglês americano)",
+    "FRASE",
+    "\"New York\" é NOVA York. A etiqueta NEW balança no guidão da bicicleta recém-saída da loja.",
+    "My new shoes are very comfortable.",
+    "Meus sapatos novos são muito confortáveis."
+  ],
+  [
+    "drawer",
+    "",
+    "gaveta",
+    "DRÓR (uma sílaba no uso americano)",
+    "IMG",
+    "Você puxa a GAVETA para fora como quem dá um draw, um puxão. Dentro dela, os talheres ficam escondidos.",
+    "The forks are in the top drawer.",
+    "Os garfos estão na gaveta de cima."
+  ],
+  [
+    "always",
+    "",
+    "sempre",
+    "ÓL-uêiz",
+    "PAD",
+    "ALL, todos, mais WAYS, caminhos: em todos os caminhos, SEMPRE. Um relógio fiel chega na hora todos os dias.",
+    "She always brings lunch from home.",
+    "Ela sempre traz almoço de casa."
+  ],
+  [
+    "keep",
+    "",
+    "manter / guardar / continuar",
+    "KÍIP",
+    "FRASE",
+    "O goleiro, goalKEEPER, GUARDA o gol. Keep segura algo no mesmo lugar ou estado: keep quiet, manter silêncio.",
+    "You can keep the extra change.",
+    "Você pode ficar com o troco que sobrou."
+  ],
+  [
+    "long",
+    "",
+    "longo / comprido / demorado",
+    "LÓNG (ng nasal)",
+    "PT",
+    "LONGO perde a última vogal e vira LONG. Uma corda comprida atravessa a sala; o ng termina no nariz.",
+    "It is a long walk from here.",
+    "É uma caminhada longa daqui."
+  ],
+  [
+    "pillow",
+    "",
+    "travesseiro",
+    "PÍ-lou",
+    "SOM",
+    "\"PILOtei até cair no TRAVESSEIRO.\" Imagine um piloto dormindo sobre uma nuvem macia, do tamanho da cabeça.",
+    "I need a softer pillow tonight.",
+    "Eu preciso de um travesseiro mais macio esta noite."
+  ],
+  [
+    "leave",
+    "",
+    "sair / deixar",
+    "LÍIV",
+    "IMG",
+    "A pessoa SAI do quarto e DEIXA a chave na mesa: leave cobre as duas ações. Alongue o i para não confundir com live.",
+    "Please leave your shoes by the door.",
+    "Por favor, deixe seus sapatos perto da porta."
+  ],
+  [
+    "deadline",
+    "",
+    "prazo final",
+    "DÉD-lain",
+    "PAD",
+    "DEAD mais LINE faz uma linha que não deixa o tempo passar: o PRAZO FINAL. Marque-a em vermelho no calendário.",
+    "The deadline for this form is Friday.",
+    "O prazo final deste formulário é sexta-feira."
+  ],
+  [
+    "money",
+    "",
+    "dinheiro",
+    "MÂ-ni",
+    "SOM",
+    "Um macaco faz \"mâni\" contando as notas: DINHEIRO. Money não recebe plural em S quando falamos da quantia.",
+    "I need money for the bus.",
+    "Eu preciso de dinheiro para o ônibus."
+  ],
+  [
+    "around",
+    "",
+    "ao redor de / por volta de",
+    "â-RÁUND",
+    "PAD",
+    "ROUND lembra redondo: AROUND dá a volta AO REDOR. Com horas, desenha uma margem: around six, por volta das seis.",
+    "We walked around the lake together.",
+    "Nós caminhamos juntos ao redor do lago."
+  ],
+  [
+    "name",
+    "",
+    "nome",
+    "NÊIM",
+    "PT",
+    "NOME e NAME são parentes fáceis de reconhecer. Troque o som do meio por êi e escreva seu nome no crachá.",
+    "Please write your name on the form.",
+    "Por favor, escreva seu nome no formulário."
+  ],
+  [
+    "place",
+    "",
+    "lugar / local / colocar",
+    "PLÊIS",
+    "FALSO",
+    "PLACE é um LUGAR, não necessariamente uma casa. Reserve um lugar à mesa: a place at the table.",
+    "This is a quiet place to read.",
+    "Este é um lugar tranquilo para ler."
+  ],
+  [
+    "ever",
+    "",
+    "alguma vez / em qualquer momento",
+    "É-vâr",
+    "REGRA",
+    "EVER percorre todo o calendário procurando uma ocasião: have you ever...? Na pergunta, significa ALGUMA VEZ, não sempre.",
+    "Have you ever seen a whale?",
+    "Você já viu uma baleia alguma vez?"
+  ],
+  [
+    "feel",
+    "",
+    "sentir / sentir-se",
+    "FÍIL",
+    "IMG",
+    "Passe a mão no tecido: você SENTE se é macio. Alongue o i de feel enquanto seus dedos percebem a textura.",
+    "I feel much better after lunch.",
+    "Eu me sinto muito melhor depois do almoço."
+  ],
+  [
+    "umbrella",
+    "",
+    "guarda-chuva",
+    "âm-BRÉ-lâ",
+    "PT",
+    "UMBRA lembra sombra: o guarda-chuva cria uma sombra e barra a chuva. A tônica fica no BRÉ do meio.",
+    "Take an umbrella; it might rain.",
+    "Leve um guarda-chuva; pode chover."
+  ],
+  [
+    "father",
+    "",
+    "pai",
+    "FÁ-dhâr (dh entre os dentes)",
+    "FRASE",
+    "\"Father Christmas\" é o Papai Noel britânico. Father é PAI; dad é a forma familiar, papai.",
+    "My father makes breakfast on Sundays.",
+    "Meu pai prepara o café da manhã aos domingos."
+  ],
+  [
+    "guy",
+    "",
+    "cara / rapaz",
+    "GÁI",
+    "SOM",
+    "\"GAI, quem é esse CARA?\" O U depois do G não soa como u: guy tem uma sílaba só.",
+    "The guy at the counter is helpful.",
+    "O rapaz do balcão é prestativo."
+  ],
+  [
+    "laundry",
+    "",
+    "roupa para lavar / lavagem de roupas",
+    "LÓN-dri",
+    "PT",
+    "LAVANDERIA ajuda a reconhecer LAUNDRY: a cesta de roupa suja indo para a máquina. Não é o cômodo apenas, mas também a roupa.",
+    "I do the laundry on Saturday.",
+    "Eu lavo a roupa no sábado."
+  ],
+  [
+    "old",
+    "",
+    "velho / antigo / de idade",
+    "ÔULD",
+    "FRASE",
+    "\"How old are you?\" pergunta sua idade, não se você está velho. Uma foto OLD amarela no álbum guarda o sentido de antigo.",
+    "This old bicycle still works well.",
+    "Esta bicicleta velha ainda funciona bem."
+  ],
+  [
+    "which",
+    "",
+    "qual / que (seleção)",
+    "UÍTCH",
+    "IMG",
+    "WHICH mostra um pequeno cardápio e pede QUAL opção. What abre a pergunta; which escolhe entre alternativas visíveis ou conhecidas.",
+    "Which bus goes to the city center?",
+    "Qual ônibus vai para o centro da cidade?"
+  ],
+  [
+    "big",
+    "",
+    "grande",
+    "BÍG",
+    "FRASE",
+    "\"Big Brother\" é o GRANDE irmão. Desenhe um B gigante ocupando a folha inteira para guardar o tamanho.",
+    "There is a big park near here.",
+    "Tem um parque grande aqui perto."
+  ],
+  [
+    "lot",
+    "",
+    "grande quantidade / lote",
+    "LÁT",
+    "PT",
+    "Um LOTE cheio de caixas ajuda a lembrar de a LOT of: MUITOS objetos. O a faz parte dessa expressão de quantidade.",
+    "We have a lot of fresh fruit.",
+    "Nós temos muitas frutas frescas."
+  ],
+  [
+    "rent",
+    "",
+    "aluguel / alugar",
+    "RÉNT",
+    "IMG",
+    "O anúncio FOR RENT fica na janela da casa para ALUGAR. Imagine o boleto mensal preso ao vidro.",
+    "The rent includes water and electricity.",
+    "O aluguel inclui água e luz."
+  ],
+  [
+    "hello",
+    "",
+    "olá / alô",
+    "hâ-LÔU (h soprado)",
+    "FRASE",
+    "HELLO abre a porta da conversa, como OLÁ ou ALÔ no telefone. O destaque fica no final, lôu.",
+    "Hello, is this the train station?",
+    "Alô, é da estação de trem?"
+  ],
+  [
+    "nice",
+    "",
+    "agradável / legal / bonito",
+    "NÁIS",
+    "FRASE",
+    "\"Nice to meet you\" diz que é AGRADÁVEL conhecer alguém. Guarde um sorriso de apresentação em vez de traduzir sempre como bom.",
+    "That is a nice picture of you.",
+    "Essa é uma foto bonita sua."
+  ],
+  [
+    "believe",
+    "",
+    "acreditar / crer",
+    "bi-LÍIV",
+    "FRASE",
+    "\"Believe me\" pede ACREDITE em mim. Imagine uma mão sobre o coração prometendo que a história é verdadeira.",
+    "I believe we met here last year.",
+    "Eu acredito que nos conhecemos aqui no ano passado."
+  ],
+  [
+    "girl",
+    "",
+    "menina / garota",
+    "GÂRL (r americano)",
+    "FRASE",
+    "GIRLfriend é a namorada; GIRL, sozinha, é uma MENINA ou garota. O som central não é guél, mas â com R.",
+    "The girl with glasses is my cousin.",
+    "A menina de óculos é minha prima."
+  ],
+  [
+    "someone",
+    "",
+    "alguém",
+    "SÂM-uân",
+    "PAD",
+    "SOME, algum, mais ONE, um: uma pessoa sem nome, ALGUÉM. Imagine uma silhueta tocando a campainha.",
+    "Someone is waiting at the front door.",
+    "Alguém está esperando na porta da frente."
+  ],
+  [
+    "fine",
+    "",
+    "bem / bom / multa",
+    "FÁIN",
+    "FRASE",
+    "\"I'm fine\" confirma que você está BEM. No para-brisa, a mesma palavra pode virar uma MULTA: a parking fine.",
+    "I feel fine after a short rest.",
+    "Eu me sinto bem depois de um breve descanso."
+  ],
+  [
+    "thanks",
+    "",
+    "obrigado / agradecimentos",
+    "THÉNKS (língua entre os dentes)",
+    "FRASE",
+    "THANK ganha S e vira o agradecimento pronto: OBRIGADO. Você pode dizer thanks sozinho ao receber um favor.",
+    "Thanks for helping me with the bags.",
+    "Obrigado por me ajudar com as bolsas."
+  ],
+  [
+    "refund",
+    "",
+    "reembolso / reembolsar",
+    "RÍ-fând (substantivo); ri-FÂND (verbo)",
+    "PAD",
+    "RE indica volta e FUND lembra fundos: o dinheiro volta para você. A loja devolve o valor da compra.",
+    "Can I get a refund for this?",
+    "Posso receber um reembolso disto?"
+  ],
+  [
+    "kind",
+    "",
+    "tipo / espécie / gentil",
+    "KÁIND",
+    "FRASE",
+    "\"What kind?\" pergunta QUAL TIPO; \"so kind\" elogia alguém GENTIL. Imagine escolher o tipo de flor para agradecer uma gentileza.",
+    "What kind of bread would you like?",
+    "Que tipo de pão você gostaria?"
+  ],
+  [
+    "appointment",
+    "",
+    "consulta / compromisso marcado",
+    "â-PÓINT-mânt",
+    "PAD",
+    "POINT marca um ponto na agenda; APPOINTMENT ocupa aquele horário. É consulta ou encontro marcado, não um encontro por acaso.",
+    "I have a dentist appointment tomorrow.",
+    "Eu tenho uma consulta no dentista amanhã."
+  ],
+  [
+    "house",
+    "",
+    "casa (construção)",
+    "HÁUS (h soprado)",
+    "IMG",
+    "Desenhe paredes e telhado: HOUSE é a construção da CASA. Home acrescenta a ideia de lar, mesmo num apartamento.",
+    "Their house has a small garden.",
+    "A casa deles tem um jardim pequeno."
+  ],
+  [
+    "every",
+    "",
+    "cada / todo",
+    "É-vri",
+    "REGRA",
+    "EVERY entrega um presente a CADA criança, uma por uma. Por isso vem com substantivo no singular: every child.",
+    "The bus comes every ten minutes.",
+    "O ônibus passa a cada dez minutos."
+  ],
+  [
+    "commute",
+    "",
+    "trajeto habitual ao trabalho / fazer esse trajeto",
+    "kâ-MIÚT",
+    "IMG",
+    "O trem repete a mesma viagem entre casa e trabalho: COMMUTE. O bilhete mensal guarda o trajeto de todo dia.",
+    "My daily commute takes thirty minutes.",
+    "Meu trajeto diário ao trabalho leva trinta minutos."
+  ],
+  [
+    "through",
+    "",
+    "através de / por dentro de",
+    "THRÚ (língua entre os dentes; gh mudo)",
+    "IMG",
+    "Uma flecha atravessa um túnel e sai do outro lado: THROUGH. A palavra longa cabe num único som, thrú.",
+    "We walked through the park after lunch.",
+    "Nós caminhamos pelo parque depois do almoço."
+  ],
+  [
+    "shelf",
+    "",
+    "prateleira",
+    "CHÉLF",
+    "IMG",
+    "O CHEF guarda seus potes numa PRATELEIRA: shelf. Troque o começo por ch e coloque um L antes do F.",
+    "Please put the books on that shelf.",
+    "Por favor, coloque os livros naquela prateleira."
+  ],
+  [
+    "course",
+    "",
+    "curso / percurso",
+    "KÓRS (r americano)",
+    "PT",
+    "CURSO troca o som do U por ó e vira COURSE. Em of course, a expressão inteira significa claro.",
+    "This course starts on Monday morning.",
+    "Este curso começa na segunda-feira de manhã."
+  ],
+  [
+    "stay",
+    "",
+    "ficar / permanecer / estadia",
+    "STÊI",
+    "FRASE",
+    "\"Stay here\" segura alguém no lugar: FIQUE aqui. Não é simplesmente estar; implica continuar ou hospedar-se.",
+    "Can we stay here for two nights?",
+    "Podemos ficar aqui por duas noites?"
+  ],
+  [
+    "left",
+    "",
+    "esquerdo / esquerda / restante",
+    "LÉFT",
+    "IMG",
+    "A seta LEFT aponta a ESQUERDA no cruzamento. Também indica o que restou: two left, dois restantes.",
+    "The pharmacy is on your left.",
+    "A farmácia fica à sua esquerda."
   ]
 ]
